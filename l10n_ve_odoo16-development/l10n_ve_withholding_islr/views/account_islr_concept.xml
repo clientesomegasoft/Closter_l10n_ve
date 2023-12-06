@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="account_islr_concept_view_tree" model="ir.ui.view">
+		<field name="name">account.islr.concept.view.tree</field>
+		<field name="model">account.islr.concept</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="account_islr_concept_view_form" model="ir.ui.view">
+		<field name="name">account.islr.concept.view.form</field>
+		<field name="model">account.islr.concept</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<div class="oe_title">
+						<label for="name" class="o_form_label"/>
+						<h1 class="mt0"><field name="name" placeholder="ej. Sueldos y Salarios..."/></h1>
+					</div>
+					<notebook>
+						<page name="rate" string="Tasas">
+							<field name="rate_ids" options="{'no_open': 1}">
+								<tree editable="top">
+									<field name="name"/>
+									<field name="person_type_id" options="{'no_open': 1}"/>
+									<field name="base"/>
+									<field name="factor"/>
+									<field name="rate"/>
+									<field name="subtraction"/>
+									<field name="rate_type"/>
+								</tree>
+							</field>
+						</page>
+					</notebook>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="account_islr_concept_action" model="ir.actions.act_window">
+		<field name="name">Concepto de retención de ingresos</field>
+		<field name="res_model">account.islr.concept</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem id="menu_account_islr_concept" action="account_islr_concept_action" parent="l10n_ve_config_account.menu_l10n_ve_finance_configuration"/>
+</odoo>

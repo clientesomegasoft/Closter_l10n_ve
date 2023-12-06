@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+	<record id="view_invoice_tree" model="ir.ui.view">
+		<field name="name">account.invoice.tree</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_invoice_tree"/>
+		<field name="arch" type="xml">
+			<field name="amount_residual_signed" position="after">
+				<field name="currency_ref_id" invisible="1"/>
+				<field name="amount_residual_ref" sum="Adeudado ope." optional="hide"/>
+			</field>
+		</field>
+	</record>
+	<record id="view_move_form" model="ir.ui.view">
+		<field name="name">account.move.form</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_move_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//group[@id='header_right_group']" position="inside">
+				<field name="currency_ref_id" invisible="1"/>
+				<field name="global_rate_ref" attrs="{'invisible': [('move_type', '!=', 'entry')]}"/>
+				<field name="currency_rate_ref" attrs="{'invisible': [('global_rate_ref', '=', False)], 'required': [('global_rate_ref', '=', True)]}" options="{'no_create': 1, 'no_open': 1}"/>
+			</xpath>
+			<xpath expr="//field[@name='line_ids']/tree/field[@name='balance']" position="after">
+				<field name="currency_ref_id" invisible="1"/>
+				<field name="currency_rate_ref" options="{'no_create': 1, 'no_open': 1}" attrs="{'column_invisible': ['|', ('parent.move_type', '!=', 'entry'), ('parent.global_rate_ref', '=', True)]}"/>
+				<field name="debit_ref" sum="Total Debit Ref" attrs="{'invisible': [('display_type', 'in', ('line_section', 'line_note'))]}" optional="hide"/>
+				<field name="credit_ref" sum="Total Credit Ref" attrs="{'invisible': [('display_type', 'in', ('line_section', 'line_note'))]}" optional="hide"/>
+				<field name="balance_ref" invisible="1"/>
+			</xpath>
+			<xpath expr="//field[@name='line_ids']/form/group/field[@name='balance']" position="after">
+				<field name="currency_ref_id" invisible="1"/>
+				<field name="currency_rate_ref"/>
+				<field name="debit_ref"/>
+				<field name="credit_ref"/>
+				<field name="balance_ref" invisible="1"/>
+			</xpath>
+		</field>
+	</record>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_town_hall,access.res.town.hall,model_res_town_hall,,1,1,1,1
+access_gross_income_report,access.gross.income.report,model_gross_income_report,,1,1,1,1
+access_gross_income_report_line,access.gross.income.report.line,model_gross_income_report_line,,1,1,1,1

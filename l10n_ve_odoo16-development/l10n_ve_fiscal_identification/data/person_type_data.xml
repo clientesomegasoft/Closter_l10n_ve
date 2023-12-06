@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="person_type_pjdo" model="person.type">
+		<field name="name">PJDO Persona Jurídica Domiciliada</field>
+		<field name="code">PJDO</field>
+		<field name="is_company">True</field>
+	</record>
+	<record id="person_type_pjnd" model="person.type">
+		<field name="name">PJND Persona Jurídica No Domiciliada</field>
+		<field name="code">PJND</field>
+		<field name="is_company">True</field>
+	</record>
+	<record id="person_type_pnre" model="person.type">
+		<field name="name">PNRE Persona Natural Residente</field>
+		<field name="code">PNRE</field>
+		<field name="is_company">False</field>
+	</record>
+	<record id="person_type_pnnr" model="person.type">
+		<field name="name">PNNR Persona Natural No Residente</field>
+		<field name="code">PNNR</field>
+		<field name="is_company">False</field>
+	</record>
+</odoo>

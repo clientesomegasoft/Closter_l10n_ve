@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="account_withholding_islr">
+		<t t-foreach="docs" t-as="doc">
+			<t t-call="web.html_container">
+				<t t-call="web.basic_layout">
+					<div class="page">
+						<div class="container row m-0 p-0">
+							<div class="col-3 pl-0">
+								<img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="max-height: 85pt;" alt="Company Logo"/>
+							</div>
+							<div class="col-9">
+								<div class="row py-4">
+									<div class="col-6 text-center"><h4>Comprobante de Retención de ISLR</h4></div>
+									<div class="col-6 text-end pr-0"><p style="font-size: 11px;">
+										Para dar cumplimiento con la normativa establecida el Artículo 24, Decreto 1.808<br/>
+										en materia de Retenciones ISLR publicado en G.O. N° 36.203 del 12 de Mayo de 1997
+									</p></div>
+								</div>
+								<div class="row text-end mt-4">
+									<div class="col-6 pe-1 border"><b>Nro. Comprobante:</b> <span t-field="doc.name"/></div>
+									<div class="col-6 pe-1 border"><b>Fecha de emisión:</b> <span t-field="doc.date"/></div>
+								</div>
+							</div>
+						</div>
+						<table class="table table-bordered mt-3 p-0" style="font-size: 13px;">
+							<tr>
+								<td>Nombre y Apellido o Razón Social del Agente de Retención:<br/><span t-field="doc.agent_id"/></td>
+								<td>Registro de Identificación Fiscal del Agente de Retención<br/><span t-field="doc.agent_id.vat"/></td>
+								<td style="width:20%;">Período Fiscal<br/><span t-esc="doc.date.strftime('%m/%Y')"/></td>
+							</tr>
+							<tr>
+								<td colspan="3">Dirección Fiscal del Agente de Retención:<br/><span t-esc="doc.agent_id._display_address(without_company=True)"/></td>
+							</tr>
+							<tr>
+								<td>Nombre y Apellido o Razón Social del Agente Retenido:<br/><span t-field="doc.subject_id"/></td>
+								<td colspan="2">Registro de Identificación Fiscal del Agente Retenido<br/><span t-field="doc.subject_id.vat"/></td>
+							</tr>
+							<tr>
+								<td colspan="3">Dirección Fiscal del Agente Retenido:<br/><span t-esc="doc.subject_id._display_address(without_company=True)"/></td>
+							</tr>
+						</table>
+						<table class="table table-bordered mt-3 p-0 text-center" style="font-size: 13px;">
+							<tr style="background-color:#A9F5F2;">
+								<th>Fecha de documento</th>
+								<th>Nro. Factura</th>
+								<th>Nro. Control</th>
+								<th>Nro. Nota de débito</th>
+								<th>Nro. Nota de crédito</th>
+								<th>Nro. Factura afectada</th>
+								<th>Concepto</th>
+								<th>Monto total del documento</th>
+								<th>Base imponible</th>
+								<th>% de Retencion</th>
+								<th>Sustraendo</th>
+								<th>Impuesto retenido</th>
+							</tr>
+							<tr t-foreach="doc.line_ids" t-as="line">
+								<td><span t-field="doc.invoice_date"/></td>
+								<td><span t-esc="doc.invoice_id.supplier_invoice_number or doc.invoice_id.name"/></td>
+								<td><span t-field="doc.invoice_id.nro_ctrl"/></td>
+								<td><span t-esc="doc.invoice_id.supplier_invoice_number or doc.invoice_id.name" t-if="doc.invoice_id.debit_origin_id"/></td>
+								<td><span t-esc="doc.invoice_id.supplier_invoice_number or doc.invoice_id.name" t-if="doc.invoice_id.reversed_entry_id"/></td>
+								<td>
+									<span t-esc="doc.invoice_id.debit_origin_id.supplier_invoice_number or doc.invoice_id.debit_origin_id.name" t-if="doc.invoice_id.debit_origin_id"/>
+									<span t-esc="doc.invoice_id.reversed_entry_id.supplier_invoice_number or doc.invoice_id.reversed_entry_id.name" t-if="doc.invoice_id.reversed_entry_id"/>
+								</td>
+								<td><span t-field="line.islr_concept_id.name"/></td>
+								<td/>
+								<td class="text-end"><span t-field="line.base_amount"/></td>
+								<td><span t-esc="line.percent" t-options='{"widget": "float", "precision": 2}'/>%</td>
+								<td class="text-end"><span t-field="line.subtraction"/></td>
+								<td class="text-end"><span t-field="line.amount"/></td>
+							</tr>
+							<tr>
+								<td colspan="7"/>
+								<td class="text-end"><span t-esc="abs(doc.invoice_id.amount_total_signed if doc.currency_id.id == doc.company_id.currency_id.id else doc.invoice_id.amount_total_ref)" t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/></td>
+								<td class="text-end"><span t-field="doc.base_amount"/></td>
+								<td/>
+								<td/>
+								<td class="text-end"><span t-field="doc.amount"/></td>
+							</tr>
+						</table>
+						<div class="row mt32 mb32 text-center" style="page-break-inside: avoid;">
+							<div class="col-6">
+								<div style="height: 100px;">
+									<img t-if="doc.company_id.sign_512 and doc.company_id.partner_id == doc.agent_id" t-att-src="image_data_uri(doc.company_id.sign_512)" style="max-height: 100px;"/>
+								</div>
+								<div class="mx-auto mb-2 border-top border-dark" style="width: 50%;"/>
+								<span t-field="doc.agent_id"/><br/>
+								Agente de Retención (Sello y Firma)
+							</div>
+							<div class="col-6">
+								<div style="height: 100px;">
+									<img t-if="doc.company_id.sign_512 and doc.company_id.partner_id == doc.subject_id" t-att-src="image_data_uri(doc.company_id.sign_512)" style="max-height: 100px;"/>
+								</div>
+								<div class="mx-auto mb-2 border-top border-dark" style="width: 50%;"/>
+								<span t-field="doc.subject_id"/><br/>
+								Firma del Beneficiario
+							</div>
+						</div>
+					</div> 
+				</t>
+			</t>
+		</t>
+	</template>
+	<record id="account_withholding_islr_report" model="ir.actions.report">
+		<field name="name">Comprobante de ISLR</field>
+		<field name="model">account.withholding.islr</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">l10n_ve_withholding_islr.account_withholding_islr</field>
+		<field name="report_file">l10n_ve_withholding_islr.account_withholding_islr</field>
+		<field name="print_report_name">'COMP ISLR - %s' % (object.name)</field>
+		<field name="binding_model_id" ref="model_account_withholding_islr"/>
+		<field name="paperformat_id" ref="l10n_ve_config_withholding.account_withholding_paperformat"/>
+	</record>
+</odoo>

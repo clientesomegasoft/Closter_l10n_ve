@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="product_template_form_view" model="ir.ui.view">
+		<field name="name">product.template.common.form</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@name='pricing']" position="after">
+				<field name="currency_ref_id" invisible="1"/>
+				<label for="list_price_ref"/>
+				<div name="pricing_ref">
+					<field name="list_price_ref" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_ref_id', 'field_digits': True}"/>
+				</div>
+			</xpath>
+			<xpath expr="//div[@name='standard_price_uom']" position="after">
+				<field name="cost_currency_ref_id" invisible="1"/>
+				<label for="standard_price_ref" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"/>
+				<div name="standard_price_uom_ref" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}">
+					<field name="standard_price_ref" class="oe_inline" widget="monetary" options="{'currency_field': 'cost_currency_ref_id', 'field_digits': True}"/>
+				</div>
+			</xpath>
+		</field>
+	</record>
+	<record id="product_template_kanban_view" model="ir.ui.view">
+		<field name="name">Product.template.product.kanban</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_kanban_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@name='product_lst_price']" position="after">
+				<field name="currency_ref_id" invisible="1"/>
+				<div name="product_list_price_ref" class="mt-1">
+					Precio op.: <field name="list_price_ref" widget="monetary" options="{'currency_field': 'currency_ref_id', 'field_digits': True}"></field>
+				</div>
+			</xpath>
+		</field>
+	</record>
+	<record id="product_template_tree_view" model="ir.ui.view">
+		<field name="name">product.template.product.tree</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_tree_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='list_price']" position="after">
+				<field name="currency_ref_id" invisible="1"/>
+				<field name="list_price_ref" widget="monetary" options="{'currency_field': 'currency_ref_id'}" optional="show" decoration-muted="not sale_ok"/>
+			</xpath>
+			<xpath expr="//field[@name='standard_price']" position="after">
+				<field name="cost_currency_ref_id" invisible="1"/>
+				<field name="standard_price_ref" widget="monetary" options="{'currency_field': 'cost_currency_ref_id'}" optional="show" readonly="1"/>
+			</xpath>
+		</field>
+	</record>
+	<record id="product_product_stock_tree_inherit_stock_account" model="ir.ui.view">
+		<field name="name">product.product.stock.tree.inherit.stock.account</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="stock_account.product_product_stock_tree_inherit_stock_account"/>
+		<field name="arch" type="xml">
+			<field name="avg_cost" position="after">
+				<field name="cost_currency_ref_id" invisible="1"/>
+				<field name="standard_price_ref" optional="show"/>
+			</field>
+			<field name="total_value" position="after">
+				<field name="total_value_ref" optional="show" sum="Total op"/>
+			</field>
+		</field>
+	</record>
+</odoo>

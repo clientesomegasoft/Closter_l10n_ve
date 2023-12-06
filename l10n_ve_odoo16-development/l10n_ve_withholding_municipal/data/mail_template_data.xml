@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+		<record id="mail_template_withholding_municipal_receipt" model="mail.template">
+			<field name="name">Comprobante de retención municipal</field>
+			<field name="model_id" ref="l10n_ve_withholding_municipal.model_account_withholding_municipal"/>
+			<field name="subject">{{ object.agent_id.name }} - Comprobante de retención municipal: {{ object.name }}</field>
+			<field name="email_from">{{ (object.create_uid.email_formatted or user.email_formatted) }}</field>
+			<field name="partner_to">{{ object.type == 'supplier' and object.subject_id.id or object.agent_id.id}}</field>
+			<field name="description">Envia un correo cuando se pulsa el boton de "ENVIAR POR CORREO ELECTRONICO" en los comprobantes de retención municipal</field>
+			<field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+	<p style="margin: 0px; padding: 0px;font-size: 13px;">
+		Hola <t t-out="object.type == 'supplier' and object.subject_id.name or object.agent_id.name"/>,<br/>
+		Acá adjunto se encuentra el comprobante de retención municipal: <strong t-out="object.name"/>
+		por un monto de <strong t-out="format_amount(object.amount, object.currency_id)"/>,<br/>
+		correspondiente a la Factura Nro. <strong t-out="object.type == 'supplier' and object.invoice_id.supplier_invoice_number or object.invoice_id.name"/>.<br/>
+		Puede responder este correo si tiene alguna duda.
+		<br/><br/>
+		Muchas gracias.
+		<t t-if="user.signature">
+			<br/><t t-out="user.signature"/>
+		</t>
+	</p>
+</div></field>
+			<field name="report_template" ref="account_withholding_municipal_report"/>
+			<field name="report_name">COMP RETENCIÓN MUNICIPAL - {{ object.name }}</field>
+			<field name="lang">{{ object.subject_id.lang }}</field>
+			<field name="auto_delete" eval="True"/>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_invoice_report_view_tree_operative" model="ir.ui.view">
+        <field name="name">account.invoice.report.view.tree.operative</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.account_invoice_report_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_average']" position="before">
+                <field name="price_average_ref" optional="hide" sum="Total"/>
+            </xpath>
+            <xpath expr="//field[@name='price_subtotal']" position="before">
+                <field name="price_subtotal_ref" optional="show" sum="Total"/>
+            </xpath>
+            <xpath expr="//field[@name='price_total']" position="before">
+                <field name="price_total_ref" optional="show" sum="Total"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

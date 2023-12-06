@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+	<record id="view_order_form" model="ir.ui.view">
+		<field name="name">sale.order.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+				<attribute name="options">{'no_quick_create': 1}</attribute>
+			</xpath>
+		</field>
+	</record>
+	<record id="purchase_order_form" model="ir.ui.view">
+		<field name="name">purchase.order.form</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+				<attribute name="options">{'no_quick_create': 1}</attribute>
+			</xpath>
+		</field>
+	</record>
+	<record id="view_move_form" model="ir.ui.view">
+		<field name="name">account.move.form</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_move_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+				<attribute name="domain"/>
+			</xpath>
+			<xpath expr="//field[@name='line_ids']/tree/field[@name='partner_id']" position="attributes">
+				<attribute name="options">{'no_quick_create': 1}</attribute>
+			</xpath>
+		</field>
+	</record>
+	<record id="view_account_analytic_account_form" model="ir.ui.view">
+		<field name="name">analytic.analytic.account.form</field>
+		<field name="model">account.analytic.account</field>
+		<field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+				<attribute name="options">{'no_quick_create': 1}</attribute>
+			</xpath>
+		</field>
+	</record>
+	<record id="product_supplierinfo_tree_view" model="ir.ui.view">
+		<field name="name">product.supplierinfo.tree.view</field>
+		<field name="model">product.supplierinfo</field>
+		<field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+				<attribute name="options">{'no_quick_create': 1}</attribute>
+			</xpath>
+		</field>
+	</record>
+	<record id="view_bank_statement_line_form_bank_rec_widget" model="ir.ui.view">
+		<field name="name">account.bank.statement.line.form.bank_rec_widget</field>
+		<field name="model">account.bank.statement.line</field>
+		<field name="inherit_id" ref="account_accountant.view_bank_statement_line_form_bank_rec_widget"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+				<attribute name="options">{'no_quick_create': 1}</attribute>
+			</xpath>
+		</field>
+	</record>
+	<record id="view_bank_statement_line_tree_bank_rec_widget" model="ir.ui.view">
+		<field name="name">account.bank.statement.line.tree.bank_rec_widget</field>
+		<field name="model">account.bank.statement.line</field>
+		<field name="inherit_id" ref="account_accountant.view_bank_statement_line_tree_bank_rec_widget"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+				<attribute name="options">{'no_quick_create': 1}</attribute>
+			</xpath>
+		</field>
+	</record>
+</odoo>

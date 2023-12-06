@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_liquor_tax,access.account.liquor.tax,model_account_liquor_tax,,1,1,1,1
+access_account_liquor_tax_report,access.account.liquor.tax.report,model_account_liquor_tax_report,,1,1,1,1
+access_account_liquor_tax_report_line,access.account.liquor.tax.report.line,model_account_liquor_tax_report_line,,1,1,1,1

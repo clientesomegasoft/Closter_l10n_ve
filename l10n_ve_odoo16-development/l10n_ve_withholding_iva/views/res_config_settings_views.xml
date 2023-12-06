@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="res_config_settings_view_form" model="ir.ui.view">
+		<field name="name">res.config.settings.view.form</field>
+		<field name="model">res.config.settings</field>
+		<field name="priority" eval="1"/>
+		<field name="inherit_id" ref="l10n_ve_config_withholding.res_config_settings_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@name='company_sign']" position="before">
+				<div class="col-12 col-lg-6 o_setting_box">
+					<div class="o_setting_left_pane">
+						<field name="is_iva_agent"/>
+					</div>
+					<div class="o_setting_right_pane">
+						<label for="is_iva_agent"/>
+						<div class="content-group">
+							<div class="row mt8">
+								<label for="in_iva_journal_id" class="col-lg-4 o_light_label" attrs="{'invisible': [('is_iva_agent', '=', False)]}"/>
+								<field name="in_iva_journal_id" attrs="{'invisible': [('is_iva_agent', '=', False)], 'required': [('is_iva_agent', '=', True)]}" options="{'no_create': 1, 'no_open': 1}"/>
+							</div>
+							<div class="row mt8">
+								<label for="in_iva_account_id" class="col-lg-4 o_light_label" attrs="{'invisible': [('is_iva_agent', '=', False)]}"/>
+								<field name="in_iva_account_id" attrs="{'invisible': [('is_iva_agent', '=', False)], 'required': [('is_iva_agent', '=', True)]}" options="{'no_create': 1, 'no_open': 1}"/>
+							</div>
+							<div class="row mt8">
+								<label for="out_iva_journal_id" class="col-lg-4 o_light_label"/>
+								<field name="out_iva_journal_id" options="{'no_create': 1, 'no_open': 1}"/>
+							</div>
+							<div class="row mt8">
+								<label for="out_iva_account_id" class="col-lg-4 o_light_label"/>
+								<field name="out_iva_account_id" options="{'no_create': 1, 'no_open': 1}"/>
+							</div>
+						</div>
+						<div class="row mt16">
+							<label for="iva_rate_id" class="col-lg-4 o_light_label"/>
+							<field name="iva_rate_id" options="{'no_create': 1, 'no_open': 1}"/>
+						</div>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

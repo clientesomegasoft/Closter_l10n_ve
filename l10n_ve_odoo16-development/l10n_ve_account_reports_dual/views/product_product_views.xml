@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_product_margin_tree" model="ir.ui.view">
+		<field name="name">product.margin.tree</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="product_margin.view_product_margin_tree"/>
+		<field name="arch" type="xml">
+			<xpath expr="//tree" position="replace">
+				<tree>
+					<field name="name"/>
+					<field name="default_code"/>
+					<field name="sale_avg_price" optional="show"/>
+					<field name="sale_avg_price_ref" optional="show"/>
+					<field name="sale_num_invoiced"/>
+					<field name="turnover" sum="Turnover" optional="show"/>
+					<field name="turnover_ref" sum="Turnover ref" optional="show"/>
+					<field name="sales_gap" sum="Sales Gap" optional="show"/>
+					<field name="sales_gap_ref" sum="Sales Gap ref" optional="show"/>
+					<field name="total_cost" sum="Total Cost" optional="show"/>
+					<field name="total_cost_ref" sum="Total Cost ref" optional="show"/>
+					<field name="purchase_num_invoiced" string="# Purchased"/>
+					<field name="total_margin" sum="Total Margin" optional="show"/>
+					<field name="total_margin_ref" sum="Total Margin ref" optional="show"/>
+					<field name="expected_margin" optional="show"/>
+					<field name="total_margin_rate"  widget="progressbar" optional="show"/>
+					<field name="expected_margin_rate" widget="progressbar" optional="show"/>
+					<field name="categ_id" invisible="1"/>
+					<field name="uom_id" invisible="1"/>
+					<field name="type" invisible="1"/>
+					<field name="company_id" invisible="1"/>
+				</tree>
+			</xpath>
+		</field>
+	</record>
+</odoo>

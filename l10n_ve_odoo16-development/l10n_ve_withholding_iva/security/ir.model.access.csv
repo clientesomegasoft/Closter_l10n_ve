@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_withholding_iva_rate,access.withholding_iva_rate,model_withholding_iva_rate,,1,1,1,1
+access_account_withholding_iva,access.account.withholding.iva,model_account_withholding_iva,,1,1,1,1
+access_account_withholding_iva_line,access.account.withholding.iva.line,model_account_withholding_iva_line,,1,1,1,1
+access_account_withholding_iva_txt,access.account.withholding.iva.txt,model_account_withholding_iva_txt,,1,1,1,1

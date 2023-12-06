@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="search_template_year_filter">
+		<button type="button" class="o-no-caret btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+			<span class="fa fa-calendar"/> <t t-esc="options['year']"/>
+		</button>
+		<div class="dropdown-menu o_filter_menu" role="menu">
+			<div class="o_account_report_search">
+				<label class="custom-date o_form_label" for="year">Año: </label>
+				<div class="form-group custom-date">
+					<div class="o_datepicker js_account_reports_yearpicker" t-att-data-default-value="options['year']">
+						<input type='text' class="o_datepicker_input" name="year"/>
+						<span class="o_datepicker_button"/>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary mt-2 js_account_report_year_filter" data-filter="custom">Aceptar</button>
+			</div>
+		</div>
+	</template>
+	<template id="search_template_partner_id">
+		<button type="button" class="o-no-caret btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+			<span class="fa fa-user"/> Proveedor: <t t-if="options['partner_id']" t-esc="options['partner_id'].get('name')"/>
+		</button>
+		<ul class="dropdown-menu o_filter_menu" role="menu">
+			<li class="o_account_report_search js_m2o_filters"/>
+		</ul>
+	</template>
+	<template id="search_template" inherit_id="account_reports.search_template">
+		<xpath expr="." position="inside">
+			<div class="btn-group dropdown o_account_reports_year_filter" t-if="'year' in options">
+				<t t-call="l10n_ve_arc_report.search_template_year_filter"/>
+			</div>
+			<div class="btn-group dropdown o_account_reports_filter_partner_id" t-if="'partner_id' in options">
+				<t t-call="l10n_ve_arc_report.search_template_partner_id"/>
+			</div>
+		</xpath>
+	</template>
+</odoo>
