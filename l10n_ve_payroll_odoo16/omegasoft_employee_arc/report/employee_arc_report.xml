@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="employee_arc_report">
+		<t t-foreach="docs" t-as="doc">
+			<t t-foreach="doc.employee_ids" t-as="employee">
+				<t t-call="web.html_container">
+					<t t-call="web.basic_layout">
+						<div class="page">
+							<div class="container row m-0 text-center">
+								<div class="col-9">
+									<span>PLANTILLA AR-C</span>
+									<h5>COMPROBANTE DE RETECIÓN DEL IMPUESTO SOBRE LA RENTA</h5>
+								</div>
+								<div class="col-3">
+									<table>
+										<tr><td colspan="2">PERÍODO</td></tr>
+										<tr><td>DESDE</td><td>HASTA</td></tr>
+										<tr>
+											<td class="px-2"><b><span t-esc="'01/01/%s' % doc.year"/></b></td>
+											<td class="px-2"><b><span t-esc="'31/12/%s' % doc.year"/></b></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="container mt-2 text-left">
+								<span>BENEFICIARIO DE LAS REMUNERACIONES</span>
+								<table class="table table-bordered table-sm">
+									<thead><tr>
+										<th style="width: 50%;">Nombre y Apellido</th>
+										<th style="width: 25%;">Nro de personal</th>
+										<th style="width: 25%;">Cédula de identidad</th>
+									</tr></thead>
+									<tbody><tr>
+										<td><span t-field="employee.name"/></td>
+										<td><span t-field="employee.registration_number"/></td>
+										<td><span t-field="employee.identification_id"/></td>
+									</tr></tbody>
+								</table>
+							</div>
+							<div class="container mt-2 text-left">
+								<span>AGENTE DE RETENCIÓN</span>
+								<table class="table table-bordered table-sm">
+									<thead><tr>
+										<th style="width: 50%;">Nombre y Apellido o Razón Social</th>
+										<th style="width: 25%;">Numero de RIF</th>
+										<th style="width: 25%;">Nro del contribuyente</th>
+									</tr></thead>
+									<tbody><tr>
+										<td><span t-field="doc.company_id.name"/></td>
+										<td><span t-field="doc.company_id.vat"/></td>
+										<td><span t-field="doc.company_id.islr_agent_number"/></td> <!-- Nro del contribuyente -->
+									</tr></tbody>
+								</table>
+								<table class="table table-bordered table-sm">
+									<thead><tr>
+										<th style="width: 50%;">Funcionario autorizado para la retención	</th>
+										<th style="width: 25%;">Numero de RIF</th>
+										<th style="width: 25%;">Cédula de identidad</th>
+										</tr></thead>
+									<tbody><tr>
+										<td><span t-field="doc.company_id.withholding_officer_id"/></td>
+										<td><span t-field="doc.company_id.withholding_officer_id.rif"/></td>
+										<td><span t-field="doc.company_id.withholding_officer_id.identification_id"/></td>
+									</tr></tbody>
+								</table>
+								<table class="table table-bordered table-sm">
+									<thead><tr>
+										<th style="width: 75%;">Dirección del agente de retencion</th>
+										<th style="width: 25%;">Teléfono</th>
+									</tr></thead>
+									<tbody><tr>
+										<td><span t-esc="doc.company_id.partner_id._display_address(without_company=True)"/></td>
+										<td><span t-esc="doc.company_id.phone"/></td>
+									</tr></tbody>
+								</table>
+							</div>
+							<div class="container mt-5 text-center">
+								<t t-set="base_sum" t-value="0.0"/>
+								<t t-set="amount_sum" t-value="0.0"/>
+								<t t-set="months_table" t-value="doc.get_months_table()"/>
+								<table class="table table-bordered table-sm mt-2">
+									<thead><tr>
+										<th>MES</th>
+										<th>SALARIO NORMAL PAGADO</th>
+										<th>PORCENTAJE RETENCIÓN</th>
+										<th>IMPUESTO RETENIDO</th>
+										<th>SALARIO NORMAL ACUMULADO</th>
+										<th>IMPUESTO ACUMULADO</th>
+									</tr></thead>
+									<tbody>
+										<tr t-foreach="employee.get_arc_month_lines(months_table)" t-as="line">
+											<t t-set="base_sum" t-value="doc.currency_id.round(base_sum + line['base'])"/>
+											<t t-set="amount_sum" t-value="doc.currency_id.round(amount_sum + line['amount'])"/>
+											<td><span t-esc="line['month']"/></td>
+											<td><span t-esc="round(line['base'],2)"/></td>
+											<td><span t-esc="round(line['percentage'],2)"/></td>
+											<td><span t-esc="round(line['amount'],2)"/></td>
+											<td><span t-esc="round(base_sum,2)"/></td>
+											<td><span t-esc="round(amount_sum,2)"/></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="row mt32 mb32 text-center" style="height: 8cm; position:relative;">
+								<div style="position: absolute; bottom: 0; left: 100px; right: 100px;">
+									<hr style="border-color: black; width: 50%; margin-left: auto; margin-right: auto;"/>
+									Firma del Agente de Retención
+								</div>
+							</div>
+						</div>
+					</t>
+				</t>
+			</t>
+		</t>
+	</template>
+	<record id="employee_arc_report_paperformat" model="report.paperformat">
+		<field name="name">ARC empleados</field>
+		<field name="default" eval="True"/>
+		<field name="format">A4</field>
+		<field name="orientation">Portrait</field>
+		<field name="margin_top">10</field>
+		<field name="margin_bottom">10</field>
+		<field name="margin_left">5</field>
+		<field name="margin_right">5</field>
+		<field name="dpi">96</field>
+	</record>
+	<record id="action_employee_arc_report" model="ir.actions.report">
+		<field name="name">ARC empleados</field>
+		<field name="model">employee.arc.report.wizard</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">omegasoft_employee_arc.employee_arc_report</field>
+		<field name="report_file">omegasoft_employee_arc.employee_arc_report</field>
+		<field name="binding_model_id" ref="model_employee_arc_report_wizard"/>
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="omegasoft_employee_arc.employee_arc_report_paperformat"/>
+	</record>
+</odoo>

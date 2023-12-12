@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_leave_view_form_manager_approval_fix" model="ir.ui.view">
+        <field name="name">hr.leave.view.form.manager.approval.fix</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='holiday_type']" position="after">
+                <field name="validation_type" invisible="1"/>
+                <field name="should_approve_automatically" invisible="1"/>
+            </xpath>
+          
+            <!-- PATCH: avoid user validation error
+                 SEE ALSO: _compute_should_approve_automatically -->
+            <xpath expr="//button[@name='action_confirm']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', '|', ('should_approve_automatically','=', True), ('state', '!=', 'draft'), ('active', '=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm']" position="after">
+                <button
+                    string="Confirm"
+                    name="action_noop"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': ['|', '|', ('should_approve_automatically','=', False), ('state', '!=', 'draft'), ('active', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

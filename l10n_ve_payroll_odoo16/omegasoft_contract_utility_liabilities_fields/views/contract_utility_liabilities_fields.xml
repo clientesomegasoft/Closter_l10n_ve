@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_contract_view_form_inherit_labor_liabilities_page" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit.labor.liabilities.page</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[@name='information']" position="after">
+                <page name="labor_liabilities" string="Labor liabilities">
+                    <group name="top">
+                        <group name="profit_liabilities." string="Profit liabilities">
+                            <label for="earnings_generated" />
+                            <div class="o_row" name="earnings_generated">
+                                <field name="earnings_generated" readonly="1" widget="monetary" options="{'currency_field': 'earnings_generated_currency'}"/>
+                                <field name="earnings_generated_previous_amount" invisible="1" widget="monetary" options="{'currency_field': 'earnings_generated_currency'}"/>
+                                <field name="earnings_generated_currency" invisible="1" options="{'no_open': True, 'no_create': True}" attrs="{'required': [('earnings_generated', '>', 0)]}"/>
+                            </div>
+                            <label for="advances_granted" />
+                            <div class="o_row" name="advances_granted">
+                                <field name="advances_granted" readonly="1" widget="monetary" options="{'currency_field': 'advances_granted_currency'}"/>
+                                <field name="advances_granted_previous_amount" invisible="1" widget="monetary" options="{'currency_field': 'advances_granted_currency'}"/>
+                                <field name="advances_granted_currency" invisible="1" options="{'no_open': True, 'no_create': True}" attrs="{'required': [('advances_granted', '>', 0)]}"/>
+                            </div>
+                            <label for="earnings_generated_total_available" />
+                            <div class="o_row" name="earnings_generated_total_available">
+                                <field name="earnings_generated_total_available" readonly="1" widget="monetary" options="{'currency_field': 'earnings_generated_total_available_currency'}"/>
+                                <field name="earnings_generated_total_available_currency" invisible="1" options="{'no_open': True, 'no_create': True}" attrs="{'required': [('earnings_generated_total_available', '>', 0)]}"/>
+                            </div>
+                        </group>
+
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

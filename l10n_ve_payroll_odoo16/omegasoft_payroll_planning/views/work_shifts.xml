@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="work_shifts_view_form" model="ir.ui.view">
+        <field name="name">work.shifts.view.form</field>
+        <field name="model">work.shifts</field>
+        <field name="arch" type="xml">
+            <form string="Work shifts">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="work_shifts_view_tree" model="ir.ui.view">
+        <field name="name">work.shifts.view.tree</field>
+        <field name="model">work.shifts</field>
+        <field name="arch" type="xml">
+            <tree string="Work shifts">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,347 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_organizational_units
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-29 20:51+0000\n"
+"PO-Revision-Date: 2023-03-29 20:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.organizational_units_res_config_settings_view_form_inherit_omegasoft
+msgid "<span class=\"o_form_label\">Acive Organizational Units</span>"
+msgstr "<span class=\"o_form_label\">Unidades organizativas activas</span>"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_needaction
+msgid "Action Needed"
+msgstr "Accion necesaria"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.organizational_units_res_config_settings_view_form_inherit_omegasoft
+msgid "Activation of the fields for the creation of organizational units"
+msgstr "Activación de los campos para la creación de unidades organizativas"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_department__analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta Analitica"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
+msgid "Appraisal Templates"
+msgstr "Plantillas de tasación"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__appraisals_to_process_count
+msgid "Appraisals to Process"
+msgstr "Avalúos a Tramitar"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_filter
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de archivos adjuntos"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_res_company
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_tree
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.organizational_units_res_config_settings_view_form_inherit_omegasoft
+msgid "Configuration of the Organizational Units section"
+msgstr "Configuración de la sección Unidades Organizativas"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__custom_appraisal_templates
+msgid "Custom Appraisal Templates"
+msgstr "Plantillas de evaluación personalizadas"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_department
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_job__department_id
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__department_id
+msgid "Department"
+msgstr "Departamento"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_employee
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_appraisal
+msgid "Employee Appraisal"
+msgstr "Valoración del empleado"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__employee_feedback_template
+msgid "Employee Feedback Template"
+msgstr "Plantilla de comentarios de los empleados"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__has_message
+msgid "Has Message"
+msgstr "tiene mensaje"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__id
+msgid "ID"
+msgstr "Identificacion"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,help:omegasoft_hr_organizational_units.field_hr_organizational_units__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,help:omegasoft_hr_organizational_units.field_hr_organizational_units__message_has_error
+#: model:ir.model.fields,help:omegasoft_hr_organizational_units.field_hr_organizational_units__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_job
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__jobs_ids
+msgid "Jobs"
+msgstr "Puesto de trabajo"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Archivo adjunto principal"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__manager_id
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
+msgid "Manager"
+msgstr "Gerente"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__manager_feedback_template
+msgid "Manager Feedback Template"
+msgstr "Plantilla de comentarios del gerente"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__member_ids
+msgid "Members"
+msgstr "Miembros"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensajes"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,help:omegasoft_hr_organizational_units.field_hr_organizational_units__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,help:omegasoft_hr_organizational_units.field_hr_organizational_units__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.actions.act_window,name:omegasoft_hr_organizational_units.hr_organizational_units_tree_action
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_filter
+msgid "Organizational units"
+msgstr "Unidades organizativas"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__plan_ids
+msgid "Plan"
+msgstr ""
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
+msgid "Plans"
+msgstr "Planes"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__plans_count
+msgid "Plans Count"
+msgstr "Contador de planes"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__total_employee
+msgid "Total Employee"
+msgstr "Total de empleados"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_filter
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,help:omegasoft_hr_organizational_units.field_hr_organizational_units__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_department__active_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_employee__active_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_job__active_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_res_company__active_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_res_config_settings__active_organizational_units
+msgid "active organizational units"
+msgstr "Unidades organizativas activas"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_department__code
+msgid "code"
+msgstr "Referencia"
+
+#. module: omegasoft_hr_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
+msgid "department"
+msgstr "Departamento"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_organizational_units
+msgid "hr.organizational.units"
+msgstr "Unidades organizativas"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_appraisal__organizational_units_id
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_department__organizational_units_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_employee__organizational_units_id
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_job__organizational_units_id
+#: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_plan__organizational_units_id
+#: model:ir.ui.menu,name:omegasoft_hr_organizational_units.menu_organizational_units
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_filter
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
+msgid "organizational units"
+msgstr "Unidad organizativa"
+
+#. module: omegasoft_hr_organizational_units
+#: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_plan
+msgid "plan"
+msgstr "Plan"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_job__contract_type_id
+#: model_terms:ir.ui.view,arch_db:hr.view_job_filter
+msgid "Employment Type"
+msgstr "Tipo de empleado"

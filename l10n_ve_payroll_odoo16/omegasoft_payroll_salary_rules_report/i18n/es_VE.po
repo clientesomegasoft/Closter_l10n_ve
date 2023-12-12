@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_payroll_salary_rules_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-10 18:16+0000\n"
+"PO-Revision-Date: 2022-11-10 18:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_payroll_salary_rules_report
+#: model:ir.model.fields,field_description:omegasoft_payroll_salary_rules_report.field_hr_payroll_report__count_assignments
+msgid "Assignments"
+msgstr "Asignaciones"
+
+#. module: omegasoft_payroll_salary_rules_report
+#: model:ir.model.fields,field_description:omegasoft_payroll_salary_rules_report.field_hr_payroll_report__employee_category_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: omegasoft_payroll_salary_rules_report
+#: model:ir.model.fields,field_description:omegasoft_payroll_salary_rules_report.field_hr_payroll_report__count_deductions
+msgid "Deductions"
+msgstr "Deducciones"
+
+#. module: omegasoft_payroll_salary_rules_report
+#: model:ir.model,name:omegasoft_payroll_salary_rules_report.model_hr_payroll_report
+msgid "Payroll Analysis Report"
+msgstr "Informe del análisis de la nómina"
+
+#. module: omegasoft_payroll_salary_rules_report
+#: model:ir.model.fields,field_description:omegasoft_payroll_salary_rules_report.field_hr_payroll_report__salary_rule_name
+msgid "Salary rule"
+msgstr "Regla salarial"

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- Employee disability -->
+        <record id="hr_employee_disability_tree" model="ir.ui.view">
+            <field name="name">hr.employee.disability.tree</field>
+            <field name="model">hr_employee_disability</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_employee_disability_form" model="ir.ui.view">
+            <field name="name">hr.employee.disability.form</field>
+            <field name="model">hr_employee_disability</field>
+            <field name="arch" type="xml">
+                <form string="Employee Disability">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group name="group_top" string="Employee Disability">
+                            <group name="group_left" style="width:50%;">
+                                <field name="name" required="True" />
+                            </group>
+                            
+                            <group name="group_right" style="width:50%;">
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_employee_form_hcm" model="ir.ui.view">
+        <field name="name">hr.employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='hr_settings']" position="before">
+                <page name="hcm_settings" string="HCM">
+
+                    <field name="hcm_currency_id" invisible="1"/>
+                    <group>
+                        <!-- row 1 -->
+                        <group>
+                            <group>
+                                <field name="hcm_is_inclusion"/>
+                            </group>
+                            <group>
+                                <field name="hcm_is_exclusion"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <field name="hcm_insurer_id" attrs="{'required':[('hcm_is_inclusion', '=', True)]}"/>
+                        </group>
+
+                        <!-- row 2 -->
+                        <group>
+                            <group>
+                                <field name="hcm_start_date"/>
+                            </group>
+                            <group>
+                                <field name="hcm_end_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="hcm_coverage_scale_id"/>
+                        </group>
+
+                        <!-- rows 3 & 4 -->
+                        <group>
+                            <field name="hcm_total_policy_coverage"/>
+                            <field name="hcm_company_quota_amount"/>
+                        </group>
+                        <group>
+                            <field name="hcm_total_quota_amount"/>
+                            <field name="hcm_employee_quota_amount"/>
+                        </group>
+                    </group>
+
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

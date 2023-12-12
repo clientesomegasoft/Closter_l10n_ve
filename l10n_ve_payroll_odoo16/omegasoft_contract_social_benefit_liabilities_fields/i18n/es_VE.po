@@ -1,0 +1,225 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_contract_social_benefit_liabilities_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-14 16:46+0000\n"
+"PO-Revision-Date: 2023-07-14 16:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_social_benefit_liabilities_fields.l10n_ve_omegasoft_res_config_settings_view_form_social_benefit
+msgid "<span class=\"o_form_label\">Benefit Calculation Date</span>"
+msgstr "<span class=\"o_form_label\">Fecha de cálculo de Prestaciones</span>"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__accrued_social_benefits_currency
+msgid "Accrued Social Benefits Currency"
+msgstr "Moneda de las Prestaciones sociales acumuladas"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__accrued_social_benefits
+msgid "Accrued social benefits"
+msgstr "Prestaciones sociales acumuladas"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__accrued_social_benefits_previous_amount
+msgid "Accrued social benefits _previous amount"
+msgstr "Prestaciones sociales acumuladas (monto previo)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__employee_additional_days
+msgid "Additional days"
+msgstr "Días adicionales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__advances_of_social_benefits_currency
+msgid "Advances Of Social Benefits Currency"
+msgstr "Moneda de los Anticipo de Prestaciones Sociales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__advances_of_social_benefits
+msgid "Advances of social benefits"
+msgstr "Anticipo de Prestaciones Sociales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__advances_of_social_benefits_previous_amount
+msgid "Advances of social benefits _previous amount"
+msgstr "Anticipo de Prestaciones Sociales (monto previo)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_res_company__benefit_calculation_date
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_res_config_settings__benefit_calculation_date
+msgid "Benefit Calculation Date"
+msgstr "Fecha de cálculo de Prestaciones"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__benefit_interest_currency
+msgid "Benefit Interest Currency"
+msgstr "Moneda del Intereses Prestacional"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__benefit_interest
+msgid "Benefit interest"
+msgstr "Intereses Prestacional"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__benefit_interest_previous_amount
+msgid "Benefit interest previous amount"
+msgstr "Intereses Prestacional (monto previo)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields.selection,name:omegasoft_contract_social_benefit_liabilities_fields.selection__res_company__selection_type_date_benefit__calendar_date
+#: model:ir.model.fields.selection,name:omegasoft_contract_social_benefit_liabilities_fields.selection__res_config_settings__selection_type_date_benefit__calendar_date
+msgid "Calendat date"
+msgstr "Fecha del calendario"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model,name:omegasoft_contract_social_benefit_liabilities_fields.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model,name:omegasoft_contract_social_benefit_liabilities_fields.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_social_benefit_liabilities_fields.l10n_ve_omegasoft_res_config_settings_view_form_social_benefit
+msgid ""
+"Configuration of the date to take in the calculation of social benefits"
+msgstr "Configuración de la fecha a tomar en el cálculo de las prestaciones sociales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields.selection,name:omegasoft_contract_social_benefit_liabilities_fields.selection__res_company__selection_type_date_benefit__contract_start_date
+#: model:ir.model.fields.selection,name:omegasoft_contract_social_benefit_liabilities_fields.selection__res_config_settings__selection_type_date_benefit__contract_start_date
+msgid "Contract start date"
+msgstr "Fecha de inicio del contrato"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__employee_accrued_benefits_date
+#: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__employee_accrued_benefits_date
+msgid "Date of accrued benefits"
+msgstr "Fecha de las prestaciones acumuladas"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__days_per_year_accumulated_currency
+msgid "Days Per Year Accumulated Currency"
+msgstr "Moneda de los Días por año"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__days_per_year_accumulated
+msgid "Days per year accumulated"
+msgstr "Días por año"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__days_per_year_accumulated_previous_amount
+msgid "Days per year accumulated previous amount"
+msgstr "Días por año (monto previo)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__employee_additional_days
+msgid "Employee Additional Days"
+msgstr "Días adicionales del empleado"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model,name:omegasoft_contract_social_benefit_liabilities_fields.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_benefit_interest_date
+#: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_days_per_year_accumulated_date
+#: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_social_benefits_generated_date
+msgid "Indicates the date of the last Benefit interest payment calculation."
+msgstr "Indica la fecha del ultimo calculo de intereses prestacionales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_benefit_interest_date
+msgid "Last Benefit interest Calculation"
+msgstr "Ultimo calculo de intereses prestacionales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_social_benefits_generated_date
+msgid "Last Benefit social Calculation"
+msgstr "Ultimo calculo de prestacion social"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_days_per_year_accumulated_date
+msgid "Last Benefit year accumulated Calculation"
+msgstr "Ultimo calculo de dias por años acumulados"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__most_recent_spd
+msgid "Most Recent Spd"
+msgstr "Más reciente Spd"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__most_recent_spd
+msgid "Most recent SPD payment"
+msgstr "Pago más reciente del SPD"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_benefit_interest
+msgid "Provisions Benefit interest"
+msgstr "Intereses Prestacional (provisiones)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_days_per_year_accumulated
+msgid "Provisions Days per year accumulated"
+msgstr "Días por año (provisiones)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_social_benefits_generated
+msgid "Provisions Social benefits generated"
+msgstr "Prestaciones sociales generadas (provisiones)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.actions.server,name:omegasoft_contract_social_benefit_liabilities_fields.ir_cron_employee_social_benefits_ir_actions_server
+#: model:ir.cron,cron_name:omegasoft_contract_social_benefit_liabilities_fields.ir_cron_employee_social_benefits
+msgid "Social Benefits"
+msgstr "Prestaciones sociales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__social_benefits_generated_currency
+msgid "Social Benefits Generated Currency"
+msgstr "Moneda de las Prestaciones Sociales Generados"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_social_benefit_liabilities_fields.hr_contract_view_form_inherit_social_benefit_liabilities_fields
+msgid "Social benefit liabilities"
+msgstr "Pasivos de prestaciones sociales"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__social_benefits_generated
+msgid "Social benefits generated"
+msgstr "Prestaciones sociales generadas"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__social_benefits_generated_previous_amount
+msgid "Social benefits generated previous amount"
+msgstr "Prestaciones sociales generadas (monto previo)"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__total_available_social_benefits_generated_currency
+msgid "Total Available Social Benefits Generated Currency"
+msgstr "Moneda de las Prestaciones sociales generadas"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__total_available_social_benefits_generated
+msgid "Total Available Social benefits generated"
+msgstr "Total Disponible"
+
+#. module: omegasoft_contract_social_benefit_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_res_company__selection_type_date_benefit
+#: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_res_config_settings__selection_type_date_benefit
+msgid "Type date benefit calculation"
+msgstr "Fecha para cálculo de prestaciones sociales"

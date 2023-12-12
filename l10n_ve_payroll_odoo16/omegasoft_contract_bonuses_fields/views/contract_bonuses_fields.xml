@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_contract_bonuses_salary_field" model="ir.ui.view">
+        <field name="name">hr.contract.bonuses.salary.field</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='salary']" position="after">
+                <field name="custom_contract_currency_bonus" invisible="1"/>
+                
+                <div style="width: 50%">
+                    <group name="bonuses_salary" string="Bonuses">
+                        <label for="complementary_bonus_check" />
+                        <div class="o_row" name="complementary_bonus_check">
+                            <field name="complementary_bonus_check" />
+                            <field name="complementary_bonus" widget="monetary" options="{'currency_field': 'complementary_bonus_currency'}" attrs="{'invisible': [('complementary_bonus_check', '=', False)], 'required': [('complementary_bonus_check', '=', True)]}"/><span></span>
+                            <field name="complementary_bonus_currency" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('complementary_bonus_check', '=', False)], 'required': [('complementary_bonus', '>', 0)]}"/>
+                        </div>
+                        
+                        <label for="night_bonus" />
+                        <div class="o_row" name="night_bonus">
+                            <field name="night_bonus" />
+                            <field name="night_bonus_amount" widget="monetary" options="{'currency_field': 'night_bonus_currency'}" attrs="{'invisible': [('night_bonus', '=', False)], 'required': [('night_bonus', '=', True)]}"/>
+                            <field name="night_bonus_currency" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('night_bonus', '=', False)], 'required': [('night_bonus_amount', '>', 0)]}"/>
+                        </div>
+                        
+                        <label for="perfect_attendance_bonus_check" />
+                        <div class="o_row" name="perfect_attendance_bonus_check">
+                            <field name="perfect_attendance_bonus_check" />
+                            <field name="perfect_attendance_bonus" widget="monetary" options="{'currency_field': 'perfect_attendance_bonus_currency'}" attrs="{'invisible': [('perfect_attendance_bonus_check', '=', False)], 'required': [('perfect_attendance_bonus_check', '=', True)]}"/>
+                            <field name="perfect_attendance_bonus_currency" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('perfect_attendance_bonus_check', '=', False)], 'required': [('perfect_attendance_bonus', '>', 0)]}"/>
+                        </div>
+                    </group>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

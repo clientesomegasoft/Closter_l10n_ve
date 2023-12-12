@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Page Bonus-->
+    <record id="hr_employee_bonus_page_form" model="ir.ui.view">
+        <field name="name">hr.employee.bonus.page.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='personal_information']" position="after">
+
+                <page string="Bonus">
+                    <separator string="Bonus" colspan="4" />
+
+                    <field name="bonus_line_ids" widget="one2many" readonly="0">
+                        <tree string="Current Bonus" editable="bottom" no_open="1" create="0" edit="0" delete="0">
+                            <field name="bonus_id" />
+                            <field name="description" />
+                            <field name="employee_bonus_amount" sum='Total bonus amount'/>
+                        </tree>
+                    </field>
+
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

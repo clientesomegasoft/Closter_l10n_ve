@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_contract_view_form_estimated_profit" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.estimated.profit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='average_wage']" position="after">
+                <label for="estimated_profit" />
+                <div class="o_row" name="estimated_profit">
+                    <field name="estimated_profit" widget="monetary" readonly="1"/>
+                    <span></span>
+                    <field name="estimated_profit_date_start" placeholder="Date Start" />
+                    <span></span>
+                    <field name="estimated_profit_date_end" placeholder="Date End" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

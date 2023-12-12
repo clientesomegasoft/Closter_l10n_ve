@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        
+        <!-- Form view for "model" -->
+        <record id="hr_payroll_structure_report_names" model="ir.ui.view">
+            <field name="name">hr.payroll.structure.report.names</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_employee_grade_form" />
+            <field name="arch" type="xml">
+                
+                <xpath expr="//field[@name='schedule_pay']" position="after">
+                    
+                    <field name="report_name_id" required="1" />
+                    
+                </xpath>
+                
+            </field>
+        </record>
+        
+
+    </data>
+</odoo>

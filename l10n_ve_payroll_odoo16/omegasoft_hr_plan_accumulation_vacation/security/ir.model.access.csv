@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_plan_accumulation,hr_plan_accumulation,model_hr_plan_accumulation,base.group_user,1,1,1,0
+access_hr_plan_accumulation_vacation,hr_plan_accumulation.vacation,model_hr_plan_accumulation_vacation,base.group_user,1,1,1,0
+access_hr_plan_accumulation_enjoy,hr_plan_accumulation.enjoy,model_hr_plan_accumulation_enjoy,base.group_user,1,1,1,0
+access_hr_plan_accumulation_history,hr_plan_accumulation.history,model_hr_plan_accumulation_history,base.group_user,1,1,1,0
+
+access_hr_plan_accumulation_admin,hr_plan_accumulation,model_hr_plan_accumulation,base.group_erp_manager,1,1,1,1
+access_hr_plan_accumulation_vacation_admin,hr_plan_accumulation.vacation,model_hr_plan_accumulation_vacation,base.group_erp_manager,1,1,1,1
+access_hr_plan_accumulation_enjoy_admin,hr_plan_accumulation.enjoy,model_hr_plan_accumulation_enjoy,base.group_erp_manager,1,1,1,1
+access_hr_plan_accumulation_history_admin,hr_plan_accumulation.history,model_hr_plan_accumulation_history,base.group_erp_manager,1,1,1,1

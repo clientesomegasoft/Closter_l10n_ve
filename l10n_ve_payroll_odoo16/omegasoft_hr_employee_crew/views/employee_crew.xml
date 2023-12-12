@@ -1,0 +1,51 @@
+<odoo>
+  
+  <record id="employee_crew_view_tree" model="ir.ui.view">
+    <field name="name">employee.crew.view.tree</field>
+    <field name="model">hr.employee.crew</field>
+    <field name="arch" type="xml">
+        <tree editable="bottom">
+            <field name="name"/>
+            <field name="employee_ids" domain="[('job_id.rotating_job', '=', True)]" widget="many2many_tags" options="{'no_create': 1}"/>
+            <field name="company_id" groups="base.group_no_one"/>
+        </tree>
+    </field>
+</record>
+
+<record id="employee_crew_view_search" model="ir.ui.view">
+    <field name="name">employee.crew.view.search</field>
+    <field name="model">hr.employee.crew</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" />
+            <field name="employee_ids" />
+            <field name="company_id" />
+            <separator/>
+            <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+            <separator/>
+            <filter name="company" string="Company" context="{'group_by': 'company_id'}" />
+            <filter name="employee_ids" string="Employee" context="{'group_by': 'employee_ids'}" />
+        </search>
+    </field>
+</record>
+
+<record id="employee_crew_action" model="ir.actions.act_window">
+    <field name="name">Employee crew</field>
+    <field name="res_model">hr.employee.crew</field>
+    <field name="view_mode">tree</field>
+    <field name="search_view_id" ref="omegasoft_hr_employee_crew.employee_crew_view_search"/>
+    <field name="help" type="html">
+        <p>There are no defined crews</p>
+        <p>please create one</p>
+    </field>
+</record>
+
+<menuitem
+    id="employee_crew_menu"
+    name="Employee crew"
+    action="employee_crew_action"
+    groups=""
+    parent="planning.planning_menu_settings"
+    sequence="21"/>
+
+</odoo>

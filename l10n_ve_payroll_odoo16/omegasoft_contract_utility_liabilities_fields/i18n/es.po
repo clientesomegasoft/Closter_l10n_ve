@@ -1,0 +1,71 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_contract_utility_liabilities_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-02 12:58+0000\n"
+"PO-Revision-Date: 2022-12-02 12:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__advances_granted_currency
+msgid "Advances Granted Currency"
+msgstr "Moneda del Anticipos Otorgados"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__advances_granted
+msgid "Advances granted"
+msgstr "Anticipos Otorgados"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__advances_granted_previous_amount
+msgid "Advances granted_previous amount"
+msgstr "Anticipos Otorgados (monto previo)"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__earnings_generated_currency
+msgid "Earnings Generated Currency"
+msgstr ""
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__earnings_generated_total_available_currency
+msgid "Earnings Generated Total Available Currency"
+msgstr "Moneda de las Utilidades Generadas"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__earnings_generated
+msgid "Earnings generated"
+msgstr "Utilidades Generadas"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__earnings_generated_total_available
+msgid "Earnings generated Total available"
+msgstr "Total Disponible"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_utility_liabilities_fields.field_hr_contract__earnings_generated_previous_amount
+msgid "Earnings generated previous amount"
+msgstr "Utilidades Generadas (monto previo)"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model:ir.model,name:omegasoft_contract_utility_liabilities_fields.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato del empleado"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_utility_liabilities_fields.hr_contract_view_form_inherit_labor_liabilities_page
+msgid "Labor liabilities"
+msgstr "Pasivos Laborales"
+
+#. module: omegasoft_contract_utility_liabilities_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_utility_liabilities_fields.hr_contract_view_form_inherit_labor_liabilities_page
+msgid "Profit liabilities"
+msgstr "Pasivos de Utilidades"

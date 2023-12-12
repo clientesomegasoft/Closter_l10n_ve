@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+	<data>
+		<record id="omegasoft_paid_sales_allocation_line_tree" model="ir.ui.view">
+			<field name="name">paid.sales.allocation.line.tree</field>
+			<field name="model">paid.sales.allocation</field>
+			<field name="priority">1000</field>
+			<field name="arch" type="xml">
+				<tree create="0" delete="0">
+					<field name="date"/>
+					<field name="department_id"/>
+					<field name="state"/>
+					<field name="assignment" sum="Total assignment"/>
+					<field name="currency_id" optional="hide"/>
+					<field name="payment_date"/>
+					<field name="invoice_id" optional="hide"/>
+					<field name="employee_id" optional="hide"/>
+					<field name="invoice_state" optional="hide" string="Invoice state"/>
+				</tree>
+			</field>
+		</record>
+	</data>
+</odoo>

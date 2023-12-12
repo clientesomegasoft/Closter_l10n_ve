@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="hr_employee_bonus_lines_search" model="ir.ui.view">
+            <field name="name">hr.employee.bonus.lines.search</field>
+            <field name="model">hr_employee_bonus_line</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" />
+                    <separator />
+                    <filter name="archived" string="Archived" domain="[('active', '=', False)]" />
+                </search>
+            </field>
+        </record>
+
+        <record id="employee_bonus_lines_tree" model="ir.ui.view">
+            <field name="name">employee.bonus.lines.tree</field>
+            <field name="model">hr_employee_bonus_line</field>
+            <field name="arch" type="xml">
+                <tree create="false" delete="false" edit="false">
+                    <field name="name" />
+                    <field name="bonus_id" />
+                    <field name="description" />
+                    <field name="employee_bonus_amount" sum='Total bonus amount'/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_bonus_lines_form" model="ir.ui.view">
+            <field name="name">employee.bonus.lines.form</field>
+            <field name="model">hr_employee_bonus_line</field>
+            <field name="arch" type="xml">
+                <form string="Employee Bonus lines" edit="false">
+                    <header></header>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="bonus_id" />
+                                <field name="description" />
+                                <field name="employee_bonus_amount" sum='Total bonus amount'/>
+                            </group>
+
+                            <group>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_contract_parafiscal_contributions_field" model="ir.ui.view">
+        <field name="name">hr.contract.parafiscal.contributions.field</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='salary']" position="after">
+                
+                
+                    <group name="parafiscal_contributions" string="Parafiscal contributions">
+                        <field name="mandatory_social_security" />
+                        <field name="forced_unemployment" />
+                        <field name="housing_policy_law" />
+                        <field name="inces" />
+                        <field name="income_tax_islr" />
+                        
+                        <label for="percentage_income_tax_islr" attrs="{'invisible': [('income_tax_islr', '=', False)]}"/>
+                        <div class="o_row" name="percentage_income_tax_islr">
+                            <field name="percentage_income_tax_islr" nolabel="1" attrs="{'invisible': [('income_tax_islr', '=', False)], 'required': [('income_tax_islr', '=', True)]}"/>
+                            <span attrs="{'invisible': [('income_tax_islr', '=', False)]}">%</span>
+                        </div>
+                    </group>
+                
+                
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

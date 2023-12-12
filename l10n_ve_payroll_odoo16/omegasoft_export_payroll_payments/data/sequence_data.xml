@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="sequence_txt_bank_rolda" model="ir.sequence">
+        <field name="name">TXT Bancos</field>
+        <field name="code">export.bank.payments</field>
+        <field name="prefix"></field>
+        <field name="number_next" eval="1"/>
+        <field name="number_increment" eval="1"/>
+        <field name="company_id" eval="False"/>
+        <field name="padding">6</field>
+    </record>
+</odoo>

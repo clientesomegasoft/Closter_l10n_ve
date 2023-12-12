@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="l10n_ve_omegasoft_res_config_settings_view_form" model="ir.ui.view">
+		<field name="name">l10n.ve.omegasoft.res.config.settings.view.form</field>
+		<field name="model">res.config.settings</field>
+		<field name="inherit_id" ref="omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@id='l10n_ve_configuration_social_benefits']" position="after">
+				<h2>Configuración ARI</h2>
+				<div class="row mt16 o_settings_container" id="l10n_ve_configuration_ari">
+					<div class="col-lg-6 col-12 o_setting_box">
+						<div class="o_setting_right_pane">
+							<div class="text-muted">
+								Configuración de las categorías que se tomaran en cuenta en las lineas (Calculo de salario) de las nominas a pagar para las horas extras laborales.
+							</div>
+							<label for="overtime_category_ids"/>
+							<div class="mt8" id="overtime_category_ids">
+								<field name="overtime_category_ids" widget="many2many_tags" options="{'no_create': True}"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12 o_setting_box">
+						<div class="o_setting_right_pane">
+							<div class="text-muted">
+								Reglas que se tomaran en cuenta de las nominas a pagar que contienen el calculo del impuesto retenido de los empleados.
+							</div>
+							<label for="withholdig_category_ids"/>
+							<div class="mt8" id="withholdig_category_ids">
+								<field name="withholdig_category_ids" widget="many2many_tags" options="{'no_create': True}"/>
+							</div>
+							<label for="withholdig_rule_ids"/>
+							<div class="mt8" id="withholdig_rule_ids">
+								<field name="withholdig_rule_ids" widget="many2many_tags" options="{'no_create': True}"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12 o_setting_box">
+						<div class="o_setting_right_pane">
+							<div class="text-muted">
+								Reglas que se tomaran en cuenta de las nominas a pagar que contienen el calculo de las remuneraciones recibidas por el empleado.
+							</div>
+							<label for="wage_received_category_ids"/>
+							<div class="mt8" id="wage_received_category_ids">
+								<field name="wage_received_category_ids" widget="many2many_tags" options="{'no_create': True}"/>
+							</div>
+							<label for="wage_received_rule_ids"/>
+							<div class="mt8" id="wage_received_rule_ids">
+								<field name="wage_received_rule_ids" widget="many2many_tags" options="{'no_create': True}"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

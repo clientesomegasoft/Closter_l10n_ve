@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- PaperFormat-->
+    <record id="paperformat_payslip_report_custom" model="report.paperformat">
+        <field name="name">Custom payslip report</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">110</field>
+        <field name="margin_bottom">40</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">100</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- reporte: Factura -->
+    <record id="hr_payroll.action_report_payslip" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_payslip_report_custom" />
+    </record>
+
+    <!-- calling custom payslip report template -->
+    <template id="hr_payroll.report_payslip_lang">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="o" t-value="o.with_context(lang=o.employee_id.sudo().address_home_id.lang or o.env.lang)" />
+                <t t-call="omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom" t-lang="o.env.lang" />
+            </t>
+        </t>
+    </template>
+
+    <!--Custom external layout-->
+    <template id="omegasoft_payroll_custom_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div t-attf-class="header o_company_#{company.id}_layout">
+
+            <div class="row">
+                <div class="col-3 mb4">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/>
+                </div>
+                <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+            </div>
+    
+            <!-- Divider Line -->
+            <div t-if="company.logo or company.report_header" class="row" style="margin-top: 5px; margin-bottom: 5px;">
+                <div class="col-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" name="company_address">
+                    <span t-if="company.company_details" t-field="company.company_details"></span>
+                </div>
+            </div>
+
+            <!-- Encabezado (Informacion del empleado y salarios) -->
+            <div align="center" style="height: 10mm; font-size: 12px;">
+                <!--Es invalido el reporte-->
+                <div name="report_is_invalid" style="height: 15mm;">
+                    <t t-raw="report_is_invalid"/>
+                </div>
+            </div>
+            <!--Informacion del empleado-->
+            <div align="center" style="height: 45mm; font-size: 12px;">
+                <div name="employee_info">
+                    <t t-raw="employee_info"/>
+                </div>
+            </div>
+            <!--Informacion de salario-->
+            <div align="center">
+                <div name="salary_info" style="height: 5mm; font-size: 12px;">
+                    <t t-raw="salary_info"/>
+                </div>
+            </div>
+        </div>
+
+        <div style="font-size: 13px;" class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <!-- Cuerpo (Tabla de lineas de salario) -->
+            <div style="font-size: 12px;">
+                <div>
+                    <t t-raw="0"/>
+                </div>
+
+                <div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <t t-raw="signatures"/>
+                </div>
+            </div>
+
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="row ml-auto mr-auto" style="font-size: 10px;">
+                    <t t-raw="accumulated"/>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+    <!--custom payslip report template-->
+    <template id="hr_payslip_report_custom">
+
+        <t t-call="omegasoft_hr_payroll_receipt_payment.omegasoft_payroll_custom_layout">
+
+            <!--Es invalido el reporte-->
+            <t t-set="report_is_invalid">
+                <div class="text-center">
+                    <t t-set="is_invalid" t-value="o._is_invalid()" />
+                    <t t-if="is_invalid">
+                        <strong>
+                            <t t-esc="is_invalid" />
+                        </strong>
+                    </t>
+                    <t t-else="">
+                        <!-- Report name-->
+                        <t t-set="report_name" t-value="o.compute_report_name()" />
+                        <h3 class="text-center" t-esc="report_name" />
+                    </t>
+                </div>
+            </t>
+            <!--Informacion del empleado-->
+            <t t-set="employee_info">
+                <!--Employee Info-->
+                <table name="employee-infos" class="table table-sm table-bordered">
+                    <tbody>
+                        <tr>
+                            <td class="w-25">
+                                <strong>Empleado</strong>
+                            </td>
+
+                            <td class="w-25">
+                                <strong>Identificación</strong>
+                            </td>
+
+                            <td class="w-25">
+                                <strong>Fecha de inicio del contrato</strong>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <span t-field="o.employee_id.registration_number"/> <span t-field="o.employee_id" />
+                            </td>
+
+                            <td>
+                                <span t-field="o.employee_id.identification_id" />
+                            </td>
+
+                            <td>
+                                <t t-set="date" t-value="o.employee_id.first_contract_date" />
+                                <span t-esc="date.strftime('%d/%m/%Y')" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="w-25">
+                                <strong>Cargo</strong>
+                            </td>
+
+                            <td class="w-25">
+                                <strong>Período de pago</strong>
+                            </td>
+
+                            <td class="w-25">
+                                <strong>Calculado en </strong>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <span t-field="o.employee_id.job_title" />
+                            </td>
+
+                            <td>
+                                <t t-if="o.date_from &lt; o.contract_id.date_start">
+                                    <t t-set="date" t-value="o.contract_id.date_start" />
+                                    <span t-esc="date.strftime('%d/%m/%Y')" />
+                                </t>
+                                <t t-else="">
+                                    <t t-if="o.date_from">
+                                        <t t-set="date" t-value="o.date_from" />
+                                        <span t-esc="date.strftime('%d/%m/%Y')" />
+                                    </t>
+                                    <t t-else="">
+
+                                    </t>
+                                </t>
+                            -
+                                <t t-if="o.contract_id.date_end and o.date_to &gt; o.contract_id.date_end">
+                                    <t t-set="date" t-value="o.contract_id.date_end" />
+                                    <span t-esc="date.strftime('%d/%m/%Y')" />
+                                </t>
+                                <t t-else="">
+                                    <t t-if="o.date_to">
+                                        <t t-set="date" t-value="o.date_to" />
+                                        <span t-esc="date.strftime('%d/%m/%Y')" />
+                                    </t>
+                                    <t t-else="">
+
+                                    </t>
+                                </t>
+                            </td>
+
+                            <td>
+                                <t t-if="o.compute_date">
+                                    <t t-set="date" t-value="o.compute_date" />
+                                    <span t-esc="date.strftime('%d/%m/%Y')" />
+                                </t>
+                                <t t-else="">
+                                </t>
+                            </td>
+                        </tr>
+
+                        <tr>
+                        </tr>
+
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </t>
+            <!--Informacion de salario-->
+            <t t-set="salary_info">
+                <!-- YTI TODO master: Remove this horrible bidouille and add a field on the structure to display the basic
+                        salary on the payslip report -->
+                <t t-set="holiday_attest_n1" t-value="o.env.ref('l10n_be_hr_payroll.hr_payroll_structure_cp200_employee_departure_n1_holidays', raise_if_not_found=False)" />
+                <t t-set="holiday_attest_n" t-value="o.env.ref('l10n_be_hr_payroll.hr_payroll_structure_cp200_employee_departure_n_holidays', raise_if_not_found=False)" />
+                <table class="table table-sm table-borderless" t-if="o.struct_id not in [holiday_attest_n, holiday_attest_n1]">
+                    <tbody>
+                        <t t-if="o.struct_id.currency_id">
+                            <t t-set="currency" t-value="o.struct_id.currency_id"/>
+                        </t>
+                        <t t-else="">
+                            <t t-set="currency" t-value="o.currency_id"/>
+                        </t>
+                        <tr t-if="o.struct_id.id not in o._get_payroll_structure_for_salary_settlement()">
+                            <td class="w-25" style="border: none;">
+                                <strong>Salario básico</strong>
+                            </td>
+                            <td style="color:#000000; border: none;" class="w-25">
+                                <span t-esc="o.payslip_get_contract_wage()" t-options="{'widget': 'monetary', 'display_currency': currency}" />
+                            </td>
+                            <td class="w-25" style="border: none;"></td>
+                            <td class="w-25" style="border: none;"></td>
+                        </tr>
+
+                        <tr t-if="o.company_id.show_average_vacation_salary and (o.struct_id.id in o._get_payroll_structure_for_average_vacation_salary() or o.struct_id.id in o._get_payroll_structure_for_salary_settlement())">
+                            <td class="w-25" style="border: none;">
+                                <strong>Salario promedio vacaciones</strong>
+                            </td>
+                            <td style="color:#000000; border: none;" class="w-25">
+                                <span t-esc="o.contract_id.average_wage" t-options="{'widget': 'monetary', 'display_currency': currency}" />
+                            </td>
+                            <td class="w-25" style="border: none;"></td>
+                            <td class="w-25" style="border: none;"></td>
+                        </tr>
+
+                        <tr t-if="o.company_id.show_salary_settlement and o.struct_id.id in o._get_payroll_structure_for_salary_settlement()">
+                            <t t-set="salary_settlement" t-value="o._salary_settlement()" />
+
+                            <td class="w-25" style="border: none;">
+                                <strong>Salario liquidación</strong>
+                            </td>
+                            <td style="color:#000000; border: none;" class="w-25">
+                                <span t-esc="salary_settlement" t-options="{'widget': 'monetary', 'display_currency': currency}" />
+                            </td>
+                            <td class="w-25" style="border: none;"></td>
+                            <td class="w-25" style="border: none;"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </t>
+            <!-- Cuerpo (Tabla de lineas de salario) -->
+            <div class="page">
+
+                <table class="table table-sm table-borderless">
+                    <t t-if="o.struct_id.currency_id">
+                        <t t-set="currency" t-value="o.struct_id.currency_id"/>
+                    </t>
+                    <t t-else="">
+                        <t t-set="currency" t-value="currency"/>
+                    </t>
+
+                    <thead class="o_black_border">
+                        <tr style="text-align: left;">
+                            <th>Nombre</th>
+                            <th>Número de horas</th>
+                            <th>Número de días</th>
+                            <th>Asignaciones</th>
+                            <th>Deducciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <span t-foreach="o.worked_days_line_ids" t-as="worked_days">
+                            <t t-if="worked_days.code != 'OUT'">
+                                <tr style="color:none">
+                                    <td>
+                                        <span t-field="worked_days.name" />
+                                    </td>
+                                    <td>
+                                        <span t-field="worked_days.number_of_hours" />
+                                    </td>
+                                    <td>
+                                        <span t-field="worked_days.number_of_days" />
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </t>
+                        </span>
+
+                        <span t-foreach="o.line_ids.filtered(lambda line: line.salary_rule_id.code in ['SABYDOM'])" t-as="line">
+                            <tr style="color:none">
+                                <td>
+                                    <span t-field="line.name" />
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="line.amount" t-options="{'widget': 'text'}"/>
+                                </td>
+                                <td>
+
+                                </td>
+
+                                <td></td>
+                            </tr>
+                        </span>
+
+                        <span t-foreach="o.input_line_ids" t-as="input">
+                            <t t-set="other_entries_type" t-value="o._get_other_entries_type_code()"/>
+                            <t t-if="input.input_type_id.code in other_entries_type">
+                                <t t-if="input.input_type_id.name">
+                                    <t t-set="description" t-value="input.input_type_id.name" />
+                                </t>
+                                <t t-else="">
+                                    <t t-set="description" t-value="input.name" />
+                                </t>
+                                <tr style="color:none">
+                                    <td>
+                                        <span t-esc="description" />
+                                    </td>
+                                    <td>
+                                        <t t-if="input.uom_id.name in ['Hours', 'hours', 'Horas', 'horas'] ">
+                                            <span t-field="input.amount" />
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="input.uom_id.name in ['Days', 'days', 'Días', 'días'] ">
+                                            <span t-field="input.amount" />
+                                        </t>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </t>
+                        </span>
+
+                        <t t-set="categories_assignments" t-value="o._get_categories_assignments()"/>
+                        <t t-set="categories_deductions" t-value="o._get_categories_deductions()"/>
+                        <!-- <t t-set="lines" t-value="o._get_lines()"/> -->
+                        <span t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip and (line.category_id.code in categories_assignments or line.category_id.code in categories_deductions) )" t-as="line">
+                            <t t-set="line_style" />
+                            <t t-set="line_class" />
+                            <t t-if="line.code == 'NET'"></t>
+                            <t t-if="(line.code == 'BASIC') or (line.code == 'GROSS')">
+                                <t t-set="line_style" t-value="'color:#00A09D;'" />
+                                <t t-set="line_class" t-value="'o_subtotal o_border_bottom'" />
+                            </t>
+                            <tr t-att-class="line_class" t-att-style="line_style">
+                                <td>
+                                    <span t-field="line.name" />
+                                </td>
+
+                                <td></td>
+                                <td>
+                                    <span t-if="line.quantity &gt; 1" t-esc="line.quantity" />
+                                </td>
+
+                                <!--assignments-->
+                                <t t-if="line.category_id.code in categories_assignments">
+                                    <td style="text-align: center;">
+                                        <span t-esc="line.total" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if line.total &lt; 0 else ''" />
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                    <td style="text-align: center;">
+                                        <span t-options="{'widget': 'text'}">-</span>
+                                    </td>
+                                </t>
+
+                                <t t-if="line.category_id.code in categories_deductions">
+                                    <td style="text-align: center;">
+                                        <span t-esc="line.total" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if line.total &lt; 0 else ''" />
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                    <td style="text-align: center;">
+                                        <span t-options="{'widget': 'text'}">-</span>
+                                    </td>
+                                </t>
+                                <td></td>
+                            </tr>
+                        </span>
+
+                        <!--Totals-->
+                        <tr>
+                            <t t-set="total_assignments" t-value="o.accumulated_assignments()" />
+                            <t t-set="total_deductions" t-value="o.accumulated_deductions()" />
+                            <td colspan="3" style="text-align: center;">
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <span>
+                                    <strong>Totales</strong>
+                                        :
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <span t-esc="total_assignments" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if total_assignments &lt; 0 else ''" />
+                            </td>
+                            <td style="text-align: center;">
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <span t-esc="total_deductions" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if total_deductions &lt; 0 else ''" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center;">
+                                <span>
+                                    <strong>Neto a pagar</strong>
+                                        :
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <t t-set="net_salary" t-value="o.accumulated_assignments() - o.accumulated_deductions()" />
+                                <span t-esc="net_salary" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if net_salary &lt; 0 else ''" />
+                                <p t-if="net_salary &lt; 0">El importe neto se recuperará de la primera remuneración positiva establecida después.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <t t-set="signatures">
+                <div class="container">
+                    <!--Centering the signature-->
+                    <div class="mt32 mb32 text-center" style="page-break-inside: avoid;">
+                        <table class="table table-sm table-borderless" style="width: 90%; height: 0cm;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%; position:relative;">
+                                        <img t-if="o.company_id.signature_512" t-att-src="image_data_uri(o.company_id.signature_512)" height="120px" style="margin-top: 0px; max-width: 160px;"/>
+                                        <div style="position:relative; height: 1cm;">
+                                            <div style="position: absolute; bottom: 0; left: 100px; right: 100px;">
+                                                <hr style="border: 1px solid black; width=5%;" />
+                                                <b style="margin-top:6em;">Aprobado por</b>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width: 50%; position:relative;">
+                                        <img t-if="o.company_id.signature_512" t-att-src="image_data_uri(o.company_id.signature_512)" height="120px" style="margin-top: 0px; max-width: 160px; visibility: hidden;"/>
+                                        <div style="position:relative; height: 1cm;">
+                                            <div style="position: absolute; bottom: 0; left: 100px; right: 100px;">
+                                                <hr style="border: 1px solid black; width=5%;" />
+                                                <b style="margin-top: 6em;">Recibido por</b>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+
+            <t t-set="accumulated">
+                <div id="total_settings" style="page-break-inside: avoid;">
+
+                    <table class="table table-sm table-borderless height: 0mm;">
+                        <tbody>
+                            <tr>
+                                <t t-if="o.company_id.quarterly_payment_benefits">
+                                    <td class="w-25">
+                                        <strong>Abono trimestral de Prestaciones Sociales:</strong>
+                                    </td>
+                                    <td class="w-25">
+
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                </t>
+
+                            </tr>
+
+                            <tr>
+                                <t t-if="o.company_id.profits_generated or o.company_id.advance_profit_sharing or o.company_id.net_income or o.company_id.social_benefits">
+                                    <td class="w-25 o_black_border" colspan="2" style="text-align: center;">
+                                        <strong>Acumulados</strong>
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                </t>
+                            </tr>
+
+                            <tr>
+                                <t t-if="o.company_id.profits_generated">
+                                    <td class="w-25">
+                                        <strong>Utilades generadas:</strong>
+                                    </td>
+                                    <td class="w-25">
+                                        <t t-if="o.contract_id.earnings_generated and o.contract_id.earnings_generated &gt; 0">
+                                            <t t-set="earnings_generated" t-value="o.contract_id.earnings_generated" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="earnings_generated" t-value="0" />
+                                        </t>
+
+                                        <span t-esc="earnings_generated" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if net_salary &lt; 0 else ''" />
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                </t>
+
+                            </tr>
+
+                            <tr>
+                                <t t-if="o.company_id.advance_profit_sharing">
+                                    <td class="w-25">
+                                        <strong>Anticipo de Utilades Otorgados:</strong>
+                                    </td>
+                                    <td class="w-25">
+                                        <t t-if="o.contract_id.advances_granted and o.contract_id.advances_granted &gt; 0">
+                                            <t t-set="advances_granted" t-value="o.contract_id.advances_granted" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="advances_granted" t-value="0" />
+                                        </t>
+
+                                        <span t-esc="advances_granted" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if net_salary &lt; 0 else ''" />
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                </t>
+
+                            </tr>
+
+                            <tr>
+                                <t t-if="o.company_id.net_income">
+                                    <td class="w-25">
+                                        <strong>Utilidades Netas:</strong>
+                                    </td>
+                                    <td class="w-25">
+                                        <t t-if="o.contract_id.earnings_generated_total_available and o.contract_id.earnings_generated_total_available &gt; 0">
+                                            <t t-set="earnings_generated_total_available" t-value="o.contract_id.earnings_generated_total_available" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="earnings_generated_total_available" t-value="0" />
+                                        </t>
+
+                                        <span t-esc="earnings_generated_total_available" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if net_salary &lt; 0 else ''" />
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                </t>
+
+                            </tr>
+
+                            <tr>
+                                <t t-if="o.company_id.social_benefits">
+                                    <td class="w-25">
+                                        <strong>Prestaciones Sociales:</strong>
+                                    </td>
+                                    <td class="w-25">
+                                        <t t-if="o.contract_id.total_available_social_benefits_generated and o.contract_id.total_available_social_benefits_generated &gt; 0">
+                                            <t t-set="total_available_social_benefits_generated" t-value="o.contract_id.total_available_social_benefits_generated" />
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="total_available_social_benefits_generated" t-value="0" />
+                                        </t>
+
+                                        <span t-esc="total_available_social_benefits_generated" t-options='{"widget": "monetary", "display_currency": currency}' t-att-style="'color:#875A7B;' if net_salary &lt; 0 else ''" />
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                </t>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+
+    </template>
+
+</odoo>

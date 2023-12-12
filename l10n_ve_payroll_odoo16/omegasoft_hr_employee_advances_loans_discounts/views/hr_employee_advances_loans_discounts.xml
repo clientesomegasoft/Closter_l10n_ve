@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- hr_employee_advances_loans_discounts -->
+    <record id="hr_employee_advances_loans_discounts_tree" model="ir.ui.view">
+        <field name="name">hr.employee.advances.loans.discounts.tree</field>
+        <field name="model">hr_employee_advances_loans_discounts</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1">
+                <field name="active" invisible="1" />
+                <field name="date_issue" />
+                <field name="name" />
+                <field name="employee_ids" widget="many2many_tags" optional="hide"/>
+                <field name="employee_file" invisible="True"/>
+                <field name="employee_file_code_ids" widget="many2many_tags" optional="hide" options="{'no_create': 1}" invisible="not context.get('employee_file')"/>
+                <field name="employee_reference" />
+                <field name="company_id" optional="hide" />
+                <field name="department_ids" widget="many2many_tags" optional="hide"/>
+                <field name="state" widget="badge" decoration-warning="state == 'open'" decoration-danger="state == 'rejected'" decoration-success="state == 'paid'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_employee_advances_loans_discounts_form" model="ir.ui.view">
+        <field name="name">hr.employee.salary.advance.form</field>
+        <field name="model">hr_employee_advances_loans_discounts</field>
+        <field name="arch" type="xml">
+            <form string="Request advance">
+                <header>
+                    <field name="state" widget="statusbar" />
+                    <button name="action_confirm" string="Paid" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'not in', ['open'])]}"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['new', 'draft', 'rejected'])]}"/>
+                    <button name="action_draft" string="Draft" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['new', 'open', 'draft', 'paid', 'rejected'])]}"/>
+                    <button name="action_open" string="Confirm" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                    <button name="action_draft" string="restore a draf" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['new', 'draft', 'open', 'paid'])]}"/>
+                </header>
+                <sheet>
+                    <field name="active" invisible="1" />
+                    <group name="group_top" string="Advances Loans and discounts to employees">
+                        <group name="group_left" style="width:50%;">
+                            <field name="date_issue" required="1" attrs="{'readonly': [('state', 'not in', 'draft' )]}"/>
+                            <field name="employee_ids" widget="many2many_tags" attrs="{'readonly': ['|',('name', '!=', 'employee'), ('state', 'not in', 'draft' )], 'required': [('name', '=', 'employee')]}" force_save="1" options="{'no_create': True}"/>
+                            <field name="employee_file" invisible="True"/>
+                            <field name="employee_file_code_ids" widget="many2many_tags" options="{'no_create': 1}" attrs="{'required': [('name', '=', 'employee'), ('employee_file', '=', True)], 'invisible': [('employee_file', '=', False)], 'readonly': ['|',('name', '!=', 'employee'), ('state', 'not in', 'draft')]}" />
+                            <field name="employee_contract_ids" invisible="1"/>
+                            <field name="department_ids" widget="many2many_tags" attrs="{'required': [('name', '=', 'department')], 'readonly': ['|',('name', '!=', 'department'), ('state', 'not in', 'draft' )]}" force_save="1" options="{'no_create': True}"/>
+                            
+                        </group>
+                        <group name="group_right" style="width:50%;">
+                            <field name="name" required="1" attrs="{'readonly': [('state', 'not in', 'draft' )]}"/>
+                            <field name="company_id" attrs="{'required': [('name', '=', 'company')], 'readonly': ['|',('name', '!=', 'company'), ('state', 'not in', 'draft')]}" force_save="1" options="{'no_open': True}"/>
+                            <field name="employee_reference" />
+                            <label for="rate_id" />
+                            <div class="o_row" name="rate_id">
+                                <field name="company_currency" invisible="1"/>
+                                <field name="rate_id" options="{'no_create': True, 'no_open': True}" domain="[('currency_rate_active', '=', True), ('currency_id', '!=', company_currency)]" attrs="{'readonly': [('state', 'not in', 'draft' )]}"/>
+                                <field name="rate_amount" readonly="1" force_save="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="advances_loans_discounts_line_ids" string="Product lines">
+                            <field name="advances_loans_discounts_line_ids" required="1" widget="section_and_note_one2many" mode="tree">
+                                <tree editable="bottom">
+                                    <field name="date_issue" />
+                                    <field name="employee_ids" invisible="1"/>
+                                    <field name="product_employee_ids" attrs="{'readonly': [('discount_state', 'not in', 'draft' )]}"  required="1" widget="many2many_tags" domain="[('id', 'in', employee_ids)]" options="{'no_create': True}"/>
+                                    <field name="employee_file" invisible="True"/>
+                                    <field name="employee_file_code_ids" force_save="1" domain="[('employee_id', 'in', employee_ids)]" widget="many2many_tags" attrs="{'column_invisible': [('parent.employee_file', '=', False)], 'required': [('employee_file', '=', True)], 'readonly': [('discount_state', 'not in', 'draft' )]}" options="{'no_create': 1}"/>
+                                    <field name="type_advance_loan" required="1" attrs="{'readonly': [('discount_state', 'not in', 'draft' )]}" force_save="1"/>
+                                    <field name="description" attrs="{'readonly': [('discount_state', 'not in', 'draft' )]}"/>
+                                    <field name="exceeds_maximum" attrs="{'readonly': [('discount_state', 'not in', 'draft' )]}"/>
+                                    <field name="amount" required="1" attrs="{'readonly': [('discount_state', 'not in', 'draft' )]}"/>
+                                    <field name="currency_id" options="{'no_create': True}" required="1" attrs="{'readonly': [ '|', ('discount_state', 'not in', 'draft' ), ('type_advance_loan', 'in', ['profits', 'social_benefits', 'benefit_interest', 'days_per_year'] ) ]}"/>
+                                    <field name="fees" attrs="{'readonly': ['|',('type_advance_loan', 'not in', ('discount', 'loan', 'per_diem')), ('discount_state', 'not in', 'draft' )], 'required': [('type_advance_loan', 'in', ('discount', 'loan', 'per_diem'))]}" force_save="1"/>
+                                    <field name="fee_amount" readonly="1" force_save="1"/>
+                                    <field name="discount_start_date" attrs="{'readonly': ['|',('type_advance_loan', 'not in', ('discount', 'loan', 'per_diem')), ('discount_state', 'not in', 'draft')], 'required': [('type_advance_loan', 'in', ('discount', 'loan', 'per_diem'))]}" force_save="1"/>
+                                    <field name="discount_end_date" readonly="1" force_save="1"/>
+                                    <field name="discount_state" readonly="1" force_save="1" widget="badge" decoration-warning="discount_state in ['draft','open']" decoration-danger="discount_state == 'rejected'" decoration-success="discount_state == 'paid'"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Archived-->
+    <record id="hr_employee_advances_loans_discounts_search" model="ir.ui.view">
+        <field name="name">hr.employee.salary.advance.search</field>
+        <field name="model">hr_employee_advances_loans_discounts</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <separator />
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]" />
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_employee_advances_loans_discounts_action" model="ir.actions.act_window">
+        <field name="name">Anticipos Préstamos y descuentos</field>
+        <field name="res_model">hr_employee_advances_loans_discounts</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions -->
+    <menuitem id="hr_employee_advances_loans_discounts" name="Anticipos Préstamos y descuentos" parent="hr.menu_hr_root" sequence="96" />
+    <menuitem id="hr_employee_advances_loans_discounts_config" name="Anticipos Préstamos y descuentos" action="hr_employee_advances_loans_discounts_action" parent="hr_employee_advances_loans_discounts" sequence="1" />
+
+</odoo>

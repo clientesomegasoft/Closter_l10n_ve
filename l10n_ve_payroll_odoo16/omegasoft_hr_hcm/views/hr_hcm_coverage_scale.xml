@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_hcm_coverage_scale_window_action" model="ir.actions.act_window">
+        <field name="name">HCM Converage Scale</field>
+        <field name="res_model">hr.hcm.coverage.scale</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                There's no HCM coverage scale yet
+            </p><p>
+            Let's create a new one!
+            </p>
+        </field>
+    </record>
+
+    <record id="hr_hcm_coverage_scale_view_tree" model="ir.ui.view">
+        <field name="name">hr.hcm.coverage.scale.view.tree</field>
+        <field name="model">hr.hcm.coverage.scale</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="total_policy_coverage"/>
+                <field name="total_quota_amount"/>
+                <field name="job_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_hcm_coverage_scale_view_form" model="ir.ui.view">
+        <field name="name">hr.hcm.coverage.scale.view.form</field>
+        <field name="model">hr.hcm.coverage.scale</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="currency_id" invisible="1"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="total_policy_coverage" widget="float"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                            <field name="total_quota_amount" widget="float"/>
+                        </group>
+                    </group>
+                    <group>
+                    </group>
+                    <group>
+                        <field name="company_percentage_contribution"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="employee_quota_amount"/>
+                            <field name="job_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="company_quota_amount"/>
+                        </group>
+                    </group>
+                    <group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_hr_hcm_coverage_scale"
+        name="HCM Coverage Scale"
+        parent="hr.menu_human_resources_configuration"
+        action="hr_hcm_coverage_scale_window_action"
+        sequence="5"/>
+
+</odoo>
