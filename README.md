@@ -12,11 +12,10 @@ Una localización de Odoo para Venezuela desarrollada por [Omegasoft C.A.](https
 
 -   Guavana
     -   Carlos Carvajal - carlos.carvajal@omegasoftve.com
-    -   Naudy Mendez - naudy.mendez@omegasoftve.com
-    -   Gabriel Peraza - gabriel.peraza@omegasoftve.com
     -   Daniel Ospino - daniel.ospino@omegasoftve.com
-    -   Rene Gomez - rene.gomez@omegasoftve.com
     -   Gabriel Peraza - gabriel.peraza@omegasoftve.com
     -   Luis Alfonzo - luis.alfonzo@omegasoftve.com
+    -   Naudy Mendez - naudy.mendez@omegasoftve.com
+    -   Rene Gomez - rene.gomez@omegasoftve.com
 -   Comunidad Odoo Venezuela
     - Leonardo J. Caballero G. leonardocaballero@gmail.com
