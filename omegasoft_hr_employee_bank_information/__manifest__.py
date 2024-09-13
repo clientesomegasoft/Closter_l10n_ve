@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Omegasoft C.A Hr Emplooye Bank information',
+    'name': 'Omegasoft C.A Hr Employee Bank information',
     'version': '16.0.16',
     'category': 'Human Resources/Contracts',
     'application': False,
     'author': 'Omegasoft C.A',
     'contributor': 'Daniel Ospino - daniel.ospino@omegasoftve.com / Rene Gomez - rene.gomez@omegasoftve.com',
     'website': 'https://www.omegasoftve.com/',
-    'summary': 'Hr Emplooye Bank information',
+    'summary': 'Hr Employee Bank information',
     'description': """
     Employee's Bank information.
     """,

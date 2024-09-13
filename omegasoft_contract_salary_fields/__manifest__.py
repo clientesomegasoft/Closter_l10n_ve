@@ -8,7 +8,7 @@
     'website': 'https://www.omegasoftve.com/',
     'summary': 'Salary Fields',
     'description': """
-    Adds the basic fields for salary according to Venezuelan law..
+    Adds the basic fields for salary according to Venezuelan law.
     """,
     'depends': ['hr_contract', 'omegasoft_payroll_res_config_settings', 'omegasoft_hr_employee_code'],
     'data' : [

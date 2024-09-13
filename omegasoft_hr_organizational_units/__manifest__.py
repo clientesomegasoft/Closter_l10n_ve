@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Omegasoft C.A Hr Organizatuinal units',
+    'name': 'Omegasoft C.A Hr Organizational units',
     'version': '16.0.16',
     'category': 'Human Resources/Employee',
     'application': False,
     'author': 'Omegasoft C.A',
     'contributor': 'Daniel Ospino - daniel.ospino@omegasoftve.com',
     'website': 'https://www.omegasoftve.com/',
-    'summary': 'Hr Emplooye',
+    'summary': 'Hr Employee',
     'description': """
     Cost Centers.
     """,

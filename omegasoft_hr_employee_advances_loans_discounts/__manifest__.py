@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Omegasoft C.A Hr Emplooye Advances, loans and discounts',
+    'name': 'Omegasoft C.A Hr Employee Advances, loans and discounts',
     'version': '16.0.16',
     'category': 'Human Resources/Contracts',
     'application': False,
     'author': 'Omegasoft C.A',
     'contributor': 'Daniel Ospino - daniel.ospino@omegasoftve.com / Rene Gomez - rene.gomez@omegasoftve.com',
     'website': 'https://www.omegasoftve.com/',
-    'summary': 'Hr Emplooye Advances, loans and discounts',
+    'summary': 'Hr Employee Advances, loans and discounts',
     'description': """
     Employee's Advances, loans and discounts.
     """,

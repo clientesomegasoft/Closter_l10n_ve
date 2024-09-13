@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Omegasoft C.A Hr Emplooye Disability',
+    'name': 'Omegasoft C.A Hr Employee Disability',
     'version': '16.0.16',
     'category': 'Human Resources/Employee',
     'application': False,
     'author': 'Omegasoft C.A',
     'contributor': 'Daniel Ospino - daniel.ospino@omegasoftve.com / Rene Gomez - rene.gomez@omegasoftve.com',
     'website': 'https://www.omegasoftve.com/',
-    'summary': 'Hr Emplooye Disability',
+    'summary': 'Hr Employee Disability',
     'description': """
-    Emplooye Disability.
+    Employee Disability.
     """,
     'depends': ['hr','hr_payroll'],
     'data' : [

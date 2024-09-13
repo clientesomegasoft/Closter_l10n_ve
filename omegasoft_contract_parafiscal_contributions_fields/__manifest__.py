@@ -9,7 +9,7 @@
     'website': 'https://www.omegasoftve.com/',
     'summary': 'Parafiscal Contributions Fields',
     'description': """
-    Adds the basic fields for Parafiscal Contributions according to Venezuelan law..
+    Adds the basic fields for Parafiscal Contributions according to Venezuelan law.
     """,
     'depends': ['hr_contract'],
     'data' : [

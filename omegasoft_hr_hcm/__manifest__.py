@@ -8,7 +8,7 @@
         'Gabriel Peraza - gabriel.peraza@omegasoftve.com',
     ],
     'website': 'https://www.omegasoftve.com/',
-    'summary': 'Hr Emplooye',
+    'summary': 'Hr Employee',
     'description': """ New configurations for human resources and policy coverage""",
     'depends': [
         'hr',

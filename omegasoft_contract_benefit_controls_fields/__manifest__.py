@@ -9,7 +9,7 @@
     'website': 'https://www.omegasoftve.com/',
     'summary': 'Benefit controls Fields',
     'description': """
-    Adds the basic fields for Benefit controls according to Venezuelan law..
+    Adds the basic fields for Benefit controls according to Venezuelan law.
     """,
     'depends': ['hr_contract'],
     'data' : [
