@@ -1,6 +1,6 @@
 # Localización de Odoo para Venezuela
 
-Repositorio creado con la finalidad de agregar los addons desarrollados en Odoo 16 correspondiente a la localización venezolana
+Repositorio creado con la finalidad de agregar los addons desarrollados en Odoo 16 correspondiente a la localización venezolana, incluye el modulo de Nomina.
 
 Una localización de Odoo para Venezuela desarrollada por [Omegasoft C.A.](https://www.omegasoftve.com/).
 
