@@ -10,7 +10,7 @@ Una localización de Odoo para Venezuela desarrollada por [Omegasoft C.A.](https
 
 # Colaboradores
 
--   Guavana
+-   Omegasoft C.A..
     -   Carlos Carvajal - carlos.carvajal@omegasoftve.com
     -   Daniel Ospino - daniel.ospino@omegasoftve.com
     -   Gabriel Peraza - gabriel.peraza@omegasoftve.com
