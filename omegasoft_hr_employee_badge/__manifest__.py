@@ -4,7 +4,7 @@
     "category": "Human Resources/Contracts",
     "author": "Omegasoft C.A",
     "contributor": "Daniel Ospino - daniel.ospino@omegasoftve.com",
-    "website": "https://github.com/macagua/Closter_l10n_ve0n_ve",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "description": """
     Generate employee card
     """,

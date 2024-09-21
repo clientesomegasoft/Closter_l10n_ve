@@ -41,17 +41,9 @@
     </record>
 
     <!-- central bank social benefits rate history -->
-    <record
-        id="central_bank_social_benefits_rate_history_comp_rule"
-        model="ir.rule"
-    >
-        <field
-            name="name"
-        >central.bank.social.benefits.rate.history.comp.rule</field>
-        <field
-            name="model_id"
-            ref="model_central_bank_social_benefits_rate_history"
-        />
+    <record id="central_bank_social_benefits_rate_history_comp_rule" model="ir.rule">
+        <field name="name">central.bank.social.benefits.rate.history.comp.rule</field>
+        <field name="model_id" ref="model_central_bank_social_benefits_rate_history" />
         <field eval="True" name="global" />
         <field
             name="domain_force"

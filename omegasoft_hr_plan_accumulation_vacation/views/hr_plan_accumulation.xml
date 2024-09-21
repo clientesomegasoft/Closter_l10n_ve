@@ -29,11 +29,7 @@
                             options="{'no_create': 1}"
                             attrs="{'invisible': [('employee_file', '=', False)]}"
                         />
-                        <field
-                            name="last_calculation"
-                            readonly="1"
-                            default="today"
-                        />
+                        <field name="last_calculation" readonly="1" default="today" />
                         <field name="company_id" groups="base.group_no_one" />
                     </group>
                     <notebook colspan="4">

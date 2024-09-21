@@ -19,12 +19,8 @@
         <field name="name">Consignment Purchase Report</field>
         <field name="model">consignment.report.wizard</field>
         <field name="report_type">qweb-pdf</field>
-        <field
-            name="report_name"
-        >pways_so_po_consignment.consignments_template</field>
-        <field
-            name="report_file"
-        >pways_so_po_consignment.consignments_template</field>
+        <field name="report_name">pways_so_po_consignment.consignments_template</field>
+        <field name="report_file">pways_so_po_consignment.consignments_template</field>
         <field
             name="binding_model_id"
             ref="pways_so_po_consignment.model_consignment_report_wizard"

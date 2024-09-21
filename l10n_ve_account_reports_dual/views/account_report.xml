@@ -10,19 +10,14 @@
             </xpath>
         </field>
     </record>
-    <template
-        id="search_template_custom"
-        inherit_id="account_reports.search_template"
-    >
+    <template id="search_template_custom" inherit_id="account_reports.search_template">
         <xpath expr="//div[@id='extra_options_dropdown']" position="after">
             <div
                 id="currencies_dropdown"
                 class="btn-group dropdown o_account_reports_filter_currency"
                 t-if="options.get('selected_currency')"
             >
-                <t
-                    t-call="l10n_ve_account_reports_dual.search_template_currencies"
-                />
+                <t t-call="l10n_ve_account_reports_dual.search_template_currencies" />
             </div>
         </xpath>
     </template>

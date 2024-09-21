@@ -63,9 +63,7 @@
                                             t-as="line"
                                         >
                                                 <td>
-                                                    <span
-                                                    t-esc="line.order_id.name"
-                                                />
+                                                    <span t-esc="line.order_id.name" />
                                                 </td>
                                                 <td>
                                                     <span
@@ -81,9 +79,7 @@
                                                     <span t-esc="line.price_unit" />
                                                 </td>
                                                 <td class="text-center">
-                                                    <span
-                                                    t-esc="line.price_subtotal"
-                                                />
+                                                    <span t-esc="line.price_subtotal" />
                                                 </td>
                                                 <td class="text-center">
                                                     <span
@@ -144,17 +140,14 @@
                                                 <th><strong>Product</strong></th>
                                                 <th><strong>Quantity</strong></th>
                                                 <th><strong>Sale Qty</strong></th>
-                                                <th><strong
-                                                >Remaining Qty</strong></th>
-                                                <th><strong
-                                                >Avalible Qty</strong></th>
+                                                <th><strong>Remaining Qty</strong></th>
+                                                <th><strong>Avalible Qty</strong></th>
                                                 <th><strong>Unit Price</strong></th>
                                                 <th><strong
                                                 >Consignment Total</strong></th>
                                                 <th><strong>Sale Total</strong></th>
                                                 <th><strong>Cost Total</strong></th>
-                                                <th><strong
-                                                >Profit Total</strong></th>
+                                                <th><strong>Profit Total</strong></th>
                                             </tr>
                                         </thead>
                                         <tbody style="font-size:13px;">
@@ -174,9 +167,7 @@
                                                     <span t-esc="line.sale_qty" />
                                                 </td>
                                                 <td class="text-center">
-                                                    <span
-                                                    t-esc="line.available_qty"
-                                                />
+                                                    <span t-esc="line.available_qty" />
                                                 </td>
                                                 <td class="text-center">
                                                     <span t-esc="line.free_qty" />
@@ -185,9 +176,7 @@
                                                     <span t-esc="line.price_unit" />
                                                 </td>
                                                 <td class="text-center">
-                                                    <span
-                                                    t-esc="line.price_subtotal"
-                                                />
+                                                    <span t-esc="line.price_subtotal" />
                                                 </td>
                                                 <td class="text-center">
                                                     <span t-esc="line.sale_total" />
@@ -196,9 +185,7 @@
                                                     <span t-esc="line.cost_total" />
                                                 </td>
                                                 <td class="text-center">
-                                                    <span
-                                                    t-esc="line.profit_total"
-                                                />
+                                                    <span t-esc="line.profit_total" />
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -207,9 +194,7 @@
                                     <div class="col-7">
                                     </div>
                                     <div class="col-5">
-                                        <table
-                                            class="table table-sm table-bordered"
-                                        >
+                                        <table class="table table-sm table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th><strong

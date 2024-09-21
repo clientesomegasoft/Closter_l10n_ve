@@ -16,9 +16,9 @@
         <field name="implied_ids" eval="[(4, ref('group_purchase_consign_user'))]" />
         <field name="category_id" ref="purchase_consignments" />
         <field
-                name="users"
-                eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
-            />
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
     </record>
 
     <record model="ir.module.category" id="sales_consignments">
@@ -37,8 +37,8 @@
         <field name="implied_ids" eval="[(4, ref('group_consignments_user'))]" />
         <field name="category_id" ref="sales_consignments" />
         <field
-                name="users"
-                eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
-            />
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
     </record>
 </odoo>

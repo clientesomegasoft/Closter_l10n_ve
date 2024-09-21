@@ -14,11 +14,7 @@
                 <field name="payment_date" />
                 <field name="invoice_id" optional="hide" />
                 <field name="employee_id" optional="hide" />
-                <field
-                    name="invoice_state"
-                    optional="hide"
-                    string="Invoice state"
-                />
+                <field name="invoice_state" optional="hide" string="Invoice state" />
             </tree>
         </field>
     </record>

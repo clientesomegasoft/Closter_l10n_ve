@@ -10,11 +10,7 @@
                 <field name="allocation_date" />
                 <field name="name" />
                 <field name="description" />
-                <field
-                    name="employee_ids"
-                    widget='many2many_tags'
-                    optional="hide"
-                />
+                <field name="employee_ids" widget='many2many_tags' optional="hide" />
                 <field name="employee_file" invisible="True" />
                 <field
                     name="employee_file_code_ids"
@@ -178,11 +174,7 @@
                     decoration-info="state == 'partial_delivery'"
                     decoration-success="state == 'delivered'"
                 />
-                <field
-                    name="employee_ids"
-                    widget='many2many_tags'
-                    optional="hide"
-                />
+                <field name="employee_ids" widget='many2many_tags' optional="hide" />
                 <field name="employee_file" invisible="True" />
                 <field
                     name="employee_file_code_ids"
@@ -284,11 +276,7 @@
                                 widget="section_and_note_one2many"
                                 mode="tree"
                             >
-                                <tree
-                                    editable="bottom"
-                                    delete="false"
-                                    create="false"
-                                >
+                                <tree editable="bottom" delete="false" create="false">
                                     <field name="employee_ids" invisible="1" />
                                     <field name="employee_file" invisible="True" />
                                     <field
@@ -311,11 +299,7 @@
                                         domain="[('detailed_type', '=', 'consu'), ('is_an_endowment_product', '=', True)]"
                                         options="{'no_create': True}"
                                     />
-                                    <field
-                                        name="size_id"
-                                        readonly="1"
-                                        required="1"
-                                    />
+                                    <field name="size_id" readonly="1" required="1" />
                                     <field
                                         name="allocated_quantity"
                                         readonly="1"
@@ -326,11 +310,7 @@
                                         readonly="1"
                                         force_save="1"
                                     />
-                                    <field
-                                        name="frequency"
-                                        readonly="1"
-                                        required="1"
-                                    />
+                                    <field name="frequency" readonly="1" required="1" />
                                     <field
                                         name="delivery_frequency"
                                         readonly="1"
@@ -412,10 +392,7 @@
         />
     </record>
 
-    <record
-        id="contract_allocation_to_delivered_action"
-        model="ir.actions.act_window"
-    >
+    <record id="contract_allocation_to_delivered_action" model="ir.actions.act_window">
         <field name="name">Allocation to delivered</field>
         <field name="res_model">contract_allocation</field>
         <field name="view_mode">tree,form</field>

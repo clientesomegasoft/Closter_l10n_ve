@@ -5,9 +5,9 @@
       <field name="inherit_id" ref="base.view_currency_form" />
       <field name="arch" type="xml">
         <xpath
-            expr="//field[@name='rate_ids']/tree/field[@name='rate']"
-            position="after"
-        >
+                expr="//field[@name='rate_ids']/tree/field[@name='rate']"
+                position="after"
+            >
           <field name="is_payroll_rate" />
         </xpath>
       </field>

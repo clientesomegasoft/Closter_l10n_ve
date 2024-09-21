@@ -42,9 +42,7 @@
 </p>
 </div></field>
         <field name="report_template" ref="account_withholding_municipal_report" />
-        <field
-            name="report_name"
-        >COMP RETENCIÓN MUNICIPAL - {{ object.name }}</field>
+        <field name="report_name">COMP RETENCIÓN MUNICIPAL - {{ object.name }}</field>
         <field name="lang">{{ object.subject_id.lang }}</field>
         <field name="auto_delete" eval="True" />
     </record>
