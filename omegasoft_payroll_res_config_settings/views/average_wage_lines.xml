@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <data>
+    <record id="average_wage_lines_form" model="ir.ui.view">
+        <field name="name">average.wage.lines.form</field>
+        <field name="model">average_wage_lines</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field
+                            name="payroll_structure_type"
+                            required="1"
+                            options="{'no_open': True, 'no_create': True}"
+                        />
+                        <field name="number_of_weeks" />
+                        <field
+                            name="salary_rule_category"
+                            widget="many2many_tags"
+                            required="1"
+                            options="{'no_open': True, 'no_create': True}"
+                        />
+                        <field name="best_weeks_check" />
+                        <field
+                            name="number_of_best_weeks"
+                            attrs="{'readonly': [('best_weeks_check', '=', False)]}"
+                        />
+                        <field
+                            name="structure_type_default_schedule_pay"
+                            invisible="1"
+                        />
+                        <field
+                            name="average_days"
+                            attrs="{'required': [('structure_type_default_schedule_pay', '=', 'monthly')]}"
+                        />
+                        <field name="company_id" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="average_wage_lines_form" model="ir.ui.view">
-            <field name="name">average.wage.lines.form</field>
-            <field name="model">average_wage_lines</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group>
-                            <field
-                                name="payroll_structure_type"
-                                required="1"
-                                options="{'no_open': True, 'no_create': True}"
-                            />
-                            <field name="number_of_weeks" />
-                            <field
-                                name="salary_rule_category"
-                                widget="many2many_tags"
-                                required="1"
-                                options="{'no_open': True, 'no_create': True}"
-                            />
-                            <field name="best_weeks_check" />
-                            <field
-                                name="number_of_best_weeks"
-                                attrs="{'readonly': [('best_weeks_check', '=', False)]}"
-                            />
-                            <field
-                                name="structure_type_default_schedule_pay"
-                                invisible="1"
-                            />
-                            <field
-                                name="average_days"
-                                attrs="{'required': [('structure_type_default_schedule_pay', '=', 'monthly')]}"
-                            />
-                            <field name="company_id" invisible="1" />
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <record id="average_wage_lines_tree" model="ir.ui.view">
+        <field name="name">average.wage.lines.tree</field>
+        <field name="model">average_wage_lines</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field
+                    name="payroll_structure_type"
+                    options="{'no_open': True, 'no_create': True}"
+                />
+                <field name="number_of_weeks" />
+                <field
+                    name="salary_rule_category"
+                    widget="many2many_tags"
+                    options="{'no_open': True, 'no_create': True}"
+                />
+                <field name="best_weeks_check" />
+                <field name="number_of_best_weeks" />
+                <field name="average_days" />
+                <field name="company_id" invisible="1" />
+                <field name="structure_type_default_schedule_pay" invisible="1" />
+            </tree>
+        </field>
+    </record>
 
-        <record id="average_wage_lines_tree" model="ir.ui.view">
-            <field name="name">average.wage.lines.tree</field>
-            <field name="model">average_wage_lines</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field
-                        name="payroll_structure_type"
-                        options="{'no_open': True, 'no_create': True}"
-                    />
-                    <field name="number_of_weeks" />
-                    <field
-                        name="salary_rule_category"
-                        widget="many2many_tags"
-                        options="{'no_open': True, 'no_create': True}"
-                    />
-                    <field name="best_weeks_check" />
-                    <field name="number_of_best_weeks" />
-                    <field name="average_days" />
-                    <field name="company_id" invisible="1" />
-                    <field name="structure_type_default_schedule_pay" invisible="1" />
-                </tree>
-            </field>
-        </record>
-
-        <record id="average_wage_lines_action" model="ir.actions.act_window">
-            <field name="name">Average Wage Lines</field>
-            <field name="res_model">average_wage_lines</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create average wage line</p>
-            </field>
-        </record>
-
-    </data>
+    <record id="average_wage_lines_action" model="ir.actions.act_window">
+        <field name="name">Average Wage Lines</field>
+        <field name="res_model">average_wage_lines</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create average wage line</p>
+        </field>
+    </record>
 </odoo>

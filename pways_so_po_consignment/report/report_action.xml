@@ -1,60 +1,58 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
-        <record id="paperformat_consignment" model="report.paperformat">
-            <field name="name">Consignment A4</field>
-            <field name="default" eval="True" />
-            <field name="format">A4</field>
-            <field name="page_height">0</field>
-            <field name="page_width">0</field>
-            <field name="orientation">Portrait</field>
-            <field name="margin_top">10</field>
-            <field name="margin_bottom">20</field>
-            <field name="margin_left">7</field>
-            <field name="margin_right">7</field>
-            <field name="header_line" eval="False" />
-            <field name="header_spacing">15</field>
-            <field name="dpi">90</field>
-        </record>
-        <record id="consignment_report" model="ir.actions.report">
-            <field name="name">Consignment Purchase Report</field>
-            <field name="model">consignment.report.wizard</field>
-            <field name="report_type">qweb-pdf</field>
-            <field
-                name="report_name"
-            >pways_so_po_consignment.consignments_template</field>
-            <field
-                name="report_file"
-            >pways_so_po_consignment.consignments_template</field>
-            <field
-                name="binding_model_id"
-                ref="pways_so_po_consignment.model_consignment_report_wizard"
-            />
-            <field
-                name="paperformat_id"
-                ref="pways_so_po_consignment.paperformat_consignment"
-            />
-            <field name="binding_type">report</field>
-        </record>
-        <record id="sale_consignment_report" model="ir.actions.report">
-            <field name="name">Sale Consignment Report</field>
-            <field name="model">sale.consignment.report.wizard</field>
-            <field name="report_type">qweb-pdf</field>
-            <field
-                name="report_name"
-            >pways_so_po_consignment.sale_consignments_template</field>
-            <field
-                name="report_file"
-            >pways_so_po_consignment.sale_consignments_template</field>
-            <field
-                name="binding_model_id"
-                ref="pways_so_po_consignment.model_sale_consignment_report_wizard"
-            />
-            <field
-                name="paperformat_id"
-                ref="pways_so_po_consignment.paperformat_consignment"
-            />
-            <field name="binding_type">report</field>
-        </record>
-    </data>
+    <record id="paperformat_consignment" model="report.paperformat">
+        <field name="name">Consignment A4</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">15</field>
+        <field name="dpi">90</field>
+    </record>
+    <record id="consignment_report" model="ir.actions.report">
+        <field name="name">Consignment Purchase Report</field>
+        <field name="model">consignment.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field
+            name="report_name"
+        >pways_so_po_consignment.consignments_template</field>
+        <field
+            name="report_file"
+        >pways_so_po_consignment.consignments_template</field>
+        <field
+            name="binding_model_id"
+            ref="pways_so_po_consignment.model_consignment_report_wizard"
+        />
+        <field
+            name="paperformat_id"
+            ref="pways_so_po_consignment.paperformat_consignment"
+        />
+        <field name="binding_type">report</field>
+    </record>
+    <record id="sale_consignment_report" model="ir.actions.report">
+        <field name="name">Sale Consignment Report</field>
+        <field name="model">sale.consignment.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field
+            name="report_name"
+        >pways_so_po_consignment.sale_consignments_template</field>
+        <field
+            name="report_file"
+        >pways_so_po_consignment.sale_consignments_template</field>
+        <field
+            name="binding_model_id"
+            ref="pways_so_po_consignment.model_sale_consignment_report_wizard"
+        />
+        <field
+            name="paperformat_id"
+            ref="pways_so_po_consignment.paperformat_consignment"
+        />
+        <field name="binding_type">report</field>
+    </record>
 </odoo>

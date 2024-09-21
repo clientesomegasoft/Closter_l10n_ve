@@ -1,122 +1,120 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
-        <record
-            id="hr_view_department_form_omegasoft_organizational_units"
-            model="ir.ui.view"
-        >
-            <field
-                name="name"
-            >hr.view.department.form.omegasoft.organizational.units</field>
-            <field name="model">hr.department</field>
-            <field name="inherit_id" ref="hr.view_department_form" />
-            <field name="arch" type="xml">
-                <xpath expr="//form" position="replace">
-                    <form string="department">
-                        <field name="company_id" invisible="1" />
-                        <sheet>
-                            <div class="oe_button_box" name="button_box">
-                                <button
-                                    class="oe_stat_button"
-                                    type="action"
-                                    name="%(hr.act_employee_from_department)d"
-                                    icon="fa-users"
-                                >
-                                    <field
-                                        string="Employees"
-                                        name="total_employee"
-                                        widget="statinfo"
-                                    />
-                                </button>
-                                <button
-                                    class="oe_stat_button"
-                                    type="object"
-                                    name="action_plan_from_department"
-                                    icon="fa-list-ul"
-                                >
-                                    <field
-                                        string="Plans"
-                                        name="plans_count"
-                                        widget="statinfo"
-                                    />
-                                </button>
-                            </div>
-                            <widget
-                                name="web_ribbon"
-                                title="Archived"
-                                bg_color="bg-danger"
-                                attrs="{'invisible': [('active', '=', True)]}"
-                            />
-                            <field name="active" invisible="1" />
-                            <group name="group_top">
-                                <group name="group_left" style="width:50%;">
-                                    <field name="name" />
-                                    <field name="manager_id" />
-                                    <field name="parent_id" />
-                                    <field name="custom_appraisal_templates" />
-                                    <field name="company_id" invisible="1" />
-                                    <field
-                                        name="company_id"
-                                        options="{'no_create': True}"
-                                        groups="base.group_multi_company"
-                                    />
-                                    <!-- <field name="appraisal_survey_template_id"/> -->
-                                </group>
-                                <group name="group_right" style="width:50%;">
-                                    <field
-                                        name="active_organizational_units"
-                                        invisible="1"
-                                    />
-                                    <field
-                                        name="organizational_units_ids"
-                                        widget="many2many_tags"
-                                        attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"
-                                    />
-                                    <field
-                                        name="analytic_account_id"
-                                        attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"
-                                    />
-                                    <field
-                                        name="code"
-                                        attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"
-                                    />
-                                </group>
-                            </group>
-                            <notebook
-                                attrs="{'invisible': [('custom_appraisal_templates', '=', False)]}"
+    <record
+        id="hr_view_department_form_omegasoft_organizational_units"
+        model="ir.ui.view"
+    >
+        <field
+            name="name"
+        >hr.view.department.form.omegasoft.organizational.units</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="replace">
+                <form string="department">
+                    <field name="company_id" invisible="1" />
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button
+                                class="oe_stat_button"
+                                type="action"
+                                name="%(hr.act_employee_from_department)d"
+                                icon="fa-users"
                             >
-                                <page string="Appraisal Templates">
-                                    <group>
-                                        <group>
-                                            <h3 class="ps-0">Employee</h3>
-                                            <field
-                                                name="employee_feedback_template"
-                                                nolabel="1"
-                                                colspan="2"
-                                            />
-                                        </group>
-                                        <group>
-                                            <h3 class="ps-0">Manager</h3>
-                                            <field
-                                                name="manager_feedback_template"
-                                                nolabel="1"
-                                                colspan="2"
-                                            />
-                                        </group>
-                                    </group>
-                                </page>
-                            </notebook>
-                        </sheet>
-                        <div class="oe_chatter">
-                            <field
-                                name="message_follower_ids"
-                                groups="base.group_user"
-                            />
-                            <field name="message_ids" />
+                                <field
+                                    string="Employees"
+                                    name="total_employee"
+                                    widget="statinfo"
+                                />
+                            </button>
+                            <button
+                                class="oe_stat_button"
+                                type="object"
+                                name="action_plan_from_department"
+                                icon="fa-list-ul"
+                            >
+                                <field
+                                    string="Plans"
+                                    name="plans_count"
+                                    widget="statinfo"
+                                />
+                            </button>
                         </div>
-                    </form>
-                </xpath>
-            </field>
-        </record>
-    </data>
+                        <widget
+                            name="web_ribbon"
+                            title="Archived"
+                            bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"
+                        />
+                        <field name="active" invisible="1" />
+                        <group name="group_top">
+                            <group name="group_left" style="width:50%;">
+                                <field name="name" />
+                                <field name="manager_id" />
+                                <field name="parent_id" />
+                                <field name="custom_appraisal_templates" />
+                                <field name="company_id" invisible="1" />
+                                <field
+                                    name="company_id"
+                                    options="{'no_create': True}"
+                                    groups="base.group_multi_company"
+                                />
+                                <!-- <field name="appraisal_survey_template_id"/> -->
+                            </group>
+                            <group name="group_right" style="width:50%;">
+                                <field
+                                    name="active_organizational_units"
+                                    invisible="1"
+                                />
+                                <field
+                                    name="organizational_units_ids"
+                                    widget="many2many_tags"
+                                    attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"
+                                />
+                                <field
+                                    name="analytic_account_id"
+                                    attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"
+                                />
+                                <field
+                                    name="code"
+                                    attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"
+                                />
+                            </group>
+                        </group>
+                        <notebook
+                            attrs="{'invisible': [('custom_appraisal_templates', '=', False)]}"
+                        >
+                            <page string="Appraisal Templates">
+                                <group>
+                                    <group>
+                                        <h3 class="ps-0">Employee</h3>
+                                        <field
+                                            name="employee_feedback_template"
+                                            nolabel="1"
+                                            colspan="2"
+                                        />
+                                    </group>
+                                    <group>
+                                        <h3 class="ps-0">Manager</h3>
+                                        <field
+                                            name="manager_feedback_template"
+                                            nolabel="1"
+                                            colspan="2"
+                                        />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field
+                            name="message_follower_ids"
+                            groups="base.group_user"
+                        />
+                        <field name="message_ids" />
+                    </div>
+                </form>
+            </xpath>
+        </field>
+    </record>
 </odoo>

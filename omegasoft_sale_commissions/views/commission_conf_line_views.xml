@@ -1,21 +1,19 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-    <data>
-        <record id="omegasoft_commission_conf_line_tree" model="ir.ui.view">
-            <field name="name">commission.conf.line.tree</field>
-            <field name="model">commission.conf.line</field>
-            <field name="priority">1000</field>
-            <field name="arch" type="xml">
-                <tree editable="top">
-                    <field name="department_id" />
-                    <field name="bill_calculation" />
-                    <field name="fixed_amount" />
-                    <field name="direct_percentage" />
-                    <field name="allocation_percentage" />
-                    <field name="global_percentage" />
-                    <field name="scale_ids" widget="many2many_tags" />
-                </tree>
-            </field>
-        </record>
-    </data>
+    <record id="omegasoft_commission_conf_line_tree" model="ir.ui.view">
+        <field name="name">commission.conf.line.tree</field>
+        <field name="model">commission.conf.line</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="department_id" />
+                <field name="bill_calculation" />
+                <field name="fixed_amount" />
+                <field name="direct_percentage" />
+                <field name="allocation_percentage" />
+                <field name="global_percentage" />
+                <field name="scale_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
 </odoo>

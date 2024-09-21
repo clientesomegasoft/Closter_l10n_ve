@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
-        <record id="account_report_form_custom" model="ir.ui.view">
-            <field name="name">account.report.form.custom</field>
-            <field name="model">account.report</field>
-            <field name="inherit_id" ref="account_reports.account_report_form" />
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='filter_unreconciled']" position="after">
-                    <field name="filter_currency" />
-                </xpath>
-            </field>
-        </record>
-        <template
-            id="search_template_custom"
-            inherit_id="account_reports.search_template"
-        >
-            <xpath expr="//div[@id='extra_options_dropdown']" position="after">
-                <div
-                    id="currencies_dropdown"
-                    class="btn-group dropdown o_account_reports_filter_currency"
-                    t-if="options.get('selected_currency')"
-                >
-                    <t
-                        t-call="l10n_ve_account_reports_dual.search_template_currencies"
-                    />
-                </div>
+    <record id="account_report_form_custom" model="ir.ui.view">
+        <field name="name">account.report.form.custom</field>
+        <field name="model">account.report</field>
+        <field name="inherit_id" ref="account_reports.account_report_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='filter_unreconciled']" position="after">
+                <field name="filter_currency" />
             </xpath>
-        </template>
-        <template id="search_template_currencies">
-            <button
-                type="button"
-                class="o_dropdown_toggler_btn btn btn-secondary dropdown-toggle"
-                data-bs-toggle="dropdown"
+        </field>
+    </record>
+    <template
+        id="search_template_custom"
+        inherit_id="account_reports.search_template"
+    >
+        <xpath expr="//div[@id='extra_options_dropdown']" position="after">
+            <div
+                id="currencies_dropdown"
+                class="btn-group dropdown o_account_reports_filter_currency"
+                t-if="options.get('selected_currency')"
             >
-                <span class="fa fa-money" /> Moneda: <span
-                    t-foreach="options['currencies']"
-                    t-as="currency"
-                    t-if="currency['id'] == options['selected_currency']"
-                    t-esc="currency['name']"
+                <t
+                    t-call="l10n_ve_account_reports_dual.search_template_currencies"
                 />
-            </button>
-            <div class="dropdown-menu o_filter_menu" role="menu">
-                <a
-                    t-foreach="options['currencies']"
-                    t-as="currency"
-                    role="menuitem"
-                    class="dropdown-item js_account_reports_one_choice_filter"
-                    data-filter="selected_currency"
-                    t-att-data-id="currency['id']"
-                >
-                    <t t-esc="currency['name']" />
-                </a>
             </div>
-        </template>
-    </data>
+        </xpath>
+    </template>
+    <template id="search_template_currencies">
+        <button
+            type="button"
+            class="o_dropdown_toggler_btn btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+        >
+            <span class="fa fa-money" /> Moneda: <span
+                t-foreach="options['currencies']"
+                t-as="currency"
+                t-if="currency['id'] == options['selected_currency']"
+                t-esc="currency['name']"
+            />
+        </button>
+        <div class="dropdown-menu o_filter_menu" role="menu">
+            <a
+                t-foreach="options['currencies']"
+                t-as="currency"
+                role="menuitem"
+                class="dropdown-item js_account_reports_one_choice_filter"
+                data-filter="selected_currency"
+                t-att-data-id="currency['id']"
+            >
+                <t t-esc="currency['name']" />
+            </a>
+        </div>
+    </template>
 </odoo>
