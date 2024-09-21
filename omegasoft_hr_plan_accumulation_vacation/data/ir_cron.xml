@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data noupdate="1">
         <record id="ir_cron_employee_accumulation" model="ir.cron">
             <field name="name">Accumulated vacation employee</field>
-            <field name="model_id" ref="model_hr_plan_accumulation"/>
+            <field name="model_id" ref="model_hr_plan_accumulation" />
             <field name="state">code</field>
             <field name="code">model._accumulated_vacation()</field>
             <field name="interval_number">1</field>
             <field name="interval_type">days</field>
-            <field name="nextcall" eval="(DateTime.now().replace(hour=2, minute=0, second=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field
+                name="nextcall"
+                eval="(DateTime.now().replace(hour=2, minute=0, second=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"
+            />
             <field name="numbercall">-1</field>
         </record>
     </data>

@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <template id="hr_payslip_report_custom" inherit_id="omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom">
+    <template
+        id="hr_payslip_report_custom"
+        inherit_id="omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom"
+    >
 
         <xpath expr="//t[@t-set='categories_deductions']" position="after">
-            <t t-set="categories_extras" t-value="o._get_categories_extras()"/>
-            <t t-set="rules_extras" t-value="o._get_rules_extras()"/>
+            <t t-set="categories_extras" t-value="o._get_categories_extras()" />
+            <t t-set="rules_extras" t-value="o._get_rules_extras()" />
         </xpath>
 
         <!-- Replaces *:384 foreach (appears on payslip filter) -->
@@ -21,9 +24,12 @@
                 )</attribute>
         </xpath>
 
-        <xpath expr="//t/div/table/tbody/span[4][@t-foreach]//span[@t-esc='line.quantity']" position="replace">
+        <xpath
+            expr="//t/div/table/tbody/span[4][@t-foreach]//span[@t-esc='line.quantity']"
+            position="replace"
+        >
             <t t-if="(line.category_id.code in categories_extras)">
-                <span t-esc="line.total" t-options="{'widget': 'text'}"/>
+                <span t-esc="line.total" t-options="{'widget': 'text'}" />
             </t>
             <t t-else="">
                 <span t-if="line.quantity &gt; 1" t-esc="line.quantity" />

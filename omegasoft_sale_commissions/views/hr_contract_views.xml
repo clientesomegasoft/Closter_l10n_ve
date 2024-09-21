@@ -1,38 +1,60 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-	<data>
-		<record id="omegasoft_hr_contract_view_form_inherit" model="ir.ui.view">
-			<field name="name">hr.contract.view.form.inherit</field>
-			<field name="model">hr.contract</field>
-			<field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
-			<field name="arch" type="xml">
+    <data>
+        <record id="omegasoft_hr_contract_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.view.form.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+            <field name="arch" type="xml">
 
-				<xpath expr="//field[@name='analytic_account_id']" position="before">
-					<field name="receive_commission"/>
-				</xpath>
+                <xpath expr="//field[@name='analytic_account_id']" position="before">
+                    <field name="receive_commission" />
+                </xpath>
 
-				<xpath expr="//notebook[1]" position="inside">
-					<page string="Assignment settings" name="sales_allowance" attrs="{'invisible': [('receive_commission', '=', False)]}" groups="hr_contract.group_hr_contract_manager">
-						<group name="group_top">
-							<group name="group_left">
-								<label for="cutoff_type"/>
-								<div name="cutoff_div" class="o_row">
-									<field name="cutoff_type" attrs="{'required': [('receive_commission', '=', True)]}"/>
-									<field name="cutoff_date" attrs="{'required': [('cutoff_type', '=', 'personalized')], 'invisible': ['|', ('cutoff_type', '!=', 'personalized'), ('receive_commission', '=', False)]}"/>
-								</div>
-							</group>
-							<group name="group_right">
-							</group>
-						</group>
-						<field name="commission_conf_line_ids" context="{'tree_view_ref': 'sales_commissions.omegasoft_commission_conf_line_tree'}"/>
-					</page>
+                <xpath expr="//notebook[1]" position="inside">
+                    <page
+                        string="Assignment settings"
+                        name="sales_allowance"
+                        attrs="{'invisible': [('receive_commission', '=', False)]}"
+                        groups="hr_contract.group_hr_contract_manager"
+                    >
+                        <group name="group_top">
+                            <group name="group_left">
+                                <label for="cutoff_type" />
+                                <div name="cutoff_div" class="o_row">
+                                    <field
+                                        name="cutoff_type"
+                                        attrs="{'required': [('receive_commission', '=', True)]}"
+                                    />
+                                    <field
+                                        name="cutoff_date"
+                                        attrs="{'required': [('cutoff_type', '=', 'personalized')], 'invisible': ['|', ('cutoff_type', '!=', 'personalized'), ('receive_commission', '=', False)]}"
+                                    />
+                                </div>
+                            </group>
+                            <group name="group_right">
+                            </group>
+                        </group>
+                        <field
+                            name="commission_conf_line_ids"
+                            context="{'tree_view_ref': 'sales_commissions.omegasoft_commission_conf_line_tree'}"
+                        />
+                    </page>
 
-					<page string="Paid sales allocation" name="paid_sales_allocation" attrs="{'invisible': [('receive_commission', '=', False)]}" groups="hr_contract.group_hr_contract_manager">
-						<field name="paid_sales_allocation_ids" context="{'tree_view_ref': 'sales_commissions.omegasoft_paid_sales_allocation_line_tree'}"/>
-					</page>
-				</xpath>
+                    <page
+                        string="Paid sales allocation"
+                        name="paid_sales_allocation"
+                        attrs="{'invisible': [('receive_commission', '=', False)]}"
+                        groups="hr_contract.group_hr_contract_manager"
+                    >
+                        <field
+                            name="paid_sales_allocation_ids"
+                            context="{'tree_view_ref': 'sales_commissions.omegasoft_paid_sales_allocation_line_tree'}"
+                        />
+                    </page>
+                </xpath>
 
-			</field>
-		</record>
-	</data>
+            </field>
+        </record>
+    </data>
 </odoo>

@@ -1,78 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-	<record id="gross_income_report_view_tree" model="ir.ui.view">
-		<field name="name">gross.income.report.view.tree</field>
-		<field name="model">gross.income.report</field>
-		<field name="arch" type="xml">
-			<tree>
-				<field name="name"/>
-				<field name="date_from"/>
-				<field name="date_to"/>
-				<field name="currency_id" groups="base.group_multi_currency" optional="hide"/>
-				<field name="company_id" groups="base.group_multi_company" optional="hide"/>
-				<field name="state"/>
-			</tree>
-		</field>
-	</record>
-	<record id="gross_income_report_view_form" model="ir.ui.view">
-		<field name="name">gross.income.report.view.form</field>
-		<field name="model">gross.income.report</field>
-		<field name="arch" type="xml">
-			<form>
-				<header>
-					<button name="button_draft" states="posted,cancel" string="Restablecer a borrador" type="object"/>
-					<button name="button_post" string="Confirmar" class="oe_highlight" type="object" attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"/>
-					<button name="button_cancel" states="posted" string="Cancelar" type="object"/>
-					<button name="seek_for_lines" states="draft" string="Generar lineas" type="object"/>
-					<field name="state" widget="statusbar" statusbar_visible="draft,posted"/>
-				</header>
-				<sheet>
-					<div class="oe_button_box" name="button_box">
-						<field name="move_id" invisible="1"/>
-						<button name="button_open_journal_entry" type="object" class="oe_stat_button" icon="fa-bars" attrs="{'invisible': ['|', ('move_id', '=', False), ('state', '!=', 'posted')]}">
-							<div class="o_stat_info">
-								<span class="o_stat_text">Asiento</span>
-							</div>
-						</button>
-					</div>
-					<div class="oe_title">
-						<h1 class="mt0"><field name="name" placeholder="Descripción"/></h1>
-					</div>
-					<group>
-						<group>
-							<field name="date_from"/>
-							<field name="date_to"/>
-						</group>
-						<group>
-							<field name="town_hall_id"/>
-							<field name="company_id" groups="base.group_multi_company"/>
-						</group>
-					</group>
-					<notebook>
-						<page string="Lineas">
-							<field name="line_ids" options="{'no_open': 1}">
-								<tree>
-									<field name="currency_id" invisible="1"/>
-									<field name="account_id"/>
-									<field name="balance"/>
-								</tree>
-							</field>
-							<group class="oe_subtotal_footer oe_right">
-								<field name="currency_id" invisible="1"/>
-								<field name="amount_total"/>
-								<field name="percentage"/>
-								<field name="amount_tax"/>
-							</group>
-						</page>
-					</notebook>
-				</sheet>
-			</form>
-		</field>
-	</record>
-	<record id="gross_income_report_action" model="ir.actions.act_window">
-		<field name="name">Reporte de Ingresos Brutos</field>
-		<field name="res_model">gross.income.report</field>
-		<field name="view_mode">tree,form</field>
-	</record>
-	<menuitem id="menu_gross_income_report" parent="l10n_ve_config_account.menu_l10n_ve_reports" action="gross_income_report_action"/>
+    <record id="gross_income_report_view_tree" model="ir.ui.view">
+        <field name="name">gross.income.report.view.tree</field>
+        <field name="model">gross.income.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date_from" />
+                <field name="date_to" />
+                <field
+                    name="currency_id"
+                    groups="base.group_multi_currency"
+                    optional="hide"
+                />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="hide"
+                />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+    <record id="gross_income_report_view_form" model="ir.ui.view">
+        <field name="name">gross.income.report.view.form</field>
+        <field name="model">gross.income.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="button_draft"
+                        states="posted,cancel"
+                        string="Restablecer a borrador"
+                        type="object"
+                    />
+                    <button
+                        name="button_post"
+                        string="Confirmar"
+                        class="oe_highlight"
+                        type="object"
+                        attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"
+                    />
+                    <button
+                        name="button_cancel"
+                        states="posted"
+                        string="Cancelar"
+                        type="object"
+                    />
+                    <button
+                        name="seek_for_lines"
+                        states="draft"
+                        string="Generar lineas"
+                        type="object"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,posted"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="move_id" invisible="1" />
+                        <button
+                            name="button_open_journal_entry"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-bars"
+                            attrs="{'invisible': ['|', ('move_id', '=', False), ('state', '!=', 'posted')]}"
+                        >
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Asiento</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1 class="mt0"><field
+                                name="name"
+                                placeholder="Descripción"
+                            /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date_from" />
+                            <field name="date_to" />
+                        </group>
+                        <group>
+                            <field name="town_hall_id" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Lineas">
+                            <field name="line_ids" options="{'no_open': 1}">
+                                <tree>
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="account_id" />
+                                    <field name="balance" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="currency_id" invisible="1" />
+                                <field name="amount_total" />
+                                <field name="percentage" />
+                                <field name="amount_tax" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="gross_income_report_action" model="ir.actions.act_window">
+        <field name="name">Reporte de Ingresos Brutos</field>
+        <field name="res_model">gross.income.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="menu_gross_income_report"
+        parent="l10n_ve_config_account.menu_l10n_ve_reports"
+        action="gross_income_report_action"
+    />
 </odoo>

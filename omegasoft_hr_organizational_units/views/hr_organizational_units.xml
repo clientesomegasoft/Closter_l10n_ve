@@ -1,49 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="view_hr_organizational_units_form" model="ir.ui.view">
         <field name="name">view.hr.organizational.units.form</field>
         <field name="model">hr.organizational.units</field>
         <field name="arch" type="xml">
             <form string="organizational units">
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" invisible="1" />
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" type="object" name="act_employee_from_hr_organizational_units" icon="fa-users">
-                            <field string="Employees" name="total_employee" widget="statinfo"/>
+                        <button
+                            class="oe_stat_button"
+                            type="object"
+                            name="act_employee_from_hr_organizational_units"
+                            icon="fa-users"
+                        >
+                            <field
+                                string="Employees"
+                                name="total_employee"
+                                widget="statinfo"
+                            />
                         </button>
-                        <button class="oe_stat_button" type="object" name="action_plan_from_organizational_units" icon="fa-list-ul">
-                            <field string="Plans" name="plans_count" widget="statinfo"/>
+                        <button
+                            class="oe_stat_button"
+                            type="object"
+                            name="action_plan_from_organizational_units"
+                            icon="fa-list-ul"
+                        >
+                            <field
+                                string="Plans"
+                                name="plans_count"
+                                widget="statinfo"
+                            />
                         </button>
                     </div>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
-                    <field name="active" invisible="1"/>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <field name="active" invisible="1" />
                     <group col="4">
-                        <field name="active_organizational_units" invisible="1"/>
-                        <field name="name" attrs="{'required': [('active_organizational_units', '=', True)]}"/>
-                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
-                        <field name="manager_id" attrs="{'required': [('active_organizational_units', '=', True)]}"/>
-                        <field name="department_id" attrs="{'required': [('active_organizational_units', '=', True)]}"/>
-                        <field name="jobs_ids" widget="many2many_tags" attrs="{'required': [('active_organizational_units', '=', True)]}"/>
-                        <field name="custom_appraisal_templates"/>
+                        <field name="active_organizational_units" invisible="1" />
+                        <field
+                            name="name"
+                            attrs="{'required': [('active_organizational_units', '=', True)]}"
+                        />
+                        <field
+                            name="company_id"
+                            options="{'no_create': True}"
+                            groups="base.group_multi_company"
+                        />
+                        <field
+                            name="manager_id"
+                            attrs="{'required': [('active_organizational_units', '=', True)]}"
+                        />
+                        <field
+                            name="department_id"
+                            attrs="{'required': [('active_organizational_units', '=', True)]}"
+                        />
+                        <field
+                            name="jobs_ids"
+                            widget="many2many_tags"
+                            attrs="{'required': [('active_organizational_units', '=', True)]}"
+                        />
+                        <field name="custom_appraisal_templates" />
                     </group>
-                    <notebook attrs="{'invisible': [('custom_appraisal_templates', '=', False)]}">
+                    <notebook
+                        attrs="{'invisible': [('custom_appraisal_templates', '=', False)]}"
+                    >
                         <page string="Appraisal Templates">
                             <group>
                                 <group>
                                     <h3 class="ps-0">Employee</h3>
-                                    <field name="employee_feedback_template" nolabel="1" colspan="2"/>
+                                    <field
+                                        name="employee_feedback_template"
+                                        nolabel="1"
+                                        colspan="2"
+                                    />
                                 </group>
                                 <group>
                                     <h3 class="ps-0">Manager</h3>
-                                    <field name="manager_feedback_template" nolabel="1" colspan="2"/>
+                                    <field
+                                        name="manager_feedback_template"
+                                        nolabel="1"
+                                        colspan="2"
+                                    />
                                 </group>
                             </group>
                         </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" groups="base.group_user"/>
-                    <field name="message_ids"/>
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="message_ids" />
                 </div>
             </form>
         </field>
@@ -54,10 +104,10 @@
         <field name="model">hr.organizational.units</field>
         <field name="arch" type="xml">
             <tree string="Companies" sample="1">
-                <field name="name"/>
-                <field name="company_id" groups="base.group_multi_company"/>
-                <field name="manager_id"/>
-                <field name="company_id" invisible="1"/>
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="manager_id" />
+                <field name="company_id" invisible="1" />
             </tree>
         </field>
     </record>
@@ -67,11 +117,19 @@
         <field name="model">hr.organizational.units</field>
         <field name="arch" type="xml">
             <search string="Organizational units">
-                <field name="name" string="organizational units"/>
+                <field name="name" string="organizational units" />
                 <field name="manager_id" />
-                <filter string="Unread Messages" name="message_needaction" domain="[('message_needaction','=',True)]"/>
-                <separator/>
-                <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                <filter
+                    string="Unread Messages"
+                    name="message_needaction"
+                    domain="[('message_needaction','=',True)]"
+                />
+                <separator />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active','=',False)]"
+                />
             </search>
             </field>
     </record>
@@ -82,8 +140,13 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_organizational_units" name="organizational units" action="hr_organizational_units_tree_action" parent="hr.menu_config_employee" groups="hr.group_hr_user" sequence="4"/>
-    
+    <menuitem
+        id="menu_organizational_units"
+        name="organizational units"
+        action="hr_organizational_units_tree_action"
+        parent="hr.menu_config_employee"
+        groups="hr.group_hr_user"
+        sequence="4"
+    />
+
 </odoo>
-
-

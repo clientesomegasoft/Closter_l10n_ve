@@ -1,7 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <data>
-        
+
         <record id="employee_disability_001" model="hr_employee_disability">
             <field name="name">Discapacidad fisica</field>
         </record>
@@ -25,6 +25,6 @@
         <record id="employee_disability_006" model="hr_employee_disability">
             <field name="name">Discapacidad visual</field>
         </record>
-    
+
     </data>
 </odoo>

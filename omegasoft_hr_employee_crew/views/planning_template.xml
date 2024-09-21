@@ -1,24 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <record id="planning_slot_template_view_tree_inherit_employee_crew" model="ir.ui.view">
+    <record
+        id="planning_slot_template_view_tree_inherit_employee_crew"
+        model="ir.ui.view"
+    >
         <field name="name">planning.slot.template.view.list.inherit</field>
         <field name="model">planning.slot.template</field>
-        <field name="inherit_id" ref="omegasoft_payroll_planning.omegasoft_planning_slot_template_view_tree"/>
+        <field
+            name="inherit_id"
+            ref="omegasoft_payroll_planning.omegasoft_planning_slot_template_view_tree"
+        />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='work_entry_type_id']" position="after">
-                <field name="employee_crew_id" options="{'no_create': 1}" optional="show"/>
+                <field
+                    name="employee_crew_id"
+                    options="{'no_create': 1}"
+                    optional="show"
+                />
             </xpath>
         </field>
     </record>
 
-    <record id="planning_slot_template_view_form_inherit_employee_crew" model="ir.ui.view">
+    <record
+        id="planning_slot_template_view_form_inherit_employee_crew"
+        model="ir.ui.view"
+    >
         <field name="name">planning.slot.template.view.form.inherit</field>
         <field name="model">planning.slot.template</field>
-        <field name="inherit_id" ref="planning.planning_slot_template_view_form"/>
+        <field name="inherit_id" ref="planning.planning_slot_template_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//sheet/group/group[1]" position="inside">
-                <field name="employee_crew_id" options="{'no_create': 1, 'no_edit': 1}"/>
+                <field
+                    name="employee_crew_id"
+                    options="{'no_create': 1, 'no_edit': 1}"
+                />
             </xpath>
         </field>
     </record>

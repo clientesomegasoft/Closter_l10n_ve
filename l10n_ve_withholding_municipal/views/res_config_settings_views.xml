@@ -1,47 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-	<record id="res_config_settings_view_form" model="ir.ui.view">
-		<field name="name">res.config.settings.view.form</field>
-		<field name="model">res.config.settings</field>
-		<field name="priority" eval="1"/>
-		<field name="inherit_id" ref="l10n_ve_config_withholding.res_config_settings_view_form"/>
-		<field name="arch" type="xml">
-			<xpath expr="//div[@name='company_sign']" position="before">
-				<div class="col-12 col-lg-6 o_setting_box" name="withholding_municipal_container">
-					<div class="o_setting_left_pane">
-						<field name="is_municipal_agent"/>
-					</div>
-					<div class="o_setting_right_pane">
-						<label for="is_municipal_agent"/>
-						<div class="content-group">
-							<div class="row mt8" attrs="{'invisible': [('is_municipal_agent', '=', False)]}">
-								<label for="in_municipal_journal_id" class="col-lg-4 o_light_label"/>
-								<field name="in_municipal_journal_id" attrs="{'required': [('is_municipal_agent', '=', True)]}" options="{'no_create': 1, 'no_open': 1}"/>
-							</div>
-							<div class="row mt8" attrs="{'invisible': [('is_municipal_agent', '=', False)]}">
-								<label for="in_municipal_account_id" class="col-lg-4 o_light_label"/>
-								<field name="in_municipal_account_id" attrs="{'required': [('is_municipal_agent', '=', True)]}" options="{'no_create': 1, 'no_open': 1}"/>
-							</div>
-							<div class="row mt8">
-								<label for="out_municipal_journal_id" class="col-lg-4 o_light_label"/>
-								<field name="out_municipal_journal_id" options="{'no_create': 1, 'no_open': 1}"/>
-							</div>
-							<div class="row mt8">
-								<label for="out_municipal_account_id" class="col-lg-4 o_light_label"/>
-								<field name="out_municipal_account_id" options="{'no_create': 1, 'no_open': 1}"/>
-							</div>
-							<div class="row mt8" attrs="{'invisible': [('is_municipal_agent', '=', False)]}">
-								<label for="activity_number" class="col-lg-4 o_light_label"/>
-								<field name="activity_number"/>
-							</div>
-							<div class="row mt8" attrs="{'invisible': [('is_municipal_agent', '=', False)]}">
-								<label for="nifg" class="col-lg-4 o_light_label"/>
-								<field name="nifg"/>
-							</div>
-						</div>
-					</div>
-				</div>
-			</xpath>
-		</field>
-	</record>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="1" />
+        <field
+            name="inherit_id"
+            ref="l10n_ve_config_withholding.res_config_settings_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='company_sign']" position="before">
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    name="withholding_municipal_container"
+                >
+                    <div class="o_setting_left_pane">
+                        <field name="is_municipal_agent" />
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="is_municipal_agent" />
+                        <div class="content-group">
+                            <div
+                                class="row mt8"
+                                attrs="{'invisible': [('is_municipal_agent', '=', False)]}"
+                            >
+                                <label
+                                    for="in_municipal_journal_id"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field
+                                    name="in_municipal_journal_id"
+                                    attrs="{'required': [('is_municipal_agent', '=', True)]}"
+                                    options="{'no_create': 1, 'no_open': 1}"
+                                />
+                            </div>
+                            <div
+                                class="row mt8"
+                                attrs="{'invisible': [('is_municipal_agent', '=', False)]}"
+                            >
+                                <label
+                                    for="in_municipal_account_id"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field
+                                    name="in_municipal_account_id"
+                                    attrs="{'required': [('is_municipal_agent', '=', True)]}"
+                                    options="{'no_create': 1, 'no_open': 1}"
+                                />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="out_municipal_journal_id"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field
+                                    name="out_municipal_journal_id"
+                                    options="{'no_create': 1, 'no_open': 1}"
+                                />
+                            </div>
+                            <div class="row mt8">
+                                <label
+                                    for="out_municipal_account_id"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field
+                                    name="out_municipal_account_id"
+                                    options="{'no_create': 1, 'no_open': 1}"
+                                />
+                            </div>
+                            <div
+                                class="row mt8"
+                                attrs="{'invisible': [('is_municipal_agent', '=', False)]}"
+                            >
+                                <label
+                                    for="activity_number"
+                                    class="col-lg-4 o_light_label"
+                                />
+                                <field name="activity_number" />
+                            </div>
+                            <div
+                                class="row mt8"
+                                attrs="{'invisible': [('is_municipal_agent', '=', False)]}"
+                            >
+                                <label for="nifg" class="col-lg-4 o_light_label" />
+                                <field name="nifg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
 </odoo>

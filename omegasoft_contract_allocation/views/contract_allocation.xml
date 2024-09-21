@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <data>
         <!-- contract_allocation -->
@@ -11,10 +11,24 @@
                     <field name="allocation_date" />
                     <field name="name" />
                     <field name="description" />
-                    <field name="employee_ids" widget='many2many_tags' optional="hide"/>
-                    <field name="employee_file" invisible="True"/>
-                    <field name="employee_file_code_ids" widget="many2many_tags" options="{'no_create': 1}" optional="hide" invisible="not context.get('employee_file')"/>
-                    <field name="employee_contract_ids" widget="many2many_tags" optional="hide"/>
+                    <field
+                        name="employee_ids"
+                        widget='many2many_tags'
+                        optional="hide"
+                    />
+                    <field name="employee_file" invisible="True" />
+                    <field
+                        name="employee_file_code_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': 1}"
+                        optional="hide"
+                        invisible="not context.get('employee_file')"
+                    />
+                    <field
+                        name="employee_contract_ids"
+                        widget="many2many_tags"
+                        optional="hide"
+                    />
                 </tree>
             </field>
         </record>
@@ -26,44 +40,112 @@
                 <form string="Allocation">
                     <sheet>
                         <field name="active" invisible="1" />
-                        <group name="top" >
+                        <group name="top">
                             <group name="right">
-                                <field name="name" required="1"/>
-                                <field name="employee_ids" required="1" widget="many2many_tags" options="{'no_create': True}" placeholder="Employee(s)" attrs="{'required': [('name', '=', 'employee')]}"/>
-                                <field name="employee_file" invisible="True"/>
-                                <field name="company_id" invisible="True"/>
-                                <field name="employee_file_code_ids" widget="many2many_tags" options="{'no_create': 1}" attrs="{'invisible': [('employee_file', '=', False)], 'required': [('employee_file', '=', True)] }" domain="[('company_id', '=', company_id),('employee_id.contract_id.state', '=', 'open')]"/>
-                                <field name="job_title" readonly="1" attrs="{'invisible': [('name', '!=', 'employee')]}" force_save="1"/>
+                                <field name="name" required="1" />
+                                <field
+                                    name="employee_ids"
+                                    required="1"
+                                    widget="many2many_tags"
+                                    options="{'no_create': True}"
+                                    placeholder="Employee(s)"
+                                    attrs="{'required': [('name', '=', 'employee')]}"
+                                />
+                                <field name="employee_file" invisible="True" />
+                                <field name="company_id" invisible="True" />
+                                <field
+                                    name="employee_file_code_ids"
+                                    widget="many2many_tags"
+                                    options="{'no_create': 1}"
+                                    attrs="{'invisible': [('employee_file', '=', False)], 'required': [('employee_file', '=', True)] }"
+                                    domain="[('company_id', '=', company_id),('employee_id.contract_id.state', '=', 'open')]"
+                                />
+                                <field
+                                    name="job_title"
+                                    readonly="1"
+                                    attrs="{'invisible': [('name', '!=', 'employee')]}"
+                                    force_save="1"
+                                />
                                 <field name="description" />
                             </group>
                             <group name="left">
-                                <field name="employee_contract_ids" invisible="1" widget="many2many_tags" options="{'no_create': True}" placeholder="Contract(s)"/>
+                                <field
+                                    name="employee_contract_ids"
+                                    invisible="1"
+                                    widget="many2many_tags"
+                                    options="{'no_create': True}"
+                                    placeholder="Contract(s)"
+                                />
                                 <!-- <field name="department_ids" widget="many2many_tags" options="{'no_create': True}" placeholder="Department(s)" attrs="{'required': [('name', '=', 'department')]}"/>
                                 <field name="company_id" attrs="{'required': [('name', '=', 'company')]}"/> -->
-                                <field name="allocation_date" required="1" placeholder="Start date for delivery of the endowment"/>
+                                <field
+                                    name="allocation_date"
+                                    required="1"
+                                    placeholder="Start date for delivery of the endowment"
+                                />
                             </group>
                         </group>
 
                         <notebook>
                             <page name="allocation_lines" string="Allocation lines">
 
-                                <field name="allocation_line_ids" required="1" widget="section_and_note_one2many" mode="tree">
+                                <field
+                                    name="allocation_line_ids"
+                                    required="1"
+                                    widget="section_and_note_one2many"
+                                    mode="tree"
+                                >
                                     <tree editable="bottom" delete="false">
-                                        <field name="employee_ids" invisible="1"/>
-                                        <field name="employee_id" required="1" domain="[('id', 'in', employee_ids)]" options="{'no_create': True}"/>
-                                        <field name="employee_file" invisible="True"/>
-                                        <field name="employee_file_code_id" domain="[('employee_id', 'in', employee_ids)]" options="{'no_create': True}" attrs="{'column_invisible': [('parent.employee_file', '=', False)], 'required': [('employee_file', '=', True)]}"/>
-                                        <field name="product_id" required="1" domain="[('detailed_type', '=', 'consu'), ('is_an_endowment_product', '=', True)]" options="{'no_create': True}"/>
-                                        <field name="size_id" required="1"/>
+                                        <field name="employee_ids" invisible="1" />
+                                        <field
+                                            name="employee_id"
+                                            required="1"
+                                            domain="[('id', 'in', employee_ids)]"
+                                            options="{'no_create': True}"
+                                        />
+                                        <field name="employee_file" invisible="True" />
+                                        <field
+                                            name="employee_file_code_id"
+                                            domain="[('employee_id', 'in', employee_ids)]"
+                                            options="{'no_create': True}"
+                                            attrs="{'column_invisible': [('parent.employee_file', '=', False)], 'required': [('employee_file', '=', True)]}"
+                                        />
+                                        <field
+                                            name="product_id"
+                                            required="1"
+                                            domain="[('detailed_type', '=', 'consu'), ('is_an_endowment_product', '=', True)]"
+                                            options="{'no_create': True}"
+                                        />
+                                        <field name="size_id" required="1" />
                                         <field name="allocated_quantity" required="1" />
-                                        <field name="delivered_each" readonly="1"/>
+                                        <field name="delivered_each" readonly="1" />
                                         <field name="frequency" required="1" />
                                         <field name="delivery_frequency" required="1" />
-                                        <field name="is_delivered" invisible="1"/>
-                                        <field name="quantity_delivered" readonly="1" force_save="1"/>
-                                        <field name="date_delivered" readonly="1" force_save="1"/>
-                                        <field name="quantity_to_deliver" readonly="1" force_save="1"/>
-                                        <button name="unlink" title="delete" type="object" class="btn-secondary float-right" attrs="{'invisible': [('quantity_delivered', '>', 0)]}" icon="fa-trash-o" force_save="1"/>
+                                        <field name="is_delivered" invisible="1" />
+                                        <field
+                                            name="quantity_delivered"
+                                            readonly="1"
+                                            force_save="1"
+                                        />
+                                        <field
+                                            name="date_delivered"
+                                            readonly="1"
+                                            force_save="1"
+                                        />
+                                        <field
+                                            name="quantity_to_deliver"
+                                            readonly="1"
+                                            force_save="1"
+                                        />
+                                        <button
+                                            name="unlink"
+                                            title="delete"
+                                            type="object"
+                                            class="btn-secondary float-right"
+                                            attrs="{'invisible': [('quantity_delivered', '>', 0)]}"
+                                            icon="fa-trash-o"
+                                            force_save="1"
+                                        />
                                     </tree>
                                 </field>
                             </page>
@@ -71,9 +153,9 @@
 
                     </sheet>
                     <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="activity_ids" widget="mail_activity"/>
-                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="activity_ids" widget="mail_activity" />
+                        <field name="message_ids" widget="mail_thread" />
                     </div>
                 </form>
             </field>
@@ -90,11 +172,31 @@
                     <field name="allocation_date" />
                     <field name="name" />
                     <field name="description" />
-                    <field name="state" widget="badge" decoration-warning="state == 'draft'" decoration-info="state == 'partial_delivery'" decoration-success="state == 'delivered'"/>
-                    <field name="employee_ids" widget='many2many_tags' optional="hide"/>
-                    <field name="employee_file" invisible="True"/>
-                    <field name="employee_file_code_ids" widget="many2many_tags" options="{'no_create': 1}" optional="hide" invisible="not context.get('employee_file')"/>
-                    <field name="employee_contract_ids" widget="many2many_tags" optional="hide"/>
+                    <field
+                        name="state"
+                        widget="badge"
+                        decoration-warning="state == 'draft'"
+                        decoration-info="state == 'partial_delivery'"
+                        decoration-success="state == 'delivered'"
+                    />
+                    <field
+                        name="employee_ids"
+                        widget='many2many_tags'
+                        optional="hide"
+                    />
+                    <field name="employee_file" invisible="True" />
+                    <field
+                        name="employee_file_code_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': 1}"
+                        optional="hide"
+                        invisible="not context.get('employee_file')"
+                    />
+                    <field
+                        name="employee_contract_ids"
+                        widget="many2many_tags"
+                        optional="hide"
+                    />
                 </tree>
             </field>
         </record>
@@ -105,51 +207,168 @@
             <field name="arch" type="xml">
                 <form string="Allocation">
                     <header>
-                        <button string="Submit" name="get_lines_to_delivered" type="object" class="oe_highlight"/>
+                        <button
+                            string="Submit"
+                            name="get_lines_to_delivered"
+                            type="object"
+                            class="oe_highlight"
+                        />
                         <field name="state" widget="statusbar" />
                     </header>
 
                     <sheet>
-                        <field name="compute_state" invisible="1"/>
+                        <field name="compute_state" invisible="1" />
                         <field name="active" invisible="1" />
-                        <group name="top" >
+                        <group name="top">
                             <group name="right">
-                                <field name="name" readonly="1" required="1"/>
-                                <field name="employee_ids" readonly="1" required="1" widget="many2many_tags" options="{'no_create': True}" placeholder="Employee(s)" attrs="{'required': [('name', '=', 'employee')]}"/>
-                                <field name="employee_file" invisible="True"/>
-                                <field name="employee_file_code_ids" widget="many2many_tags" options="{'no_create': 1}" attrs="{'invisible': [('employee_file', '=', False)], 'required': [('employee_file', '=', True)]}" domain="[('company_id', '=', company_id),('employee_id.contract_id.state', '=', 'open')]"/>
-                                <field name="job_title" readonly="1" attrs="{'invisible': [('name', '!=', 'employee')]}" force_save="1"/>
+                                <field name="name" readonly="1" required="1" />
+                                <field
+                                    name="employee_ids"
+                                    readonly="1"
+                                    required="1"
+                                    widget="many2many_tags"
+                                    options="{'no_create': True}"
+                                    placeholder="Employee(s)"
+                                    attrs="{'required': [('name', '=', 'employee')]}"
+                                />
+                                <field name="employee_file" invisible="True" />
+                                <field
+                                    name="employee_file_code_ids"
+                                    widget="many2many_tags"
+                                    options="{'no_create': 1}"
+                                    attrs="{'invisible': [('employee_file', '=', False)], 'required': [('employee_file', '=', True)]}"
+                                    domain="[('company_id', '=', company_id),('employee_id.contract_id.state', '=', 'open')]"
+                                />
+                                <field
+                                    name="job_title"
+                                    readonly="1"
+                                    attrs="{'invisible': [('name', '!=', 'employee')]}"
+                                    force_save="1"
+                                />
                                 <field name="description" />
                             </group>
                             <group name="left">
-                                <field name="employee_contract_ids" readonly="1" invisible="1" widget="many2many_tags" options="{'no_create': True}" placeholder="Contract(s)"/>
-                                <field name="department_ids" widget="many2many_tags" options="{'no_create': True}" placeholder="Department(s)" attrs="{'required': [('name', '=', 'department')]}"/>
-                                <field name="company_id" attrs="{'required': [('name', '=', 'company')]}"/>
-                                <field name="allocation_date" readonly="1" required="1" placeholder="Start date for delivery of the endowment"/>
+                                <field
+                                    name="employee_contract_ids"
+                                    readonly="1"
+                                    invisible="1"
+                                    widget="many2many_tags"
+                                    options="{'no_create': True}"
+                                    placeholder="Contract(s)"
+                                />
+                                <field
+                                    name="department_ids"
+                                    widget="many2many_tags"
+                                    options="{'no_create': True}"
+                                    placeholder="Department(s)"
+                                    attrs="{'required': [('name', '=', 'department')]}"
+                                />
+                                <field
+                                    name="company_id"
+                                    attrs="{'required': [('name', '=', 'company')]}"
+                                />
+                                <field
+                                    name="allocation_date"
+                                    readonly="1"
+                                    required="1"
+                                    placeholder="Start date for delivery of the endowment"
+                                />
                             </group>
                         </group>
 
                         <notebook>
                             <page name="allocation_lines" string="Allocation lines">
 
-                                <field name="allocation_line_ids" required="1" widget="section_and_note_one2many" mode="tree">
-                                    <tree editable="bottom" delete="false" create="false">
-                                        <field name="employee_ids" invisible="1"/>
-                                        <field name="employee_file" invisible="True"/>
-                                        <field name="employee_id" readonly="1" required="1" domain="[('id', 'in', employee_ids)]" options="{'no_create': True}"/>
-                                        <field name="employee_file_code_id" domain="[('employee_id', 'in', employee_ids)]" options="{'no_create': True}" attrs="{'column_invisible': [('parent.employee_file', '=', False)], 'required': [('employee_file', '=', True)]}"/>
-                                        <field name="product_id" readonly="1" required="1" domain="[('detailed_type', '=', 'consu'), ('is_an_endowment_product', '=', True)]" options="{'no_create': True}"/>
-                                        <field name="size_id" readonly="1" required="1"/>
-                                        <field name="allocated_quantity" readonly="1" required="1" />
-                                        <field name="delivered_each" readonly="1" force_save="1"/>
-                                        <field name="frequency" readonly="1" required="1" />
-                                        <field name="delivery_frequency" readonly="1" required="1" />
-                                        <field name="is_delivered" invisible="1"/>
-                                        <field name="quantity_delivered" readonly="1" force_save="1"/>
-                                        <field name="date_delivered" readonly="1" force_save="1"/>
-                                        <field name="quantity_to_deliver" readonly="1" force_save="1"/>
-                                        <field name="state" widget="badge" decoration-warning="state == 'draft'" decoration-info="state == 'partial_delivery'" decoration-success="state == 'delivered'" force_save="1"/>
-                                        <button name="unlink" title="delete" type="object" class="btn-secondary float-right" attrs="{'invisible': [('quantity_delivered', '>', 0)]}" icon="fa-trash-o"/>
+                                <field
+                                    name="allocation_line_ids"
+                                    required="1"
+                                    widget="section_and_note_one2many"
+                                    mode="tree"
+                                >
+                                    <tree
+                                        editable="bottom"
+                                        delete="false"
+                                        create="false"
+                                    >
+                                        <field name="employee_ids" invisible="1" />
+                                        <field name="employee_file" invisible="True" />
+                                        <field
+                                            name="employee_id"
+                                            readonly="1"
+                                            required="1"
+                                            domain="[('id', 'in', employee_ids)]"
+                                            options="{'no_create': True}"
+                                        />
+                                        <field
+                                            name="employee_file_code_id"
+                                            domain="[('employee_id', 'in', employee_ids)]"
+                                            options="{'no_create': True}"
+                                            attrs="{'column_invisible': [('parent.employee_file', '=', False)], 'required': [('employee_file', '=', True)]}"
+                                        />
+                                        <field
+                                            name="product_id"
+                                            readonly="1"
+                                            required="1"
+                                            domain="[('detailed_type', '=', 'consu'), ('is_an_endowment_product', '=', True)]"
+                                            options="{'no_create': True}"
+                                        />
+                                        <field
+                                            name="size_id"
+                                            readonly="1"
+                                            required="1"
+                                        />
+                                        <field
+                                            name="allocated_quantity"
+                                            readonly="1"
+                                            required="1"
+                                        />
+                                        <field
+                                            name="delivered_each"
+                                            readonly="1"
+                                            force_save="1"
+                                        />
+                                        <field
+                                            name="frequency"
+                                            readonly="1"
+                                            required="1"
+                                        />
+                                        <field
+                                            name="delivery_frequency"
+                                            readonly="1"
+                                            required="1"
+                                        />
+                                        <field name="is_delivered" invisible="1" />
+                                        <field
+                                            name="quantity_delivered"
+                                            readonly="1"
+                                            force_save="1"
+                                        />
+                                        <field
+                                            name="date_delivered"
+                                            readonly="1"
+                                            force_save="1"
+                                        />
+                                        <field
+                                            name="quantity_to_deliver"
+                                            readonly="1"
+                                            force_save="1"
+                                        />
+                                        <field
+                                            name="state"
+                                            widget="badge"
+                                            decoration-warning="state == 'draft'"
+                                            decoration-info="state == 'partial_delivery'"
+                                            decoration-success="state == 'delivered'"
+                                            force_save="1"
+                                        />
+                                        <button
+                                            name="unlink"
+                                            title="delete"
+                                            type="object"
+                                            class="btn-secondary float-right"
+                                            attrs="{'invisible': [('quantity_delivered', '>', 0)]}"
+                                            icon="fa-trash-o"
+                                        />
                                     </tree>
                                 </field>
                             </page>
@@ -157,9 +376,9 @@
 
                     </sheet>
                     <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="activity_ids" widget="mail_activity"/>
-                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="activity_ids" widget="mail_activity" />
+                        <field name="message_ids" widget="mail_thread" />
                     </div>
                 </form>
             </field>
@@ -173,7 +392,11 @@
                 <search>
                     <field name="name" />
                     <separator />
-                    <filter name="archived" string="Archived" domain="[('active', '=', False)]" />
+                    <filter
+                        name="archived"
+                        string="Archived"
+                        domain="[('active', '=', False)]"
+                    />
                 </search>
             </field>
         </record>
@@ -182,26 +405,52 @@
             <field name="name">Configuration of endowments</field>
             <field name="res_model">contract_allocation</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_ids" eval="[(5, 0, 0),
+            <field
+                name="view_ids"
+                eval="[(5, 0, 0),
                 (0, 0, {'view_mode': 'tree', 'view_id': ref('contract_allocation_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('contract_allocation_form')})]"/>
+                (0, 0, {'view_mode': 'form', 'view_id': ref('contract_allocation_form')})]"
+            />
         </record>
 
-        <record id="contract_allocation_to_delivered_action" model="ir.actions.act_window">
+        <record
+            id="contract_allocation_to_delivered_action"
+            model="ir.actions.act_window"
+        >
             <field name="name">Allocation to delivered</field>
             <field name="res_model">contract_allocation</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_ids" eval="[(5, 0, 0),
+            <field
+                name="view_ids"
+                eval="[(5, 0, 0),
                 (0, 0, {'view_mode': 'tree', 'view_id': ref('contract_allocation_to_delivered_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('contract_allocation_to_delivered_form')}),]"/>
+                (0, 0, {'view_mode': 'form', 'view_id': ref('contract_allocation_to_delivered_form')}),]"
+            />
             <field name="context">{'create':0}</field>
         </record>
 
         <!-- actions -->
-        <menuitem id="menu_contract_allocation" name="Allocation" parent="hr.menu_hr_root" sequence="97" />
+        <menuitem
+            id="menu_contract_allocation"
+            name="Allocation"
+            parent="hr.menu_hr_root"
+            sequence="97"
+        />
 
-        <menuitem id="contract_allocation_config" name="Delivery configuration" action="contract_allocation_action" parent="menu_contract_allocation" sequence="1" />
-        <menuitem id="contract_allocation_delivery_registration" name="Delivery registration" action="contract_allocation_to_delivered_action" parent="menu_contract_allocation" sequence="2" />
+        <menuitem
+            id="contract_allocation_config"
+            name="Delivery configuration"
+            action="contract_allocation_action"
+            parent="menu_contract_allocation"
+            sequence="1"
+        />
+        <menuitem
+            id="contract_allocation_delivery_registration"
+            name="Delivery registration"
+            action="contract_allocation_to_delivered_action"
+            parent="menu_contract_allocation"
+            sequence="2"
+        />
 
     </data>
 </odoo>

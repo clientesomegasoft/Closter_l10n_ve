@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <data>
 
@@ -18,8 +18,14 @@
                     <field name="maximum_age" />
                     <field name="type_maximum_age" />
                     <field name="study_level" />
-                    <field name="state" widget="badge" decoration-info="state == 'new'" decoration-warning="state == 'cancel'" decoration-success="state == 'assigned'" />
-                    <field name="currency_id" optional="hide"/>
+                    <field
+                        name="state"
+                        widget="badge"
+                        decoration-info="state == 'new'"
+                        decoration-warning="state == 'cancel'"
+                        decoration-success="state == 'assigned'"
+                    />
+                    <field name="currency_id" optional="hide" />
 
                 </tree>
             </field>
@@ -32,11 +38,41 @@
                 <form string="Employee Bonus">
                     <header>
                         <field name="state" widget="statusbar" />
-                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
-                        <button name="action_cancel" string="Cancel" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['new', 'assigned', 'cancel'])]}"/>
-                        <button name="action_draft" string="Draft" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['new', 'draft', 'cancel'])]}"/>
-                        <button name="action_draft" string="restore a draft" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['new', 'draft', 'assigned'])]}"/>
-                        <button name="search_employees" string="Search employees" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'not in', ['new','draft'])]}"/>
+                        <button
+                            name="action_confirm"
+                            string="Confirm"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state', 'not in', ['draft'])]}"
+                        />
+                        <button
+                            name="action_cancel"
+                            string="Cancel"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ['new', 'assigned', 'cancel'])]}"
+                        />
+                        <button
+                            name="action_draft"
+                            string="Draft"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ['new', 'draft', 'cancel'])]}"
+                        />
+                        <button
+                            name="action_draft"
+                            string="restore a draft"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ['new', 'draft', 'assigned'])]}"
+                        />
+                        <button
+                            name="search_employees"
+                            string="Search employees"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state', 'not in', ['new','draft'])]}"
+                        />
                     </header>
                     <sheet>
                         <field name="active" invisible="1" />
@@ -44,10 +80,16 @@
 
                             <group name="group_left" style="width:50%;">
                                 <field name="name" required="True" />
-                                <field name="company_id" invisible="1"/>
+                                <field name="company_id" invisible="1" />
                                 <label for="amount" />
                                 <div class="o_row" name="amount">
-                                    <field name="amount" required="1" nolabel="1" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field
+                                        name="amount"
+                                        required="1"
+                                        nolabel="1"
+                                        widget="monetary"
+                                        options="{'currency_field': 'currency_id'}"
+                                    />
                                     <span> - </span>
                                     <field name="currency_id" required="1" />
                                 </div>
@@ -55,34 +97,77 @@
                             </group>
 
                             <group name="group_right" style="width:50%;">
-                                <field name="description" attrs="{'required': [('name', 'in', ['toy_voucher'])]}"/>
+                                <field
+                                    name="description"
+                                    attrs="{'required': [('name', 'in', ['toy_voucher'])]}"
+                                />
                                 <label for="rate_id" />
                                 <div class="o_row" name="rate_id">
-                                    <field name="company_currency" invisible="1"/>
-                                    <field name="rate_id" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="company_currency" invisible="1" />
+                                    <field
+                                        name="rate_id"
+                                        options="{'no_create': True, 'no_open': True}"
+                                    />
                                 </div>
-                                <label for="minimum_age" attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}" />
+                                <label
+                                    for="minimum_age"
+                                    attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}"
+                                />
                                 <div class="o_row" name="minimun_age">
-                                    <field name="minimum_age" nolabel="1" attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}" />
-                                    <field name="type_minimum_age" attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}" />
+                                    <field
+                                        name="minimum_age"
+                                        nolabel="1"
+                                        attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}"
+                                    />
+                                    <field
+                                        name="type_minimum_age"
+                                        attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}"
+                                    />
                                 </div>
-                                <label for="maximum_age" attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}" />
+                                <label
+                                    for="maximum_age"
+                                    attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}"
+                                />
                                 <div class="o_row" name="miximun_age">
-                                    <field name="maximum_age" nolabel="1" attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}" />
-                                    <field name="type_maximum_age" attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}" />
+                                    <field
+                                        name="maximum_age"
+                                        nolabel="1"
+                                        attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}"
+                                    />
+                                    <field
+                                        name="type_maximum_age"
+                                        attrs="{'invisible': [('name', 'not in', ['toy_voucher', 'birth_bonus'])], 'required': [('name', 'in', ['toy_voucher', 'birth_bonus'])]}"
+                                    />
                                 </div>
 
-                                <field name="study_level" attrs="{'invisible': [('name', '!=', 'school_voucher')], 'required': [('name', '=', 'school_voucher')]}" />
+                                <field
+                                    name="study_level"
+                                    attrs="{'invisible': [('name', '!=', 'school_voucher')], 'required': [('name', '=', 'school_voucher')]}"
+                                />
                             </group>
                         </group>
                         <notebook>
 
                             <page string="Bonus" name="employee_bonus">
-                                <field name="bonus_line_ids" widget="one2many" readonly="0" nolabel="1">
-                                    <tree string="Current Bonus" editable="bottom" no_open="1" create="0" delete="1">
-                                        <field name="employee_id" no_open="1"/>
-                                        <field name="bonus_id" no_open="1"/>
-                                        <field name="employee_bonus_amount" sum='Total bonus amount'/>
+                                <field
+                                    name="bonus_line_ids"
+                                    widget="one2many"
+                                    readonly="0"
+                                    nolabel="1"
+                                >
+                                    <tree
+                                        string="Current Bonus"
+                                        editable="bottom"
+                                        no_open="1"
+                                        create="0"
+                                        delete="1"
+                                    >
+                                        <field name="employee_id" no_open="1" />
+                                        <field name="bonus_id" no_open="1" />
+                                        <field
+                                            name="employee_bonus_amount"
+                                            sum='Total bonus amount'
+                                        />
                                     </tree>
                                 </field>
                             </page>
@@ -91,9 +176,9 @@
 
                     </sheet>
                     <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="activity_ids" widget="mail_activity"/>
-                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="activity_ids" widget="mail_activity" />
+                        <field name="message_ids" widget="mail_thread" />
                     </div>
                 </form>
             </field>
@@ -106,7 +191,11 @@
                 <search>
                     <field name="name" />
                     <separator />
-                    <filter name="archived" string="Archived" domain="[('active', '=', False)]" />
+                    <filter
+                        name="archived"
+                        string="Archived"
+                        domain="[('active', '=', False)]"
+                    />
                 </search>
             </field>
         </record>
@@ -118,9 +207,20 @@
         </record>
 
         <!-- actions -->
-        <menuitem id="menu_hr_employee_bonus" name="Eventual bonus" parent="hr.menu_hr_root" sequence="98" />
+        <menuitem
+            id="menu_hr_employee_bonus"
+            name="Eventual bonus"
+            parent="hr.menu_hr_root"
+            sequence="98"
+        />
 
-        <menuitem id="hr_employee_bonus_config" name="Employee Bonus" action="hr_employee_bonus_action" parent="menu_hr_employee_bonus" sequence="1" />
+        <menuitem
+            id="hr_employee_bonus_config"
+            name="Employee Bonus"
+            action="hr_employee_bonus_action"
+            parent="menu_hr_employee_bonus"
+            sequence="1"
+        />
 
     </data>
 </odoo>

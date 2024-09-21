@@ -1,67 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-	<record id="account_liquor_tax_report_view_tree" model="ir.ui.view">
-		<field name="name">account.liquor.tax.report.view.tree</field>
-		<field name="model">account.liquor.tax.report</field>
-		<field name="arch" type="xml">
-			<tree>
-				<field name="name"/>
-				<field name="date_from"/>
-				<field name="date_to"/>
-				<field name="company_id" groups="base.group_multi_company"/>
-				<field name="amount"/>
-				<field name="state"/>
-			</tree>
-		</field>
-	</record>
-	<record id="account_liquor_tax_report_view_form" model="ir.ui.view">
-		<field name="name">account.liquor.tax.report.view.form</field>
-		<field name="model">account.liquor.tax.report</field>
-		<field name="arch" type="xml">
-			<form>
-				<header>
-					<button name="seek_for_lines" states="draft" string="Generar lineas" type="object"/>
-					<button name="button_draft" states="confirmed,paid" string="Restablecer a borrador" type="object"/>
-					<button name="button_confirm" string="Confirmar" type="object" attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"/>
-					<button name="button_pay" string="Pagar" type="object" attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'confirmed')]}"/>
-					<field name="state" widget="statusbar"/>
-				</header>
-				<sheet>
-					<div class="oe_title">
-						<h1 class="mt0"><field name="name" placeholder="Descripción"/></h1>
-					</div>
-					<group col="4">
-						<field name="date_from"/>
-						<field name="date_to"/>
-					</group>
-					<notebook>
-						<page name="lines" string="Lineas">
-							<field name="line_ids" nolabel="1">
-								<tree>
-									<field name="report_id" invisible="1"/>
-									<field name="currency_id" invisible="1"/>
-									<field name="liquor_tax_id"/>
-									<field name="rate"/>
-									<field name="base_amount"/>
-									<field name="amount"/>
-								</tree>
-							</field>
-							<group col="4" name="total_amount">
-								<group colspan="1" class="oe_subtotal_footer oe_right">
-									<field name="currency_id" invisible="1"/>
-									<field name="amount"/>
-								</group>
-							</group>
-						</page>
-					</notebook>
-				</sheet>
-			</form>
-		</field>
-	</record>
-	<record id="account_liquor_tax_report_action" model="ir.actions.act_window">
-		<field name="name">Reporte impuestos por venta de licor</field>
-		<field name="res_model">account.liquor.tax.report</field>
-		<field name="view_mode">tree,form</field>
-	</record>
-	<menuitem id="menu_account_liquor_tax_report" parent="l10n_ve_config_account.menu_l10n_ve_reports" action="account_liquor_tax_report_action"/>
+    <record id="account_liquor_tax_report_view_tree" model="ir.ui.view">
+        <field name="name">account.liquor.tax.report.view.tree</field>
+        <field name="model">account.liquor.tax.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date_from" />
+                <field name="date_to" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="amount" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+    <record id="account_liquor_tax_report_view_form" model="ir.ui.view">
+        <field name="name">account.liquor.tax.report.view.form</field>
+        <field name="model">account.liquor.tax.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="seek_for_lines"
+                        states="draft"
+                        string="Generar lineas"
+                        type="object"
+                    />
+                    <button
+                        name="button_draft"
+                        states="confirmed,paid"
+                        string="Restablecer a borrador"
+                        type="object"
+                    />
+                    <button
+                        name="button_confirm"
+                        string="Confirmar"
+                        type="object"
+                        attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"
+                    />
+                    <button
+                        name="button_pay"
+                        string="Pagar"
+                        type="object"
+                        attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'confirmed')]}"
+                    />
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class="mt0"><field
+                                name="name"
+                                placeholder="Descripción"
+                            /></h1>
+                    </div>
+                    <group col="4">
+                        <field name="date_from" />
+                        <field name="date_to" />
+                    </group>
+                    <notebook>
+                        <page name="lines" string="Lineas">
+                            <field name="line_ids" nolabel="1">
+                                <tree>
+                                    <field name="report_id" invisible="1" />
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="liquor_tax_id" />
+                                    <field name="rate" />
+                                    <field name="base_amount" />
+                                    <field name="amount" />
+                                </tree>
+                            </field>
+                            <group col="4" name="total_amount">
+                                <group colspan="1" class="oe_subtotal_footer oe_right">
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="amount" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="account_liquor_tax_report_action" model="ir.actions.act_window">
+        <field name="name">Reporte impuestos por venta de licor</field>
+        <field name="res_model">account.liquor.tax.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="menu_account_liquor_tax_report"
+        parent="l10n_ve_config_account.menu_l10n_ve_reports"
+        action="account_liquor_tax_report_action"
+    />
 </odoo>

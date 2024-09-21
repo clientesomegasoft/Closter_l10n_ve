@@ -1,27 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="hr_view_employee_form_omegasoft_family_information" model="ir.ui.view">
         <field name="name">hr.view.employee.form.omegasoft.family_information</field>
         <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='personal_information']" position="after">
                 <page name="family_informartion" string="Family data">
                     <field name="family_information_ids" nolabel="1">
                         <tree editable="bottom" create="1">
-                            <field name="relationship" required="1"/>
-                            <field name="name" required="1"/>
-                            <field name="guardianship" attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])], 'required': [('relationship', 'in', ['son','daughter'])]}"/>
-                            <field name="nationality" attrs="{'required': [('relationship', 'in', ['father','mother','spouse'])]}"/>
-                            <field name="id_number" attrs="{'required': [('relationship', 'not in', ['son','daughter'])]}"/>
-                            <field name="gender" attrs="{'invisible': [('relationship', 'not in', ['son','daughter','spouse'])], 'required': [('relationship', 'in', ['son','daughter','spouse'])]}"/>
-                            <field name="date_of_birth" required="1"/>
-                            <field name="age" readonly="1" force_save="1"/>
-                            <field name="type_age" readonly="1" force_save="1"/>
-                            <field name="study_level" attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])]}"/>
-                            <field name="is_family_burden"/>
-                            <field name="employee_id" invisible="1"/>
+                            <field name="relationship" required="1" />
+                            <field name="name" required="1" />
+                            <field
+                                name="guardianship"
+                                attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])], 'required': [('relationship', 'in', ['son','daughter'])]}"
+                            />
+                            <field
+                                name="nationality"
+                                attrs="{'required': [('relationship', 'in', ['father','mother','spouse'])]}"
+                            />
+                            <field
+                                name="id_number"
+                                attrs="{'required': [('relationship', 'not in', ['son','daughter'])]}"
+                            />
+                            <field
+                                name="gender"
+                                attrs="{'invisible': [('relationship', 'not in', ['son','daughter','spouse'])], 'required': [('relationship', 'in', ['son','daughter','spouse'])]}"
+                            />
+                            <field name="date_of_birth" required="1" />
+                            <field name="age" readonly="1" force_save="1" />
+                            <field name="type_age" readonly="1" force_save="1" />
+                            <field
+                                name="study_level"
+                                attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])]}"
+                            />
+                            <field name="is_family_burden" />
+                            <field name="employee_id" invisible="1" />
                         </tree>
                     </field>
                 </page>

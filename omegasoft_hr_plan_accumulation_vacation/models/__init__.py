@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import hr_plan_accumulation
 from . import hr_plan_accumulation_enjoy
 from . import hr_plan_accumulation_vacation

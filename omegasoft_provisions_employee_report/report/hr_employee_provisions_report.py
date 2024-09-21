@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import tools
-from odoo import api, fields, models
+from odoo import fields, models, tools
 
 
 class HrContractEmployeeReport(models.Model):
@@ -10,27 +8,34 @@ class HrContractEmployeeReport(models.Model):
     _description = "Employees Provisions Report"
     _auto = False
 
-    contract_id = fields.Many2one('hr.contract', 'Contract', readonly=True)
-    employee_id = fields.Many2one('hr.employee', 'Employee', readonly=True)
-    company_id = fields.Many2one('res.company', 'Company', readonly=True)
-    department_id = fields.Many2one('hr.department', 'Department', readonly=True)
+    contract_id = fields.Many2one("hr.contract", "Contract", readonly=True)
+    employee_id = fields.Many2one("hr.employee", "Employee", readonly=True)
+    company_id = fields.Many2one("res.company", "Company", readonly=True)
+    department_id = fields.Many2one("hr.department", "Department", readonly=True)
 
     # Utilidades
-    earnings_generated = fields.Float('Earnings generated', readonly=True)
-    advances_granted = fields.Float('Advances granted', readonly=True)
-    earnings_generated_total_available = fields.Float('Earnings generated total available', readonly=True)
-    
-    #Prestaciones Sociales
-    social_benefits_generated = fields.Float('Social benefits generated', readonly=True)
-    accrued_social_benefits = fields.Float('Accrued social benefits', readonly=True)
-    advances_of_social_benefits = fields.Float('Advances of social benefits', readonly=True)
-    total_available_social_benefits_generated = fields.Float('Total available social benefits generated', readonly=True)
-    benefit_interest = fields.Float('Benefit interest', readonly=True)
-    days_per_year_accumulated = fields.Float('Days per year accumulated', readonly=True)
-    
-    #Vacaciones
-    vacations_advances_granted = fields.Float('Vacations advances granted', readonly=True)
+    earnings_generated = fields.Float("Earnings generated", readonly=True)
+    advances_granted = fields.Float("Advances granted", readonly=True)
+    earnings_generated_total_available = fields.Float(
+        "Earnings generated total available", readonly=True
+    )
 
+    # Prestaciones Sociales
+    social_benefits_generated = fields.Float("Social benefits generated", readonly=True)
+    accrued_social_benefits = fields.Float("Accrued social benefits", readonly=True)
+    advances_of_social_benefits = fields.Float(
+        "Advances of social benefits", readonly=True
+    )
+    total_available_social_benefits_generated = fields.Float(
+        "Total available social benefits generated", readonly=True
+    )
+    benefit_interest = fields.Float("Benefit interest", readonly=True)
+    days_per_year_accumulated = fields.Float("Days per year accumulated", readonly=True)
+
+    # Vacaciones
+    vacations_advances_granted = fields.Float(
+        "Vacations advances granted", readonly=True
+    )
 
     def init(self):
         query = """
@@ -70,4 +75,6 @@ class HrContractEmployeeReport(models.Model):
                 c.vacations_advances_granted
                 """
         tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute("""CREATE or REPLACE VIEW %s as (%s)""" % (self._table, query))
+        self.env.cr.execute(
+            """CREATE or REPLACE VIEW %s as (%s)""" % (self._table, query)
+        )

@@ -1,51 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-	<record id="ari_employee_setting_view_tree" model="ir.ui.view">
-		<field name="name">ari.employee.setting.view.tree</field>
-		<field name="model">ari.employee.setting</field>
-		<field name="arch" type="xml">
-			<tree string="">
-				<field name="employee_id"/>
-				<field name="employee_file" invisible="True"/>
-                <field name="employee_file_code_id" options="{'no_create': 1}" optional="hide" invisible="not context.get('employee_file')"/>
-				<field name="fiscal_year"/>
-			</tree>
-		</field>
-	</record>
-	<record id="ari_employee_setting_view_form" model="ir.ui.view">
-		<field name="name">ari.employee.setting.view.form</field>
-		<field name="model">ari.employee.setting</field>
-		<field name="arch" type="xml">
-			<form string="">
-				<sheet>
-					<group col="4">
-						<field name="employee_id" colspan="2" options="{'no_create': 1}"/>
-						<field name="employee_file" invisible="True"/>
-                		<field name="employee_file_code_id" required="1" options="{'no_create': 1}" attrs="{'invisible': [('employee_file', '=', False)]}"/>
-						<field name="fiscal_year" widget="fieldyear_int" colspan="2"/>
-					</group>
-					<notebook>
-						<page name="expences" string="Lineas">
-							<field name="line_ids">
-								<tree editable="bottom">
-									<field name="expense"/>
-									<field name="amount" required="1"/>
-									<field name="trimester_1"/>
-									<field name="trimester_2"/>
-									<field name="trimester_3"/>
-									<field name="trimester_4"/>
-								</tree>
-							</field>
-						</page>
-					</notebook>
-				</sheet>
-			</form>
-		</field>
-	</record>
-	<record id="ari_employee_setting_action" model="ir.actions.act_window">
-		<field name="name">Configuración ARI</field>
-		<field name="res_model">ari.employee.setting</field>
-		<field name="view_mode">tree,form</field>
-	</record>
-	<menuitem id="menu_ari_employee_setting" action="ari_employee_setting_action" parent="hr.menu_human_resources_configuration" sequence="5"/>
+    <record id="ari_employee_setting_view_tree" model="ir.ui.view">
+        <field name="name">ari.employee.setting.view.tree</field>
+        <field name="model">ari.employee.setting</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="employee_id" />
+                <field name="employee_file" invisible="True" />
+                <field
+                    name="employee_file_code_id"
+                    options="{'no_create': 1}"
+                    optional="hide"
+                    invisible="not context.get('employee_file')"
+                />
+                <field name="fiscal_year" />
+            </tree>
+        </field>
+    </record>
+    <record id="ari_employee_setting_view_form" model="ir.ui.view">
+        <field name="name">ari.employee.setting.view.form</field>
+        <field name="model">ari.employee.setting</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group col="4">
+                        <field
+                            name="employee_id"
+                            colspan="2"
+                            options="{'no_create': 1}"
+                        />
+                        <field name="employee_file" invisible="True" />
+                        <field
+                            name="employee_file_code_id"
+                            required="1"
+                            options="{'no_create': 1}"
+                            attrs="{'invisible': [('employee_file', '=', False)]}"
+                        />
+                        <field name="fiscal_year" widget="fieldyear_int" colspan="2" />
+                    </group>
+                    <notebook>
+                        <page name="expences" string="Lineas">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="expense" />
+                                    <field name="amount" required="1" />
+                                    <field name="trimester_1" />
+                                    <field name="trimester_2" />
+                                    <field name="trimester_3" />
+                                    <field name="trimester_4" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="ari_employee_setting_action" model="ir.actions.act_window">
+        <field name="name">Configuración ARI</field>
+        <field name="res_model">ari.employee.setting</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="menu_ari_employee_setting"
+        action="ari_employee_setting_action"
+        parent="hr.menu_human_resources_configuration"
+        sequence="5"
+    />
 </odoo>

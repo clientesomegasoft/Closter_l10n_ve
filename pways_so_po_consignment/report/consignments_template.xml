@@ -1,35 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
         <template id="consignments_template">
             <t t-call="web.html_container">
                 <t t-call="web.basic_layout">
-                    <div class="oe_structure"/>
+                    <div class="oe_structure" />
                         <div class="page">
                             <t t-if="report_type == 'consignment_details_report'">
                                 <div>
-                                    <div class="text-center"> 
-                                        <span style="font-size:30px;"><b>Consignment Report Details</b></span>
+                                    <div class="text-center">
+                                        <span style="font-size:30px;"><b
+                                        >Consignment Report Details</b></span>
                                     </div>
                                 </div>
-                                <br/>
+                                <br />
                                 <t t-foreach="consignment_header_report" t-as="header">
                                     <div class="row">
                                             <div class="col-6">
                                                 <span>Vendor name:</span>
-                                                <span t-esc="header['vendor_name']"/><br/>
+                                                <span
+                                            t-esc="header['vendor_name']"
+                                        /><br />
                                                 <span>Reference Id:</span>
-                                                <span t-esc="header['consignment_name']"/><br/>
+                                                <span
+                                            t-esc="header['consignment_name']"
+                                        /><br />
                                             </div>
                                             <div class="col-6">
                                                 <span>Date:</span>
-                                                <span t-esc="header['purchase_date']"/><br/>
+                                                <span
+                                            t-esc="header['purchase_date']"
+                                        /><br />
                                                 <span>Sale Orders:</span>
-                                                <span t-esc="header['sale_order_ids']"/><br/>
+                                                <span
+                                            t-esc="header['sale_order_ids']"
+                                        /><br />
                                             </div>
                                     </div>
                                 </t>
-                                <table class="table table-sm table-bordered" style="width:100%">
+                                <table
+                                class="table table-sm table-bordered"
+                                style="width:100%"
+                            >
                                     <thead>
                                         <tr>
                                             <th><strong>Product</strong></th>
@@ -41,24 +53,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr t-foreach="consignment_detailes_report" t-as="line">
+                                        <tr
+                                        t-foreach="consignment_detailes_report"
+                                        t-as="line"
+                                    >
                                             <td>
-                                                <span t-esc="line['product_name']"/>
+                                                <span t-esc="line['product_name']" />
                                             </td>
                                             <td class="text-center">
-                                                <span t-esc="line['purchase_qty']"/>
+                                                <span t-esc="line['purchase_qty']" />
                                             </td>
                                             <td class="text-center">
-                                                <span t-esc="line['sale_qty']"/>
+                                                <span t-esc="line['sale_qty']" />
                                             </td>
                                             <td class="text-center">
-                                                <span t-esc="line['purchase_price']"/>
+                                                <span t-esc="line['purchase_price']" />
                                             </td>
                                             <td class="text-center">
-                                                <span t-esc="line['sale_price']"/>
+                                                <span t-esc="line['sale_price']" />
                                             </td>
                                             <td class="text-center">
-                                                <span t-esc="line['uom']"/>
+                                                <span t-esc="line['uom']" />
                                             </td>
                                         </tr>
                                     </tbody>
@@ -68,27 +83,45 @@
                                         <div class="col-8">
                                         </div>
                                         <div class="col-4">
-                                            <table class="table table-sm table-bordered">
+                                            <table
+                                            class="table table-sm table-bordered"
+                                        >
                                                 <thead>
                                                     <tr>
-                                                        <th><strong>Total Sale Amount: </strong></th>
-                                                        <th><strong><span t-esc="footer['total_sale_amount']"/></strong></th>
+                                                        <th><strong
+                                                        >Total Sale Amount: </strong></th>
+                                                        <th><strong><span
+                                                                t-esc="footer['total_sale_amount']"
+                                                            /></strong></th>
                                                     </tr>
                                                     <tr>
-                                                        <th><strong>Our Commision <span t-esc="footer['commission_percentage']"/> %</strong></th>
-                                                        <th><strong><span t-esc="footer['commission']"/></strong></th>
+                                                        <th><strong>Our Commision <span
+                                                                t-esc="footer['commission_percentage']"
+                                                            /> %</strong></th>
+                                                        <th><strong><span
+                                                                t-esc="footer['commission']"
+                                                            /></strong></th>
                                                     </tr>
                                                     <tr>
-                                                        <th><strong>Service Charge: </strong></th>
-                                                        <th><strong>-<span t-esc="footer['expense_amount']"/></strong></th>
+                                                        <th><strong
+                                                        >Service Charge: </strong></th>
+                                                        <th><strong>-<span
+                                                                t-esc="footer['expense_amount']"
+                                                            /></strong></th>
                                                     </tr>
                                                     <tr>
-                                                        <th><strong>Total Expens: </strong></th>
-                                                        <th><strong>-<span t-esc="footer['total_expense']"/></strong></th>
+                                                        <th><strong
+                                                        >Total Expens: </strong></th>
+                                                        <th><strong>-<span
+                                                                t-esc="footer['total_expense']"
+                                                            /></strong></th>
                                                     </tr>
                                                     <tr>
-                                                        <th><strong>Net Payble: </strong></th>
-                                                        <th><strong><span t-esc="footer['paid_amount']"/></strong></th>
+                                                        <th><strong
+                                                        >Net Payble: </strong></th>
+                                                        <th><strong><span
+                                                                t-esc="footer['paid_amount']"
+                                                            /></strong></th>
                                                     </tr>
                                                 </thead>
                                             </table>
@@ -98,28 +131,35 @@
                             </t>
                             <t t-if="report_type == 'purchase_sale_report'">
                                 <div>
-                                    <div class="text-center"> 
-                                        <span style="font-size:30px;"><b>Sale by product report</b></span>
+                                    <div class="text-center">
+                                        <span style="font-size:30px;"><b
+                                        >Sale by product report</b></span>
                                     </div>
                                 </div>
-                                <br/>
+                                <br />
                                 <t t-foreach="lines" t-as="rec">
                                     <t t-if="rec['order_line']">
                                         <div class="row">
                                             <div class="col-6">
                                                 <span>Sale Order:</span>
-                                                <span t-esc="rec['name']"/><br/>
+                                                <span t-esc="rec['name']" /><br />
                                                 <span>Date:</span>
-                                                <span t-esc="rec['sale'].date_order"/><br/>
+                                                <span
+                                                t-esc="rec['sale'].date_order"
+                                            /><br />
                                             </div>
                                             <div class="col-6">
                                                 <span>Customers:</span>
-                                                <span t-esc="rec['customer']"/><br/>
+                                                <span t-esc="rec['customer']" /><br />
                                                 <span>Purchase Order: </span>
-                                                <span t-esc="rec['purchase_id']"/><br/>
+                                                <span t-esc="rec['purchase_id']" /><br
+                                            />
                                             </div>
                                         </div>
-                                        <table class="table table-sm table-bordered" style="width:100%">
+                                        <table
+                                        class="table table-sm table-bordered"
+                                        style="width:100%"
+                                    >
                                             <thead style="font-size:13px;">
                                                 <tr>
                                                     <th><strong>Product</strong></th>
@@ -129,18 +169,27 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="font-size:13px;">
-                                                <tr t-foreach="rec['order_line']" t-as="line">
+                                                <tr
+                                                t-foreach="rec['order_line']"
+                                                t-as="line"
+                                            >
                                                     <td>
-                                                        <span t-esc="line.product_id.name"/>
+                                                        <span
+                                                        t-esc="line.product_id.name"
+                                                    />
                                                     </td>
                                                     <td class="text-center">
-                                                        <span t-esc="line.product_uom_qty"/>
+                                                        <span
+                                                        t-esc="line.product_uom_qty"
+                                                    />
                                                     </td>
                                                     <td class="text-center">
-                                                        <span t-esc="line.price_unit"/>
+                                                        <span t-esc="line.price_unit" />
                                                     </td>
                                                     <td class="text-center">
-                                                        <span t-esc="line.price_subtotal"/>
+                                                        <span
+                                                        t-esc="line.price_subtotal"
+                                                    />
                                                     </td>
                                                 </tr>
                                             </tbody>

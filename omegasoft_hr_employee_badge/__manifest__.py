@@ -1,17 +1,16 @@
-# -*- coding: utf-8 -*-
 {
-    'name': 'Omegasoft C.A - Hr Employee Card',
-    'version': '16.0.16',
-    'category': 'Human Resources/Contracts',
-    'author': 'Omegasoft C.A',
-    'contributor': 'Daniel Ospino - daniel.ospino@omegasoftve.com',
-	'website': 'https://www.omegasoftve.com',
-    'description': """
+    "name": "Omegasoft C.A - Hr Employee Card",
+    "version": "16.0.16",
+    "category": "Human Resources/Contracts",
+    "author": "Omegasoft C.A",
+    "contributor": "Daniel Ospino - daniel.ospino@omegasoftve.com",
+    "website": "https://github.com/OCA/l10n-venezuela",
+    "description": """
     Generate employee card
     """,
-    'depends': ['base','hr'],
-    'data': [
-        'views/hr_employee_badge.xml',
+    "depends": ["base", "hr"],
+    "data": [
+        "views/hr_employee_badge.xml",
     ],
-    'license': 'LGPL-3'
+    "license": "LGPL-3",
 }

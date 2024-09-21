@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
     <!-- Generar TXT de Nomina -->
     <record id="export_bank_payments_view_tree" model="ir.ui.view">
@@ -22,10 +22,19 @@
         <field name="arch" type="xml">
             <form string="Generar TXT de Nómina">
                 <header>
-                    <button name="action_draft" string="Convertir a borrador" type="object"
-                        states="done" />
-                    <button name="action_done" string="Confirmar" type="object" class="btn-primary"
-                        states="draft" />
+                    <button
+                        name="action_draft"
+                        string="Convertir a borrador"
+                        type="object"
+                        states="done"
+                    />
+                    <button
+                        name="action_done"
+                        string="Confirmar"
+                        type="object"
+                        class="btn-primary"
+                        states="draft"
+                    />
                     <field name="state" widget="statusbar" />
                 </header>
                 <sheet>
@@ -40,33 +49,58 @@
                             <field name="description" />
                             <label for="date_start" string="Período" />
                             <div>
-                                <field name="date_start" required="1" class="oe_inline" /> - <field
-                                    name="date_end" required="1" class="oe_inline" />
+                                <field
+                                    name="date_start"
+                                    required="1"
+                                    class="oe_inline"
+                                /> - <field
+                                    name="date_end"
+                                    required="1"
+                                    class="oe_inline"
+                                />
                             </div>
 
                             <field name="type_trans" invisible="1" />
-                            <field name="structure_id"
-                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll'), ('state', '=', 'draft'), ('by_employee', '=', False)]}" />
+                            <field
+                                name="structure_id"
+                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll'), ('state', '=', 'draft'), ('by_employee', '=', False)]}"
+                            />
                             <field name="employee_domain" invisible="1" />
                             <field name="by_employee" />
-                            <field name="employee_ids" widget="many2many_tags"
+                            <field
+                                name="employee_ids"
+                                widget="many2many_tags"
                                 domain="[('id', 'in', employee_domain)]"
                                 options="{'no_create': True}"
-                                attrs="{'invisible': [('by_employee', '=', False)], 'required': [('by_employee', '!=',  False)]}" />
+                                attrs="{'invisible': [('by_employee', '=', False)], 'required': [('by_employee', '!=',  False)]}"
+                            />
                             <field name="txt_file" filename="txt_name" readonly="1" />
                             <field name="txt_name" invisible="1" />
                         </group>
                         <group>
                             <field name="type_trans" required="1" />
-                            <field name="bank_id" options="{'no_create': True}"
-                                attrs="{'required': [('type_trans', '=', 'payroll')]}" />
-                            <field name="bank_account_id" options="{'no_create': True}"
-                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}" />
-                            <field name="txt_type" attrs="{'invisible': [('type_trans', '!=', 'payroll')]}"/>
-                            <field name="operation_type"
-                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}" />
-                            <field name="valid_date"
-                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}" />
+                            <field
+                                name="bank_id"
+                                options="{'no_create': True}"
+                                attrs="{'required': [('type_trans', '=', 'payroll')]}"
+                            />
+                            <field
+                                name="bank_account_id"
+                                options="{'no_create': True}"
+                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}"
+                            />
+                            <field
+                                name="txt_type"
+                                attrs="{'invisible': [('type_trans', '!=', 'payroll')]}"
+                            />
+                            <field
+                                name="operation_type"
+                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}"
+                            />
+                            <field
+                                name="valid_date"
+                                attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}"
+                            />
                         </group>
                     </group>
                 </sheet>
@@ -96,8 +130,12 @@
         </field>
     </record>
 
-    <menuitem id="export_bank_payments_menu" name="Generar TXT de Nómina"
-        parent="hr_payroll.menu_hr_payroll_report" action="export_bank_payments_action"
-        sequence="11" />
+    <menuitem
+        id="export_bank_payments_menu"
+        name="Generar TXT de Nómina"
+        parent="hr_payroll.menu_hr_payroll_report"
+        action="export_bank_payments_action"
+        sequence="11"
+    />
 
 </odoo>

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import hr_job
 from . import planning_slot_template
 from . import plannig_slot

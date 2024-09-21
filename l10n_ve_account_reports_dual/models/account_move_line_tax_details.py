@@ -1,14 +1,12 @@
-# -*- coding: utf-8 -*-
-
 from odoo import api, models
 
 
 class AccountMoveLine(models.Model):
-    _inherit = 'account.move.line'
+    _inherit = "account.move.line"
 
     @api.model
     def _get_query_tax_details(self, tables, where_clause, where_params, fallback=True):
-        """ Create the tax details sub-query based on the orm domain passed as parameter.
+        """Create the tax details sub-query based on the orm domain passed as parameter.
 
         :param tables:          The 'tables' query to inject after the FROM.
         :param where_clause:    The 'where_clause' query computed based on an orm domain.
@@ -16,7 +14,7 @@ class AccountMoveLine(models.Model):
         :param fallback:        Fallback on an approximated mapping if the mapping failed.
         :return:                A tuple <query, params>.
         """
-        group_taxes = self.env['account.tax'].search([('amount_type', '=', 'group')])
+        group_taxes = self.env["account.tax"].search([("amount_type", "=", "group")])
 
         group_taxes_query_list = []
         group_taxes_params = []
@@ -25,18 +23,20 @@ class AccountMoveLine(models.Model):
             if not children_taxes:
                 continue
 
-            children_taxes_in_query = ','.join('%s' for dummy in children_taxes)
-            group_taxes_query_list.append(f'WHEN tax.id = %s THEN ARRAY[{children_taxes_in_query}]')
+            children_taxes_in_query = ",".join("%s" for dummy in children_taxes)
+            group_taxes_query_list.append(
+                f"WHEN tax.id = %s THEN ARRAY[{children_taxes_in_query}]"
+            )
             group_taxes_params.append(group_tax.id)
             group_taxes_params.extend(children_taxes.ids)
 
         if group_taxes_query_list:
-            group_taxes_query = f'''UNNEST(CASE {' '.join(group_taxes_query_list)} ELSE ARRAY[tax.id] END)'''
+            group_taxes_query = f"""UNNEST(CASE {' '.join(group_taxes_query_list)} ELSE ARRAY[tax.id] END)"""
         else:
-            group_taxes_query = 'tax.id'
+            group_taxes_query = "tax.id"
 
         if fallback:
-            fallback_query = f'''
+            fallback_query = f"""
                 UNION ALL
 
                 SELECT
@@ -57,13 +57,14 @@ class AccountMoveLine(models.Model):
                     AND base_line.currency_id = account_move_line.currency_id
                 WHERE base_tax_line_mapping.tax_line_id IS NULL
                 AND {where_clause}
-            '''
+            """
             fallback_params = where_params
         else:
-            fallback_query = ''
+            fallback_query = ""
             fallback_params = []
 
-        return f'''
+        return (
+            f"""
             /*
             As example to explain the different parts of the query, we'll consider a move with the following lines:
             Name            Tax_line_id         Tax_ids                 Debit       Credit      Base lines
@@ -480,4 +481,10 @@ class AccountMoveLine(models.Model):
                     0.0
                 ) AS tax_amount_currency
             FROM base_tax_matching_all_amounts sub
-        ''', group_taxes_params + where_params + where_params + where_params + fallback_params
+        """,
+            group_taxes_params
+            + where_params
+            + where_params
+            + where_params
+            + fallback_params,
+        )

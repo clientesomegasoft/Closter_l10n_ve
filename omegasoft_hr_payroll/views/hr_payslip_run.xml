@@ -1,24 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="hr_payslip_run_form_inherit_omegasoft" model="ir.ui.view">
         <field name="name">hr.payslip.run.form.inherit.omegasoft</field>
         <field name="model">hr.payslip.run</field>
-        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form" />
         <field name="arch" type="xml">
             <xpath expr="//header/button[1]" position="replace">
-                <button name="contex_payslip_by_employee" type="object" states="draft" string="Generate payroll receipts" class="oe_highlight"/>
+                <button
+                    name="contex_payslip_by_employee"
+                    type="object"
+                    states="draft"
+                    string="Generate payroll receipts"
+                    class="oe_highlight"
+                />
             </xpath>
             <xpath expr="//sheet/group/group[1]" position="before">
                 <group name="struct">
-                    <label for="struct_id"/>
+                    <label for="struct_id" />
                         <div class="o_row">
                             <field name="struct_id" />
                         </div>
                 </group>
                 <group name="fortnight">
-                    <field name="struct_fortnight" invisible="1"/>
-                    <field name="fortnight" attrs="{'invisible': [('struct_fortnight', '!=', 'bi-weekly')] ,'required': [('struct_fortnight', '=', 'bi-weekly')]}"/>
+                    <field name="struct_fortnight" invisible="1" />
+                    <field
+                        name="fortnight"
+                        attrs="{'invisible': [('struct_fortnight', '!=', 'bi-weekly')] ,'required': [('struct_fortnight', '=', 'bi-weekly')]}"
+                    />
                 </group>
             </xpath>
         </field>
@@ -28,26 +37,34 @@
     <record id="hr_payslip_run_view_form_inherit_omegasoft_rate" model="ir.ui.view">
         <field name="name">hr.payslip.run.view.form.inherit.omegasoft.rate</field>
         <field name="model">hr.payslip.run</field>
-        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form" />
         <field name="arch" type="xml">
 
             <xpath expr="//sheet/group/group[2]" position="before">
                 <group name="rate">
-                    <field name="number_of_mondays" invisible="1"/>
-                    <field name="number_of_saturdays_sundays" invisible="1"/>
+                    <field name="number_of_mondays" invisible="1" />
+                    <field name="number_of_saturdays_sundays" invisible="1" />
                     <label for="rate_id" />
                     <div class="o_row" name="rate_id">
-                        <field name="company_currency" invisible="1"/>
-                        <field name="rate_id" options="{'no_create': True, 'no_open': True}" domain="[('currency_rate_active', '=', True), ('currency_id', '!=', company_currency), ('is_payroll_rate', '=', True)]"/>
-                        <field name="rate_amount" readonly="1" force_save="1"/>
+                        <field name="company_currency" invisible="1" />
+                        <field
+                            name="rate_id"
+                            options="{'no_create': True, 'no_open': True}"
+                            domain="[('currency_rate_active', '=', True), ('currency_id', '!=', company_currency), ('is_payroll_rate', '=', True)]"
+                        />
+                        <field name="rate_amount" readonly="1" force_save="1" />
                     </div>
                 </group>
             </xpath>
 
             <xpath expr="//field[@name='date_end']" position="after">
-                <div class="o_row" name="week_number" attrs="{'invisible': [('struct_fortnight', '!=', 'weekly')]}">
-                     - <label for="week_number"/>
-                    <field name="week_number" class="col-3 text-center"/>
+                <div
+                    class="o_row"
+                    name="week_number"
+                    attrs="{'invisible': [('struct_fortnight', '!=', 'weekly')]}"
+                >
+                     - <label for="week_number" />
+                    <field name="week_number" class="col-3 text-center" />
                 </div>
             </xpath>
 

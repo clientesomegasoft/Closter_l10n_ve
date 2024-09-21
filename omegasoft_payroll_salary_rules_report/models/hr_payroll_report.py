@@ -1,15 +1,15 @@
-# -*- coding: utf-8 -*-
-from odoo import tools
-from odoo import models, fields, api
+from odoo import fields, models, tools
+
 
 class HrPayrollReport(models.Model):
     _inherit = "hr.payroll.report"
 
-    salary_rule_name = fields.Char('Salary rule', readonly=True)
-    count_assignments =  fields.Float('Assignments', readonly=True)
-    count_deductions =  fields.Float('Deductions', readonly=True)
-    employee_category_id =  fields.Many2one('hr.employee.category', 'Category', readonly=True)
-
+    salary_rule_name = fields.Char("Salary rule", readonly=True)
+    count_assignments = fields.Float("Assignments", readonly=True)
+    count_deductions = fields.Float("Deductions", readonly=True)
+    employee_category_id = fields.Many2one(
+        "hr.employee.category", "Category", readonly=True
+    )
 
     def init(self):
         query = """
@@ -70,12 +70,14 @@ class HrPayrollReport(models.Model):
                 plg.total,
                 min_id.min_line,
                 c.id,
-                pl.name, 
+                pl.name,
                 src.code,
                 pl.total,
                 src.case,
-				ec.category_id,
+                ec.category_id,
                 d.master_department_id
                 """
         tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute("""CREATE or REPLACE VIEW %s as (%s)""" % (self._table, query))
+        self.env.cr.execute(
+            """CREATE or REPLACE VIEW %s as (%s)""" % (self._table, query)
+        )

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
 
@@ -9,11 +9,20 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="payroll_structure_type" required="1" options="{'no_open': True, 'no_create': True}" />
-                            <field name="salary_rule_category" widget="many2many_tags" required="1" options="{'no_open': True, 'no_create': True}"/>
+                            <field
+                                name="payroll_structure_type"
+                                required="1"
+                                options="{'no_open': True, 'no_create': True}"
+                            />
+                            <field
+                                name="salary_rule_category"
+                                widget="many2many_tags"
+                                required="1"
+                                options="{'no_open': True, 'no_create': True}"
+                            />
                             <!-- <field name="structure_type_default_schedule_pay" invisible="1"/>  attrs="{'required': [('structure_type_default_schedule_pay', '=', 'monthly')]}"-->
                             <field name="average_days" />
-                            <field name="company_id" invisible="1"/>
+                            <field name="company_id" invisible="1" />
                         </group>
                     </sheet>
                 </form>
@@ -25,10 +34,17 @@
             <field name="model">hr.estimated.profit</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="payroll_structure_type" options="{'no_open': True, 'no_create': True}" />
-                    <field name="salary_rule_category" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                    <field
+                        name="payroll_structure_type"
+                        options="{'no_open': True, 'no_create': True}"
+                    />
+                    <field
+                        name="salary_rule_category"
+                        widget="many2many_tags"
+                        options="{'no_open': True, 'no_create': True}"
+                    />
                     <field name="average_days" />
-                    <field name="company_id" invisible="1"/>
+                    <field name="company_id" invisible="1" />
                     <!-- <field name="structure_type_default_schedule_pay" invisible="1"/> -->
                 </tree>
             </field>

@@ -1,48 +1,69 @@
-# -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
-
-from odoo import models, fields, api, _
-from odoo.tools import float_is_zero
 
 from itertools import chain
 
+from odoo import models
+
 
 class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
-    _inherit = 'account.multicurrency.revaluation.report.handler'
+    _inherit = "account.multicurrency.revaluation.report.handler"
 
-    def _multi_currency_revaluation_get_custom_lines(self, options, line_code, current_groupby, next_groupby, offset=0, limit=None):
+    def _multi_currency_revaluation_get_custom_lines(
+        self, options, line_code, current_groupby, next_groupby, offset=0, limit=None
+    ):
         def build_result_dict(report, query_res):
-            foreign_currency = self.env['res.currency'].browse(query_res['currency_id'][0]) if len(query_res['currency_id']) == 1 else None
+            foreign_currency = (
+                self.env["res.currency"].browse(query_res["currency_id"][0])
+                if len(query_res["currency_id"]) == 1
+                else None
+            )
 
             return {
-                'balance_currency': report.format_value(query_res['balance_currency'], currency=foreign_currency, figure_type='monetary'),
-                'balance_operation': query_res['balance_operation'],
-                'balance_current': query_res['balance_current'],
-                'adjustment': query_res['adjustment'],
-                'has_sublines': query_res['aml_count'] > 0,
+                "balance_currency": report.format_value(
+                    query_res["balance_currency"],
+                    currency=foreign_currency,
+                    figure_type="monetary",
+                ),
+                "balance_operation": query_res["balance_operation"],
+                "balance_current": query_res["balance_current"],
+                "adjustment": query_res["adjustment"],
+                "has_sublines": query_res["aml_count"] > 0,
             }
 
-        report = self.env['account.report'].browse(options['report_id'])
-        report._check_groupby_fields((next_groupby.split(',') if next_groupby else []) + ([current_groupby] if current_groupby else []))
+        report = self.env["account.report"].browse(options["report_id"])
+        report._check_groupby_fields(
+            (next_groupby.split(",") if next_groupby else [])
+            + ([current_groupby] if current_groupby else [])
+        )
 
         # No need to run any SQL if we're computing the main line: it does not display any total
         if not current_groupby:
             return {
-                'balance_currency': None,
-                'balance_operation': None,
-                'balance_current': None,
-                'adjustment': None,
-                'has_sublines': False,
+                "balance_currency": None,
+                "balance_operation": None,
+                "balance_current": None,
+                "adjustment": None,
+                "has_sublines": False,
             }
 
-        query = "(VALUES {})".format(', '.join("(%s, %s)" for rate in options['currency_rates']))
-        params = list(chain.from_iterable((cur['currency_id'], cur['rate']) for cur in options['currency_rates'].values()))
-        custom_currency_table_query = self.env.cr.mogrify(query, params).decode(self.env.cr.connection.encoding)
+        query = "(VALUES {})".format(
+            ", ".join("(%s, %s)" for rate in options["currency_rates"])
+        )
+        params = list(
+            chain.from_iterable(
+                (cur["currency_id"], cur["rate"])
+                for cur in options["currency_rates"].values()
+            )
+        )
+        custom_currency_table_query = self.env.cr.mogrify(query, params).decode(
+            self.env.cr.connection.encoding
+        )
 
-        tables, where_clause, where_params = report._query_get(options, 'strict_range')
+        tables, where_clause, where_params = report._query_get(options, "strict_range")
         tail_query, tail_params = report._get_engine_query_tail(offset, limit)
 
-        full_query = f"""
+        full_query = (
+            f"""
             WITH custom_currency_table(currency_id, rate) AS ({custom_currency_table_query})
 
             SELECT
@@ -56,7 +77,13 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
             FROM (
 
                 SELECT
-                    """ + (f"account_move_line.{current_groupby} AS grouping_key," if current_groupby else '') + f"""
+                    """
+            + (
+                f"account_move_line.{current_groupby} AS grouping_key,"
+                if current_groupby
+                else ""
+            )
+            + f"""
                     account_move_line.amount_residual AS balance_operation,
                     account_move_line.amount_residual_currency AS balance_currency,
                     account_move_line.amount_residual_currency / custom_currency_table.rate AS balance_current,
@@ -78,7 +105,13 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
 
                 -- Add the lines without currency, i.e. payment in company currency for invoice in foreign currency
                 SELECT
-                    """ + (f"account_move_line.{current_groupby} AS grouping_key," if current_groupby else '') + f"""
+                    """
+            + (
+                f"account_move_line.{current_groupby} AS grouping_key,"
+                if current_groupby
+                else ""
+            )
+            + f"""
                     -part.amount AS balance_operation,
                     CASE
                        WHEN account_move_line.id = part.credit_move_id THEN -part.debit_amount_currency
@@ -113,15 +146,18 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
             GROUP BY grouping_key
             {tail_query}
         """
+        )
 
         self._cr.execute(full_query, (where_params * 2) + tail_params)
         query_res_lines = self._cr.dictfetchall()
 
         if not current_groupby:
-            return build_result_dict(report, query_res_lines and query_res_lines[0] or {})
+            return build_result_dict(
+                report, query_res_lines and query_res_lines[0] or {}
+            )
         else:
             rslt = []
             for query_res in query_res_lines:
-                grouping_key = query_res['grouping_key']
+                grouping_key = query_res["grouping_key"]
                 rslt.append((grouping_key, build_result_dict(report, query_res)))
             return rslt

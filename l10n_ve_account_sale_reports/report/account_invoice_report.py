@@ -1,22 +1,16 @@
-# -*- coding: utf-8 -*-
-
 from odoo import api, fields, models
 
+
 class AccountInvoiceReport(models.Model):
-    _inherit = 'account.invoice.report'
+    _inherit = "account.invoice.report"
 
-    price_subtotal_ref = fields.Float(
-        string   = 'Untaxed Total Ref',
-        readonly = True)
+    price_subtotal_ref = fields.Float(string="Untaxed Total Ref", readonly=True)
 
-    price_total_ref = fields.Float(
-        string   = 'Total Ref',
-        readonly = True)
+    price_total_ref = fields.Float(string="Total Ref", readonly=True)
 
     price_average_ref = fields.Float(
-        string         = 'Average Price Ref',
-        group_operator = 'avg',
-        readonly       = True)
+        string="Average Price Ref", group_operator="avg", readonly=True
+    )
 
     @api.model
     def _select(self):
@@ -53,10 +47,11 @@ class AccountInvoiceReport(models.Model):
     @api.model
     def _from(self):
         statement = super(AccountInvoiceReport, self)._from()
-        operative_currency_table = self.env['res.currency']._get_query_currency_ref_table({
-                'multi_company': True,
-                'date': {'date_to': fields.Date.today()}
-            })
+        operative_currency_table = self.env[
+            "res.currency"
+        ]._get_query_currency_ref_table(
+            {"multi_company": True, "date": {"date_to": fields.Date.today()}}
+        )
 
         statement = f"""
             {statement}

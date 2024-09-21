@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import account_islr_concept
 from . import product_template
 from . import account_journal

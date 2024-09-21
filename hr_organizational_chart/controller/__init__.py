@@ -1,4 +1,3 @@
-# -- coding: utf-8 --
 ###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #

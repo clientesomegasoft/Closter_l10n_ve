@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <data>
         <!-- Employee disability -->
@@ -24,7 +24,7 @@
                             <group name="group_left" style="width:50%;">
                                 <field name="name" required="True" />
                             </group>
-                            
+
                             <group name="group_right" style="width:50%;">
                             </group>
                         </group>
