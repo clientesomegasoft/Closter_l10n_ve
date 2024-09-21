@@ -114,12 +114,12 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
 
     @api.model_create_multi
     def create(self, values):
-        res = super(HrEmployeeAdvancesLoansDiscounts, self).create(values)
+        res = super(__class__, self).create(values)
         res.state = "draft"
         return res
 
     def write(self, vals):
-        res = super(HrEmployeeAdvancesLoansDiscounts, self).write(vals)
+        res = super(__class__, self).write(vals)
         for record in self.employee_ids:
             employee_contract = record.contract_id
             if employee_contract.state == "open" and self.state in ["open"]:
@@ -135,7 +135,7 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
         return res
 
     def unlink(self):
-        return super(HrEmployeeAdvancesLoansDiscounts, self).unlink()
+        return super(__class__, self).unlink()
 
     @api.onchange("company_id", "employee_ids", "department_ids", "name")
     def _onchange_hr_dependent_data(self):

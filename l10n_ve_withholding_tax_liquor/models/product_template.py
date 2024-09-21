@@ -21,7 +21,7 @@ class SaleOrderLine(models.Model):
         self.liquor_tax_ids = [Command.set(self.product_id.liquor_tax_ids.ids)]
 
     def _prepare_invoice_line(self, **optional_values):
-        res = super(SaleOrderLine, self)._prepare_invoice_line(**optional_values)
+        res = super(__class__, self)._prepare_invoice_line(**optional_values)
         res["liquor_tax_ids"] = [Command.set(self.liquor_tax_ids.ids)]
         return res
 

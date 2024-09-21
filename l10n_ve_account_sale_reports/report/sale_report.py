@@ -76,7 +76,7 @@ class SaleReport(models.Model):
         return res
 
     def _from_sale(self):
-        statement = super(SaleReport, self)._from_sale()
+        statement = super(__class__, self)._from_sale()
         operative_currency_table = self.env[
             "res.currency"
         ]._get_query_currency_ref_table(
@@ -90,7 +90,7 @@ class SaleReport(models.Model):
         return statement
 
     def _group_by_sale(self):
-        statement = super(SaleReport, self)._group_by_sale()
+        statement = super(__class__, self)._group_by_sale()
         statement = f"""
             {statement},
             operative_currency_table.rate

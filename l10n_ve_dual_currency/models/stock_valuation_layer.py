@@ -136,7 +136,7 @@ class StockMove(models.Model):
         svl_id,
         description,
     ):
-        rslt = super(StockMove, self)._generate_valuation_lines_data(
+        rslt = super(__class__, self)._generate_valuation_lines_data(
             partner_id,
             qty,
             debit_value,

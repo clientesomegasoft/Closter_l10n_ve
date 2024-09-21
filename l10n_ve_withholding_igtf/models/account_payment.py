@@ -207,9 +207,9 @@ class AccountPayment(models.Model):
         }
 
     def action_draft(self):
-        super(AccountPayment, self).action_draft()
+        super(__class__, self).action_draft()
         self.igtf_move_id.button_draft()
 
     def action_cancel(self):
-        super(AccountPayment, self).action_cancel()
+        super(__class__, self).action_cancel()
         self.igtf_move_id.button_cancel()

@@ -16,7 +16,7 @@ class SaleOrder(models.Model):
     )
 
     def action_confirm(self):
-        res = super(SaleOrder, self).action_confirm()
+        res = super(__class__, self).action_confirm()
         consignments_data = []
         if self.is_consignments and self.analytic_id:
             for line in self.order_line:
@@ -74,7 +74,7 @@ class SaleOrderLine(models.Model):
     purchase_order_line_id = fields.Many2one("purchase.order.line", "Purchase Line")
 
     def _prepare_invoice_line(self, **optional_values):
-        values = super(SaleOrderLine, self)._prepare_invoice_line(**optional_values)
+        values = super(__class__, self)._prepare_invoice_line(**optional_values)
         if self.order_id.analytic_id:
             values["analytic_distribution"] = {self.order_id.analytic_id.id: 100}
         return values

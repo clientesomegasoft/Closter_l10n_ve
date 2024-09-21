@@ -85,4 +85,4 @@ class HrPlanAccumulationHistory(models.Model):
             if "leave_id" in values and "time_off_type_id" not in values:
                 leave = self.env["hr.leave"].browse(values["leave_id"])
                 values["time_off_type_id"] = leave.holiday_status_id.id
-        return super(HrPlanAccumulationHistory, self).create(vals_list)
+        return super(__class__, self).create(vals_list)

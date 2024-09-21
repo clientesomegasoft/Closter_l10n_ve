@@ -19,7 +19,7 @@ class CommissionScale(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        res = super(CommissionScale, self).create(vals_list)
+        res = super(__class__, self).create(vals_list)
         for rec in res:
             rec.code = self.env["ir.sequence"].next_by_code("commission.scale.seq")
         return res

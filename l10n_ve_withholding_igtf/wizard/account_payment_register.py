@@ -55,7 +55,7 @@ class AccountPaymentRegister(models.TransientModel):
 
     def _create_payment_vals_from_wizard(self, batch_result):
         payment_vals = super(
-            AccountPaymentRegister, self
+            __class__, self
         )._create_payment_vals_from_wizard(batch_result)
         payment_vals.update(
             {

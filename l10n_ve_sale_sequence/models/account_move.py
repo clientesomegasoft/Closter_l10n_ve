@@ -24,7 +24,7 @@ class AccountMove(models.Model):
         return super(AccountMove, self - processed_moves)._compute_name()
 
     def action_post(self):
-        var = super(AccountMove, self).action_post()
+        var = super(__class__, self).action_post()
         if (
             self.is_sale_document()
             and not self.nro_ctrl

@@ -19,7 +19,7 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
     ):
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
             return super(
-                AgedPartnerBalanceCustomHandler, self
+                __class__, self
             )._aged_partner_report_custom_engine_common(
                 options, internal_type, current_groupby, next_groupby, offset, limit
             )

@@ -22,7 +22,7 @@ class SaleOrderCreateWizards(models.TransientModel):
     def default_get(self, vals):
         lines = []
         consignment_id = self.env["sale.consignment.order"]
-        vals = super(SaleOrderCreateWizards, self).default_get(vals)
+        vals = super(__class__, self).default_get(vals)
         active_id = self.env.context.get("active_id")
         if active_id:
             consignment_id = self.env["sale.consignment.order"].browse(active_id)

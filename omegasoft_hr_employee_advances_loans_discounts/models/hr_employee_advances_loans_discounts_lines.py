@@ -100,7 +100,7 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
 
     @api.model_create_multi
     def create(self, values):
-        res = super(HrEmployeeAdvancesLoansDiscountsLines, self).create(values)
+        res = super(__class__, self).create(values)
         res.discount_state = "draft"
         return res
 
@@ -110,7 +110,7 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
                 raise ValidationError(
                     "Las lineas solo pueden ser eliminadas en estado borrador"
                 )
-        res = super(HrEmployeeAdvancesLoansDiscountsLines, self).unlink()
+        res = super(__class__, self).unlink()
         return res
 
     @api.onchange("product_employee_ids")

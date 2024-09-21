@@ -18,7 +18,7 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         """
 
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
-            return super(CashFlowReportCustomHandler, self)._compute_liquidity_balance(
+            return super(__class__, self)._compute_liquidity_balance(
                 report, options, currency_table_query, payment_account_ids, date_scope
             )
 
@@ -84,7 +84,7 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         """
 
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
-            return super(CashFlowReportCustomHandler, self)._get_liquidity_moves(
+            return super(__class__, self)._get_liquidity_moves(
                 report,
                 options,
                 currency_table_query,
@@ -255,7 +255,7 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         """
 
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
-            return super(CashFlowReportCustomHandler, self)._get_reconciled_moves(
+            return super(__class__, self)._get_reconciled_moves(
                 report,
                 options,
                 currency_table_query,

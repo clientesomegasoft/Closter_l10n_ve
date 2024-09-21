@@ -28,4 +28,4 @@ class Partner(models.Model):
             )
         ):
             vals["is_islr_agent"] = False
-        return super(Partner, self).write(vals)
+        return super(__class__, self).write(vals)

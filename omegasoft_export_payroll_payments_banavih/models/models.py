@@ -62,7 +62,7 @@ class ExportBankPaymentsBanavih(models.Model):
                 root, banavih_code + fiscal_code, False
             )
         else:
-            return super(ExportBankPaymentsBanavih, self).action_done()
+            return super(__class__, self).action_done()
 
         if not data:
             raise ValidationError(

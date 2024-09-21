@@ -74,7 +74,7 @@ class HrContractAllocationLine(models.Model):
             raise ValidationError("La Cantidad entregada debe ser mayor a cero")
 
     def write(self, vals):
-        return super(HrContractAllocationLine, self).write(vals)
+        return super(__class__, self).write(vals)
 
     @api.onchange("allocated_quantity")
     def _onchange_allocated_quantity(self):

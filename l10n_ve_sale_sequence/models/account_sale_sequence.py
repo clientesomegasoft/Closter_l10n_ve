@@ -124,7 +124,7 @@ class AccountSaleSequence(models.Model):
                 vals[field + "_control_sequence_id"] = control_sequence.id
                 vals[field + "_sequence_id"] = name_sequence.id
 
-        res = super(AccountSaleSequence, self).create(vals_list)
+        res = super(__class__, self).create(vals_list)
         res._check_control_sequence()
         return res
 
@@ -143,7 +143,7 @@ class AccountSaleSequence(models.Model):
                 ) = self.invoice_control_sequence_id
                 to_unlink.unlink()
 
-        res = super(AccountSaleSequence, self).write(vals)
+        res = super(__class__, self).write(vals)
 
         if any(
             field in vals
@@ -163,7 +163,7 @@ class AccountSaleSequence(models.Model):
             for record in self:
                 sequence_ids |= getattr(record, field + "_control_sequence_id")
                 sequence_ids |= getattr(record, field + "_sequence_id")
-        res = super(AccountSaleSequence, self).unlink()
+        res = super(__class__, self).unlink()
         sequence_ids.unlink()
         return res
 

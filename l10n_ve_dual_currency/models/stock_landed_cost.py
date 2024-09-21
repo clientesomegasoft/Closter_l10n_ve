@@ -5,7 +5,7 @@ class StockLandedCost(models.Model):
     _inherit = "stock.landed.cost"
 
     def button_validate(self):
-        res = super(StockLandedCost, self).button_validate()
+        res = super(__class__, self).button_validate()
         for cost in self:
             if cost.account_move_id:
                 cost.account_move_id.global_rate_ref = False
@@ -34,7 +34,7 @@ class AdjustmentLines(models.Model):
     _inherit = "stock.valuation.adjustment.lines"
 
     def _create_accounting_entries(self, move, qty_out):
-        res = super(AdjustmentLines, self)._create_accounting_entries(move, qty_out)
+        res = super(__class__, self)._create_accounting_entries(move, qty_out)
         for line in res:
             line[2]["currency_rate_ref"] = self.cost_line_id.currency_rate_ref.id
         return res

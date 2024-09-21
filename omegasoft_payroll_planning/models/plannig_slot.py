@@ -41,7 +41,7 @@ class PlanningSlot(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        res = super(PlanningSlot, self).create(vals_list)
+        res = super(__class__, self).create(vals_list)
         if vals_list:
             for record in res:
                 hr_work_entry = []
@@ -130,4 +130,4 @@ class PlanningSlot(models.Model):
 
                 for entrys in work_entrys:
                     entrys.unlink()
-        return super(PlanningSlot, self).unlink()
+        return super(__class__, self).unlink()

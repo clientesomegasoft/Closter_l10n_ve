@@ -119,7 +119,7 @@ class HrLeave(models.Model):
                                     )
                                 )
 
-        return super(HrLeave, self).action_confirm()
+        return super(__class__, self).action_confirm()
 
     def action_refuse(self):
         for leave in self:
@@ -160,7 +160,7 @@ class HrLeave(models.Model):
                                 }
                             )
 
-        return super(HrLeave, self).action_refuse()
+        return super(__class__, self).action_refuse()
 
     def _holiday_type_search_employee(self):
         employees = self.env["hr.employee"]
@@ -179,7 +179,7 @@ class HrLeave(models.Model):
 
     def unlink(self):
         self.history_ids.unlink()
-        return super(HrLeave, self).unlink()
+        return super(__class__, self).unlink()
 
     @api.constrains("employee_ids")
     def _check_history_ids(self):

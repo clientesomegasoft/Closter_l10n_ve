@@ -519,7 +519,7 @@ class HrPayslip(models.Model):
                 ) - record.contract_id.advances_of_social_benefits
 
     def action_payslip_done(self):
-        res = super(HrPayslip, self).action_payslip_done()
+        res = super(__class__, self).action_payslip_done()
         self._compute_earnings_generated()
         self._compute_profits_resets()
         self._compute_vacations_resets()
@@ -543,7 +543,7 @@ class HrPayslip(models.Model):
                 record._compute_profits_resets(True)
                 record._compute_vacations_resets(True)
                 record._compute_social_benefits_resets(True)
-        return super(HrPayslip, self).action_payslip_cancel()
+        return super(__class__, self).action_payslip_cancel()
 
     def _check_payroll(self):
         if (
@@ -564,7 +564,7 @@ class HrPayslip(models.Model):
             raise UserError(
                 "No se puede marcar la nómina como pagada si el asiento contable no esta publicado."
             )
-        return super(HrPayslip, self).action_payslip_paid()
+        return super(__class__, self).action_payslip_paid()
 
     def _action_create_account_move(self):
         precision = self.env["decimal.precision"].precision_get("Payroll")
@@ -682,7 +682,7 @@ class HrPayslip(models.Model):
             credit_ref = self.currency_id._convert(
                 credit, self.company_id.currency_id, self.company_id, date_ref
             )
-        res = super(HrPayslip, self)._prepare_line_values(
+        res = super(__class__, self)._prepare_line_values(
             line, account_id, date_ref, debit_ref, credit_ref
         )
 

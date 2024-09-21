@@ -16,7 +16,7 @@ class StockMove(models.Model):
     _inherit = "stock.move"
 
     def _action_confirm(self, merge=True, merge_into=False):
-        stock_move = super(StockMove, self)._action_confirm(
+        stock_move = super(__class__, self)._action_confirm(
             merge=True, merge_into=False
         )
         for move in self.filtered(lambda x: x.sale_line_id.consignment_move_id):

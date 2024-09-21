@@ -30,7 +30,7 @@ class SaleOrder(models.Model):
 
     def _prepare_invoice(self):
         self.ensure_one()
-        res = super(SaleOrder, self)._prepare_invoice()
+        res = super(__class__, self)._prepare_invoice()
         res["department_id"] = self.department_id.id
         res["seller_employee_id"] = self.seller_employee_id.id
         res["assigned_employee_id"] = self.assigned_employee_id.id

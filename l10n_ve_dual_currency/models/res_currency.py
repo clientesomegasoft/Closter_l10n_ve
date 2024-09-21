@@ -11,7 +11,7 @@ class Currency(models.Model):
     _inherit = "res.currency"
 
     def _get_rates(self, company, date):
-        return super(Currency, self)._get_rates(
+        return super(__class__, self)._get_rates(
             company, to_datetime(date, tz=self._context.get("tz", self.env.user.tz))
         )
 
@@ -110,7 +110,7 @@ class CurrencyRate(models.Model):
             raise UserError(
                 "No es posible ejecutar esta acción ya que la tasa está siendo utilizada por otro modelo."
             )
-        return super(CurrencyRate, self).write(vals)
+        return super(__class__, self).write(vals)
 
     def name_get(self):
         field = (

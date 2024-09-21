@@ -247,7 +247,7 @@ class ExportBankPayments(models.Model):
             else:
                 number_next_actual = 1
             sequences.write({"number_next_actual": number_next_actual})
-        return super(ExportBankPayments, self).unlink()
+        return super(__class__, self).unlink()
 
     def action_draft(self):
         self.write(

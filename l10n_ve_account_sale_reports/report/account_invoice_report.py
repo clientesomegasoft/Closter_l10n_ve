@@ -14,7 +14,7 @@ class AccountInvoiceReport(models.Model):
 
     @api.model
     def _select(self):
-        statement = super(AccountInvoiceReport, self)._select()
+        statement = super(__class__, self)._select()
 
         # Firstly, we convert the values to the ones represented in the company's currency,
         # then whe convert them to the operative currency as expects the temporary table
@@ -46,7 +46,7 @@ class AccountInvoiceReport(models.Model):
 
     @api.model
     def _from(self):
-        statement = super(AccountInvoiceReport, self)._from()
+        statement = super(__class__, self)._from()
         operative_currency_table = self.env[
             "res.currency"
         ]._get_query_currency_ref_table(

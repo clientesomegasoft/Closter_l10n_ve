@@ -64,4 +64,4 @@ class HrPlanAccumulationEnjoy(models.Model):
         for vals in vals_list:
             if "time_off_type_id" not in vals and not vals.get("time_off_type_id"):
                 vals["time_off_type_id"] = leave_type_enjoy.id
-        return super(HrPlanAccumulationEnjoy, self).create(vals_list)
+        return super(__class__, self).create(vals_list)

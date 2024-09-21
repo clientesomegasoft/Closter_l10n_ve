@@ -15,7 +15,7 @@ class PurchaseOrder(models.Model):
 
     @api.model
     def create(self, vals):
-        res = super(PurchaseOrder, self).create(vals)
+        res = super(__class__, self).create(vals)
         if res["is_consignments"]:
             res["name"] = (
                 self.env["ir.sequence"].next_by_code("purchase.consignments") or "/"
@@ -23,7 +23,7 @@ class PurchaseOrder(models.Model):
         return res
 
     def button_confirm(self):
-        res = super(PurchaseOrder, self).button_confirm()
+        res = super(__class__, self).button_confirm()
         consignments_data = []
         if self.is_consignments:
             plan_id = self.env["account.analytic.plan"].search(
@@ -96,7 +96,7 @@ class ExpensesDetails(models.Model):
 
     @api.model
     def create(self, vals):
-        res = super(ExpensesDetails, self).create(vals)
+        res = super(__class__, self).create(vals)
         analytic_id = res.purchase_expense_id.account_analytic_id
         if analytic_id:
             consignments_data = []
@@ -123,7 +123,7 @@ class ExpensesDetails(models.Model):
                     lambda x: x.expenses_id.id == order.id
                 )
                 consignment_id.unlink()
-        return super(ExpensesDetails, self).unlink()
+        return super(__class__, self).unlink()
 
 
 class PurchaseOrderLine(models.Model):

@@ -13,4 +13,4 @@ class Partner(models.Model):
             and vals["partner_type"] not in ("supplier", "customer_supplier")
         ):
             vals["apply_igtf"] = False
-        return super(Partner, self).write(vals)
+        return super(__class__, self).write(vals)

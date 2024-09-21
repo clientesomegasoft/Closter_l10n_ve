@@ -196,7 +196,7 @@ class HrContractAllocation(models.Model):
         }
 
     def write(self, vals):
-        return super(HrContractAllocation, self).write(vals)
+        return super(__class__, self).write(vals)
 
     @api.depends("allocation_line_ids.state")
     def _compute_state(self):

@@ -72,7 +72,7 @@ class HrPlanAccumulationVacation(models.Model):
         for vals in vals_list:
             if "time_off_type_id" not in vals and not vals.get("time_off_type_id"):
                 vals["time_off_type_id"] = leave_type_vacation.id
-        return super(HrPlanAccumulationVacation, self).create(vals_list)
+        return super(__class__, self).create(vals_list)
 
     @api.constrains("days_law", "vacation_bonus", "additional_days")
     def validate_days(self):

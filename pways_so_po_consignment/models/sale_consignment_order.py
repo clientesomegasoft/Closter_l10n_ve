@@ -68,7 +68,7 @@ class SaleConsignmentOrder(models.Model):
 
     @api.model
     def create(self, vals):
-        res = super(SaleConsignmentOrder, self).create(vals)
+        res = super(__class__, self).create(vals)
         res["name"] = (
             self.env["ir.sequence"].next_by_code("sale.consignment.order") or "/"
         )

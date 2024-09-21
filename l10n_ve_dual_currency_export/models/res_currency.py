@@ -49,7 +49,7 @@ class CurrencyRate(models.Model):
     def name_get(self):
         # NOTE: In this way, we ensure that exports will always return a valid rate
         if not self.env.context.get("import_compat"):
-            return super(CurrencyRate, self).name_get()
+            return super(__class__, self).name_get()
 
         return [(currency.id, tools.ustr(currency.name)) for currency in self]
 

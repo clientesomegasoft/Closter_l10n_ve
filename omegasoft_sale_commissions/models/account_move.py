@@ -31,7 +31,7 @@ class AccountMove(models.Model):
             self.required_department_id = False
 
     def action_post(self):
-        res = super(AccountMove, self).action_post()
+        res = super(__class__, self).action_post()
         for rec in self:
             # Total de la factura en la moneda de la compañia
             total_invoice = rec.currency_id._convert(

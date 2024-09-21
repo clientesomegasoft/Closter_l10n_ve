@@ -45,7 +45,7 @@ class SaleOrderLine(models.Model):
         comming from a sale order line. This method could be override in order to add other custom key that could
         be used in move/po creation.
         """
-        values = super(SaleOrderLine, self)._prepare_procurement_values(group_id)
+        values = super(__class__, self)._prepare_procurement_values(group_id)
         if self.consignment_move_id.state != "done":
             self.consignment_move_id._action_done()
         if self.consignment_move_id:

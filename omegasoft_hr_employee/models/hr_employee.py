@@ -35,7 +35,7 @@ class HrEmployee(models.Model):
                     "Advertencia El empleado ya está registrado en el rif: %s y está activo"
                     % (vals.get("rif", False))
                 )
-        res = super(HrEmployee, self).write(vals)
+        res = super(__class__, self).write(vals)
         return res
 
     @api.model_create_multi
@@ -56,7 +56,7 @@ class HrEmployee(models.Model):
                         "Advertencia El empleado ya está registrado en el rif: %s y está activo"
                         % (vals.get("rif", False))
                     )
-        return super(HrEmployee, self).create(vals_list)
+        return super(__class__, self).create(vals_list)
 
     @api.model
     def validate_rif(self, field_value):

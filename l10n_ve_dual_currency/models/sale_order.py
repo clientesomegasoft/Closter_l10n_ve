@@ -21,7 +21,7 @@ class SaleOrder(models.Model):
             self._recompute_prices()
 
     def _prepare_invoice(self):
-        vals = super(SaleOrder, self)._prepare_invoice()
+        vals = super(__class__, self)._prepare_invoice()
         vals["currency_rate_ref"] = self.currency_rate_ref.id
         return vals
 

@@ -23,7 +23,7 @@ class AccountPayment(models.Model):
             )
 
     def action_post(self):
-        super(AccountPayment, self).action_post()
+        super(__class__, self).action_post()
 
         percentage = self.company_id.itf_percentage
         amount_currency = self.currency_id.round(self.amount * percentage / 100)
@@ -131,9 +131,9 @@ class AccountPayment(models.Model):
         }
 
     def action_draft(self):
-        super(AccountPayment, self).action_draft()
+        super(__class__, self).action_draft()
         self.itf_move_id.button_draft()
 
     def action_cancel(self):
-        super(AccountPayment, self).action_cancel()
+        super(__class__, self).action_cancel()
         self.itf_move_id.button_cancel()

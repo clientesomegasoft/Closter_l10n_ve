@@ -124,7 +124,7 @@ class Partner(models.Model):
         self.vat = False
 
     def _get_name(self):
-        res = super(Partner, self)._get_name()
+        res = super(__class__, self)._get_name()
         if self._context.get("show_vat") and not self.vat and self.identification:
             res = "%s\n%s" % (res, self.identification)
         return res
@@ -136,7 +136,7 @@ class Users(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         self = self.with_context(skip_check_partner_type=True)
-        return super(Users, self).create(vals_list)
+        return super(__class__, self).create(vals_list)
 
 
 class ResCompany(models.Model):
@@ -145,4 +145,4 @@ class ResCompany(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         self = self.with_context(skip_check_partner_type=True)
-        return super(ResCompany, self).create(vals_list)
+        return super(__class__, self).create(vals_list)

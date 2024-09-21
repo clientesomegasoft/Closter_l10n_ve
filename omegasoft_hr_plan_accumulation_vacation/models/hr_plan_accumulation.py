@@ -194,4 +194,4 @@ class HrPlanAccumulation(models.Model):
     def unlink(self):
         self.vacation_ids.unlink()
         self.enjoy_ids.unlink()
-        return super(HrPlanAccumulation, self).unlink()
+        return super(__class__, self).unlink()

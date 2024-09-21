@@ -38,10 +38,10 @@ class AccountPayment(models.Model):
         # forzar calculo cuando cambia el selector de tasa
         if isinstance(changed_fields, set) and "currency_rate_ref" in changed_fields:
             changed_fields.add("currency_id")
-        return super(AccountPayment, self)._synchronize_to_moves(changed_fields)
+        return super(__class__, self)._synchronize_to_moves(changed_fields)
 
     def _prepare_move_line_default_vals(self, write_off_line_vals=None):
-        vals = super(AccountPayment, self)._prepare_move_line_default_vals(
+        vals = super(__class__, self)._prepare_move_line_default_vals(
             write_off_line_vals
         )
         if self.currency_id == self.currency_ref_id:

@@ -7,7 +7,7 @@ class PurchaseOrderLine(models.Model):
     location_id = fields.Many2one("stock.location", "Location", copy=False)
 
     def _prepare_stock_moves(self, picking):
-        res = super(PurchaseOrderLine, self)._prepare_stock_moves(picking)
+        res = super(__class__, self)._prepare_stock_moves(picking)
         if self.location_id:
             for val in res:
                 val["location_dest_id"] = self.location_id and self.location_id.id

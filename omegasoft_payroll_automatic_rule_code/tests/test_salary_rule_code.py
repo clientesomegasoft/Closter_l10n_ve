@@ -5,7 +5,7 @@ class TestSalaryRule(TransactionCase):
     @classmethod
     def setUpClass(cls):
         """Set up initial data."""
-        super(TestSalaryRule, cls).setUpClass()
+        super(__class__, cls).setUpClass()
 
         cls.category = cls.env["hr.salary.rule.category"].create(
             {"name": "Test Category", "code": "TEST"}

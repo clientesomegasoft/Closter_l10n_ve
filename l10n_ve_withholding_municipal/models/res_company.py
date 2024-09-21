@@ -20,7 +20,7 @@ class ResCompany(models.Model):
     nifg = fields.Char(string="NIFG")
 
     def _create_per_company_withholding_sequence(self):
-        super(ResCompany, self)._create_per_company_withholding_sequence()
+        super(__class__, self)._create_per_company_withholding_sequence()
         values = [
             {
                 "name": "Withholding municipal: %s" % company.name,
