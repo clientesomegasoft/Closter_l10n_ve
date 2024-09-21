@@ -4,7 +4,7 @@
     "category": "Human Resources",
     "author": "Omegasoft C.A",
     "contributor": "Carlos Carvajal carlos.carvajal@omegasoftve.com",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Generation of Report Letters",
     "description": """
         Generation of Report Letters""",

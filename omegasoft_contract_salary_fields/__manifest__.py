@@ -4,7 +4,7 @@
     "contributor": "Daniel Ospino - daniel.ospino@omegasoftve.com / Rene Gomez - rene.gomez@omegasoftve.com",
     "application": False,
     "author": "Omegasoft C.A",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Salary Fields",
     "description": """
     Adds the basic fields for salary according to Venezuelan law.

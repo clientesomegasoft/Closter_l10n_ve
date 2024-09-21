@@ -19,8 +19,8 @@ org_slug: OCA
 rebel_module_groups: []
 repo_description: Odoo modules for Venezuela
 repo_name: Odoo modules for Venezuela
-repo_slug: l10n-venezuela
-repo_website: https://github.com/OCA/l10n-venezuela
+repo_slug: Closter_l10n_ve
+repo_website: https://github.com/macagua/Closter_l10n_ve
 use_pyproject_toml: true
 use_ruff: true
 

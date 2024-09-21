@@ -5,7 +5,7 @@
     "application": False,
     "author": "Omegasoft C.A",
     "contributor": "Daniel Ospino - dospinoomegasoft@omegasoftve.com",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Customization in hr for vacation control",
     "description": """
     New model for hr, for vacation control

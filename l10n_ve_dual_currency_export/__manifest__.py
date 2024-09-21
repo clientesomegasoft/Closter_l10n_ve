@@ -6,7 +6,7 @@
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Moneda Operativa",
     "description": """
 Importar/Exportar Moneda Operativa

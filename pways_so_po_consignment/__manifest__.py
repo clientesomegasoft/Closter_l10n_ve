@@ -8,7 +8,7 @@
                 the consignee is financially responsible (the buyer) for the receipt of a shipment also includes
                 commision on consigment and multiple reports.
             """,
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "depends": ["purchase_stock", "sale_management", "sale_stock"],
     "data": [
         "security/purchase_security_inherit.xml",

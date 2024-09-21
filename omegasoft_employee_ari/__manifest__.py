@@ -7,7 +7,7 @@ Reporte ARI Empleados
 """,
     "category": "Human Resources/Contracts",
     "author": "Omegasoft C.A",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "depends": [
         "hr",
         "omegasoft_payroll_res_config_settings",

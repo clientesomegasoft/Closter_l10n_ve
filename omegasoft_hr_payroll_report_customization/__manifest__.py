@@ -7,7 +7,7 @@
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Adds new salary rule categories that will be included in payslip reports",
     "description": """
 Let users configure a new kind of salary rule category which

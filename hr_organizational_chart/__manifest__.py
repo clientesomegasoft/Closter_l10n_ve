@@ -30,7 +30,7 @@
     "maintainer": "Cybrosys Techno Solutions",
     "live_test_url": "https://youtu.be/dyCzplsAysQ",
     "category": "Generic Modules/Human Resources",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "depends": ["hr"],
     "data": [
         "views/show_employee_chart.xml",

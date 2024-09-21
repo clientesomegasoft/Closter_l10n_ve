@@ -5,7 +5,7 @@
     "application": False,
     "author": "Omegasoft C.A",
     "contributor": "Leonel torres - leonel.torres@omegasoftve.com / Daniel Ospino - daniel.ospino@omegasoftve.com",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Automatic salary rule code",
     "description": """
     Generates the code for salary rules based on the category code and the

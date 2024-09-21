@@ -6,7 +6,7 @@
     "contributor": [
         "Naudy Mendez - naudy.mendez@omegasoftve.com",
     ],
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Secuencias de factura de cliente",
     "description": """
 Secuencias de factura de cliente

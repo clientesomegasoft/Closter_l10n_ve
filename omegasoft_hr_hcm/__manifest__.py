@@ -6,7 +6,7 @@
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Employee",
     "description": """ New configurations for human resources and policy coverage""",
     "depends": ["hr", "omegasoft_hr_employee", "omegasoft_payroll_res_config_settings"],

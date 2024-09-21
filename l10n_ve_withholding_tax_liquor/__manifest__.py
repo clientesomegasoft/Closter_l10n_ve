@@ -6,7 +6,7 @@
     "contributor": [
         "Naudy Mendez - naudy.mendez@omegasoftve.com",
     ],
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Impuesto al licor",
     "description": """
 Impuesto al Licor

@@ -5,7 +5,7 @@
     "application": False,
     "author": "Omegasoft C.A",
     "contributor": "Daniel Ospino - daniel.ospino@omegasoftve.com / Rene Gomez - rene.gomez@omegasoftve.com",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Employee Family information",
     "description": """
     Employee's family information.

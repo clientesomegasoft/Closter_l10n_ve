@@ -1,8 +1,8 @@
-[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/l10n-venezuela&target_branch=16.0)
-[![Pre-commit Status](https://github.com/OCA/l10n-venezuela/actions/workflows/pre-commit.yml/badge.svg?branch=16.0)](https://github.com/OCA/l10n-venezuela/actions/workflows/pre-commit.yml?query=branch%3A16.0)
-[![Build Status](https://github.com/OCA/l10n-venezuela/actions/workflows/test.yml/badge.svg?branch=16.0)](https://github.com/OCA/l10n-venezuela/actions/workflows/test.yml?query=branch%3A16.0)
-[![codecov](https://codecov.io/gh/OCA/l10n-venezuela/branch/16.0/graph/badge.svg)](https://codecov.io/gh/OCA/l10n-venezuela)
-[![Translation Status](https://translation.odoo-community.org/widgets/l10n-venezuela-16-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/l10n-venezuela-16-0/?utm_source=widget)
+[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=macagua/Closter_l10n_ve&target_branch=16.0)
+[![Pre-commit Status](https://github.com/macagua/Closter_l10n_ve/actions/workflows/pre-commit.yml/badge.svg?branch=16.0)](https://github.com/macagua/Closter_l10n_ve/actions/workflows/pre-commit.yml?query=branch%3A16.0)
+[![Build Status](https://github.com/macagua/Closter_l10n_ve/actions/workflows/test.yml/badge.svg?branch=16.0)](https://github.com/macagua/Closter_l10n_ve/actions/workflows/test.yml?query=branch%3A16.0)
+[![codecov](https://codecov.io/gh/macagua/Closter_l10n_ve/branch/16.0/graph/badge.svg)](https://codecov.io/gh/macagua/Closter_l10n_ve)
+[![Translation Status](https://translation.odoo-community.org/widgets/Closter_l10n_ve-16-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/Closter_l10n_ve-16-0/?utm_source=widget)
 
 # Localización de Odoo para Venezuela
 

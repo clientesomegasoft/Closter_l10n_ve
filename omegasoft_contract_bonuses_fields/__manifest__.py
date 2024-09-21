@@ -5,7 +5,7 @@
     "application": False,
     "author": "Omegasoft C.A",
     "contributor": "Rene Gomez - rene.gomez@omegasoftve.com",
-    "website": "https://github.com/OCA/l10n-venezuela",
+    "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Bonuses Fields",
     "description": """
     Adds the basic fields for salary bonuses according to Venezuelan law.

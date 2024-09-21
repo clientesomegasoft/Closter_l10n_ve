@@ -48,13 +48,13 @@ repos:
       # update the NOT INSTALLABLE ADDONS section above
       - id: oca-update-pre-commit-excluded-addons
       - id: oca-fix-manifest-website
-        args: ["https://github.com/OCA/l10n-venezuela"]
+        args: ["https://github.com/macagua/Closter_l10n_ve"]
       - id: oca-gen-addon-readme
         args:
           - --addons-dir=.
           - --branch=16.0
           - --org-name=OCA
-          - --repo-name=l10n-venezuela
+          - --repo-name=Closter_l10n_ve
           - --if-source-changed
           - --keep-source-digest
           - --convert-fragments-to-markdown
