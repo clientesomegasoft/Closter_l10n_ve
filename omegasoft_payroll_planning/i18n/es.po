@@ -1138,6 +1138,7 @@ msgstr ""
 msgid "Period"
 msgstr "Período"
 
+#. module: omegasoft_payroll_planning
 #. module: planning
 #: code:addons/planning/models/planning.py:0
 #: model:ir.model.fields.selection,name:planning.selection__planning_slot__allocation_type__planning
@@ -1146,6 +1147,7 @@ msgstr "Período"
 #: model_terms:ir.ui.view,arch_db:planning.planning_view_calendar
 #: model_terms:ir.ui.view,arch_db:planning.planning_view_my_calendar
 #: model_terms:ir.ui.view,arch_db:planning.res_config_settings_view_form
+#: model:hr.work.entry.type,name:omegasoft_payroll_planning.work_entry_type_planning
 #, python-format
 msgid "Planning"
 msgstr "Planificación"
@@ -1918,11 +1920,6 @@ msgstr "a"
 #: model:mail.template,subject:planning.email_template_slot_single
 msgid "{{ ctx.get('mail_subject', '') }} {{ ctx.get('start_datetime' , '') }}"
 msgstr ""
-
-#. module: omegasoft_payroll_planning
-#: model:hr.work.entry.type,name:omegasoft_payroll_planning.work_entry_type_planning
-msgid "Planning"
-msgstr "Planificación"
 
 #. module: omegasoft_payroll_planning
 #: model:ir.model.fields,field_description:omegasoft_payroll_planning.field_hr_work_entry_type__planning_slot_template_ids

@@ -19,10 +19,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ve_sale_sequence.field_account_sale_sequence__debit_control_number_next_actual
 #: model:ir.model.fields,field_description:l10n_ve_sale_sequence.field_account_sale_sequence__invoice_control_number_next_actual
 #: model:ir.model.fields,field_description:l10n_ve_sale_sequence.field_account_sale_sequence__refund_control_number_next_actual
-msgid "Actual Next Number"
-msgstr "Siguiente número de control"
-
-#. module: l10n_ve_sale_sequence
 #: model:ir.model.fields,field_description:l10n_ve_sale_sequence.field_account_sale_sequence__debit_number_next_actual
 #: model:ir.model.fields,field_description:l10n_ve_sale_sequence.field_account_sale_sequence__invoice_number_next_actual
 #: model:ir.model.fields,field_description:l10n_ve_sale_sequence.field_account_sale_sequence__refund_number_next_actual
