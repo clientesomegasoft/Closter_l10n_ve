@@ -104,7 +104,7 @@ class WithholdingIVATXT(models.Model):
     def unlink(self):
         for rec in self:
             if rec.state != "cancel":
-                raise UserError("Solo TXT en estado Cancelado pueden ser suprimidos.")
+                raise UserError(_("Solo TXT en estado Cancelado pueden ser suprimidos."))
         return super().unlink()
 
     def _generate_txt_data(self):

@@ -101,7 +101,7 @@ class HrPayslip(models.Model):
     def _constrains_average_wage(self):
         for record in self:
             if record.average_wage <= 0 and record.struct_id.use_average_wage:
-                raise UserError("El calculo del promedio debe ser mayor a cero")
+                raise UserError(_("El calculo del promedio debe ser mayor a cero"))
 
     @api.onchange("struct_id")
     def _check_fields_structure_for_rate(self):
@@ -564,8 +564,10 @@ class HrPayslip(models.Model):
     def action_payslip_paid(self):
         if any(move.state != "posted" for move in self.move_id):
             raise UserError(
-                "No se puede marcar la nómina como pagada "
-                "si el asiento contable no esta publicado."
+                _(
+                    "No se puede marcar la nómina como pagada "
+                    "si el asiento contable no esta publicado."
+                )
             )
         return super(__class__, self).action_payslip_paid()
 

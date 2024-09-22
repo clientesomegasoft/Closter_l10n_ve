@@ -1,4 +1,4 @@
-from odoo import Command, api, fields, models
+from odoo import Command, _, api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -90,7 +90,7 @@ class AccountWithholdingISLR(models.Model):
         elif self.type == "customer" and (
             not self.name or self.name == "NUMERO DE COMPROBANTE"
         ):
-            raise UserError("El numero de comprobante es requerido.")
+            raise UserError(_("El numero de comprobante es requerido."))
 
         values = self._prepare_move_values()
         if self.move_id:
@@ -138,7 +138,7 @@ class AccountWithholdingISLR(models.Model):
     def button_draft(self):
         if self.xml_state == "posted":
             raise UserError(
-                "No se puede reestablecer a borrador una retención ya declarada."
+                _("No se puede reestablecer a borrador una retención ya declarada.")
             )
         if self.move_id:
             self.move_id.button_draft()
@@ -146,7 +146,7 @@ class AccountWithholdingISLR(models.Model):
 
     def button_cancel(self):
         if self.xml_state == "posted":
-            raise UserError("No se puede cancelar una retención ya declarada.")
+            raise UserError(_("No se puede cancelar una retención ya declarada."))
         if self.move_id:
             if self.move_id.state == "posted":
                 self.move_id._reverse_moves(
@@ -178,7 +178,7 @@ class AccountWithholdingISLR(models.Model):
         for rec in self:
             if rec.state != "cancel":
                 raise UserError(
-                    "Solo retenciones en estado Cancelado pueden ser suprimidas."
+                    _("Solo retenciones en estado Cancelado pueden ser suprimidas.")
                 )
         return super().unlink()
 

@@ -20,7 +20,7 @@
 #
 ###################################################################################
 
-from odoo import http
+from odoo import _, http
 from odoo.exceptions import UserError
 from odoo.http import request
 
@@ -51,12 +51,12 @@ class EmployeeChart(http.Controller):
             return key
         elif len(employees) == 0:
             raise UserError(
-                "Should not have manager for the employee in the top of the chart"
+                _("Should not have manager for the employee in the top of the chart")
             )
         else:
             for emp in employees:
                 names.append(emp.name)
-            raise UserError("These employee have no Manager %s" % (names))
+            raise UserError(_("These employee have no Manager %s") % (names))
 
     def get_lines(self, loop_count):
         if loop_count:

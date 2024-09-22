@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
 
@@ -81,15 +81,15 @@ class HrContractAllocationLine(models.Model):
         for record in self:
             if record.allocated_quantity < record.quantity_delivered:
                 raise UserError(
-                    "La cantidad asignada no puede ser "
-                    "menor que de la cantidad entregada."
+                    _("La cantidad asignada no puede ser "
+                    "menor que de la cantidad entregada.")
                 )
 
     @api.onchange("quantity_delivered")
     def _onchange_quantity_delivered(self):
         for record in self:
             if record.quantity_delivered > record.allocated_quantity:
-                raise UserError("No puede entregar más de la cantidad asignada.")
+                raise UserError(_("No puede entregar más de la cantidad asignada."))
             elif record.allocated_quantity and record.quantity_delivered:
                 record.quantity_to_deliver = (
                     record.allocated_quantity - record.quantity_delivered

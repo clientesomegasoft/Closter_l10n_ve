@@ -23,5 +23,7 @@ class Contract(models.Model):
     def _onchange_cutoff_date_kjfgkj(self):
         if self.receive_commission and self.cutoff_date < 1 or self.cutoff_date > 28:
             raise UserError(
-                _("The allowed range of values on the commission cutoff date is 1-28.")
+                _(
+                    "The allowed range of values on the commission cutoff date is 1-28."
+                )
             )

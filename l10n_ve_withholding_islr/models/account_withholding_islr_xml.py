@@ -3,7 +3,7 @@ import re
 
 from lxml import etree
 
-from odoo import Command, api, fields, models
+from odoo import Command, _, api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -97,7 +97,8 @@ class WithholdingISLRXML(models.Model):
     def unlink(self):
         for rec in self:
             if rec.state != "cancel":
-                raise UserError("Solo XML en estado Cancelado pueden ser suprimidos.")
+                raise UserError(
+                    _("Solo XML en estado Cancelado pueden ser suprimidos."))
         return super().unlink()
 
     def _generate_xml_data(self):

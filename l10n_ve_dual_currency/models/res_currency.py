@@ -1,6 +1,6 @@
 import pytz
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 from odoo.tools import format_amount
 
@@ -99,7 +99,7 @@ class CurrencyRate(models.Model):
                     ],
                 )
                 if self._cr.fetchone()[0]:
-                    raise UserError("Solo se puede almacenar una tasa BCV por dia.")
+                    raise UserError(_("Solo se puede almacenar una tasa BCV por dia."))
 
     def write(self, vals):
         if self.env["account.move.line"].search(
@@ -108,8 +108,10 @@ class CurrencyRate(models.Model):
             [("currency_rate_ref", "=", self.id)], limit=1
         ):
             raise UserError(
-                "No es posible ejecutar esta acción ya que la "
-                "tasa está siendo utilizada por otro modelo."
+                _(
+                    "No es posible ejecutar esta acción ya que la "
+                    "tasa está siendo utilizada por otro modelo."
+                )
             )
         return super(__class__, self).write(vals)
 
