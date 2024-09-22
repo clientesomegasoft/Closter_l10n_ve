@@ -338,7 +338,8 @@ class HrPayslip(models.Model):
         for record in self.slip_ids:
             if record.state in ["done", "paid"]:
                 record.action_payslip_cancel()
-        super(__class__, self).action_draft()
+        res = super(__class__, self).action_draft()
+        return res
 
     def valid_state_payslib(self):
         for record in self.slip_ids:
