@@ -74,8 +74,8 @@ class HrHCMCoverage(models.Model):
         if not ves:
             ves = self.env.company.currency_id
             _logger.warning(
-                "USING env.company.currency_id {ves} as
-                "default value for hr.hcm.coverage.scale"""
+                "USING env.company.currency_id {ves} as "
+                "default value for hr.hcm.coverage.scale"
             )
         return ves
 
