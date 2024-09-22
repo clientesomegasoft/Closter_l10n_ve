@@ -7,9 +7,6 @@
     "contributor": "Rene Gomez - rene.gomez@omegasoftve.com",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Bonuses Fields",
-    "description": """
-    Adds the basic fields for salary bonuses according to Venezuelan law.
-    """,
     "depends": ["hr_contract"],
     "data": [
         "views/contract_bonuses_fields.xml",

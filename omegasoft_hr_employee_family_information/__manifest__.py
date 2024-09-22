@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Employee Family information",
-    "description": """
-    Employee's family information.
-    """,
     "depends": ["hr"],
     "data": [
         "security/ir.model.access.csv",

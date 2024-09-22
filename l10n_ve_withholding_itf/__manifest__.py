@@ -8,11 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Retenciones de ITF",
-    "description": """
-Retenciones de ITF
-==================
-Realiza retenciones de ITF.
-""",
     "depends": [
         "l10n_ve_config_withholding",
     ],

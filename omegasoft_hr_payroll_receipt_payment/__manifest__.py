@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Payroll Receipt of payment",
-    "description": """
-    Customizations to Hr Payroll Receipt of payment.
-    """,
     "depends": [
         "hr_payroll",
         "uom",

@@ -9,8 +9,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Fixes some features in hr_holidays",
-    "description": """
-    """,
     "depends": [
         "hr_holidays",
     ],

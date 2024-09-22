@@ -3,8 +3,6 @@
     "summary": """
         create crew master and relate with planning module
         """,
-    "description": """
-    """,
     "author": "Omegasoft C.A.",
     "contributor": "Luis Alfonzo - luis.alfonzo@omegasoftve.com",
     "website": "https://github.com/macagua/Closter_l10n_ve",

@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Utility Liabilities Fields",
-    "description": """
-    Adds the basic fields for Utility Liabilities according to Venezuelan law.
-    """,
     "depends": ["hr_contract"],
     "data": [
         "views/contract_utility_liabilities_fields.xml",

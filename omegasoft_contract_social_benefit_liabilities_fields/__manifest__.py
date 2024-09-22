@@ -10,10 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Contract Social benefit liabilities Fields",
-    "description": """
-    Adds the Social Benefit Calculations and basic fields for Social benefit
-    liabilities according to Venezuelan law.
-    """,
     "depends": [
         "hr_contract",
         "omegasoft_contract_utility_liabilities_fields",

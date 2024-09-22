@@ -8,10 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Identificación Fiscal",
-    "description": """
-Identificación Fiscal
-=====================
-    """,
     "depends": ["base_vat", "sale", "purchase", "account_accountant"],
     "data": [
         "security/ir.model.access.csv",

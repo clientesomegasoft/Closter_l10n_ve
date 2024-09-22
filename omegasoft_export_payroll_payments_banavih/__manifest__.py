@@ -10,8 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Generation of txt file (BANAVIH) for mass payroll payments.",
-    "description": """
-        Generation of txt file (BANAVIH) for mass payroll payments.""",
     "depends": [
         "base",
         "omegasoft_export_payroll_payments",

@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Provisions Employee Report.",
-    "description": """
-        Provisions Employee Report
-    """,
     "depends": [
         "base",
         "hr_contract",

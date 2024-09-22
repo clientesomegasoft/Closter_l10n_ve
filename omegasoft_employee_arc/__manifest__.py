@@ -1,10 +1,6 @@
 {
     "name": "Omegasoft C.A Employee ARC report",
     "version": "16.0.0.0.1",
-    "description": """
-Reporte ARC Empleados
-=====================
-""",
     "category": "Human Resources/Contracts",
     "author": "Omegasoft C.A.",
     "website": "https://github.com/macagua/Closter_l10n_ve",

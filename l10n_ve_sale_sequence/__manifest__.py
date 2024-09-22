@@ -8,10 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Secuencias de factura de cliente",
-    "description": """
-Secuencias de factura de cliente
-================================
-    """,
     "depends": [
         "l10n_ve_fiscal_book_report",
     ],

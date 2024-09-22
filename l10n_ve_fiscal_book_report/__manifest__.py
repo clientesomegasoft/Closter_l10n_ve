@@ -8,11 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Libros fiscales Compra / Venta",
-    "description": """
-Libros fiscales
-===============
-Visualiza los libros fiscales de compra y venta.
-""",
     "depends": [
         "l10n_ve_account_reports_dual",
         "l10n_ve_withholding_iva",

@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Res currency payroll customization",
-    "description": """
-        Identifies currency rates as payroll rate or regular rate
-    """,
     "depends": ["base", "l10n_ve_dual_currency"],
     "data": [
         "views/res_currency_views.xml",

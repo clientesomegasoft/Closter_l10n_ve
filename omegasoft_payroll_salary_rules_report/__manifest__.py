@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Customizations to the payroll analysis report.",
-    "description": """
-        Customizations to the payroll analysis report
-    """,
     "depends": ["base", "hr_payroll", "hr"],
     "data": [],
     "installable": True,

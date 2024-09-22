@@ -8,11 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Impuesto al licor",
-    "description": """
-Impuesto al Licor
-=================
-Calcula y declara los impuestos correspondientes a cada concepto de ventas de licor.
-""",
     "depends": [
         "l10n_ve_dual_currency",
     ],

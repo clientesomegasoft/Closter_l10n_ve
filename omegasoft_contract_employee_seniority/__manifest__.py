@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Employee Seniority",
-    "description": """
-    Adds the basic fields for Employee Seniority.
-    """,
     "depends": ["hr_contract"],
     "data": [
         "data/employee_seniority.xml",

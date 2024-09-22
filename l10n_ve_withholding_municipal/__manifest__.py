@@ -8,12 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Retenciones municipales",
-    "description": """
-Retenciones Municipales
-=======================
-Realiza retenciones municipales según se especifica en la Ley de cada
-territorio municipal dentro del pais.
-""",
     "depends": [
         "l10n_ve_config_withholding",
     ],

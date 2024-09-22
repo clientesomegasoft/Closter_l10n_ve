@@ -8,12 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Retenciones de ISLR",
-    "description": """
-Retenciones de ISLR
-===================
-Realiza retenciones de impuesto sobre la renta según se especifica
-en la Ley, aplicable en todo el territorio nacional.
-""",
     "depends": [
         "l10n_ve_config_withholding",
     ],

@@ -6,8 +6,6 @@
     "contributor": "Carlos Carvajal carlos.carvajal@omegasoftve.com",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Generation of Report Letters",
-    "description": """
-        Generation of Report Letters""",
     "depends": ["omegasoft_hr_employee", "omegasoft_export_payroll_payments"],
     "data": [
         "security/ir.model.access.csv",

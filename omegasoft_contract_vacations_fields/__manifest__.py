@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Contract Vacations Fields",
-    "description": """
-    Adds the basic fields for Vacations according to Venezuelan law.
-    """,
     "depends": ["hr_contract", "omegasoft_contract_utility_liabilities_fields"],
     "data": [
         "views/contract_vacations_fields.xml",

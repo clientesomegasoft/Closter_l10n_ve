@@ -8,11 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Retenciones de IGTF",
-    "description": """
-Retenciones de IGTF
-===================
-Realiza retenciones de IGTF.
-""",
     "depends": ["l10n_ve_config_withholding"],
     "data": [
         "views/res_partner_views.xml",

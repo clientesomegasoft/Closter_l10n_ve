@@ -10,10 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Automatic salary rule code",
-    "description": """
-    Generates the code for salary rules based on the category code and the
-    rule sequence number.
-    """,
     "depends": ["hr_payroll"],
     "installable": True,
     "auto_install": False,

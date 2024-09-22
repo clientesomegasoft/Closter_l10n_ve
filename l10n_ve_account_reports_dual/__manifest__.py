@@ -9,11 +9,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Reportes en moneda operativa",
-    "description": """
-Reportes en moneda operativa
-============================
-Permite visualizar los informes contables en la moneda de referencia
-""",
     "depends": ["account_followup", "product_margin", "l10n_ve_dual_currency"],
     "data": [
         "views/account_report.xml",

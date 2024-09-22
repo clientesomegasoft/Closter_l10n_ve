@@ -8,13 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Declaraciones de Patente de Industria y Comercio",
-    "description": """
-Reporte de Ingresos Brutos
-==========================
-Lista y detalla el resumen de las cuentas de ingreso en un periodo
-determinado. Genera el pago correspondiente al porcentaje definido
-por la alcaldía para los ingresos brutos (Declaración de patente).
-""",
     "depends": ["l10n_ve_withholding_municipal"],
     "data": [
         "security/ir.model.access.csv",

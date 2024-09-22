@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Planning & Payroll",
-    "description": """
-    Customizations to Planning & Payroll.
-    """,
     "depends": [
         "base",
         "hr",

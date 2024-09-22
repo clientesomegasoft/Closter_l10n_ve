@@ -7,9 +7,6 @@
     "contributor": "Daniel Ospino - daniel.ospino@omegasoftve.com",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Employee",
-    "description": """
-    Cost Centers.
-    """,
     "depends": [
         "hr",
         "omegasoft_hr_employee",

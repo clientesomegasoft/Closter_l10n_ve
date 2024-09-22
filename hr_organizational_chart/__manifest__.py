@@ -24,7 +24,6 @@
     "name": "HR Organizational Chart",
     "version": "16.0.1.0.0",
     "summary": "HR Employees organizational chart",
-    "description": "HR Employees organizational chart",
     "author": "Cybrosys Techno solutions,Open HRMS",
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",

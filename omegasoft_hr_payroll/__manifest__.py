@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Payroll",
-    "description": """
-    Customizations to Hr Payroll.
-    """,
     "depends": [
         "hr",
         "hr_payroll",

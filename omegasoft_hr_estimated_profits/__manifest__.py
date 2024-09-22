@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Estimated Profits",
-    "description": """
-        Calculation of estimated profits
-        """,
     "depends": [
         "hr",
         "omegasoft_payroll_res_config_settings",

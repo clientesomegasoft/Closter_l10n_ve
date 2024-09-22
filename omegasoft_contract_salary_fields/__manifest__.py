@@ -9,9 +9,6 @@
     "author": "Omegasoft C.A.",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Salary Fields",
-    "description": """
-    Adds the basic fields for salary according to Venezuelan law.
-    """,
     "depends": [
         "hr_contract",
         "omegasoft_payroll_res_config_settings",

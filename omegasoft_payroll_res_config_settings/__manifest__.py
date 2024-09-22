@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Payroll Res Config Settings",
-    "description": """
-    Global configurations to the payroll module.
-    """,
     "depends": ["hr_payroll"],
     "data": [
         "security/access.xml",

@@ -8,10 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Retenciones de IVA",
-    "description": """
-Retenciones de IVA
-==================
-    """,
     "depends": [
         "l10n_ve_config_withholding",
     ],

@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Benefit controls Fields",
-    "description": """
-    Adds the basic fields for Benefit controls according to Venezuelan law.
-    """,
     "depends": ["hr_contract"],
     "data": [
         "views/contract_benefit_controls_fields.xml",

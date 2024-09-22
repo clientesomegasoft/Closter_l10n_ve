@@ -7,9 +7,6 @@
     "contributor": "Ismael Castillo - ismael.castillo@omegasoftve.com",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Bonuses Fields",
-    "description": """
-        Adds salary bonuses fields to Venezuela Accountant Localization.
-    """,
     "depends": ["omegasoft_contract_bonuses_fields", "hr_contract"],
     "data": [
         "views/hr_contract.xml",

@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Employee Bank information",
-    "description": """
-    Employee's Bank information.
-    """,
     "depends": ["omegasoft_hr_employee_family_information"],
     "data": [
         "security/ir.model.access.csv",

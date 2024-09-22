@@ -13,9 +13,6 @@
         Allocation of uniforms, personal hygiene and personal equipment
         to employees
     """,
-    "description": """
-        Allocation of uniforms, personal hygiene and personal equipment to employees.
-    """,
     "depends": [
         "hr",
         "hr_payroll",

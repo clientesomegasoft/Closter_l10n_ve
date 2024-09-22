@@ -10,8 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Generation of txt file for mass payroll payments",
-    "description": """
-        Generation of txt file for mass payroll payments""",
     "depends": ["base", "hr", "hr_payroll", "omegasoft_hr_employee_bank_information"],
     "data": [
         "security/ir.model.access.csv",

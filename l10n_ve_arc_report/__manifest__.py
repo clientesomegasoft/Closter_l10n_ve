@@ -8,10 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Reporte ARC Proveedores",
-    "description": """
-Reporte ARC Proveedores
-=======================
-    """,
     "depends": [
         "l10n_ve_account_reports_dual",
     ],

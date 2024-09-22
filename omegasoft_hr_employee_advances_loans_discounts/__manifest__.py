@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Employee Advances, loans and discounts",
-    "description": """
-    Employee's Advances, loans and discounts.
-    """,
     "depends": [
         "hr",
         "hr_payroll",

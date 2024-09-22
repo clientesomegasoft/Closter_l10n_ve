@@ -8,10 +8,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Configuración de Retenciones",
-    "description": """
-Configuración de Retenciones
-============================
-""",
     "depends": [
         "account_debit_note",
         "l10n_ve_dual_currency",

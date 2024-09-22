@@ -11,14 +11,6 @@
     "summary": """
     Adds new salary rule categories that will be included in payslip
     reports""",
-    "description": """
-Let users configure a new kind of salary rule category which
-would be included in Payslip reports.
-
-The salary rules must be included in the new kind and also must
-have set their field "Appears on Payslip" (appears_on_payslip) to be
-shown in the report.
-""",
     "depends": [
         "hr",
         "hr_payroll",

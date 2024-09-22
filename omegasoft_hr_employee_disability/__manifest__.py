@@ -10,9 +10,6 @@
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Employee Disability",
-    "description": """
-    Employee Disability.
-    """,
     "depends": ["hr", "hr_payroll"],
     "data": [
         "data/employee_disability_data.xml",
