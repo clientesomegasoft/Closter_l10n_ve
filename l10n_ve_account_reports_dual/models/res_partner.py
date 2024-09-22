@@ -5,7 +5,7 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     currency_ref_id = fields.Many2one(
-        "res.currency", compute="_get_company_currency_ref"
+        "res.currency", compute="_compute_get_company_currency_ref"
     )
     total_due_ref = fields.Monetary(
         string="Adeudado total ope.",
@@ -20,7 +20,7 @@ class ResPartner(models.Model):
         groups="account.group_account_readonly,account.group_account_invoice",
     )
 
-    def _get_company_currency_ref(self):
+    def _compute_get_company_currency_ref(self):
         for partner in self:
             if partner.company_id:
                 partner.currency_ref_id = partner.sudo().company_id.currency_ref_id

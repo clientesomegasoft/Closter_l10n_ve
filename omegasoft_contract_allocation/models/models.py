@@ -14,7 +14,7 @@ class HrContractCustomization(models.Model):
         string="Allocations", comodel_name="contract_allocation", ondelete="restrict"
     )
 
-    delivered_count = fields.Integer(compute="compute_delivered_count")
+    delivered_count = fields.Integer(compute="_compute_delivered_count")
 
     def get_endowments_delivered(self):
         self.ensure_one()
@@ -30,7 +30,7 @@ class HrContractCustomization(models.Model):
             "context": "{'create': False}",
         }
 
-    def compute_delivered_count(self):
+    def _compute_delivered_count(self):
         for record in self:
             record.delivered_count = self.env["contract_allocation_lines"].search_count(
                 [

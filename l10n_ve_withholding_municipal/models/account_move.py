@@ -18,10 +18,10 @@ class AccountMove(models.Model):
         states={"draft": [("readonly", False)]},
         copy=False,
     )
-    apply_withholding_municipal = fields.Boolean(compute="_apply_withholding_municipal")
+    apply_withholding_municipal = fields.Boolean(compute="_compute_apply_withholding_municipal")
 
     @api.depends("partner_id", "move_type")
-    def _apply_withholding_municipal(self):
+    def _compute_apply_withholding_municipal(self):
         for move in self:
             move.apply_withholding_municipal = (
                 move.is_sale_document() and move.partner_id.is_municipal_agent
