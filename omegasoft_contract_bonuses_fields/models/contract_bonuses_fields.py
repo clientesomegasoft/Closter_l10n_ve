@@ -68,5 +68,5 @@ class ContractBonusesField(models.Model):
                 or record.perfect_attendance_bonus < 0
             ):
                 raise ValidationError(
-                    "Los montos de los bonos de salarios deben ser superiores a cero."
+                    _("Los montos de los bonos de salarios deben ser superiores a cero.")
                 )

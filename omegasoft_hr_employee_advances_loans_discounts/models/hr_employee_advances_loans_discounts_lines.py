@@ -109,7 +109,7 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
         for record in self:
             if record.discount_state != "draft":
                 raise ValidationError(
-                    "Las lineas solo pueden ser eliminadas en estado borrador"
+                    _("Las lineas solo pueden ser eliminadas en estado borrador")
                 )
         res = super(__class__, self).unlink()
         return res
@@ -118,7 +118,7 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
     def _check_product_employee_ids(self):
         if len(self.product_employee_ids) > 1:
             raise ValidationError(
-                "Los anticipos por empleado sólo aceptan un máximo de 1 empleado"
+                _("Los anticipos por empleado sólo aceptan un máximo de 1 empleado")
             )
 
     def _should_check_amount(self):
@@ -173,20 +173,20 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
                 }
 
                 raise ValidationError(
-                    "El monto {advancement} del anticipo para ({employee}) no debe "
+                    _("El monto {advancement} del anticipo para ({employee}) no debe "
                     "ser superior a {details}: {available:,.2f}".format(
                         advancement=advancement,
                         employee=", ".join(record.product_employee_ids.mapped("name")),
                         details=ERROR_DETAILS.get(record.type_advance_loan, ""),
                         available=available_limit,
-                    )
+                    ))
                 )
 
     @api.onchange("fees")
     def _compute_fees_amount(self):
         for record in self:
             if record.fees and record.fees <= 0:
-                raise ValidationError("La cantidad de cuotas debe ser mayor a Cero")
+                raise ValidationError(_("La cantidad de cuotas debe ser mayor a Cero"))
             elif record.fees:
                 record.fee_amount = record.amount / record.fees
 

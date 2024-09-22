@@ -30,7 +30,7 @@ class PurchaseOrder(models.Model):
                 [("is_consignment", "=", "True")], limit=1
             )
             if not plan_id:
-                raise ValidationError("Please set analytic plan for consignment")
+                raise ValidationError(_("Please set analytic plan for consignment"))
             analytic_id = self.env["account.analytic.account"].search(
                 [("purchase_order_id", "=", self.id)], limit=1
             )

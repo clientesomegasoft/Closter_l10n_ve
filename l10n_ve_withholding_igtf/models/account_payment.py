@@ -1,4 +1,4 @@
-from odoo import Command, api, fields, models
+from odoo import Command, _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -124,8 +124,8 @@ class AccountPayment(models.Model):
 
         if not outstanding_account_id:
             raise ValidationError(
-                "No puede crear un nuevo pago sin una cuenta de pagos/recibos "
-                "pendientes establecida en ya sea la empresa o el diario IGTF"
+                _("No puede crear un nuevo pago sin una cuenta de pagos/recibos "
+                "pendientes establecida en ya sea la empresa o el diario IGTF")
             )
 
         move_line_values = [

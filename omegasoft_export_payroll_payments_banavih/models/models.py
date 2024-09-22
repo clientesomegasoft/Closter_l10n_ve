@@ -32,21 +32,21 @@ class ExportBankPaymentsBanavih(models.Model):
             and len(self.bank_account_id.sanitized_acc_number) != 20
         ):
             raise ValidationError(
-                "La longitud del número de cuenta de "
-                "la compañia debe ser de 20 dígitos."
+                _("La longitud del número de cuenta de "
+                "la compañia debe ser de 20 dígitos.")
             )
 
         elif self.bank_account_id and not self.bank_account_id.is_payroll_account:
             raise ValidationError(
-                "La cuenta de la compañia debe estar "
-                "configurada como 'Cuenta de Nomina'."
+                _("La cuenta de la compañia debe estar "
+                "configurada como 'Cuenta de Nomina'.")
             )
 
         if (
             self.env.company.partner_id.partner_type != "other"
             and not self.env.company.partner_id.vat
         ):
-            raise ValidationError("Por favor establezca el RIF de la compañia.")
+            raise ValidationError(_("Por favor establezca el RIF de la compañia."))
 
         if self.type_trans == "fiscal":
             root = self.generate_fiscal_payroll()
@@ -58,7 +58,7 @@ class ExportBankPaymentsBanavih(models.Model):
             banavih_code = self.env.company.banavih_code
             if not banavih_code:
                 raise ValidationError(
-                    "No se encuentra configurado un Código de Identificación Banavih!"
+                    _("No se encuentra configurado un Código de Identificación Banavih!")
                 )
             data, filename = self._write_attachment(
                 root, banavih_code + fiscal_code, False
@@ -68,7 +68,7 @@ class ExportBankPaymentsBanavih(models.Model):
 
         if not data:
             raise ValidationError(
-                "No se pudo generar el archivo. Intente de nuevo con otro periodo."
+                _("No se pudo generar el archivo. Intente de nuevo con otro periodo.")
             )
         return self.write({"state": "done"})
 
@@ -92,23 +92,23 @@ class ExportBankPaymentsBanavih(models.Model):
     def _fiscal_payroll_validations(self, employee, totals):
         if not employee.country_id:
             raise ValidationError(
-                ("Por favor establezca la nacionalidad del empleado: %s.")
+                (_("Por favor establezca la nacionalidad del empleado: %s."))
                 % (employee.name)
             )
         if not employee.identification_id:
             raise ValidationError(
-                ("Por favor establezca la C.I. para el empleado: %s.") % (employee.name)
+                (_("Por favor establezca la C.I. para el empleado: %s.")) % (employee.name)
             )
         elif not employee.identification_id[2:].isnumeric():
             raise ValidationError(
-                ("La C.I. del empleado: %s, debe contener solo números.")
+                (_("La C.I. del empleado: %s, debe contener solo números."))
                 % (employee.name)
             )
         elif 5 < len(employee.identification_id[2:]) > 8:
             raise ValidationError(
                 (
-                    "La C.I. del empleado: %s, debe tener "
-                    "una longitud entre 5 y 8 dígitos."
+                    _("La C.I. del empleado: %s, debe tener "
+                    "una longitud entre 5 y 8 dígitos.")
                 )
                 % (employee.name)
             )
@@ -116,7 +116,7 @@ class ExportBankPaymentsBanavih(models.Model):
         names = tuple(filter(lambda x: x != "", words))
         if len(names) < 2:
             raise ValidationError(
-                ("El empleado: %s, debe tener almenos un nombre y un apellido.")
+                (_("El empleado: %s, debe tener almenos un nombre y un apellido."))
                 % (employee.name)
             )
         elif len(names) == 2:
@@ -124,16 +124,16 @@ class ExportBankPaymentsBanavih(models.Model):
             if not (1 < len(names[0]) < 26):
                 raise ValidationError(
                     (
-                        "El primer nombre del empleado: %s, debe tener "
-                        "una longitud entre 2 y 25 caracteres."
+                        _("El primer nombre del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres.")
                     )
                     % (employee.name)
                 )
             if not (1 < len(names[1]) < 26):
                 raise ValidationError(
                     (
-                        "El primer apellido del empleado: %s, debe tener "
-                        "una longitud entre 2 y 25 caracteres."
+                        _("El primer apellido del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres.")
                     )
                     % (employee.name)
                 )
@@ -143,16 +143,16 @@ class ExportBankPaymentsBanavih(models.Model):
             if not (1 < len(names[0]) < 26):
                 raise ValidationError(
                     (
-                        "El primer nombre del empleado: %s, debe tener "
-                        "una longitud entre 2 y 25 caracteres."
+                        _("El primer nombre del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres.")
                     )
                     % (employee.name)
                 )
             if not (1 < len(names[1]) < 26):
                 raise ValidationError(
                     (
-                        "El primer apellido del empleado: %s, debe tener "
-                        "una longitud entre 2 y 25 caracteres."
+                        _("El primer apellido del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres.")
                     )
                     % (employee.name)
                 )
@@ -162,40 +162,40 @@ class ExportBankPaymentsBanavih(models.Model):
             if not (1 < len(names[0]) < 26):
                 raise ValidationError(
                     (
-                        "El primer nombre del empleado: %s, debe tener "
-                        "una longitud entre 2 y 25 caracteres."
+                        _("El primer nombre del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres.")
                     )
                     % (employee.name)
                 )
             if not (1 < len(names[2]) < 26):
                 raise ValidationError(
                     (
-                        "El primer apellido del empleado: %s, debe tener "
-                        "una longitud entre 2 y 25 caracteres."
+                        _("El primer apellido del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres.")
                     )
                     % (employee.name)
                 )
         if totals[employee.id] <= 0:
             raise ValidationError(
                 (
-                    "La sumatoria de los montos totales de las lineas con "
+                    _("La sumatoria de los montos totales de las lineas con "
                     "categoria 'Básico' y 'Basico3' en los Recibos de Salario "
-                    "del empleado: %s, debe ser un monto mayor que cero."
+                    "del empleado: %s, debe ser un monto mayor que cero.")
                 )
                 % (employee.name)
             )
         elif len(f"{totals[employee.id]:.2f}".replace(".", "")) > 18:
             raise ValidationError(
                 (
-                    "La sumatoria de los montos totales de las lineas con "
+                    _("La sumatoria de los montos totales de las lineas con "
                     "categoria 'Básico' y 'Basico3' en los Recibos de Salario "
-                    "del empleado: %s, no debe tener mas de 18 digitos."
+                    "del empleado: %s, no debe tener mas de 18 digitos.")
                 )
                 % (employee.name)
             )
         if not employee.contract_id.date_start:
             raise ValidationError(
-                ("Por establecer la fecha de inicio de contrato del empleado:")
+                (_("Por establecer la fecha de inicio de contrato del empleado:"))
                 % (employee.name)
             )
 
@@ -219,8 +219,8 @@ class ExportBankPaymentsBanavih(models.Model):
             if employee.identification_id in identification_ids:
                 raise ValidationError(
                     (
-                        "La cedula de identidad del empleado %s, se "
-                        "encuentra duplicada en el archivo a generar."
+                        _("La cedula de identidad del empleado %s, se "
+                        "encuentra duplicada en el archivo a generar.")
                     )
                     % (employee.name)
                 )

@@ -46,6 +46,6 @@ class ContractParafiscalContributionsField(models.Model):
                 or record.percentage_income_tax_islr > 99
             ):
                 raise ValidationError(
-                    "Los montos permitidos para el porcentaje "
-                    "de ISLR estan en el rango [0,99]."
+                    _("Los montos permitidos para el porcentaje "
+                    "de ISLR estan en el rango [0,99].")
                 )

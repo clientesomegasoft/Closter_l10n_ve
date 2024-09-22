@@ -25,4 +25,4 @@ class LineEstimatedProfit(models.Model):
     # def _check_average_days(self):
     #     for record in self:
     #         if record.average_days <= 0 and record.structure_type_default_schedule_pay == 'monthly':
-    #             raise ValidationError('El promedio de días debe ser superior a cero.')
+    #             raise ValidationError(_('El promedio de días debe ser superior a cero.'))

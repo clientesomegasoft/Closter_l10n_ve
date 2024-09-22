@@ -73,12 +73,12 @@ class Partner(models.Model):
                 if partner.is_company:
                     if partner.person_type_id.code not in ("PJDO", "PJND"):
                         raise ValidationError(
-                            "El campo 'Tipo de persona' no puede ser nulo y "
+                            _("El campo 'Tipo de persona' no puede ser nulo y "
                             "debe corresponder con el tipo de contacto Compañía "
-                            "('PJDO' o 'PJND')."
+                            "('PJDO' o 'PJND').")
                         )
                     if partner.person_type_id.code == "PJDO" and not partner.vat:
-                        raise ValidationError("El campo 'RIF' no puede ser nulo !")
+                        raise ValidationError(_("El campo 'RIF' no puede ser nulo !"))
                     if (
                         partner.person_type_id.code == "PJDO"
                         and partner.country_id.code == "VE"
@@ -88,20 +88,20 @@ class Partner(models.Model):
                         )
                     ):
                         raise ValidationError(
-                            "El campo 'RIF' tiene un formato incorrecto.\n"
+                            _("El campo 'RIF' tiene un formato incorrecto.\n"
                             "Formatos admitidos: J-12345678-9, V-12345678-9 o "
-                            "G-12345678-9."
+                            "G-12345678-9.")
                         )
                 else:
                     if partner.person_type_id.code not in ("PNRE", "PNNR"):
                         raise ValidationError(
-                            "El campo 'Tipo de persona' no puede ser nulo y debe "
+                            _("El campo 'Tipo de persona' no puede ser nulo y debe "
                             "corresponder con el tipo de contacto Individual ('PNRE' "
-                            "o 'PNNR')."
+                            "o 'PNNR').")
                         )
                     if not partner.identification:
                         raise ValidationError(
-                            "El campo 'Documento de identidad' no puede ser nulo !"
+                            _("El campo 'Documento de identidad' no puede ser nulo !")
                         )
                     if (
                         partner.person_type_id.code == "PNRE"
@@ -109,13 +109,13 @@ class Partner(models.Model):
                         and not ci_regex.match(partner.identification)
                     ):
                         raise ValidationError(
-                            "El campo 'Documento de identidad' tiene un formato "
+                            _("El campo 'Documento de identidad' tiene un formato "
                             "incorrecto.\nFormatos admitidos: V12345678, E12345678, "
-                            "P1234567890."
+                            "P1234567890.")
                         )
                 if not partner.partner_type:
                     raise ValidationError(
-                        "El campo 'Clasificación comercial' no puede ser nulo !"
+                        _("El campo 'Clasificación comercial' no puede ser nulo !")
                     )
 
     @api.constrains("vat", "country_id")

@@ -77,11 +77,11 @@ class SaleConsignmentLineLotSerial(models.Model):
             qty = sum(so_line_ids.mapped("qty"))
             if qty > record.line_id.sale_qty:
                 raise ValidationError(
-                    "Total quantity can not be greater than line quantity."
+                    _("Total quantity can not be greater than line quantity.")
                 )
             if record.line_id.product_id.tracking == "serial":
                 if 1 < record.qty:
-                    raise ValidationError("For serial qty will be 1 only")
+                    raise ValidationError(_("For serial qty will be 1 only"))
             if record.qty > record.available_qty:
                 raise ValidationError(
                     _(
@@ -101,4 +101,4 @@ class SaleConsignmentLineLotSerial(models.Model):
                     ]
                 )
                 if len(so_line_ids) > 1:
-                    raise ValidationError("You can not use same serial number twise")
+                    raise ValidationError(_("You can not use same serial number twise"))

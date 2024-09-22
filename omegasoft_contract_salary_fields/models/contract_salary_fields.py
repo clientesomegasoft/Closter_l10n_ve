@@ -70,16 +70,16 @@ class ContractSalaryField(models.Model):
         for record in self:
             if record.wage_type == "hourly" and record.hourly_wage <= 0:
                 raise ValidationError(
-                    "El monto del Salario no puede ser menor o igual a cero"
+                    _("El monto del Salario no puede ser menor o igual a cero")
                 )
             elif record.wage_type == "monthly" and record.wage <= 0:
                 raise ValidationError(
-                    "El monto del Salario no puede ser menor o igual a cero"
+                    _("El monto del Salario no puede ser menor o igual a cero")
                 )
 
             if record.cestaticket_salary <= 0:
                 raise ValidationError(
-                    "El monto del Salario Cesta Ticke no puede ser menor o igual a cero"
+                    _("El monto del Salario Cesta Ticke no puede ser menor o igual a cero")
                 )
             if (
                 record.average_wage_date_start
@@ -87,11 +87,11 @@ class ContractSalaryField(models.Model):
                 and record.average_wage < 0
             ):
                 raise ValidationError(
-                    "El monto del Salario Promedio no puede ser "
-                    "menor a cero si existen fechas de inicio y fin"
+                    _("El monto del Salario Promedio no puede ser "
+                    "menor a cero si existen fechas de inicio y fin")
                 )
             if record.salary_overtime_hours < 0:
-                raise ValidationError("Las Horas Extras deben ser superiores a cero.")
+                raise ValidationError(_("Las Horas Extras deben ser superiores a cero."))
 
     def _net_amount(self, payslip_obj, to_currency, average_salary=False):
         # neto = 0
@@ -166,7 +166,7 @@ class ContractSalaryField(models.Model):
             if record.average_wage_date_start and record.average_wage_date_end:
                 if record.average_wage_date_start > record.average_wage_date_end:
                     raise ValidationError(
-                        "La fecha de inicio no puede ser mayor a la fecha fin"
+                        _("La fecha de inicio no puede ser mayor a la fecha fin")
                     )
 
                 payslip_obj = self.env["hr.payslip"].search(
@@ -244,7 +244,7 @@ class ContractSalaryField(models.Model):
         for record in self:
             if record.average_wage < 0:
                 raise ValidationError(
-                    "El monto del salario promedio debe ser superior a cero."
+                    _("El monto del salario promedio debe ser superior a cero.")
                 )
             elif module and module.state == "installed" and record.average_wage:
                 record.is_average_wage = True

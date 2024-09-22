@@ -71,7 +71,7 @@ class HrContractAllocationLine(models.Model):
     @api.onchange("date_delivered")
     def _onchange_date_delivered(self):
         if self.quantity_delivered <= 0 and self.date_delivered:
-            raise ValidationError("La Cantidad entregada debe ser mayor a cero")
+            raise ValidationError(_("La Cantidad entregada debe ser mayor a cero"))
 
     def write(self, vals):
         return super(__class__, self).write(vals)
