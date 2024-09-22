@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Contract Salary Fields",
-    "version": "16.0.16",
+    "version": "16.0.0.0.16",
     "contributor": [
         "Daniel Ospino - daniel.ospino@omegasoftve.com",
         "Rene Gomez - rene.gomez@omegasoftve.com",

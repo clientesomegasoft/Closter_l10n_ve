@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Payroll Automatic Rule Code",
-    "version": "16.0.16",
+    "version": "16.0.0.0.16",
     "category": "Human Resources/Payroll",
     "application": False,
     "author": "Omegasoft C.A",

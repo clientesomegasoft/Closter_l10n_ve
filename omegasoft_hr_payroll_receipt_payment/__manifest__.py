@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Hr Payroll Receipt of payment",
-    "version": "16.0.16",
+    "version": "16.0.0.0.16",
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",

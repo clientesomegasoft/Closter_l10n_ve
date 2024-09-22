@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Configuración contable",
-    "version": "1.0",
+    "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
     "author": "Omegasoft C.A",
     "contributor": [

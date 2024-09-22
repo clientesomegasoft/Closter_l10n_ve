@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft - Comisiones de venta",
-    "version": "16",
+    "version": "16.0.0.0.1",
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",

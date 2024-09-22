@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A HR Report Letters",
-    "version": "16.0.16",
+    "version": "16.0.0.0.16",
     "category": "Human Resources",
     "author": "Omegasoft C.A",
     "contributor": "Carlos Carvajal carlos.carvajal@omegasoftve.com",

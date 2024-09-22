@@ -1,6 +1,6 @@
 {
     "name": "Consignment Management System",
-    "version": "16.0.0",
+    "version": "16.0.0.0.0",
     "author": "Preciseways",
     "category": "Industries",
     "summary": """Retailer agrees to pay a seller or consignor for merchandise

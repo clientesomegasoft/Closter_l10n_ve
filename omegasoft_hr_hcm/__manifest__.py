@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A - HCM",
-    "version": "16.0.1",
+    "version": "16.0.0.0.1",
     "category": "Human Resources/Employee",
     "author": "Omegasoft C.A",
     "contributor": [

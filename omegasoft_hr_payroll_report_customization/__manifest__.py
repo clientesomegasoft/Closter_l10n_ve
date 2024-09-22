@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft - Payroll Report Customization",
-    "version": "16.0",
+    "version": "16.0.0.0.1",
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",

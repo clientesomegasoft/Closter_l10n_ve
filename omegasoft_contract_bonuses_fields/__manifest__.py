@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Contract Bonuses Fields",
-    "version": "15.0.1.2",
+    "version": "16.0.0.1.2",
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",

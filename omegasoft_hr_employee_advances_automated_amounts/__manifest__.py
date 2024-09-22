@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft - HR Employee Advances, Loans and Discounts Automated Amounts",
-    "version": "16.0.1",
+    "version": "16.0.0.0.1",
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",

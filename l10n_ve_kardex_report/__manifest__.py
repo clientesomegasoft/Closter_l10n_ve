@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Libro de inventario",
-    "version": "1.0",
+    "version": "16.0.0.0.1",
     "category": "Inventory/Inventory",
     "author": "Omegasoft C.A",
     "contributor": [

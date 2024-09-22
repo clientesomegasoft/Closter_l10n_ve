@@ -1,6 +1,6 @@
 {
     "name": "omegasoft hr plan accumulation vacation",
-    "version": "16",
+    "version": "16.0.0.0.1",
     "category": "Human Resources/vacation",
     "application": False,
     "author": "Omegasoft C.A",

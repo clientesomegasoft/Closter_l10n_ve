@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A. Account and Sale Statistics",
-    "version": "16.0.1",
+    "version": "16.0.0.0.1",
     "summary": """Customize the standards reports on Account and Sale applications""",
     "description": """
 Express the monetary fields/columns that appears in some

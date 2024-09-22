@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft - Holidays/Time Off",
-    "version": "16",
+    "version": "16.0.0.0.1",
     "category": "Human Resources/Time Off",
     "application": False,
     "author": "Omegasoft C.A",

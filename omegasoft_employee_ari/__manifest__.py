@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Employee ARI report",
-    "version": "1.0",
+    "version": "16.0.0.0.1",
     "description": """
 Reporte ARI Empleados
 =====================

@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft C.A Res Currency Payroll rate",
-    "version": "16.0.16",
+    "version": "16.0.0.0.16",
     "category": "Currency",
     "application": False,
     "author": "Omegasoft C.A",

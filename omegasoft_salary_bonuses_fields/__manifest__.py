@@ -1,6 +1,6 @@
 {
     "name": "Omegasoft - Salary Bonuses Fields",
-    "version": "15",
+    "version": "16.0.0.0.0",
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",
