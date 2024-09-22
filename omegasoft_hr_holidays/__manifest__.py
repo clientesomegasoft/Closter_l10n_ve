@@ -3,7 +3,7 @@
     "version": "16.0.0.0.1",
     "category": "Human Resources/Time Off",
     "application": False,
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],

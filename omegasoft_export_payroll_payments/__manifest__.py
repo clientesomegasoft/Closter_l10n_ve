@@ -3,7 +3,7 @@
     "version": "16.0.0.0.16",
     "category": "Human Resources/Payroll",
     "application": False,
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "contributor": [
         "Daniel Ospino - daniel.ospino@omegasoftve.com",
         "Rene Gomez - rene.gomez@omegasoftve.com",

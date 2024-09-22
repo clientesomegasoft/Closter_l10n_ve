@@ -3,7 +3,7 @@
     "version": "16.0.0.0.0",
     "category": "Human Resources/Contracts",
     "application": False,
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "contributor": "Ismael Castillo - ismael.castillo@omegasoftve.com",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Bonuses Fields",

@@ -12,7 +12,7 @@ The reports that are affected by this module are:
     - Invoices Statistics
     - Sales Analysis Report
 """,
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],

@@ -2,7 +2,7 @@
     "name": "Omegasoft C.A ARC Proveedores",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "contributor": [
         "Naudy Mendez - naudy.mendez@omegasoftve.com",
     ],

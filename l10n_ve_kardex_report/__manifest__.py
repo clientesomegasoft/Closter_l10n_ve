@@ -2,7 +2,7 @@
     "name": "Omegasoft C.A Libro de inventario",
     "version": "16.0.0.0.1",
     "category": "Inventory/Inventory",
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "contributor": [
         "Naudy Mendez - naudy.mendez@omegasoftve.com",
     ],

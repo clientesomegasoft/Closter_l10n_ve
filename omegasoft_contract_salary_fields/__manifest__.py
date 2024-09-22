@@ -6,7 +6,7 @@
         "Rene Gomez - rene.gomez@omegasoftve.com",
     ],
     "application": False,
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Salary Fields",
     "description": """

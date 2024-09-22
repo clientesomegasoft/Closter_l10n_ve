@@ -3,7 +3,7 @@
     "version": "16.0.0.0.1",
     "category": "Human Resources/Contracts",
     "application": False,
-    "author": "Omegasoft C.A",
+    "author": "Omegasoft C.A.",
     "contributor": "Daniel Ospino - dospinoomegasoft@omegasoftve.com",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Sale Comissions",
