@@ -24,8 +24,9 @@ class AccountPaymentRegister(models.TransientModel):
     def _get_total_amount_in_wizard_currency_to_full_reconcile(
         self, batch_result, early_payment_discount=True
     ):
-        """Compute the total amount needed in the currency of the wizard to fully reconcile the batch of journal
-        items passed as parameter.
+        """Compute the total amount needed in the currency of the wizard
+        to fully reconcile the batch of journal items passed as
+        parameter.
 
         :param batch_result:    A batch returned by '_get_batches'.
         :return:                An amount in the currency of the wizard.
@@ -38,7 +39,8 @@ class AccountPaymentRegister(models.TransientModel):
                 batch_result, early_payment_discount=early_payment_discount
             )
         elif self.source_currency_id != comp_curr and self.currency_id == comp_curr:
-            # Foreign currency on source line but the company currency one on the opposite line.
+            # Foreign currency on source line but the company
+            # currency one on the opposite line.
             if self.source_currency_id == self.currency_ref_id:
                 return comp_curr.round(
                     self.source_amount_currency / self.currency_rate_ref.rate
@@ -51,7 +53,8 @@ class AccountPaymentRegister(models.TransientModel):
                     self.payment_date,
                 ), False
         elif self.source_currency_id == comp_curr and self.currency_id != comp_curr:
-            # Company currency on source line but a foreign currency one on the opposite line.
+            # Company currency on source line but a foreign
+            # currency one on the opposite line.
             if self.currency_id == self.currency_ref_id:
                 return abs(
                     sum(
@@ -74,7 +77,8 @@ class AccountPaymentRegister(models.TransientModel):
                     )
                 ), False
         else:
-            # Foreign currency on payment different than the one set on the journal entries.
+            # Foreign currency on payment different than
+            # the one set on the journal entries.
             return comp_curr._convert(
                 self.source_amount, self.currency_id, self.company_id, self.payment_date
             ), False

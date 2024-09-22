@@ -264,7 +264,9 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
             """
             )
 
-            # For the move lines linked to no partner, but reconciled with this partner. They will appear in grey in the report
+            # For the move lines linked to no partner, but
+            # reconciled with this partner. They will appear
+            # in grey in the report
             # TODO campo amount_ref en account_partial_reconcile
             queries.append(
                 f"""
@@ -325,11 +327,13 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
         self._cr.execute(query, all_params)
         for aml_result in self._cr.dictfetchall():
             if aml_result["key"] == "indirectly_linked_aml":
-                # Append the line to the partner found through the reconciliation.
+                # Append the line to the partner found through
+                # the reconciliation.
                 if aml_result["partner_id"] in rslt:
                     rslt[aml_result["partner_id"]].append(aml_result)
 
-                # Balance it with an additional line in the Unknown Partner section but having reversed amounts.
+                # Balance it with an additional line in the Unknown
+                # Partner section but having reversed amounts.
                 if None in rslt:
                     rslt[None].append(
                         {

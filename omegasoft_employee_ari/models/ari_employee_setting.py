@@ -71,7 +71,8 @@ class AriEmployeeSettingLines(models.Model):
         [
             (
                 "education",
-                "Institutos docentes por la educación del contribuyente y descendientes no mayores de 25 años",
+                "Institutos docentes por la educación del contribuyente "
+                "y descendientes no mayores de 25 años",
             ),
             ("HCM", "Primas de seguros de Hospitalizacion, cirugia y maternidad"),
             (
@@ -80,7 +81,8 @@ class AriEmployeeSettingLines(models.Model):
             ),
             (
                 "house",
-                "Intereses para la adquisicion de la vivienda principal o del pago del alquiler de la vivienda",
+                "Intereses para la adquisicion de la vivienda principal "
+                "o del pago del alquiler de la vivienda",
             ),
             ("extra", "Monto retenido de mas en años anteriores"),
         ],

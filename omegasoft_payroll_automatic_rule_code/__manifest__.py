@@ -4,7 +4,10 @@
     "category": "Human Resources/Payroll",
     "application": False,
     "author": "Omegasoft C.A",
-    "contributor": "Leonel torres - leonel.torres@omegasoftve.com / Daniel Ospino - daniel.ospino@omegasoftve.com",
+    "contributor": [
+        "Leonel torres - leonel.torres@omegasoftve.com",
+        "Daniel Ospino - daniel.ospino@omegasoftve.com",
+    ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Automatic salary rule code",
     "description": """

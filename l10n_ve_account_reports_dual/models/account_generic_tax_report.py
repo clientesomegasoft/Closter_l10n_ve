@@ -13,12 +13,15 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
         """Read the tax details to compute the tax amounts.
 
         :param options_list:    The list of report options, one for each period.
-        :param groupby_fields:  A list of tuple (alias, field) representing the way the amounts must be grouped.
-        :return:                A dictionary mapping each groupby key (e.g. a tax_id) to a sub dictionary containing:
+        :param groupby_fields:  A list of tuple (alias, field) representing the
+                                way the amounts must be grouped.
+        :return:                A dictionary mapping each groupby key (e.g. a tax_id)
+                                to a sub dictionary containing:
 
             base_amount:    The tax base amount expressed in company's currency.
             tax_amount      The tax amount expressed in company's currency.
-            children:       The children nodes following the same pattern as the current dictionary.
+            children:       The children nodes following the same pattern as
+                            the current dictionary.
         """
         fetch_group_of_taxes = False
 
@@ -28,7 +31,8 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
             select_clause_list.append(f"{alias}.{field} AS {alias}_{field}")
             groupby_query_list.append(f"{alias}.{field}")
 
-            # Fetch both info from the originator tax and the child tax to manage the group of taxes.
+            # Fetch both info from the originator tax and the
+            # child tax to manage the group of taxes.
             if alias == "src_tax":
                 select_clause_list.append(f"tax.{field} AS tax_{field}")
                 groupby_query_list.append(f"tax.{field}")
@@ -38,7 +42,8 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
         groupby_query_str = ",".join(groupby_query_list)
 
         # Fetch the group of taxes.
-        # If all children taxes are 'none', all amounts are aggregated and only the group will appear on the report.
+        # If all children taxes are 'none', all amounts are
+        # aggregated and only the group will appear on the report.
         # If some children taxes are not 'none', the children are displayed.
         group_of_taxes_to_expand = set()
         if fetch_group_of_taxes:
@@ -70,8 +75,10 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                     ._get_query_tax_details(tables, where_clause, where_params)
                 )
 
-            # Avoid adding multiple times the same base amount sharing the same grouping_key.
-            # It could happen when dealing with group of taxes for example.
+            # Avoid adding multiple times the same base
+            # amount sharing the same grouping_key.
+            # It could happen when dealing with group
+            # of taxes for example.
             row_keys = set()
 
             self._cr.execute(
@@ -105,14 +112,17 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                     grouping_key = f"{alias}_{field}"
 
                     # Manage group of taxes.
-                    # In case the group of taxes is mixing multiple taxes having a type_tax_use != 'none', consider
+                    # In case the group of taxes is mixing multiple
+                    # taxes having a type_tax_use != 'none', consider
                     # them instead of the group.
                     if (
                         grouping_key == "src_tax_id"
                         and row["src_tax_id"] in group_of_taxes_to_expand
                     ):
-                        # Add the originator group to the grouping key, to make sure that its base amount is not
-                        # treated twice, for hybrid cases where a tax is both used in a group and independently.
+                        # Add the originator group to the grouping key, to
+                        # make sure that its base amount is not treated twice,
+                        # for hybrid cases where a tax is both used in a
+                        # group and independently.
                         cumulated_row_key.append(row[grouping_key])
 
                         # Ensure the child tax is used instead of the group.
@@ -153,7 +163,9 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
         self, report, options, options_by_column_group
     ):
         # Fetch the group of taxes.
-        # If all child taxes have a 'none' type_tax_use, all amounts are aggregated and only the group appears on the report.
+        # If all child taxes have a 'none' type_tax_use,
+        # all amounts are aggregated and only the group
+        # appears on the report.
         self._cr.execute(
             """
                 SELECT
@@ -278,19 +290,23 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                         in group_of_taxes_info[row["src_group_tax_id"]]["child_tax_ids"]
                     ):
                         # Suppose a base of 1000 with a group of taxes 20% affect + 10%.
-                        # The base of the group of taxes must be 1000, not 1200 because the group of taxes is not
-                        # expanded. So the tax lines affecting the base of its own group of taxes are ignored.
+                        # The base of the group of taxes must be 1000, not 1200 because
+                        # the group of taxes is not expanded. So the tax lines affecting
+                        # the base of its own group of taxes are ignored.
                         pass
                     elif row[
                         "tax_type_tax_use"
                     ] == "none" and child_to_group_of_taxes.get(row["tax_id"]):
-                        # The tax line is affecting the base of a 'none' tax belonging to a group of taxes.
-                        # In that case, the amount is accounted as an extra base for that group. However, we need to
-                        # account it only once.
-                        # For example, suppose a tax 10% affect base of subsequent followed by a group of taxes
-                        # 20% + 30%. On a base of 1000.0, the tax line for 10% will affect the base of 20% + 30%.
-                        # However, this extra base must be accounted only once since the base of the group of taxes
-                        # must be 1100.0 and not 1200.0.
+                        # The tax line is affecting the base of a 'none' tax belonging
+                        # to a group of taxes.
+                        # In that case, the amount is accounted as an extra base for
+                        # that group. However, we need to account it only once.
+                        # For example, suppose a tax 10% affect base of subsequent
+                        # followed by a group of taxes 20% + 30%. On a base of 1000.0,
+                        # the tax line for 10% will affect the base of 20% + 30%.
+                        # However, this extra base must be accounted only once since
+                        # the base of the group of taxes must be 1100.0 and not
+                        # 1200.0.
                         group_tax_id = child_to_group_of_taxes[row["tax_id"]]
                         if group_tax_id not in group_of_taxes_with_extra_base_amount:
                             group_tax_info = group_of_taxes_info[group_tax_id]
@@ -361,7 +377,8 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
 
             for row in self._cr.dictfetchall():
                 # Manage group of taxes.
-                # In case the group of taxes is mixing multiple taxes having a type_tax_use != 'none', consider
+                # In case the group of taxes is mixing multiple
+                # taxes having a type_tax_use != 'none', consider
                 # them instead of the group.
                 tax_id = row["tax_id"]
                 if row["group_tax_id"]:

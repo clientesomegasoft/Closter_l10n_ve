@@ -267,7 +267,8 @@ class JournalReportCustomHandler(models.AbstractModel):
             res[country_name][name][sign] = report.format_value(
                 balance, blank_if_zero=False, figure_type="monetary"
             )
-            # We need them formatted, to ensure they are displayed correctly in the report. (E.g. 0.0, not 0)
+            # We need them formatted, to ensure they are
+            # displayed correctly in the report. (E.g. 0.0, not 0)
             if opposite[sign] not in res[country_name][name]:
                 res[country_name][name][opposite[sign]] = report.format_value(
                     0, blank_if_zero=False, figure_type="monetary"
@@ -285,8 +286,10 @@ class JournalReportCustomHandler(models.AbstractModel):
     def _get_generic_tax_summary_for_sections(self, options, data):
         """
         Overridden to make use of the generic tax report computation
-        Works by forcing specific options into the tax report to only get the lines we need.
-        The result is grouped by the country in which the tag exists in case of multivat environment.
+        Works by forcing specific options into the tax report to only
+        get the lines we need.
+        The result is grouped by the country in which the tag exists
+        in case of multivat environment.
         Returns a dictionary with the following structure:
         {
             Country : [
@@ -318,7 +321,8 @@ class JournalReportCustomHandler(models.AbstractModel):
                     "tax_amount": tax_report_line["columns"][1]["no_format"],
                 }
 
-        # Make the final data dict that will be used by the template, using the taxes information.
+        # Make the final data dict that will be used by
+        # the template, using the taxes information.
         taxes = self.env["account.tax"].browse(tax_values.keys())
         res = defaultdict(list)
         for tax in taxes:

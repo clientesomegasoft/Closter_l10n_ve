@@ -18,9 +18,7 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
         limit=None,
     ):
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
-            return super(
-                __class__, self
-            )._aged_partner_report_custom_engine_common(
+            return super(__class__, self)._aged_partner_report_custom_engine_common(
                 options, internal_type, current_groupby, next_groupby, offset, limit
             )
 
@@ -52,9 +50,8 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
                     rslt[period_key] += query_res[period_key]
 
             if current_groupby == "id":
-                query_res = query_res_lines[
-                    0
-                ]  # We're grouping by id, so there is only 1 element in query_res_lines anyway
+                query_res = query_res_lines[0]  # We're grouping by id, so there is only
+                # 1 element in query_res_lines anyway
                 currency = (
                     self.env["res.currency"].browse(query_res["currency_id"][0])
                     if len(query_res["currency_id"]) == 1
@@ -77,7 +74,8 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
                         else None,
                         "total": None,
                         "has_sublines": query_res["aml_count"] > 0,
-                        # Needed by the custom_unfold_all_batch_data_generator, to speed-up unfold_all
+                        # Needed by the custom_unfold_all_batch_data_generator,
+                        # to speed-up unfold_all
                         "partner_id": query_res["partner_id"][0]
                         if query_res["partner_id"]
                         else None,

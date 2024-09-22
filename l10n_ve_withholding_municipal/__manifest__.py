@@ -11,7 +11,8 @@
     "description": """
 Retenciones Municipales
 =======================
-Realiza retenciones municipales según se especifica en la Ley de cada territorio municipal dentro del pais.
+Realiza retenciones municipales según se especifica en la Ley de cada
+territorio municipal dentro del pais.
 """,
     "depends": [
         "l10n_ve_config_withholding",

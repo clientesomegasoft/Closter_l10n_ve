@@ -80,7 +80,8 @@ class Employee(models.Model):
 
                 raise ValidationError(
                     _(
-                        "The employee %s cannot be deleted because it has the following payslip entries:\n%s",
+                        "The employee %s cannot be deleted because "
+                        "it has the following payslip entries:\n%s",
                         record.name,
                         details,
                     )

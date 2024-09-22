@@ -126,10 +126,15 @@ class HrOrganizatioanlUnits(models.Model):
             units.total_employee = result.get(units.id, 0)
 
     def act_employee_from_hr_organizational_units(self):
-        #     action = self.env['ir.actions.actions']._for_xml_id('hr.view_act_employee_from_hr_organizational_units')
-        #     action['context'] = {'default_organizational_units_id': self.id, 'search_default_organizational_units_id': self.id}
-        #     action['domain'] = [('organizational_units_id', '=', self.id)]
-        #     return action
+        # action = self.env['ir.actions.actions']._for_xml_id(
+        #     'hr.view_act_employee_from_hr_organizational_units'
+        # )
+        # action['context'] = {
+        #     'default_organizational_units_id': self.id,
+        #     'search_default_organizational_units_id': self.id
+        # }
+        # action['domain'] = [('organizational_units_id', '=', self.id)]
+        # return action
         return {
             "type": "ir.actions.act_window",
             "name": "employee",

@@ -20,7 +20,8 @@ class HrPayslipEmployees(models.TransientModel):
             ("second_fortnight", "Second fortnight"),
         ],
         string="Fortnights",
-        help="Indicates whether the structure associated with the payroll is first or second fortnight",
+        help="""Indicates whether the structure associated with
+        the payroll is first or second fortnight""",
     )
 
     struct_fortnight = fields.Selection(related="structure_id.schedule_pay")
@@ -141,12 +142,20 @@ class HrPayslipEmployees(models.TransientModel):
                 }
 
         ##############################################################
-        # payslip_run.write({'struct_id': self.structure_id.id, 'fortnight': self.fortnight, 'struct_fortnight': self.struct_fortnight})
+        # payslip_run.write({
+        #     'struct_id': self.structure_id.id,
+        #     'fortnight': self.fortnight,
+        #     'struct_fortnight': self.struct_fortnight
+        # })
         # payslip_run._onchange_fortnight()
 
-        # days = payslip_run._get_number_of_mondays_saturdays_sundays(payslip_run.date_start,payslip_run.date_end)
+        # days = payslip_run._get_number_of_mondays_saturdays_sundays(
+        #     payslip_run.date_start,payslip_run.date_end
+        # )
         # payslip_run.number_of_mondays = days.get('number_of_mondays')
-        # payslip_run.number_of_saturdays_sundays = days.get('number_of_saturdays_sundays')
+        # payslip_run.number_of_saturdays_sundays = days.get(
+        #     'number_of_saturdays_sundays'
+        # )
         ##############################################################
 
         default_values = Payslip.default_get(Payslip.fields_get())

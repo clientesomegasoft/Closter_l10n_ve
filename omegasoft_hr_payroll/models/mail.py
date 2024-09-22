@@ -39,8 +39,9 @@ class Mail(models.Model):
                 )
             except Exception as exc:
                 if raise_exception:
-                    # To be consistent and backward compatible with mail_mail.send() raised
-                    # exceptions, it is encapsulated into an Odoo MailDeliveryException
+                    # To be consistent and backward compatible with mail_mail.send()
+                    # raised exceptions, it is encapsulated into an Odoo
+                    # MailDeliveryException
                     raise MailDeliveryException(
                         _("Unable to connect to SMTP Server"), exc
                     )
@@ -130,7 +131,8 @@ class Mail(models.Model):
                     {
                         "state": "exception",
                         "failure_reason": _(
-                            "Error without exception. Probably due do sending an email without computed recipients."
+                            "Error without exception. Probably due do "
+                            "sending an email without computed recipients."
                         ),
                     }
                 )
@@ -138,8 +140,8 @@ class Mail(models.Model):
                 payslip.email_state = "exception"
                 #################################################
                 # Update notification in a transient exception state to avoid concurrent
-                # update in case an email bounces while sending all emails related to current
-                # mail record.
+                # update in case an email bounces while sending all emails related to
+                # current mail record.
                 notifs = self.env["mail.notification"].search(
                     [
                         ("notification_type", "=", "email"),
@@ -149,7 +151,9 @@ class Mail(models.Model):
                 )
                 if notifs:
                     notif_msg = _(
-                        "Error without exception. Probably due do concurrent access update of notification records. Please see with an administrator."
+                        "Error without exception. Probably due do concurrent "
+                        "access update of notification records. Please see with "
+                        "an administrator."
                     )
                     notifs.sudo().write(
                         {
@@ -158,8 +162,9 @@ class Mail(models.Model):
                             "failure_reason": notif_msg,
                         }
                     )
-                    # `test_mail_bounce_during_send`, force immediate update to obtain the lock.
-                    # see rev. 56596e5240ef920df14d99087451ce6f06ac6d36
+                    # `test_mail_bounce_during_send`, force immediate
+                    # update to obtain the lock. see
+                    # rev. 56596e5240ef920df14d99087451ce6f06ac6d36
                     notifs.flush(
                         fnames=[
                             "notification_status",
@@ -169,10 +174,11 @@ class Mail(models.Model):
                         records=notifs,
                     )
 
-                # build an RFC2822 email.message.Message object and send it without queuing
+                # build an RFC2822 email.message.Message object and
+                # send it without queuing
                 res = None
-                # TDE note: could be great to pre-detect missing to/cc and skip sending it
-                # to go directly to failed state update
+                # TDE note: could be great to pre-detect missing to/cc
+                # and skip sending it  to go directly to failed state update
                 for email in email_list:
                     msg = IrMailServer.build_email(
                         email_from=mail.email_from,
@@ -202,7 +208,8 @@ class Mail(models.Model):
                         processing_pid = None
                     except AssertionError as error:
                         if str(error) == IrMailServer.NO_VALID_RECIPIENT:
-                            # if we have a list of void emails for email_list -> email missing, otherwise generic email failure
+                            # if we have a list of void emails for email_list ->
+                            # email missing, otherwise generic email failure
                             if (
                                 not email.get("email_to")
                                 and failure_type != "mail_email_invalid"
@@ -233,24 +240,27 @@ class Mail(models.Model):
                         mail.id,
                         mail.message_id,
                     )
-                    # /!\ can't use mail.state here, as mail.refresh() will cause an error
-                    # see revid:odo@openerp.com-20120622152536-42b2s28lvdv3odyr in 6.1
+                    # /!\ can't use mail.state here, as mail.refresh() will
+                    # cause an error see
+                    # revid:odo@openerp.com-20120622152536-42b2s28lvdv3odyr in 6.1
                 mail._postprocess_sent_message(
                     success_pids=success_pids, failure_type=failure_type
                 )
             except MemoryError:
-                # prevent catching transient MemoryErrors, bubble up to notify user or abort cron job
-                # instead of marking the mail as failed
+                # prevent catching transient MemoryErrors, bubble up to notify
+                # user or abort cron job instead of marking the mail as failed
                 _logger.exception(
-                    "MemoryError while processing mail with ID %r and Msg-Id %r. Consider raising the --limit-memory-hard startup option",
+                    "MemoryError while processing mail with ID %r and Msg-Id %r. "
+                    "Consider raising the --limit-memory-hard startup option",
                     mail.id,
                     mail.message_id,
                 )
                 # mail status will stay on ongoing since transaction will be rollback
                 raise
             except (psycopg2.Error, smtplib.SMTPServerDisconnected):
-                # If an error with the database or SMTP session occurs, chances are that the cursor
-                # or SMTP session are unusable, causing further errors when trying to save the state.
+                # If an error with the database or SMTP session occurs,
+                # chances are that the cursor or SMTP session are unusable,
+                # causing further errors when trying to save the state.
                 _logger.exception(
                     "Exception while processing mail with ID %r and Msg-Id %r.",
                     mail.id,
@@ -349,7 +359,8 @@ class Mail(models.Model):
                 template = self.env.ref(notif_layout, raise_if_not_found=True)
             except ValueError:
                 _logger.warning(
-                    "QWeb template %s not found when sending template %s. Sending without layouting."
+                    "QWeb template %s not found when sending template %s. "
+                    "Sending without layouting."
                     % (notif_layout, self.name)
                 )
             else:

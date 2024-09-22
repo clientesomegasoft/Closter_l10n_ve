@@ -3,11 +3,11 @@
     "version": "16.0.0",
     "author": "Preciseways",
     "category": "Industries",
-    "summary": """ Retailer agrees to pay a seller or consignor for merchandise after the item sells or
-                selling goods (clothing, furniture, etc.) through a third-party vendor such as a consignment store.
-                the consignee is financially responsible (the buyer) for the receipt of a shipment also includes
-                commision on consigment and multiple reports.
-            """,
+    "summary": """Retailer agrees to pay a seller or consignor for merchandise
+    after the item sells or selling goods (clothing, furniture, etc.) through a
+    third-party vendor such as a consignment store. the consignee is financially
+    responsible (the buyer) for the receipt of a shipment also includes commission
+    on consignment and multiple reports.""",
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "depends": ["purchase_stock", "sale_management", "sale_stock"],
     "data": [

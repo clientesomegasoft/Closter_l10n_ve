@@ -11,7 +11,8 @@
     "description": """
 Retenciones de ISLR
 ===================
-Realiza retenciones de impuesto sobre la renta según se especifica en la Ley, aplicable en todo el territorio nacional.
+Realiza retenciones de impuesto sobre la renta según se especifica
+en la Ley, aplicable en todo el territorio nacional.
 """,
     "depends": [
         "l10n_ve_config_withholding",

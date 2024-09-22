@@ -22,7 +22,8 @@ class HrHCMCoverage(models.Model):
     currency_id = fields.Many2one(
         "res.currency",
         default=lambda self: self._get_default_currency_id(),
-        help="Tenchincal field used to keep consistency on the amounts used in this record",
+        help="""Tenchincal field used to keep consistency
+        on the amounts used in this record""",
     )
 
     total_quota_amount = fields.Monetary(
@@ -73,7 +74,8 @@ class HrHCMCoverage(models.Model):
         if not ves:
             ves = self.env.company.currency_id
             _logger.warning(
-                "USING env.company.currency_id {ves} as default value for hr.hcm.coverage.scale"
+                "USING env.company.currency_id {ves} as
+                "default value for hr.hcm.coverage.scale"""
             )
         return ves
 

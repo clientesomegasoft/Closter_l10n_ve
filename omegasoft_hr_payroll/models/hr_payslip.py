@@ -44,7 +44,8 @@ class HrPayslip(models.Model):
             ("second_fortnight", "Second fortnight"),
         ],
         string="Fortnights",
-        help="Indicates whether the structure associated with the payroll is first or second fortnight",
+        help="""Indicates whether the structure associated with
+        the payroll is first or second fortnight""",
         tracking=True,
     )
 
@@ -532,7 +533,8 @@ class HrPayslip(models.Model):
                 name = record.name
                 raise UserError(
                     _(
-                        "No se puede llevar a borrardor una nomina con asientos publicados: \n"
+                        "No se puede llevar a borrardor una "
+                        "nomina con asientos publicados: \n"
                         "%(name)s",
                         name=name,
                     )
@@ -562,7 +564,8 @@ class HrPayslip(models.Model):
     def action_payslip_paid(self):
         if any(move.state != "posted" for move in self.move_id):
             raise UserError(
-                "No se puede marcar la nómina como pagada si el asiento contable no esta publicado."
+                "No se puede marcar la nómina como pagada "
+                "si el asiento contable no esta publicado."
             )
         return super(__class__, self).action_payslip_paid()
 
@@ -572,7 +575,8 @@ class HrPayslip(models.Model):
         # Add payslip without run
         payslips_to_post = self.filtered(lambda slip: not slip.payslip_run_id)
 
-        # Adding pay slips from a batch and deleting pay slips with a batch that is not ready for validation.
+        # Adding pay slips from a batch and deleting pay
+        # slips with a batch that is not ready for validation.
         payslip_runs = (self - payslips_to_post).mapped("payslip_run_id")
         for run in payslip_runs:
             if run._are_payslips_ready():
@@ -640,7 +644,8 @@ class HrPayslip(models.Model):
                     debit_sum += line_id["debit"]
                     credit_sum += line_id["credit"]
 
-                # The code below is called if there is an error in the balance between credit and debit sum.
+                # The code below is called if there is an error
+                # in the balance between credit and debit sum.
                 if (
                     float_compare(credit_sum, debit_sum, precision_digits=precision)
                     == -1

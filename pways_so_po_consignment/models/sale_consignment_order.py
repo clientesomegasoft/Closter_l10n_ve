@@ -152,7 +152,8 @@ class SaleConsignmentOrder(models.Model):
         ):
             raise ValidationError(
                 _(
-                    "Please assigned consignment location or consignment route in seleted warehouse."
+                    "Please assigned consignment location or "
+                    "consignment route in selected warehouse."
                 )
             )
 

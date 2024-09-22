@@ -1,8 +1,9 @@
 {
     "name": "Omegasoft Hr Employee Code",
-    "summary": """adds employee file functionality""",
+    "summary": """Adds employee file functionality""",
     "description": """
-        Adds the employee tab field to various views of the employee module and adds employee search by file
+    Adds the employee tab field to various views of the employee
+    module and adds employee search by file
     """,
     "author": "Omegasoft C.A",
     "contributor": "Luis Alfonzo - luis.alfonzo@omegasoftve.com",

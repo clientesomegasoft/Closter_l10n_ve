@@ -50,7 +50,8 @@ class ContractSalaryField(models.Model):
 
     salary_overtime_hours = fields.Monetary(
         string="Overtime hours",
-        help="These are the hours of work that are performed on a voluntary basis, over the maximum duration of the ordinary working day.",
+        help="""These are the hours of work that are performed on a voluntary
+        basis, over the maximum duration of the ordinary working day.""",
         currency_field="salary_overtime_hours_currency",
         tracking=True,
     )
@@ -86,7 +87,8 @@ class ContractSalaryField(models.Model):
                 and record.average_wage < 0
             ):
                 raise ValidationError(
-                    "El monto del Salario Promedio no puede ser menor a cero si existen fechas de inicio y fin"
+                    "El monto del Salario Promedio no puede ser "
+                    "menor a cero si existen fechas de inicio y fin"
                 )
             if record.salary_overtime_hours < 0:
                 raise ValidationError("Las Horas Extras deben ser superiores a cero.")

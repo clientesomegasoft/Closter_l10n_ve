@@ -64,7 +64,8 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
 
     exceeds_maximum = fields.Boolean(
         string="Exceeds the maximum?",
-        help="When active, the system will not consider the limits of the amount of the advance payment.",
+        help="""When active, the system will not consider the
+        limits of the amount of the advance payment.""",
         tracking=True,
     )
 
@@ -172,8 +173,8 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
                 }
 
                 raise ValidationError(
-                    "El monto {advancement} del anticipo para ({employee}) no debe ser superior "
-                    "a {details}: {available:,.2f}".format(
+                    "El monto {advancement} del anticipo para ({employee}) no debe "
+                    "ser superior a {details}: {available:,.2f}".format(
                         advancement=advancement,
                         employee=", ".join(record.product_employee_ids.mapped("name")),
                         details=ERROR_DETAILS.get(record.type_advance_loan, ""),
@@ -210,7 +211,8 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
                     if not pay_structure:
                         raise UserError(
                             _(
-                                "Indicate the structure for loans and discounts from the employee contract"
+                                "Indicate the structure for loans and "
+                                "discounts from the employee contract"
                             )
                         )
 

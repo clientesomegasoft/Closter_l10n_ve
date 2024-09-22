@@ -32,6 +32,7 @@ class ResCompany(models.Model):
                     [("company_id", "=", company.id)], limit=1
                 ):
                     raise UserError(
-                        "No puedes cambiar la moneda operativa / fiscal de la compañía ya que existen asientos contables !!!"
+                        "No puedes cambiar la moneda operativa / fiscal "
+                        "de la compañía ya que existen asientos contables !!!"
                     )
         return super(__class__, self).write(values)

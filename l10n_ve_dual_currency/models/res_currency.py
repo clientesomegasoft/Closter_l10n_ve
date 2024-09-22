@@ -108,7 +108,8 @@ class CurrencyRate(models.Model):
             [("currency_rate_ref", "=", self.id)], limit=1
         ):
             raise UserError(
-                "No es posible ejecutar esta acción ya que la tasa está siendo utilizada por otro modelo."
+                "No es posible ejecutar esta acción ya que la "
+                "tasa está siendo utilizada por otro modelo."
             )
         return super(__class__, self).write(vals)
 

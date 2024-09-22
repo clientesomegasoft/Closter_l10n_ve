@@ -4,7 +4,10 @@
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",
-    "contributor": "Daniel Ospino - daniel.ospino@omegasoftve.com / Rene Gomez - rene.gomez@omegasoftve.com",
+    "contributor": [
+        "Daniel Ospino - daniel.ospino@omegasoftve.com",
+        "Rene Gomez - rene.gomez@omegasoftve.com",
+    ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
     "summary": "Hr Payroll Receipt of payment",
     "description": """

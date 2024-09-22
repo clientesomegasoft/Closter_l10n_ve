@@ -216,8 +216,16 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
     )
 
-    # hr_working_hours = fields.Boolean(string='Working hours', related='company_id.hr_working_hours', readonly=False)
-    # hr_planning = fields.Boolean(string='Planning', related='company_id.hr_planning', readonly=False)
+    # hr_working_hours = fields.Boolean(
+    #     string='Working hours',
+    #     related='company_id.hr_working_hours',
+    #     readonly=False
+    # )
+    # hr_planning = fields.Boolean(
+    #     string='Planning',
+    #     related='company_id.hr_planning',
+    #     readonly=False
+    # )
 
     @api.constrains(
         "minimum_wage",

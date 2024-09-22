@@ -148,9 +148,12 @@ class AccountMoveLine(models.Model):
         "matched_credit_ids",
     )
     def _compute_amount_residual(self):
-        """Computes the residual amount of a move line from a reconcilable account in the company currency and the line's currency.
-        This amount will be 0 for fully reconciled lines or lines from a non-reconcilable account, the original line amount
-        for unreconciled lines, and something in-between for partially reconciled lines.
+        """Computes the residual amount of a move line from a reconcilable
+        account in the company currency and the line's currency.
+        This amount will be 0 for fully reconciled lines or lines from a
+        non-reconcilable account, the original line amount
+        for unreconciled lines, and something in-between for partially
+        reconciled lines.
         """
         need_residual_lines = self.filtered(
             lambda x: x.account_id.reconcile
@@ -191,24 +194,33 @@ class AccountMoveLine(models.Model):
             )
             amounts_map = {
                 (line_id, flag): (amount, amount_ref, amount_currency)
-                for line_id, flag, amount, amount_ref, amount_currency in self.env.cr.fetchall()
+                for (
+                    line_id,
+                    flag,
+                    amount,
+                    amount_ref,
+                    amount_currency,
+                ) in self.env.cr.fetchall()
             }
         else:
             amounts_map = {}
 
-        # Lines that can't be reconciled with anything since the account doesn't allow that.
+        # Lines that can't be reconciled with anything
+        # since the account doesn't allow that.
         for line in self - need_residual_lines:
             line.amount_residual = 0.0
             line.amount_residual_currency = 0.0
             line.reconciled = False
 
         for line in need_residual_lines:
-            # Since this part could be call on 'new' records, 'company_currency_id'/'currency_id' could be not set.
+            # Since this part could be call on 'new' records,
+            # 'company_currency_id'/'currency_id' could be not set.
             comp_curr = line.company_currency_id or self.env.company.currency_id
             ref_curr = self.env.company.currency_ref_id
             foreign_curr = line.currency_id or comp_curr
 
-            # Retrieve the amounts in both foreign/company currencies. If the record is 'new', the amounts_map is empty.
+            # Retrieve the amounts in both foreign/company currencies.
+            # If the record is 'new', the amounts_map is empty.
             debit_amount, debit_amount_ref, debit_amount_currency = amounts_map.get(
                 (line.id, "debit"), (0.0, 0.0, 0.0)
             )
@@ -216,7 +228,8 @@ class AccountMoveLine(models.Model):
                 (line.id, "credit"), (0.0, 0.0, 0.0)
             )
 
-            # Subtract the values from the account.partial.reconcile to compute the residual amounts.
+            # Subtract the values from the account.partial.reconcile
+            # to compute the residual amounts.
             line.amount_residual = comp_curr.round(
                 line.balance - debit_amount + credit_amount
             )
@@ -238,10 +251,13 @@ class AccountMoveLine(models.Model):
 
     @api.model
     def _prepare_reconciliation_single_partial(self, debit_vals, credit_vals):
-        """Prepare the values to create an account.partial.reconcile later when reconciling the dictionaries passed
+        """Prepare the values to create an account.partial.reconcile later
+        when reconciling the dictionaries passed
         as parameters, each one representing an account.move.line.
-        :param debit_vals:  The values of account.move.line to consider for a debit line.
-        :param credit_vals: The values of account.move.line to consider for a credit line.
+        :param debit_vals:  The values of account.move.line to consider
+                            for a debit line.
+        :param credit_vals: The values of account.move.line to consider
+                            for a credit line.
         :return:            A dictionary:
                 * debit_vals:   None if the line has nothing left to reconcile.
                 * credit_vals:  None if the line has nothing left to reconcile.
@@ -282,8 +298,9 @@ class AccountMoveLine(models.Model):
                 return abs(vals["amount_currency"]) / abs(vals["balance"])
 
         # ==== Determine the currency in which the reconciliation will be done ====
-        # In this part, we retrieve the residual amounts, check if they are zero or not and determine in which
-        # currency and at which rate the reconciliation will be done.
+        # In this part, we retrieve the residual amounts, check
+        # if they are zero or not and determine in which currency
+        # and at which rate the reconciliation will be done.
 
         res = {
             "debit_vals": debit_vals,
@@ -321,7 +338,8 @@ class AccountMoveLine(models.Model):
             and not has_debit_zero_residual
             and not has_credit_zero_residual
         ):
-            # Everything is expressed in company's currency and there is something left to reconcile.
+            # Everything is expressed in company's currency
+            # and there is something left to reconcile.
             recon_currency = company_currency
             debit_rate = credit_rate = 1.0
             recon_debit_amount = remaining_debit_amount
@@ -333,8 +351,10 @@ class AccountMoveLine(models.Model):
             and credit_vals["currency"] != company_currency
             and not has_credit_zero_residual_currency
         ):
-            # The credit line is using a foreign currency but not the opposite line.
-            # In that case, convert the amount in company currency to the foreign currency one.
+            # The credit line is using a foreign currency
+            # but not the opposite line.
+            # In that case, convert the amount in company
+            # currency to the foreign currency one.
             recon_currency = credit_vals["currency"]
             debit_rate = get_odoo_rate(debit_vals)
             credit_rate = get_accounting_rate(credit_vals)
@@ -349,8 +369,10 @@ class AccountMoveLine(models.Model):
             and credit_vals["currency"] == company_currency
             and not has_credit_zero_residual
         ):
-            # The debit line is using a foreign currency but not the opposite line.
-            # In that case, convert the amount in company currency to the foreign currency one.
+            # The debit line is using a foreign currency
+            # but not the opposite line.
+            # In that case, convert the amount in company
+            # currency to the foreign currency one.
             recon_currency = debit_vals["currency"]
             debit_rate = get_accounting_rate(debit_vals)
             credit_rate = get_odoo_rate(credit_vals)
@@ -387,24 +409,28 @@ class AccountMoveLine(models.Model):
             and debit_vals["currency"] != company_currency
             and (has_debit_zero_residual_currency or has_credit_zero_residual_currency)
         ):
-            # Special case for exchange difference lines. In that case, both lines are sharing the same foreign
-            # currency but at least one has no amount in foreign currency.
-            # In that case, we don't want a rate for the opposite line because the exchange difference is supposed
-            # to reduce only the amount in company currency but not the foreign one.
+            # Special case for exchange difference lines. In that case,
+            # both lines are sharing the same foreign currency but at
+            # least one has no amount in foreign currency.
+            # In that case, we don't want a rate for the opposite line
+            # because the exchange difference is supposed to reduce only
+            # the amount in company currency but not the foreign one.
             recon_currency = company_currency
             debit_rate = None
             credit_rate = None
             recon_debit_amount = remaining_debit_amount
             recon_credit_amount = -remaining_credit_amount
         else:
-            # Multiple involved foreign currencies. The reconciliation is done using the currency of the company.
+            # Multiple involved foreign currencies. The
+            # reconciliation is done using the currency of the company.
             recon_currency = company_currency
             debit_rate = get_accounting_rate(debit_vals)
             credit_rate = get_accounting_rate(credit_vals)
             recon_debit_amount = remaining_debit_amount
             recon_credit_amount = -remaining_credit_amount
 
-        # Check if there is something left to reconcile. Move to the next loop iteration if not.
+        # Check if there is something left to reconcile.
+        # Move to the next loop iteration if not.
         skip_reconciliation = False
         if (
             recon_currency.is_zero(recon_debit_amount)
@@ -478,8 +504,9 @@ class AccountMoveLine(models.Model):
             partial_amount = min(partial_debit_amount, partial_credit_amount)
 
             # Compute the partial amount expressed in foreign currency.
-            # Take care to handle the case when a line expressed in company currency is mimicking the foreign
-            # currency of the opposite line.
+            # Take care to handle the case when a line expressed in
+            # company currency is mimicking the foreign currency of
+            # the opposite line.
             if debit_vals["currency"] == company_currency:
                 partial_debit_amount_currency = partial_amount
             else:
@@ -532,8 +559,10 @@ class AccountMoveLine(models.Model):
             partial_debit_amount_currency_ref, partial_credit_amount_currency_ref
         )
 
-        # Computation of the partial exchange difference. You can skip this part using the
-        # `no_exchange_difference` context key (when reconciling an exchange difference for example).
+        # Computation of the partial exchange difference.
+        # You can skip this part using the `no_exchange_difference`
+        # context key (when reconciling an exchange
+        # difference for example).
         if not self._context.get("no_exchange_difference"):
             exchange_lines_to_fix = self.env["account.move.line"]
             amounts_list = []
@@ -563,7 +592,8 @@ class AccountMoveLine(models.Model):
 
             else:
                 if debit_fully_matched:
-                    # Create an exchange difference on the remaining amount expressed in company's currency.
+                    # Create an exchange difference on the remaining
+                    # amount expressed in company's currency.
                     debit_exchange_amount = remaining_debit_amount - partial_amount
                     if not company_currency.is_zero(debit_exchange_amount):
                         if debit_vals.get("record"):
@@ -573,8 +603,10 @@ class AccountMoveLine(models.Model):
                         if debit_vals["currency"] == company_currency:
                             remaining_debit_amount_curr -= debit_exchange_amount
                 else:
-                    # Create an exchange difference ensuring the rate between the residual amounts expressed in
-                    # both foreign and company's currency is still consistent regarding the rate between
+                    # Create an exchange difference ensuring the rate
+                    # between the residual amounts expressed in
+                    # both foreign and company's currency is still
+                    # consistent regarding the rate between
                     # 'amount_currency' & 'balance'.
                     debit_exchange_amount = partial_debit_amount - partial_amount
                     if company_currency.compare_amounts(debit_exchange_amount, 0.0) > 0:
@@ -586,7 +618,8 @@ class AccountMoveLine(models.Model):
                             remaining_debit_amount_curr -= debit_exchange_amount
 
                 if credit_fully_matched:
-                    # Create an exchange difference on the remaining amount expressed in company's currency.
+                    # Create an exchange difference on the remaining
+                    # amount expressed in company's currency.
                     credit_exchange_amount = remaining_credit_amount + partial_amount
                     if not company_currency.is_zero(credit_exchange_amount):
                         if credit_vals.get("record"):
@@ -596,8 +629,10 @@ class AccountMoveLine(models.Model):
                         if credit_vals["currency"] == company_currency:
                             remaining_credit_amount_curr -= credit_exchange_amount
                 else:
-                    # Create an exchange difference ensuring the rate between the residual amounts expressed in
-                    # both foreign and company's currency is still consistent regarding the rate between
+                    # Create an exchange difference ensuring the rate
+                    # between the residual amounts expressed in
+                    # both foreign and company's currency is still
+                    # consistent regarding the rate between
                     # 'amount_currency' & 'balance'.
                     credit_exchange_amount = partial_amount - partial_credit_amount
                     if (
@@ -690,9 +725,13 @@ class AccountMoveLine(models.Model):
 
     @api.model
     def _prepare_reconciliation_partials(self, vals_list):
-        """Prepare the partials on the current journal items to perform the reconciliation.
-        Note: The order of records in self is important because the journal items will be reconciled using this order.
-        :return: a tuple of 1) list of vals for partial reconciliation creation, 2) the list of vals for the exchange difference entries to be created
+        """Prepare the partials on the current journal items to
+        perform the reconciliation.
+        Note: The order of records in self is important because
+        the journal items will be reconciled using this order.
+        :return: a tuple of 1) list of vals for partial reconciliation
+                 creation, 2) the list of vals for the exchange difference
+                 entries to be created
         """
         debit_vals_list = iter(
             [
@@ -720,9 +759,12 @@ class AccountMoveLine(models.Model):
 
         while True:
             # ==== Find the next available lines ====
-            # For performance reasons, the partials are created all at once meaning the residual amounts can't be
-            # trusted from one iteration to another. That's the reason why all residual amounts are kept as variables
-            # and reduced "manually" every time we append a dictionary to 'partials_vals_list'.
+            # For performance reasons, the partials are created
+            # all at once meaning the residual amounts can't be
+            # trusted from one iteration to another. That's the
+            # reason why all residual amounts are kept as variables
+            # and reduced "manually" every time we append a
+            # dictionary to 'partials_vals_list'.
 
             # Move to the next available debit line.
             if not debit_vals:
@@ -785,15 +827,18 @@ class AccountMoveLine(models.Model):
         self, amounts_list, company=None, exchange_date=None
     ):
         """Prepare values to create later the exchange difference journal entry.
-        The exchange difference journal entry is there to fix the debit/credit of lines when the journal items are
-        fully reconciled in foreign currency.
+        The exchange difference journal entry is there to fix the debit/credit
+        of lines when the journal items are fully reconciled in foreign currency.
         :param amounts_list:    A list of dict, one for each aml.
         :param company:         The company in case there is no aml in self.
-        :param exchange_date:   Optional date object providing the date to consider for the exchange difference.
+        :param exchange_date:   Optional date object providing the date to
+                                consider for the exchange difference.
         :return:                A python dictionary containing:
-                * move_vals:    A dictionary to be passed to the account.move.create method.
-                * to_reconcile: A list of tuple <move_line, sequence> in order to perform the reconciliation after the move
-                                                creation.
+                * move_vals:    A dictionary to be passed to the
+                                account.move.create method.
+                * to_reconcile: A list of tuple <move_line, sequence> in
+                                order to perform the reconciliation after
+                                the move creation.
         """
         company = self.company_id or company
         if not company:
@@ -887,9 +932,11 @@ class AccountMoveLine(models.Model):
 
     @api.model
     def _create_exchange_difference_move(self, exchange_diff_vals):
-        """Create the exchange difference journal entry on the current journal items.
-        :param exchange_diff_vals:  The current vals of the exchange difference journal entry created by the
-                                                                '_prepare_exchange_difference_move_vals' method.
+        """Create the exchange difference journal
+        entry on the current journal items.
+        :param exchange_diff_vals:  The current vals of the exchange difference
+                                    journal entry created by the
+                                    '_prepare_exchange_difference_move_vals' method.
         :return:                    An account.move record.
         """
         move_vals = exchange_diff_vals["move_vals"]
@@ -901,22 +948,28 @@ class AccountMoveLine(models.Model):
         if not journal:
             raise UserError(
                 _(
-                    "You should configure the 'Exchange Gain or Loss Journal' in your company settings, to manage"
-                    " automatically the booking of accounting entries related to differences between exchange rates."
+                    "You should configure the 'Exchange Gain or Loss Journal' "
+                    "in your company settings, to manage automatically the "
+                    "booking of accounting entries related to differences "
+                    "between exchange rates."
                 )
             )
         if not journal.company_id.expense_currency_exchange_account_id:
             raise UserError(
                 _(
-                    "You should configure the 'Loss Exchange Rate Account' in your company settings, to manage"
-                    " automatically the booking of accounting entries related to differences between exchange rates."
+                    "You should configure the 'Loss Exchange Rate Account' "
+                    "in your company settings, to manage automatically the "
+                    "booking of accounting entries related to differences "
+                    "between exchange rates."
                 )
             )
         if not journal.company_id.income_currency_exchange_account_id.id:
             raise UserError(
                 _(
-                    "You should configure the 'Gain Exchange Rate Account' in your company settings, to manage"
-                    " automatically the booking of accounting entries related to differences between exchange rates."
+                    "You should configure the 'Gain Exchange Rate Account' "
+                    "in your company settings, to manage automatically the "
+                    "booking of accounting entries related to differences "
+                    "between exchange rates."
                 )
             )
 
@@ -928,7 +981,8 @@ class AccountMoveLine(models.Model):
         )
         exchange_move._post(soft=False)
 
-        # Reconcile lines to the newly created exchange difference journal entry by creating more partials.
+        # Reconcile lines to the newly created exchange difference
+        # journal entry by creating more partials.
         for source_line, sequence in exchange_diff_vals["to_reconcile"]:
             exchange_diff_line = exchange_move.line_ids[sequence]
             (exchange_diff_line + source_line).with_context(

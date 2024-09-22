@@ -104,7 +104,8 @@ class EmployeeARCReport(models.TransientModel):
         else:
             raise UserError(
                 _(
-                    "No existe plantilla para el envio de ARC configurada en ajuste de nomina."
+                    "No existe plantilla para el envio de "
+                    "ARC configurada en ajuste de nomina."
                 )
             )
 

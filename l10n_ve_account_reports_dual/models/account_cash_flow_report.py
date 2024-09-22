@@ -8,13 +8,18 @@ class CashFlowReportCustomHandler(models.AbstractModel):
     def _compute_liquidity_balance(
         self, report, options, currency_table_query, payment_account_ids, date_scope
     ):
-        """Compute the balance of all liquidity accounts to populate the following sections:
-            'Cash and cash equivalents, beginning of period' and 'Cash and cash equivalents, closing balance'.
+        """Compute the balance of all liquidity accounts to populate the following
+        sections:
+            'Cash and cash equivalents, beginning of period' and
+            'Cash and cash equivalents, closing balance'.
 
         :param options:                 The report options.
-        :param currency_table_query:    The custom query containing the multi-companies rates.
-        :param payment_account_ids:     A tuple containing all account.account's ids being used in a liquidity journal.
-        :return:                        A list of tuple (account_id, account_code, account_name, balance).
+        :param currency_table_query:    The custom query containing the multi-companies
+                                        rates.
+        :param payment_account_ids:     A tuple containing all account.account's ids
+                                        being used in a liquidity journal.
+        :return:                        A list of tuple (account_id, account_code,
+                                        account_name, balance).
         """
 
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
@@ -77,10 +82,14 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         The difficulty is to represent only the not-reconciled part of balance.
 
         :param options:                 The report options.
-        :param currency_table_query:    The floating query to handle a multi-company/multi-currency environment.
-        :param payment_move_ids:        A tuple containing all account.move's ids being the liquidity moves.
-        :param payment_account_ids:     A tuple containing all account.account's ids being used in a liquidity journal.
-        :return:                        A list of tuple (account_id, account_code, account_name, account_type, amount).
+        :param currency_table_query:    The floating query to handle a multi-company/
+                                        multi-currency environment.
+        :param payment_move_ids:        A tuple containing all account.move's ids
+                                        being the liquidity moves.
+        :param payment_account_ids:     A tuple containing all account.account's ids
+                                        being used in a liquidity journal.
+        :return:                        A list of tuple (account_id, account_code,
+                                        account_name, account_type, amount).
         """
 
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
@@ -243,15 +252,20 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         payment_move_ids,
         cash_flow_tag_ids,
     ):
-        """Retrieve all moves being not a liquidity move to be shown in the cash flow statement.
-        Each amount must be valued at the percentage of what is actually paid.
-        E.g. An invoice of 1000 being paid at 50% must be valued at 500.
+        """Retrieve all moves being not a liquidity move to be shown in the cash
+        flow statement. Each amount must be valued at the percentage of what is
+        actually paid. E.g. An invoice of 1000 being paid at 50% must be valued
+        at 500.
 
         :param options:                 The report options.
-        :param currency_table_query:    The floating query to handle a multi-company/multi-currency environment.
-        :param payment_move_ids:        A tuple containing all account.move's ids being the liquidity moves.
-        :param payment_account_ids:     A tuple containing all account.account's ids being used in a liquidity journal.
-        :return:                        A list of tuple (account_id, account_code, account_name, account_type, amount).
+        :param currency_table_query:    The floating query to handle a
+                                        multi-company/multi-currency environment.
+        :param payment_move_ids:        A tuple containing all account.move's ids
+                                        being the liquidity moves.
+        :param payment_account_ids:     A tuple containing all account.account's ids
+                                        being used in a liquidity journal.
+        :return:                        A list of tuple (account_id, account_code,
+                                        account_name, account_type, amount).
         """
 
         if options.get("selected_currency") != self.env.company.currency_ref_id.id:
@@ -463,7 +477,8 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                 and aml_account_id
                 not in reconciled_percentage_per_move[aml_column_group_key][aml_move_id]
             ):
-                # Lines being on reconciled moves but not reconciled with any liquidity move must be valued at the
+                # Lines being on reconciled moves but not reconciled
+                # with any liquidity move must be valued at the
                 # percentage of what is actually paid.
                 reconciled_percentage = total_reconciled_amount / total_amount
                 aml_balance *= reconciled_percentage
@@ -472,8 +487,10 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                 and aml_account_id
                 in reconciled_percentage_per_move[aml_column_group_key][aml_move_id]
             ):
-                # The total amount to reconcile is 0. In that case, only add entries being on these accounts. Otherwise,
-                # this special case will lead to an unexplained difference equivalent to the reconciled amount on this
+                # The total amount to reconcile is 0. In that case,
+                # only add entries being on these accounts. Otherwise,
+                # this special case will lead to an unexplained
+                # difference equivalent to the reconciled amount on this
                 # account.
                 # E.g:
                 #

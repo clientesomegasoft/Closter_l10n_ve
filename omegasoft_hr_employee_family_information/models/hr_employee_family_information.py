@@ -13,7 +13,8 @@ class HrEmployeeFamilyInformation(models.Model):
     name = fields.Char(string="Name", help="Name of relative")
     active = fields.Boolean(
         default=True,
-        help="Set active to false to hide the fam,ily information tag without removing it.",
+        help="""Set active to false to hide the fam,ily
+        information tag without removing it.""",
     )
     relationship = fields.Selection(
         string="Relationship",
@@ -76,9 +77,11 @@ class HrEmployeeFamilyInformation(models.Model):
     def _onchange_id_number(self):
         if self.id_number and not self.id_number.isdigit():
             raise ValidationError(
-                "Advertencia! Para el número de C.I solo se admiten caracteres numéricos"
+                "Advertencia! Para el número de C.I "
+                "solo se admiten caracteres numéricos"
             )
         if self.id_number and len(self.id_number) > 8:
             raise ValidationError(
-                "Advertencia! La longitud para el número de C.I no debe ser mayor a 8 caracteres"
+                "Advertencia! La longitud para el número de C.I "
+                "no debe ser mayor a 8 caracteres"
             )

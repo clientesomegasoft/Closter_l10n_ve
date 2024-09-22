@@ -40,7 +40,8 @@ class AccountMove(models.Model):
                 rec.company_id,
                 rec.currency_rate_ref,
             )
-            # Se obtienen las líneas de configuración que cumplan con las condiciones establecidas
+            # Se obtienen las líneas de configuración que
+            # cumplan con las condiciones establecidas
             query_resul = rec._query_commission_conf_line(
                 rec.department_id.id,
                 rec.seller_employee_id.id,
@@ -70,7 +71,8 @@ class AccountMove(models.Model):
                 rec.company_id,
                 rec.currency_rate_ref,
             )
-            # Se obtienen las líneas de configuración que cumplan con las condiciones establecidas
+            # Se obtienen las líneas de configuración
+            # que cumplan con las condiciones establecidas
             query_resul = rec._query_commission_conf_line(
                 rec.department_id.id,
                 rec.seller_employee_id.id,

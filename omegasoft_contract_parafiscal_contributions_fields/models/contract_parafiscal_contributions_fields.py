@@ -33,7 +33,8 @@ class ContractParafiscalContributionsField(models.Model):
 
     percentage_income_tax_islr = fields.Float(
         string="Percentage Income Tax ISRL",
-        help="Indicates the percentage figure to be applied for Income Tax Withholding.",
+        help="""Indicates the percentage figure to
+        be applied for Income Tax Withholding.""",
         tracking=True,
     )
 
@@ -45,5 +46,6 @@ class ContractParafiscalContributionsField(models.Model):
                 or record.percentage_income_tax_islr > 99
             ):
                 raise ValidationError(
-                    "Los montos permitidos para el porcentaje de ISLR estan en el rango [0,99]."
+                    "Los montos permitidos para el porcentaje "
+                    "de ISLR estan en el rango [0,99]."
                 )

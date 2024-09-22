@@ -4,9 +4,15 @@
     "category": "Human Resources/Contracts",
     "application": False,
     "author": "Omegasoft C.A",
-    "contributor": "Daniel Ospino - daniel.ospino@omegasoftve.com / Rene Gomez - rene.gomez@omegasoftve.com",
+    "contributor": [
+        "Daniel Ospino - daniel.ospino@omegasoftve.com",
+        "Rene Gomez - rene.gomez@omegasoftve.com",
+    ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
-    "summary": "Allocation of uniforms, personal hygiene and personal equipment to employees",
+    "summary": """
+        Allocation of uniforms, personal hygiene and personal equipment
+        to employees
+    """,
     "description": """
         Allocation of uniforms, personal hygiene and personal equipment to employees.
     """,

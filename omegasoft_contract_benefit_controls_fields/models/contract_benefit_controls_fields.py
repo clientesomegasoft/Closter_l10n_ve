@@ -8,7 +8,8 @@ class ContractBenefitControlField(models.Model):
     # Social benefits
     accumulated_social_benefits = fields.Monetary(
         string="Accumulated Social Benefits",
-        help="Indicates the amount of the opening balance for the Benefit Accrual to Date.",
+        help="""Indicates the amount of the opening
+        balance for the Benefit Accrual to Date.""",
         tracking=True,
         currency_field="accumulated_social_benefits_currency",
     )
@@ -35,7 +36,8 @@ class ContractBenefitControlField(models.Model):
     # Interest benefits
     interest_accrued_employee_benefits = fields.Monetary(
         string="Interest on accrued employee benefits",
-        help="Indicates the amount of the initial balance for accrued interest benefits.",
+        help="""Indicates the amount of the initial
+        balance for accrued interest benefits.""",
         tracking=True,
         currency_field="interest_accrued_employee_benefits_currency",
     )
@@ -49,7 +51,8 @@ class ContractBenefitControlField(models.Model):
     # Utility benefits
     accumulated_earnings_benefits = fields.Monetary(
         string="Accumulated earnings Benefits",
-        help="Indicates the amount of the opening balance for the Benefit Accrual to Date.",
+        help="""Indicates the amount of the opening
+        balance for the Benefit Accrual to Date.""",
         tracking=True,
         currency_field="accumulated_earnings_benefits_currency",
     )
@@ -73,7 +76,8 @@ class ContractBenefitControlField(models.Model):
     # Day per year benefits
     accumulated_day_per_year_benefits = fields.Monetary(
         string="Accumulated day per year Benefits",
-        help="Indicates the amount of the opening balance for the Benefit Accrual to Date.",
+        help="""Indicates the amount of the opening
+        balance for the Benefit Accrual to Date.""",
         tracking=True,
         currency_field="accumulated_day_per_year_benefits_currency",
     )
@@ -101,7 +105,8 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_social_benefits < 0:
                 raise ValidationError(
-                    "El monto para las Prestaciones Sociales Acumuladas debe ser superior a cero."
+                    "El monto para las Prestaciones Sociales "
+                    "Acumuladas debe ser superior a cero."
                 )
             elif (
                 module
@@ -125,7 +130,8 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.interest_accrued_employee_benefits < 0:
                 raise ValidationError(
-                    "El monto para las Prestaciones Sociales Acumuladas debe ser superior a cero."
+                    "El monto para las Prestaciones Sociales "
+                    "Acumuladas debe ser superior a cero."
                 )
             elif (
                 module
@@ -145,7 +151,8 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_advances_social_benefits < 0:
                 raise ValidationError(
-                    "El monto para los Anticipos Sociales Acumuladas debe ser superior a cero."
+                    "El monto para los Anticipos Sociales "
+                    "Acumuladas debe ser superior a cero."
                 )
             elif (
                 module
@@ -170,7 +177,8 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_earnings_benefits < 0:
                 raise ValidationError(
-                    "El monto para los Anticipos Sociales Acumuladas debe ser superior a cero."
+                    "El monto para los Anticipos Sociales "
+                    "Acumuladas debe ser superior a cero."
                 )
             elif (
                 module
@@ -193,7 +201,8 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_advances_earnings_benefits < 0:
                 raise ValidationError(
-                    "El monto para los Anticipos Sociales Acumuladas debe ser superior a cero."
+                    "El monto para los Anticipos Sociales "
+                    "Acumuladas debe ser superior a cero."
                 )
             elif (
                 module
@@ -216,7 +225,8 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_day_per_year_benefits < 0:
                 raise ValidationError(
-                    "El monto para los Anticipos Sociales Acumuladas debe ser superior a cero."
+                    "El monto para los Anticipos Sociales "
+                    "Acumuladas debe ser superior a cero."
                 )
             elif (
                 module

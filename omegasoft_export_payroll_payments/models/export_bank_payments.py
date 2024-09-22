@@ -269,12 +269,14 @@ class ExportBankPayments(models.Model):
             and len(self.bank_account_id.sanitized_acc_number) != 20
         ):
             raise ValidationError(
-                "La longitud del número de cuenta de la compañia debe ser de 20 dígitos."
+                "La longitud del número de cuenta de "
+                "la compañia debe ser de 20 dígitos."
             )
 
         elif self.bank_account_id and not self.bank_account_id.is_payroll_account:
             raise ValidationError(
-                "La cuenta de la compañia debe estar configurada como 'Cuenta de Nomina'."
+                "La cuenta de la compañia debe estar "
+                "configurada como 'Cuenta de Nomina'."
             )
 
         if (
@@ -340,14 +342,16 @@ class ExportBankPayments(models.Model):
                 ]
             )
         # Filtro:
-        # 1. Tipo de operacion: Comparar primeros 4 digitos de la cuenta de la compañia con los de la cuenta del empleado
+        # 1. Tipo de operacion: Comparar primeros 4 digitos de
+        # la cuenta de la compañia con los de la cuenta del empleado
         if self.type_trans != "fiscal":
             bank_account_number = self.bank_account_id.acc_number[:4]
             if self.operation_type == "same":
                 employee_domain = self._get_employee_domain(bank_account_number, True)
                 if not employee_domain:
                     raise ValidationError(
-                        "No se pudo generar el archivo. Intente de nuevo con otro periodo."
+                        "No se pudo generar el archivo. "
+                        "Intente de nuevo con otro periodo."
                     )
                 payslips = payslips.filtered(
                     lambda x: self.bank_account_id.acc_number
@@ -357,7 +361,8 @@ class ExportBankPayments(models.Model):
                 employee_domain = self._get_employee_domain(bank_account_number)
                 if not employee_domain:
                     raise ValidationError(
-                        "No se pudo generar el archivo. Intente de nuevo con otro periodo."
+                        "No se pudo generar el archivo. "
+                        "Intente de nuevo con otro periodo."
                     )
                 payslips = payslips.filtered(
                     lambda x: self.bank_account_id.acc_number
@@ -381,7 +386,8 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 13:
             raise ValidationError(
                 (
-                    "El monto a pagar para el empleado: %s, excede la cantidad maxima de digitos."
+                    "El monto a pagar para el empleado: %s, "
+                    "excede la cantidad maxima de digitos."
                 )
                 % (payslip.employee_id.name)
             )
@@ -390,7 +396,8 @@ class ExportBankPayments(models.Model):
             if len(f"{payslip.net_wage:.2f}".replace(".", "")) > 11:
                 raise ValidationError(
                     (
-                        "El monto a pagar para el empleado: %s, excede la cantidad maxima de digitos."
+                        "El monto a pagar para el empleado: %s, "
+                        "excede la cantidad maxima de digitos."
                     )
                     % (payslip.employee_id.name)
                 )
@@ -405,7 +412,8 @@ class ExportBankPayments(models.Model):
             if len(f"{payslip.net_wage:.2f}") > 18:
                 raise ValidationError(
                     (
-                        "El monto a pagar para el empleado: %s, excede la cantidad maxima de digitos."
+                        "El monto a pagar para el empleado: %s, "
+                        "excede la cantidad maxima de digitos."
                     )
                     % (payslip.employee_id.name)
                 )
@@ -428,7 +436,8 @@ class ExportBankPayments(models.Model):
         employee = payslip.employee_id
         if not employees_bank_info.letter:
             raise ValidationError(
-                f"No se encuentra configurada la Letra Calificadora en los datos bancarios del empleado {employee.name}"
+                f"""No se encuentra configurada la Letra Calificadora
+                en los datos bancarios del empleado {employee.name}"""
             )
         nationality = employees_bank_info.letter.upper()
         id_digits = employees_bank_info.holder_account_id
@@ -485,7 +494,8 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 15:
             raise ValidationError(
                 (
-                    "El monto a pagar para el empleado: %s, excede la cantidad maxima de digitos."
+                    "El monto a pagar para el empleado: %s, "
+                    "excede la cantidad maxima de digitos."
                 )
                 % (payslip.employee_id.name)
             )
@@ -511,7 +521,8 @@ class ExportBankPayments(models.Model):
         employee = payslip.employee_id
         if not employees_bank_info.letter:
             raise ValidationError(
-                f"No se encuentra configurada la Letra Calificadora en los datos bancarios del empleado {employee.name}"
+                f"""No se encuentra configurada la Letra Calificadora
+                en los datos bancarios del empleado {employee.name}"""
             )
         nationality = employees_bank_info.letter
         id_digits = employees_bank_info.holder_account_id
@@ -559,7 +570,8 @@ class ExportBankPayments(models.Model):
                     employee = payslip.employee_id
                     if not employees_bank_info.letter:
                         raise ValidationError(
-                            f"No se encuentra configurada la Letra Calificadora en los datos bancarios del empleado {employee.name}"
+                            f"""No se encuentra configurada la Letra Calificadora
+                            en los datos bancarios del empleado {employee.name}"""
                         )
                     nationality = employees_bank_info.letter.upper()
                     id_digits = employees_bank_info.holder_account_id
@@ -582,7 +594,8 @@ class ExportBankPayments(models.Model):
                     employee = payslip.employee_id
                     if not employees_bank_info.letter:
                         raise ValidationError(
-                            f"No se encuentra configurada la Letra Calificadora en los datos bancarios del empleado {employee.name}"
+                            f"""No se encuentra configurada la Letra Calificadora
+                            en los datos bancarios del empleado {employee.name}"""
                         )
                     nationality = employees_bank_info.letter.upper()
                     id_digits = employees_bank_info.holder_account_id
@@ -614,7 +627,8 @@ class ExportBankPayments(models.Model):
                 total_payroll = f"{total_payroll:.2f}".replace(".", "")
                 if len(total_payroll) > 15:
                     raise ValidationError(
-                        "El monto total de la nomina excede la cantidad maxima de digitos."
+                        "El monto total de la nomina excede "
+                        "la cantidad maxima de digitos."
                     )
 
                 if self.env.company.partner_id.vat:
@@ -670,7 +684,8 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 15:
             raise ValidationError(
                 (
-                    "El monto a pagar para el empleado: %s, excede la cantidad maxima de digitos."
+                    "El monto a pagar para el empleado: %s, "
+                    "excede la cantidad maxima de digitos."
                 )
                 % (payslip.employee_id.name)
             )
@@ -696,7 +711,8 @@ class ExportBankPayments(models.Model):
         employee = payslip.employee_id
         if not employees_bank_info.letter:
             raise ValidationError(
-                f"No se encuentra configurada la Letra Calificadora en los datos bancarios del empleado {employee.name}"
+                f"""No se encuentra configurada la Letra Calificadora
+                en los datos bancarios del empleado {employee.name}"""
             )
         nationality = employees_bank_info.letter
         id_digits = employees_bank_info.holder_account_id
@@ -790,7 +806,8 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 17:
             raise ValidationError(
                 (
-                    "El monto a pagar para el empleado: %s, excede la cantidad maxima de digitos."
+                    "El monto a pagar para el empleado: %s, "
+                    "excede la cantidad maxima de digitos."
                 )
                 % (payslip.employee_id.name)
             )
@@ -816,7 +833,8 @@ class ExportBankPayments(models.Model):
         employee = payslip.employee_id
         if not employees_bank_info.letter:
             raise ValidationError(
-                f"No se encuentra configurada la Letra Calificadora en los datos bancarios del empleado {employee.name}"
+                f"""No se encuentra configurada la Letra Calificadora
+                en los datos bancarios del empleado {employee.name}"""
             )
         nationality = employees_bank_info.letter.upper()
         id_digits = employees_bank_info.holder_account_id

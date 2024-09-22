@@ -160,8 +160,10 @@ class AccountMove(models.Model):
         If cancel parameter is true, the reconcilable or liquidity lines
         of each original move will be reconciled with its reverse's.
         :param default_values_list: A list of default values to consider per move.
-                                                                ('type' & 'reversed_entry_id' are computed in the method).
-        :return:                    An account.move recordset, reverse of the current self.
+                                    ('type' & 'reversed_entry_id' are computed in
+                                    the method).
+        :return:                    An account.move recordset, reverse of the current
+                                    self.
         """
         if not default_values_list:
             default_values_list = [{} for move in self]

@@ -139,8 +139,10 @@ class ProductProduct(models.Model):
                 * abs(quantity / self.quantity_svl)
             )
             if rounding_error:
-                # If it is bigger than the (smallest number of the currency * quantity) / 2,
-                # then it isn't a rounding error but a stock valuation error, we shouldn't fix it under the hood ...
+                # If it is bigger than the (smallest number
+                # of the currency * quantity) / 2, then it isn't
+                # a rounding error but a stock valuation error,
+                # we shouldn't fix it under the hood ...
                 if abs(rounding_error) <= max(
                     (abs(quantity) * currency.rounding) / 2, currency.rounding
                 ):
@@ -169,7 +171,9 @@ class ProductProduct(models.Model):
         ].check_access_rights("read", raise_exception=False):
             raise UserError(
                 _(
-                    "You cannot update the cost of a product in automated valuation as it leads to the creation of a journal entry, for which you don't have the access rights."
+                    "You cannot update the cost of a product in automated "
+                    "valuation as it leads to the creation of a journal entry, "
+                    "for which you don't have the access rights."
                 )
             )
 
@@ -251,7 +255,9 @@ class ProductProduct(models.Model):
             if not product_accounts[product.id].get("stock_valuation"):
                 raise UserError(
                     _(
-                        "You don't have any stock valuation account defined on your product category. You must define one before processing this operation."
+                        "You don't have any stock valuation account defined "
+                        "on your product category. You must define one before "
+                        "processing this operation."
                     )
                 )
 
@@ -321,7 +327,8 @@ class ProductProduct(models.Model):
     def _run_fifo(self, quantity, company):
         self.ensure_one()
 
-        # Find back incoming stock valuation layers (called candidates here) to value `quantity`.
+        # Find back incoming stock valuation layers
+        # (called candidates here) to value `quantity`.
         qty_to_take_on_candidates = quantity
         candidates = (
             self.env["stock.valuation.layer"]

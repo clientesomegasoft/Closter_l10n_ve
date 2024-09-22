@@ -23,7 +23,8 @@ class HrPayslip(models.Model):
     )
     complementary_payroll = fields.Boolean(
         "is complementary payroll?",
-        help="This structure will be available when generating payroll for employees with weekly and monthly structures.",
+        help="""This structure will be available when generating payroll
+        for employees with weekly and monthly structures.""",
         default=False,
         tracking=True,
     )

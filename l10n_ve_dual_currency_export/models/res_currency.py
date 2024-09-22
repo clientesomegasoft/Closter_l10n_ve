@@ -95,13 +95,17 @@ class CurrencyRate(models.Model):
             [self._rec_name] if self._rec_name else []
         )
 
-        # NOTE: We cannot let odoo decide how to treat the fields manually because any search
-        #       made in multiple non compatible fields will trigger a ValueError Exception
-        #       For example: `rate` and `name` for this model which have the types Float
-        #                    and Datetime respectively.
+        # NOTE: We cannot let odoo decide how to treat the
+        #       fields manually because any search made in
+        #       multiple non compatible fields will trigger
+        #       a ValueError Exception
+        #       For example: `rate` and `name` for this model
+        #       which have the types Float and Datetime
+        #       respectively.
         if not search_fnames:
             _logger.warning(
-                "Cannot execute name_search, no _rec_name or _rec_names_search defined on %s",
+                "Cannot execute name_search, no _rec_name "
+                "or _rec_names_search defined on %s",
                 self._name,
             )
 

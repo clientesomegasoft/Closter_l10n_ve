@@ -43,7 +43,8 @@ class StockValuationLayer(models.Model):
             )
             account_moves._post()
         for svl in self:
-            # Eventually reconcile together the invoice and valuation accounting entries on the stock interim accounts
+            # Eventually reconcile together the invoice and valuation
+            # accounting entries on the stock interim accounts
             if svl.company_id.anglo_saxon_accounting:
                 svl.stock_move_id._get_related_invoices()._stock_account_anglo_saxon_reconcile_valuation(
                     product=svl.product_id
@@ -55,7 +56,8 @@ class StockMove(models.Model):
 
     def product_price_update_before_done(self, forced_qty=None):
         tmpl_dict = defaultdict(lambda: 0.0)
-        # adapt standard price on incomming moves if the product cost_method is 'average'
+        # adapt standard price on incomming moves
+        # if the product cost_method is 'average'
         std_price_update = {}
         for move in self.filtered(
             lambda move: move._is_in()
@@ -96,7 +98,8 @@ class StockMove(models.Model):
                 ) / (product_tot_qty_available + qty)
 
             tmpl_dict[move.product_id.id] += qty_done
-            # Write the standard price, as SUPERUSER_ID because a warehouse manager may not have the right to write on products
+            # Write the standard price, as SUPERUSER_ID because a warehouse
+            # manager may not have the right to write on products
             move.product_id.with_company(move.company_id.id).with_context(
                 disable_auto_svl=True
             ).sudo().write(

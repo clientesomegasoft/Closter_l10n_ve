@@ -50,7 +50,8 @@ class HrPayslip(models.Model):
             ("second_fortnight", "Second fortnight"),
         ],
         string="Fortnights",
-        help="Indicates whether the structure associated with the payroll is first or second fortnight",
+        help="""Indicates whether the structure associated with
+        the payroll is first or second fortnight""",
     )
 
     struct_fortnight = fields.Selection(related="struct_id.schedule_pay")
@@ -345,7 +346,8 @@ class HrPayslip(models.Model):
                 name = record.name
                 raise UserError(
                     _(
-                        "No se puede llevar a borrardor una nomina con asientos publicados: \n"
+                        "No se puede llevar a borrador una nomina "
+                        "con asientos publicados: \n"
                         "%(name)s",
                         name=name,
                     )

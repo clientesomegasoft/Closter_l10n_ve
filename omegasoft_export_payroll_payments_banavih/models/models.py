@@ -32,12 +32,14 @@ class ExportBankPaymentsBanavih(models.Model):
             and len(self.bank_account_id.sanitized_acc_number) != 20
         ):
             raise ValidationError(
-                "La longitud del número de cuenta de la compañia debe ser de 20 dígitos."
+                "La longitud del número de cuenta de "
+                "la compañia debe ser de 20 dígitos."
             )
 
         elif self.bank_account_id and not self.bank_account_id.is_payroll_account:
             raise ValidationError(
-                "La cuenta de la compañia debe estar configurada como 'Cuenta de Nomina'."
+                "La cuenta de la compañia debe estar "
+                "configurada como 'Cuenta de Nomina'."
             )
 
         if (
@@ -105,7 +107,8 @@ class ExportBankPaymentsBanavih(models.Model):
         elif 5 < len(employee.identification_id[2:]) > 8:
             raise ValidationError(
                 (
-                    "La C.I. del empleado: %s, debe tener una longitud entre 5 y 8 dígitos."
+                    "La C.I. del empleado: %s, debe tener "
+                    "una longitud entre 5 y 8 dígitos."
                 )
                 % (employee.name)
             )
@@ -121,60 +124,72 @@ class ExportBankPaymentsBanavih(models.Model):
             if not (1 < len(names[0]) < 26):
                 raise ValidationError(
                     (
-                        "El primer nombre del empleado: %s, debe tener una longitud entre 2 y 25 caracteres."
+                        "El primer nombre del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres."
                     )
                     % (employee.name)
                 )
             if not (1 < len(names[1]) < 26):
                 raise ValidationError(
                     (
-                        "El primer apellido del empleado: %s, debe tener una longitud entre 2 y 25 caracteres."
+                        "El primer apellido del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres."
                     )
                     % (employee.name)
                 )
         elif len(names) == 3:
-            # Se asume que se trata de primer nombre, primer apellido y un segundo apellido
+            # Se asume que se trata de primer nombre,
+            # primer apellido y un segundo apellido
             if not (1 < len(names[0]) < 26):
                 raise ValidationError(
                     (
-                        "El primer nombre del empleado: %s, debe tener una longitud entre 2 y 25 caracteres."
+                        "El primer nombre del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres."
                     )
                     % (employee.name)
                 )
             if not (1 < len(names[1]) < 26):
                 raise ValidationError(
                     (
-                        "El primer apellido del empleado: %s, debe tener una longitud entre 2 y 25 caracteres."
+                        "El primer apellido del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres."
                     )
                     % (employee.name)
                 )
         else:
-            # Se asume que las primeras 4 palabras son el primer nombre, segundo nombre, primer apellido, segundo apellido
+            # Se asume que las primeras 4 palabras son el primer nombre,
+            # segundo nombre, primer apellido, segundo apellido
             if not (1 < len(names[0]) < 26):
                 raise ValidationError(
                     (
-                        "El primer nombre del empleado: %s, debe tener una longitud entre 2 y 25 caracteres."
+                        "El primer nombre del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres."
                     )
                     % (employee.name)
                 )
             if not (1 < len(names[2]) < 26):
                 raise ValidationError(
                     (
-                        "El primer apellido del empleado: %s, debe tener una longitud entre 2 y 25 caracteres."
+                        "El primer apellido del empleado: %s, debe tener "
+                        "una longitud entre 2 y 25 caracteres."
                     )
                     % (employee.name)
                 )
         if totals[employee.id] <= 0:
             raise ValidationError(
                 (
-                    "La sumatoria de los montos totales de las lineas con categoria 'Básico' y 'Basico3' en los Recibos de Salario del empleado: %s, debe ser un monto mayor que cero."
+                    "La sumatoria de los montos totales de las lineas con "
+                    "categoria 'Básico' y 'Basico3' en los Recibos de Salario "
+                    "del empleado: %s, debe ser un monto mayor que cero."
                 )
                 % (employee.name)
             )
         elif len(f"{totals[employee.id]:.2f}".replace(".", "")) > 18:
             raise ValidationError(
                 (
-                    "La sumatoria de los montos totales de las lineas con categoria 'Básico' y 'Basico3' en los Recibos de Salario del empleado: %s, no debe tener mas de 18 digitos."
+                    "La sumatoria de los montos totales de las lineas con "
+                    "categoria 'Básico' y 'Basico3' en los Recibos de Salario "
+                    "del empleado: %s, no debe tener mas de 18 digitos."
                 )
                 % (employee.name)
             )
@@ -204,7 +219,8 @@ class ExportBankPaymentsBanavih(models.Model):
             if employee.identification_id in identification_ids:
                 raise ValidationError(
                     (
-                        "La cedula de identidad del empleado %s, se encuentra duplicada en el archivo a generar."
+                        "La cedula de identidad del empleado %s, se "
+                        "encuentra duplicada en el archivo a generar."
                     )
                     % (employee.name)
                 )

@@ -23,8 +23,10 @@ class PurchaseOrder(models.Model):
         return vals
 
     def _add_supplier_to_product(self):
-        # Add the partner in the supplier list of the product if the supplier is not registered for
-        # this product. We limit to 10 the number of suppliers for a product to avoid the mess that
+        # Add the partner in the supplier list of the
+        # product if the supplier is not registered for
+        # this product. We limit to 10 the number of
+        # suppliers for a product to avoid the mess that
         # could be caused for some generic products ("Miscellaneous").
         for line in self.order_line:
             # Do not add a contact as a supplier
@@ -59,7 +61,8 @@ class PurchaseOrder(models.Model):
                         line.date_order or fields.Date.today(),
                         round=False,
                     )
-                # Compute the price for the template's UoM, because the supplier's UoM is related to that UoM.
+                # Compute the price for the template's UoM, because
+                # the supplier's UoM is related to that UoM.
                 if line.product_id.product_tmpl_id.uom_po_id != line.product_uom:
                     default_uom = line.product_id.product_tmpl_id.uom_po_id
                     price = line.product_uom._compute_price(price, default_uom)
@@ -67,7 +70,8 @@ class PurchaseOrder(models.Model):
                 supplierinfo = self._prepare_supplier_info(
                     partner, line, price, currency
                 )
-                # In case the order partner is a contact address, a new supplierinfo is created on
+                # In case the order partner is a contact address,
+                # a new supplierinfo is created on
                 # the parent company. In this case, we keep the product name and code.
                 seller = line.product_id._select_seller(
                     partner_id=line.partner_id,
@@ -111,7 +115,8 @@ class PurchaseOrderLine(models.Model):
                     DEFAULT_SERVER_DATETIME_FORMAT
                 )
 
-            # If not seller, use the standard price. It needs a proper currency conversion.
+            # If not seller, use the standard price.
+            # It needs a proper currency conversion.
             if not seller:
                 unavailable_seller = line.product_id.seller_ids.filtered(
                     lambda s: s.partner_id == line.order_id.partner_id
@@ -121,8 +126,10 @@ class PurchaseOrderLine(models.Model):
                     and line.price_unit
                     and line.product_uom == line._origin.product_uom
                 ):
-                    # Avoid to modify the price unit if there is no price list for this partner and
-                    # the line has already one to avoid to override unit price set manually.
+                    # Avoid to modify the price unit if there
+                    # is no price list for this partner and
+                    # the line has already one to avoid to
+                    # override unit price set manually.
                     continue
                 po_line_uom = line.product_uom or line.product_id.uom_po_id
                 price_unit = line.env["account.tax"]._fix_tax_included_price_company(

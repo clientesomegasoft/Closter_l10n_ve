@@ -16,8 +16,10 @@ class AccountInvoiceReport(models.Model):
     def _select(self):
         statement = super(__class__, self)._select()
 
-        # Firstly, we convert the values to the ones represented in the company's currency,
-        # then whe convert them to the operative currency as expects the temporary table
+        # Firstly, we convert the values to the ones
+        # represented in the company's currency,
+        # then whe convert them to the operative
+        # currency as expects the temporary table
         # `operative_currency_table`.
         statement = f"""
             {statement},

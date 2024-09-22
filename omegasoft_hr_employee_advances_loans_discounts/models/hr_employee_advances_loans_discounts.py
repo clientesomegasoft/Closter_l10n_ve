@@ -20,7 +20,8 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
             ("company", "Company"),
         ],
         string="Advance type",
-        help="It refers to whether the Advance, Loan or discount is for an employee, specific department or the entire company.",
+        help="""It refers to whether the Advance, Loan or discount is
+        for an employee, specific department or the entire company.""",
         tracking=True,
     )
 
@@ -172,7 +173,8 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
             )
             if not maybe_employees:
                 raise ValidationError(
-                    "El departamento seleccionado no tiene empleados con contratos En Proceso"
+                    "El departamento seleccionado no tiene "
+                    "empleados con contratos En Proceso"
                 )
 
         employee_ids.append(fields.Command.set(maybe_employees.ids))
@@ -250,7 +252,8 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
 
     employee_file = fields.Boolean("Employee file", related="company_id.employee_file")
 
-    # NOTE: Needs to be computed. Otherwise we could have problems with the execution order of
+    # NOTE: Needs to be computed. Otherwise we could
+    # have problems with the execution order of
     #       every field involved with these records.
     employee_file_code_ids = fields.Many2many(
         "employee.file.code",

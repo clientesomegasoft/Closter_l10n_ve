@@ -141,7 +141,8 @@ class HrContractAllocation(models.Model):
                 )
                 if not employees:
                     raise ValidationError(
-                        "El departamento seleccionado no tiene empleados con contratos En Proceso"
+                        "El departamento seleccionado no tiene "
+                        "empleados con contratos En Proceso"
                     )
                 else:
                     self.write({"employee_ids": [(6, 0, employees.ids)]})

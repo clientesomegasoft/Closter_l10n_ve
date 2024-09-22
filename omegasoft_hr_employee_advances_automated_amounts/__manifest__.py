@@ -8,9 +8,10 @@
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],
     "website": "https://github.com/macagua/Closter_l10n_ve",
-    "summary": "Fill employee advance form lines according to their benefits automatically",
+    "summary": """
+    Fill employee advance form lines according to their benefits automatically""",
     "description": """
-""",
+    Fill employee advance form lines according to their benefits automatically""",
     "depends": [
         "hr",
         "hr_payroll",

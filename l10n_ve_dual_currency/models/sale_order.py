@@ -62,7 +62,8 @@ class PricelistItem(models.Model):
     def _compute_price(
         self, product, quantity, uom, date, currency=None, currency_rate_ref=None
     ):
-        """Compute the unit price of a product in the context of a pricelist application.
+        """Compute the unit price of a product in
+        the context of a pricelist application.
 
         :param product: recordset of product (product.product/product.template)
         :param float qty: quantity of products requested (in given uom)

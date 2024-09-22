@@ -62,7 +62,8 @@ class SaleOrder(models.Model):
                     if record.product_uom_qty > qty:
                         raise ValidationError(
                             _(
-                                "Order qty of product %s is more then consignment purchase order"
+                                "Order qty of product %s is more "
+                                "then consignment purchase order"
                                 % (record.product_id.name)
                             )
                         )

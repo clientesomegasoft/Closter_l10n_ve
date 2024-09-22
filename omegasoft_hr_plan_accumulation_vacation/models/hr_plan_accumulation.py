@@ -27,7 +27,8 @@ class HrPlanAccumulation(models.Model):
         string="last calculation",
         default=False,
         readonly=True,
-        help="It refers to the year to which the vacation days belong, Field will be increased automatically by the planned action.",
+        help="""It refers to the year to which the vacation days belong, Field
+        will be increased automatically by the planned action.""",
         tracking=True,
     )
     company_id = fields.Many2one(
@@ -132,7 +133,8 @@ class HrPlanAccumulation(models.Model):
         if not leave_type_vacation:
             raise UserError(
                 _(
-                    "You must indicate in the types of absence, an absence of vacations and one of enjoyment"
+                    "You must indicate in the types of absence, an "
+                    "absence of vacations and one of enjoyment"
                 )
             )
 
@@ -155,7 +157,8 @@ class HrPlanAccumulation(models.Model):
                     )
                     accumulation_id = self.create(create_vals)
 
-                # It does not have the last date of the last calculation, so it will be your first calculation.
+                # It does not have the last date of the last calculation,
+                # so it will be your first calculation.
                 if accumulation_id.last_calculation:
                     diff_date = relativedelta.relativedelta(
                         today, accumulation_id.last_calculation

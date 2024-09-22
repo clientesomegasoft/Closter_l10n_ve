@@ -49,7 +49,8 @@ class HrLeave(models.Model):
                             lines = accumulated_id.enjoy_ids
 
                         for line in lines:
-                            # Condición para verificar si todos los campos son mayores a cero
+                            # Condición para verificar si todos
+                            # los campos son mayores a cero
                             if (
                                 line.days_law > 0
                                 or line.vacation_bonus > 0
@@ -115,7 +116,8 @@ class HrLeave(models.Model):
                             else:
                                 raise UserError(
                                     _(
-                                        "Error: The legal days, vacation days, and additional days cannot be less than zero"
+                                        "Error: The legal days, vacation days, and "
+                                        "additional days cannot be less than zero"
                                     )
                                 )
 
@@ -188,7 +190,8 @@ class HrLeave(models.Model):
                 if not record.history_ids:
                     raise UserError(
                         _(
-                            "This type of absence cannot be generated without their respective lines"
+                            "This type of absence cannot be generated "
+                            "without their respective lines"
                         )
                     )
 
@@ -205,7 +208,8 @@ class HrLeave(models.Model):
             if self.number_of_days_display != days:
                 raise UserError(
                     _(
-                        "The number of days to be deducted does not match the number of days of the permission"
+                        "The number of days to be deducted does not "
+                        "match the number of days of the permission"
                     )
                 )
 
@@ -220,7 +224,8 @@ class HrLeave(models.Model):
                     leave_parent.holiday_status_id.is_plan_vacation
                     or leave_parent.holiday_status_id.is_plan_enjoy
                 ):
-                    # Obtén las líneas de historial filtradas para el empleado en particular
+                    # Obtén las líneas de historial filtradas
+                    # para el empleado en particular
                     history_lines = leave_parent.history_ids.filtered(
                         lambda x: x.employee_id.id == values.get("employee_id")
                     )

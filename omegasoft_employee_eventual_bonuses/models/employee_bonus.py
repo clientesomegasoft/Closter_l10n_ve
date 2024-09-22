@@ -267,7 +267,8 @@ class HrEmployeeBonus(models.Model):
             pass
 
     def search_employees(self):
-        # TODO: Clear the entered information if you have changed the type of voucher, which was entered the first time.
+        # TODO: Clear the entered information if you have changed
+        # the type of voucher, which was entered the first time.
         if self.name == "school_voucher":
             # School voucher
             self._search_employees(True)

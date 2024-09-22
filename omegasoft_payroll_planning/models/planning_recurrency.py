@@ -22,7 +22,9 @@ class PlanningRecurrency(models.Model):
                 if recurrency.repeat_type == "until":
                     recurrence_end_dt = recurrency.repeat_until
 
-                # find end of generation period (either the end of recurrence (if this one ends before the cron period), or the given `stop_datetime` (usually the cron period))
+                # find end of generation period (either the end of recurrence
+                # (if this one ends before the cron period), or the given
+                # `stop_datetime` (usually the cron period))
                 if not stop_datetime:
                     stop_datetime = fields.Datetime.now() + get_timedelta(
                         recurrency.company_id.planning_generation_interval, "month"

@@ -27,5 +27,6 @@ class HrEmployee(models.Model):
                 )
             elif count_is_payroll_account == 0 and record.bank_information_ids:
                 raise ValidationError(
-                    "Es necesario marcar en una de las lineas el check de cuenta nomina."
+                    "Es necesario marcar en una de las "
+                    "lineas el check de cuenta nomina."
                 )

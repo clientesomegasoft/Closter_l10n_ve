@@ -29,12 +29,14 @@ class HRLeaveType(models.Model):
         if len(types_leave_vacation) > 1:
             raise UserError(
                 _(
-                    "There can only be one type of absence with the is_plan_vacation check active, including in archived records"
+                    "There can only be one type of absence with the is_plan_vacation "
+                    "check active, including in archived records"
                 )
             )
         if len(types_leave_enjoy) > 1:
             raise UserError(
                 _(
-                    "There can only be one type of absence with the is_plan_enjoy check active, including in archived records"
+                    "There can only be one type of absence with the is_plan_enjoy "
+                    "check active, including in archived records"
                 )
             )

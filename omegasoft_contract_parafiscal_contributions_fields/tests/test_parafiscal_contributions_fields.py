@@ -14,5 +14,6 @@ class TestParafiscalContributionsField(TransactionCase):
 
         self.assertIn(
             contract.percentage_income_tax_islr in expect_values,
-            "Los montos permitidos para el porcentaje de ISLR estan en el rango [0,99].",
+            "Los montos permitidos para el porcentaje "
+            "de ISLR estan en el rango [0,99].",
         )

@@ -88,7 +88,8 @@ class AccountAnalyticAccount(models.Model):
                 if not product_commission:
                     raise ValidationError(
                         _(
-                            "Please create service type product with default code commission"
+                            "Please create service type product "
+                            "with default code commission"
                         )
                     )
             total_amount = sum(income_ids.mapped("sales"))

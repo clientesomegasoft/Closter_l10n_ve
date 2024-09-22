@@ -12,6 +12,7 @@ class AccountMunicioalConcept(models.Model):
         (
             "check_rate",
             "CHECK(rate > 0 AND rate <= 100)",
-            "El porcentaje de retención debe estar en un rango mayor a 0 y menor o igual a 100.",
+            "El porcentaje de retención debe estar en "
+            "un rango mayor a 0 y menor o igual a 100.",
         ),
     ]

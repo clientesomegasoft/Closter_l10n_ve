@@ -23,13 +23,15 @@ class ResTownHall(models.Model):
         "res.partner",
         string="Contacto",
         required=True,
-        help="Contacto relacionado el cual será utilizado al momento  de registrar el pago del impuesto municipal por ingresos brutos.",
+        help="""Contacto relacionado el cual será utilizado al momento de
+        registrar el pago del impuesto municipal por ingresos brutos.""",
     )
 
     _sql_constraints = [
         (
             "check_percentage",
             "CHECK(percentage > 0 AND percentage <= 100)",
-            "El porcentaje de retención debe estar en un rango mayor a 0 y menor o igual a 100.",
+            "El porcentaje de retención debe estar en "
+            "un rango mayor a 0 y menor o igual a 100.",
         ),
     ]

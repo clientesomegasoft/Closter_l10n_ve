@@ -9,9 +9,11 @@ class AccountMoveLine(models.Model):
         """Create the tax details sub-query based on the orm domain passed as parameter.
 
         :param tables:          The 'tables' query to inject after the FROM.
-        :param where_clause:    The 'where_clause' query computed based on an orm domain.
+        :param where_clause:    The 'where_clause' query computed based on
+                                an orm domain.
         :param where_params:    The params to fill the 'where_clause' query.
-        :param fallback:        Fallback on an approximated mapping if the mapping failed.
+        :param fallback:        Fallback on an approximated mapping if
+                                the mapping failed.
         :return:                A tuple <query, params>.
         """
         group_taxes = self.env["account.tax"].search([("amount_type", "=", "group")])

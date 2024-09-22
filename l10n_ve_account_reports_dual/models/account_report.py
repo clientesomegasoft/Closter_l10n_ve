@@ -63,24 +63,37 @@ class AccountReport(models.Model):
     ):
         """Report engine.
 
-        Formulas made for this engine consist of a domain on account.move.line. Only those move lines will be used to compute the result.
+        Formulas made for this engine consist of a domain on
+        account.move.line. Only those move lines will be used
+        to compute the result.
 
-        This engine supports a few subformulas, each returning a slighlty different result:
-        - sum: the result will be sum of the matched move lines' balances
+        This engine supports a few subformulas, each returning a
+        slighlty different result:
+        - sum: the result will be sum of the matched move lines'
+               balances
 
-        - sum_if_pos: the result will be the same as sum only if it's positive; else, it will be 0
+        - sum_if_pos: the result will be the same as sum only if
+                      it's positive; else, it will be 0
 
-        - sum_if_neg: the result will be the same as sum only if it's negative; else, it will be 0
+        - sum_if_neg: the result will be the same as sum only if
+                      it's negative; else, it will be 0
 
-        - count_rows: the result will be the number of sublines this expression has. If the parent report line has no groupby,
-                      then it will be the number of matching amls. If there is a groupby, it will be the number of distinct grouping
-                      keys at the first level of this groupby (so, if groupby is 'partner_id, account_id', the number of partners).
+        - count_rows: the result will be the number of sublines
+                      this expression has. If the parent report
+                      line has no groupby, then it will be the
+                      number of matching amls. If there is a
+                      groupby, it will be the number of distinct
+                      grouping keys at the first level of this
+                      groupby (so, if groupby is 'partner_id,
+                      account_id', the number of partners).
         """
 
         def _format_result_depending_on_groupby(formula_rslt):
             if not current_groupby:
                 if formula_rslt:
-                    # There should be only one element in the list; we only return its totals (a dict) ; so that a list is only returned in case
+                    # There should be only one element in the list;
+                    # we only return its totals (a dict) ; so that
+                    # a list is only returned in case
                     # of a groupby being unfolded.
                     return formula_rslt[0][1]
                 else:
@@ -162,8 +175,12 @@ class AccountReport(models.Model):
                 else:
                     expressions_by_sign_policy["no_sign_check"] += expression
 
-            # Then we have to check the total of the line and only give results if its sign matches the desired policy.
-            # This is important for groupby managements, for which we can't just check the sign query_res by query_res
+            # Then we have to check the total of the line and
+            # only give results if its sign matches the desired
+            # policy.
+            # This is important for groupby managements, for
+            # which we can't just check the sign query_res
+            # by query_res
             if (
                 expressions_by_sign_policy["sum_if_pos"]
                 or expressions_by_sign_policy["sum_if_neg"]
@@ -173,7 +190,8 @@ class AccountReport(models.Model):
                     if self.env.company.currency_id.compare_amounts(total_sum, 0.0) >= 0
                     else "sum_if_neg"
                 )
-                # >= instead of > is intended; usability decision: 0 is considered positive
+                # >= instead of > is intended; usability
+                # decision: 0 is considered positive
 
                 formula_rslt_with_sign = [
                     (grouping_key, {**totals, sign_policy_with_value: totals["sum"]})

@@ -7,7 +7,8 @@ class HrEmployee(models.Model):
     hcm_currency_id = fields.Many2one(
         "res.currency",
         related="hcm_coverage_scale_id.currency_id",
-        help="Tenchincal field used to keep consistency on the amounts used in this record",
+        help="""Tenchincal field used to keep consistency
+        on the amounts used in this record""",
     )
 
     hcm_is_inclusion = fields.Boolean("Inclusion")

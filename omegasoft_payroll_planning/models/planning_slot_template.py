@@ -89,7 +89,11 @@ class PlanningSlotTemplate(models.Model):
         """
         duration = self._get_duration()
         end_datetime = start_datetime + duration
-        # end_datetime = calendar.plan_hours(duration, start_datetime, compute_leaves=True)
+        # end_datetime = calendar.plan_hours(
+        #     duration,
+        #     start_datetime,
+        #     compute_leaves=True
+        # )
 
         if end_datetime is False:
             raise ValidationError(_("The duration is too long."))

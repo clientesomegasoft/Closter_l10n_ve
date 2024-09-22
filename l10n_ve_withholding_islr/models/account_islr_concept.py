@@ -20,7 +20,8 @@ class AccountISLRConcept(models.Model):
         )
         if not rate_id:
             raise ValidationError(
-                f"No se encontro tasa de retención de ISLR.\n\nTipo: {person_type_id.name}\nConcepto: {self.name}"
+                f"""No se encontro tasa de retención de ISLR.\n\nTipo:
+                {person_type_id.name}\nConcepto: {self.name}"""
             )
 
         if not rate_id.rate_type:

@@ -9,7 +9,8 @@ class GeneralLedgerCustomHandler(models.AbstractModel):
     _inherit = "account.general.ledger.report.handler"
 
     def _get_query_sums(self, report, options):
-        """Construct a query retrieving all the aggregated sums to build the report. It includes:
+        """Construct a query retrieving all the aggregated
+        sums to build the report. It includes:
         - sums for all accounts.
         - sums for the initial balances.
         - sums for the unaffected earnings.
@@ -22,7 +23,8 @@ class GeneralLedgerCustomHandler(models.AbstractModel):
         queries = []
 
         # Create the currency table.
-        # As the currency table is the same whatever the comparisons, create it only once.
+        # As the currency table is the same
+        # whatever the comparisons, create it only once.
         ct_query = self.env["res.currency"]._get_query_currency_table(options)
 
         balance_query = False
@@ -47,8 +49,10 @@ class GeneralLedgerCustomHandler(models.AbstractModel):
             if not options.get("general_ledger_strict_range"):
                 options_group = self._get_options_sum_balance(options_group)
 
-            # Sum is computed including the initial balance of the accounts configured to do so, unless a special option key is used
-            # (this is required for trial balance, which is based on general ledger)
+            # Sum is computed including the initial balance
+            # of the accounts configured to do so, unless a
+            # special option key is used (this is required for
+            # trial balance, which is based on general ledger)
             sum_date_scope = (
                 "strict_range"
                 if options_group.get("general_ledger_strict_range")
@@ -127,10 +131,11 @@ class GeneralLedgerCustomHandler(models.AbstractModel):
     def _get_query_amls(
         self, report, options, expanded_account_ids, offset=0, limit=None
     ):
-        """Construct a query retrieving the account.move.lines when expanding a report line with or without the load
-        more.
+        """Construct a query retrieving the account.move.lines when expanding
+        a report line with or without the load more.
         :param options:               The report options.
-        :param expanded_account_ids:  The account.account ids corresponding to consider. If None, match every account.
+        :param expanded_account_ids:  The account.account ids corresponding
+                                      to consider. If None, match every account.
         :param offset:                The offset of the query (used by the load more).
         :param limit:                 The limit of the query (used by the load more).
         :return:                      (query, params)

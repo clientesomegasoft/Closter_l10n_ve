@@ -23,7 +23,8 @@ class HrEmployee(models.Model):
         if not ves:
             ves = self.env.company.currency_id
             _logger.warning(
-                "USING env.company.currency_id {ves} as default value for employee advances"
+                "USING env.company.currency_id {ves} as "
+                "default value for employee advances"
             )
         return ves
 

@@ -36,7 +36,8 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
             + ([current_groupby] if current_groupby else [])
         )
 
-        # No need to run any SQL if we're computing the main line: it does not display any total
+        # No need to run any SQL if we're computing the
+        # main line: it does not display any total
         if not current_groupby:
             return {
                 "balance_currency": None,

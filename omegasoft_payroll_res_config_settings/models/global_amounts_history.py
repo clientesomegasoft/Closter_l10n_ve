@@ -84,7 +84,9 @@ class MinimumWageHistory(models.Model):
         if self.date < date.today():
             raise ValidationError(
                 _(
-                    "It is not possible to create backdated records through the interface. Historical data must be entered by import upload."
+                    "It is not possible to create backdated records through "
+                    "the interface. Historical data must be entered by import "
+                    "upload."
                 )
             )
 
@@ -182,7 +184,8 @@ class SalaryBasketTicketHistory(models.Model):
         if self.date < date.today():
             raise ValidationError(
                 _(
-                    "It is not possible to create backdated records through the interface. Historical data must be entered by import upload."
+                    "It is not possible to create backdated records through the "
+                    "interface. Historical data must be entered by import upload."
                 )
             )
 
@@ -276,7 +279,8 @@ class VacationsHistory(models.Model):
         if self.date < date.today():
             raise ValidationError(
                 _(
-                    "It is not possible to create backdated records through the interface. Historical data must be entered by import upload."
+                    "It is not possible to create backdated records through the "
+                    "interface. Historical data must be entered by import upload."
                 )
             )
 
@@ -370,7 +374,8 @@ class DaysOfProfitHistory(models.Model):
         if self.date < date.today():
             raise ValidationError(
                 _(
-                    "It is not possible to create backdated records through the interface. Historical data must be entered by import upload."
+                    "It is not possible to create backdated records through the "
+                    "interface. Historical data must be entered by import upload."
                 )
             )
 
@@ -464,7 +469,8 @@ class CentralBankSocialBenefitsRateHistory(models.Model):
         if self.date < date.today():
             raise ValidationError(
                 _(
-                    "It is not possible to create backdated records through the interface. Historical data must be entered by import upload."
+                    "It is not possible to create backdated records through the "
+                    "interface. Historical data must be entered by import upload."
                 )
             )
 

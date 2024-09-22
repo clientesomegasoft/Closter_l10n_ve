@@ -28,12 +28,14 @@ class HrEmployee(models.Model):
             res = self.validate_rif(vals.get("rif", False))
             if not res:
                 raise ValidationError(
-                    "Advertencia El rif tiene un formato incorrecto. Ej: V-[0]1234567 or V-12345678[0], E-012345678, J-012345678 o G-012345678. Por favor, inténtelo de nuevo"
+                    "Advertencia El rif tiene un formato incorrecto. "
+                    "Ej: V-[0]1234567 or V-12345678[0], E-012345678, "
+                    "J-012345678 o G-012345678. Por favor, inténtelo de nuevo"
                 )
             if not self.validate_rif_duplicate(vals.get("rif", False)):
                 raise ValidationError(
-                    "Advertencia El empleado ya está registrado en el rif: %s y está activo"
-                    % (vals.get("rif", False))
+                    "Advertencia El empleado ya está registrado "
+                    "en el rif: %s y está activo" % (vals.get("rif", False))
                 )
         res = super(__class__, self).write(vals)
         return res
@@ -49,12 +51,14 @@ class HrEmployee(models.Model):
                 res = self.validate_rif(vals.get("rif"))
                 if not res:
                     raise ValidationError(
-                        "Advertencia El rif tiene un formato incorrecto. Ej: V-[0]1234567 or V-12345678[0], E-012345678, J-012345678 o G-012345678. Por favor, inténtelo de nuevo"
+                        "Advertencia El rif tiene un formato incorrecto. "
+                        "Ej: V-[0]1234567 or V-12345678[0], E-012345678, "
+                        "J-012345678 o G-012345678. Por favor, inténtelo de nuevo"
                     )
                 if not self.validate_rif_duplicate(vals.get("rif", False), True):
                     raise ValidationError(
-                        "Advertencia El empleado ya está registrado en el rif: %s y está activo"
-                        % (vals.get("rif", False))
+                        "Advertencia El empleado ya está registrado "
+                        "en el rif: %s y está activo" % (vals.get("rif", False))
                     )
         return super(__class__, self).create(vals_list)
 
