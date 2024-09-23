@@ -70,7 +70,7 @@ Authors
 Contributors
 ------------
 
--  `Omegasoft C.A. <https://www.omegasoftve.com/>`__:
+-  `Omegasoft C.A. <https://www.omegasoftve.com/>`__
 
    -  Carlos Carvajal <carlos.carvajal@omegasoftve.com>
 

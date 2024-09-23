@@ -71,7 +71,7 @@ Authors
 Contributors
 ------------
 
--  `Omegasoft C.A. <https://www.omegasoftve.com/>`__:
+-  `Omegasoft C.A. <https://www.omegasoftve.com/>`__
 
    -  Luis Alfonzo <luis.alfonzo@omegasoftve.com>
 

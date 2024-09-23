@@ -71,7 +71,7 @@ Authors
 Contributors
 ------------
 
--  `Omegasoft C.A. <https://www.omegasoftve.com/>`__:
+-  `Omegasoft C.A. <https://www.omegasoftve.com/>`__
 
    -  Daniel Ospino <dospinoomegasoft@omegasoftve.com>
 

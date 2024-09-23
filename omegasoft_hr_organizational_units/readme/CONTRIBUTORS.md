@@ -1,4 +1,4 @@
-- [Omegasoft C.A.](https://www.omegasoftve.com/):
+- [Omegasoft C.A.](https://www.omegasoftve.com/)
   - Daniel Ospino \<<daniel.ospino@omegasoftve.com>\>
 
 - Comunidad Odoo Venezuela

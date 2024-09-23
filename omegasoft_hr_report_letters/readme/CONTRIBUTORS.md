@@ -1,4 +1,4 @@
-- [Omegasoft C.A.](https://www.omegasoftve.com/):
+- [Omegasoft C.A.](https://www.omegasoftve.com/)
   - Carlos Carvajal \<<carlos.carvajal@omegasoftve.com>\>
 
 - Comunidad Odoo Venezuela

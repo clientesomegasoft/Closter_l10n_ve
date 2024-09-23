@@ -1,4 +1,4 @@
-- [Omegasoft C.A.](https://www.omegasoftve.com/):
+- [Omegasoft C.A.](https://www.omegasoftve.com/)
   - Gabriel Peraza \<<gabriel.peraza@omegasoftve.com>\>
 
 - Comunidad Odoo Venezuela

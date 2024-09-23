@@ -76,7 +76,7 @@ Authors
 Contributors
 ------------
 
--  `Omegasoft C.A. <https://www.omegasoftve.com/>`__:
+-  `Omegasoft C.A. <https://www.omegasoftve.com/>`__
 
    -  Gabriel Peraza <gabriel.peraza@omegasoftve.com>
 

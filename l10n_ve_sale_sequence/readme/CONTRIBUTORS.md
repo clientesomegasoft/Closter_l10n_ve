@@ -1,4 +1,4 @@
-- [Omegasoft C.A.](https://www.omegasoftve.com/):
+- [Omegasoft C.A.](https://www.omegasoftve.com/)
   - Naudy Mendez \<<naudy.mendez@omegasoftve.com>\>
 
 - Comunidad Odoo Venezuela
