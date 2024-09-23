@@ -18,7 +18,7 @@ class ResCompany(models.Model):
     )
 
     def _create_per_company_withholding_sequence(self):
-        super(__class__, self)._create_per_company_withholding_sequence()
+        res = super(__class__, self)._create_per_company_withholding_sequence()
         values = [
             {
                 "name": "Withholding ISLR: %s" % company.name,
@@ -32,3 +32,4 @@ class ResCompany(models.Model):
         ]
         if values:
             self.env["ir.sequence"].create(values)
+        return res
