@@ -71,10 +71,11 @@ class AccountMove(models.Model):
         return to_post
 
     def button_draft(self):
-        super().button_draft()
+        res = super().button_draft()
         self.mapped("withholding_municipal_ids").filtered(
             lambda w: w.state == "posted"
         ).button_draft()
+        return res
 
     def button_cancel(self):
         res = super().button_cancel()

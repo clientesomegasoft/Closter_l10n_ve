@@ -29,10 +29,11 @@ class AccountMove(models.Model):
         return to_post
 
     def button_draft(self):
-        super().button_draft()
+        res = super().button_draft()
         for move in self:
             if move.withholding_islr_id.state == "posted":
                 move.withholding_islr_id.button_draft()
+        return res
 
     def button_cancel(self):
         res = super().button_cancel()
