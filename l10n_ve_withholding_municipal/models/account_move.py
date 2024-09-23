@@ -77,10 +77,11 @@ class AccountMove(models.Model):
         ).button_draft()
 
     def button_cancel(self):
-        super().button_cancel()
+        res = super().button_cancel()
         self.mapped("withholding_municipal_ids").filtered(
             lambda w: w.state == "draft"
         ).button_cancel()
+        return res
 
     def button_open_withholding_municipal(self):
         self.ensure_one()

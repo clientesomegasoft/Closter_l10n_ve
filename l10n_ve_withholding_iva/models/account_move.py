@@ -30,10 +30,11 @@ class AccountMove(models.Model):
                 move.withholding_iva_id.button_draft()
 
     def button_cancel(self):
-        super().button_cancel()
+        res = super().button_cancel()
         for move in self:
             if move.withholding_iva_id.state == "draft":
                 move.withholding_iva_id.button_cancel()
+        return res
 
     def button_open_withholding_iva(self):
         self.ensure_one()
