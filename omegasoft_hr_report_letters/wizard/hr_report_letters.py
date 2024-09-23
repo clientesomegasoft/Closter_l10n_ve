@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import _, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -22,7 +22,11 @@ class HrReportLetters(models.TransientModel):
     def button_print(self):
         if self.letter_type == "work":
             if not self.employee_id:
-                raise ValidationError(_("Debe seleccionar un Empleado!"))
+                raise ValidationError(
+                    _(
+                        "Debe seleccionar un Empleado!"
+                    )
+                )
             docids = self.employee_id
             return self.env.ref(
                 "omegasoft_hr_report_letters.report_hr_work_letter_action"
@@ -30,7 +34,11 @@ class HrReportLetters(models.TransientModel):
 
         elif self.letter_type == "txt":
             if not self.export_bank_payment_id:
-                raise ValidationError(_("Debe seleccionar un Número de TXT!"))
+                raise ValidationError(
+                    _(
+                        "Debe seleccionar un Número de TXT!"
+                    )
+                )
             return self.env.ref(
                 "omegasoft_hr_report_letters.report_hr_txt_letter_action"
             ).report_action(None)

@@ -86,9 +86,7 @@ class HrPlanAccumulationVacation(models.Model):
         for record in self:
             if record.days_law > 15 or record.days_law < 0:
                 raise UserError(
-                    _(
-                        "The legal days cannot be less than zero or greater than 15."
-                    )
+                    _("The legal days cannot be less than zero or greater than 15.")
                 )
             if record.vacation_bonus > 30 or record.vacation_bonus < 0:
                 raise UserError(
@@ -99,7 +97,5 @@ class HrPlanAccumulationVacation(models.Model):
                 )
             if record.additional_days > 15 or record.additional_days < 0:
                 raise UserError(
-                    _(
-                        "The additional days cannot be less than zero or more than 15."
-                    )
+                    _("The additional days cannot be less than zero or more than 15.")
                 )

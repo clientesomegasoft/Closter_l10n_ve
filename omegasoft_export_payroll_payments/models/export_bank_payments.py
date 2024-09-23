@@ -5,7 +5,7 @@ from datetime import datetime
 
 import pytz
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -104,7 +104,9 @@ class ExportBankPayments(models.Model):
     def _check_employee_ids(self):
         if self.employee_ids and len(self.employee_ids) > 10:
             raise ValidationError(
-                _("La cantidad maxima de empleados por TXT no debe ser mayor a 10.")
+                _(
+                    "La cantidad maxima de empleados por TXT no debe ser mayor a 10."
+                )
             )
 
     def _get_employee_domain(self, bank_account_number, operation_type_same=False):
@@ -239,7 +241,9 @@ class ExportBankPayments(models.Model):
 
         if all(int(item) < int(current_sequence.name) for item in self.mapped("name")):
             raise ValidationError(
-                _("No se puede eliminar. Hay secuencias superiores creadas")
+                _(
+                    "No se puede eliminar. Hay secuencias superiores creadas"
+                )
             )
         else:
             if len(self) == 1:
@@ -269,21 +273,29 @@ class ExportBankPayments(models.Model):
             and len(self.bank_account_id.sanitized_acc_number) != 20
         ):
             raise ValidationError(
-                _("La longitud del número de cuenta de "
-                "la compañia debe ser de 20 dígitos.")
+                _(
+                    "La longitud del número de cuenta de "
+                    "la compañia debe ser de 20 dígitos."
+                )
             )
 
         elif self.bank_account_id and not self.bank_account_id.is_payroll_account:
             raise ValidationError(
-                _("La cuenta de la compañia debe estar "
-                "configurada como 'Cuenta de Nomina'.")
+                _(
+                    "La cuenta de la compañia debe estar "
+                    "configurada como 'Cuenta de Nomina'."
+                )
             )
 
         if (
             self.env.company.partner_id.partner_type != "other"
             and not self.env.company.partner_id.vat
         ):
-            raise ValidationError(_("Por favor establezca el RIF de la compañia."))
+            raise ValidationError(
+                _(
+                    "Por favor establezca el RIF de la compañia."
+                )
+            )
 
         bank_account_number = self.bank_account_id.acc_number[:4]
 
@@ -302,7 +314,9 @@ class ExportBankPayments(models.Model):
 
         if not data:
             raise ValidationError(
-                _("No se pudo generar el archivo. Intente de nuevo con otro periodo.")
+                _(
+                    "No se pudo generar el archivo. Intente de nuevo con otro periodo."
+                )
             )
         return self.write({"state": "done"})
 
@@ -350,8 +364,10 @@ class ExportBankPayments(models.Model):
                 employee_domain = self._get_employee_domain(bank_account_number, True)
                 if not employee_domain:
                     raise ValidationError(
-                        _("No se pudo generar el archivo. "
-                        "Intente de nuevo con otro periodo.")
+                        _(
+                            "No se pudo generar el archivo. "
+                            "Intente de nuevo con otro periodo."
+                        )
                     )
                 payslips = payslips.filtered(
                     lambda x: self.bank_account_id.acc_number
@@ -361,8 +377,10 @@ class ExportBankPayments(models.Model):
                 employee_domain = self._get_employee_domain(bank_account_number)
                 if not employee_domain:
                     raise ValidationError(
-                        _("No se pudo generar el archivo. "
-                        "Intente de nuevo con otro periodo.")
+                        _(
+                            "No se pudo generar el archivo. "
+                            "Intente de nuevo con otro periodo."
+                        )
                     )
                 payslips = payslips.filtered(
                     lambda x: self.bank_account_id.acc_number
@@ -386,8 +404,10 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 13:
             raise ValidationError(
                 (
-                    _("El monto a pagar para el empleado: %s, "
-                    "excede la cantidad maxima de digitos.")
+                    _(
+                        "El monto a pagar para el empleado: %s, "
+                        "excede la cantidad maxima de digitos."
+                    )
                 )
                 % (payslip.employee_id.name)
             )
@@ -396,8 +416,10 @@ class ExportBankPayments(models.Model):
             if len(f"{payslip.net_wage:.2f}".replace(".", "")) > 11:
                 raise ValidationError(
                     (
-                        _("El monto a pagar para el empleado: %s, "
-                        "excede la cantidad maxima de digitos.")
+                        _(
+                            "El monto a pagar para el empleado: %s, "
+                            "excede la cantidad maxima de digitos."
+                        )
                     )
                     % (payslip.employee_id.name)
                 )
@@ -412,8 +434,10 @@ class ExportBankPayments(models.Model):
             if len(f"{payslip.net_wage:.2f}") > 18:
                 raise ValidationError(
                     (
-                       _("El monto a pagar para el empleado: %s, "
-                        "excede la cantidad maxima de digitos.")
+                        _(
+                            "El monto a pagar para el empleado: %s, "
+                            "excede la cantidad maxima de digitos."
+                        )
                     )
                     % (payslip.employee_id.name)
                 )
@@ -463,7 +487,9 @@ class ExportBankPayments(models.Model):
             total_payroll = f"{total_payroll:.2f}".replace(".", "")
             if len(total_payroll) > 13:
                 raise ValidationError(
-                    _("El monto total de la nomina excede la cantidad maxima de digitos.")
+                    _(
+                        "El monto total de la nomina excede la cantidad maxima de digitos."
+                    )
                 )
 
             if self.env.company.partner_id.vat:
@@ -494,8 +520,10 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 15:
             raise ValidationError(
                 (
-                    _("El monto a pagar para el empleado: %s, "
-                    "excede la cantidad maxima de digitos.")
+                    _(
+                        "El monto a pagar para el empleado: %s, "
+                        "excede la cantidad maxima de digitos."
+                    )
                 )
                 % (payslip.employee_id.name)
             )
@@ -627,8 +655,10 @@ class ExportBankPayments(models.Model):
                 total_payroll = f"{total_payroll:.2f}".replace(".", "")
                 if len(total_payroll) > 15:
                     raise ValidationError(
-                        _("El monto total de la nomina excede "
-                        "la cantidad maxima de digitos.")
+                        _(
+                            "El monto total de la nomina excede "
+                            "la cantidad maxima de digitos."
+                        )
                     )
 
                 if self.env.company.partner_id.vat:
@@ -684,8 +714,10 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 15:
             raise ValidationError(
                 (
-                    _("El monto a pagar para el empleado: %s, "
-                    "excede la cantidad maxima de digitos.")
+                    _(
+                        "El monto a pagar para el empleado: %s, "
+                        "excede la cantidad maxima de digitos."
+                    )
                 )
                 % (payslip.employee_id.name)
             )
@@ -753,7 +785,9 @@ class ExportBankPayments(models.Model):
             total_payroll = f"{total_payroll:.2f}".replace(".", ",")
             if len(total_payroll) > 18:
                 raise ValidationError(
-                    _("El monto total de la nomina excede la cantidad maxima de digitos.")
+                    _(
+                        "El monto total de la nomina excede la cantidad maxima de digitos."
+                    )
                 )
 
             if self.env.company.partner_id.vat:
@@ -806,8 +840,10 @@ class ExportBankPayments(models.Model):
         if len(f"{payslip.net_wage:.2f}") > 17:
             raise ValidationError(
                 (
-                    _("El monto a pagar para el empleado: %s, "
-                    "excede la cantidad maxima de digitos.")
+                    _(
+                        "El monto a pagar para el empleado: %s, "
+                        "excede la cantidad maxima de digitos."
+                    )
                 )
                 % (payslip.employee_id.name)
             )
@@ -880,7 +916,9 @@ class ExportBankPayments(models.Model):
             total_payroll = f"{total_payroll:.2f}".replace(".", "")
             if len(total_payroll) > 17:
                 raise ValidationError(
-                    _("El monto total de la nomina excede la cantidad maxima de digitos.")
+                    _(
+                        "El monto total de la nomina excede la cantidad maxima de digitos."
+                    )
                 )
 
             if self.env.company.partner_id.vat:

@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -52,13 +52,17 @@ class HrEmployeeBankInformation(models.Model):
         for record in self:
             if record.name and record.name.bic == False:
                 raise ValidationError(
-                    _("Por favor establezca el Código de identificación "
-                    "bancaria (BIC/SWIFT) para el banco seleccionado")
+                    _(
+                        "Por favor establezca el Código de identificación "
+                        "bancaria (BIC/SWIFT) para el banco seleccionado"
+                    )
                 )
             elif record.name and record.name.bic and len(record.name.bic) > 12:
                 raise ValidationError(
-                    _("La longitud del Código de identificación bancaria "
-                    "(BIC/SWIFT) no debe ser mayor a 12 caracteres")
+                    _(
+                        "La longitud del Código de identificación bancaria "
+                        "(BIC/SWIFT) no debe ser mayor a 12 caracteres"
+                    )
                 )
 
     @api.constrains("bank_account_number")
@@ -69,9 +73,11 @@ class HrEmployeeBankInformation(models.Model):
                 or len(record.bank_account_number) != 20
             ):
                 raise ValidationError(
-                    _("Sólo se permiten caracteres numéricos [0-9] y la "
-                    "longitud total del número de cuenta bancaria debe ser "
-                    "igual a 20 caracteres.")
+                    _(
+                        "Sólo se permiten caracteres numéricos [0-9] y la "
+                        "longitud total del número de cuenta bancaria debe ser "
+                        "igual a 20 caracteres."
+                    )
                 )
 
     @api.constrains("account_holder")
@@ -83,9 +89,11 @@ class HrEmployeeBankInformation(models.Model):
                 not account_holder_name.isalpha() or account_holder_len > 25
             ):
                 raise ValidationError(
-                    _("El nombre del titular de la cuenta debe contener "
-                    "únicamente caracteres alfabéticos [a-z,A-Z] y su "
-                    "longitud no debe superar los 25 caracteres.")
+                    _(
+                        "El nombre del titular de la cuenta debe contener "
+                        "únicamente caracteres alfabéticos [a-z,A-Z] y su "
+                        "longitud no debe superar los 25 caracteres."
+                    )
                 )
 
     @api.constrains("holder_account_id")
@@ -96,7 +104,9 @@ class HrEmployeeBankInformation(models.Model):
                 or len(record.holder_account_id) != 8
             ):
                 raise ValidationError(
-                    _("Sólo se permiten caracteres numéricos [0-9] y "
-                    "la longitud total del número de identificación del "
-                    "titular de la cuenta debe ser igual a 8 caracteres.")
+                    _(
+                        "Sólo se permiten caracteres numéricos [0-9] y "
+                        "la longitud total del número de identificación del "
+                        "titular de la cuenta debe ser igual a 8 caracteres."
+                    )
                 )

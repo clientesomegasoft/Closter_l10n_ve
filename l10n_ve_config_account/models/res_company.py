@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 
 
@@ -32,7 +32,9 @@ class ResCompany(models.Model):
                     [("company_id", "=", company.id)], limit=1
                 ):
                     raise UserError(
-                        _("No puedes cambiar la moneda operativa / fiscal "
-                        "de la compañía ya que existen asientos contables !!!")
+                        _(
+                            "No puedes cambiar la moneda operativa / fiscal "
+                            "de la compañía ya que existen asientos contables !!!"
+                        )
                     )
         return super(__class__, self).write(values)

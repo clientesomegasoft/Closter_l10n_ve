@@ -79,7 +79,9 @@ class ContractSalaryField(models.Model):
 
             if record.cestaticket_salary <= 0:
                 raise ValidationError(
-                    _("El monto del Salario Cesta Ticke no puede ser menor o igual a cero")
+                    _(
+                        "El monto del Salario Cesta Ticke no puede ser menor o igual a cero"
+                    )
                 )
             if (
                 record.average_wage_date_start
@@ -87,11 +89,15 @@ class ContractSalaryField(models.Model):
                 and record.average_wage < 0
             ):
                 raise ValidationError(
-                    _("El monto del Salario Promedio no puede ser "
-                    "menor a cero si existen fechas de inicio y fin")
+                    _(
+                        "El monto del Salario Promedio no puede ser "
+                        "menor a cero si existen fechas de inicio y fin"
+                    )
                 )
             if record.salary_overtime_hours < 0:
-                raise ValidationError(_("Las Horas Extras deben ser superiores a cero."))
+                raise ValidationError(
+                    _("Las Horas Extras deben ser superiores a cero.")
+                )
 
     def _net_amount(self, payslip_obj, to_currency, average_salary=False):
         # neto = 0

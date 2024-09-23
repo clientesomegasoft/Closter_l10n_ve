@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -23,10 +23,14 @@ class HrEmployee(models.Model):
                 pass
             if count_is_payroll_account > 1:
                 raise ValidationError(
-                    _("Sólo se permiten seleccionar una cuenta, como cuenta de nomina")
+                    _(
+                        "Sólo se permiten seleccionar una cuenta, como cuenta de nomina"
+                    )
                 )
             elif count_is_payroll_account == 0 and record.bank_information_ids:
                 raise ValidationError(
-                    _("Es necesario marcar en una de las "
-                    "lineas el check de cuenta nomina.")
+                    _(
+                        "Es necesario marcar en una de las "
+                        "lineas el check de cuenta nomina."
+                    )
                 )

@@ -98,7 +98,8 @@ class WithholdingISLRXML(models.Model):
         for rec in self:
             if rec.state != "cancel":
                 raise UserError(
-                    _("Solo XML en estado Cancelado pueden ser suprimidos."))
+                    _("Solo XML en estado Cancelado pueden ser suprimidos.")
+                )
         return super().unlink()
 
     def _generate_xml_data(self):

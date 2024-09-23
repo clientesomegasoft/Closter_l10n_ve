@@ -1,6 +1,6 @@
 from logging import getLogger
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.tools.float_utils import float_compare
 
@@ -86,6 +86,14 @@ class HrHCMCoverage(models.Model):
                 a, b, precision_digits=record.currency_id.decimal_places
             )
             if compare(record.company_percentage_contribution, 100) > 0:
-                raise ValidationError(_("Company Percentage is too high (max 100)"))
+                raise ValidationError(
+                    _(
+                        "Company Percentage is too high (max 100)"
+                    )
+                )
             elif compare(record.company_percentage_contribution, 0) < 0:
-                raise ValidationError(_("Company Percentage is too low (min 0)"))
+                raise ValidationError(
+                    _(
+                        "Company Percentage is too low (min 0)"
+                    )
+                )

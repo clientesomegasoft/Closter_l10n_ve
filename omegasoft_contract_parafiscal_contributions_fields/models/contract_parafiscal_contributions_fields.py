@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -46,6 +46,8 @@ class ContractParafiscalContributionsField(models.Model):
                 or record.percentage_income_tax_islr > 99
             ):
                 raise ValidationError(
-                    _("Los montos permitidos para el porcentaje "
-                    "de ISLR estan en el rango [0,99].")
+                    _(
+                        "Los montos permitidos para el porcentaje "
+                        "de ISLR estan en el rango [0,99]."
+                    )
                 )

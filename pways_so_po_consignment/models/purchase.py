@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -30,7 +30,11 @@ class PurchaseOrder(models.Model):
                 [("is_consignment", "=", "True")], limit=1
             )
             if not plan_id:
-                raise ValidationError(_("Please set analytic plan for consignment"))
+                raise ValidationError(
+                    _(
+                        "Please set analytic plan for consignment"
+                    )
+                )
             analytic_id = self.env["account.analytic.account"].search(
                 [("purchase_order_id", "=", self.id)], limit=1
             )

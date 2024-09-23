@@ -1,6 +1,6 @@
 import re
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -28,14 +28,18 @@ class HrEmployee(models.Model):
             res = self.validate_rif(vals.get("rif", False))
             if not res:
                 raise ValidationError(
-                    _("Advertencia El rif tiene un formato incorrecto. "
-                    "Ej: V-[0]1234567 or V-12345678[0], E-012345678, "
-                    "J-012345678 o G-012345678. Por favor, inténtelo de nuevo")
+                    _(
+                        "Advertencia El rif tiene un formato incorrecto. "
+                        "Ej: V-[0]1234567 or V-12345678[0], E-012345678, "
+                        "J-012345678 o G-012345678. Por favor, inténtelo de nuevo"
+                    )
                 )
             if not self.validate_rif_duplicate(vals.get("rif", False)):
                 raise ValidationError(
-                    _("Advertencia El empleado ya está registrado "
-                    "en el rif: %s y está activo" % (vals.get("rif", False)))
+                    _(
+                        "Advertencia El empleado ya está registrado "
+                        "en el rif: %s y está activo" % (vals.get("rif", False))
+                    )
                 )
         res = super(__class__, self).write(vals)
         return res
@@ -51,14 +55,18 @@ class HrEmployee(models.Model):
                 res = self.validate_rif(vals.get("rif"))
                 if not res:
                     raise ValidationError(
-                        _("Advertencia El rif tiene un formato incorrecto. "
-                        "Ej: V-[0]1234567 or V-12345678[0], E-012345678, "
-                        "J-012345678 o G-012345678. Por favor, inténtelo de nuevo")
+                        _(
+                            "Advertencia El rif tiene un formato incorrecto. "
+                            "Ej: V-[0]1234567 or V-12345678[0], E-012345678, "
+                            "J-012345678 o G-012345678. Por favor, inténtelo de nuevo"
+                        )
                     )
                 if not self.validate_rif_duplicate(vals.get("rif", False), True):
                     raise ValidationError(
-                        _("Advertencia El empleado ya está registrado "
-                        "en el rif: %s y está activo" % (vals.get("rif", False)))
+                        _(
+                            "Advertencia El empleado ya está registrado "
+                            "en el rif: %s y está activo" % (vals.get("rif", False))
+                        )
                     )
         return super(__class__, self).create(vals_list)
 

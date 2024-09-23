@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -105,8 +105,10 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_social_benefits < 0:
                 raise ValidationError(
-                    _("El monto para las Prestaciones Sociales "
-                    "Acumuladas debe ser superior a cero.")
+                    _(
+                        "El monto para las Prestaciones Sociales "
+                        "Acumuladas debe ser superior a cero."
+                    )
                 )
             elif (
                 module
@@ -130,8 +132,10 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.interest_accrued_employee_benefits < 0:
                 raise ValidationError(
-                    _("El monto para las Prestaciones Sociales "
-                    "Acumuladas debe ser superior a cero.")
+                    _(
+                        "El monto para las Prestaciones Sociales "
+                        "Acumuladas debe ser superior a cero."
+                    )
                 )
             elif (
                 module
@@ -151,8 +155,10 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_advances_social_benefits < 0:
                 raise ValidationError(
-                    _("El monto para los Anticipos Sociales "
-                    "Acumuladas debe ser superior a cero.")
+                    _(
+                        "El monto para los Anticipos Sociales "
+                        "Acumuladas debe ser superior a cero."
+                    )
                 )
             elif (
                 module
@@ -177,8 +183,10 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_earnings_benefits < 0:
                 raise ValidationError(
-                    _("El monto para los Anticipos Sociales "
-                    "Acumuladas debe ser superior a cero.")
+                    _(
+                        "El monto para los Anticipos Sociales "
+                        "Acumuladas debe ser superior a cero."
+                    )
                 )
             elif (
                 module
@@ -201,8 +209,10 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_advances_earnings_benefits < 0:
                 raise ValidationError(
-                    _("El monto para los Anticipos Sociales "
-                    "Acumuladas debe ser superior a cero.")
+                    _(
+                        "El monto para los Anticipos Sociales "
+                        "Acumuladas debe ser superior a cero."
+                    )
                 )
             elif (
                 module
@@ -225,8 +235,10 @@ class ContractBenefitControlField(models.Model):
         for record in self:
             if record.accumulated_day_per_year_benefits < 0:
                 raise ValidationError(
-                    _("El monto para los Anticipos Sociales "
-                    "Acumuladas debe ser superior a cero.")
+                    _(
+                        "El monto para los Anticipos Sociales "
+                        "Acumuladas debe ser superior a cero."
+                    )
                 )
             elif (
                 module

@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -68,5 +68,7 @@ class ContractBonusesField(models.Model):
                 or record.perfect_attendance_bonus < 0
             ):
                 raise ValidationError(
-                    _("Los montos de los bonos de salarios deben ser superiores a cero.")
+                    _(
+                        "Los montos de los bonos de salarios deben ser superiores a cero."
+                    )
                 )

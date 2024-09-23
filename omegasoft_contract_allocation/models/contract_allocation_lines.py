@@ -81,8 +81,10 @@ class HrContractAllocationLine(models.Model):
         for record in self:
             if record.allocated_quantity < record.quantity_delivered:
                 raise UserError(
-                    _("La cantidad asignada no puede ser "
-                    "menor que de la cantidad entregada.")
+                    _(
+                        "La cantidad asignada no puede ser "
+                        "menor que de la cantidad entregada."
+                    )
                 )
 
     @api.onchange("quantity_delivered")

@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -99,7 +99,9 @@ class HrContractAllocation(models.Model):
     def _check_employee_ids(self):
         if self.name == "employee" and len(self.employee_ids) > 1:
             raise ValidationError(
-                _("Las dotaciones por empleado sólo aceptan un máximo de 1 empleado")
+                _(
+                    "Las dotaciones por empleado sólo aceptan un máximo de 1 empleado"
+                )
             )
 
     @api.onchange("employee_ids", "name")
@@ -141,8 +143,10 @@ class HrContractAllocation(models.Model):
                 )
                 if not employees:
                     raise ValidationError(
-                        _("El departamento seleccionado no tiene "
-                        "empleados con contratos En Proceso")
+                        _(
+                            "El departamento seleccionado no tiene "
+                            "empleados con contratos En Proceso"
+                        )
                     )
                 else:
                     self.write({"employee_ids": [(6, 0, employees.ids)]})
@@ -215,9 +219,17 @@ class HrContractAllocation(models.Model):
         if self.allocation_line_ids:
             for record in self.allocation_line_ids:
                 if record.allocated_quantity <= 0:
-                    raise ValidationError(_("La cantidad asignada debe ser mayor a cero"))
+                    raise ValidationError(
+                        _(
+                            "La cantidad asignada debe ser mayor a cero"
+                        )
+                    )
                 if record.frequency <= 0:
-                    raise ValidationError(_("La frecuencia debe ser mayor a cero"))
+                    raise ValidationError(
+                        _(
+                            "La frecuencia debe ser mayor a cero"
+                        )
+                    )
 
     # employee file code
     employee_file = fields.Boolean("Employee file", related="company_id.employee_file")

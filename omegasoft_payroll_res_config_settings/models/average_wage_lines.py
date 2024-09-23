@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -33,14 +33,20 @@ class AverageWageLines(models.Model):
                 record.average_days <= 0
                 and record.structure_type_default_schedule_pay == "monthly"
             ):
-                raise ValidationError(_("El promedio de días debe ser superior a cero."))
+                raise ValidationError(
+                    _(
+                        "El promedio de días debe ser superior a cero."
+                    )
+                )
 
     @api.constrains("number_of_best_weeks")
     def _check_number_of_best_weeks(self):
         for record in self:
             if record.number_of_best_weeks <= 0 and record.best_weeks_check:
                 raise ValidationError(
-                    _("Cantidad de mejores semanas debe ser mayor a cero.")
+                    _(
+                        "Cantidad de mejores semanas debe ser mayor a cero."
+                    )
                 )
 
     @api.constrains("number_of_weeks")
@@ -51,5 +57,7 @@ class AverageWageLines(models.Model):
                 and record.structure_type_default_schedule_pay == "weekly"
             ):
                 raise ValidationError(
-                    _("Cantidad de semanas a tomar debe ser mayor a cero.")
+                    _(
+                        "Cantidad de semanas a tomar debe ser mayor a cero."
+                    )
                 )

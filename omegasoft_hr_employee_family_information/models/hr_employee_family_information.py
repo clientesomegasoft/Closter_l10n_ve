@@ -2,7 +2,7 @@ from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -77,11 +77,15 @@ class HrEmployeeFamilyInformation(models.Model):
     def _onchange_id_number(self):
         if self.id_number and not self.id_number.isdigit():
             raise ValidationError(
-                _("Advertencia! Para el número de C.I "
-                "solo se admiten caracteres numéricos")
+                _(
+                    "Advertencia! Para el número de C.I "
+                    "solo se admiten caracteres numéricos"
+                )
             )
         if self.id_number and len(self.id_number) > 8:
             raise ValidationError(
-                _("Advertencia! La longitud para el número de C.I "
-                "no debe ser mayor a 8 caracteres")
+                _(
+                    "Advertencia! La longitud para el número de C.I "
+                    "no debe ser mayor a 8 caracteres"
+                )
             )

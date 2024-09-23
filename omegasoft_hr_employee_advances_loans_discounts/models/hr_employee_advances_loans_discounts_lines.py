@@ -173,13 +173,17 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
                 }
 
                 raise ValidationError(
-                    _("El monto {advancement} del anticipo para ({employee}) no debe "
-                    "ser superior a {details}: {available:,.2f}".format(
-                        advancement=advancement,
-                        employee=", ".join(record.product_employee_ids.mapped("name")),
-                        details=ERROR_DETAILS.get(record.type_advance_loan, ""),
-                        available=available_limit,
-                    ))
+                    _(
+                        "El monto {advancement} del anticipo para ({employee}) no debe "
+                        "ser superior a {details}: {available:,.2f}".format(
+                            advancement=advancement,
+                            employee=", ".join(
+                                record.product_employee_ids.mapped("name")
+                            ),
+                            details=ERROR_DETAILS.get(record.type_advance_loan, ""),
+                            available=available_limit,
+                        )
+                    )
                 )
 
     @api.onchange("fees")

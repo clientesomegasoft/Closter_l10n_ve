@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -173,8 +173,10 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
             )
             if not maybe_employees:
                 raise ValidationError(
-                    _("El departamento seleccionado no tiene "
-                    "empleados con contratos En Proceso")
+                    _(
+                        "El departamento seleccionado no tiene "
+                        "empleados con contratos En Proceso"
+                    )
                 )
 
         employee_ids.append(fields.Command.set(maybe_employees.ids))
@@ -238,14 +240,18 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
             for record in self.advances_loans_discounts_line_ids:
                 if record.amount <= 0:
                     raise ValidationError(
-                        _("El monto en las lineas debe ser mayor a cero.")
+                        _(
+                            "El monto en las lineas debe ser mayor a cero."
+                        )
                     )
                 if (
                     record.type_advance_loan in ["loan", "discount", "per_diem"]
                     and record.fees <= 0
                 ):
                     raise ValidationError(
-                        _("Las Cuotas en las lineas no pueden ser menor o igual a cero")
+                        _(
+                            "Las Cuotas en las lineas no pueden ser menor o igual a cero"
+                        )
                     )
 
     # employee file code
