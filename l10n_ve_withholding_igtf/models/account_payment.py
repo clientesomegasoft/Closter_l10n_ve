@@ -213,5 +213,6 @@ class AccountPayment(models.Model):
         return res
 
     def action_cancel(self):
-        super(__class__, self).action_cancel()
+        res = super(__class__, self).action_cancel()
         self.igtf_move_id.button_cancel()
+        return res
