@@ -44,7 +44,7 @@ class FiscalBooksReportHandler(models.AbstractModel):
     _description = "Libros Fiscales Custom Handler"
 
     def _custom_options_initializer(self, report, options, previous_options=None):
-        super()._custom_options_initializer(
+        opts = super()._custom_options_initializer(
             report, options, previous_options=previous_options
         )
         options["buttons"] += [
@@ -61,6 +61,7 @@ class FiscalBooksReportHandler(models.AbstractModel):
                 "sequence": 90,
             },
         ]
+        return opts
 
     def _caret_options_initializer(self):
         return {

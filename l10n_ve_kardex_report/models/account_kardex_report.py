@@ -14,7 +14,7 @@ class AccountKardexReport(models.AbstractModel):
     _inherit = "account.report.custom.handler"
 
     def _custom_options_initializer(self, report, options, previous_options=None):
-        super()._custom_options_initializer(
+        opts = super()._custom_options_initializer(
             report, options, previous_options=previous_options
         )
         options["column_headers"][0] = [
@@ -24,6 +24,7 @@ class AccountKardexReport(models.AbstractModel):
             {"name": "Saldo final", "colspan": 3, "forced_options": {}},
         ]
         options["columns"] += options["columns"][2:] * 2
+        return opts
 
     def _dynamic_lines_generator(
         self, report, options, all_column_groups_expression_totals
