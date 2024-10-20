@@ -33,6 +33,6 @@
     "installable": True,
     "price": 60.0,
     "currency": "EUR",
-    "images": ["static/description/banner.png"],
+    "images": ["static/description/icon.png"],
     "license": "OPL-1",
 }
