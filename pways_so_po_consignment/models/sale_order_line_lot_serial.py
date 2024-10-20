@@ -26,16 +26,10 @@ class SaleOrderLineLotSerial(models.Model):
             qty = sum(so_line_id.mapped("qty"))
             if qty > record.line_id.product_uom_qty:
                 raise ValidationError(
-                    _(
-                        "Line qty can not be greater than consignment qty."
-                    )
+                    _("Line qty can not be greater than consignment qty.")
                 )
             if record.line_id.product_id.tracking == "serial" and record.qty > 1:
-                raise ValidationError(
-                    _(
-                        "For serial done qty must be 1"
-                    )
-                )
+                raise ValidationError(_("For serial done qty must be 1"))
 
     @api.constrains("lot_producing_id")
     def check_lot_serial(self):
@@ -48,7 +42,5 @@ class SaleOrderLineLotSerial(models.Model):
             )
             if so_line_ids and len(so_line_ids) > 1:
                 raise ValidationError(
-                    _(
-                        "For some products same serial/lot number is used twice."
-                    )
+                    _("For some products same serial/lot number is used twice.")
                 )
