@@ -121,7 +121,8 @@ class Mail(models.Model):
                 if mail.headers:
                     try:
                         headers.update(ast.literal_eval(mail.headers))
-                    except Exception:
+                    except Exception as e:
+                        _logger.info(e)
                         pass
 
                 # Writing on the mail object may fail (e.g. lock on user) which
