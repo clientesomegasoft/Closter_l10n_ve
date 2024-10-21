@@ -71,7 +71,7 @@ class Mail(models.Model):
                 if smtp_session:
                     smtp_session.quit()
 
-    def _send_with_template(
+    def _send_with_template(  # noqa: C901
         self, payslip, auto_commit=False, raise_exception=False, smtp_session=None
     ):
         IrMailServer = self.env["ir.mail_server"]

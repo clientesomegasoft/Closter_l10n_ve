@@ -95,7 +95,7 @@ class ExportBankPaymentsBanavih(models.Model):
 
         return employees_data
 
-    def _fiscal_payroll_validations(self, employee, totals):
+    def _fiscal_payroll_validations(self, employee, totals):  # noqa: C901
         if not employee.country_id:
             raise ValidationError(
                 (_("Por favor establezca la nacionalidad del empleado: %s."))

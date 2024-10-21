@@ -20,7 +20,7 @@ class SocialBenefit(models.Model):
     employee_additional_days = fields.Integer(help="Additional days", default=0)
 
     # Social benefits
-    def _social_benefits(self):
+    def _social_benefits(self):  # noqa: C901
         employee_obj = (
             self.env["hr.employee"]
             .search([("active", "=", True)])
