@@ -63,6 +63,7 @@ repos:
     rev: v0.0.25
     hooks:
       - id: oca-checks-odoo-module
+        args: ["--disable=xml-view-dangerous-replace-low-priority, --enable=all"]
       - id: oca-checks-po
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.7.1
