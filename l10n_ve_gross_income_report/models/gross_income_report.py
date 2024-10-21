@@ -119,10 +119,10 @@ class GrossIncomeReport(models.Model):
             },
         ]
         expence_account_id = self.move_id.line_ids.filtered(
-            lambda l: l.account_id.id == self.town_hall_id.expence_account_id.id
+            lambda line: line.account_id.id == self.town_hall_id.expence_account_id.id
         )
         payable_account_id = self.move_id.line_ids.filtered(
-            lambda l: l.account_id.id == self.town_hall_id.payable_account_id.id
+            lambda line: line.account_id.id == self.town_hall_id.payable_account_id.id
         )
         line_ids_commands = [
             Command.update(expence_account_id.id, line_ids[0])

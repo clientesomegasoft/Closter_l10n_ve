@@ -96,8 +96,8 @@ class AccountMoveLine(models.Model):
             return
 
         payment_term_lines = self.filtered(
-            lambda l: l.display_type == "payment_term"
-            and not l.move_id.invoice_payment_term_id
+            lambda line: line.display_type == "payment_term"
+            and not line.move_id.invoice_payment_term_id
         )
 
         for line in self - payment_term_lines:
@@ -113,7 +113,7 @@ class AccountMoveLine(models.Model):
         for line in payment_term_lines:
             line.balance_ref = -sum(
                 line.move_id.line_ids.filtered(
-                    lambda l: l.display_type in ("product", "tax", "rounding")
+                    lambda line: line.display_type in ("product", "tax", "rounding")
                 ).mapped("balance_ref")
             )
 

@@ -55,7 +55,7 @@ class AccountMove(models.Model):
     def _apply_withholding_islr(self):
         self.ensure_one()
         return self.invoice_line_ids.filtered(
-            lambda l: l.product_id.apply_withholding_islr
+            lambda line: line.product_id.apply_withholding_islr
         ) and (
             (
                 self.is_sale_document()

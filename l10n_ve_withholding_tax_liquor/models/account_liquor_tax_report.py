@@ -76,13 +76,13 @@ class AccountLiquourTaxReport(models.Model):
             move_line_ids = self.env["account.move.line"].browse(line_ids)
 
             base_amount = 0.0
-            for l in move_line_ids:
-                price_subtotal = l.company_currency_id.round(
-                    l.price_subtotal / l.currency_rate
+            for line in move_line_ids:
+                price_subtotal = line.company_currency_id.round(
+                    line.price_subtotal / line.currency_rate
                 )
                 if not is_company_currency:
-                    price_subtotal = l.currency_ref_id.round(
-                        price_subtotal * l.currency_rate_ref.rate
+                    price_subtotal = line.currency_ref_id.round(
+                        price_subtotal * line.currency_rate_ref.rate
                     )
                 base_amount += price_subtotal
 

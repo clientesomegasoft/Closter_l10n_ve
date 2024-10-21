@@ -109,8 +109,8 @@ class AccountWithholdingISLR(models.Model):
 
         # Reconcile.
         (self.move_id.line_ids + self.invoice_id.line_ids).filtered(
-            lambda l: l.account_id.id == self.destination_account_id.id
-            and not l.reconciled
+            lambda line: line.account_id.id == self.destination_account_id.id
+            and not line.reconciled
         ).reconcile()
 
         self.write({"state": "posted"})

@@ -16,7 +16,7 @@ class AccountISLRConcept(models.Model):
         self.ensure_one()
 
         rate_id = self.rate_ids.filtered(
-            lambda l: l.person_type_id.id == person_type_id.id
+            lambda line: line.person_type_id.id == person_type_id.id
         )
         if not rate_id:
             raise ValidationError(

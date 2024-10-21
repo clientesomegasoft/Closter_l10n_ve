@@ -215,7 +215,7 @@ class AccountMove(models.Model):
             for move, reverse_move in zip(self, reverse_moves, strict=True):
                 group = defaultdict(list)
                 for line in (move.line_ids + reverse_move.line_ids).filtered(
-                    lambda l: not l.reconciled
+                    lambda L: not L.reconciled
                 ):
                     group[(line.account_id, line.currency_id)].append(line.id)
                 for (account, dummy), line_ids in group.items():
@@ -244,7 +244,8 @@ def _post(self, soft=True):
             continue
         if invoice.move_type in ("in_invoice", "in_refund", "in_receipt"):
             valued_lines |= invoice.invoice_line_ids.filtered(
-                lambda l: l.product_id and l.product_id.cost_method != "standard"
+                lambda line: line.product_id
+                and line.product_id.cost_method != "standard"
             )
     if valued_lines:
         svls, _amls = valued_lines._apply_price_difference()

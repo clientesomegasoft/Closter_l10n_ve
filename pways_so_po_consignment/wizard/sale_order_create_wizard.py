@@ -35,8 +35,8 @@ class SaleOrderCreateWizards(models.TransientModel):
                 )
 
             fil_consignment_line_ids = consignment_line_ids.filtered(
-                lambda l: l.available_qty > 0
-                and l.move_id.state in ["assigned", "done"]
+                lambda line: line.available_qty > 0
+                and line.move_id.state in ["assigned", "done"]
             )
 
             for line in fil_consignment_line_ids:
