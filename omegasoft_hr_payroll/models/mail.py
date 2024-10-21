@@ -284,7 +284,7 @@ class Mail(models.Model):
                     failure_type="unknown",
                 )
                 if raise_exception:
-                    if isinstance(e, (AssertionError, UnicodeEncodeError)):
+                    if isinstance(e, (AssertionError | UnicodeEncodeError)):
                         if isinstance(e, UnicodeEncodeError):
                             value = "Invalid text: %s" % e.object
                         else:
