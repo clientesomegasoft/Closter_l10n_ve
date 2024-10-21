@@ -154,7 +154,6 @@
                                 nolabel="1"
                             >
                                 <tree
-                                    string="Current Bonus"
                                     editable="bottom"
                                     no_open="1"
                                     create="0"

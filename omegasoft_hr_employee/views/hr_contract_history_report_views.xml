@@ -8,7 +8,6 @@
             <xpath expr="//field[@name='contract_ids']" position="replace">
                 <field name="contract_ids" widget="one2many" readonly="0">
                     <tree
-                        string="Current Contracts"
                         decoration-primary="state == 'open'"
                         decoration-muted="state == 'close'"
                         decoration-bf="id == parent.contract_id"
