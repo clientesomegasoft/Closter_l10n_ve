@@ -162,9 +162,7 @@ class HrPayslip(models.Model):
         number_of_saturdays_sundays = 0
 
         if start_of_period.month == end_of_period.month:
-            """
-                The start and end of the payroll period are in the same month.
-            """
+            # The start and end of the payroll period are in the same month.
             num_days = monthrange(start_of_period.year, start_of_period.month)
             for dia in range(start_of_period.day, end_of_period.day + 1):
                 if (
@@ -187,9 +185,7 @@ class HrPayslip(models.Model):
                         number_of_mondays += 1
 
         elif end_of_period.month > start_of_period.month:
-            """
-                The payroll start and end periods have different months.
-            """
+            # The payroll start and end periods have different months.
 
             day_month = calendar.monthrange(
                 start_of_period.year, start_of_period.month
