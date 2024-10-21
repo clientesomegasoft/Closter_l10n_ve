@@ -53,9 +53,9 @@ class HrPayslipEmployees(models.TransientModel):
                 batch_name = from_date.strftime("%B %Y")
             else:
                 batch_name = _(
-                    "From %s to %s",
-                    format_date(self.env, from_date),
-                    format_date(self.env, end_date),
+                    "From %(from_date)s to %(from_to)s",
+                    from_date=format_date(self.env, from_date),
+                    from_to=format_date(self.env, end_date),
                 )
             payslip_run = self.env["hr.payslip.run"].create(
                 {

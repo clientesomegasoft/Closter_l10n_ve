@@ -210,14 +210,16 @@ class ProductProduct(models.Model):
             ) and company_id.currency_ref_id.is_zero(value_ref):
                 continue
             elif company_id.currency_id.is_zero(value):
-                description = _("Product value manually modified (from %s to %s)") % (
-                    product.standard_price_ref,
-                    rounded_new_price_ref,
+                description = _(
+                    "Product value manually modified (from %(standard_price_ref)s to %(rounded_new_price_ref)s)",
+                    standard_price_ref=product.standard_price_ref,
+                    rounded_new_price_ref=rounded_new_price_ref,
                 )
             else:
-                description = _("Product value manually modified (from %s to %s)") % (
-                    product.standard_price,
-                    rounded_new_price,
+                description = _(
+                    "Product value manually modified (from %(standard_price)s to %(rounded_new_price)s)",
+                    standard_price=product.standard_price,
+                    rounded_new_price=rounded_new_price,
                 )
 
             svl_vals = {
