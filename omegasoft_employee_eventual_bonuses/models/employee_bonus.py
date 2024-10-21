@@ -179,11 +179,9 @@ class HrEmployeeBonus(models.Model):
         employee_list = []
         bonus_lines = []
         if self.name in ["toy_voucher", "school_voucher", "birth_bonus"]:
-            """
-                look for employees whose children's age (if any)
-                is within the range of the minimum and maximum
-                bonus age.
-            """
+            # look for employees whose children's age (if any)
+            # is within the range of the minimum and maximum
+            # bonus age.
             children_list = []
             aux_minimum_age = self.minimum_age
             aux_maximum_age = self.maximum_age
@@ -256,10 +254,8 @@ class HrEmployeeBonus(models.Model):
                 )
             employee_list = employee_obj.mapped("id")
 
-        """
-            Employees whose children's age (if any)
-            is within the minimum and maximum bonus age range.
-        """
+        # Employees whose children's age (if any)
+        # is within the minimum and maximum bonus age range.
         if employee_list:
             self.env["hr_employee_bonus_line"].create(bonus_lines)
             self.write({"state": "draft"})

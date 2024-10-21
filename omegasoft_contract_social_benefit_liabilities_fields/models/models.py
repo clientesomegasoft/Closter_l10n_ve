@@ -81,23 +81,21 @@ class SocialBenefit(models.Model):
                         )
 
                     # Step 2: Calculation of the daily salary benefits
-                    """
-                        2.1: Bring the employee's payroll that is in a paid status:
+                    # 2.1: Bring the employee's payroll that is in a paid status:
 
-                        2.1.1: Seniority equal to 3 months. If the age is the same
-                        to 3 months, the query must bring the payrolls that are in
-                        paid status of the last 3 months, filtered by the rule
-                        salary SDP (Daily salary benefits).
+                    # 2.1.1: Seniority equal to 3 months. If the age is the same
+                    # to 3 months, the query must bring the payrolls that are in
+                    # paid status of the last 3 months, filtered by the rule
+                    # salary SDP (Daily salary benefits).
 
-                        2.1.2: Seniority greater than 3 months. If the seniority is
-                        greater to 3 months and also 3 months have passed since the
-                        last calculation of SDP. The query must bring all the payrolls
-                        paid for the last 3 months, filtered by the salary rule SDP
-                        (Daily salary benefits).
+                    # 2.1.2: Seniority greater than 3 months. If the seniority is
+                    # greater to 3 months and also 3 months have passed since the
+                    # last calculation of SDP. The query must bring all the payrolls
+                    # paid for the last 3 months, filtered by the salary rule SDP
+                    # (Daily salary benefits).
 
-                        2.2: Of all the paid payrolls that result from the query,
-                        add the total amounts of all the lines.
-                    """
+                    # 2.2: Of all the paid payrolls that result from the query,
+                    # add the total amounts of all the lines.
 
                     # 2.1.2: Seniority greater than or equal to 3 months.
                     sdp_list = []
