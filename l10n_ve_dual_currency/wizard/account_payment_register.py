@@ -94,7 +94,8 @@ class AccountPaymentRegister(models.TransientModel):
         "currency_rate_ref",
     )
     def _compute_amount(self):
-        super(__class__, self)._compute_amount()
+        res = super(__class__, self)._compute_amount()
+        return res
 
     def _create_payment_vals_from_wizard(self, batch_result):
         payment_vals = {

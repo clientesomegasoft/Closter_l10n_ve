@@ -247,7 +247,8 @@ class AccountMoveLine(models.Model):
 
     @api.onchange("amount_currency", "currency_id", "currency_rate_ref")
     def _inverse_amount_currency(self):
-        super(__class__, self)._inverse_amount_currency()
+        res = super(__class__, self)._inverse_amount_currency()
+        return res
 
     @api.model
     def _prepare_reconciliation_single_partial(self, debit_vals, credit_vals):
@@ -992,5 +993,6 @@ class AccountMoveLine(models.Model):
         return exchange_move
 
     def _copy_data_extend_business_fields(self, values):
-        super(__class__, self)._copy_data_extend_business_fields(values)
+        res = super(__class__, self)._copy_data_extend_business_fields(values)
         values["balance_ref"] = self.balance_ref or 0.0
+        return res

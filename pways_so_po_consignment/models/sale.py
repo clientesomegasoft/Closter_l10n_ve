@@ -82,7 +82,7 @@ class SaleOrderLine(models.Model):
 
     @api.depends("product_id")
     def _compute_product_uom(self):
-        super()._compute_product_uom()
+        res = super()._compute_product_uom()
         for rec in self:
             if rec.order_id.is_consignments_purchase and not rec.order_id.analytic_id:
                 raise ValidationError(_("Please select consignment account"))
@@ -94,3 +94,4 @@ class SaleOrderLine(models.Model):
                 )
                 if product_line_ids:
                     rec.purchase_order_line_id = product_line_ids[0]
+        return res
