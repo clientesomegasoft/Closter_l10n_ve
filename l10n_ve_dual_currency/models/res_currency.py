@@ -38,7 +38,7 @@ class Currency(models.Model):
 
     def _convert_with_rate(
         self, from_amount, to_currency, company, date, rate=None, round=True
-    ):
+    ):  # pylint: disable=redefined-builtin
         self, to_currency = self or to_currency, to_currency or self
         assert self, "convert amount from unknown currency"
         assert to_currency, "convert amount to unknown currency"

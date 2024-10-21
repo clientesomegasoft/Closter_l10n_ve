@@ -142,7 +142,7 @@ class FiscalBooksReportHandler(models.AbstractModel):
         lines = []
         fiscal_currency_id = self.env.company.fiscal_currency_id
 
-        for id, section in SECTIONS.items():
+        for id, section in SECTIONS.items():  # pylint: disable=redefined-builtin
             section_tax_lines = _get_section_tax_lines(
                 domain=[
                     ("move_id.move_type", "in", section["move_type"]),

@@ -110,7 +110,7 @@ class WithholdingIVATXT(models.Model):
         return super().unlink()
 
     def _generate_txt_data(self):
-        def format(amount):
+        def format(amount):  # pylint: disable=redefined-builtin
             return f"{amount:.2f}"
 
         def get_origin_document(invoice):
