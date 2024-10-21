@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 
 class SaleOrder(models.Model):
-    _inherit = "sale.order"
+    _inherit = "sale.order"  # pylint: disable=consider-merging-classes-inherited
 
     is_consignments = fields.Boolean(
         string="Consignment", help="Consignments", copy=False
@@ -70,7 +70,7 @@ class SaleOrder(models.Model):
 
 
 class SaleOrderLine(models.Model):
-    _inherit = "sale.order.line"
+    _inherit = "sale.order.line"  # pylint: disable=consider-merging-classes-inherited
 
     purchase_order_line_id = fields.Many2one("purchase.order.line", "Purchase Line")
 

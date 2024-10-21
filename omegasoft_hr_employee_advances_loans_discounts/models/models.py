@@ -2,7 +2,7 @@ from odoo import fields, models
 
 
 class HrEmployee(models.Model):
-    _inherit = "hr.employee"
+    _inherit = "hr.employee"  # pylint: disable=consider-merging-classes-inherited
 
     advances_loans_discounts_line_ids = fields.Many2many(
         comodel_name="hr_employee_advances_loans_discounts_lines",

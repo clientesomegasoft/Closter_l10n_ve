@@ -11,7 +11,7 @@ PERIOD_DATES = [
 
 
 class SocialBenefit(models.Model):
-    _inherit = "hr.contract"
+    _inherit = "hr.contract"  # pylint: disable=consider-merging-classes-inherited
 
     most_recent_spd = fields.Date(help="Most recent SPD payment")
     employee_accrued_benefits_date = fields.Date(

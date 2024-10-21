@@ -2,7 +2,7 @@ from odoo import fields, models
 
 
 class SaleOrder(models.Model):
-    _inherit = "sale.order"
+    _inherit = "sale.order"  # pylint: disable=consider-merging-classes-inherited
 
     is_consignments_sale = fields.Boolean(string="Sale Consignment", copy=False)
     is_consignments_sales = fields.Boolean(string="Sale Consignments", copy=False)
@@ -16,7 +16,7 @@ class SaleOrder(models.Model):
 
 
 class SaleOrderLine(models.Model):
-    _inherit = "sale.order.line"
+    _inherit = "sale.order.line"  # pylint: disable=consider-merging-classes-inherited
 
     product_tracking = fields.Selection(related="product_id.tracking")
     line_lot_serial_ids = fields.One2many(

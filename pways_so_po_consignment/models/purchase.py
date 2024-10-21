@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 
 class PurchaseOrder(models.Model):
-    _inherit = "purchase.order"
+    _inherit = "purchase.order"  # pylint: disable=consider-merging-classes-inherited
 
     is_consignment = fields.Boolean(string="Consignment", help="Consignment")
     is_consignments = fields.Boolean(string="Consignments", help="Consignments")
@@ -127,7 +127,7 @@ class ExpensesDetails(models.Model):
 
 
 class PurchaseOrderLine(models.Model):
-    _inherit = "purchase.order.line"
+    _inherit = "purchase.order.line"  # pylint: disable=consider-merging-classes-inherited
 
     @api.model_create_multi
     def create(self, vals_list):
