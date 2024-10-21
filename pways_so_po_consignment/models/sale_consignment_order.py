@@ -374,13 +374,7 @@ class SaleConsignmentOrder(models.Model):
             standard_price = sum(product_ids.mapped("standard_price"))
             commission_price = ((sale_price - standard_price) * commission) / 100
             sale_name = ", ".join(income_ids.mapped("name")) or ""
-            name = "%s-%s-%s-%s-%s" % (
-                self.partner_id.name,
-                product_commission.name,
-                commission,
-                self.name,
-                sale_name,
-            )
+            name = f"{self.partner_id.name}-{product_commission.name}-{commission}-{self.name}-{sale_name}"
             if product_commission and commission_price:
                 vals = (
                     0,

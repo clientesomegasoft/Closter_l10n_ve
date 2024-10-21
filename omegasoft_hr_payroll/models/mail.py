@@ -117,7 +117,7 @@ class Mail(models.Model):
                 bounce_alias = ICP.get_param("mail.bounce.alias")
                 catchall_domain = ICP.get_param("mail.catchall.domain")
                 if bounce_alias and catchall_domain:
-                    headers["Return-Path"] = "%s@%s" % (bounce_alias, catchall_domain)
+                    headers["Return-Path"] = f"{bounce_alias}@{catchall_domain}"
                 if mail.headers:
                     try:
                         headers.update(ast.literal_eval(mail.headers))
@@ -191,7 +191,7 @@ class Mail(models.Model):
                         attachments=attachments,
                         message_id=mail.message_id,
                         references=mail.references,
-                        object_id=mail.res_id and ("%s-%s" % (mail.res_id, mail.model)),
+                        object_id=mail.res_id and (f"{mail.res_id}-{mail.model}"),
                         subtype="html",
                         subtype_alternative="plain",
                         headers=headers,
@@ -359,8 +359,8 @@ class Mail(models.Model):
                 template = self.env.ref(notif_layout, raise_if_not_found=True)
             except ValueError:
                 _logger.warning(
-                    "QWeb template %s not found when sending template %s. "
-                    "Sending without layouting." % (notif_layout, self.name)
+                    "QWeb template {} not found when sending template {}. "
+                    "Sending without layouting.".format(notif_layout, self.name)
                 )
             else:
                 record = self.env[self.model].browse(res_id)

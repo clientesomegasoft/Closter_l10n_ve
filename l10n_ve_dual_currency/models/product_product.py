@@ -147,7 +147,9 @@ class ProductProduct(models.Model):
                     (abs(quantity) * currency.rounding) / 2, currency.rounding
                 ):
                     vals["value"] += rounding_error
-                    vals["rounding_adjustment"] = "\nRounding Adjustment: %s%s %s" % (
+                    vals[
+                        "rounding_adjustment"
+                    ] = "\nRounding Adjustment: {}{} {}".format(
                         "+" if rounding_error > 0 else "",
                         float_repr(
                             rounding_error, precision_digits=currency.decimal_places

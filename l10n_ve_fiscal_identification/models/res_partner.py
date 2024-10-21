@@ -142,7 +142,7 @@ class Partner(models.Model):
     def _get_name(self):
         res = super(__class__, self)._get_name()
         if self._context.get("show_vat") and not self.vat and self.identification:
-            res = "%s\n%s" % (res, self.identification)
+            res = f"{res}\n{self.identification}"
         return res
 
 

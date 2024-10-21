@@ -117,7 +117,7 @@ class AccountSaleSequence(models.Model):
                     control_sequence = self._create_control_sequence(field, vals)
                 name_sequence = create_sequence(
                     {
-                        "name": "%s name - %s" % (field, vals["sequence_type"]),
+                        "name": "{} name - {}".format(field, vals["sequence_type"]),
                         "company_id": vals.get("company_id", self.env.company.id),
                     }
                 )
@@ -191,7 +191,7 @@ class AccountSaleSequence(models.Model):
     def _create_control_sequence(self, field, vals):
         return self.env["ir.sequence"].create(
             {
-                "name": "control number %s - %s" % (field, vals["sequence_type"]),
+                "name": "control number {} - {}".format(field, vals["sequence_type"]),
                 "prefix": "00-",
                 "padding": 8,
                 "company_id": vals.get("company_id")

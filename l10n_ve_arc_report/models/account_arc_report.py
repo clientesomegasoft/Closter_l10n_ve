@@ -15,7 +15,9 @@ class ReportArc(models.AbstractModel):
         )
         params = []
         for month in range(1, 13):
-            date_from = fields.Date.from_string("%s-%s-01" % (options["year"], month))
+            date_from = fields.Date.from_string(
+                "{}-{}-01".format(options["year"], month)
+            )
             date_to = date_from + relativedelta(day=31)
             params += [date_from, date_to]
         return self.env.cr.mogrify(months_table, params).decode(

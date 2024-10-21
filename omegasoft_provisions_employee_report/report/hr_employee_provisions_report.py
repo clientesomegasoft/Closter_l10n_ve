@@ -75,6 +75,4 @@ class HrContractEmployeeReport(models.Model):
                 c.vacations_advances_granted
                 """
         tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute(
-            """CREATE or REPLACE VIEW %s as (%s)""" % (self._table, query)
-        )
+        self.env.cr.execute(f"""CREATE or REPLACE VIEW {self._table} as ({query})""")

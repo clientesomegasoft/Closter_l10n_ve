@@ -71,7 +71,7 @@ class EmployeeARCReport(models.TransientModel):
     def get_months_table(self):
         params = []
         for month in range(1, 13):
-            date_from = fields.Date.from_string("%s-%s-01" % (self.year, month))
+            date_from = fields.Date.from_string(f"{self.year}-{month}-01")
             date_to = date_from + relativedelta(day=31)
             month_name = format_date(
                 self.env, date_from, date_format="MMMM"

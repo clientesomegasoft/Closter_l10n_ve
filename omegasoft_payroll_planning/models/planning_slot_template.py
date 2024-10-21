@@ -28,7 +28,7 @@ class PlanningSlotTemplate(models.Model):
     def name_get(self):
         result = []
         for shift_template in self:
-            name = "%s - %s" % (
+            name = "{} - {}".format(
                 shift_template.work_shifts_id.name
                 if shift_template.work_shifts_id
                 else shift_template.name,
@@ -64,14 +64,14 @@ class PlanningSlotTemplate(models.Model):
                 hour=int(shift_template.end_time),
                 minute=round(math.modf(shift_template.end_time)[0] / (1 / 60.0)),
             )
-            shift_template.name = "%s - %s %s" % (
-                format_time(
+            shift_template.name = "{start_time} - {end_time} {duration_days}".format(
+                start_time=format_time(
                     shift_template.env, start_time, time_format="short"
                 ).replace(":00 ", " "),
-                format_time(shift_template.env, end_time, time_format="short").replace(
-                    ":00 ", " "
-                ),
-                _("(%s days span)") % (shift_template.duration_days)
+                end_time=format_time(
+                    shift_template.env, end_time, time_format="short"
+                ).replace(":00 ", " "),
+                duration_days=_("(%s days span)") % (shift_template.duration_days)
                 if shift_template.duration_days > 1
                 else "",
             )

@@ -145,7 +145,7 @@ class AccountMove(models.Model):
     ):
         self.ensure_one()
         if self.department_id and self.seller_employee_id and self.assigned_employee_id:
-            query = """
+            query = f"""
                     SELECT ccl.id AS ccl_id,
                                 ccl.department_id AS department,
                                 ccl.bill_calculation AS bill_calculation,
@@ -165,20 +165,14 @@ class AccountMove(models.Model):
                                         FROM commission_conf_line AS ccl
                                         JOIN commission_conf_line_commission_scale_rel AS comun ON comun.commission_conf_line_id = ccl.id
                                         LEFT JOIN commission_scale AS cs ON cs.id = comun.commission_scale_id
-                                        WHERE (%(total_invoice)s >= cs.sale_scale_from AND %(total_invoice)s <= cs.sale_scale_to)
+                                        WHERE ({total_invoice} >= cs.sale_scale_from AND {total_invoice} <= cs.sale_scale_to)
                                         group by ccl.id) AS scale ON scale.commission = ccl.id
                             LEFT JOIN commission_scale AS cs ON cs.id = scale.scale
                     WHERE (
-                        ccl.department_id = %(department)s AND
-                        ccl.bill_calculation = %(calculation)s AND
-                        (hc.employee_id in (%(seller)s, %(assigned)s) OR ccl.global_percentage > 0)
+                        ccl.department_id = {department} AND
+                        ccl.bill_calculation = {calculation} AND
+                        (hc.employee_id in ({seller}, {assigned}) OR ccl.global_percentage > 0)
                     );
-                """ % {
-                "department": department,
-                "seller": seller,
-                "assigned": assigned,
-                "calculation": calculation,
-                "total_invoice": total_invoice,
-            }
+                """
             self._cr.execute(query)
             return self._cr.dictfetchall()
