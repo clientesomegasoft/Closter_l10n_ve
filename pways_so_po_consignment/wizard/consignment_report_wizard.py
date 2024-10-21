@@ -1,9 +1,12 @@
+import logging
 from datetime import date, datetime
 
 from dateutil.relativedelta import relativedelta
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+
+_logger = logging.getLogger(__name__)
 
 
 class ConsignmentReportWizard(models.TransientModel):
@@ -67,7 +70,7 @@ class ConsignmentTemplateReport(models.AbstractModel):
         consignment_account_id = self.env["account.analytic.account"].browse(
             data.get("consignment_account_id")
         )
-        print(consignment_account_id, "consignment_account_id")
+        _logger.info(consignment_account_id, "consignment_account_id")
         report_type = data.get("report_type")
         date_from = data.get("date_from")
         date_to = data.get("date_to")
@@ -146,9 +149,9 @@ class ConsignmentTemplateReport(models.AbstractModel):
         customer_ids = data.get("customer_ids")
         product_ids = data.get("product_ids")
         lines = []
-        print("helllo", report_type)
+        _logger.info("Report type", report_type)
         if report_type == "purchase_sale_report":
-            print("nam__________")
+            _logger.info("nam__________")
             sale_domain = [
                 ("is_consignments", "=", True),
                 ("date_order", ">=", date_from),
@@ -158,7 +161,7 @@ class ConsignmentTemplateReport(models.AbstractModel):
             if customer_ids:
                 sale_domain.append(("partner_id", "in", customer_ids))
             sale_ids = self.env["sale.order"].search(sale_domain)
-            print(sale_ids, "sale_ids")
+            _logger.info(sale_ids, "sale_ids")
             for sale in sale_ids:
                 order_line = self.env["sale.order.line"]
                 if product_ids:
@@ -178,7 +181,7 @@ class ConsignmentTemplateReport(models.AbstractModel):
                         "purchase_id": sale.analytic_id.purchase_order_id.name,
                     }
                 )
-                print(lines, "lines")
+                _logger.info(lines, "lines")
         return {
             "docs": docs,
             "company": self.env.company,
