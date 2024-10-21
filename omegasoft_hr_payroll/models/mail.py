@@ -42,8 +42,9 @@ class Mail(models.Model):
                     # To be consistent and backward compatible with mail_mail.send()
                     # raised exceptions, it is encapsulated into an Odoo
                     # MailDeliveryException
-                    raise MailDeliveryException(
-                        _("Unable to connect to SMTP Server"), exc
+                    raise MailDeliveryException(  # noqa: B904
+                        _("Unable to connect to SMTP Server"),
+                        exc,
                     )
                 else:
                     batch = self.browse(batch_ids)
@@ -288,7 +289,7 @@ class Mail(models.Model):
                             value = "Invalid text: %s" % e.object
                         else:
                             value = ". ".join(e.args)
-                        raise MailDeliveryException(value)
+                        raise MailDeliveryException(value)  # noqa: B904
                     raise
 
             if auto_commit is True:
