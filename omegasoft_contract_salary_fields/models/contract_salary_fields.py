@@ -80,7 +80,8 @@ class ContractSalaryField(models.Model):
             if record.cestaticket_salary <= 0:
                 raise ValidationError(
                     _(
-                        "El monto del Salario Cesta Ticke no puede ser menor o igual a cero"
+                        "El monto del Salario Cesta Ticke no puede ser "
+                        "menor o igual a cero"
                     )
                 )
             if (

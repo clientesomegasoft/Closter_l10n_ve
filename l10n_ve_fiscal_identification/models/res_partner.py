@@ -100,9 +100,9 @@ class Partner(models.Model):
                     if partner.person_type_id.code not in ("PNRE", "PNNR"):
                         raise ValidationError(
                             _(
-                                "El campo 'Tipo de persona' no puede ser nulo y debe "
-                                "corresponder con el tipo de contacto Individual ('PNRE' "
-                                "o 'PNNR')."
+                                "El campo 'Tipo de persona' no puede ser nulo y "
+                                "debe corresponder con el tipo de contacto Individual "
+                                "('PNRE' o 'PNNR')."
                             )
                         )
                     if not partner.identification:
@@ -117,8 +117,8 @@ class Partner(models.Model):
                         raise ValidationError(
                             _(
                                 "El campo 'Documento de identidad' tiene un formato "
-                                "incorrecto.\nFormatos admitidos: V12345678, E12345678, "
-                                "P1234567890."
+                                "incorrecto.\nFormatos admitidos: V12345678, E12345678,"
+                                " P1234567890."
                             )
                         )
                 if not partner.partner_type:

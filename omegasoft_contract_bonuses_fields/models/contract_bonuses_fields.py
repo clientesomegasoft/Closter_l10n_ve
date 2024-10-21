@@ -69,6 +69,7 @@ class ContractBonusesField(models.Model):
             ):
                 raise ValidationError(
                     _(
-                        "Los montos de los bonos de salarios deben ser superiores a cero."
+                        "Los montos de los bonos de salarios deben ser superiores "
+                        "a cero."
                     )
                 )
