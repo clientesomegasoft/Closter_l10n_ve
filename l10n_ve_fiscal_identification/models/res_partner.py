@@ -80,11 +80,7 @@ class Partner(models.Model):
                             )
                         )
                     if partner.person_type_id.code == "PJDO" and not partner.vat:
-                        raise ValidationError(
-                            _(
-                                "El campo 'RIF' no puede ser nulo !"
-                            )
-                        )
+                        raise ValidationError(_("El campo 'RIF' no puede ser nulo !"))
                     if (
                         partner.person_type_id.code == "PJDO"
                         and partner.country_id.code == "VE"
@@ -111,9 +107,7 @@ class Partner(models.Model):
                         )
                     if not partner.identification:
                         raise ValidationError(
-                            _(
-                                "El campo 'Documento de identidad' no puede ser nulo !"
-                            )
+                            _("El campo 'Documento de identidad' no puede ser nulo !")
                         )
                     if (
                         partner.person_type_id.code == "PNRE"
@@ -129,9 +123,7 @@ class Partner(models.Model):
                         )
                 if not partner.partner_type:
                     raise ValidationError(
-                        _(
-                            "El campo 'Clasificación comercial' no puede ser nulo !"
-                        )
+                        _("El campo 'Clasificación comercial' no puede ser nulo !")
                     )
 
     @api.constrains("vat", "country_id")

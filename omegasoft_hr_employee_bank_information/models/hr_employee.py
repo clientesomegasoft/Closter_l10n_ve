@@ -23,9 +23,7 @@ class HrEmployee(models.Model):
                 pass
             if count_is_payroll_account > 1:
                 raise ValidationError(
-                    _(
-                        "Sólo se permiten seleccionar una cuenta, como cuenta de nomina"
-                    )
+                    _("Sólo se permiten seleccionar una cuenta, como cuenta de nomina")
                 )
             elif count_is_payroll_account == 0 and record.bank_information_ids:
                 raise ValidationError(

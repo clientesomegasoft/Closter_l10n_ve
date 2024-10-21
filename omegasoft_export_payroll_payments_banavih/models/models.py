@@ -50,11 +50,7 @@ class ExportBankPaymentsBanavih(models.Model):
             self.env.company.partner_id.partner_type != "other"
             and not self.env.company.partner_id.vat
         ):
-            raise ValidationError(
-                _(
-                    "Por favor establezca el RIF de la compañia."
-                )
-            )
+            raise ValidationError(_("Por favor establezca el RIF de la compañia."))
 
         if self.type_trans == "fiscal":
             root = self.generate_fiscal_payroll()
@@ -78,9 +74,7 @@ class ExportBankPaymentsBanavih(models.Model):
 
         if not data:
             raise ValidationError(
-                _(
-                    "No se pudo generar el archivo. Intente de nuevo con otro periodo."
-                )
+                _("No se pudo generar el archivo. Intente de nuevo con otro periodo.")
             )
         return self.write({"state": "done"})
 
@@ -104,9 +98,7 @@ class ExportBankPaymentsBanavih(models.Model):
     def _fiscal_payroll_validations(self, employee, totals):
         if not employee.country_id:
             raise ValidationError(
-                (
-                    _("Por favor establezca la nacionalidad del empleado: %s.")
-                )
+                (_("Por favor establezca la nacionalidad del empleado: %s."))
                 % (employee.name)
             )
         if not employee.identification_id:

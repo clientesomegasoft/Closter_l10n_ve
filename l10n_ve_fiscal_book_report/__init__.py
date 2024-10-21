@@ -1,5 +1,5 @@
 from . import models
-from odoo import api, SUPERUSER_ID
+from odoo import SUPERUSER_ID, api
 
 
 def _set_invoices(cr, registry):

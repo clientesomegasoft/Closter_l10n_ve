@@ -112,20 +112,12 @@ class HrEmployeeBonus(models.Model):
     @api.constrains("amount")
     def _constrain_amount(self):
         if self.amount <= 0:
-            raise ValidationError(
-                _(
-                    "El monto debe ser mayor a cero."
-                )
-            )
+            raise ValidationError(_("El monto debe ser mayor a cero."))
 
     @api.constrains("maximum_age")
     def _constrain_maximum_age(self):
         if self.maximum_age <= 0 and self.name in ["toy_voucher", "birth_bonus"]:
-            raise ValidationError(
-                _(
-                    "La Edad máxima debe ser mayor a cero."
-                )
-            )
+            raise ValidationError(_("La Edad máxima debe ser mayor a cero."))
 
     def name_get(self):
         msj = []
@@ -170,9 +162,7 @@ class HrEmployeeBonus(models.Model):
                 aux_maximum_age = record.maximum_age * 12
             if aux_maximum_age < aux_minimum_age:
                 raise ValidationError(
-                    _(
-                        "La edad máxima no debe ser inferior a la edad mínima."
-                    )
+                    _("La edad máxima no debe ser inferior a la edad mínima.")
                 )
 
     def _clean_lines(self):

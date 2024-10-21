@@ -360,8 +360,7 @@ class Mail(models.Model):
             except ValueError:
                 _logger.warning(
                     "QWeb template %s not found when sending template %s. "
-                    "Sending without layouting."
-                    % (notif_layout, self.name)
+                    "Sending without layouting." % (notif_layout, self.name)
                 )
             else:
                 record = self.env[self.model].browse(res_id)

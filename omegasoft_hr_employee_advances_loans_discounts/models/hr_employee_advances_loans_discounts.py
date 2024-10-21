@@ -240,18 +240,14 @@ class HrEmployeeAdvancesLoansDiscounts(models.Model):
             for record in self.advances_loans_discounts_line_ids:
                 if record.amount <= 0:
                     raise ValidationError(
-                        _(
-                            "El monto en las lineas debe ser mayor a cero."
-                        )
+                        _("El monto en las lineas debe ser mayor a cero.")
                     )
                 if (
                     record.type_advance_loan in ["loan", "discount", "per_diem"]
                     and record.fees <= 0
                 ):
                     raise ValidationError(
-                        _(
-                            "Las Cuotas en las lineas no pueden ser menor o igual a cero"
-                        )
+                        _("Las Cuotas en las lineas no pueden ser menor o igual a cero")
                     )
 
     # employee file code

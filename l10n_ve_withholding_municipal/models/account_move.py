@@ -18,7 +18,9 @@ class AccountMove(models.Model):
         states={"draft": [("readonly", False)]},
         copy=False,
     )
-    apply_withholding_municipal = fields.Boolean(compute="_compute_apply_withholding_municipal")
+    apply_withholding_municipal = fields.Boolean(
+        compute="_compute_apply_withholding_municipal"
+    )
 
     @api.depends("partner_id", "move_type")
     def _compute_apply_withholding_municipal(self):

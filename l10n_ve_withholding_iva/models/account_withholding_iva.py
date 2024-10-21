@@ -99,11 +99,7 @@ class AccountWithholdingIVA(models.Model):
         elif self.type == "customer" and (
             not self.name or self.name == "NUMERO DE COMPROBANTE"
         ):
-            raise UserError(
-                _(
-                    "El numero de comprobante es requerido."
-                )
-            )
+            raise UserError(_("El numero de comprobante es requerido."))
 
         values = self._prepare_move_values()
         if self.move_id:
@@ -156,9 +152,7 @@ class AccountWithholdingIVA(models.Model):
     def button_draft(self):
         if self.txt_state == "posted":
             raise UserError(
-                _(
-                    "No se puede restablecer a borrador una retención ya declarada."
-                )
+                _("No se puede restablecer a borrador una retención ya declarada.")
             )
         if self.move_id:
             self.move_id.button_draft()
@@ -166,11 +160,7 @@ class AccountWithholdingIVA(models.Model):
 
     def button_cancel(self):
         if self.txt_state == "posted":
-            raise UserError(
-                _(
-                    "No se puede cancelar una retención ya declarada."
-                )
-            )
+            raise UserError(_("No se puede cancelar una retención ya declarada."))
         if self.move_id:
             if self.move_id.state == "posted":
                 self.move_id._reverse_moves(
@@ -202,9 +192,7 @@ class AccountWithholdingIVA(models.Model):
         for withholding_iva_id in self:
             if withholding_iva_id.state != "cancel":
                 raise UserError(
-                    _(
-                        "Solo retenciones en estado Cancelado pueden ser suprimidas."
-                    )
+                    _("Solo retenciones en estado Cancelado pueden ser suprimidas.")
                 )
         return super().unlink()
 

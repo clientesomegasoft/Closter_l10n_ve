@@ -90,11 +90,7 @@ class AccountWithholdingMunicipal(models.Model):
         elif self.type == "customer" and (
             not self.name or self.name == "NUMERO DE COMPROBANTE"
         ):
-            raise UserError(
-                _(
-                    "El numero de comprobante es requerido."
-                )
-            )
+            raise UserError(_("El numero de comprobante es requerido."))
 
         values = self._prepare_move_values()
         if self.move_id:
@@ -178,9 +174,7 @@ class AccountWithholdingMunicipal(models.Model):
         for rec in self:
             if rec.state != "cancel":
                 raise UserError(
-                    _(
-                        "Solo retenciones en estado Cancelado pueden ser suprimidas."
-                    )
+                    _("Solo retenciones en estado Cancelado pueden ser suprimidas.")
                 )
         return super().unlink()
 

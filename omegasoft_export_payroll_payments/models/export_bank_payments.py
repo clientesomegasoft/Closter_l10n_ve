@@ -104,9 +104,7 @@ class ExportBankPayments(models.Model):
     def _check_employee_ids(self):
         if self.employee_ids and len(self.employee_ids) > 10:
             raise ValidationError(
-                _(
-                    "La cantidad maxima de empleados por TXT no debe ser mayor a 10."
-                )
+                _("La cantidad maxima de empleados por TXT no debe ser mayor a 10.")
             )
 
     def _get_employee_domain(self, bank_account_number, operation_type_same=False):
@@ -241,9 +239,7 @@ class ExportBankPayments(models.Model):
 
         if all(int(item) < int(current_sequence.name) for item in self.mapped("name")):
             raise ValidationError(
-                _(
-                    "No se puede eliminar. Hay secuencias superiores creadas"
-                )
+                _("No se puede eliminar. Hay secuencias superiores creadas")
             )
         else:
             if len(self) == 1:
@@ -291,11 +287,7 @@ class ExportBankPayments(models.Model):
             self.env.company.partner_id.partner_type != "other"
             and not self.env.company.partner_id.vat
         ):
-            raise ValidationError(
-                _(
-                    "Por favor establezca el RIF de la compañia."
-                )
-            )
+            raise ValidationError(_("Por favor establezca el RIF de la compañia."))
 
         bank_account_number = self.bank_account_id.acc_number[:4]
 
@@ -314,9 +306,7 @@ class ExportBankPayments(models.Model):
 
         if not data:
             raise ValidationError(
-                _(
-                    "No se pudo generar el archivo. Intente de nuevo con otro periodo."
-                )
+                _("No se pudo generar el archivo. Intente de nuevo con otro periodo.")
             )
         return self.write({"state": "done"})
 
