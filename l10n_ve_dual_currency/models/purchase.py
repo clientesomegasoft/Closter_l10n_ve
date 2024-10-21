@@ -209,7 +209,7 @@ class PurchaseOrderLine(models.Model):
                 }
                 default_names.append(
                     line._get_product_purchase_description(
-                        line.product_id.with_context(product_ctx)
+                        line.product_id.with_context(**product_ctx)
                     )
                 )
             if not line.name or line.name in default_names:
@@ -218,5 +218,5 @@ class PurchaseOrderLine(models.Model):
                     "lang": get_lang(line.env, line.partner_id.lang).code,
                 }
                 line.name = line._get_product_purchase_description(
-                    line.product_id.with_context(product_ctx)
+                    line.product_id.with_context(**product_ctx)
                 )
