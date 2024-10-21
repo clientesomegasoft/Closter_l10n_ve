@@ -80,7 +80,7 @@ class ContractSalaryField(models.Model):
             if record.cestaticket_salary <= 0:
                 raise ValidationError(
                     _(
-                        "El monto del Salario Cesta Ticke no puede ser "
+                        "El monto del Salario Cesta Ticket no puede ser "
                         "menor o igual a cero"
                     )
                 )
@@ -272,7 +272,7 @@ class ContractSalaryField(models.Model):
                 "warning": {
                     "title": _("Alerta en fechas del campo Salario Promedio"),
                     "message": _(
-                        "Fecha de inicio Y fecha de fin en Salario Promedio Vacias.\n"
+                        "Fecha de inicio Y fecha de fin en Salario Promedio Vacías.\n"
                         "El salario promedio quedara con valor cero "
                         "0"
                         ".\n"

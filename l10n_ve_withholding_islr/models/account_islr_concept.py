@@ -20,7 +20,7 @@ class AccountISLRConcept(models.Model):
         )
         if not rate_id:
             raise ValidationError(
-                f"""No se encontro tasa de retención de ISLR.\n\nTipo:
+                f"""No se encontró tasa de retención de ISLR.\n\nTipo:
                 {person_type_id.name}\nConcepto: {self.name}"""
             )
 
@@ -71,12 +71,12 @@ class AccountISLRConceptRate(models.Model):
     )
 
     _sql_constraints = [
-        ("unique_name", "UNIQUE(name)", "El codigo debe ser unico!"),
-        ("isdigit_name", "CHECK(name ~ '^\\d+$')", "El codigo tiene que ser numérico!"),
+        ("unique_name", "UNIQUE(name)", "El código debe ser único!"),
+        ("isdigit_name", "CHECK(name ~ '^\\d+$')", "El código tiene que ser numérico!"),
         (
             "unique_person_type_id",
             "UNIQUE(islr_concept_id, person_type_id)",
-            'El campo "Tipo de persona" debe ser unico por concepto !',
+            'El campo "Tipo de persona" debe ser único por concepto !',
         ),
     ]
 
