@@ -72,7 +72,7 @@ class HrEmployeePrivate(models.Model):
             wage = full_wage[employee_id.id]
             family_burden = len(
                 employee_id.family_information_ids.filtered(
-                    lambda l: l.is_family_burden
+                    lambda line: line.is_family_burden
                 )
             )
             line = {
