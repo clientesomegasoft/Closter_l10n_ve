@@ -50,7 +50,7 @@ class HrEmployeeBankInformation(models.Model):
     @api.constrains("name")
     def constrains_name(self):
         for record in self:
-            if record.name and record.name.bic == False:
+            if record.name and record.name.bic is False:
                 raise ValidationError(
                     _(
                         "Por favor establezca el Código de identificación "
