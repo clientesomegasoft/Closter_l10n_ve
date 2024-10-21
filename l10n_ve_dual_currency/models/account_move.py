@@ -175,7 +175,7 @@ class AccountMove(models.Model):
                 lines.remove_move_reconcile()
 
         reverse_moves = self.env["account.move"]
-        for move, default_values in zip(self, default_values_list):
+        for move, default_values in zip(self, default_values_list, strict=True):
             default_values.update(
                 {
                     "move_type": TYPE_REVERSE_MAP[move.move_type],
@@ -212,7 +212,7 @@ class AccountMove(models.Model):
             reverse_moves.with_context(
                 move_reverse_cancel=cancel, skip_compute_balance_ref=True
             )._post(soft=False)
-            for move, reverse_move in zip(self, reverse_moves):
+            for move, reverse_move in zip(self, reverse_moves, strict=True):
                 group = defaultdict(list)
                 for line in (move.line_ids + reverse_move.line_ids).filtered(
                     lambda l: not l.reconciled

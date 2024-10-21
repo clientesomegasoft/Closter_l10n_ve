@@ -862,7 +862,7 @@ class AccountMoveLine(models.Model):
         }
         to_reconcile = []
 
-        for line, amounts in zip(self, amounts_list):
+        for line, amounts in zip(self, amounts_list, strict=True):
             move_vals["date"] = max(move_vals["date"], line.date)
 
             if "amount_residual" in amounts:

@@ -170,7 +170,8 @@ class FiscalBooksReportHandler(models.AbstractModel):
                                 "style": "white-space:nowrap;",
                             }
                             for value in [
-                                sum(i) for i in zip(*section_tax_lines.values())
+                                sum(i)
+                                for i in zip(*section_tax_lines.values(), strict=True)
                             ]
                         ],
                     },
