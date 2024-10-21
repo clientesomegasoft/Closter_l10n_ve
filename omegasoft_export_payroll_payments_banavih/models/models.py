@@ -257,8 +257,8 @@ class ExportBankPaymentsBanavih(models.Model):
             # Preparacion de campos
             nationality = "V" if employee.country_id.name == "Venezuela" else "E"
             employee_id = (
-                re.search("(\d+)", employee.identification_id).group()
-                if re.search("(\d+)", employee.identification_id)
+                re.search("(\\d+)", employee.identification_id).group()
+                if re.search("(\\d+)", employee.identification_id)
                 else ""
             )
             words = self._remove_accents(employee.name).upper().split(" ")

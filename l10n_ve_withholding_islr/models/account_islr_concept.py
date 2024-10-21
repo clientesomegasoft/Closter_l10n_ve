@@ -72,7 +72,7 @@ class AccountISLRConceptRate(models.Model):
 
     _sql_constraints = [
         ("unique_name", "UNIQUE(name)", "El codigo debe ser unico!"),
-        ("isdigit_name", "CHECK(name ~ '^\d+$')", "El codigo tiene que ser numérico!"),
+        ("isdigit_name", "CHECK(name ~ '^\\d+$')", "El codigo tiene que ser numérico!"),
         (
             "unique_person_type_id",
             "UNIQUE(islr_concept_id, person_type_id)",
