@@ -25,7 +25,11 @@ Consignment Management System
 
 |badge1| |badge2| |badge3| |badge4|
 
-
+Retailer agrees to pay a seller or consignor for merchandise after the
+item sells or selling goods (clothing, furniture, etc.) through a
+third-party vendor such as a consignment store. the consignee is
+financially responsible (the buyer) for the receipt of a shipment also
+includes commission on consignment and multiple reports.
 
 **Table of contents**
 
@@ -37,7 +41,10 @@ Installation
 
 To install this module, you need to:
 
--  do this ...
+-  Go to the ``Applications`` menu.
+-  Click on the module search box, enter the module name and press the
+   ``Enter`` key to search.
+-  Click on the ``Install`` button.
 
 Usage
 =====
@@ -78,7 +85,7 @@ Other credits
 
 The development of this module has been financially supported by:
 
--  `Omegasoft C.A. <https://www.omegasoftve.com/>`__
+-  `Preciseways <https://www.linkedin.com/company/preciseways-private-limited/>`__
 
 Maintainers
 -----------
