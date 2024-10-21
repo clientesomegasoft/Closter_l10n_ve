@@ -205,7 +205,7 @@ class HrPayslip(models.Model):
             ("company_id", "=", self.env.company.id),
         ]
 
-    def _compute_employee_ids(self):
+    def _compute_employee_ids(self):  # noqa: C901
         new_payroll_ids = self.env["hr.employee"]
         domain = self._get_available_contracts_domain()
         added_record_ids = set()
