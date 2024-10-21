@@ -82,7 +82,7 @@ class HrHCMCoverage(models.Model):
     @api.constrains("company_percentage_contribution")
     def _constrains_company_percentage_contribution(self):
         for record in self:
-            compare = lambda a, b: float_compare(
+            compare = lambda a, b: float_compare(  # noqa: E731
                 a, b, precision_digits=record.currency_id.decimal_places
             )
             if compare(record.company_percentage_contribution, 100) > 0:

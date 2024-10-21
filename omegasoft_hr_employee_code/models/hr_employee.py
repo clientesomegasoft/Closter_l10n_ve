@@ -64,7 +64,7 @@ class Employee(models.Model):
     def _ondelete_check_payslips(self):
         for record in self:
             if record.slip_ids:
-                show_id = (
+                show_id = (  # noqa: E731
                     lambda record: record.id
                     if self.env.user.has_group("base.group_no_one")
                     else ""

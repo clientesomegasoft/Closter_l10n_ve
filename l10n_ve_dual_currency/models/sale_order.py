@@ -84,9 +84,9 @@ class PricelistItem(models.Model):
         # and must be multiplied according to the factor between uoms
         product_uom = product.uom_id
         if product_uom != uom:
-            convert = lambda p: product_uom._compute_price(p, uom)
+            convert = lambda p: product_uom._compute_price(p, uom)  # noqa: E731
         else:
-            convert = lambda p: p
+            convert = lambda p: p  # noqa: E731
 
         if self.compute_price == "fixed":
             price = convert(self.fixed_price)
