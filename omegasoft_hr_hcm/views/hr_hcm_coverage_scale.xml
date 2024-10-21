@@ -18,7 +18,7 @@
         <field name="name">hr.hcm.coverage.scale.view.tree</field>
         <field name="model">hr.hcm.coverage.scale</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree>
                 <field name="name" />
                 <field name="code" />
                 <field name="total_policy_coverage" />

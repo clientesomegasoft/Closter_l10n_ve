@@ -4,7 +4,7 @@
         <field name="name">ari.employee.setting.view.tree</field>
         <field name="model">ari.employee.setting</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree>
                 <field name="employee_id" />
                 <field name="employee_file" invisible="True" />
                 <field

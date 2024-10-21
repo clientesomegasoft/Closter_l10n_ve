@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='input_line_ids']/tree" position="replace">
-                <tree string="Input Data" editable="bottom">
+                <tree editable="bottom">
                     <!--
                         Required 0 to force client to send on change request even when not defined
                         Salary Attachments would otherwise not properly be computed and payslip_id is

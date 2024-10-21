@@ -4,7 +4,7 @@
         <field name="name">account.withholding.islr.view.tree</field>
         <field name="model">account.withholding.islr</field>
         <field name="arch" type="xml">
-            <tree string="Retenciones de islr" create="0" edit="0">
+            <tree create="0" edit="0">
                 <field name="name" />
                 <field name="invoice_id" />
                 <field name="date" />

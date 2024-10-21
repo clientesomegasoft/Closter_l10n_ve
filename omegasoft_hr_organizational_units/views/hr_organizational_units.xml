@@ -103,7 +103,7 @@
         <field name="name">view.hr.organizational.units.tree</field>
         <field name="model">hr.organizational.units</field>
         <field name="arch" type="xml">
-            <tree string="Companies" sample="1">
+            <tree sample="1">
                 <field name="name" />
                 <field name="company_id" groups="base.group_multi_company" />
                 <field name="manager_id" />

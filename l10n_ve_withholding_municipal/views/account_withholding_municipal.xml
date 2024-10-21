@@ -4,7 +4,7 @@
         <field name="name">account.withholding.municipal.view.tree</field>
         <field name="model">account.withholding.municipal</field>
         <field name="arch" type="xml">
-            <tree string="Retenciones municipales" create="0" edit="0">
+            <tree create="0" edit="0">
                 <field name="name" />
                 <field name="invoice_id" />
                 <field name="date" />

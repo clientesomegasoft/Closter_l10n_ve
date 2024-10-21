@@ -19,7 +19,7 @@
         <field name="name">work.shifts.view.tree</field>
         <field name="model">work.shifts</field>
         <field name="arch" type="xml">
-            <tree string="Work shifts">
+            <tree>
                 <field name="name" />
             </tree>
         </field>
