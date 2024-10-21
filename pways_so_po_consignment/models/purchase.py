@@ -37,7 +37,7 @@ class PurchaseOrder(models.Model):
             if not analytic_id:
                 analytic_id = self.env["account.analytic.account"].create(
                     {
-                        "name": "%s-cm-%s" % (self.name, self.partner_id.name),
+                        "name": f"{self.name}-cm-{self.partner_id.name}",
                         "partner_id": self.partner_id.id,
                         "purchase_order_id": self.id,
                         "is_consignments": True,
