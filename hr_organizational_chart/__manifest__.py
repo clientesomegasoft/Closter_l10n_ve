@@ -41,7 +41,7 @@
             "hr_organizational_chart/static/src/xml/chart_view.xml",
         ],
     },
-    "images": ["static/description/banner.png"],
+    "images": ["static/description/icon.png"],
     "installable": True,
     "auto_install": False,
     "application": False,
