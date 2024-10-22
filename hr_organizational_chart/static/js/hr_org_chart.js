@@ -27,7 +27,7 @@ odoo.define("hr_org_chart_employee.hr_org_chart", function (require) {
         init: function (parent, context) {
             this._super(parent, context);
             var self = this;
-            if (context.tag == "employee_organization_chart") {
+            if (context.tag === "employee_organization_chart") {
                 this._rpc({
                     route: "/get/employees",
                 }).then(function (result) {

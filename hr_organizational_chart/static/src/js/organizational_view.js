@@ -46,7 +46,7 @@ odoo.define("hr_organizational_chart.view_chart", function (require) {
                     this.colspan_td = this.check_child[0].parentElement.parentElement;
                     this.tbody_child = this.colspan_td.parentElement.parentElement;
                     var child_length = this.tbody_child.children.length;
-                    if (child_length == 1) {
+                    if (child_length === 1) {
                         this._rpc({
                             route: "/get/parent/colspan",
                             params: {
