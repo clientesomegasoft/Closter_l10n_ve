@@ -754,8 +754,8 @@ class ExportBankPayments(models.Model):
         aux_txt_data += f"{amount:0>18}"
         aux_txt_data += "10" if self.operation_type == "same" else 00  # Tipo de Pago
         aux_txt_data += f"{employees_bank_info.name.bic:<12}"
-        aux_txt_data += "{0:<7}".format("")
-        aux_txt_data += "{0:<50}".format("")
+        aux_txt_data += "{0:<7}".format("")  # noqa: UP030
+        aux_txt_data += "{0:<50}".format("")  # noqa: UP030
 
         return aux_txt_data
 
@@ -791,7 +791,9 @@ class ExportBankPayments(models.Model):
             # Header
             txt_data += "HEADER"
             txt_data += f"{self.name:0>8}"
-            txt_data += "{0:<8}".format("")  # CAMBIAR POR NúMERO DE NEGOCIACIÓn
+            txt_data += "{0:<8}".format(
+                ""
+            )  # CAMBIAR POR NúMERO DE NEGOCIACIÓn  # noqa: UP030
             txt_data += nationality.upper() + f"{vat_digits:0<9}"
             txt_data += self.valid_date.strftime("%d/%m/%Y")
             txt_data += self.valid_date.strftime("%d/%m/%Y") + "\n"
