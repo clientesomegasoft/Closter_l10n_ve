@@ -293,7 +293,7 @@ class Mail(models.Model):
                     raise
 
             if auto_commit is True:
-                self._cr.commit()
+                self._cr.commit()  # pylint: disable=invalid-commit
         return True
 
 
