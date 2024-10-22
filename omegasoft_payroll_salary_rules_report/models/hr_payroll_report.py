@@ -78,4 +78,13 @@ class HrPayrollReport(models.Model):
                 d.master_department_id
                 """
         tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute(f"""CREATE or REPLACE VIEW {self._table} as ({query})""")
+        sql = """CREATE or REPLACE VIEW {self_table} as ({query})"""
+        self._cr.execute(
+            sql,
+            (
+                tuple(
+                    self_table=self._table,
+                    query=query,
+                ),
+            ),
+        )

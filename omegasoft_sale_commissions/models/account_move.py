@@ -145,7 +145,7 @@ class AccountMove(models.Model):
     ):
         self.ensure_one()
         if self.department_id and self.seller_employee_id and self.assigned_employee_id:
-            query = f"""
+            query = """
                     SELECT ccl.id AS ccl_id,
                                 ccl.department_id AS department,
                                 ccl.bill_calculation AS bill_calculation,
@@ -174,5 +174,16 @@ class AccountMove(models.Model):
                         (hc.employee_id in ({seller}, {assigned}) OR ccl.global_percentage > 0)
                     );
                 """
-            self._cr.execute(query)
+            self._cr.execute(
+                query,
+                (
+                    tuple(
+                        total_invoice=total_invoice,
+                        department=department,
+                        calculation=calculation,
+                        seller=seller,
+                        assigned=assigned,
+                    ),
+                ),
+            )
             return self._cr.dictfetchall()

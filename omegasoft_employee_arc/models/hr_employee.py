@@ -6,8 +6,7 @@ class HrEmployeePrivate(models.Model):
 
     def get_arc_month_lines(self, months_table):
         self.ensure_one()
-        self._cr.execute(
-            f"""
+        sql = """
             SELECT
                 months_table.month_name AS month,
                 COALESCE(SUM(CASE WHEN hpl.code = 'NET200' THEN hpl.total ELSE 0.0 END), 0.0) AS base,
@@ -15,13 +14,22 @@ class HrEmployeePrivate(models.Model):
                 COALESCE(SUM(CASE WHEN hpl.code = 'COMP64' THEN hpl.total ELSE 0.0 END), 0.0) AS amount
             FROM {months_table}
             LEFT JOIN hr_payslip hp ON hp.date BETWEEN months_table.date_from AND months_table.date_to AND
-                hp.employee_id = {self.id} AND
+                hp.employee_id = {self_id} AND
                 hp.state IN ('done', 'paid') AND
-                hp.company_id = {self.company_id.id}
+                hp.company_id = {self_company_id}
             LEFT JOIN hr_payslip_line hpl ON hpl.slip_id = hp.id
             LEFT JOIN hr_contract hc ON hc.id = hp.contract_id
             GROUP BY month, months_table.date_from, percentage
             ORDER BY months_table.date_from
         """
+        self._cr.execute(
+            sql,
+            (
+                tuple(
+                    months_table=months_table,
+                    self_id=self.id,
+                    self_company_id=self.company_id.id,
+                ),
+            ),
         )
         return self._cr.dictfetchall()

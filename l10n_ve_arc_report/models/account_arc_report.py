@@ -31,8 +31,7 @@ class ReportArc(models.AbstractModel):
             return []
 
         fiscal_currency_id = self.env.company.fiscal_currency_id
-        self._cr.execute(
-            """
+        sql = """
             SELECT
                 months_table.date_from AS month,
                 COALESCE(SUM(ABS(account_move.{amount_total})), 0.0) AS total_invoice,
@@ -49,14 +48,19 @@ class ReportArc(models.AbstractModel):
                 account_move.id = account_withholding_islr.invoice_id
             GROUP BY month
             ORDER BY month
-        """.format(
-                amount_total=self.env.company.currency_id == fiscal_currency_id
-                and "amount_total_signed"
-                or "amount_total_ref",
-                months_table=self._get_months_table(options),
-                partner_id=options["partner_id"]["id"],
-                company_id=self.env.company.id,
-            )
+        """
+        self._cr.execute(
+            sql,
+            (
+                tuple(
+                    amount_total=self.env.company.currency_id == fiscal_currency_id
+                    and "amount_total_signed"
+                    or "amount_total_ref",
+                    months_table=self._get_months_table(options),
+                    partner_id=options["partner_id"]["id"],
+                    company_id=self.env.company.id,
+                ),
+            ),
         )
 
         lines = []
