@@ -29,7 +29,7 @@
     "maintainer": "Cybrosys Techno Solutions",
     "live_test_url": "https://youtu.be/dyCzplsAysQ",
     "category": "Generic Modules/Human Resources",
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "website": "https://apps.odoo.com/apps/modules/16.0/pways_so_po_consignment",  # pylint: disable=manifest-required-website
     "depends": ["hr"],
     "data": [
         "views/show_employee_chart.xml",
