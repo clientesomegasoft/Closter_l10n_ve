@@ -2,9 +2,9 @@ odoo.define("hr_organizational_chart.view_chart", function (require) {
     "use strict";
     console.log("hlooooooooo");
     var AbstractAction = require("web.AbstractAction");
-    // var ajax = require("web.ajax");
+    // Var ajax = require("web.ajax");
     var core = require("web.core");
-    // var rpc = require("web.rpc");
+    // Var rpc = require("web.rpc");
     var _t = core._t;
 
     var EmployeeOrganizationalChart = AbstractAction.extend({
@@ -19,7 +19,7 @@ odoo.define("hr_organizational_chart.view_chart", function (require) {
             this.renderEmployeeDetails();
         },
         renderEmployeeDetails: function () {
-            // var employee_id = 1;
+            // Var employee_id = 1;
             var self = this;
             console.log("hhhhh", this);
             this._rpc({
