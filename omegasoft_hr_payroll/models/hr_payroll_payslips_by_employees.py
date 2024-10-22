@@ -124,7 +124,7 @@ class HrPayslipEmployees(models.TransientModel):
                 ):
                     work_entries_by_contract[work_entry.contract_id] |= work_entry
 
-                for contract, work_entries in work_entries_by_contract.items():
+                for _contract, work_entries in work_entries_by_contract.items():
                     conflicts = work_entries._to_intervals()
                     time_intervals_str = "\n - ".join(
                         ["", *[f"{s[0]} -> {s[1]}" for s in conflicts._items]]

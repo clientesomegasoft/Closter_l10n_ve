@@ -218,7 +218,7 @@ class AccountMove(models.Model):
                     lambda L: not L.reconciled
                 ):
                     group[(line.account_id, line.currency_id)].append(line.id)
-                for (account, dummy), line_ids in group.items():
+                for (account, _dummy), line_ids in group.items():
                     if account.reconcile or account.account_type in (
                         "asset_cash",
                         "liability_credit_card",
@@ -251,7 +251,7 @@ def _post(self, soft=True):
         svls, _amls = valued_lines._apply_price_difference()
         stock_valuation_layers |= svls
 
-    for (product, company), dummy in groupby(
+    for (product, company), _dummy in groupby(
         stock_valuation_layers, key=lambda svl: (svl.product_id, svl.company_id)
     ):
         product = product.with_company(company.id)
