@@ -68,7 +68,7 @@ odoo.define("hr_org_chart_employee.hr_org_chart", function (require) {
         },
         view_employee: function (ev) {
             if (ev.target.attributes[1]) {
-                var id = parseInt(ev.target.attributes[1].nodeValue);
+                var id = parseInt(ev.target.attributes[1].nodeValue, 10);
                 this.do_action({
                     name: _t("Employee"),
                     type: "ir.actions.act_window",

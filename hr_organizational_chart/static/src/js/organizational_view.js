@@ -50,7 +50,7 @@ odoo.define("hr_organizational_chart.view_chart", function (require) {
                         this._rpc({
                             route: "/get/parent/colspan",
                             params: {
-                                emp_id: parseInt(this.id),
+                                emp_id: parseInt(this.id, 10),
                             },
                         }).then(function (col_val) {
                             if (col_val) {
@@ -60,7 +60,7 @@ odoo.define("hr_organizational_chart.view_chart", function (require) {
                         this._rpc({
                             route: "/get/child/data",
                             params: {
-                                click_id: parseInt(this.id),
+                                click_id: parseInt(this.id, 10),
                             },
                         }).then(function (result) {
                             if (result) {
@@ -79,7 +79,10 @@ odoo.define("hr_organizational_chart.view_chart", function (require) {
         view_employee: function (ev) {
             console.log("viiii");
             if (ev.target.parentElement.className) {
-                var id = parseInt(ev.target.parentElement.parentElement.children[0].id);
+                var id = parseInt(
+                    ev.target.parentElement.parentElement.children[0].id,
+                    10
+                );
                 this.do_action({
                     name: _t("Employee"),
                     type: "ir.actions.act_window",
