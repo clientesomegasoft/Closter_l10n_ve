@@ -3,9 +3,9 @@
     "version": "16.0.0.0.0",
     "category": "Human Resources/Contracts",
     "application": False,
-    "author": "Omegasoft C.A.",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
     "contributor": "Ismael Castillo - ismael.castillo@omegasoftve.com",
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "website": "https://github.com/OCA/l10n-venezuela",
     "summary": "Bonuses Fields",
     "depends": ["omegasoft_contract_bonuses_fields", "hr_contract"],
     "data": [

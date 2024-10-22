@@ -2,8 +2,8 @@
     "name": "Omegasoft C.A Employee ARI report",
     "version": "16.0.0.0.1",
     "category": "Human Resources/Contracts",
-    "author": "Omegasoft C.A.",
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/l10n-venezuela",
     "depends": [
         "hr",
         "omegasoft_payroll_res_config_settings",

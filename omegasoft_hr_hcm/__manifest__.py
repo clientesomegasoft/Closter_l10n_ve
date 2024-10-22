@@ -2,11 +2,11 @@
     "name": "Omegasoft C.A - HCM",
     "version": "16.0.0.0.1",
     "category": "Human Resources/Employee",
-    "author": "Omegasoft C.A.",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "website": "https://github.com/OCA/l10n-venezuela",
     "summary": "Hr Employee",
     "depends": ["hr", "omegasoft_hr_employee", "omegasoft_payroll_res_config_settings"],
     "data": [

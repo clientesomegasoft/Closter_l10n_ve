@@ -2,11 +2,11 @@
     "name": "Omegasoft C.A Libro de inventario",
     "version": "16.0.0.0.1",
     "category": "Inventory/Inventory",
-    "author": "Omegasoft C.A.",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",
     "contributor": [
         "Naudy Mendez - naudy.mendez@omegasoftve.com",
     ],
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "website": "https://github.com/OCA/l10n-venezuela",
     "summary": "Libro de inventario",
     "depends": [
         "l10n_ve_account_reports_dual",

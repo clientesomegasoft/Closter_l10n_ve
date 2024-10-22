@@ -2,11 +2,11 @@
     "name": "Omegasoft C.A ARC Proveedores",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
-    "author": "Omegasoft C.A.",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
     "contributor": [
         "Naudy Mendez - naudy.mendez@omegasoftve.com",
     ],
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "website": "https://github.com/OCA/l10n-venezuela",
     "summary": "Reporte ARC Proveedores",
     "depends": [
         "l10n_ve_account_reports_dual",

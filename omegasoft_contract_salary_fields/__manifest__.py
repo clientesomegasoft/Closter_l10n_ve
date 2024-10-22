@@ -6,8 +6,8 @@
         "Rene Gomez - rene.gomez@omegasoftve.com",
     ],
     "application": False,
-    "author": "Omegasoft C.A.",
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/l10n-venezuela",
     "summary": "Salary Fields",
     "depends": [
         "hr_contract",

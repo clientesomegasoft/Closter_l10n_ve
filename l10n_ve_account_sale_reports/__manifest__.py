@@ -2,11 +2,11 @@
     "name": "Omegasoft C.A. Account and Sale Statistics",
     "version": "16.0.0.0.1",
     "summary": """Customize the standards reports on Account and Sale applications""",
-    "author": "Omegasoft C.A.",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],
-    "website": "https://github.com/macagua/Closter_l10n_ve",
+    "website": "https://github.com/OCA/l10n-venezuela",
     "category": "Inventory/Inventory",
     "depends": [
         "account",
