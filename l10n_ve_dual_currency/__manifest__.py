@@ -2,7 +2,7 @@
     "name": "Omegasoft C.A Moneda operativa",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
-    "author": "Omegasoft C.A., Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
     "contributor": [
         "Naudy Mendez - naudy.mendez@omegasoftve.com",
     ],

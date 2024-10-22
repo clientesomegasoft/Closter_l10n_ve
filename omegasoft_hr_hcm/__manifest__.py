@@ -2,7 +2,7 @@
     "name": "Omegasoft C.A - HCM",
     "version": "16.0.0.0.1",
     "category": "Human Resources/Employee",
-    "author": "Omegasoft C.A., Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
     "contributor": [
         "Gabriel Peraza - gabriel.peraza@omegasoftve.com",
     ],

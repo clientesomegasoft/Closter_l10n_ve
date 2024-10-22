@@ -3,7 +3,7 @@
     "version": "16.0.0.0.16",
     "category": "Human Resources/Contracts",
     "application": False,
-    "author": "Omegasoft C.A., Odoo Community Association (OCA)",Odoo Community Association (OCA)",Odoo Community Association (OCA)",
+    "author": "Omegasoft C.A., Odoo Community Association (OCA)",
     "contributor": [
         "Daniel Ospino - daniel.ospino@omegasoftve.com",
         "Rene Gomez - rene.gomez@omegasoftve.com",
