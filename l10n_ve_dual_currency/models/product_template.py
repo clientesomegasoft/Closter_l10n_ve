@@ -14,7 +14,7 @@ class ProductTemplate(models.Model):
     standard_price_ref = fields.Float(
         "Coste op.",
         compute="_compute_standard_price_ref",
-        inverse="_set_standard_price_ref",
+        inverse="_inverse_set_standard_price_ref",
         digits="Product Price",
     )
     currency_ref_id = fields.Many2one("res.currency", compute="_compute_currency_id")
@@ -49,7 +49,7 @@ class ProductTemplate(models.Model):
         for template in self - unique_variants:
             template.standard_price_ref = 0.0
 
-    def _set_standard_price_ref(self):
+    def _inverse_set_standard_price_ref(self):
         for template in self:
             if len(template.product_variant_ids) == 1:
                 template.product_variant_ids.standard_price_ref = (
