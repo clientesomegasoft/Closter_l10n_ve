@@ -1,7 +1,7 @@
 {
     "name": "Consignment Management System",
     "version": "16.0.0.0.0",
-    "author": "Preciseways",
+    "author": "Preciseways",  # pylint: disable=manifest-required-author
     "category": "Industries",
     "summary": """Retailer agrees to pay a seller or consignor for merchandise
     after the item sells or selling goods (clothing, furniture, etc.) through a
