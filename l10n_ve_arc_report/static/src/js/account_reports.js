@@ -153,7 +153,7 @@ odoo.define("l10n_ve_arc_report.report_filter", function (require) {
 
             this.$searchview_buttons
                 .find(".js_account_report_year_filter")
-                .click(function (e) {
+                .click(function () {
                     var year = self.$searchview_buttons.find(
                         '.o_datepicker_input[name="year"]'
                     );
