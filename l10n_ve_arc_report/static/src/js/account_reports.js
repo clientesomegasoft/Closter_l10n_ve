@@ -158,7 +158,7 @@ odoo.define("l10n_ve_arc_report.report_filter", function (require) {
                         '.o_datepicker_input[name="year"]'
                     );
                     var error = year.val() === "";
-                    self.report_options.year = parseInt(year.val());
+                    self.report_options.year = parseInt(year.val(), 10);
                     if (error) {
                         new WarningDialog(
                             self,
