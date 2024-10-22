@@ -34,5 +34,5 @@
     "price": 60.0,
     "currency": "EUR",
     "images": ["static/description/icon.png"],
-    "license": "OPL-1",
+    "license": "OPL-1",  # pylint: disable=license-allowed
 }
