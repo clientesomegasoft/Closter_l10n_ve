@@ -1,6 +1,6 @@
 // Var employee_data = [];
 
-/* eslint-disable no-unused-vars, no-implicit-globals */
+/* eslint-disable no-unused-vars, no-implicit-globals, strict */
 var nodeTemplate = function (data) {
     return `
         <span class="office">${data.office}</span>
@@ -8,7 +8,7 @@ var nodeTemplate = function (data) {
         <div class="content">${data.title}</div>
       `;
 };
-/* eslint-enable no-unused-vars, no-implicit-globals */
+/* eslint-enable no-unused-vars, no-implicit-globals, strict */
 
 odoo.define("hr_org_chart_employee.hr_org_chart", function (require) {
     "use strict";
