@@ -41,7 +41,7 @@ odoo.define("hr_org_chart_employee.hr_org_chart", function (require) {
                         },
                         []
                     ).then(function (values) {
-                        employee_data = values;
+                        // Employee_data = values;
                         self.render();
                         self.href = window.location.href;
                     });
