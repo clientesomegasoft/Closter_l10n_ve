@@ -16,14 +16,14 @@ HR Organizational Chart
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-OCA%2FCloster_l10n_ve-lightgray.png?logo=github
-    :target: https://github.com/OCA/Closter_l10n_ve/tree/16.0/hr_organizational_chart
-    :alt: OCA/Closter_l10n_ve
+.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fl10n--venezuela-lightgray.png?logo=github
+    :target: https://github.com/OCA/l10n-venezuela/tree/16.0/hr_organizational_chart
+    :alt: OCA/l10n-venezuela
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/Closter_l10n_ve-16-0/Closter_l10n_ve-16-0-hr_organizational_chart
+    :target: https://translation.odoo-community.org/projects/l10n-venezuela-16-0/l10n-venezuela-16-0-hr_organizational_chart
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/Closter_l10n_ve&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/l10n-venezuela&target_branch=16.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -55,10 +55,10 @@ To usage this module, you need to:
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/Closter_l10n_ve/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/l10n-venezuela/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/Closter_l10n_ve/issues/new?body=module:%20hr_organizational_chart%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/l10n-venezuela/issues/new?body=module:%20hr_organizational_chart%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -100,6 +100,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/Closter_l10n_ve <https://github.com/OCA/Closter_l10n_ve/tree/16.0/hr_organizational_chart>`_ project on GitHub.
+This module is part of the `OCA/l10n-venezuela <https://github.com/OCA/l10n-venezuela/tree/16.0/hr_organizational_chart>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
