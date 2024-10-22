@@ -40,7 +40,7 @@ odoo.define("hr_org_chart_employee.hr_org_chart", function (require) {
                             args: [result],
                         },
                         []
-                    ).then(function (values) {
+                    ).then(function () {
                         // Employee_data = values;
                         self.render();
                         self.href = window.location.href;
