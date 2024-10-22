@@ -80,6 +80,7 @@ max-complexity = 16
 "l10n_ve_withholding_municipal/__manifest__.py" = ["B018"]
 "l10n_ve_withholding_municipal/models/account_move.py" = ["E501", "F841", "B018", "B023"]
 "l10n_ve_withholding_municipal/models/res_config_settings.py" = ["E501"]
+"l10n_ve_withholding_tax_liquor/__manifest__.py" = ["B018"]
 "l10n_ve_withholding_tax_liquor/models/account_liquor_tax_report.py" = ["E501"]
 "omegasoft_contract_social_benefit_liabilities_fields/__manifest__.py" = ["B018"]
 "omegasoft_contract_social_benefit_liabilities_fields/models/models.py" = ["E501", "B023"]
