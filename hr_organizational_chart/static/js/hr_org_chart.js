@@ -1,5 +1,6 @@
-var employee_data = [];
+// var employee_data = [];
 
+/* eslint-disable no-unused-vars */
 var nodeTemplate = function (data) {
     return `
         <span class="office">${data.office}</span>
@@ -7,18 +8,19 @@ var nodeTemplate = function (data) {
         <div class="content">${data.title}</div>
       `;
 };
+/* eslint-enable no-unused-vars */
 
 odoo.define("hr_org_chart_employee.hr_org_chart", function (require) {
     "use strict";
 
     var core = require("web.core");
-    var session = require("web.session");
+    // var session = require("web.session");
     var ajax = require("web.ajax");
-    var Widget = require("web.Widget");
+    // var Widget = require("web.Widget");
     var QWeb = core.qweb;
     var _t = core._t;
     var AbstractAction = require("web.AbstractAction");
-    var _lt = core._lt;
+    // var _lt = core._lt;
 
     var OrgChartDepartment = AbstractAction.extend({
         events: {
@@ -50,11 +52,11 @@ odoo.define("hr_org_chart_employee.hr_org_chart", function (require) {
             return $.when(ajax.loadLibs(this), this._super());
         },
         start: function () {
-            var self = this;
+            // var self = this;
             return this._super();
         },
         render: function () {
-            var super_render = this._super;
+            // var super_render = this._super;
             var self = this;
             var org_chart = QWeb.render("hr_organizational_chart.org_chart_template", {
                 widget: self,
