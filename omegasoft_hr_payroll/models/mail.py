@@ -297,7 +297,7 @@ class Mail(models.Model):
         return True
 
 
-class Mail(models.Model):
+class MailTemplate(models.Model):
     _inherit = "mail.template"
 
     def send_mail_template(

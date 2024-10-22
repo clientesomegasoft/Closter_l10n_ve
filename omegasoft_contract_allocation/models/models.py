@@ -1,7 +1,7 @@
 from odoo import fields, models
 
 
-class HrContractCustomization(models.Model):
+class ProductTemplateCustomization(models.Model):
     _inherit = "product.template"
 
     is_an_endowment_product = fields.Boolean(string="It is an endowment product")
