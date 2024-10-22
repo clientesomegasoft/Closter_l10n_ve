@@ -46,7 +46,7 @@ odoo.define("omegasoft_employee_arc.yearpicker", function (require) {
 
         start: function () {
             var self = this;
-            var promise;
+            var promise = Promise.resolve();
             if (self.mode === "edit") {
                 self.datewidget = self._makeDatePicker();
                 self.datewidget.on("datetime_changed", self, function () {
@@ -64,7 +64,7 @@ odoo.define("omegasoft_employee_arc.yearpicker", function (require) {
                     self._replaceElement(self.datewidget.$el);
                 });
             }
-            return Promise.resolve(promise).then(self._super.bind(self));
+            return promise.then(self._super.bind(self));
         },
 
         _makeDatePicker: function () {
