@@ -101,7 +101,7 @@ odoo.define("omegasoft_employee_arc.yearpicker", function (require) {
             if (this.value === false || value === false) {
                 return this.value === value;
             }
-            return this.value == value;
+            return this.value === value;
         },
     });
 
