@@ -58,10 +58,10 @@ class HrOrganizatioanlUnits(models.Model):
             ["organizational_units_id"],
             ["organizational_units_id"],
         )
-        result = dict(
-            (data["organizational_units_id"][0], data["organizational_units_id_count"])
+        result = {
+            data["organizational_units_id"][0]: data["organizational_units_id_count"]
             for data in appraisals
-        )
+        }
         for units in self:
             units.appraisals_to_process_count = result.get(units.id, 0)
 
@@ -118,10 +118,10 @@ class HrOrganizatioanlUnits(models.Model):
             ["organizational_units_id"],
             ["organizational_units_id"],
         )
-        result = dict(
-            (data["organizational_units_id"][0], data["organizational_units_id_count"])
+        result = {
+            data["organizational_units_id"][0]: data["organizational_units_id_count"]
             for data in emp_data
-        )
+        }
         for units in self:
             units.total_employee = result.get(units.id, 0)
 

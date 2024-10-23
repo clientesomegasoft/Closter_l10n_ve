@@ -251,7 +251,9 @@ class AccountMoveLine(models.Model):
         return res
 
     @api.model
-    def _prepare_reconciliation_single_partial(self, debit_vals, credit_vals):  # noqa: C901
+    def _prepare_reconciliation_single_partial(
+        self, debit_vals, credit_vals
+    ):  # noqa: C901
         """Prepare the values to create an account.partial.reconcile later
         when reconciling the dictionaries passed
         as parameters, each one representing an account.move.line.

@@ -2,7 +2,9 @@ from odoo import SUPERUSER_ID, fields, models
 
 
 class PurchaseOrderLine(models.Model):
-    _inherit = "purchase.order.line"  # pylint: disable=consider-merging-classes-inherited
+    _inherit = (
+        "purchase.order.line"  # pylint: disable=consider-merging-classes-inherited
+    )
 
     location_id = fields.Many2one("stock.location", "Location", copy=False)
 

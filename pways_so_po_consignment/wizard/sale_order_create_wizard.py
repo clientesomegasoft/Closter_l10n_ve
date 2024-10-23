@@ -55,7 +55,7 @@ class SaleOrderCreateWizards(models.TransientModel):
         return vals
 
     def action_create_sale_order(self):
-        sale_order_lines = []
+        pass
 
         for line in self.consignment_line_ids.filtered(
             lambda x: x.product_id.tracking != "none"

@@ -252,7 +252,7 @@ class HrLeave(models.Model):
                         for leave_type in leave_types
                     }
                     for values in vals_list:
-                        employee_id = values.get("employee_id", False)
+                        values.get("employee_id", False)
                         leave_type_id = values.get("holiday_status_id")
 
                         # Establecer el estado en "borrador"

@@ -122,6 +122,5 @@ class CurrencyRate(models.Model):
                     domains.append(domain)
                 except ValueError as e:
                     _logger.info(e)
-                    pass
             args += aggregator(domains)
         return self._search(args, limit=limit, access_rights_uid=name_get_uid)

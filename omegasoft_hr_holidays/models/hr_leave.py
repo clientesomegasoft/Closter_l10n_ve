@@ -35,4 +35,3 @@ class HolidaysRequest(models.Model):
     def action_noop(self):
         """Do nothing. Made to avoid problems with action_confirm on UI.
         SEE ALSO: _compute_should_approve_automatically()"""
-        pass

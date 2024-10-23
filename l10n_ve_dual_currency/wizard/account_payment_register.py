@@ -42,46 +42,64 @@ class AccountPaymentRegister(models.TransientModel):
             # Foreign currency on source line but the company
             # currency one on the opposite line.
             if self.source_currency_id == self.currency_ref_id:
-                return comp_curr.round(
-                    self.source_amount_currency / self.currency_rate_ref.rate
-                ), False
+                return (
+                    comp_curr.round(
+                        self.source_amount_currency / self.currency_rate_ref.rate
+                    ),
+                    False,
+                )
             else:
-                return self.source_currency_id._convert(
-                    self.source_amount_currency,
-                    comp_curr,
-                    self.company_id,
-                    self.payment_date,
-                ), False
+                return (
+                    self.source_currency_id._convert(
+                        self.source_amount_currency,
+                        comp_curr,
+                        self.company_id,
+                        self.payment_date,
+                    ),
+                    False,
+                )
         elif self.source_currency_id == comp_curr and self.currency_id != comp_curr:
             # Company currency on source line but a foreign
             # currency one on the opposite line.
             if self.currency_id == self.currency_ref_id:
-                return abs(
-                    sum(
-                        self.currency_id.round(
-                            aml.amount_residual * aml.move_id.currency_rate_ref.rate
+                return (
+                    abs(
+                        sum(
+                            self.currency_id.round(
+                                aml.amount_residual * aml.move_id.currency_rate_ref.rate
+                            )
+                            for aml in batch_result["lines"]
                         )
-                        for aml in batch_result["lines"]
-                    )
-                ), False
+                    ),
+                    False,
+                )
             else:
-                return abs(
-                    sum(
-                        comp_curr._convert(
-                            aml.amount_residual,
-                            self.currency_id,
-                            self.company_id,
-                            aml.date,
+                return (
+                    abs(
+                        sum(
+                            comp_curr._convert(
+                                aml.amount_residual,
+                                self.currency_id,
+                                self.company_id,
+                                aml.date,
+                            )
+                            for aml in batch_result["lines"]
                         )
-                        for aml in batch_result["lines"]
-                    )
-                ), False
+                    ),
+                    False,
+                )
         else:
             # Foreign currency on payment different than
             # the one set on the journal entries.
-            return comp_curr._convert(
-                self.source_amount, self.currency_id, self.company_id, self.payment_date
-            ), False
+            return (
+                comp_curr._convert(
+                    self.source_amount,
+                    self.currency_id,
+                    self.company_id,
+                    self.payment_date,
+                ),
+                False,
+            )
 
     @api.depends(
         "can_edit_wizard",

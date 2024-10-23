@@ -69,7 +69,7 @@ class AccountMove(models.Model):
     def _get_withholding_iva_properties(self):
         self.ensure_one()
         if self.is_sale_document():
-            iva_rate = self.company_id.partner_id.iva_rate_id.name / 100
+            self.company_id.partner_id.iva_rate_id.name / 100
             values = {
                 "type": "customer",
                 "agent_id": self.partner_id.id,
@@ -80,7 +80,7 @@ class AccountMove(models.Model):
                 "destination_account_id": self.partner_id.property_account_receivable_id.id,
             }
         elif self.is_purchase_document():
-            iva_rate = self.partner_id.iva_rate_id.name / 100
+            self.partner_id.iva_rate_id.name / 100
             values = {
                 "type": "supplier",
                 "agent_id": self.company_id.partner_id.id,

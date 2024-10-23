@@ -754,8 +754,8 @@ class ExportBankPayments(models.Model):
         aux_txt_data += f"{amount:0>18}"
         aux_txt_data += "10" if self.operation_type == "same" else 00  # Tipo de Pago
         aux_txt_data += f"{employees_bank_info.name.bic:<12}"
-        aux_txt_data += "{0:<7}".format("")  # noqa: UP030
-        aux_txt_data += "{0:<50}".format("")  # noqa: UP030
+        aux_txt_data += "{:<7}".format("")  # noqa: UP030
+        aux_txt_data += "{:<50}".format("")  # noqa: UP030
 
         return aux_txt_data
 
@@ -791,7 +791,7 @@ class ExportBankPayments(models.Model):
             # Header
             txt_data += "HEADER"
             txt_data += f"{self.name:0>8}"
-            txt_data += "{0:<8}".format(
+            txt_data += "{:<8}".format(
                 ""
             )  # CAMBIAR POR NúMERO DE NEGOCIACIÓn  # noqa: UP030
             txt_data += nationality.upper() + f"{vat_digits:0<9}"
@@ -876,18 +876,18 @@ class ExportBankPayments(models.Model):
         aux_txt_data += f"{id_digits:0>15}"
         aux_txt_data += "1" if self.operation_type == "same" else "3"
         aux_txt_data += "{:0>12}".format("")
-        aux_txt_data += "{0:<30}".format("")
+        aux_txt_data += "{:<30}".format("")
         aux_txt_data += bank_acc
         aux_txt_data += f"{amount:0>17}"
         aux_txt_data += f"{nationality + id_digits:<16}"
         aux_txt_data += "0000000222"
         aux_txt_data += "{:0>3}".format("")
-        aux_txt_data += "{0:<60}".format(re.sub(r"[^A-Za-z]+", " ", employee_name))
+        aux_txt_data += "{:<60}".format(re.sub(r"[^A-Za-z]+", " ", employee_name))
         aux_txt_data += "{:0>15}".format("")
-        aux_txt_data += "{0:<50}".format("")
+        aux_txt_data += "{:<50}".format("")
         aux_txt_data += "{:0>4}".format("")
-        aux_txt_data += "{0:<30}".format("")
-        aux_txt_data += "{0:<80}".format("")
+        aux_txt_data += "{:<30}".format("")
+        aux_txt_data += "{:<80}".format("")
         aux_txt_data += "{:0>35}".format("")
 
         return aux_txt_data
@@ -923,7 +923,7 @@ class ExportBankPayments(models.Model):
             # 2. Construccion de linea
             # Cabecera
             txt_data += "1"
-            txt_data += "{0:<12}".format("BAMRVECA")
+            txt_data += "{:<12}".format("BAMRVECA")
             txt_data += f"{self.name:0>15}"
             txt_data += "NOMIN"
             txt_data += "0000000222"

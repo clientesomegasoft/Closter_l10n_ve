@@ -221,7 +221,9 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
                         )
 
                 else:
-                    pay_structure = record.product_employee_ids.contract_id.structure_type_id.default_schedule_pay
+                    pay_structure = (
+                        record.product_employee_ids.contract_id.structure_type_id.default_schedule_pay
+                    )
 
                 # Quincenal
                 if pay_structure == "bi-weekly":

@@ -344,7 +344,9 @@ class SocialBenefit(models.Model):
                                 current_contract.employee_additional_days
                                 * comprehensive_salary
                             )
-                            current_contract.provisions_days_per_year_accumulated_date = today
+                            current_contract.provisions_days_per_year_accumulated_date = (
+                                today
+                            )
                     else:
                         pass
 

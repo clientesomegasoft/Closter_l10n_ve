@@ -124,7 +124,6 @@ class Mail(models.Model):
                         headers.update(ast.literal_eval(mail.headers))
                     except Exception as e:
                         _logger.info(e)
-                        pass
 
                 # Writing on the mail object may fail (e.g. lock on user) which
                 # would trigger a rollback *after* actually sending the email.

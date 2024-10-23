@@ -127,7 +127,9 @@ class ExpensesDetails(models.Model):
 
 
 class PurchaseOrderLine(models.Model):
-    _inherit = "purchase.order.line"  # pylint: disable=consider-merging-classes-inherited
+    _inherit = (
+        "purchase.order.line"  # pylint: disable=consider-merging-classes-inherited
+    )
 
     @api.model_create_multi
     def create(self, vals_list):

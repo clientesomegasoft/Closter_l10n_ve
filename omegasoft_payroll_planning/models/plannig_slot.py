@@ -119,7 +119,6 @@ class PlanningSlot(models.Model):
 
     def unlink(self):
         for record in self:
-            hr_work_entry = []
             work_entry_type_attendance = self.env.ref(
                 "hr_work_entry.work_entry_type_attendance", raise_if_not_found=False
             )

@@ -113,7 +113,9 @@ class ProductProduct(models.Model):
                 AND i.company_id = %s
                 AND l.display_type = 'product'
                 GROUP BY l.product_id
-                """.format(self.env["res.currency"]._select_companies_rates())
+                """.format(
+            self.env["res.currency"]._select_companies_rates()
+        )
         invoice_types = ("out_invoice", "out_refund")
         self.env.cr.execute(
             sqlstr,
