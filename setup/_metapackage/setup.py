@@ -68,7 +68,6 @@ setuptools.setup(
         'odoo16-addon-omegasoft_salary_bonuses_fields',
         'odoo16-addon-omegasoft_sale_commissions',
         'odoo16-addon-pways_so_po_consignment',
-
     ],
     classifiers=[
         'Programming Language :: Python',
