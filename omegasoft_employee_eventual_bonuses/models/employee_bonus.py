@@ -147,7 +147,7 @@ class HrEmployeeBonus(models.Model):
     @api.onchange("type_maximum_age")
     def _onchange_maximum_age(self):
         for record in self:
-            ## Express ages in months
+            # Express ages in months
             aux_minimum_age = record.minimum_age
             aux_maximum_age = record.maximum_age
 
@@ -191,7 +191,7 @@ class HrEmployeeBonus(models.Model):
                 ):
                     aux_child_age = child.age
 
-                    ## Express ages in months
+                    # Express ages in months
                     # (0.329) represents the factor to take from days to months
                     if child.type_age == "days":
                         aux_child_age = int(child.age * 0.0329)
