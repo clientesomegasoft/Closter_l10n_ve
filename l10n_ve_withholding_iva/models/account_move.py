@@ -69,7 +69,7 @@ class AccountMove(models.Model):
     def _get_withholding_iva_properties(self):
         self.ensure_one()
         if self.is_sale_document():
-            self.company_id.partner_id.iva_rate_id.name / 100
+            company_iva_rate_name = self.company_id.partner_id.iva_rate_id.name / 100
             values = {
                 "type": "customer",
                 "agent_id": self.partner_id.id,
@@ -78,9 +78,10 @@ class AccountMove(models.Model):
                 "journal_id": self.company_id.out_iva_journal_id.id,
                 "withholding_account_id": self.company_id.out_iva_account_id.id,
                 "destination_account_id": self.partner_id.property_account_receivable_id.id,
+                "company_iva_rate_name": company_iva_rate_name,
             }
         elif self.is_purchase_document():
-            self.partner_id.iva_rate_id.name / 100
+            partner_iva_rate_name = self.partner_id.iva_rate_id.name / 100
             values = {
                 "type": "supplier",
                 "agent_id": self.company_id.partner_id.id,
@@ -89,6 +90,7 @@ class AccountMove(models.Model):
                 "journal_id": self.company_id.in_iva_journal_id.id,
                 "withholding_account_id": self.company_id.in_iva_account_id.id,
                 "destination_account_id": self.partner_id.property_account_payable_id.id,
+                "partner_iva_rate_name": partner_iva_rate_name,
             }
 
         exempt_amount = 0.0

@@ -23,7 +23,7 @@ class HrReportLetters(models.TransientModel):
         if self.letter_type == "work":
             if not self.employee_id:
                 raise ValidationError(_("Debe seleccionar un Empleado!"))
-            self.employee_id
+            # self.employee_id
             return self.env.ref(
                 "omegasoft_hr_report_letters.report_hr_work_letter_action"
             ).report_action(None)
