@@ -10,12 +10,12 @@ class ResConfigSettings(models.TransientModel):
     in_municipal_journal_id = fields.Many2one(
         related="company_id.in_municipal_journal_id",
         readonly=False,
-        domain="[('company_id', '=', company_id), ('withholding_journal_type', '=', 'municipal')]",
+        domain="[('company_id', '=', company_id), ('withholding_journal_type', '=', 'municipal')]",  # noqa: B950
     )
     out_municipal_journal_id = fields.Many2one(
         related="company_id.out_municipal_journal_id",
         readonly=False,
-        domain="[('company_id', '=', company_id), ('withholding_journal_type', '=', 'municipal')]",
+        domain="[('company_id', '=', company_id), ('withholding_journal_type', '=', 'municipal')]",  # noqa: B950
     )
     in_municipal_account_id = fields.Many2one(
         related="company_id.in_municipal_account_id", readonly=False

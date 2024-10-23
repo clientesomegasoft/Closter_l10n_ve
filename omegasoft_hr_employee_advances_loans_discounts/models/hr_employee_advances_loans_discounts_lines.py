@@ -208,7 +208,7 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
 
                 if record.type_advance_loan in ["discount", "loan"]:
                     pay_structure = (
-                        record.product_employee_ids.contract_id.structure_loan_discount.schedule_pay
+                        record.product_employee_ids.contract_id.structure_loan_discount.schedule_pay  # noqa: B950
                         if record.product_employee_ids.contract_id.structure_loan_discount
                         else False
                     )
@@ -222,7 +222,7 @@ class HrEmployeeAdvancesLoansDiscountsLines(models.Model):
 
                 else:
                     pay_structure = (
-                        record.product_employee_ids.contract_id.structure_type_id.default_schedule_pay
+                        record.product_employee_ids.contract_id.structure_type_id.default_schedule_pay  # noqa: B950
                     )
 
                 # Quincenal

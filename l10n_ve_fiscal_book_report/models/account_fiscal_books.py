@@ -95,21 +95,53 @@ class FiscalBooksReportHandler(models.AbstractModel):
                 f"""
                 SELECT
                     account_tax.fiscal_tax_type,
-                    SUM(CASE
-                        WHEN account_move_line.display_type = 'product' THEN ABS(account_move_line.{balance}) * CASE WHEN account_move_line__move_id.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END
-                        ELSE account_move_line.{tax_base_amount} * CASE WHEN account_move_line__move_id.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END
-                    END),
-                    SUM(CASE
-                        WHEN account_move_line.display_type = 'product' THEN 0.0
-                        ELSE ABS(account_move_line.{balance}) * CASE WHEN account_move_line__move_id.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END
-                    END)
+                    SUM(
+                        CASE
+                         WHEN account_move_line.display_type = 'product'
+                         THEN ABS(account_move_line.{balance}) *
+                         CASE
+                          WHEN account_move_line__move_id.move_type
+                          IN ('out_refund', 'in_refund')
+                          THEN -1
+                          ELSE 1
+                         END
+                        ELSE account_move_line.{tax_base_amount} *
+                         CASE
+                          WHEN account_move_line__move_id.move_type
+                          IN ('out_refund', 'in_refund')
+                          THEN -1
+                          ELSE 1
+                          END
+                        END
+                    ),
+                    SUM(
+                        CASE
+                         WHEN account_move_line.display_type = 'product'
+                         THEN 0.0
+                        ELSE
+                         ABS(account_move_line.{balance}) *
+                         CASE
+                          WHEN account_move_line__move_id.move_type
+                          IN ('out_refund', 'in_refund')
+                          THEN -1
+                          ELSE 1
+                          END
+                        END
+                    )
                 FROM {tables}
-                LEFT JOIN account_move_line_account_tax_rel ON account_move_line_account_tax_rel.account_move_line_id = account_move_line.id
-                JOIN account_tax ON account_tax.id IN (account_move_line.tax_line_id, account_move_line_account_tax_rel.account_tax_id)
+                LEFT JOIN account_move_line_account_tax_rel
+                ON account_move_line_account_tax_rel.account_move_line_id = account_move_line.id
+                JOIN account_tax
+                ON account_tax.id IN (
+                    account_move_line.tax_line_id,
+                    account_move_line_account_tax_rel.account_tax_id
+                )
                 WHERE {where_clause} AND ((
-                    account_move_line.display_type = 'product' AND account_tax.fiscal_tax_type = 'exempt'
+                    account_move_line.display_type = 'product'
+                    AND account_tax.fiscal_tax_type = 'exempt'
                     ) OR (
-                    account_move_line.display_type = 'tax' AND account_tax.fiscal_tax_type != 'exempt'
+                    account_move_line.display_type = 'tax'
+                    AND account_tax.fiscal_tax_type != 'exempt'
                 ))
                 GROUP BY account_tax.fiscal_tax_type
             """,
@@ -120,9 +152,17 @@ class FiscalBooksReportHandler(models.AbstractModel):
         def _get_section_withholding_line(withholding_type):
             self._cr.execute(
                 """
-                SELECT 0.0, SUM(account_withholding_iva.amount * CASE WHEN account_move.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END)
+                SELECT 0.0, SUM(
+                    account_withholding_iva.amount *
+                    CASE
+                     WHEN account_move.move_type IN ('out_refund', 'in_refund')
+                     THEN -1
+                    ELSE 1
+                    END
+                )
                 FROM account_withholding_iva
-                JOIN account_move ON account_move.id = account_withholding_iva.invoice_id
+                JOIN account_move
+                ON account_move.id = account_withholding_iva.invoice_id
                 WHERE
                     account_move.not_in_fiscal_book = FALSE
                     AND account_withholding_iva.state = 'posted'
@@ -389,65 +429,137 @@ class FiscalBooksReportHandler(models.AbstractModel):
 
         return (
             f"""
-            ROW_NUMBER() OVER(ORDER BY {'account_move.nro_ctrl ASC' if options['file_type'] == 'sale' else 'account_move.invoice_date ASC'}) AS id,
+            ROW_NUMBER() OVER(ORDER BY {
+                'account_move.nro_ctrl ASC' if options['file_type'] == 'sale'
+                else 'account_move.invoice_date ASC'
+            }) AS id,
             account_move.invoice_date AS date,
             COALESCE(res_partner.vat, res_partner.identification) AS rif,
             res_partner.name AS partner_name,
             person_type.code AS partner_code,
             account_move.nro_ctrl AS nro_ctrl,
             CASE
-                WHEN account_move.move_type = 'out_invoice' AND account_move.debit_origin_id IS NULL THEN account_move.name
-                WHEN account_move.move_type = 'in_invoice' AND account_move.debit_origin_id IS NULL THEN account_move.supplier_invoice_number
+                WHEN account_move.move_type = 'out_invoice'
+                AND account_move.debit_origin_id IS NULL
+                THEN account_move.name
+                WHEN account_move.move_type = 'in_invoice'
+                AND account_move.debit_origin_id IS NULL
+                THEN account_move.supplier_invoice_number
             END AS invoice_name,
             CASE
-                WHEN account_move.move_type = 'out_refund' THEN account_move.name
-                WHEN account_move.move_type = 'in_refund' THEN account_move.supplier_invoice_number
+                WHEN account_move.move_type = 'out_refund'
+                THEN account_move.name
+                WHEN account_move.move_type = 'in_refund'
+                THEN account_move.supplier_invoice_number
             END AS refund_name,
             CASE
-                WHEN account_move.move_type = 'out_invoice' AND account_move.debit_origin_id IS NOT NULL THEN account_move.name
-                WHEN account_move.move_type = 'in_invoice' AND account_move.debit_origin_id IS NOT NULL THEN account_move.supplier_invoice_number
+                WHEN account_move.move_type = 'out_invoice'
+                AND account_move.debit_origin_id IS NOT NULL
+                THEN account_move.name
+                WHEN account_move.move_type = 'in_invoice'
+                AND account_move.debit_origin_id IS NOT NULL
+                THEN account_move.supplier_invoice_number
             END AS debit_name,
             CASE
-                WHEN account_move.move_type IN ('out_invoice', 'out_refund') THEN affected_move.name
-                WHEN account_move.move_type IN ('in_invoice', 'in_refund') THEN affected_move.supplier_invoice_number
+                WHEN account_move.move_type IN ('out_invoice', 'out_refund')
+                THEN affected_move.name
+                WHEN account_move.move_type IN ('in_invoice', 'in_refund')
+                THEN affected_move.supplier_invoice_number
             END AS affected_name,
             CASE
-                WHEN account_move.state = 'cancel' THEN 'ANU-03'
-                WHEN account_move.move_type IN ('out_invoice', 'in_invoice') AND account_move.debit_origin_id IS NULL THEN 'REG-01'
-                WHEN account_move.move_type IN ('out_refund', 'in_refund') OR (account_move.move_type IN ('out_invoice', 'in_invoice') AND account_move.debit_origin_id IS NOT NULL) THEN 'COM-02'
+                WHEN account_move.state = 'cancel'
+                THEN 'ANU-03'
+                WHEN account_move.move_type IN ('out_invoice', 'in_invoice')
+                AND account_move.debit_origin_id IS NULL
+                THEN 'REG-01'
+                WHEN account_move.move_type IN ('out_refund', 'in_refund')
+                OR (account_move.move_type IN ('out_invoice', 'in_invoice')
+                AND account_move.debit_origin_id IS NOT NULL)
+                THEN 'COM-02'
             END AS document_type,
             CASE
-                WHEN account_move.state = 'posted' AND account_move.invoice_date >= %(date_from)s THEN
-                    ABS(account_move.{amount_total}) * CASE WHEN account_move.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END
+                WHEN account_move.state = 'posted'
+                AND account_move.invoice_date >= %(date_from)s
+                THEN
+                    ABS(account_move.{amount_total}) *
+                    CASE
+                     WHEN account_move.move_type IN ('out_refund', 'in_refund')
+                     THEN -1
+                     ELSE 1
+                    END
                 ELSE 0.0
             END AS amount_total,
-            SUM(CASE
-                WHEN account_move.state = 'posted' AND account_move.invoice_date >= %(date_from)s AND account_move_line.display_type = 'product' AND account_tax.fiscal_tax_type = 'exempt' THEN
-                    ABS(account_move_line.{balance}) * CASE WHEN account_move.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END
+            SUM(
+                CASE
+                 WHEN account_move.state = 'posted'
+                 AND account_move.invoice_date >= %(date_from)s
+                 AND account_move_line.display_type = 'product'
+                 AND account_tax.fiscal_tax_type = 'exempt'
+                 THEN
+                    ABS(account_move_line.{balance}) *
+                    CASE
+                     WHEN account_move.move_type IN ('out_refund', 'in_refund')
+                     THEN -1
+                     ELSE 1
+                    END
                 ELSE 0.0
-            END) AS base_exempt,"""
+                END
+            ) AS base_exempt,"""
             + ",".join(
                 f"""
-            SUM(CASE
-                WHEN account_move.state = 'posted' AND account_move.invoice_date >= %(date_from)s AND account_move_line.display_type = 'tax' AND account_tax.fiscal_tax_type = %({t})s THEN
-                    ABS(account_move_line.{tax_base_amount}) * CASE WHEN account_move.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END
+            SUM(
+                CASE
+                 WHEN account_move.state = 'posted'
+                 AND account_move.invoice_date >= %(date_from)s
+                 AND account_move_line.display_type = 'tax'
+                 AND account_tax.fiscal_tax_type = %({t})s
+                 THEN
+                    ABS(account_move_line.{tax_base_amount}) *
+                    CASE
+                     WHEN account_move.move_type IN ('out_refund', 'in_refund')
+                     THEN -1
+                     ELSE 1
+                    END
                 ELSE 0.0
-            END) AS base_{t},
-            MAX(CASE
-                WHEN account_move.state = 'posted' AND account_move.invoice_date >= %(date_from)s AND account_move_line.display_type = 'tax' AND account_tax.fiscal_tax_type = %({t})s THEN
+                END
+            ) AS base_{t},
+            MAX(
+                CASE
+                 WHEN account_move.state = 'posted'
+                 AND account_move.invoice_date >= %(date_from)s
+                 AND account_move_line.display_type = 'tax'
+                 AND account_tax.fiscal_tax_type = %({t})s
+                THEN
                     TO_CHAR(account_tax.amount, '999%%')
                 ELSE ''
-            END) AS tax_{t},
-            SUM(CASE
-                WHEN account_move.state = 'posted' AND account_move.invoice_date >= %(date_from)s AND account_move_line.display_type = 'tax' AND account_tax.fiscal_tax_type = %({t})s THEN
-                    ABS(account_move_line.{balance}) * CASE WHEN account_move.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END
+                END
+            ) AS tax_{t},
+            SUM(
+                CASE
+                 WHEN account_move.state = 'posted'
+                 AND account_move.invoice_date >= %(date_from)s
+                 AND account_move_line.display_type = 'tax'
+                 AND account_tax.fiscal_tax_type = %({t})s
+                 THEN
+                    ABS(account_move_line.{balance}) *
+                    CASE
+                     WHEN account_move.move_type IN ('out_refund', 'in_refund')
+                     THEN -1
+                     ELSE 1
+                    END
                 ELSE 0.0
-            END) AS amount_{t}"""
+                END
+            ) AS amount_{t}"""
                 for t in ("general", "reduced", "additional")
             )
             + """,
             account_withholding_iva.name AS withholding_name,
-            COALESCE(account_withholding_iva.amount, 0.0) * CASE WHEN account_move.move_type IN ('out_refund', 'in_refund') THEN -1 ELSE 1 END AS withholding_amount,
+            COALESCE(account_withholding_iva.amount, 0.0) *
+            CASE
+             WHEN account_move.move_type IN ('out_refund', 'in_refund')
+             THEN -1
+             ELSE 1
+            END AS withholding_amount,
             account_withholding_iva.date AS withholding_date
         """
         )
@@ -458,11 +570,20 @@ class FiscalBooksReportHandler(models.AbstractModel):
             account_move
             JOIN res_partner ON res_partner.id = account_move.partner_id
             LEFT JOIN person_type ON person_type.id = res_partner.person_type_id
-            LEFT JOIN account_move affected_move ON affected_move.id IN (account_move.reversed_entry_id, account_move.debit_origin_id)
-            JOIN account_move_line ON account_move_line.move_id = account_move.id
-            LEFT JOIN account_move_line_account_tax_rel ON account_move_line_account_tax_rel.account_move_line_id = account_move_line.id
-            JOIN account_tax ON account_tax.id IN (account_move_line.tax_line_id, account_move_line_account_tax_rel.account_tax_id)
-            LEFT JOIN account_withholding_iva ON account_withholding_iva.id = account_move.withholding_iva_id AND account_withholding_iva.state = 'posted'
+            LEFT JOIN account_move affected_move
+            ON affected_move.id IN (
+                account_move.reversed_entry_id, account_move.debit_origin_id)
+            JOIN account_move_line
+            ON account_move_line.move_id = account_move.id
+            LEFT JOIN account_move_line_account_tax_rel
+            ON account_move_line_account_tax_rel.account_move_line_id = account_move_line.id
+            JOIN account_tax
+            ON account_tax.id IN (
+                account_move_line.tax_line_id, account_move_line_account_tax_rel.account_tax_id
+            )
+            LEFT JOIN account_withholding_iva
+            ON account_withholding_iva.id = account_move.withholding_iva_id
+            AND account_withholding_iva.state = 'posted'
         """
 
     @api.model
@@ -472,13 +593,17 @@ class FiscalBooksReportHandler(models.AbstractModel):
             AND account_move.move_type IN %(types)s
             AND account_move.state IN %(states)s
             AND account_move.company_id = %(company)s
-            AND (account_move.invoice_date BETWEEN %(date_from)s AND %(date_to)s OR account_withholding_iva.date BETWEEN %(date_from)s AND %(date_to)s)
+            AND (account_move.invoice_date
+            BETWEEN %(date_from)s AND %(date_to)s
+            OR account_withholding_iva.date
+            BETWEEN %(date_from)s AND %(date_to)s)
         """
 
     @api.model
     def _group_by(self, options):
         return """
-            account_move.id, res_partner.id, person_type.id, affected_move.id, account_withholding_iva.id
+            account_move.id, res_partner.id, person_type.id,
+            affected_move.id, account_withholding_iva.id
         """
 
     @api.model
@@ -500,7 +625,11 @@ class FiscalBooksReportHandler(models.AbstractModel):
             FROM {self._from(options)}
             WHERE {self._where(options)}
             GROUP BY {self._group_by(options)}
-            ORDER BY {'account_move.nro_ctrl ASC' if options['file_type'] == 'sale' else 'account_move.invoice_date ASC'}
+            ORDER BY {
+                'account_move.nro_ctrl ASC'
+                if options['file_type'] == 'sale'
+                else 'account_move.invoice_date ASC'
+            }
         """,
             self._params(options),
         )

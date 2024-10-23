@@ -213,13 +213,13 @@ class ProductProduct(models.Model):
                 continue
             elif company_id.currency_id.is_zero(value):
                 description = _(
-                    "Product value manually modified (from %(standard_price_ref)s to %(rounded_new_price_ref)s)",
+                    "Product value manually modified (from %(standard_price_ref)s to %(rounded_new_price_ref)s)",  # noqa: B950
                     standard_price_ref=product.standard_price_ref,
                     rounded_new_price_ref=rounded_new_price_ref,
                 )
             else:
                 description = _(
-                    "Product value manually modified (from %(standard_price)s to %(rounded_new_price)s)",
+                    "Product value manually modified (from %(standard_price)s to %(rounded_new_price)s)",  # noqa: B950
                     standard_price=product.standard_price,
                     rounded_new_price=rounded_new_price,
                 )
@@ -284,7 +284,7 @@ class ProductProduct(models.Model):
                         0,
                         {
                             "name": _(
-                                "%(user)s changed cost from %(previous)s to %(new_price)s - %(product)s",
+                                "%(user)s changed cost from %(previous)s to %(new_price)s - %(product)s",  # noqa: B950
                                 user=self.env.user.name,
                                 previous=product.standard_price,
                                 new_price=new_price,
@@ -302,7 +302,7 @@ class ProductProduct(models.Model):
                         0,
                         {
                             "name": _(
-                                "%(user)s changed cost from %(previous)s to %(new_price)s - %(product)s",
+                                "%(user)s changed cost from %(previous)s to %(new_price)s - %(product)s",  # noqa: B950
                                 user=self.env.user.name,
                                 previous=product.standard_price,
                                 new_price=new_price,

@@ -23,7 +23,8 @@ class Canapdis(models.Model):
             DISTINCT employee.id
         FROM
             hr_employee employee
-            JOIN hr_employee_hr_employee_disability_rel dis_rel ON dis_rel.hr_employee_id = employee.id
+        JOIN hr_employee_hr_employee_disability_rel dis_rel
+        ON dis_rel.hr_employee_id = employee.id
         """
         self._cr.execute(query)
         result = self._cr.fetchall()

@@ -85,7 +85,8 @@ class SaleReport(models.Model):
 
         statement = f"""
             {statement}
-            JOIN {operative_currency_table} ON operative_currency_table.company_id = s.company_id
+            JOIN {operative_currency_table}
+            ON operative_currency_table.company_id = s.company_id
         """
         return statement
 

@@ -131,13 +131,16 @@ class AccountReport(models.Model):
                 options.get("selected_currency", False)
                 and options.get("selected_currency") == self.env.company.currency_id.id
             ):
-                balance_query = "COALESCE(SUM(ROUND(account_move_line.balance * currency_table.rate, currency_table.precision)), 0.0) AS sum,"
+                balance_query = "COALESCE(SUM(ROUND(account_move_line.balance * currency_table.rate, currency_table.precision)), 0.0) AS sum,"  # noqa: B950
             else:
-                balance_query = "COALESCE(SUM(ROUND(account_move_line.balance_ref * currency_table.rate, currency_table.precision)), 0.0) AS sum,"
+                balance_query = "COALESCE(SUM(ROUND(account_move_line.balance_ref * currency_table.rate, currency_table.precision)), 0.0) AS sum,"  # noqa: B950
             query = f"""
                 SELECT
                     {balance_query}
-                    COUNT(DISTINCT account_move_line.{next_groupby.split(',')[0] if next_groupby else 'id'}) AS count_rows
+                    COUNT(
+                        DISTINCT
+                    account_move_line.{next_groupby.split(',')[0] if next_groupby else 'id'}
+                    ) AS count_rows
                     {f', {groupby_sql} AS grouping_key' if groupby_sql else ''}
                 FROM {tables}
                 JOIN {ct_query} ON currency_table.company_id = account_move_line.company_id

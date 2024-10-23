@@ -23,7 +23,7 @@ class AccountInvoiceReport(models.Model):
         # `operative_currency_table`.
         statement = f"""
             {statement},
-            (-line.balance * currency_table.rate) * operative_currency_table.rate AS price_subtotal_ref,
+(-line.balance * currency_table.rate) * operative_currency_table.rate AS price_subtotal_ref,
             (line.price_total * (CASE
                     WHEN move.move_type IN ('in_invoice','out_refund','in_receipt')
                         THEN -1
@@ -57,6 +57,7 @@ class AccountInvoiceReport(models.Model):
 
         statement = f"""
             {statement}
-            JOIN {operative_currency_table} ON operative_currency_table.company_id = line.company_id
+            JOIN {operative_currency_table}
+            ON operative_currency_table.company_id = line.company_id
         """
         return statement

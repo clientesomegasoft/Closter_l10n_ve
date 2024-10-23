@@ -37,7 +37,7 @@ class AccountSaleSequence(models.Model):
         "account.journal",
         related="invoice_sequence_id.invoice_name_journal_ids",
         readonly=False,
-        domain="[('type', '=', 'sale'), ('sequence_type', '=', sequence_type), ('invoice_name_sequence_id', '=', False)]",
+        domain="[('type', '=', 'sale'), ('sequence_type', '=', sequence_type), ('invoice_name_sequence_id', '=', False)]",  # noqa: B950
     )
     invoice_prefix = fields.Char(related="invoice_sequence_id.prefix", readonly=False)
     invoice_padding = fields.Integer(
@@ -65,7 +65,7 @@ class AccountSaleSequence(models.Model):
         "account.journal",
         related="refund_sequence_id.invoice_name_journal_ids",
         readonly=False,
-        domain="[('type', '=', 'sale'), ('sequence_type', '=', sequence_type), ('invoice_name_sequence_id', '=', False)]",
+        domain="[('type', '=', 'sale'), ('sequence_type', '=', sequence_type), ('invoice_name_sequence_id', '=', False)]",  # noqa: B950
     )
     refund_prefix = fields.Char(related="refund_sequence_id.prefix", readonly=False)
     refund_padding = fields.Integer(
@@ -93,7 +93,7 @@ class AccountSaleSequence(models.Model):
         "account.journal",
         related="debit_sequence_id.invoice_name_journal_ids",
         readonly=False,
-        domain="[('type', '=', 'sale'), ('sequence_type', '=', sequence_type), ('invoice_name_sequence_id', '=', False)]",
+        domain="[('type', '=', 'sale'), ('sequence_type', '=', sequence_type), ('invoice_name_sequence_id', '=', False)]",  # noqa: B950
     )
     debit_prefix = fields.Char(related="debit_sequence_id.prefix", readonly=False)
     debit_padding = fields.Integer(related="debit_sequence_id.padding", readonly=False)

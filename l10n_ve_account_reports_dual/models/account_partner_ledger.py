@@ -9,7 +9,8 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
     _inherit = "account.partner.ledger.report.handler"
 
     def _get_query_sums(self, options):
-        """Construct a query retrieving all the aggregated sums to build the report. It includes:
+        """Construct a query retrieving all the aggregated sums to build the report.
+        It includes:
         - sums for all partners.
         - sums for the initial balances.
         :param options:             The report options.
@@ -26,14 +27,38 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
             and options.get("selected_currency") == self.env.company.currency_id.id
         ):
             balance_query = """
-                    SUM(ROUND(account_move_line.debit * currency_table.rate, currency_table.precision))   AS debit,
-                    SUM(ROUND(account_move_line.credit * currency_table.rate, currency_table.precision))  AS credit,
-                    SUM(ROUND(account_move_line.balance * currency_table.rate, currency_table.precision)) AS balance"""
+                    SUM(ROUND(
+                            account_move_line.debit * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS debit,
+                    SUM(ROUND(
+                            account_move_line.credit * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS credit,
+                    SUM(ROUND(
+                            account_move_line.balance * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS balance"""
         else:
             balance_query = """
-                    SUM(ROUND(account_move_line.debit_ref * currency_table.rate, currency_table.precision))   AS debit,
-                    SUM(ROUND(account_move_line.credit_ref * currency_table.rate, currency_table.precision))  AS credit,
-                    SUM(ROUND(account_move_line.balance_ref * currency_table.rate, currency_table.precision)) AS balance"""
+                    SUM(ROUND(
+                            account_move_line.debit_ref * currency_table.rate,
+                            currency_table.precision
+                        )
+                    )   AS debit,
+                    SUM(ROUND(
+                            account_move_line.credit_ref * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS credit,
+                    SUM(ROUND(
+                            account_move_line.balance_ref * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS balance"""
         for (
             column_group_key,
             column_group_options,
@@ -46,11 +71,12 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
             queries.append(
                 f"""
                 SELECT
-                    account_move_line.partner_id                                                          AS groupby,
-                    %s                                                                                    AS column_group_key,
+                    account_move_line.partner_id AS groupby,
+                    %s AS column_group_key,
                     {balance_query}
                 FROM {tables}
-                LEFT JOIN {ct_query} ON currency_table.company_id = account_move_line.company_id
+                LEFT JOIN {ct_query}
+                ON currency_table.company_id = account_move_line.company_id
                 WHERE {where_clause}
                 GROUP BY account_move_line.partner_id
             """
@@ -68,14 +94,38 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
             and options.get("selected_currency") == self.env.company.currency_id.id
         ):
             balance_query = """
-                    SUM(ROUND(account_move_line.debit * currency_table.rate, currency_table.precision))   AS debit,
-                    SUM(ROUND(account_move_line.credit * currency_table.rate, currency_table.precision))  AS credit,
-                    SUM(ROUND(account_move_line.balance * currency_table.rate, currency_table.precision)) AS balance"""
+                    SUM(ROUND(
+                            account_move_line.debit * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS debit,
+                    SUM(ROUND(
+                            account_move_line.credit * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS credit,
+                    SUM(ROUND(
+                            account_move_line.balance * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS balance"""
         else:
             balance_query = """
-                    SUM(ROUND(account_move_line.debit_ref * currency_table.rate, currency_table.precision))   AS debit,
-                    SUM(ROUND(account_move_line.credit_ref * currency_table.rate, currency_table.precision))  AS credit,
-                    SUM(ROUND(account_move_line.balance_ref * currency_table.rate, currency_table.precision)) AS balance"""
+                    SUM(ROUND(
+                            account_move_line.debit_ref * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS debit,
+                    SUM(ROUND(
+                            account_move_line.credit_ref * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS credit,
+                    SUM(ROUND(
+                            account_move_line.balance_ref * currency_table.rate,
+                            currency_table.precision
+                        )
+                    ) AS balance"""
         for (
             column_group_key,
             column_group_options,
@@ -92,7 +142,7 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
                 f"""
                 SELECT
                     account_move_line.partner_id,
-                    %s                                                                                    AS column_group_key,
+                    %s AS column_group_key,
                    {balance_query}
                 FROM {tables}
                 LEFT JOIN {ct_query} ON currency_table.company_id = account_move_line.company_id
@@ -117,9 +167,10 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
         return init_balance_by_col_group
 
     def _get_sums_without_partner(self, options):
-        """Get the sum of lines without partner reconciled with a line with a partner, grouped by partner. Those lines
-        should be considered as belonging to the partner for the reconciled amount as it may clear some of the partner
-        invoice/bill and they have to be accounted in the partner balance."""
+        """Get the sum of lines without partner reconciled with a line with a partner,
+        grouped by partner. Those lines should be considered as belonging to the partner
+        for the reconciled amount as it may clear some of the partner invoice/bill and
+        they have to be accounted in the partner balance."""
         queries = []
         params = []
         report = self.env.ref("account_reports.partner_ledger_report")
@@ -139,16 +190,39 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
             queries.append(
                 f"""
                 SELECT
-                    %s                                                                                                    AS column_group_key,
-                    aml_with_partner.partner_id                                                                           AS groupby,
-                    COALESCE(SUM(CASE WHEN aml_with_partner.balance > 0 THEN 0 ELSE partial.amount END), 0)               AS debit,
-                    COALESCE(SUM(CASE WHEN aml_with_partner.balance < 0 THEN 0 ELSE partial.amount END), 0)               AS credit,
-                    COALESCE(SUM(CASE WHEN aml_with_partner.balance > 0 THEN -partial.amount ELSE partial.amount END), 0) AS balance
+                    %s AS column_group_key,
+                    aml_with_partner.partner_id AS groupby,
+                    COALESCE(SUM(
+                        CASE
+                         WHEN aml_with_partner.balance > 0
+                         THEN 0
+                         ELSE partial.amount
+                        END
+                        ), 0
+                    ) AS debit,
+                    COALESCE(SUM(
+                        CASE
+                         WHEN aml_with_partner.balance < 0
+                         THEN 0
+                         ELSE partial.amount
+                        END
+                        ), 0
+                    ) AS credit,
+                    COALESCE(SUM(
+                        CASE
+                         WHEN aml_with_partner.balance > 0
+                         THEN -partial.amount
+                         ELSE partial.amount
+                        END
+                        ), 0
+                    ) AS balance
                 FROM {tables}
                 JOIN account_partial_reconcile partial
-                    ON account_move_line.id = partial.debit_move_id OR account_move_line.id = partial.credit_move_id
+                    ON account_move_line.id = partial.debit_move_id
+                    OR account_move_line.id = partial.credit_move_id
                 JOIN account_move_line aml_with_partner ON
-                    (aml_with_partner.id = partial.debit_move_id OR aml_with_partner.id = partial.credit_move_id)
+                    (aml_with_partner.id = partial.debit_move_id
+                    OR aml_with_partner.id = partial.credit_move_id)
                     AND aml_with_partner.partner_id IS NOT NULL
                 WHERE partial.max_date <= %s AND {where_clause}
                     AND account_move_line.partner_id IS NULL
@@ -187,14 +261,32 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
             and options.get("selected_currency") == self.env.company.currency_id.id
         ):
             balance_query = """
-                    ROUND(account_move_line.debit * currency_table.rate, currency_table.precision)   AS debit,
-                    ROUND(account_move_line.credit * currency_table.rate, currency_table.precision)  AS credit,
-                    ROUND(account_move_line.balance * currency_table.rate, currency_table.precision) AS balance,"""
+                    ROUND(
+                        account_move_line.debit * currency_table.rate,
+                        currency_table.precision
+                    ) AS debit,
+                    ROUND(
+                        account_move_line.credit * currency_table.rate,
+                        currency_table.precision
+                    ) AS credit,
+                    ROUND(
+                        account_move_line.balance * currency_table.rate,
+                        currency_table.precision
+                    ) AS balance,"""
         else:
             balance_query = """
-                    ROUND(account_move_line.debit_ref * currency_table.rate, currency_table.precision)   AS debit,
-                    ROUND(account_move_line.credit_ref * currency_table.rate, currency_table.precision)  AS credit,
-                    ROUND(account_move_line.balance_ref * currency_table.rate, currency_table.precision) AS balance,"""
+                    ROUND(
+                        account_move_line.debit_ref * currency_table.rate,
+                        currency_table.precision
+                    ) AS debit,
+                    ROUND(
+                        account_move_line.credit_ref * currency_table.rate,
+                        currency_table.precision
+                    ) AS credit,
+                    ROUND(
+                        account_move_line.balance_ref * currency_table.rate,
+                        currency_table.precision
+                    ) AS balance,"""
         queries = []
         all_params = []
         lang = self.env.lang or get_lang(self.env).code
@@ -244,21 +336,25 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
                     account_move_line.amount_currency,
                     account_move_line.matching_number,
                     {balance_query}
-                    account_move.name                                                                AS move_name,
-                    account_move.move_type                                                           AS move_type,
-                    account.code                                                                     AS account_code,
-                    {account_name}                                                                   AS account_name,
-                    journal.code                                                                     AS journal_code,
-                    {journal_name}                                                                   AS journal_name,
-                    %s                                                                               AS column_group_key,
-                    'directly_linked_aml'                                                            AS key
+                    account_move.name AS move_name,
+                    account_move.move_type AS move_type,
+                    account.code AS account_code,
+                    {account_name} AS account_name,
+                    journal.code AS journal_code,
+                    {journal_name} AS journal_name,
+                    %s AS column_group_key,
+                    'directly_linked_aml' AS key
                 FROM {tables}
                 JOIN account_move ON account_move.id = account_move_line.move_id
                 LEFT JOIN {ct_query} ON currency_table.company_id = account_move_line.company_id
-                LEFT JOIN res_company company               ON company.id = account_move_line.company_id
-                LEFT JOIN res_partner partner               ON partner.id = account_move_line.partner_id
-                LEFT JOIN account_account account           ON account.id = account_move_line.account_id
-                LEFT JOIN account_journal journal           ON journal.id = account_move_line.journal_id
+                LEFT JOIN res_company company
+                ON company.id = account_move_line.company_id
+                LEFT JOIN res_partner partner
+                ON partner.id = account_move_line.partner_id
+                LEFT JOIN account_account account
+                ON account.id = account_move_line.account_id
+                LEFT JOIN account_journal journal
+                ON journal.id = account_move_line.journal_id
                 WHERE {where_clause} AND {directly_linked_aml_partner_clause}
                 ORDER BY account_move_line.date, account_move_line.id
             """
@@ -283,17 +379,29 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
                     account_move_line.currency_id,
                     account_move_line.amount_currency,
                     account_move_line.matching_number,
-                    CASE WHEN aml_with_partner.balance > 0 THEN 0 ELSE partial.amount END               AS debit,
-                    CASE WHEN aml_with_partner.balance < 0 THEN 0 ELSE partial.amount END               AS credit,
-                    CASE WHEN aml_with_partner.balance > 0 THEN -partial.amount ELSE partial.amount END AS balance,
-                    account_move.name                                                                   AS move_name,
-                    account_move.move_type                                                              AS move_type,
-                    account.code                                                                        AS account_code,
-                    {account_name}                                                                      AS account_name,
-                    journal.code                                                                        AS journal_code,
-                    {journal_name}                                                                      AS journal_name,
-                    %s                                                                                  AS column_group_key,
-                    'indirectly_linked_aml'                                                             AS key
+                    CASE
+                     WHEN aml_with_partner.balance > 0
+                     THEN 0
+                     ELSE partial.amount
+                    END AS debit,
+                    CASE
+                     WHEN aml_with_partner.balance < 0
+                     THEN 0
+                     ELSE partial.amount
+                    END AS credit,
+                    CASE
+                     WHEN aml_with_partner.balance > 0
+                     THEN -partial.amount
+                     ELSE partial.amount
+                    END AS balance,
+                    account_move.name AS move_name,
+                    account_move.move_type AS move_type,
+                    account.code AS account_code,
+                    {account_name} AS account_name,
+                    journal.code AS journal_code,
+                    {journal_name} AS journal_name,
+                    %s AS column_group_key,
+                    'indirectly_linked_aml' AS key
                 FROM {tables},
                     account_partial_reconcile partial,
                     account_move,
@@ -301,10 +409,12 @@ class PartnerLedgerCustomHandler(models.AbstractModel):
                     account_journal journal,
                     account_account account
                 WHERE
-                    (account_move_line.id = partial.debit_move_id OR account_move_line.id = partial.credit_move_id)
+                    (account_move_line.id = partial.debit_move_id
+                    OR account_move_line.id = partial.credit_move_id)
                     AND account_move_line.partner_id IS NULL
                     AND account_move.id = account_move_line.move_id
-                    AND (aml_with_partner.id = partial.debit_move_id OR aml_with_partner.id = partial.credit_move_id)
+                    AND (aml_with_partner.id = partial.debit_move_id
+                    OR aml_with_partner.id = partial.credit_move_id)
                     AND {indirectly_linked_aml_partner_clause}
                     AND journal.id = account_move_line.journal_id
                     AND account.id = account_move_line.account_id

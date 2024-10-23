@@ -457,7 +457,7 @@ class ExportBankPayments(models.Model):
         id_digits = employees_bank_info.holder_account_id
 
         # # *** Construccion de registro ***
-        aux_txt_data += f'{"ND":<2}{"0":<1}{bank_acc:<20}{amount:0>13}{nationality:<1}{id_digits:0>9}'
+        aux_txt_data += f'{"ND":<2}{"0":<1}{bank_acc:<20}{amount:0>13}{nationality:<1}{id_digits:0>9}'  # noqa: B950
 
         return aux_txt_data
 
@@ -492,7 +492,7 @@ class ExportBankPayments(models.Model):
                 vat_digits = ""
 
             # 2. Construccion de linea
-            txt_data += f'{"NC":<2}{"0":<1}{bank_acc:<20}{total_payroll:0>13}{nationality:<1}{vat_digits:0>9}'
+            txt_data += f'{"NC":<2}{"0":<1}{bank_acc:<20}{total_payroll:0>13}{nationality:<1}{vat_digits:0>9}'  # noqa: B950
 
             for payslip in payslips:
                 # *** Registro detalle ***
@@ -596,7 +596,7 @@ class ExportBankPayments(models.Model):
                     a, b = "áéíóúüÁÉÍÓÚñÑ", "aeiouuAEIOUnN"
                     trans = str.maketrans(a, b)
                     employee_name = employee.name.translate(trans)
-                    txt_data += f'{nationality}{id_digits:0>9}{"  "}{amount:0>21}{self.valid_date.strftime("%d%m%Y")}{employee_name:<60}\n'
+                    txt_data += f'{nationality}{id_digits:0>9}{"  "}{amount:0>21}{self.valid_date.strftime("%d%m%Y")}{employee_name:<60}\n'  # noqa: B950
         elif self.txt_type == "guard":
             if payslips:
                 for payslip in payslips:
@@ -633,7 +633,7 @@ class ExportBankPayments(models.Model):
                     bank_acc = employees_bank_info.bank_account_number
                     bank_code = bank_acc[:4]
 
-                    txt_data += f'{nationality}{id_digits:0>9}{"  "}{first_name:<20}{last_name:<20}{"NO APLICA":<40}{amount:0>21}{nationality}{id_digits:0>9}{print_name:<40}{bank_code}{bank_name:<40}{bank_acc}{description:<25}{"NO APLICA":<40}\n'
+                    txt_data += f'{nationality}{id_digits:0>9}{"  "}{first_name:<20}{last_name:<20}{"NO APLICA":<40}{amount:0>21}{nationality}{id_digits:0>9}{print_name:<40}{bank_code}{bank_name:<40}{bank_acc}{description:<25}{"NO APLICA":<40}\n'  # noqa: B950
         else:
             if payslips:
                 # *** Registro de cabecera ***

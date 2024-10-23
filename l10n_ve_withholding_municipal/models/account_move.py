@@ -132,5 +132,5 @@ class AccountMove(models.Model):
                 "subject_id": self.partner_id.id,
                 "journal_id": self.company_id.in_municipal_journal_id.id,
                 "withholding_account_id": self.company_id.in_municipal_account_id.id,
-                "destination_account_id": self.company_id.partner_id.property_account_payable_id.id,
+                "destination_account_id": self.company_id.partner_id.property_account_payable_id.id,  # noqa: B950
             }

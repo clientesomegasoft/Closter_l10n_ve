@@ -14,7 +14,7 @@ class ProductTemplate(models.Model):
     _sql_constraints = [
         (
             "check_islr_concept",
-            "CHECK((type != 'service') OR apply_withholding_islr = FALSE OR (type = 'service' AND apply_withholding_islr = TRUE AND islr_concept_id IS NOT NULL))",
+            "CHECK((type != 'service') OR apply_withholding_islr = FALSE OR (type = 'service' AND apply_withholding_islr = TRUE AND islr_concept_id IS NOT NULL))",  # noqa: B950
             "Para los productos de tipo servicio el concepto de ISLR es requerido.",
         )
     ]

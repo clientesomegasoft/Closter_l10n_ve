@@ -286,8 +286,8 @@ class ExportBankPaymentsBanavih(models.Model):
             )
 
             # Contruccion de lineas
-            txt_data += f'{nationality}{","}{employee_id}{","}{first_name}{","}{second_name}{","}'
-            txt_data += f'{first_surname}{","}{second_surname}{","}{debt_amount}{","}{entry_date}{","}'
+            txt_data += f'{nationality}{","}{employee_id}{","}{first_name}{","}{second_name}{","}'  # noqa: B950
+            txt_data += f'{first_surname}{","}{second_surname}{","}{debt_amount}{","}{entry_date}{","}'  # noqa: B950
             if exit_date:
                 txt_data += f"{exit_date}"
             i += 1

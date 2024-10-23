@@ -160,13 +160,20 @@ class AccountMove(models.Model):
                                 cs.percentage AS cs_percentage
                             FROM commission_conf_line AS ccl
                             JOIN hr_contract AS hc ON hc.id = ccl.contract_id
-                            LEFT JOIN (SELECT ccl.id AS commission,
-                                                max(cs.id) AS scale
-                                        FROM commission_conf_line AS ccl
-                                        JOIN commission_conf_line_commission_scale_rel AS comun ON comun.commission_conf_line_id = ccl.id
-                                        LEFT JOIN commission_scale AS cs ON cs.id = comun.commission_scale_id
-                                        WHERE ({total_invoice} >= cs.sale_scale_from AND {total_invoice} <= cs.sale_scale_to)
-                                        group by ccl.id) AS scale ON scale.commission = ccl.id
+                            LEFT JOIN (
+                                SELECT ccl.id AS commission,
+                                       max(cs.id) AS scale
+                                FROM commission_conf_line AS ccl
+                                JOIN commission_conf_line_commission_scale_rel
+                                AS comun ON comun.commission_conf_line_id = ccl.id
+                                LEFT JOIN commission_scale
+                                AS cs ON cs.id = comun.commission_scale_id
+                                WHERE (
+                                    {total_invoice} >= cs.sale_scale_from
+                                    AND {total_invoice} <= cs.sale_scale_to
+                                )
+                                GROUP BY ccl.id
+                            ) AS scale ON scale.commission = ccl.id
                             LEFT JOIN commission_scale AS cs ON cs.id = scale.scale
                     WHERE (
                         ccl.department_id = {department} AND

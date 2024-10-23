@@ -130,9 +130,14 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
             groupby_clause = always_present_groupby
         select_period_query = ",".join(
             f"""
-                CASE WHEN period_table.period_index = {i}
-                THEN %s * (SUM(account_move_line.balance_ref) - COALESCE(SUM(part_debit.amount_ref), 0) + COALESCE(SUM(part_credit.amount_ref), 0))
-                ELSE 0 END AS period{i}
+                CASE
+                 WHEN period_table.period_index = {i}
+                 THEN %s * (
+                     SUM(account_move_line.balance_ref) - COALESCE(
+                         SUM(part_debit.amount_ref), 0) + COALESCE(
+                             SUM(part_credit.amount_ref), 0))
+                 ELSE 0
+                END AS period{i}
             """
             for i in range(len(periods))
         )
@@ -144,21 +149,34 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
             SELECT
                 {select_from_groupby}
                 %s * SUM(account_move_line.amount_residual_currency) AS amount_currency,
-                ARRAY_AGG(DISTINCT account_move_line.partner_id) AS partner_id,
+                ARRAY_AGG(
+                    DISTINCT account_move_line.partner_id) AS partner_id,
                 ARRAY_AGG(account_move_line.payment_id) AS payment_id,
-                ARRAY_AGG(DISTINCT COALESCE(account_move_line.date_maturity, account_move_line.date)) AS report_date,
-                ARRAY_AGG(DISTINCT account_move_line.expected_pay_date) AS expected_date,
-                ARRAY_AGG(DISTINCT account.code) AS account_name,
-                ARRAY_AGG(DISTINCT COALESCE(account_move_line.date_maturity, account_move_line.date)) AS due_date,
-                ARRAY_AGG(DISTINCT account_move_line.currency_id) AS currency_id,
+                ARRAY_AGG(
+                    DISTINCT COALESCE(
+                        account_move_line.date_maturity, account_move_line.date)
+                    ) AS report_date,
+                ARRAY_AGG(
+                    DISTINCT account_move_line.expected_pay_date
+                    ) AS expected_date,
+                ARRAY_AGG(
+                    DISTINCT account.code) AS account_name,
+                ARRAY_AGG(
+                    DISTINCT COALESCE(
+                        account_move_line.date_maturity, account_move_line.date)
+                    ) AS due_date,
+                ARRAY_AGG(
+                    DISTINCT account_move_line.currency_id) AS currency_id,
                 COUNT(account_move_line.id) AS aml_count,
                 ARRAY_AGG(account.code) AS account_code,
                 {select_period_query}
 
             FROM {tables}
 
-            JOIN account_journal journal ON journal.id = account_move_line.journal_id
-            JOIN account_account account ON account.id = account_move_line.account_id
+            JOIN account_journal journal
+            ON journal.id = account_move_line.journal_id
+            JOIN account_account account
+            ON account.id = account_move_line.account_id
 
             LEFT JOIN LATERAL (
                 SELECT SUM(part.amount_ref) AS amount_ref, part.debit_move_id
@@ -177,12 +195,16 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
             JOIN period_table ON
                 (
                     period_table.date_start IS NULL
-                    OR COALESCE(account_move_line.date_maturity, account_move_line.date) <= DATE(period_table.date_start)
+                    OR COALESCE(
+                        account_move_line.date_maturity, account_move_line.date
+                    ) <= DATE(period_table.date_start)
                 )
                 AND
                 (
                     period_table.date_stop IS NULL
-                    OR COALESCE(account_move_line.date_maturity, account_move_line.date) >= DATE(period_table.date_stop)
+                    OR COALESCE(
+                        account_move_line.date_maturity, account_move_line.date
+                    ) >= DATE(period_table.date_stop)
                 )
 
             WHERE {where_clause}
@@ -190,9 +212,11 @@ class AgedPartnerBalanceCustomHandler(models.AbstractModel):
             GROUP BY {groupby_clause}
 
             HAVING
-                (SUM(account_move_line.debit_ref) - COALESCE(SUM(part_debit.amount_ref), 0)) != 0
+                (SUM(account_move_line.debit_ref) - COALESCE(
+                    SUM(part_debit.amount_ref), 0)) != 0
                 OR
-                (SUM(account_move_line.credit_ref) - COALESCE(SUM(part_credit.amount_ref), 0)) != 0
+                (SUM(account_move_line.credit_ref) - COALESCE(
+                    SUM(part_credit.amount_ref), 0)) != 0
             {tail_query}
         """
 

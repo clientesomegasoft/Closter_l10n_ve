@@ -13,7 +13,7 @@ class AccountMove(models.Model):
     _sql_constraints = [
         (
             "unique_nro_ctrl_out_invoice",
-            "EXCLUDE (nro_ctrl WITH =, company_id WITH =) WHERE (move_type IN ('out_invoice', 'out_refund'))",
+            "EXCLUDE (nro_ctrl WITH =, company_id WITH =) WHERE (move_type IN ('out_invoice', 'out_refund'))",  # noqa: B950
             "\nYa existe un documento con el mismo número de control !",
         ),
         (

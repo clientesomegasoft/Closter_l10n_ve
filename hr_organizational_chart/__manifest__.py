@@ -24,12 +24,12 @@
     "name": "HR Organizational Chart",
     "version": "16.0.1.0.0",
     "summary": "HR Employees organizational chart",
-    "author": "Cybrosys Techno solutions, Open HRMS",  # pylint: disable=manifest-required-author
+    "author": "Cybrosys Techno solutions, Open HRMS",  # noqa: B950  # pylint: disable=manifest-required-author
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "live_test_url": "https://youtu.be/dyCzplsAysQ",
     "category": "Generic Modules/Human Resources",
-    "website": "https://apps.odoo.com/apps/modules/16.0/pways_so_po_consignment",  # pylint: disable=manifest-required-website
+    "website": "https://apps.odoo.com/apps/modules/16.0/hr_organizational_chart",  # noqa: B950  # pylint: disable=manifest-required-website
     "depends": ["hr"],
     "data": [
         "views/show_employee_chart.xml",

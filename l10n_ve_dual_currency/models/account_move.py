@@ -271,7 +271,7 @@ def _post(self, soft=True):
     posted = super(AM, self)._post(soft)
     # The invoice reference is set during the super call
     for layer in stock_valuation_layers:
-        description = f"{layer.account_move_line_id.move_id.display_name} - {layer.product_id.display_name}"
+        description = f"{layer.account_move_line_id.move_id.display_name} - {layer.product_id.display_name}"  # noqa: B950
         layer.description = description
         if layer.product_id.valuation != "real_time":
             continue

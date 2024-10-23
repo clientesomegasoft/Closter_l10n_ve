@@ -130,7 +130,7 @@ class AccountMove(models.Model):
                 "subject_id": self.partner_id.id,
                 "journal_id": self.company_id.in_islr_journal_id.id,
                 "withholding_account_id": self.company_id.in_islr_account_id.id,
-                "destination_account_id": self.company_id.partner_id.property_account_payable_id.id,
+                "destination_account_id": self.company_id.partner_id.property_account_payable_id.id,  # noqa: B950
                 "invoice_id": self.id,
                 "date": self.date,
                 "line_ids": line_ids,

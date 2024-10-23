@@ -54,7 +54,7 @@ class AccountMoveLine(models.Model):
     _sql_constraints = [
         (
             "check_credit_debit_ref",
-            "CHECK(display_type IN ('line_section', 'line_note') OR debit_ref * credit_ref = 0)",
+            "CHECK(display_type IN ('line_section', 'line_note') OR debit_ref * credit_ref = 0)",  # noqa: B950
             "Wrong credit or debit value in accounting entry !",
         )
     ]
@@ -173,7 +173,9 @@ class AccountMoveLine(models.Model):
                     'debit' AS flag,
                     COALESCE(SUM(part.amount), 0.0) AS amount,
                     COALESCE(SUM(part.amount_ref), 0.0) AS amount_ref,
-                    ROUND(SUM(part.debit_amount_currency), curr.decimal_places) AS amount_currency
+                    ROUND(
+                        SUM(part.debit_amount_currency), curr.decimal_places
+                    ) AS amount_currency
                 FROM account_partial_reconcile part
                 JOIN res_currency curr ON curr.id = part.debit_currency_id
                 WHERE part.debit_move_id IN %s
@@ -184,7 +186,9 @@ class AccountMoveLine(models.Model):
                     'credit' AS flag,
                     COALESCE(SUM(part.amount), 0.0) AS amount,
                     COALESCE(SUM(part.amount_ref), 0.0) AS amount_ref,
-                    ROUND(SUM(part.credit_amount_currency), curr.decimal_places) AS amount_currency
+                    ROUND(
+                        SUM(part.credit_amount_currency), curr.decimal_places
+                    ) AS amount_currency
                 FROM account_partial_reconcile part
                 JOIN res_currency curr ON curr.id = part.credit_currency_id
                 WHERE part.credit_move_id IN %s

@@ -87,24 +87,38 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
             + f"""
                     account_move_line.amount_residual AS balance_operation,
                     account_move_line.amount_residual_currency AS balance_currency,
-                    account_move_line.amount_residual_currency / custom_currency_table.rate AS balance_current,
-                    account_move_line.amount_residual_currency / custom_currency_table.rate - account_move_line.amount_residual AS adjustment,
+account_move_line.amount_residual_currency / custom_currency_table.rate AS balance_current,
+account_move_line.amount_residual_currency / custom_currency_table.rate - account_move_line.amount_residual AS adjustment,
                     account_move_line.currency_id AS currency_id,
                     account_move_line.id AS aml_id
                 FROM {tables}
-                JOIN account_account account ON account_move_line.account_id = account.id
-                JOIN res_currency currency ON currency.id = account_move_line.currency_id
-                JOIN custom_currency_table ON custom_currency_table.currency_id = currency.id
+                JOIN account_account account
+                ON account_move_line.account_id = account.id
+                JOIN res_currency currency
+                ON currency.id = account_move_line.currency_id
+                JOIN custom_currency_table
+                ON custom_currency_table.currency_id = currency.id
                 WHERE {where_clause}
-                    AND (account.currency_id != account_move_line.company_currency_id OR (account.account_type IN ('asset_receivable', 'liability_payable') AND (account_move_line.currency_id != account_move_line.company_currency_id)))
-                    AND (account_move_line.amount_residual != 0 OR account_move_line.amount_residual_currency != 0)
-                    AND {'NOT EXISTS' if line_code == 'to_adjust' else 'EXISTS'} (
-                        SELECT * FROM account_account_exclude_res_currency_provision WHERE account_account_id = account_id AND res_currency_id = account_move_line.currency_id
+                    AND (account.currency_id != account_move_line.company_currency_id
+                     OR (account.account_type IN ('asset_receivable', 'liability_payable')
+                     AND (
+                         account_move_line.currency_id != account_move_line.company_currency_id
+                     )
+                    )
+                )
+                    AND (account_move_line.amount_residual != 0
+                     OR account_move_line.amount_residual_currency != 0)
+                     AND {'NOT EXISTS' if line_code == 'to_adjust' else 'EXISTS'} (
+                         SELECT *
+                         FROM account_account_exclude_res_currency_provision
+                         WHERE account_account_id = account_id
+                         AND res_currency_id = account_move_line.currency_id
                     )
 
                 UNION ALL
 
-                -- Add the lines without currency, i.e. payment in company currency for invoice in foreign currency
+                -- Add the lines without currency, i.e. payment in company
+                -- currency for invoice in foreign currency
                 SELECT
                     """
             + (
@@ -115,32 +129,51 @@ class MulticurrencyRevaluationReportCustomHandler(models.AbstractModel):
             + f"""
                     -part.amount AS balance_operation,
                     CASE
-                       WHEN account_move_line.id = part.credit_move_id THEN -part.debit_amount_currency
+                       WHEN account_move_line.id = part.credit_move_id
+                       THEN -part.debit_amount_currency
                        ELSE -part.credit_amount_currency
                     END AS balance_currency,
                     CASE
-                       WHEN account_move_line.id = part.credit_move_id THEN -part.debit_amount_currency
+                       WHEN account_move_line.id = part.credit_move_id
+                       THEN -part.debit_amount_currency
                        ELSE -part.credit_amount_currency
                     END / custom_currency_table.rate AS balance_current,
                     CASE
-                       WHEN account_move_line.id = part.credit_move_id THEN -part.debit_amount_currency
+                       WHEN account_move_line.id = part.credit_move_id
+                       THEN -part.debit_amount_currency
                        ELSE -part.credit_amount_currency
                     END / custom_currency_table.rate - account_move_line.balance AS adjustment,
                     CASE
-                       WHEN account_move_line.id = part.credit_move_id THEN part.debit_currency_id
+                       WHEN account_move_line.id = part.credit_move_id
+                       THEN part.debit_currency_id
                        ELSE part.credit_currency_id
                     END AS currency_id,
                     account_move_line.id AS aml_id
                 FROM {tables}
                 JOIN account_account account ON account_move_line.account_id = account.id
-                JOIN account_partial_reconcile part ON account_move_line.id = part.credit_move_id OR account_move_line.id = part.debit_move_id
-                JOIN res_currency currency ON currency.id = (CASE WHEN account_move_line.id = part.credit_move_id THEN part.debit_currency_id ELSE part.credit_currency_id END)
+                JOIN account_partial_reconcile part
+                ON account_move_line.id = part.credit_move_id
+                OR account_move_line.id = part.debit_move_id
+                JOIN res_currency currency
+                ON currency.id = (
+                    CASE
+                     WHEN account_move_line.id = part.credit_move_id
+                     THEN part.debit_currency_id
+                     ELSE part.credit_currency_id
+                    END
+                )
                 JOIN custom_currency_table ON custom_currency_table.currency_id = currency.id
                 WHERE {where_clause}
-                    AND (account.currency_id = account_move_line.company_currency_id AND (account.account_type IN ('asset_receivable', 'liability_payable') AND account_move_line.currency_id = account_move_line.company_currency_id))
-                    AND (account_move_line.amount_residual != 0 OR account_move_line.amount_residual_currency != 0)
+                    AND (account.currency_id = account_move_line.company_currency_id
+                    AND (account.account_type IN ('asset_receivable', 'liability_payable')
+                    AND account_move_line.currency_id = account_move_line.company_currency_id))
+                    AND (account_move_line.amount_residual != 0
+                    OR account_move_line.amount_residual_currency != 0)
                     AND {'NOT EXISTS' if line_code == 'to_adjust' else 'EXISTS'} (
-                        SELECT * FROM account_account_exclude_res_currency_provision WHERE account_account_id = account_id AND res_currency_id = account_move_line.currency_id
+                        SELECT *
+                        FROM account_account_exclude_res_currency_provision
+                        WHERE account_account_id = account_id
+                        AND res_currency_id = account_move_line.currency_id
                     )
             ) subquery
 

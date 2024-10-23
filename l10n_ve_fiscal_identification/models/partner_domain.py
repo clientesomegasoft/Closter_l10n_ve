@@ -5,7 +5,7 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     partner_id = fields.Many2one(
-        domain="[('type', '!=', 'private'), ('company_id', 'in', (False, company_id)), ('partner_type', 'in', ('customer', 'customer_supplier'))]"
+        domain="[('type', '!=', 'private'), ('company_id', 'in', (False, company_id)), ('partner_type', 'in', ('customer', 'customer_supplier'))]"  # noqa: B950
     )
 
 
@@ -13,7 +13,7 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     partner_id = fields.Many2one(
-        domain="[('type', '!=', 'private'), ('company_id', 'in', (False, company_id)), ('partner_type', 'in', ('supplier', 'customer_supplier'))]"
+        domain="[('type', '!=', 'private'), ('company_id', 'in', (False, company_id)), ('partner_type', 'in', ('supplier', 'customer_supplier'))]"  # noqa: B950
     )
 
 

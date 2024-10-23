@@ -31,7 +31,10 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         params = []
         if self.pool["account.account"].name.translate:
             lang = self.env.user.lang or get_lang(self.env).code
-            account_name = f"COALESCE(account_account.name->>'{lang}', account_account.name->>'en_US')"
+            account_name = f"""COALESCE(
+                account_account.name->>'{lang}',
+                account_account.name->>'en_US'
+            )"""
         else:
             account_name = "account_account.name"
 
@@ -52,7 +55,9 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                     account_move_line.account_id,
                     account_account.code AS account_code,
                     {account_name} AS account_name,
-                    SUM(ROUND(account_move_line.balance_ref, currency_table.precision)) AS balance
+                    SUM(
+                        ROUND(account_move_line.balance_ref, currency_table.precision)
+                    ) AS balance
                 FROM {tables}
                 JOIN account_account
                     ON account_account.id = account_move_line.account_id
@@ -110,7 +115,10 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         params = []
         if self.pool["account.account"].name.translate:
             lang = self.env.user.lang or get_lang(self.env).code
-            account_name = f"COALESCE(account_account.name->>'{lang}', account_account.name->>'en_US')"
+            account_name = f"""COALESCE(
+                account_account.name->>'{lang}',
+                account_account.name->>'en_US'
+            )"""
         else:
             account_name = "account_account.name"
 
@@ -128,7 +136,11 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                     {account_name} AS account_name,
                     account_account.account_type AS account_account_type,
                     account_account_account_tag.account_account_tag_id AS account_tag_id,
-                    SUM(ROUND(account_partial_reconcile.amount_ref, currency_table.precision)) AS balance
+                    SUM(
+                        ROUND(
+                            account_partial_reconcile.amount_ref,
+                            currency_table.precision)
+                    ) AS balance
                 FROM account_move_line
                 LEFT JOIN {currency_table_query}
                     ON currency_table.company_id = account_move_line.company_id
@@ -137,12 +149,16 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                 JOIN account_account
                     ON account_account.id = account_move_line.account_id
                 LEFT JOIN account_account_account_tag
-                    ON account_account_account_tag.account_account_id = account_move_line.account_id
-                    AND account_account_account_tag.account_account_tag_id IN %s
+                ON account_account_account_tag.account_account_id = account_move_line.account_id
+                AND account_account_account_tag.account_account_tag_id IN %s
                 WHERE account_move_line.move_id IN %s
                     AND account_move_line.account_id NOT IN %s
                     AND account_partial_reconcile.max_date BETWEEN %s AND %s
-                GROUP BY account_move_line.company_id, account_move_line.account_id, account_account.code, account_name, account_account.account_type, account_account_account_tag.account_account_tag_id
+                GROUP BY account_move_line.company_id,
+                         account_move_line.account_id,
+                         account_account.code, account_name,
+                         account_account.account_type,
+                         account_account_account_tag.account_account_tag_id
 
                 UNION ALL
 
@@ -154,7 +170,11 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                     {account_name} AS account_name,
                     account_account.account_type AS account_account_type,
                     account_account_account_tag.account_account_tag_id AS account_tag_id,
-                    -SUM(ROUND(account_partial_reconcile.amount_ref, currency_table.precision)) AS balance
+                    -SUM(
+                        ROUND(
+                            account_partial_reconcile.amount_ref,
+                            currency_table.precision)
+                    ) AS balance
                 FROM account_move_line
                 LEFT JOIN {currency_table_query}
                     ON currency_table.company_id = account_move_line.company_id
@@ -163,12 +183,16 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                 JOIN account_account
                     ON account_account.id = account_move_line.account_id
                 LEFT JOIN account_account_account_tag
-                    ON account_account_account_tag.account_account_id = account_move_line.account_id
-                    AND account_account_account_tag.account_account_tag_id IN %s
+                ON account_account_account_tag.account_account_id = account_move_line.account_id
+                AND account_account_account_tag.account_account_tag_id IN %s
                 WHERE account_move_line.move_id IN %s
                     AND account_move_line.account_id NOT IN %s
                     AND account_partial_reconcile.max_date BETWEEN %s AND %s
-                GROUP BY account_move_line.company_id, account_move_line.account_id, account_account.code, account_name, account_account.account_type, account_account_account_tag.account_account_tag_id
+                GROUP BY account_move_line.company_id,
+                       account_move_line.account_id,
+                       account_account.code, account_name,
+                       account_account.account_type,
+                       account_account_account_tag.account_account_tag_id
 
                 UNION ALL
 
@@ -180,18 +204,25 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                     {account_name} AS account_name,
                     account_account.account_type AS account_account_type,
                     account_account_account_tag.account_account_tag_id AS account_tag_id,
-                    SUM(ROUND(account_move_line.balance_ref, currency_table.precision)) AS balance
+                    SUM(
+                        ROUND(
+                            account_move_line.balance_ref,
+                            currency_table.precision)
+                    ) AS balance
                 FROM account_move_line
                 LEFT JOIN {currency_table_query}
                     ON currency_table.company_id = account_move_line.company_id
                 JOIN account_account
                     ON account_account.id = account_move_line.account_id
                 LEFT JOIN account_account_account_tag
-                    ON account_account_account_tag.account_account_id = account_move_line.account_id
-                    AND account_account_account_tag.account_account_tag_id IN %s
+                ON account_account_account_tag.account_account_id = account_move_line.account_id
+                AND account_account_account_tag.account_account_tag_id IN %s
                 WHERE account_move_line.move_id IN %s
                     AND account_move_line.account_id NOT IN %s
-                GROUP BY account_move_line.account_id, account_account.code, account_name, account_account.account_type, account_account_account_tag.account_account_tag_id
+                GROUP BY account_move_line.account_id,
+                        account_account.code, account_name,
+                        account_account.account_type,
+                        account_account_account_tag.account_account_tag_id
             """
             )
 
@@ -413,7 +444,10 @@ class CashFlowReportCustomHandler(models.AbstractModel):
         params = []
         if self.pool["account.account"].name.translate:
             lang = self.env.user.lang or get_lang(self.env).code
-            account_name = f"COALESCE(account_account.name->>'{lang}', account_account.name->>'en_US')"
+            account_name = f"""COALESCE(
+                account_account.name->>'{lang}',
+                account_account.name->>'en_US'
+            )"""
         else:
             account_name = "account_account.name"
 
@@ -428,17 +462,25 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                     {account_name} AS account_name,
                     account_account.account_type AS account_account_type,
                     account_account_account_tag.account_account_tag_id AS account_tag_id,
-                    SUM(ROUND(account_move_line.balance_ref, currency_table.precision)) AS balance
+                    SUM(
+                        ROUND(
+                            account_move_line.balance_ref,
+                            currency_table.precision)
+                    ) AS balance
                 FROM account_move_line
                 LEFT JOIN {currency_table_query}
                     ON currency_table.company_id = account_move_line.company_id
                 JOIN account_account
                     ON account_account.id = account_move_line.account_id
                 LEFT JOIN account_account_account_tag
-                    ON account_account_account_tag.account_account_id = account_move_line.account_id
-                    AND account_account_account_tag.account_account_tag_id IN %s
+                ON account_account_account_tag.account_account_id = account_move_line.account_id
+                AND account_account_account_tag.account_account_tag_id IN %s
                 WHERE account_move_line.move_id IN %s
-                GROUP BY account_move_line.move_id, account_move_line.account_id, account_account.code, account_name, account_account.account_type, account_account_account_tag.account_account_tag_id
+                GROUP BY account_move_line.move_id,
+                        account_move_line.account_id,
+                        account_account.code, account_name,
+                        account_account.account_type,
+                        account_account_account_tag.account_account_tag_id
             """
             )
 
@@ -500,11 +542,11 @@ class CashFlowReportCustomHandler(models.AbstractModel):
                 # Bank            |           | 100
                 # Receivable      | 100       |
                 #
-                # Reconciled move:                          <- reconciled_amount=100, total_amount=0.0
-                # Account         | Debit     | Credit
-                # --------------------------------------
-                # Receivable      |           | 200
-                # Receivable      | 200       |             <- Only the reconciled part of this entry must be added.
+                # Reconciled move:  <- reconciled_amount=100, total_amount=0.0
+                # Account     | Debit | Credit
+                # -------------------------------
+                # Receivable  |       | 200
+                # Receivable  | 200   | <- Only the reconciled part of this entry must be added.
                 aml_balance = -reconciled_percentage_per_move[aml_column_group_key][
                     aml_move_id
                 ][aml_account_id][0]

@@ -53,11 +53,15 @@ class AccountLiquourTaxReport(models.Model):
     def seek_for_lines(self):
         self._cr.execute(
             """
-            SELECT account_liquor_tax.id, account_liquor_tax.rate, ARRAY_AGG(account_move_line.id)
+            SELECT
+            account_liquor_tax.id, account_liquor_tax.rate, ARRAY_AGG(account_move_line.id)
             FROM liquor_tax_move_line_rel
-            JOIN account_liquor_tax ON account_liquor_tax.id = liquor_tax_move_line_rel.tax_id
-            JOIN account_move_line ON account_move_line.id = liquor_tax_move_line_rel.line_id
-            JOIN account_move ON account_move.id = account_move_line.move_id
+            JOIN account_liquor_tax
+            ON account_liquor_tax.id = liquor_tax_move_line_rel.tax_id
+            JOIN account_move_line
+            ON account_move_line.id = liquor_tax_move_line_rel.line_id
+            JOIN account_move
+            ON account_move.id = account_move_line.move_id
             WHERE
                 account_move.move_type IN ('out_invoice', 'out_refund')
                 AND account_move_line.parent_state = 'posted'

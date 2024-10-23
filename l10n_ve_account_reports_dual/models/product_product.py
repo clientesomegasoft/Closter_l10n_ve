@@ -83,18 +83,89 @@ class ProductProduct(models.Model):
                 SELECT
                     l.product_id as product_id,
                     SUM(
-                        l.price_unit / COALESCE(NULLIF(CASE WHEN l.currency_id = crr.currency_id THEN crr.rate ELSE cr.rate END, 0), 1) *
-                        l.quantity * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END) * ((100 - l.discount) * 0.01)
-                    ) / NULLIF(SUM(l.quantity * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END)), 0) AS avg_unit_price,
-                    SUM(l.quantity * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END)) AS num_qty,
-                    SUM(ABS(l.balance) * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END)) AS total,
-                    SUM(l.quantity * pt.list_price * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END)) AS sale_expected,
+                        l.price_unit / COALESCE(NULLIF(
+                            CASE
+                             WHEN l.currency_id = crr.currency_id
+                             THEN crr.rate
+                             ELSE cr.rate
+                            END, 0
+                        ), 1) *
+                        l.quantity * (
+                            CASE
+                             WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                             THEN 1
+                             ELSE -1
+                            END
+                        ) * ((100 - l.discount) * 0.01)
+                    ) / NULLIF(SUM(l.quantity * (
+                        CASE
+                         WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                         THEN 1
+                         ELSE -1
+                         END
+                    )), 0) AS avg_unit_price,
+                    SUM(l.quantity * (
+                        CASE
+                         WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                         THEN 1
+                         ELSE -1
+                        END
+                    )) AS num_qty,
+                    SUM(ABS(l.balance) * (
+                        CASE
+                         WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                         THEN 1
+                         ELSE -1
+                        END
+                    )) AS total,
+                    SUM(l.quantity * pt.list_price * (
+                        CASE
+                         WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                         THEN 1
+                         ELSE -1
+                        END
+                    )) AS sale_expected,
                     SUM(
-                        l.price_unit / COALESCE(NULLIF(CASE WHEN l.currency_id = crr.currency_id THEN crr.rate ELSE cr.rate END, 0), 1) * crr.rate *
-                        l.quantity * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END) * ((100 - l.discount) * 0.01)
-                    ) / NULLIF(SUM(l.quantity * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END)), 0) AS avg_unit_price_ref,
-                    SUM(ABS(l.balance_ref) * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END)) AS total_ref,
-                    SUM(l.quantity * pt.list_price * crr.rate * (CASE WHEN i.move_type IN ('out_invoice', 'in_invoice') THEN 1 ELSE -1 END)) AS sale_expected_ref
+                        l.price_unit / COALESCE(NULLIF(
+                            CASE
+                             WHEN l.currency_id = crr.currency_id
+                             THEN crr.rate
+                             ELSE cr.rate
+                            END, 0
+                        ), 1) * crr.rate *
+                        l.quantity * (
+                            CASE
+                             WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                             THEN 1
+                             ELSE -1
+                            END
+                        ) * ((100 - l.discount) * 0.01)
+                    ) / NULLIF(
+                        SUM(l.quantity * (
+                            CASE
+                             WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                             THEN 1
+                             ELSE -1
+                            END
+                        )
+                    ), 0) AS avg_unit_price_ref,
+                    SUM(
+                        ABS(l.balance_ref) * (
+                            CASE
+                             WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                             THEN 1
+                             ELSE -1
+                            END
+                        )
+                    ) AS total_ref,
+                    SUM(
+                        l.quantity * pt.list_price * crr.rate * (
+                            CASE
+                             WHEN i.move_type IN ('out_invoice', 'in_invoice')
+                             THEN 1
+                             ELSE -1
+                            END
+                        )) AS sale_expected_ref
                 FROM account_move_line l
                 LEFT JOIN account_move i ON (l.move_id = i.id)
                 LEFT JOIN product_product product ON (product.id=l.product_id)

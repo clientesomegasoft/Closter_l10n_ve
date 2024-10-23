@@ -10,3 +10,5 @@ select = C,E,F,W,B,B9
 ignore = E203,E501,W503
 per-file-ignores=
     __init__.py:F401
+    l10n_ve_account_reports_dual/models/account_move_line_tax_details.py:B950
+    l10n_ve_account_reports_dual/models/account_multicurrency_revaluation_report.py:B950

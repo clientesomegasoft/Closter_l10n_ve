@@ -39,7 +39,8 @@ class ReportArc(models.AbstractModel):
                 COALESCE(SUM(account_withholding_islr.amount), 0.0) AS amount
             FROM {months_table}
             LEFT JOIN account_withholding_islr ON
-                account_withholding_islr.date BETWEEN months_table.date_from AND months_table.date_to
+                account_withholding_islr.date
+                BETWEEN months_table.date_from AND months_table.date_to
                 AND account_withholding_islr.subject_id = {partner_id}
                 AND account_withholding_islr.type = 'supplier'
                 AND account_withholding_islr.state = 'posted'

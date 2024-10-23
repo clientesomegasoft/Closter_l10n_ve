@@ -22,8 +22,13 @@ class Currency(models.Model):
             """
             SELECT id
             FROM res_currency_rate
-            WHERE name <= %s AND currency_id = %s AND company_id = %s
-            ORDER BY DATE(TIMEZONE('UTC', name) AT TIME ZONE %s) DESC, is_bcv_rate DESC NULLS LAST, name DESC
+            WHERE name <= %s
+            AND currency_id = %s
+            AND company_id = %s
+            ORDER BY
+                DATE(TIMEZONE('UTC', name) AT TIME ZONE %s) DESC,
+                is_bcv_rate DESC NULLS LAST,
+                name DESC
             LIMIT 1
         """,
             [

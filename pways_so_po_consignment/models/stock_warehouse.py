@@ -35,7 +35,9 @@ class StockMove(models.Model):
                         "qty_done": line.qty,
                         "product_id": line.product_id.id or False,
                         "product_uom_id": line.product_id.uom_id.id or False,
-                        "location_id": line.line_id.order_id.warehouse_id.consignment_location_id.id,
+                        "location_id": (
+                            line.line_id.order_id.warehouse_id.consignment_location_id.id
+                        ),
                         "location_dest_id": self.location_dest_id.id,
                         "state": move.state,
                     },

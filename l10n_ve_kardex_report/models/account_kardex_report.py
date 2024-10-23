@@ -179,8 +179,18 @@ class AccountKardexReport(models.AbstractModel):
                 COALESCE(svl.quantity, 0.0) AS quantity,
                 COALESCE(svl.unit_cost, 0.0) AS unit_cost,
                 COALESCE(svl.value, 0.0) AS value,
-                COALESCE(SUM(svl.quantity) OVER (PARTITION BY svl.product_id ORDER BY svl.create_date, svl.id), 0.0) AS end_quantity,
-                COALESCE(SUM(svl.value) OVER (PARTITION BY svl.product_id ORDER BY svl.create_date, svl.id), 0.0) AS end_value
+                COALESCE(
+                    SUM(svl.quantity) OVER (
+                        PARTITION BY svl.product_id ORDER BY svl.create_date, svl.id
+                    ),
+                    0.0
+                ) AS end_quantity,
+                COALESCE(
+                    SUM(svl.value) OVER (
+                        PARTITION BY svl.product_id ORDER BY svl.create_date, svl.id
+                    ),
+                    0.0
+                ) AS end_value
             FROM stock_valuation_layer svl
             LEFT JOIN stock_move sm ON sm.id = svl.stock_move_id
             LEFT JOIN stock_location sl ON sl.id = sm.location_id
@@ -202,8 +212,18 @@ class AccountKardexReport(models.AbstractModel):
             SELECT *,
                 end_quantity - quantity AS init_quantity,
                 end_value - value AS init_value,
-                ROUND(COALESCE((end_value - value) / NULLIF((end_quantity - quantity), 0), 0.0), 2) AS init_unit_cost,
-                ROUND(COALESCE(end_value / NULLIF(end_quantity, 0), 0.0), 2) AS end_unit_cost
+                ROUND(
+                    COALESCE(
+                        (end_value - value) / NULLIF((end_quantity - quantity), 0),
+                        0.0
+                    ), 2
+                ) AS init_unit_cost,
+                ROUND(
+                    COALESCE(
+                        end_value / NULLIF(end_quantity, 0),
+                        0.0
+                    ), 2
+                ) AS end_unit_cost
             FROM ({sub_query}) AS RESULT
             WHERE create_date >= %s
         """

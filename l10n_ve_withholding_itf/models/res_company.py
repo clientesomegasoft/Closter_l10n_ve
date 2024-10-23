@@ -15,7 +15,7 @@ class ResCompany(models.Model):
     _sql_constraints = [
         (
             "check_apply_itf",
-            "CHECK(apply_itf = FALSE OR ((itf_percentage > 0 AND itf_percentage <= 100) AND (itf_account_id IS NOT NULL)))",
+            "CHECK(apply_itf = FALSE OR ((itf_percentage > 0 AND itf_percentage <= 100) AND (itf_account_id IS NOT NULL)))",  # noqa: B950
             "El porcentaje de retención ITF debe estar en un rango mayor "
             "a 0 y menor o igual a 100 y la cuenta ITF es requerida !",
         )

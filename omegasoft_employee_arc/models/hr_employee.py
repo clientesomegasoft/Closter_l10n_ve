@@ -9,11 +9,34 @@ class HrEmployeePrivate(models.Model):
         sql = """
             SELECT
                 months_table.month_name AS month,
-                COALESCE(SUM(CASE WHEN hpl.code = 'NET200' THEN hpl.total ELSE 0.0 END), 0.0) AS base,
-                COALESCE(hc.percentage_income_tax_islr, 0.0) AS percentage,
-                COALESCE(SUM(CASE WHEN hpl.code = 'COMP64' THEN hpl.total ELSE 0.0 END), 0.0) AS amount
+                COALESCE(
+                    SUM(
+                        CASE
+                         WHEN hpl.code = 'NET200'
+                         THEN hpl.total
+                         ELSE 0.0
+                        END
+                    ),
+                    0.0
+                ) AS base,
+                COALESCE(
+                    hc.percentage_income_tax_islr,
+                    0.0
+                ) AS percentage,
+                COALESCE(
+                    SUM(
+                        CASE
+                         WHEN hpl.code = 'COMP64'
+                         THEN hpl.total
+                         ELSE 0.0
+                         END
+                    ),
+                    0.0
+                ) AS amount
             FROM {months_table}
-            LEFT JOIN hr_payslip hp ON hp.date BETWEEN months_table.date_from AND months_table.date_to AND
+            LEFT JOIN hr_payslip hp ON hp.date
+            BETWEEN months_table.date_from
+            AND months_table.date_to AND
                 hp.employee_id = {self_id} AND
                 hp.state IN ('done', 'paid') AND
                 hp.company_id = {self_company_id}

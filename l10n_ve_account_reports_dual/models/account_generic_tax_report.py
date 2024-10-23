@@ -89,12 +89,15 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                     SUM(tdr.base_amount) AS base_amount,
                     SUM(tdr.tax_amount) AS tax_amount
                 FROM ({tax_details_query}) AS tdr
-                JOIN account_tax_repartition_line trl ON trl.id = tdr.tax_repartition_line_id
-                JOIN account_tax tax ON tax.id = tdr.tax_id
-                JOIN account_tax src_tax ON
-                    src_tax.id = COALESCE(tdr.group_tax_id, tdr.tax_id)
-                    AND src_tax.type_tax_use IN ('sale', 'purchase')
-                JOIN account_account account ON account.id = tdr.base_account_id
+                JOIN account_tax_repartition_line trl
+                ON trl.id = tdr.tax_repartition_line_id
+                JOIN account_tax tax
+                ON tax.id = tdr.tax_id
+                JOIN account_tax src_tax
+                ON src_tax.id = COALESCE(tdr.group_tax_id, tdr.tax_id)
+                AND src_tax.type_tax_use IN ('sale', 'purchase')
+                JOIN account_account account
+                ON account.id = tdr.base_account_id
                 WHERE tdr.tax_exigible
                 GROUP BY tdr.tax_repartition_line_id, trl.refund_tax_id, {groupby_query_str}
                 ORDER BY src_tax.sequence, src_tax.id, tax.sequence, tax.id
@@ -174,9 +177,12 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                     ARRAY_AGG(child_tax.id) AS child_tax_ids,
                     ARRAY_AGG(DISTINCT child_tax.type_tax_use) AS child_types
                 FROM account_tax_filiation_rel group_tax_rel
-                JOIN account_tax group_tax ON group_tax.id = group_tax_rel.parent_tax
-                JOIN account_tax child_tax ON child_tax.id = group_tax_rel.child_tax
-                WHERE group_tax.amount_type = 'group' AND group_tax.company_id IN %s
+                JOIN account_tax group_tax
+                ON group_tax.id = group_tax_rel.parent_tax
+                JOIN account_tax child_tax
+                ON child_tax.id = group_tax_rel.child_tax
+                WHERE group_tax.amount_type = 'group'
+                AND group_tax.company_id IN %s
                 GROUP BY group_tax.id
             """,
             [
@@ -244,10 +250,14 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                     src_tax.type_tax_use AS src_tax_type_tax_use,
                     {balance_query}
                 FROM {tables}
-                JOIN account_move_line_account_tax_rel tax_rel ON account_move_line.id = tax_rel.account_move_line_id
-                JOIN account_tax tax ON tax.id = tax_rel.account_tax_id
-                LEFT JOIN account_tax src_tax ON src_tax.id = account_move_line.tax_line_id
-                LEFT JOIN account_tax src_group_tax ON src_group_tax.id = account_move_line.group_tax_id
+                JOIN account_move_line_account_tax_rel tax_rel
+                ON account_move_line.id = tax_rel.account_move_line_id
+                JOIN account_tax tax
+                ON tax.id = tax_rel.account_tax_id
+                LEFT JOIN account_tax src_tax
+                ON src_tax.id = account_move_line.tax_line_id
+                LEFT JOIN account_tax src_group_tax
+                ON src_group_tax.id = account_move_line.group_tax_id
                 WHERE {where_clause}
                     AND (
                         /* CABA */
@@ -272,7 +282,9 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                         )
                     )
                 GROUP BY tax.id, src_group_tax.id, src_tax.id
-                ORDER BY src_group_tax.sequence, src_group_tax.id, src_tax.sequence, src_tax.id, tax.sequence, tax.id
+                ORDER BY src_group_tax.sequence,
+                    src_group_tax.id, src_tax.sequence,
+                    src_tax.id, tax.sequence, tax.id
             """,
                 where_params,
             )
@@ -327,7 +339,8 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                         row["tax_id"] in group_of_taxes_info
                         and group_of_taxes_info[row["tax_id"]]["to_expand"]
                     ):
-                        # Expand the group of taxes since it contains at least one tax with a type != 'none'.
+                        # Expand the group of taxes since it contains at least one
+                        # tax with a type != 'none'.
                         group_info = group_of_taxes_info[row["tax_id"]]
                         for child_tax_id in group_info["child_tax_ids"]:
                             results[group_info["type_tax_use"]]["children"][
@@ -356,8 +369,10 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                     group_tax.type_tax_use AS group_tax_type_tax_use,
                     {balance_query}
                 FROM {tables}
-                JOIN account_tax tax ON tax.id = account_move_line.tax_line_id
-                LEFT JOIN account_tax group_tax ON group_tax.id = account_move_line.group_tax_id
+                JOIN account_tax tax
+                ON tax.id = account_move_line.tax_line_id
+                LEFT JOIN account_tax group_tax
+                ON group_tax.id = account_move_line.group_tax_id
                 WHERE {where_clause}
                     AND (
                         /* CABA */
@@ -366,9 +381,11 @@ class GenericTaxReportCustomHandler(models.AbstractModel):
                         OR tax.tax_exigibility != 'on_payment'
                     )
                     AND (
-                        (group_tax.id IS NULL AND tax.type_tax_use IN ('sale', 'purchase'))
+                        (group_tax.id IS NULL
+                        AND tax.type_tax_use IN ('sale', 'purchase'))
                         OR
-                        (group_tax.id IS NOT NULL AND group_tax.type_tax_use IN ('sale', 'purchase'))
+                        (group_tax.id IS NOT NULL
+                        AND group_tax.type_tax_use IN ('sale', 'purchase'))
                     )
                 GROUP BY tax.id, group_tax.id
             """,

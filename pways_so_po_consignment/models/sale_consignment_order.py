@@ -194,7 +194,9 @@ class SaleConsignmentOrder(models.Model):
                                     "product_id": lot.product_id.id,
                                     "product_uom_id": lot.product_id.uom_id.id,
                                     "location_id": consignment.warehouse_id.lot_stock_id.id,
-                                    "location_dest_id": consignment.warehouse_id.consignment_location_id.id,
+                                    "location_dest_id": (
+                                        consignment.warehouse_id.consignment_location_id.id
+                                    ),
                                 },
                             ]
                         )
@@ -210,7 +212,9 @@ class SaleConsignmentOrder(models.Model):
                                 "product_id": line.product_id.id,
                                 "product_uom_id": line.product_id.uom_id.id,
                                 "location_id": consignment.warehouse_id.lot_stock_id.id,
-                                "location_dest_id": consignment.warehouse_id.consignment_location_id.id,
+                                "location_dest_id": (
+                                    consignment.warehouse_id.consignment_location_id.id
+                                ),
                             },
                         ]
                     )
@@ -224,7 +228,9 @@ class SaleConsignmentOrder(models.Model):
                             "origin": consignment.name,
                             "product_id": line.product_id.id,
                             "location_id": consignment.warehouse_id.lot_stock_id.id,
-                            "location_dest_id": consignment.warehouse_id.consignment_location_id.id,
+                            "location_dest_id": (
+                                consignment.warehouse_id.consignment_location_id.id
+                            ),
                             "product_uom_qty": quantity,
                             "product_uom": line.product_id.uom_id.id,
                             "group_id": group_id.id,
@@ -374,7 +380,7 @@ class SaleConsignmentOrder(models.Model):
             standard_price = sum(product_ids.mapped("standard_price"))
             commission_price = ((sale_price - standard_price) * commission) / 100
             sale_name = ", ".join(income_ids.mapped("name")) or ""
-            name = f"{self.partner_id.name}-{product_commission.name}-{commission}-{self.name}-{sale_name}"
+            name = f"{self.partner_id.name}-{product_commission.name}-{commission}-{self.name}-{sale_name}"  # noqa: B950
             if product_commission and commission_price:
                 vals = (
                     0,

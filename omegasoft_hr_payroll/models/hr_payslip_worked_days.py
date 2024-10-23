@@ -35,7 +35,7 @@ class HrPayslipWorkedDays(models.Model):
                     worked_days.currency_id
                     != worked_days.payslip_id.contract_id.custom_hourly_wage_currency
                 ):
-                    worked_days.amount = worked_days.payslip_id.contract_id.custom_hourly_wage_currency._convert(
+                    worked_days.amount = worked_days.payslip_id.contract_id.custom_hourly_wage_currency._convert(  # noqa: B950
                         worked_days.amount,
                         worked_days.currency_id,
                         self.env.company,
@@ -66,7 +66,7 @@ class HrPayslipWorkedDays(models.Model):
                     worked_days.currency_id
                     != worked_days.payslip_id.contract_id.custom_wage_currency
                 ):
-                    worked_days.amount = worked_days.payslip_id.contract_id.custom_wage_currency._convert(
+                    worked_days.amount = worked_days.payslip_id.contract_id.custom_wage_currency._convert(  # noqa: B950
                         worked_days.amount,
                         worked_days.currency_id,
                         self.env.company,
