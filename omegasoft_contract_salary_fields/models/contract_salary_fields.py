@@ -223,7 +223,7 @@ class ContractSalaryField(models.Model):
                 if payslip_obj or record.is_average_wage:
                     if neto["struct_type"].best_weeks_check:
                         values = neto.get("neto")
-                        for iterator in range(
+                        for _iterator in range(
                             int(neto["struct_type"].number_of_best_weeks)
                         ):
                             max_value = max(values, key=values.get) if values else False

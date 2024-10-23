@@ -327,7 +327,7 @@ class SocialBenefit(models.Model):
                             )
                         ):
                             additional_days = 0
-                            for item in range(
+                            for _item in range(
                                 int(current_contract.years_of_seniority / 2)
                             ):
                                 additional_days += 2
