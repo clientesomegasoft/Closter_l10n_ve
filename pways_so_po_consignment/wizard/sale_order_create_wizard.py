@@ -100,7 +100,9 @@ class SaleOrderCreateWizards(models.TransientModel):
             )
 
             for lot_serial in line.order_line_ids:
-                lot_serial_id = self.env["sale.order.line.lot.serial"].create(
+                lot_serial_id = self.env[  # noqa: F841
+                    "sale.order.line.lot.serial"
+                ].create(
                     {
                         "line_id": lines_id.id,
                         "product_id": lot_serial.product_id.id or False,

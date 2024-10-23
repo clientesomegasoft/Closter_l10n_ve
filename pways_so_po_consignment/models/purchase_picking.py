@@ -1,23 +1,8 @@
-from odoo import SUPERUSER_ID, fields, models
-
-
-class PurchaseOrderLine(models.Model):
-    _inherit = (
-        "purchase.order.line"  # pylint: disable=consider-merging-classes-inherited
-    )
-
-    location_id = fields.Many2one("stock.location", "Location", copy=False)
-
-    def _prepare_stock_moves(self, picking):
-        res = super(__class__, self)._prepare_stock_moves(picking)
-        if self.location_id:
-            for val in res:
-                val["location_dest_id"] = self.location_id and self.location_id.id
-        return res
+from odoo import SUPERUSER_ID, models
 
 
 class PurchaseOrder(models.Model):
-    _inherit = "purchase.order"  # pylint: disable=consider-merging-classes-inherited
+    _inherit = "purchase.order"
 
     def _get_location_picking(self, location_id):
         moves = self.picking_ids.mapped("move_lines").filtered(

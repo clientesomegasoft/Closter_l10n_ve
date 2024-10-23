@@ -127,9 +127,16 @@ class ExpensesDetails(models.Model):
 
 
 class PurchaseOrderLine(models.Model):
-    _inherit = (
-        "purchase.order.line"  # pylint: disable=consider-merging-classes-inherited
-    )
+    _inherit = "purchase.order.line"
+
+    location_id = fields.Many2one("stock.location", "Location", copy=False)
+
+    def _prepare_stock_moves(self, picking):
+        res = super(__class__, self)._prepare_stock_moves(picking)
+        if self.location_id:
+            for val in res:
+                val["location_dest_id"] = self.location_id and self.location_id.id
+        return res
 
     @api.model_create_multi
     def create(self, vals_list):

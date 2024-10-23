@@ -67,31 +67,3 @@ class SaleOrder(models.Model):
                                 % (record.product_id.name)
                             )
                         )
-
-
-class SaleOrderLine(models.Model):
-    _inherit = "sale.order.line"  # pylint: disable=consider-merging-classes-inherited
-
-    purchase_order_line_id = fields.Many2one("purchase.order.line", "Purchase Line")
-
-    def _prepare_invoice_line(self, **optional_values):
-        values = super(__class__, self)._prepare_invoice_line(**optional_values)
-        if self.order_id.analytic_id:
-            values["analytic_distribution"] = {self.order_id.analytic_id.id: 100}
-        return values
-
-    @api.depends("product_id")
-    def _compute_product_uom(self):
-        res = super()._compute_product_uom()
-        for rec in self:
-            if rec.order_id.is_consignments_purchase and not rec.order_id.analytic_id:
-                raise ValidationError(_("Please select consignment account"))
-            if rec.order_id.is_consignments_purchase and rec.order_id.analytic_id:
-                product_line_ids = (
-                    rec.order_id.analytic_id.purchase_order_id.order_line.filtered(
-                        lambda x: x.product_id == rec.product_id
-                    )
-                )
-                if product_line_ids:
-                    rec.purchase_order_line_id = product_line_ids[0]
-        return res
