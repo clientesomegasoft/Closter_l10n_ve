@@ -27,9 +27,10 @@
     "author": "Cybrosys Techno solutions, Open HRMS",  # noqa: B950  # pylint: disable=manifest-required-author
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
-    "live_test_url": "https://youtu.be/dyCzplsAysQ",
     "category": "Generic Modules/Human Resources",
-    "website": "https://apps.odoo.com/apps/modules/16.0/hr_organizational_chart",  # noqa: B950  # pylint: disable=manifest-required-website
+    "website": "https://github.com/OCA/l10n-venezuela",
+    # "live_test_url": "https://youtu.be/dyCzplsAysQ",
+    "live_test_url": "https://apps.odoo.com/apps/modules/16.0/hr_organizational_chart",  # noqa: B950
     "depends": ["hr"],
     "data": [
         "views/show_employee_chart.xml",

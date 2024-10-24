@@ -8,7 +8,8 @@
     third-party vendor such as a consignment store. the consignee is financially
     responsible (the buyer) for the receipt of a shipment also includes commission
     on consignment and multiple reports.""",
-    "website": "https://apps.odoo.com/apps/modules/16.0/pways_so_po_consignment",  # noqa: B950  # pylint: disable=manifest-required-website
+    "website": "https://github.com/OCA/l10n-venezuela",
+    "live_test_url": "https://apps.odoo.com/apps/modules/16.0/pways_so_po_consignment",  # noqa: B950
     "depends": ["purchase_stock", "sale_management", "sale_stock"],
     "data": [
         "security/purchase_security_inherit.xml",
