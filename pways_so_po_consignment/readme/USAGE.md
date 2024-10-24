@@ -1,3 +1,0 @@
-To usage this module, you need to:
-
-* do this ...
