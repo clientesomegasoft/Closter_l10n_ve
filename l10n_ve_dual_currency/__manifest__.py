@@ -13,9 +13,9 @@
         "stock_landed_costs",
         "l10n_ve_config_account",
     ],
-    'external_dependencies': {
-        'python': [
-            'pytz',
+    "external_dependencies": {
+        "python": [
+            "pytz",
         ],
     },
     "data": [

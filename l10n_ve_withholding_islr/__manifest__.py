@@ -11,9 +11,9 @@
     "depends": [
         "l10n_ve_config_withholding",
     ],
-    'external_dependencies': {
-        'python': [
-            'lxml',
+    "external_dependencies": {
+        "python": [
+            "lxml",
         ],
     },
     "data": [

@@ -17,9 +17,9 @@
         "hr_work_entry",
         "hr_work_entry_contract_enterprise",
     ],
-    'external_dependencies': {
-        'python': [
-            'pytz',
+    "external_dependencies": {
+        "python": [
+            "pytz",
         ],
     },
     "data": [
