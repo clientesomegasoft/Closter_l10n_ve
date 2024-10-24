@@ -13,6 +13,11 @@
         "stock_landed_costs",
         "l10n_ve_config_account",
     ],
+    'external_dependencies': {
+        'python': [
+            'pytz',
+        ],
+    },
     "data": [
         "views/account_move_views.xml",
         "views/account_payment.xml",

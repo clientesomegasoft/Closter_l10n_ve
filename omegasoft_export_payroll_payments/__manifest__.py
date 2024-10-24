@@ -10,7 +10,17 @@
     ],
     "website": "https://github.com/OCA/l10n-venezuela",
     "summary": "Generation of txt file for mass payroll payments",
-    "depends": ["base", "hr", "hr_payroll", "omegasoft_hr_employee_bank_information"],
+    "depends": [
+        "base",
+        "hr",
+        "hr_payroll",
+        "omegasoft_hr_employee_bank_information"
+    ],
+    'external_dependencies': {
+        'python': [
+            'pytz',
+        ],
+    },
     "data": [
         "security/ir.model.access.csv",
         "views/export_bank_payments_views.xml",

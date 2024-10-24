@@ -11,6 +11,11 @@
     "depends": [
         "l10n_ve_config_withholding",
     ],
+    'external_dependencies': {
+        'python': [
+            'lxml',
+        ],
+    },
     "data": [
         "security/ir.model.access.csv",
         "security/security.xml",

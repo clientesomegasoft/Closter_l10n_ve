@@ -17,6 +17,11 @@
         "hr_work_entry",
         "hr_work_entry_contract_enterprise",
     ],
+    'external_dependencies': {
+        'python': [
+            'pytz',
+        ],
+    },
     "data": [
         "security/ir.model.access.csv",
         "views/hr_job.xml",

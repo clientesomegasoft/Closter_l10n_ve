@@ -12,6 +12,11 @@
         "l10n_ve_dual_currency",
         "base_import",
     ],
+    'external_dependencies': {
+        'python': [
+            'pytz',
+        ],
+    },
     "data": [],
     "application": False,
     "installable": True,
