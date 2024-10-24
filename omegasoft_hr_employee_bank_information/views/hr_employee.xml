@@ -1,22 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="hr_view_employee_form_omegasoft_bank_information" model="ir.ui.view">
         <field name="name">hr.view.employee.form.omegasoft.bank.information</field>
         <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="omegasoft_hr_employee_family_information.hr_view_employee_form_omegasoft_family_information"/>
+        <field
+            name="inherit_id"
+            ref="omegasoft_hr_employee_family_information.hr_view_employee_form_omegasoft_family_information"
+        />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='family_informartion']" position="after">
                 <page name="bank_information" string="Bank information">
                     <field name="bank_information_ids" nolabel="1">
                         <tree editable="bottom" create="1">
-                            <field name="name" required="1"/>
-                            <field name="bank_account_number" required="1"/>
-                            <field name="account_type" required="1"/>
-                            <field name="account_holder" required="1"/>
-                            <field name="letter" required="1"/>
-                            <field name="holder_account_id" required="1"/>
-                            <field name="is_payroll_account" required="1"/>
+                            <field name="name" required="1" />
+                            <field name="bank_account_number" required="1" />
+                            <field name="account_type" required="1" />
+                            <field name="account_holder" required="1" />
+                            <field name="letter" required="1" />
+                            <field name="holder_account_id" required="1" />
+                            <field name="is_payroll_account" required="1" />
                         </tree>
                     </field>
                 </page>

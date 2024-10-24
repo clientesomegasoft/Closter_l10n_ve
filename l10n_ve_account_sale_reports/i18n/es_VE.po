@@ -62,11 +62,7 @@ msgid "Untaxed Amount To Invoice Ref"
 msgstr "Base imponible a facturar Ope"
 
 #. module: l10n_ve_account_sale_reports
+#: model:ir.model.fields,field_description:l10n_ve_account_sale_reports.field_sale_report__price_subtotal_ref
 #: model:ir.model.fields,field_description:l10n_ve_account_sale_reports.field_account_invoice_report__price_subtotal_ref
 msgid "Untaxed Total Ref"
 msgstr "Total libre de impuestos Ope"
-
-#. module: l10n_ve_account_sale_reports
-#: model:ir.model.fields,field_description:l10n_ve_account_sale_reports.field_sale_report__price_subtotal_ref
-msgid "Untaxed Total Ref"
-msgstr "Base Imponible Ope"

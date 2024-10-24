@@ -1,29 +1,39 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-    
+
     <record id="hr_export_payment_banavih" model="ir.ui.view">
         <field name="name">hr.export.payment.banavih</field>
         <field name="model">export.bank.payments</field>
-        <field name="inherit_id" ref="omegasoft_export_payroll_payments.export_bank_payments_view_form" />
+        <field
+            name="inherit_id"
+            ref="omegasoft_export_payroll_payments.export_bank_payments_view_form"
+        />
         <field name="arch" type="xml">
-            
+
             <xpath expr="//field[@name='by_employee']" position="replace">
-                <field name="by_employee" attrs="{'invisible': [('type_trans', '!=', 'payroll')]}"/>
+                <field
+                    name="by_employee"
+                    attrs="{'invisible': [('type_trans', '!=', 'payroll')]}"
+                />
             </xpath>
 
             <xpath expr="//field[@name='bank_id']" position="replace">
-                <field name="bank_id" options="{'no_create': True}" attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}"/>
+                <field
+                    name="bank_id"
+                    options="{'no_create': True}"
+                    attrs="{'invisible': [('type_trans', '!=', 'payroll')], 'required': [('type_trans', '=', 'payroll')]}"
+                />
             </xpath>
 
             <xpath expr="//sheet/group[1]/group[1]/div[1]" position="replace">
                 <div>
-                    <field name="date_start" required="1" class="oe_inline"/>
-                    -<field name="date_end" required="1" class="oe_inline"/>
+                    <field name="date_start" required="1" class="oe_inline" />
+                    -<field name="date_end" required="1" class="oe_inline" />
                 </div>
             </xpath>
-            
+
         </field>
     </record>
-    
-    
+
+
 </odoo>

@@ -1,16 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
-    <data noupdate="1">
-    
-        <record id="employee_file_code_comp_rule" model="ir.rule">
-			<field name="name">employee.file.code.comp.rule</field>
-			<field name="model_id" ref="model_employee_file_code"/>
-			<field eval="True" name="global"/>
-			<field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
-		</record>
-    
-    </data>
-    
-
+    <record id="employee_file_code_comp_rule" model="ir.rule">
+        <field name="name">employee.file.code.comp.rule</field>
+        <field name="model_id" ref="model_employee_file_code" />
+        <field eval="True" name="global" />
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
 </odoo>

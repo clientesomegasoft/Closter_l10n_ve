@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <template id="canapdis_document">
@@ -9,10 +9,10 @@
                         CANAPDIS
                     </div>
                     <div class="col-6 text-center">
-                        Date: <span t-field="doc.date"/>
+                        Date: <span t-field="doc.date" />
                     </div>
                 </div>
-                <div style="height: 5mm;"></div>
+                <div style="height: 5mm;" />
                 <table class="table table-sm table-bordered" style="width:100%">
                     <thead>
                         <tr>
@@ -24,16 +24,23 @@
                     <tbody>
                         <t t-foreach="doc.employee_ids" t-as="line">
                             <tr>
-                                <td><span t-field="line.name"/></td>
+                                <td><span t-field="line.name" /></td>
                                 <td>
-                                    <span t-esc="line.employee_type_disability_ids[0].name"/>
-                                    <t t-if="len(line.employee_type_disability_ids) > 1">
-                                        <t t-foreach="line.employee_type_disability_ids[1:]" t-as="disability">
-                                            , <span t-esc="disability.name"/>
+                                    <span
+                                        t-esc="line.employee_type_disability_ids[0].name"
+                                    />
+                                    <t
+                                        t-if="len(line.employee_type_disability_ids) > 1"
+                                    >
+                                        <t
+                                            t-foreach="line.employee_type_disability_ids[1:]"
+                                            t-as="disability"
+                                        >
+                                            , <span t-esc="disability.name" />
                                         </t>
                                     </t>
                                 </td>
-                                <td><span t-field="line.certificate_number"/></td>
+                                <td><span t-field="line.certificate_number" /></td>
                             </tr>
                         </t>
                     </tbody>
@@ -45,7 +52,7 @@
     <template id="canapdis_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="omegasoft_hr_employee_disability.canapdis_document"/>
+                <t t-call="omegasoft_hr_employee_disability.canapdis_document" />
             </t>
         </t>
     </template>
@@ -54,10 +61,14 @@
         <field name="name">CANAPDIS</field>
         <field name="model">hr.canapdis</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">omegasoft_hr_employee_disability.canapdis_report</field>
-        <field name="report_file">omegasoft_hr_employee_disability.canapdis_report</field>
+        <field
+            name="report_name"
+        >omegasoft_hr_employee_disability.canapdis_report</field>
+        <field
+            name="report_file"
+        >omegasoft_hr_employee_disability.canapdis_report</field>
         <field name="print_report_name">(object.name)</field>
-        <field name="binding_model_id" ref="model_hr_canapdis"/>
+        <field name="binding_model_id" ref="model_hr_canapdis" />
         <field name="attachment">'%s.pdf' % (object.name)</field>
         <field name="attachment_use">True</field>
         <field name="binding_type">report</field>

@@ -1,22 +1,25 @@
-from odoo import fields, models, api, _
-from odoo.exceptions import UserError, ValidationError
-    
+from odoo import fields, models
+
+
 class Company(models.Model):
-    _inherit = 'res.company'
-    
+    _inherit = "res.company"
+
     selection_type_date_benefit = fields.Selection(
-        selection=[('calendar_date', 'Calendat date'),
-                   ('contract_start_date', 'Contract start date')], 
+        selection=[
+            ("calendar_date", "Calendat date"),
+            ("contract_start_date", "Contract start date"),
+        ],
         required=True,
-        string='Type date benefit calculation'
+        string="Type date benefit calculation",
     )
-    
+
+
 class ResConfigSettings(models.TransientModel):
-    _inherit = 'res.config.settings'
-    
+    _inherit = "res.config.settings"
+
     selection_type_date_benefit = fields.Selection(
         related="company_id.selection_type_date_benefit",
-        readonly=False, 
+        readonly=False,
         required=True,
-        string='Type date benefit calculation'
+        string="Type date benefit calculation",
     )

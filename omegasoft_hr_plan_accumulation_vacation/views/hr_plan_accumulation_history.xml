@@ -1,25 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
-        <!-- Define the XML view for the tree view -->
-        <record id="omegasoft_view_hr_accumulated_history_tree" model="ir.ui.view">
-            <field name="name">hr.accumulated.history.tree</field>
-            <field name="model">hr_plan_accumulation.history</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="employee_id" invisible="1"/>
-                    <field name="employee_ids" invisible="1"/>
-                    <field name="request_date_from"/>
-                    <field name="request_date_to"/>
-                    <field name="period"/>
-                    <field name="days_law"/>
-                    <field name="vacation_bonus"/>
-                    <field name="additional_days"/>
-                    <field name="time_off_type_id"/>
-                    <field name="state" widget="badge" decoration-info="state in ('draft', 'confirm')" decoration-warning="state == 'refuse'" decoration-success="state in ('validate1', 'validate')"/>
-                    <field name="leave_id" invisible="1"/>
-                </tree>
-            </field>
-        </record>
-    </data>
+    <!-- Define the XML view for the tree view -->
+    <record id="omegasoft_view_hr_accumulated_history_tree" model="ir.ui.view">
+        <field name="name">hr.accumulated.history.tree</field>
+        <field name="model">hr_plan_accumulation.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" invisible="1" />
+                <field name="employee_ids" invisible="1" />
+                <field name="request_date_from" />
+                <field name="request_date_to" />
+                <field name="period" />
+                <field name="days_law" />
+                <field name="vacation_bonus" />
+                <field name="additional_days" />
+                <field name="time_off_type_id" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-info="state in ('draft', 'confirm')"
+                    decoration-warning="state == 'refuse'"
+                    decoration-success="state in ('validate1', 'validate')"
+                />
+                <field name="leave_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
 </odoo>

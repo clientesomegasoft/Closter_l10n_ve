@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="omegasoft_hr_organizational_units" model="ir.ui.view">
         <field name="name">omegasoft.hr.organizational.units</field>
         <field name="model">hr.job</field>
-        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="inherit_id" ref="hr.view_hr_job_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='department_id']" position="after">
-                <field name="active_organizational_units" invisible="1"/>
-                <field name="organizational_units_id" attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"/>
+                <field name="active_organizational_units" invisible="1" />
+                <field
+                    name="organizational_units_id"
+                    attrs="{'invisible': [('active_organizational_units', '=', False)], 'required': [('active_organizational_units', '=', True)]}"
+                />
             </xpath>
             <xpath expr="//field[@name='department_id']" position="attributes">
                 <attribute name="required">1</attribute>

@@ -1,36 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
     <record id="l10n_ve_omegasoft_res_config_settings_view_form" model="ir.ui.view">
         <field name="name">l10n.ve.omegasoft.res.config.settings.view.form</field>
         <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('settings')]" position="inside">
-                <div class="app_settings_block" data-string="Localization Payroll" string="Localization Payroll" data-key="omegasoft_payroll_res_config_settings">
+                <div
+                    class="app_settings_block"
+                    data-string="Localization Payroll"
+                    string="Localization Payroll"
+                    data-key="omegasoft_payroll_res_config_settings"
+                >
 
                     <h2>Wage configuration</h2>
-                    <div class="row mt16 o_settings_container" id="l10n_ve_average_salary_settings">
-                        <div class="col-12 col-lg-6 o_setting_box" id="l10n_ve_average_salary_settings_setting">
+                    <div
+                        class="row mt16 o_settings_container"
+                        id="l10n_ve_average_salary_settings"
+                    >
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="l10n_ve_average_salary_settings_setting"
+                        >
                             <div class="o_setting_right_pane">
                                 <div class="text-muted">
-                                            Configuration of the pay grade, pay structure and pay rule codes, 
+                                            Configuration of the pay grade, pay structure and pay rule codes,
                                             to be taken into account for the calculation of the base salary.
                                 </div>
 
                                 <span class="o_form_label">Categories for basic</span>
                                 <div class="mt8" id="categories_for_basic">
-                                    <field name="salary_rules_categories_basic" options="{'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_categories_basic"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
                                 <span class="o_form_label">Payroll structure</span>
                                 <div class="mt8" id="payroll_structure_for_basic">
-                                    <field name="payroll_structure_for_basic" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="payroll_structure_for_basic"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
                                 <span class="o_form_label">Wage rule codes</span>
                                 <div class="mt8" id="salary_rules_for_basic">
-                                    <field name="salary_rules_for_basic" widget="many2many_tags" domain="[('category_id', '=', salary_rules_categories_basic),('struct_id', 'in', payroll_structure_for_basic),('code', '=', 'BAS7')]" class="oe_inline" options="{'no_open': True, 'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_for_basic"
+                                        widget="many2many_tags"
+                                        domain="[('category_id', '=', salary_rules_categories_basic),('struct_id', 'in', payroll_structure_for_basic),('code', '=', 'BAS7')]"
+                                        class="oe_inline"
+                                        options="{'no_open': True, 'no_create': True}"
+                                    />
                                 </div>
 
                                 <div class="text-muted">
@@ -40,17 +64,30 @@
 
                                 <span class="o_form_label">Categories for net</span>
                                 <div class="mt8" id="categories_for_net">
-                                    <field name="salary_rules_categories_net" options="{'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_categories_net"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
                                 <span class="o_form_label">Payroll structure</span>
                                 <div class="mt8" id="payroll_structure_for_net">
-                                    <field name="payroll_structure_for_net" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="payroll_structure_for_net"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
                                 <span class="o_form_label">Wage rule codes</span>
                                 <div class="mt8" id="salary_rules_for_net">
-                                    <field name="salary_rules_for_net" widget="many2many_tags" domain="[('category_id', '=', salary_rules_categories_net),('struct_id', 'in', payroll_structure_for_net)]" class="oe_inline" options="{'no_open': True, 'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_for_net"
+                                        widget="many2many_tags"
+                                        domain="[('category_id', '=', salary_rules_categories_net),('struct_id', 'in', payroll_structure_for_net)]"
+                                        class="oe_inline"
+                                        options="{'no_open': True, 'no_create': True}"
+                                    />
                                 </div>
 
                             </div>
@@ -60,29 +97,43 @@
                             <field name="average_wage_ids" invisible="1" />
 
                             <div class="o_setting_right_pane">
-                                <span class="o_form_label">Average salary settings</span>
+                                <span
+                                    class="o_form_label"
+                                >Average salary settings</span>
                                 <div class="mt8">
-                                    <field name="average_wage_count" class="w-auto pl-1 font-weight-bold"/>
+                                    <field
+                                        name="average_wage_count"
+                                        class="w-auto pl-1 font-weight-bold"
+                                    />
 
                                     <span class="o_form_label">
                                             Lines for calculating the average wage
                                     </span>
 
                                     <div>
-                                        <button name="%(average_wage_lines_action)d" type="action" class="oe_link">Manage lines for average wage calculation</button>
+                                        <button
+                                            name="%(average_wage_lines_action)d"
+                                            type="action"
+                                            class="oe_link"
+                                        >Manage lines for average wage calculation</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-6 col-12 o_setting_box">
                             <div class="o_setting_right_pane">
                                 <div class="text-muted">
                                     Selection of the structures in which the rate will be mandatory when creating the payroll.
                                 </div>
-                                <span class="o_form_label">Fee required for structures, in receipt of payment</span>
+                                <span
+                                    class="o_form_label"
+                                >Fee required for structures, in receipt of payment</span>
                                 <div class="mt8" id="payroll_structure_for_rate">
-                                    <field name="payroll_structure_for_rate" widget="many2many_tags"/>
+                                    <field
+                                        name="payroll_structure_for_rate"
+                                        widget="many2many_tags"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -90,16 +141,25 @@
                     </div>
 
                     <h2>Profits</h2>
-                    <div class="row mt16 o_settings_container" id="l10n_ve_configuration_profits">
+                    <div
+                        class="row mt16 o_settings_container"
+                        id="l10n_ve_configuration_profits"
+                    >
                         <div class="col-lg-6 col-12 o_setting_box">
                             <div class="o_setting_right_pane">
                                 <div class="text-muted">
-                                        Configuration of the Structures for the reinitialization of Labor Liabilities 
+                                        Configuration of the Structures for the reinitialization of Labor Liabilities
                                         (Profit Sharing Liabilities).
                                 </div>
-                                <span class="o_form_label">Structures for the reinitialization of Labor Liabilities</span>
+                                <span
+                                    class="o_form_label"
+                                >Structures for the reinitialization of Labor Liabilities</span>
                                 <div class="mt8" id="structures_for_utility_resets">
-                                    <field name="structures_for_utility_resets" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="structures_for_utility_resets"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -111,7 +171,11 @@
                                 </div>
                                 <span class="o_form_label">Categories for profits</span>
                                 <div class="mt8">
-                                    <field name="salary_rules_categories_for_profits" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_categories_for_profits"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
                                 <div class="text-muted">
@@ -119,31 +183,53 @@
                                 </div>
                                 <span class="o_form_label">Structures for profits</span>
                                 <div class="mt8">
-                                    <field name="payroll_structure_for_profits" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="payroll_structure_for_profits"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <h2>Configuration of social benefits</h2>
-                    <div class="row mt16 o_settings_container" id="l10n_ve_configuration_social_benefits">
+                    <div
+                        class="row mt16 o_settings_container"
+                        id="l10n_ve_configuration_social_benefits"
+                    >
                         <div class="col-lg-6 col-12 o_setting_box">
                             <div class="o_setting_right_pane">
                                 <div class="text-muted">
-                                        Configuration of the categories to be taken into account in the lines (salary calculation) 
+                                        Configuration of the categories to be taken into account in the lines (salary calculation)
                                         of the payroll to be paid for social benefits.
                                 </div>
-                                <span class="o_form_label">Categories of wage rules</span>
+                                <span
+                                    class="o_form_label"
+                                >Categories of wage rules</span>
                                 <div class="mt8" id="categories_wage_rules">
-                                    <field name="salary_rules_category" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_category"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
                                 <div class="text-muted">
-                                    Configuration of the Structures for the reinitialization of Labor Liabilities 
+                                    Configuration of the Structures for the reinitialization of Labor Liabilities
                                     (labor liabilities of days per year, interest on social benefits and social benefits).
                                 </div>
-                                <span class="o_form_label">Structures for the reinitialization of Labor Liabilities</span>
-                                <div class="mt8" id="structure_for_resets_labor_liabilities">
-                                    <field name="structure_for_resets_labor_liabilities" widget="many2many_tags" options="{'no_create': True}"/>
+                                <span
+                                    class="o_form_label"
+                                >Structures for the reinitialization of Labor Liabilities</span>
+                                <div
+                                    class="mt8"
+                                    id="structure_for_resets_labor_liabilities"
+                                >
+                                    <field
+                                        name="structure_for_resets_labor_liabilities"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -151,42 +237,82 @@
                     </div>
 
                     <h2>Payment receipt configuration</h2>
-                    <div class="row mt16 o_settings_container" id="l10n_ve_payment_receipt_configuration">
+                    <div
+                        class="row mt16 o_settings_container"
+                        id="l10n_ve_payment_receipt_configuration"
+                    >
                         <div class="col-lg-6 col-12 o_setting_box">
                             <div class="o_setting_right_pane">
 
-                                <span class="o_form_label">Categories for assignments</span>
+                                <span
+                                    class="o_form_label"
+                                >Categories for assignments</span>
                                 <div class="mt8" id="categories_assignments">
-                                    <field name="salary_rules_categories_assignments" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_categories_assignments"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
-                                <span class="o_form_label">Categories for deductions</span>
+                                <span
+                                    class="o_form_label"
+                                >Categories for deductions</span>
                                 <div class="mt8" id="categories_deductions">
-                                    <field name="salary_rules_categories_deductions" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="salary_rules_categories_deductions"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
                                 <span class="o_form_label">Lines other entries</span>
                                 <div class="mt8" id="other_entries">
-                                    <field name="lines_other_entries_type" widget="many2many_tags" options="{'no_create': True}"/>
+                                    <field
+                                        name="lines_other_entries_type"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
-                                
+
                                 <div class="text-muted">
                                         Setting up the structures for the average Vacation and Salary Settlement Wages.
                                 </div>
-                                <span class="o_form_label">Payroll structure for Average vacation salary</span>
-                                <div class="mt8" id="payroll_structure_Average_vacation_salary">
-                                    <field name="payroll_structure_for_average_vacation_salary" widget="many2many_tags" options="{'no_create': True}"/>
+                                <span
+                                    class="o_form_label"
+                                >Payroll structure for Average vacation salary</span>
+                                <div
+                                    class="mt8"
+                                    id="payroll_structure_Average_vacation_salary"
+                                >
+                                    <field
+                                        name="payroll_structure_for_average_vacation_salary"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
-                                <span class="o_form_label">Payroll structure for Salary Settlement</span>
-                                <div class="mt8" id="payroll_structure_salary_settlement">
-                                    <field name="payroll_structure_for_salary_settlement" widget="many2many_tags" options="{'no_create': True}"/>
+                                <span
+                                    class="o_form_label"
+                                >Payroll structure for Salary Settlement</span>
+                                <div
+                                    class="mt8"
+                                    id="payroll_structure_salary_settlement"
+                                >
+                                    <field
+                                        name="payroll_structure_for_salary_settlement"
+                                        widget="many2many_tags"
+                                        options="{'no_create': True}"
+                                    />
                                 </div>
 
                             </div>
                         </div>
 
-                        <div class="col-12 col-lg-6 o_setting_box" id="configuration_of_accruals">
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="configuration_of_accruals"
+                        >
                             <div class="o_setting_left_pane">
                             </div>
                             <div class="o_setting_right_pane">
@@ -194,88 +320,151 @@
                                             Configuration of accruals.
                                 </div>
 
-                                <span class="o_form_label">Quarterly payment of benefits</span>
+                                <span
+                                    class="o_form_label"
+                                >Quarterly payment of benefits</span>
                                 <div class="mt8" id="quarterly_payment_benefits">
-                                    <field name="quarterly_payment_benefits"/>
+                                    <field name="quarterly_payment_benefits" />
                                 </div>
-                                
+
                                 <span class="o_form_label">Profits generated</span>
                                 <div class="mt8" id="profits_generated">
-                                    <field name="profits_generated"/>
+                                    <field name="profits_generated" />
                                 </div>
 
                                 <span class="o_form_label">Advance profit sharing</span>
                                 <div class="mt8" id="advance_profit_sharing">
-                                    <field name="advance_profit_sharing"/>
+                                    <field name="advance_profit_sharing" />
                                 </div>
 
                                 <span class="o_form_label">Net income</span>
                                 <div class="mt8" id="net_income">
-                                    <field name="net_income"/>
+                                    <field name="net_income" />
                                 </div>
 
                                 <span class="o_form_label">Social benefits</span>
                                 <div class="mt8" id="social_benefits">
-                                    <field name="social_benefits"/>
+                                    <field name="social_benefits" />
                                 </div>
 
                                 <div class="text-muted">
                                         Setting to display average salary and settlement salary on the pay slip.
                                 </div>
 
-                                <span class="o_form_label">Show average vacation salary</span>
+                                <span
+                                    class="o_form_label"
+                                >Show average vacation salary</span>
                                 <div class="mt8" id="show_average_vacation_salary">
-                                    <field name="show_average_vacation_salary"/>
+                                    <field name="show_average_vacation_salary" />
                                 </div>
 
                                 <span class="o_form_label">Show salary Settlement</span>
                                 <div class="mt8" id="show_salary_settlement">
-                                    <field name="show_salary_settlement"/>
+                                    <field name="show_salary_settlement" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <h2>Global amounts</h2>
-                    <div class="row mt16 o_settings_container" id="custom_inherit_hr_payroll">
+                    <div
+                        class="row mt16 o_settings_container"
+                        id="custom_inherit_hr_payroll"
+                    >
                         <div class="col-lg-6 col-12 o_setting_box">
-                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_left_pane" />
                             <div class="o_setting_right_pane">
                                 <div class="text-muted">
-                                    Global amounts to customize the minimum wage, vacation days, 
+                                    Global amounts to customize the minimum wage, vacation days,
                                     utility days, ticket basket salary and the rate of employee benefits.
                                 </div>
 
                                 <span class="o_form_label">Minimum wage</span>
                                 <div class="mt8 o_row">
-                                    <field name="minimum_wage" readonly="1" force_save="1" widget="monetary" options="{'currency_field': 'minimum_wage_currency'}"/>
-                                    <field name="minimum_wage_currency" readonly="1" force_save="1" options="{'no_open': True}"/>
-                                    <button name="%(minimum_wage_history_action)d" type="action" class="oe_link">History</button>
+                                    <field
+                                        name="minimum_wage"
+                                        readonly="1"
+                                        force_save="1"
+                                        widget="monetary"
+                                        options="{'currency_field': 'minimum_wage_currency'}"
+                                    />
+                                    <field
+                                        name="minimum_wage_currency"
+                                        readonly="1"
+                                        force_save="1"
+                                        options="{'no_open': True}"
+                                    />
+                                    <button
+                                        name="%(minimum_wage_history_action)d"
+                                        type="action"
+                                        class="oe_link"
+                                    >History</button>
                                 </div>
 
                                 <span class="o_form_label">Vacations</span>
                                 <div class="mt8">
-                                    <field name="vacations" readonly="1" force_save="1"/>
-                                    <button name="%(vacations_history_action)d" type="action" class="oe_link">History</button>
+                                    <field
+                                        name="vacations"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                    <button
+                                        name="%(vacations_history_action)d"
+                                        type="action"
+                                        class="oe_link"
+                                    >History</button>
                                 </div>
 
                                 <span class="o_form_label">Days of profit</span>
                                 <div class="mt8">
-                                    <field name="days_of_profit" readonly="1" force_save="1"/>
-                                    <button name="%(days_of_profit_history_action)d" type="action" class="oe_link">History</button>
+                                    <field
+                                        name="days_of_profit"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                    <button
+                                        name="%(days_of_profit_history_action)d"
+                                        type="action"
+                                        class="oe_link"
+                                    >History</button>
                                 </div>
 
                                 <span class="o_form_label">Salary Basket Ticket</span>
                                 <div class="mt8 o_row">
-                                    <field name="salary_basket_ticket" readonly="1" force_save="1" widget="monetary" options="{'currency_field': 'salary_basket_ticket_currency'}"/>
-                                    <field name="salary_basket_ticket_currency" readonly="1" force_save="1" options="{'no_open': True}"/>
-                                    <button name="%(salary_basket_ticket_history_action)d" type="action" class="oe_link">History</button>
+                                    <field
+                                        name="salary_basket_ticket"
+                                        readonly="1"
+                                        force_save="1"
+                                        widget="monetary"
+                                        options="{'currency_field': 'salary_basket_ticket_currency'}"
+                                    />
+                                    <field
+                                        name="salary_basket_ticket_currency"
+                                        readonly="1"
+                                        force_save="1"
+                                        options="{'no_open': True}"
+                                    />
+                                    <button
+                                        name="%(salary_basket_ticket_history_action)d"
+                                        type="action"
+                                        class="oe_link"
+                                    >History</button>
                                 </div>
 
-                                <span class="o_form_label">Social benefits rate Central Bank</span>
+                                <span
+                                    class="o_form_label"
+                                >Social benefits rate Central Bank</span>
                                 <div class="mt8">
-                                    <field name="central_bank_social_benefits_rate" readonly="1" force_save="1"/>
-                                    <button name="%(central_bank_social_benefits_rate_history_action)d" type="action" class="oe_link">History</button>
+                                    <field
+                                        name="central_bank_social_benefits_rate"
+                                        readonly="1"
+                                        force_save="1"
+                                    />
+                                    <button
+                                        name="%(central_bank_social_benefits_rate_history_action)d"
+                                        type="action"
+                                        class="oe_link"
+                                    >History</button>
                                 </div>
                             </div>
                         </div>
@@ -287,7 +476,7 @@
                                 <div class="text-muted">
                                             Configuration of working day lines
                                 </div>
-                                
+
                                 <span class="o_form_label">Working hours</span>
                                 <div class="mt8" id="hr_working_hours">
                                     <field name="hr_working_hours"/>
@@ -309,7 +498,7 @@
     <record id="hr_salary_rule_list_tree_inherit_omegasoft" model="ir.ui.view">
         <field name="name">hr.salary.rule.list.tree.inherit.omegasoft</field>
         <field name="model">hr.salary.rule</field>
-        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_list"/>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_list" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='struct_id']" position="attributes">
                 <attribute name="invisible">0</attribute>

@@ -1,3 +1,11 @@
+[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/l10n-venezuela&target_branch=16.0)
+[![Pre-commit Status](https://github.com/OCA/l10n-venezuela/actions/workflows/pre-commit.yml/badge.svg?branch=16.0)](https://github.com/OCA/l10n-venezuela/actions/workflows/pre-commit.yml?query=branch%3A16.0)
+[![Build Status](https://github.com/OCA/l10n-venezuela/actions/workflows/test.yml/badge.svg?branch=16.0)](https://github.com/OCA/l10n-venezuela/actions/workflows/test.yml?query=branch%3A16.0)
+[![codecov](https://codecov.io/gh/OCA/l10n-venezuela/branch/16.0/graph/badge.svg)](https://codecov.io/gh/OCA/l10n-venezuela)
+[![Translation Status](https://translation.odoo-community.org/widgets/l10n-venezuela-16-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/l10n-venezuela-16-0/?utm_source=widget)
+
+<!-- /!\ do not modify above this line -->
+
 # Localización de Odoo para Venezuela
 
 Repositorio creado con la finalidad de agregar los addons desarrollados en Odoo
@@ -5,6 +13,8 @@ correspondiente a la localización venezolana, incluye módulos como de Recursos
 Humanos ``hr`` y Nomina ``payroll``.
 
 Una localización de Odoo para Venezuela desarrollada por [Omegasoft C.A.](https://www.omegasoftve.com/)
+
+<!-- /!\ do not modify below this line -->
 
 <!-- prettier-ignore-start -->
 
@@ -102,3 +112,8 @@ However, each module can have a totally different license. Consult each module's
     -   Rene Gomez - rene.gomez@omegasoftve.com
 -   Comunidad Odoo Venezuela
     - Leonardo J. Caballero G. leonardocaballero@gmail.com
+
+----
+OCA, or the [Odoo Community Association](http://odoo-community.org/), is a nonprofit
+organization whose mission is to support the collaborative development of Odoo features
+and promote its widespread use.

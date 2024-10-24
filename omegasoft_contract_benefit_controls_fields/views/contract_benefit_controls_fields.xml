@@ -1,62 +1,149 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="hr_contract_benefit_control_field" model="ir.ui.view">
         <field name="name">hr.contract.benefit.control.field</field>
         <field name="model">hr.contract</field>
-        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//group[@name='salary_info']/group[1]" position="after">
-                
+
                     <group name="benefit_control" string="Benefit Controls">
                         <label for="accumulated_social_benefits" />
                         <div class="o_row" name="accumulated_social_benefits">
-                            <field name="is_accumulated_social_benefits" invisible="1"/>
-                            <field name="accumulated_social_benefits" widget="float" options="{'currency_field': 'accumulated_social_benefits_currency'}" attrs="{'readonly': [('is_accumulated_social_benefits', '=', True)]}"/><span></span>
-                            <field name="accumulated_social_benefits_currency" options="{'no_open': True, 'no_create': True}" invisible="1"/>
+                            <field
+                            name="is_accumulated_social_benefits"
+                            invisible="1"
+                        />
+                            <field
+                            name="accumulated_social_benefits"
+                            widget="float"
+                            options="{'currency_field': 'accumulated_social_benefits_currency'}"
+                            attrs="{'readonly': [('is_accumulated_social_benefits', '=', True)]}"
+                        /><span />
+                            <field
+                            name="accumulated_social_benefits_currency"
+                            options="{'no_open': True, 'no_create': True}"
+                            invisible="1"
+                        />
                             <span>  </span>
-                            <field name="accumulated_social_benefits_date" placeholder="Date to" attrs="{'readonly': [('is_accumulated_social_benefits', '=', True)]}"/>
+                            <field
+                            name="accumulated_social_benefits_date"
+                            placeholder="Date to"
+                            attrs="{'readonly': [('is_accumulated_social_benefits', '=', True)]}"
+                        />
                         </div>
 
                         <label for="accumulated_advances_social_benefits" />
                         <div class="o_row" name="accumulated_advances_social_benefits">
-                            <field name="is_accumulated_advances_social_benefits" invisible="1"/>
-                            <field name="accumulated_advances_social_benefits" widget="float" options="{'currency_field': 'accumulated_social_benefits_currency'}" attrs="{'readonly': [('is_accumulated_advances_social_benefits', '=', True)]}"/><span></span>
-                            <field name="accumulated_social_benefits_currency" options="{'no_open': True, 'no_create': True}" invisible="1"/>
+                            <field
+                            name="is_accumulated_advances_social_benefits"
+                            invisible="1"
+                        />
+                            <field
+                            name="accumulated_advances_social_benefits"
+                            widget="float"
+                            options="{'currency_field': 'accumulated_social_benefits_currency'}"
+                            attrs="{'readonly': [('is_accumulated_advances_social_benefits', '=', True)]}"
+                        /><span />
+                            <field
+                            name="accumulated_social_benefits_currency"
+                            options="{'no_open': True, 'no_create': True}"
+                            invisible="1"
+                        />
                         </div>
 
                         <label for="accumulated_earnings_benefits" />
                         <div class="o_row" name="accumulated_earnings_benefits">
-                            <field name="is_accumulated_earnings_benefits" invisible="1"/>
-                            <field name="accumulated_earnings_benefits" widget="float" options="{'currency_field': 'accumulated_earnings_benefits_currency'}" attrs="{'readonly': [('is_accumulated_earnings_benefits', '=', True)]}"/><span></span>
-                            <field name="accumulated_earnings_benefits_currency" options="{'no_open': True, 'no_create': True}" invisible="1"/>
+                            <field
+                            name="is_accumulated_earnings_benefits"
+                            invisible="1"
+                        />
+                            <field
+                            name="accumulated_earnings_benefits"
+                            widget="float"
+                            options="{'currency_field': 'accumulated_earnings_benefits_currency'}"
+                            attrs="{'readonly': [('is_accumulated_earnings_benefits', '=', True)]}"
+                        /><span />
+                            <field
+                            name="accumulated_earnings_benefits_currency"
+                            options="{'no_open': True, 'no_create': True}"
+                            invisible="1"
+                        />
                         </div>
 
                         <label for="accumulated_advances_earnings_benefits" />
-                        <div class="o_row" name="accumulated_advances_earnings_benefits">
-                            <field name="is_accumulated_advances_earnings_benefits" invisible="1"/>
-                            <field name="accumulated_advances_earnings_benefits" widget="float" options="{'currency_field': 'accumulated_earnings_benefits_currency'}" attrs="{'readonly': [('is_accumulated_advances_earnings_benefits', '=', True)]}"/><span></span>
-                            <field name="accumulated_earnings_benefits_currency" options="{'no_open': True, 'no_create': True}" invisible="1"/>
+                        <div
+                        class="o_row"
+                        name="accumulated_advances_earnings_benefits"
+                    >
+                            <field
+                            name="is_accumulated_advances_earnings_benefits"
+                            invisible="1"
+                        />
+                            <field
+                            name="accumulated_advances_earnings_benefits"
+                            widget="float"
+                            options="{'currency_field': 'accumulated_earnings_benefits_currency'}"
+                            attrs="{'readonly': [('is_accumulated_advances_earnings_benefits', '=', True)]}"
+                        /><span />
+                            <field
+                            name="accumulated_earnings_benefits_currency"
+                            options="{'no_open': True, 'no_create': True}"
+                            invisible="1"
+                        />
                         </div>
-                        
+
                         <label for="interest_accrued_employee_benefits" />
                         <div class="o_row" name="interest_accrued_employee_benefits">
-                            <field name="is_interest_accrued_employee_benefits" invisible="1"/>
-                            <field name="interest_accrued_employee_benefits" widget="float" options="{'currency_field': 'interest_accrued_employee_benefits_currency'}" attrs="{'readonly': [('is_interest_accrued_employee_benefits', '=', True)]}"/><span></span>
-                            <field name="interest_accrued_employee_benefits_currency" options="{'no_open': True, 'no_create': True}" invisible="1"/>
+                            <field
+                            name="is_interest_accrued_employee_benefits"
+                            invisible="1"
+                        />
+                            <field
+                            name="interest_accrued_employee_benefits"
+                            widget="float"
+                            options="{'currency_field': 'interest_accrued_employee_benefits_currency'}"
+                            attrs="{'readonly': [('is_interest_accrued_employee_benefits', '=', True)]}"
+                        /><span />
+                            <field
+                            name="interest_accrued_employee_benefits_currency"
+                            options="{'no_open': True, 'no_create': True}"
+                            invisible="1"
+                        />
                         </div>
 
                          <label for="accumulated_day_per_year_benefits" />
                         <div class="o_row" name="accumulated_day_per_year_benefits">
-                            <field name="is_accumulated_day_per_year_benefits" invisible="1"/>
-                            <field name="accumulated_day_per_year_benefits" widget="float" options="{'currency_field': 'accumulated_day_per_year_benefits_currency'}" attrs="{'readonly': [('is_accumulated_day_per_year_benefits', '=', True)]}"/><span></span>
-                            <field name="accumulated_day_per_year_benefits_currency" options="{'no_open': True, 'no_create': True}" invisible="1"/>
+                            <field
+                            name="is_accumulated_day_per_year_benefits"
+                            invisible="1"
+                        />
+                            <field
+                            name="accumulated_day_per_year_benefits"
+                            widget="float"
+                            options="{'currency_field': 'accumulated_day_per_year_benefits_currency'}"
+                            attrs="{'readonly': [('is_accumulated_day_per_year_benefits', '=', True)]}"
+                        /><span />
+                            <field
+                            name="accumulated_day_per_year_benefits_currency"
+                            options="{'no_open': True, 'no_create': True}"
+                            invisible="1"
+                        />
                         </div>
-                        
-                        <field name="last_social_benefits_calculation" readonly="1" force_save="1"/>
-                        <field name="last_calculation_days_per_year" readonly="1" force_save="1"/>
+
+                        <field
+                        name="last_social_benefits_calculation"
+                        readonly="1"
+                        force_save="1"
+                    />
+                        <field
+                        name="last_calculation_days_per_year"
+                        readonly="1"
+                        force_save="1"
+                    />
                     </group>
-                
+
             </xpath>
         </field>
     </record>

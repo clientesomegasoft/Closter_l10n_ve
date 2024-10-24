@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!-- minimum wage history -->
@@ -9,8 +9,8 @@
             <tree editable="bottom">
                 <field name="date" />
                 <field name="amount" />
-                <field name="currency_id" options="{'no_create': 1, 'mo_open': 1}"/>
-                <field name="company_id" invisible="1"/>
+                <field name="currency_id" options="{'no_create': 1, 'mo_open': 1}" />
+                <field name="company_id" invisible="1" />
             </tree>
         </field>
     </record>
@@ -23,11 +23,19 @@
                 <field name="amount" />
                 <field name="currency_id" />
                 <field name="date" />
-                <separator/>
-                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
-                <separator/>
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
                 <group expand="0" string="Group By...">
-                    <filter name="currency_id" string="Currency" context="{'group_by': 'currency_id'}" />
+                    <filter
+                        name="currency_id"
+                        string="Currency"
+                        context="{'group_by': 'currency_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -50,8 +58,8 @@
             <tree editable="bottom">
                 <field name="date" />
                 <field name="amount" />
-                <field name="currency_id" options="{'no_create': 1, 'mo_open': 1}"/>
-                <field name="company_id" invisible="1"/>
+                <field name="currency_id" options="{'no_create': 1, 'mo_open': 1}" />
+                <field name="company_id" invisible="1" />
             </tree>
         </field>
     </record>
@@ -64,11 +72,19 @@
                 <field name="amount" />
                 <field name="currency_id" />
                 <field name="date" />
-                <separator/>
-                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
-                <separator/>
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
                 <group expand="0" string="Group By...">
-                    <filter name="currency_id" string="Currency" context="{'group_by': 'currency_id'}" />
+                    <filter
+                        name="currency_id"
+                        string="Currency"
+                        context="{'group_by': 'currency_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -91,7 +107,7 @@
             <tree editable="bottom">
                 <field name="date" />
                 <field name="days" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" invisible="1" />
             </tree>
         </field>
     </record>
@@ -103,9 +119,13 @@
             <search string="">
                 <field name="days" />
                 <field name="date" />
-                <separator/>
-                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
-                <separator/>
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
                 <group expand="0" string="Group By...">
                 </group>
             </search>
@@ -129,7 +149,7 @@
             <tree editable="bottom">
                 <field name="date" />
                 <field name="days" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" invisible="1" />
             </tree>
         </field>
     </record>
@@ -141,9 +161,13 @@
             <search string="">
                 <field name="days" />
                 <field name="date" />
-                <separator/>
-                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
-                <separator/>
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
                 <group expand="0" string="Group By...">
                 </group>
             </search>
@@ -167,33 +191,45 @@
             <tree editable="bottom">
                 <field name="date" />
                 <field name="amount" />
-                <field name="company_id" invisible="1"/>
+                <field name="company_id" invisible="1" />
             </tree>
         </field>
     </record>
 
-    <record id="central_bank_social_benefits_rate_history_view_search" model="ir.ui.view">
+    <record
+        id="central_bank_social_benefits_rate_history_view_search"
+        model="ir.ui.view"
+    >
         <field name="name">central.bank.social.benefits.rate.history.view.search</field>
         <field name="model">central.bank.social.benefits.rate.history</field>
         <field name="arch" type="xml">
             <search string="">
                 <field name="amount" />
                 <field name="date" />
-                <separator/>
-                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
-                <separator/>
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
                 <group expand="0" string="Group By...">
                 </group>
             </search>
         </field>
     </record>
 
-    <record id="central_bank_social_benefits_rate_history_action" model="ir.actions.act_window">
+    <record
+        id="central_bank_social_benefits_rate_history_action"
+        model="ir.actions.act_window"
+    >
         <field name="name">Central Bank Social Benefits Rate History</field>
         <field name="res_model">central.bank.social.benefits.rate.history</field>
         <field name="view_mode">tree</field>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create">Create Central Bank Social Benefits Rate History</p>
+            <p
+                class="oe_view_nocontent_create"
+            >Create Central Bank Social Benefits Rate History</p>
         </field>
     </record>
 

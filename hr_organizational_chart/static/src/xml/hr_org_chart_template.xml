@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
   <t t-name="hr_organizational_chart.org_chart_template">
     <h4 class="o_org_chart_title mb16 mt0" align="center">Organization Chart</h4>
-    <div id="chart-container"></div>
+    <div id="chart-container" />
     <script type="text/javascript">
       $(function() {
         <!-- Get Employee Data -->

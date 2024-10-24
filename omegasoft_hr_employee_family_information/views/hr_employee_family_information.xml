@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="hr_employee_family_information_view_form" model="ir.ui.view">
@@ -7,50 +7,74 @@
         <field name="arch" type="xml">
             <form string="Family information">
                 <sheet>
-                    <field name="active" invisible="1"/>
-                    <field name="employee_id" invisible="1"/>
+                    <field name="active" invisible="1" />
+                    <field name="employee_id" invisible="1" />
                     <group name="top">
                         <group name='family_information'>
-                            <field name="name" required="1"/>
-                            <field name="relationship" required="1"/>
-                            <field name="nationality" required="1"/>
-                            <field name="id_number" required="1"/>
-                            <field name="date_of_birth" required="1"/>
+                            <field name="name" required="1" />
+                            <field name="relationship" required="1" />
+                            <field name="nationality" required="1" />
+                            <field name="id_number" required="1" />
+                            <field name="date_of_birth" required="1" />
 
                             <label for="age" />
                             <div class="o_row" name="age">
                                 <field name="age" readonly="1" />
-                                <field name="type_age" attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"/>
+                                <field
+                                    name="type_age"
+                                    attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"
+                                />
                             </div>
 
                         </group>
                         <group name='children'>
-                            <field name="guardianship" attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"/>
-                            <field name="gender" attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"/>
-                            <field name="study_level" attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"/>
+                            <field
+                                name="guardianship"
+                                attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"
+                            />
+                            <field
+                                name="gender"
+                                attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"
+                            />
+                            <field
+                                name="study_level"
+                                attrs="{'invisible': [('relationship', '!=', 'son_daughter')], 'required': [('relationship', '=', 'son_daughter')]}"
+                            />
                         </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-    
+
     <record id="hr_employee_family_information_view_tree" model="ir.ui.view">
         <field name="name">hr.employee.family.information.view.tree</field>
         <field name="model">hr_employee_family_information</field>
         <field name="arch" type="xml">
             <tree editable="bottom" create="1">
-                <field name="relationship" required="1"/>
-                <field name="name" required="1"/>
-                <field name="guardianship" attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])], 'required': [('relationship', 'in', ['son','daughter'])]}"/>
+                <field name="relationship" required="1" />
+                <field name="name" required="1" />
+                <field
+                    name="guardianship"
+                    attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])], 'required': [('relationship', 'in', ['son','daughter'])]}"
+                />
                 <field name="nationality" />
-                <field name="id_number" attrs="{'required': [('relationship', 'not in', ['son','daughter'])]}"/>
-                <field name="gender" attrs="{'invisible': [('relationship', 'not in', ['son', 'daughter', 'spouse'])], 'required': [('relationship', 'in', ['son', 'daughter', 'spouse'])]}"/>
-                <field name="date_of_birth" required="1"/>
-                <field name="age" readonly="1" force_save="1"/>
-                <field name="type_age" readonly="1" force_save="1"/>
-                <field name="study_level" attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])]}"/>
-                <field name="employee_id" invisible="1"/>
+                <field
+                    name="id_number"
+                    attrs="{'required': [('relationship', 'not in', ['son','daughter'])]}"
+                />
+                <field
+                    name="gender"
+                    attrs="{'invisible': [('relationship', 'not in', ['son', 'daughter', 'spouse'])], 'required': [('relationship', 'in', ['son', 'daughter', 'spouse'])]}"
+                />
+                <field name="date_of_birth" required="1" />
+                <field name="age" readonly="1" force_save="1" />
+                <field name="type_age" readonly="1" force_save="1" />
+                <field
+                    name="study_level"
+                    attrs="{'invisible': [('relationship', 'not in', ['son','daughter'])]}"
+                />
+                <field name="employee_id" invisible="1" />
             </tree>
         </field>
     </record>
@@ -60,9 +84,13 @@
         <field name="model">hr_employee_family_information</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
-                <separator/>
-                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                <field name="name" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
             </search>
         </field>
     </record>

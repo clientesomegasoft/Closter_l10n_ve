@@ -1,36 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="hr_contract_bonuses_salary_field_inherit" model="ir.ui.view">
         <field name="name">hr.contract.bonuses.salary.field.inherit</field>
         <field name="model">hr.contract</field>
-        <field name="inherit_id" ref="omegasoft_contract_bonuses_fields.hr_contract_bonuses_salary_field"/>
+        <field
+            name="inherit_id"
+            ref="omegasoft_contract_bonuses_fields.hr_contract_bonuses_salary_field"
+        />
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='perfect_attendance_bonus_check']" position="after">
+            <xpath
+                expr="//div[@name='perfect_attendance_bonus_check']"
+                position="after"
+            >
                 <label for="special_bonus_applies" />
                 <div class="o_row" name="special_bonus">
                     <field name="special_bonus_applies" />
-                    <field name="special_bonus_amount" widget="monetary" options="{'currency_field': 'special_bonus_currency_id'}" attrs="{'invisible': [('special_bonus_applies', '=', False)], 'required': [('special_bonus_applies', '=', True)]}"/>
-                    <field name="special_bonus_currency_id" options="{'no_open': True, 'no_create': True, 'no_update': True}" attrs="{'invisible': [('special_bonus_applies', '=', False)], 'required': [('special_bonus_applies', '=', True)]}"/>
+                    <field
+                        name="special_bonus_amount"
+                        widget="monetary"
+                        options="{'currency_field': 'special_bonus_currency_id'}"
+                        attrs="{'invisible': [('special_bonus_applies', '=', False)], 'required': [('special_bonus_applies', '=', True)]}"
+                    />
+                    <field
+                        name="special_bonus_currency_id"
+                        options="{'no_open': True, 'no_create': True, 'no_update': True}"
+                        attrs="{'invisible': [('special_bonus_applies', '=', False)], 'required': [('special_bonus_applies', '=', True)]}"
+                    />
                 </div>
                 <label for="productivity_bonus_applies" />
                 <div class="o_row" name="productivity_bonus">
                     <field name="productivity_bonus_applies" />
-                    <field name="productivity_bonus_amount" widget="monetary" options="{'currency_field': 'productivity_bonus_currency_id'}" attrs="{'invisible': [('productivity_bonus_applies', '=', False)], 'required': [('productivity_bonus_applies', '=', True)]}"/>
-                    <field name="productivity_bonus_currency_id" options="{'no_open': True, 'no_create': True, 'no_update': True}" attrs="{'invisible': [('productivity_bonus_applies', '=', False)], 'required': [('productivity_bonus_applies', '=', True)]}"/>
+                    <field
+                        name="productivity_bonus_amount"
+                        widget="monetary"
+                        options="{'currency_field': 'productivity_bonus_currency_id'}"
+                        attrs="{'invisible': [('productivity_bonus_applies', '=', False)], 'required': [('productivity_bonus_applies', '=', True)]}"
+                    />
+                    <field
+                        name="productivity_bonus_currency_id"
+                        options="{'no_open': True, 'no_create': True, 'no_update': True}"
+                        attrs="{'invisible': [('productivity_bonus_applies', '=', False)], 'required': [('productivity_bonus_applies', '=', True)]}"
+                    />
                 </div>
                 <label for="seniority_bonus_applies" />
                 <div class="o_row" name="seniority_bonus">
                     <field name="seniority_bonus_applies" />
-                    <field name="seniority_bonus_amount" widget="monetary" options="{'currency_field': 'seniority_bonus_currency_id'}" attrs="{'invisible': [('seniority_bonus_applies', '=', False)], 'required': [('seniority_bonus_applies', '=', True)]}"/>
-                    <field name="seniority_bonus_currency_id" options="{'no_open': True, 'no_create': True, 'no_update': True}" attrs="{'invisible': [('seniority_bonus_applies', '=', False)], 'required': [('seniority_bonus_applies', '=', True)]}"/>
+                    <field
+                        name="seniority_bonus_amount"
+                        widget="monetary"
+                        options="{'currency_field': 'seniority_bonus_currency_id'}"
+                        attrs="{'invisible': [('seniority_bonus_applies', '=', False)], 'required': [('seniority_bonus_applies', '=', True)]}"
+                    />
+                    <field
+                        name="seniority_bonus_currency_id"
+                        options="{'no_open': True, 'no_create': True, 'no_update': True}"
+                        attrs="{'invisible': [('seniority_bonus_applies', '=', False)], 'required': [('seniority_bonus_applies', '=', True)]}"
+                    />
                 </div>
                 <label for="mobility_bonus_applies" />
                 <div class="o_row" name="mobility_bonus">
                     <field name="mobility_bonus_applies" />
-                    <field name="mobility_bonus_amount" widget="monetary" options="{'currency_field': 'mobility_bonus_currency_id'}" attrs="{'invisible': [('mobility_bonus_applies', '=', False)], 'required': [('mobility_bonus_applies', '=', True)]}"/>
-                    <field name="mobility_bonus_currency_id" options="{'no_open': True, 'no_create': True, 'no_update': True}" attrs="{'invisible': [('mobility_bonus_applies', '=', False)], 'required': [('mobility_bonus_applies', '=', True)]}"/>
+                    <field
+                        name="mobility_bonus_amount"
+                        widget="monetary"
+                        options="{'currency_field': 'mobility_bonus_currency_id'}"
+                        attrs="{'invisible': [('mobility_bonus_applies', '=', False)], 'required': [('mobility_bonus_applies', '=', True)]}"
+                    />
+                    <field
+                        name="mobility_bonus_currency_id"
+                        options="{'no_open': True, 'no_create': True, 'no_update': True}"
+                        attrs="{'invisible': [('mobility_bonus_applies', '=', False)], 'required': [('mobility_bonus_applies', '=', True)]}"
+                    />
                 </div>
-                <field name="seniority_bonus_cap" widget="monetary" options="{'currency_field': 'seniority_bonus_currency_id'}" attrs="{'invisible': [('seniority_bonus_applies', '=', False)], 'required': [('seniority_bonus_applies', '=', True)]}"/>
+                <field
+                    name="seniority_bonus_cap"
+                    widget="monetary"
+                    options="{'currency_field': 'seniority_bonus_currency_id'}"
+                    attrs="{'invisible': [('seniority_bonus_applies', '=', False)], 'required': [('seniority_bonus_applies', '=', True)]}"
+                />
             </xpath>
         </field>
     </record>

@@ -1,49 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- minimum wage history -->
+    <record id="minimum_wage_history_comp_rule" model="ir.rule">
+        <field name="name">minimum.wage.history.comp.rule</field>
+        <field name="model_id" ref="model_minimum_wage_history" />
+        <field eval="True" name="global" />
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
 
-    <data noupdate="1">
-    
-		<!-- minimum wage history -->
-        <record id="minimum_wage_history_comp_rule" model="ir.rule">
-			<field name="name">minimum.wage.history.comp.rule</field>
-			<field name="model_id" ref="model_minimum_wage_history"/>
-			<field eval="True" name="global"/>
-			<field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
-		</record>
+    <!-- salary basket ticket history -->
+    <record id="salary_basket_ticket_history_comp_rule" model="ir.rule">
+        <field name="name">salary.basket.ticket.history.comp.rule</field>
+        <field name="model_id" ref="model_salary_basket_ticket_history" />
+        <field eval="True" name="global" />
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
 
-		<!-- salary basket ticket history -->
-		<record id="salary_basket_ticket_history_comp_rule" model="ir.rule">
-			<field name="name">salary.basket.ticket.history.comp.rule</field>
-			<field name="model_id" ref="model_salary_basket_ticket_history"/>
-			<field eval="True" name="global"/>
-			<field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
-		</record>
+    <!-- vacations history -->
+    <record id="vacations_history_comp_rule" model="ir.rule">
+        <field name="name">vacations.history.comp.rule</field>
+        <field name="model_id" ref="model_vacations_history" />
+        <field eval="True" name="global" />
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
 
-		<!-- vacations history -->
-		<record id="vacations_history_comp_rule" model="ir.rule">
-			<field name="name">vacations.history.comp.rule</field>
-			<field name="model_id" ref="model_vacations_history"/>
-			<field eval="True" name="global"/>
-			<field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
-		</record>
+    <!-- days of profit history -->
+    <record id="days_of_profit_history_comp_rule" model="ir.rule">
+        <field name="name">days.of.profit.history.comp.rule</field>
+        <field name="model_id" ref="model_days_of_profit_history" />
+        <field eval="True" name="global" />
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
 
-		<!-- days of profit history -->
-		<record id="days_of_profit_history_comp_rule" model="ir.rule">
-			<field name="name">days.of.profit.history.comp.rule</field>
-			<field name="model_id" ref="model_days_of_profit_history"/>
-			<field eval="True" name="global"/>
-			<field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
-		</record>
-
-		<!-- central bank social benefits rate history -->
-		<record id="central_bank_social_benefits_rate_history_comp_rule" model="ir.rule">
-			<field name="name">central.bank.social.benefits.rate.history.comp.rule</field>
-			<field name="model_id" ref="model_central_bank_social_benefits_rate_history"/>
-			<field eval="True" name="global"/>
-			<field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
-		</record>
-    
-    </data>
-    
-
+    <!-- central bank social benefits rate history -->
+    <record id="central_bank_social_benefits_rate_history_comp_rule" model="ir.rule">
+        <field name="name">central.bank.social.benefits.rate.history.comp.rule</field>
+        <field name="model_id" ref="model_central_bank_social_benefits_rate_history" />
+        <field eval="True" name="global" />
+        <field
+            name="domain_force"
+        >['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
 </odoo>

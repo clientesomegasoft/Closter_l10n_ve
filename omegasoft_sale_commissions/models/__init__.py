@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import hr_contract
 from . import commission_scale
 from . import commission_conf_line

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import withholding_iva_rate
 from . import res_partner
 from . import account_journal

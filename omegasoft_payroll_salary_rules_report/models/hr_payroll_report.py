@@ -1,60 +1,161 @@
-# -*- coding: utf-8 -*-
-from odoo import tools
-from odoo import models, fields, api
+from odoo import fields, models, tools
+
 
 class HrPayrollReport(models.Model):
     _inherit = "hr.payroll.report"
 
-    salary_rule_name = fields.Char('Salary rule', readonly=True)
-    count_assignments =  fields.Float('Assignments', readonly=True)
-    count_deductions =  fields.Float('Deductions', readonly=True)
-    employee_category_id =  fields.Many2one('hr.employee.category', 'Category', readonly=True)
-
+    salary_rule_name = fields.Char("Salary rule", readonly=True)
+    count_assignments = fields.Float("Assignments", readonly=True)
+    count_deductions = fields.Float("Deductions", readonly=True)
+    employee_category_id = fields.Many2one(
+        "hr.employee.category", "Category", readonly=True
+    )
 
     def init(self):
         query = """
             SELECT
-                p.id as id,
-                CASE WHEN wd.id = min_id.min_line and src.case = 1 THEN 1 ELSE 0 END as count,
-                CASE WHEN wet.is_leave or src.case = 0 THEN 0 ELSE wd.number_of_days END as count_work,
-                CASE WHEN wet.is_leave or src.case = 0 THEN 0 ELSE wd.number_of_hours END as count_work_hours,
-                CASE WHEN wet.is_leave and wd.amount <> 0 and src.case = 1 THEN wd.number_of_days ELSE 0 END as count_leave,
-                CASE WHEN wet.is_leave and wd.amount = 0 and src.case = 1 THEN wd.number_of_days ELSE 0 END as count_leave_unpaid,
-                CASE WHEN wet.is_unforeseen and src.case = 1 THEN wd.number_of_days ELSE 0 END as count_unforeseen_absence,
-                CASE WHEN wet.is_leave and src.case = 1 THEN wd.amount ELSE 0 END as leave_basic_wage,
-                p.name as name,
-                p.date_from as date_from,
-                p.date_to as date_to,
-                e.id as employee_id,
-                e.department_id as department_id,
-                c.job_id as job_id,
-                e.company_id as company_id,
-                d.master_department_id as master_department_id,
-                wet.id as work_code,
-                CASE WHEN wet.is_leave IS NOT TRUE THEN '1' WHEN wd.amount = 0 THEN '3' ELSE '2' END as work_type,
-                CASE WHEN src.case = 1 THEN wd.number_of_days ELSE 0 END as number_of_days,
-                CASE WHEN src.case = 1 THEN wd.number_of_hours ELSE 0 END as number_of_hours,
-                CASE WHEN wd.id = min_id.min_line and src.case = 1 THEN pln.total ELSE 0 END as net_wage,
-                CASE WHEN wd.id = min_id.min_line and src.case = 1 THEN plb.total ELSE 0 END as basic_wage,
-                CASE WHEN wd.id = min_id.min_line and src.case = 1 THEN plg.total ELSE 0 END as gross_wage,
-                pl.name as salary_rule_name,
-                CASE WHEN src.code in ('BASIC','ALW','BASIC2','BASIC3') and wd.id = min_id.min_line THEN pl.total ELSE 0 END as count_assignments,
-                CASE WHEN src.code in ('DED','COMP','CONTRIB') and wd.id = min_id.min_line THEN pl.total ELSE 0 END as count_deductions,
-                ec.category_id as employee_category_id
+                p.id AS id,
+                CASE
+                 WHEN wd.id = min_id.min_line
+                 AND src.case = 1
+                 THEN 1
+                 ELSE 0
+                END AS count,
+                CASE
+                 WHEN wet.is_leave or src.case = 0
+                 THEN 0
+                 ELSE wd.number_of_days
+                END AS count_work,
+                CASE
+                 WHEN wet.is_leave or src.case = 0
+                 THEN 0
+                 ELSE wd.number_of_hours
+                END AS count_work_hours,
+                CASE
+                 WHEN wet.is_leave
+                 AND wd.amount <> 0
+                 AND src.case = 1
+                 THEN wd.number_of_days
+                 ELSE 0
+                END AS count_leave,
+                CASE
+                 WHEN wet.is_leave
+                 AND wd.amount = 0
+                 AND src.case = 1
+                 THEN wd.number_of_days
+                 ELSE 0
+                END AS count_leave_unpaid,
+                CASE
+                 WHEN wet.is_unforeseen
+                 AND src.case = 1
+                 THEN wd.number_of_days
+                 ELSE 0
+                END AS count_unforeseen_absence,
+                CASE
+                 WHEN wet.is_leave
+                 AND src.case = 1
+                 THEN wd.amount
+                 ELSE 0
+                END AS leave_basic_wage,
+                p.name AS name,
+                p.date_from AS date_from,
+                p.date_to AS date_to,
+                e.id AS employee_id,
+                e.department_id AS department_id,
+                c.job_id AS job_id,
+                e.company_id AS company_id,
+                d.master_department_id AS master_department_id,
+                wet.id AS work_code,
+                CASE
+                 WHEN wet.is_leave IS NOT TRUE
+                 THEN '1' WHEN wd.amount = 0 THEN '3'
+                 ELSE '2'
+                END AS work_type,
+                CASE
+                 WHEN src.case = 1
+                 HEN wd.number_of_days
+                 ELSE 0
+                END AS number_of_days,
+                CASE
+                 WHEN src.case = 1
+                 THEN wd.number_of_hours
+                 ELSE 0
+                END AS number_of_hours,
+                CASE
+                 WHEN wd.id = min_id.min_line
+                 AND src.case = 1
+                 THEN pln.total
+                 ELSE 0
+                END AS net_wage,
+                CASE
+                 WHEN wd.id = min_id.min_line
+                 AND src.case = 1
+                 THEN plb.total
+                 ELSE 0
+                END AS basic_wage,
+                CASE
+                 WHEN wd.id = min_id.min_line
+                 AND src.case = 1
+                 THEN plg.total
+                 ELSE 0
+                END AS gross_wage,
+                pl.name AS salary_rule_name,
+                CASE
+                 WHEN src.code IN ('BASIC','ALW','BASIC2','BASIC3')
+                 AND wd.id = min_id.min_line
+                 THEN pl.total
+                 ELSE 0
+                END AS count_assignments,
+                CASE
+                 WHEN src.code IN ('DED','COMP','CONTRIB')
+                 AND wd.id = min_id.min_line
+                 THEN pl.total
+                 ELSE 0
+                END AS count_deductions,
+                ec.category_id AS employee_category_id
             FROM
                 (SELECT * FROM hr_payslip WHERE state IN ('done', 'paid')) p
-                    left join hr_employee e on (p.employee_id = e.id)
-                    left join hr_payslip_worked_days wd on (wd.payslip_id = p.id)
-                    left join hr_work_entry_type wet on (wet.id = wd.work_entry_type_id)
-                    left join (select payslip_id, min(id) as min_line from hr_payslip_worked_days group by payslip_id) min_id on (min_id.payslip_id = p.id)
-                    left join hr_payslip_line pln on (pln.slip_id = p.id and  pln.code = 'NET')
-                    left join hr_payslip_line plb on (plb.slip_id = p.id and plb.code in ('TBASIC','TBASICQ','TBASICP'))
-                    left join hr_payslip_line plg on (plg.slip_id = p.id and plg.code in ('TA', 'TAQ'))
-                    left join hr_contract c on (p.contract_id = c.id)
-                    left join hr_payslip_line pl on (pl.slip_id = p.id and pl.category_id in (select src.id from hr_salary_rule_category src where src.code IN ('NET','BASIC','ALW','BASIC2','BASIC3', 'DED','COMP','CONTRIB')))
-                    left join (select id, code, case when code = 'NET' then 1 else 0 end from hr_salary_rule_category) src on (pl.category_id = src.id)
-                    left join employee_category_rel ec on (ec.emp_id = e.id)
-                    left join hr_department d on (e.department_id = d.id)
+                    LEFT JOIN hr_employee e ON (p.employee_id = e.id)
+                    LEFT JOIN hr_payslip_worked_days wd ON (wd.payslip_id = p.id)
+                    LEFT JOIN hr_work_entry_type wet ON (wet.id = wd.work_entry_type_id)
+                    LEFT JOIN (
+                        SELECT payslip_id, min(id) AS min_line
+                        FROM hr_payslip_worked_days
+                        GROUP BY payslip_id
+                    ) min_id ON (min_id.payslip_id = p.id)
+                    LEFT JOIN hr_payslip_line pln ON (
+                        pln.slip_id = p.id
+                        AND  pln.code = 'NET')
+                    LEFT JOIN hr_payslip_line plb ON (
+                        plb.slip_id = p.id
+                        AND plb.code IN ('TBASIC','TBASICQ','TBASICP')
+                    )
+                    LEFT JOIN hr_payslip_line plg ON (
+                        plg.slip_id = p.id
+                        AND plg.code IN ('TA', 'TAQ')
+                    )
+                    LEFT JOIN hr_contract c ON (p.contract_id = c.id)
+                    LEFT JOIN hr_payslip_line pl ON (
+                        pl.slip_id = p.id
+                        AND pl.category_id IN (
+                            SELECT src.id
+                            FROM hr_salary_rule_category src
+                            WHERE src.code IN (
+                                'NET','BASIC','ALW','BASIC2','BASIC3', 'DED','COMP','CONTRIB'
+                            )
+                        )
+                    )
+                    LEFT JOIN (
+                        SELECT id, code,
+                        CASE
+                         WHEN code = 'NET'
+                         THEN 1
+                         ELSE 0
+                        END
+                        FROM hr_salary_rule_category
+                    ) src ON (pl.category_id = src.id)
+                    LEFT JOIN employee_category_rel ec ON (ec.emp_id = e.id)
+                    LEFT JOIN hr_department d ON (e.department_id = d.id)
             GROUP BY
                 e.id,
                 e.department_id,
@@ -70,12 +171,21 @@ class HrPayrollReport(models.Model):
                 plg.total,
                 min_id.min_line,
                 c.id,
-                pl.name, 
+                pl.name,
                 src.code,
                 pl.total,
                 src.case,
-				ec.category_id,
+                ec.category_id,
                 d.master_department_id
                 """
         tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute("""CREATE or REPLACE VIEW %s as (%s)""" % (self._table, query))
+        sql = """CREATE OR REPLACE VIEW {self_table} AS ({query})"""
+        self._cr.execute(
+            sql,
+            (
+                tuple(
+                    self_table=self._table,
+                    query=query,
+                ),
+            ),
+        )

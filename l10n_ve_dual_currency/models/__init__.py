@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import tools
 from . import res_currency
 from . import account_move

@@ -1,21 +1,25 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
-	<record id="withholding_iva_rate_view_tree" model="ir.ui.view">
-		<field name="name">withholding.iva.rate.view.tree</field>
-		<field name="model">withholding.iva.rate</field>
-		<field name="arch" type="xml">
-			<tree editable="top">
-				<field name="name"/>
-				<field name="description"/>
-				<field name="create_date" string="Fecha de creación" readonly="1"/>
-			</tree>
-		</field>
-	</record>
-	<record id="action_withholding_iva_rate" model="ir.actions.act_window">
-		<field name="name">Tasas de retención de IVA</field>
-		<field name="res_model">withholding.iva.rate</field>
-		<field name="view_mode">tree</field>
-		<field name="view_id" ref="withholding_iva_rate_view_tree"/>
-	</record>
-	<menuitem id="menu_withholding_iva_rate" action="action_withholding_iva_rate" parent="l10n_ve_config_account.menu_l10n_ve_finance_configuration"/>
+    <record id="withholding_iva_rate_view_tree" model="ir.ui.view">
+        <field name="name">withholding.iva.rate.view.tree</field>
+        <field name="model">withholding.iva.rate</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+                <field name="description" />
+                <field name="create_date" string="Fecha de creación" readonly="1" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_withholding_iva_rate" model="ir.actions.act_window">
+        <field name="name">Tasas de retención de IVA</field>
+        <field name="res_model">withholding.iva.rate</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="withholding_iva_rate_view_tree" />
+    </record>
+    <menuitem
+        id="menu_withholding_iva_rate"
+        action="action_withholding_iva_rate"
+        parent="l10n_ve_config_account.menu_l10n_ve_finance_configuration"
+    />
 </odoo>

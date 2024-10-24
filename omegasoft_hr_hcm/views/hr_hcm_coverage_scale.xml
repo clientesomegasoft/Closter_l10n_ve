@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="hr_hcm_coverage_scale_window_action" model="ir.actions.act_window">
@@ -18,12 +18,12 @@
         <field name="name">hr.hcm.coverage.scale.view.tree</field>
         <field name="model">hr.hcm.coverage.scale</field>
         <field name="arch" type="xml">
-            <tree string="">
-                <field name="name"/>
-                <field name="code"/>
-                <field name="total_policy_coverage"/>
-                <field name="total_quota_amount"/>
-                <field name="job_ids"/>
+            <tree>
+                <field name="name" />
+                <field name="code" />
+                <field name="total_policy_coverage" />
+                <field name="total_quota_amount" />
+                <field name="job_ids" />
             </tree>
         </field>
     </record>
@@ -35,28 +35,28 @@
             <form string="">
                 <sheet>
                     <group>
-                        <field name="currency_id" invisible="1"/>
+                        <field name="currency_id" invisible="1" />
                         <group>
-                            <field name="name"/>
-                            <field name="total_policy_coverage" widget="float"/>
+                            <field name="name" />
+                            <field name="total_policy_coverage" widget="float" />
                         </group>
                         <group>
-                            <field name="code"/>
-                            <field name="total_quota_amount" widget="float"/>
+                            <field name="code" />
+                            <field name="total_quota_amount" widget="float" />
                         </group>
                     </group>
                     <group>
                     </group>
                     <group>
-                        <field name="company_percentage_contribution"/>
+                        <field name="company_percentage_contribution" />
                     </group>
                     <group>
                         <group>
-                            <field name="employee_quota_amount"/>
-                            <field name="job_ids" widget="many2many_tags"/>
+                            <field name="employee_quota_amount" />
+                            <field name="job_ids" widget="many2many_tags" />
                         </group>
                         <group>
-                            <field name="company_quota_amount"/>
+                            <field name="company_quota_amount" />
                         </group>
                     </group>
                     <group>
@@ -71,6 +71,7 @@
         name="HCM Coverage Scale"
         parent="hr.menu_human_resources_configuration"
         action="hr_hcm_coverage_scale_window_action"
-        sequence="5"/>
+        sequence="5"
+    />
 
 </odoo>

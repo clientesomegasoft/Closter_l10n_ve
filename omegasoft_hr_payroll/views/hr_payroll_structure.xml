@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!--Structure type-->
@@ -8,7 +8,11 @@
         <field name="inherit_id" ref="hr_payroll.hr_payroll_structure_type_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='wage_type']" position="after">
-                <field name="currency_id" options="{'no_create': True, 'no_open': True}" required="1"/>
+                <field
+                    name="currency_id"
+                    options="{'no_create': True, 'no_open': True}"
+                    required="1"
+                />
             </xpath>
         </field>
     </record>
@@ -23,20 +27,20 @@
             </xpath>
 
              <xpath expr="//field[@name='use_worked_day_lines']" position="after">
-                <field name="use_average_wage"/>
-                <field name="complementary_payroll"/>
-                <field name="is_bonus"/>
-                <field name="is_perfect_attendance"/>
-                <field name="is_night_bonus"/>
-                <field name="is_special_bonus"/>
-                <field name="is_seniority_bonus_applies"/>
-                <field name="is_productivity_bonus_applies"/>
-                <field name="is_mobility_bonus_applies"/>
+                <field name="use_average_wage" />
+                <field name="complementary_payroll" />
+                <field name="is_bonus" />
+                <field name="is_perfect_attendance" />
+                <field name="is_night_bonus" />
+                <field name="is_special_bonus" />
+                <field name="is_seniority_bonus_applies" />
+                <field name="is_productivity_bonus_applies" />
+                <field name="is_mobility_bonus_applies" />
             </xpath>
 
             <xpath expr="//field[@name='country_id']" position="after">
-				<field name="currency_id"/>
-			</xpath>
+                <field name="currency_id" />
+            </xpath>
         </field>
     </record>
 

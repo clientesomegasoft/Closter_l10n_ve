@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="hr_res_currency_view_form_inherit_omegasoft" model="ir.ui.view">
         <field name="name">hr_res_currency_view_form_inherit_omegasoft</field>
         <field name="model">res.currency</field>
-        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="inherit_id" ref="base.view_currency_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='rate_ids']/tree/field[@name='rate']" position="after">
-                <field name="currency_rate_active" invisible="1"/>
+            <xpath
+                expr="//field[@name='rate_ids']/tree/field[@name='rate']"
+                position="after"
+            >
+                <field name="currency_rate_active" invisible="1" />
         </xpath>
         </field>
     </record>

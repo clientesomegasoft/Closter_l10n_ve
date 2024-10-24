@@ -1,35 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-	<record id="customer_statements_tree_view" model="ir.ui.view">
-		<field name="name">customer.statements.tree</field>
-		<field name="model">res.partner</field>
-		<field name="inherit_id" ref="account_followup.customer_statements_tree_view"/>
-		<field name="arch" type="xml">
-			<field name="total_due" position="after">
-				<field name="currency_ref_id" invisible="1"/>
-				<field name="total_due_ref" sum="Total"/>
-			</field>
-			<field name="total_overdue" position="after">
-				<field name="total_overdue_ref" sum="Total"/>
-			</field>
-		</field>
-	</record>
-	<record id="customer_statements_form_view" model="ir.ui.view">
-		<field name="name">customer.statements.followup</field>
-		<field name="model">res.partner</field>
-		<field name="inherit_id" ref="account_followup.customer_statements_form_view"/>
-		<field name="arch" type="xml">
-			<field name="amount_residual_currency" position="after">
-				<field name="currency_ref_id" invisible="1"/>
-				<field name="amount_residual_ref" string="Importe residual ope." optional="show"/>
-			</field>
-			<xpath expr="//group[hasclass('oe_subtotal_footer')]" position="before">
-				<group class="oe_subtotal_footer oe_right">
-					<field name="currency_ref_id" invisible="1"/>
-					<field name="total_due_ref" style="font-weight: bold; font-size: 1.2em;"/>
-					<field name="total_overdue_ref" style="font-weight: bold; font-size: 1.2em;"/>
-				</group>
-			</xpath>
-		</field>
-	</record>
+    <record id="customer_statements_tree_view" model="ir.ui.view">
+        <field name="name">customer.statements.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_followup.customer_statements_tree_view" />
+        <field name="arch" type="xml">
+            <field name="total_due" position="after">
+                <field name="currency_ref_id" invisible="1" />
+                <field name="total_due_ref" sum="Total" />
+            </field>
+            <field name="total_overdue" position="after">
+                <field name="total_overdue_ref" sum="Total" />
+            </field>
+        </field>
+    </record>
+    <record id="customer_statements_form_view" model="ir.ui.view">
+        <field name="name">customer.statements.followup</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_followup.customer_statements_form_view" />
+        <field name="arch" type="xml">
+            <field name="amount_residual_currency" position="after">
+                <field name="currency_ref_id" invisible="1" />
+                <field
+                    name="amount_residual_ref"
+                    string="Importe residual ope."
+                    optional="show"
+                />
+            </field>
+            <xpath expr="//group[hasclass('oe_subtotal_footer')]" position="before">
+                <group class="oe_subtotal_footer oe_right">
+                    <field name="currency_ref_id" invisible="1" />
+                    <field
+                        name="total_due_ref"
+                        style="font-weight: bold; font-size: 1.2em;"
+                    />
+                    <field
+                        name="total_overdue_ref"
+                        style="font-weight: bold; font-size: 1.2em;"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
 </odoo>

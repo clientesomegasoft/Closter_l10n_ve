@@ -1,199 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
-        <template id="sale_consignments_template">
-            <t t-call="web.html_container">
-                <t t-call="web.basic_layout">
-                    <div class="oe_structure"/>
-                        <div class="page">
-                            <t t-if="report_type == 'sale_details_report'">
-                                <div>
-                                    <div class="text-center"> 
-                                        <span style="font-size:30px;"><b>Sale by product report</b></span>
-                                    </div>
+    <template id="sale_consignments_template">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <div class="oe_structure" />
+                    <div class="page">
+                        <t t-if="report_type == 'sale_details_report'">
+                            <div>
+                                <div class="text-center">
+                                    <span style="font-size:30px;"><b
+                                    >Sale by product report</b></span>
                                 </div>
-                                <br/>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <span>Date From:</span>
-                                        <span t-esc="data_from"/><br/><br/>
-                                    </div>
-                                    <div class="col-6">
-                                        <span>Date To: </span>
-                                         <span t-esc="date_to"/><br/><br/>
-                                    </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-6">
+                                    <span>Date From:</span>
+                                    <span t-esc="data_from" /><br /><br />
                                 </div>
-                                <t t-foreach="lines" t-as="rec">
-                                    <t t-if="rec['sale_order_lines_ids']">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Consignment Order:</span>
-                                                <span t-esc="rec['name']"/><br/>
-                                                <span>Date:</span>
-                                                <span t-esc="rec['consignment_id'].date_order"/><br/>
-                                            </div>
-                                            <div class="col-6">
-                                                <span>Customers:</span>
-                                                <span t-esc="rec['customer']"/><br/>
-                                                <span>State: </span>
-                                                <span t-esc="rec['consignment_id'].state.capitalize()"/><br/>
-                                            </div>
+                                <div class="col-6">
+                                    <span>Date To: </span>
+                                        <span t-esc="date_to" /><br /><br />
+                                </div>
+                            </div>
+                            <t t-foreach="lines" t-as="rec">
+                                <t t-if="rec['sale_order_lines_ids']">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span>Consignment Order:</span>
+                                            <span t-esc="rec['name']" /><br />
+                                            <span>Date:</span>
+                                            <span
+                                            t-esc="rec['consignment_id'].date_order"
+                                        /><br />
                                         </div>
-                                        <table class="table table-sm table-bordered" style="width:100%">
-                                            <thead style="font-size:13px;">
-                                                <tr>
-                                                    <th><strong>Sale Order</strong></th>
-                                                    <th><strong>Product</strong></th>
-                                                    <th><strong>Quantity</strong></th>
-                                                    <th><strong>Unit Price</strong></th>
-                                                    <th><strong>Sub Totals</strong></th>
-                                                    <th><strong>State</strong></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody style="font-size:13px;">
-                                                <tr t-foreach="rec['sale_order_lines_ids']" t-as="line">
-                                                    <td>
-                                                        <span t-esc="line.order_id.name"/>
-                                                    </td>
-                                                    <td>
-                                                        <span t-esc="line.product_id.name"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.product_uom_qty"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.price_unit"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.price_subtotal"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.order_id.state.capitalize()"/>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </t>
+                                        <div class="col-6">
+                                            <span>Customers:</span>
+                                            <span t-esc="rec['customer']" /><br />
+                                            <span>State: </span>
+                                            <span
+                                            t-esc="rec['consignment_id'].state.capitalize()"
+                                        /><br />
+                                        </div>
+                                    </div>
+                                    <table
+                                    class="table table-sm table-bordered"
+                                    style="width:100%"
+                                >
+                                        <thead style="font-size:13px;">
+                                            <tr>
+                                                <th><strong>Sale Order</strong></th>
+                                                <th><strong>Product</strong></th>
+                                                <th><strong>Quantity</strong></th>
+                                                <th><strong>Unit Price</strong></th>
+                                                <th><strong>Sub Totals</strong></th>
+                                                <th><strong>State</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="font-size:13px;">
+                                            <tr
+                                            t-foreach="rec['sale_order_lines_ids']"
+                                            t-as="line"
+                                        >
+                                                <td>
+                                                    <span t-esc="line.order_id.name" />
+                                                </td>
+                                                <td>
+                                                    <span
+                                                    t-esc="line.product_id.name"
+                                                />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span
+                                                    t-esc="line.product_uom_qty"
+                                                />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.price_unit" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.price_subtotal" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span
+                                                    t-esc="line.order_id.state.capitalize()"
+                                                />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </t>
                             </t>
-                            
-                            <t t-if="report_type == 'consignment_details_report'">
-                                <t t-foreach="consignment_order_details" t-as="rec">
-                                    <div style="page-break-after: always;">
-                                        <div>
-                                            <div class="text-center"> 
-                                                <span style="font-size:30px;"><b>Sale Consignment details </b></span>
-                                            </div>
+                        </t>
+
+                        <t t-if="report_type == 'consignment_details_report'">
+                            <t t-foreach="consignment_order_details" t-as="rec">
+                                <div style="page-break-after: always;">
+                                    <div>
+                                        <div class="text-center">
+                                            <span style="font-size:30px;"><b
+                                            >Sale Consignment details </b></span>
                                         </div>
-                                        <br/>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Date From:</span>
-                                                <span t-esc="data_from"/><br/><br/>
-                                            </div>
-                                            <div class="col-6">
-                                                <span>Date To: </span>
-                                                 <span t-esc="date_to"/><br/><br/>
-                                            </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span>Date From:</span>
+                                            <span t-esc="data_from" /><br /><br />
                                         </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <span>Consignment Order:</span>
-                                                <span t-esc="rec['name']"/><br/>
-                                                <span>Date:</span>
-                                                <span t-esc="rec['date']"/><br/>
-                                            </div>
-                                            <div class="col-6">
-                                                <span>Customers:</span>
-                                                <span t-esc="rec['customer']"/><br/>
-                                                <span>State: </span>
-                                                <span t-esc="rec['consignment_id'].state.capitalize()"/><br/>
-                                            </div>
+                                        <div class="col-6">
+                                            <span>Date To: </span>
+                                                <span t-esc="date_to" /><br /><br />
                                         </div>
-                                        <br/>
-                                        <bt/>
-                                        <table class="table table-sm table-bordered" style="width:100%">
-                                            <thead style="font-size:13px;">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span>Consignment Order:</span>
+                                            <span t-esc="rec['name']" /><br />
+                                            <span>Date:</span>
+                                            <span t-esc="rec['date']" /><br />
+                                        </div>
+                                        <div class="col-6">
+                                            <span>Customers:</span>
+                                            <span t-esc="rec['customer']" /><br />
+                                            <span>State: </span>
+                                            <span
+                                            t-esc="rec['consignment_id'].state.capitalize()"
+                                        /><br />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <bt />
+                                    <table
+                                    class="table table-sm table-bordered"
+                                    style="width:100%"
+                                >
+                                        <thead style="font-size:13px;">
+                                            <tr>
+                                                <th><strong>Product</strong></th>
+                                                <th><strong>Quantity</strong></th>
+                                                <th><strong>Sale Qty</strong></th>
+                                                <th><strong>Remaining Qty</strong></th>
+                                                <th><strong>Avalible Qty</strong></th>
+                                                <th><strong>Unit Price</strong></th>
+                                                <th><strong
+                                                >Consignment Total</strong></th>
+                                                <th><strong>Sale Total</strong></th>
+                                                <th><strong>Cost Total</strong></th>
+                                                <th><strong>Profit Total</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="font-size:13px;">
+                                            <tr
+                                            t-foreach="rec['order_line']"
+                                            t-as="line"
+                                        >
+                                                <td>
+                                                    <span t-esc="line.name" />
+                                                </td>
+                                                <td>
+                                                    <span
+                                                    t-esc="line.product_uom_qty"
+                                                />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.sale_qty" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.available_qty" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.free_qty" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.price_unit" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.price_subtotal" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.sale_total" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.cost_total" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="line.profit_total" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                    <div class="col-7">
+                                    </div>
+                                    <div class="col-5">
+                                        <table class="table table-sm table-bordered">
+                                            <thead>
                                                 <tr>
-                                                    <th><strong>Product</strong></th>
-                                                    <th><strong>Quantity</strong></th>
-                                                    <th><strong>Sale Qty</strong></th>
-                                                    <th><strong>Remaining Qty</strong></th>
-                                                    <th><strong>Avalible Qty</strong></th>
-                                                    <th><strong>Unit Price</strong></th>
-                                                    <th><strong>Consignment Total</strong></th>
-                                                    <th><strong>Sale Total</strong></th>
-                                                    <th><strong>Cost Total</strong></th>
-                                                    <th><strong>Profit Total</strong></th>
+                                                    <th><strong
+                                                        >Total Consignment Amount: </strong></th>
+                                                    <th><strong><span
+                                                                t-esc="rec['total']"
+                                                            /><br /></strong></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><strong
+                                                        >Total Sale Amount: </strong></th>
+                                                    <th><strong><span
+                                                                t-esc="rec['sale_total']"
+                                                            /><br /></strong></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><strong
+                                                        >Total Cost Amount: </strong></th>
+                                                    <th><strong><span
+                                                                t-esc="rec['cost_total']"
+                                                            /><br /></strong></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><strong
+                                                        >Total Profit Amount: </strong></th>
+                                                    <th><strong><span
+                                                                t-esc="rec['profit_total']"
+                                                            /><br /></strong></th>
                                                 </tr>
                                             </thead>
-                                            <tbody style="font-size:13px;">
-                                                <tr t-foreach="rec['order_line']" t-as="line">
-                                                    <td>
-                                                        <span t-esc="line.name"/>
-                                                    </td>
-                                                    <td>
-                                                        <span t-esc="line.product_uom_qty"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.sale_qty"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.available_qty"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.free_qty"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.price_unit"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.price_subtotal"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.sale_total"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.cost_total"/>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span t-esc="line.profit_total"/>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
                                         </table>
-                                        <div class="row">
-                                        <div class="col-7">
-                                        </div>
-                                        <div class="col-5">
-                                            <table class="table table-sm table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th><strong>Total Consignment Amount: </strong></th>
-                                                        <th><strong><span t-esc="rec['total']"/><br/></strong></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><strong>Total Sale Amount: </strong></th>
-                                                        <th><strong><span t-esc="rec['sale_total']"/><br/></strong></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><strong>Total Cost Amount: </strong></th>
-                                                        <th><strong><span t-esc="rec['cost_total']"/><br/></strong></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><strong>Total Profit Amount: </strong></th>
-                                                        <th><strong><span t-esc="rec['profit_total']"/><br/></strong></th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
                                     </div>
-                                    </div>
-                                </t>
+                                </div>
+                                </div>
                             </t>
-                    </div>
-                </t>
+                        </t>
+                </div>
             </t>
-        </template>
-    </data>
+        </t>
+    </template>
 </odoo>

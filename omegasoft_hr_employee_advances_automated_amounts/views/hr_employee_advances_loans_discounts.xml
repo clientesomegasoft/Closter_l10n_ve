@@ -1,13 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <record id="l10n_ve_omegasoft_res_config_settings_view_form_inherit" model="ir.ui.view">
+    <record
+        id="l10n_ve_omegasoft_res_config_settings_view_form_inherit"
+        model="ir.ui.view"
+    >
         <field name="name">hr.employee.salary.advance.form.inherit.auto</field>
         <field name="model">hr_employee_advances_loans_discounts</field>
-        <field name="inherit_id" ref="omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form"/>
+        <field
+            name="inherit_id"
+            ref="omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form"
+        />
         <field name="arch" type="xml">
 
-            <xpath expr="//div[@name='rate_id'][field/@name='rate_amount']" position="after">
+            <xpath
+                expr="//div[@name='rate_id'][field/@name='rate_amount']"
+                position="after"
+            >
                 <field
                     name="use_available_amount_per_employee"
                     attrs="{
@@ -19,7 +28,8 @@
                         'invisible': [
                             ('name', '!=', 'company'),
                         ]
-                    }"/>
+                    }"
+                />
                 <field
                     name="shared_type_advance_loan"
                     attrs="{
@@ -35,11 +45,15 @@
                                 ('name', '!=', 'company'),
                                 ('use_available_amount_per_employee', '!=', True),
                         ]
-                    }"/>
+                    }"
+                />
             </xpath>
 
             <!-- NOTE: In this way we ensure that these fields are computed on the view -->
-            <xpath expr="//field[@name='advances_loans_discounts_line_ids']/tree" position="inside">
+            <xpath
+                expr="//field[@name='advances_loans_discounts_line_ids']/tree"
+                position="inside"
+            >
                 <field name="use_available_amount_per_employee" invisible="1" />
                 <field name="parent_state" invisible="1" />
             </xpath>
@@ -47,11 +61,17 @@
             <!-- PATCH: DO NOT DELETE THIS BLOCK. OTHERWISE THE WEBCLIENT WON'T SEND
                         THE CALCULATED FIELD TO THE BACKEND CAUSING A VALIDATION ERROR
                         DUE ZERO AMOUNT PER LINE. -->
-            <xpath expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='amount']" position="attributes">
+            <xpath
+                expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='amount']"
+                position="attributes"
+            >
                 <attribute name="force_save">1</attribute>
             </xpath>
 
-            <xpath expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='amount']" position="attributes">
+            <xpath
+                expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='amount']"
+                position="attributes"
+            >
                 <attribute name="attrs">
                 {
                     'readonly': [
@@ -64,7 +84,10 @@
                 }
                 </attribute>
             </xpath>
-            <xpath expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='exceeds_maximum']" position="attributes">
+            <xpath
+                expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='exceeds_maximum']"
+                position="attributes"
+            >
                 <attribute name="attrs">
                 {
                     'readonly': [
@@ -77,7 +100,10 @@
                 }
                 </attribute>
             </xpath>
-            <xpath expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='type_advance_loan']" position="attributes">
+            <xpath
+                expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='type_advance_loan']"
+                position="attributes"
+            >
                 <attribute name="attrs">
                 {
                     'readonly': [
@@ -88,7 +114,10 @@
                 }
                 </attribute>
             </xpath>
-            <xpath expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='currency_id']" position="attributes">
+            <xpath
+                expr="//field[@name='advances_loans_discounts_line_ids']/tree/field[@name='currency_id']"
+                position="attributes"
+            >
                 <attribute name="attrs">
                 {
 
@@ -104,7 +133,7 @@
                 }
                 </attribute>
             </xpath>
-            
+
         </field>
     </record>
 
