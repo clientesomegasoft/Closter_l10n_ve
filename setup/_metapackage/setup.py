@@ -67,7 +67,6 @@ setuptools.setup(
     #     'odoo-addon-omegasoft_res_currency_payroll_rate',
     #     'odoo-addon-omegasoft_salary_bonuses_fields',
     #     'odoo-addon-omegasoft_sale_commissions',
-    #     'odoo-addon-pways_so_po_consignment',
     # ],
     classifiers=[
         'Programming Language :: Python',
