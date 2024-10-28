@@ -8,7 +8,6 @@ setuptools.setup(
     description="Meta package for oca-l10n-venezuela Odoo addons",
     version=version,
     # install_requires=[
-    #     'odoo-addon-hr_organizational_chart',
     #     'odoo-addon-l10n_ve_account_reports_dual',
     #     'odoo-addon-l10n_ve_account_sale_reports',
     #     'odoo-addon-l10n_ve_arc_report',
