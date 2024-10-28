@@ -1,5 +1,5 @@
 ==========================================
-Omegasoft C.A. Account and Sale Statistics
+Venezuela - Estadísticas de cuenta y venta
 ==========================================
 
 .. 
