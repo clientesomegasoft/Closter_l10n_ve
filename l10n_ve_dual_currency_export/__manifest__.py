@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Importar/Exportar Moneda operativa",
+    "name": "Venezuela - Importar/Exportar Moneda operativa",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
     "author": "Omegasoft C.A., Odoo Community Association (OCA)",

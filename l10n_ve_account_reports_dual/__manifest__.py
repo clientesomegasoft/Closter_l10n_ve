@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Reportes en moneda operativa",
+    "name": "Venezuela - Reportes en moneda operativa",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
     "author": "Omegasoft C.A., Odoo Community Association (OCA)",

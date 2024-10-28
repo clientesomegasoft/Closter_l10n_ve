@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Configuración retenciones",
+    "name": "Venezuela - Configuración retenciones",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
     "author": "Omegasoft C.A., Odoo Community Association (OCA)",

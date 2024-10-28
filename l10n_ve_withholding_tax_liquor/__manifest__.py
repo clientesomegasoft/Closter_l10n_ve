@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Impuesto al licor",
+    "name": "Venezuela - Impuesto al licor",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
     "author": "Omegasoft C.A., Odoo Community Association (OCA)",

@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Libro de inventario",
+    "name": "Venezuela - Libro de inventario",
     "version": "16.0.0.0.1",
     "category": "Inventory/Inventory",
     "author": "Omegasoft C.A., Odoo Community Association (OCA)",

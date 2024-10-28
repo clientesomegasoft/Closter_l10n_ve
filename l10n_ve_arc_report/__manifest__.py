@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A ARC Proveedores",
+    "name": "Venezuela - ARC Proveedores",
     "version": "16.0.0.0.1",
     "category": "Accounting/Localizations/Account Charts",
     "author": "Omegasoft C.A., Odoo Community Association (OCA)",
