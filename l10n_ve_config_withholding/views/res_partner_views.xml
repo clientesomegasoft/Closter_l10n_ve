@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- res.partner form view -->
     <record id="view_partner_form" model="ir.ui.view">
         <field name="name">view.partner.form</field>
         <field name="model">res.partner</field>
@@ -10,7 +11,7 @@
         <field name="arch" type="xml">
             <notebook position="inside">
                 <page
-                    string="Retenciones"
+                    string="Withholdings"
                     attrs="{'invisible': ['|', '|', ('is_company_partner', '=', True), ('person_type_code', 'not in', ('PNRE', 'PJDO')), ('partner_type', '=', False)]}"
                 >
                     <field name="is_company_partner" invisible="1" />

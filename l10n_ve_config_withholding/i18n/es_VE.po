@@ -19,7 +19,7 @@ msgstr ""
 
 #. module: l10n_ve_config_withholding
 #: model_terms:ir.ui.view,arch_db:l10n_ve_config_withholding.res_config_settings_view_form
-msgid "<span class=\"o_form_label\">Firma y sello de la compañía</span>"
+msgid "<span class=\"o_form_label\">Signature and seal of the company</span>"
 msgstr "<span class=\"o_form_label\">Firma y sello de la compañía</span>"
 
 #. module: l10n_ve_config_withholding
@@ -39,7 +39,7 @@ msgstr "Contacto"
 
 #. module: l10n_ve_config_withholding
 #: model_terms:ir.ui.view,arch_db:l10n_ve_config_withholding.res_config_settings_view_form
-msgid "Firma y sello digital utilizado para comprobantes de retención."
+msgid "Digital signature and seal used for withholding receipts."
 msgstr "Firma y sello digital utilizado para comprobantes de retención."
 
 #. module: l10n_ve_config_withholding
@@ -52,7 +52,7 @@ msgstr "Tipo de transacción fiscal"
 #. module: l10n_ve_config_withholding
 #: model:ir.model.fields,field_description:l10n_ve_config_withholding.field_res_company__sign_512
 #: model:ir.model.fields,field_description:l10n_ve_config_withholding.field_res_config_settings__sign_512
-msgid "Insertar imagen"
+msgid "Insert image"
 msgstr "Insertar imagen"
 
 #. module: l10n_ve_config_withholding
@@ -74,11 +74,11 @@ msgstr "Asiento contable"
 #. module: l10n_ve_config_withholding
 #: model_terms:ir.ui.view,arch_db:l10n_ve_config_withholding.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_ve_config_withholding.view_partner_form
-msgid "Retenciones"
+msgid "Withholdings"
 msgstr "Retenciones"
 
 #. module: l10n_ve_config_withholding
 #: model:ir.model.fields,field_description:l10n_ve_config_withholding.field_account_bank_statement_import_journal_creation__withholding_journal_type
 #: model:ir.model.fields,field_description:l10n_ve_config_withholding.field_account_journal__withholding_journal_type
-msgid "Tipo de diario retenciones"
+msgid "Type of withholding journal"
 msgstr "Tipo de diario retenciones"

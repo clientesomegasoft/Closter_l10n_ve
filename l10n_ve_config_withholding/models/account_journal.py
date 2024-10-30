@@ -5,7 +5,7 @@ class AccountJournal(models.Model):
     _inherit = "account.journal"
 
     withholding_journal_type = fields.Selection(
-        selection=[], string="Tipo de diario retenciones"
+        selection=[], string="Type of withholding journal"
     )
 
     @api.onchange("type")
