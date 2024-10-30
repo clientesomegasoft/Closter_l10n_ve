@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_contract_parafiscal_contributions_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 15:30+0000\n"
+"PO-Revision-Date: 2024-10-30 15:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_parafiscal_contributions_fields.hr_contract_parafiscal_contributions_field
+msgid "<span attrs=\"{'invisible': [('income_tax_islr', '=', False)]}\">%</span>"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model,name:omegasoft_contract_parafiscal_contributions_fields.model_hr_contract
+msgid "Employee Contract"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__forced_unemployment
+msgid "Forced Unemployment"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__housing_policy_law
+msgid "Housing Policy Law"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__inces
+msgid "Inces"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__income_tax_islr
+msgid "Income Tax ISRL"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,help:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__housing_policy_law
+msgid "Indicates that the employee makes the Housing Policy Law contribution."
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,help:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__inces
+msgid "Indicates that the employee makes the INCES."
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,help:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__forced_unemployment
+msgid ""
+"Indicates that the employee makes the forced unemployment contribution."
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,help:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__income_tax_islr
+msgid "Indicates that the employee makes the income tax contribution."
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,help:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__mandatory_social_security
+msgid "Indicates that the employee pays social security contributions."
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,help:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__percentage_income_tax_islr
+msgid ""
+"Indicates the percentage figure to\n"
+"        be applied for Income Tax Withholding."
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__mandatory_social_security
+msgid "Mandatory Social Security"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_parafiscal_contributions_fields.hr_contract_parafiscal_contributions_field
+msgid "Parafiscal contributions"
+msgstr ""
+
+#. module: omegasoft_contract_parafiscal_contributions_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_parafiscal_contributions_fields.field_hr_contract__percentage_income_tax_islr
+msgid "Percentage Income Tax ISRL"
+msgstr ""

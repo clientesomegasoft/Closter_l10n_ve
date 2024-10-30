@@ -1,0 +1,544 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ve_withholding_municipal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 12:59+0000\n"
+"PO-Revision-Date: 2024-10-30 12:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__rate
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__municipal_concept_rate
+msgid "% Retención"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "% de retención"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.actions.report,print_report_name:l10n_ve_withholding_municipal.account_withholding_municipal_report
+msgid "'COMP RETENCIÓN MUNICIPAL - %s' % (object.name)"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "<b>Fecha de emisión:</b>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "<b>Nro. Comprobante:</b>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid ""
+"<br/>\n"
+"                                Agente de Retención (Sello y Firma)"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid ""
+"<br/>\n"
+"                                Firma del Beneficiario"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:mail.template,body_html:l10n_ve_withholding_municipal.mail_template_withholding_municipal_receipt
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"<p style=\"margin: 0px; padding: 0px;font-size: 13px;\">\n"
+"    Hola <t t-out=\"object.type == 'supplier' and object.subject_id.name or object.agent_id.name\"></t>,<br>\n"
+"    Acá adjunto se encuentra el comprobante de retención municipal: <strong t-out=\"object.name\"></strong>\n"
+"    por un monto de <strong t-out=\"format_amount(object.amount, object.currency_id)\"></strong>,<br>\n"
+"    correspondiente a la Factura Nro. <strong t-out=\"object.type == 'supplier' and object.invoice_id.supplier_invoice_number or object.invoice_id.name\"></strong>.<br>\n"
+"    Puede responder este correo si tiene alguna duda.\n"
+"    <br><br>\n"
+"    Muchas gracias.\n"
+"    <t t-if=\"user.signature\">\n"
+"        <br><t t-out=\"user.signature\"></t>\n"
+"    </t>\n"
+"</p>\n"
+"</div>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal_view_form
+msgid "<span class=\"o_stat_text\">Asiento</span>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__agent_id
+msgid "Agente de retención"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_bank_statement_line__apply_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_move__apply_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_payment__apply_withholding_municipal
+msgid "Apply Withholding Municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__move_id
+msgid "Asiento contable"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__base_amount
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__base_amount
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Base imponible"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_municipal.selection__account_withholding_municipal__state__draft
+msgid "Borrador"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:mail.template,report_name:l10n_ve_withholding_municipal.mail_template_withholding_municipal_receipt
+msgid "COMP RETENCIÓN MUNICIPAL - {{ object.name }}"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "COMPROBANTE DE RETENCIÓN DE IMPUESTO SOBRE ACTIVIDADES ECONOMICAS"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_municipal.selection__account_withholding_municipal__state__cancel
+msgid "Cancelado"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal_view_form
+msgid "Cancelar"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Company Logo"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__company_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__company_id
+msgid "Compañía"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:mail.template,name:l10n_ve_withholding_municipal.mail_template_withholding_municipal_receipt
+msgid "Comprobante de retención municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.actions.report,name:l10n_ve_withholding_municipal.account_withholding_municipal_report
+msgid "Comprobante municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_account_municipal_concept
+msgid "Concepto de retencion municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.actions.act_window,name:l10n_ve_withholding_municipal.account_municipal_concept_action
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__municipal_concept_id
+#: model:ir.ui.menu,name:l10n_ve_withholding_municipal.menu_account_municipal_concept
+msgid "Concepto de retención municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Concepto de retencíon"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_bank_statement_line__municipal_concept_ids
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_move__municipal_concept_ids
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_payment__municipal_concept_ids
+msgid "Conceptos de retención municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal_view_form
+msgid "Confirmar"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__create_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__create_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__create_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__create_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__withholding_account_id
+msgid "Cuenta de retención"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_company__in_municipal_account_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__in_municipal_account_id
+msgid "Cuenta de retención municipal en compras"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_company__out_municipal_account_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__out_municipal_account_id
+msgid "Cuenta de retención municipal en ventas"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__destination_account_id
+msgid "Cuenta destino"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid ""
+"DECRETO 037 GACETA MUNICIPAL - Art 02: Responsabilidad: Los agentes de retención estan obligados a retener la totalidad del impuesto\n"
+"                                        que se genere al momento del pago o abono en cuenta, de conformidad con lo establecido en el articulo 119 y 124 de la Reforma Ordenanza\n"
+"                                        de Impuesto sobre Actividades Económicas de Industria, Comercio, Servicio o de Indole Similar, Gaceta Municipal N° 039 Ordinario de\n"
+"                                        Fecha 23 de Febrero de 2015 y en el articulo 210, 211, 214, de la ley Orgánica del Poder Público Municipal."
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__journal_id
+msgid "Diario"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_company__in_municipal_journal_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__in_municipal_journal_id
+msgid "Diario de compra para retención municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_company__out_municipal_journal_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__out_municipal_journal_id
+msgid "Diario de venta para retención municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Dirección Fiscal del Agente Retenido<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Dirección Fiscal del Agente de Retención<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__display_name
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__display_name
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.constraint,message:l10n_ve_withholding_municipal.constraint_account_municipal_concept_check_rate
+msgid ""
+"El porcentaje de retención debe estar en un rango mayor a 0 y menor o igual "
+"a 100."
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:mail.template,description:l10n_ve_withholding_municipal.mail_template_withholding_municipal_receipt
+msgid ""
+"Envia un correo cuando se pulsa el boton de \"ENVIAR POR CORREO "
+"ELECTRONICO\" en los comprobantes de retención municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal_view_form
+msgid "Enviar por correo electrónico"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__state
+msgid "Estado"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__invoice_id
+msgid "Factura"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__date
+msgid "Fecha de comprobante"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Fecha de documento"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__invoice_date
+msgid "Fecha factura"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept____last_update
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal____last_update
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__write_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__write_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__write_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__write_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_company__activity_number
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__activity_number
+msgid "Licencia de actividades económicas"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Licencia de actividades económicas<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal_view_form
+msgid "Lineas"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_account_withholding_municipal_line
+msgid "Lineas de retencion de municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__currency_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__currency_id
+msgid "Moneda fiscal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__amount
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__amount
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Monto retenido"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Monto total del documento"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_municipal.selection__account_journal__withholding_journal_type__municipal
+msgid "Municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_company__nifg
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__nifg
+msgid "NIFG"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "NIFG<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_municipal_concept__name
+msgid "Nombre de concepto"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Nombre y Apellido o Razón Social del Agente Retenido<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Nombre y Apellido o Razón Social del Agente de Retención<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Nro. Control"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Nro. Factura"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__name
+msgid "Numero de comprobante"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Período Fiscal<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_municipal.selection__account_withholding_municipal__state__posted
+msgid "Publicado"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.view_move_form
+msgid "RET. Municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Registro de Identificación Fiscal del Agente Retenido<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal
+msgid "Registro de Identificación Fiscal del Agente de Retención<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.account_withholding_municipal_view_form
+msgid "Restablecer a borrador"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model,name:l10n_ve_withholding_municipal.model_account_withholding_municipal
+msgid "Retenciones Municipales"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_bank_statement_line__withholding_municipal_ids
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_move__withholding_municipal_ids
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_payment__withholding_municipal_ids
+msgid "Retenciones de municipales"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_municipal.view_partner_form
+msgid "Retenciones municipales"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.actions.act_window,name:l10n_ve_withholding_municipal.account_withholding_municipal_customer_action
+#: model:ir.ui.menu,name:l10n_ve_withholding_municipal.menu_account_withholding_municipal_customer
+msgid "Retención municipal Clientes"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.actions.act_window,name:l10n_ve_withholding_municipal.account_withholding_municipal_supplier_action
+#: model:ir.ui.menu,name:l10n_ve_withholding_municipal.menu_account_withholding_municipal_supplier
+msgid "Retención municipal Proveedores"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_municipal.selection__account_withholding_municipal__type__customer
+msgid "Retención municipal clientes"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_municipal.selection__account_withholding_municipal__type__supplier
+msgid "Retención municipal proveedores"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__subject_id
+msgid "Sujeto retenido"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_journal__withholding_journal_type
+msgid "Tipo de diario retenciones"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__type
+msgid "Type"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__withholding_municipal_id
+msgid "Withholding Municipal"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:mail.template,subject:l10n_ve_withholding_municipal.mail_template_withholding_municipal_receipt
+msgid ""
+"{{ object.agent_id.name }} - Comprobante de retención municipal: {{ "
+"object.name }}"
+msgstr ""
+
+#. module: l10n_ve_withholding_municipal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__is_municipal_agent
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_partner__is_municipal_agent
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_users__is_municipal_agent
+msgid "¿Es agente de retención municipal?"
+msgstr ""

@@ -1,0 +1,206 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ve_fiscal_identification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 03:54+0000\n"
+"PO-Revision-Date: 2024-10-30 03:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.constraint,message:l10n_ve_fiscal_identification.constraint_res_partner_unique_identification
+msgid ""
+"\n"
+"Ya existe un contacto con el mismo Documento de identidad !"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.constraint,message:l10n_ve_fiscal_identification.constraint_res_partner_unique_vat
+msgid ""
+"\n"
+"Ya existe un contacto con el mismo RIF !"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__partner_type
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__partner_type
+msgid "Clasificación comercial"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__customer
+msgid "Cliente"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__customer_supplier
+msgid "Cliente / Proveedor"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model_terms:ir.ui.view,arch_db:l10n_ve_fiscal_identification.res_partner_view_search
+msgid "Clientes"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_sale_order__partner_id
+msgid "Customer"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_account_payment__partner_id
+msgid "Customer/Vendor"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__code
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__person_type_code
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__person_type_code
+msgid "Código"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__identification
+msgid "Documento de identidad"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model_terms:ir.ui.view,arch_db:l10n_ve_fiscal_identification.view_partner_form
+msgid "Ej. J-12345678-9"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__is_company
+msgid "Es compañía"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_account_move__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_account_payment
+msgid "Payments"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__supplier
+msgid "Proveedor"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model_terms:ir.ui.view,arch_db:l10n_ve_fiscal_identification.res_partner_view_search
+msgid "Proveedores"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__vat
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__vat
+msgid "RIF"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,help:l10n_ve_fiscal_identification.field_res_partner__vat
+#: model:ir.model.fields,help:l10n_ve_fiscal_identification.field_res_users__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__name
+msgid "Tipo"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_person_type
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__person_type_id
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__person_type_id
+msgid "Tipo de persona"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model,name:l10n_ve_fiscal_identification.model_res_users
+msgid "User"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_purchase_order__partner_id
+msgid "Vendor"
+msgstr ""
+
+#. module: l10n_ve_fiscal_identification
+#: model:ir.model.fields,help:l10n_ve_fiscal_identification.field_purchase_order__partner_id
+msgid "You can find a vendor by its Name, TIN, Email or Internal Reference."
+msgstr ""
