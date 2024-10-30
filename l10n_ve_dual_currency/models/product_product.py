@@ -7,17 +7,17 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
 
     standard_price_ref = fields.Float(
-        string="Coste op.", company_dependent=True, digits="Product Price"
+        string="Op. cost", company_dependent=True, digits="Product Price"
     )
     value_svl_ref = fields.Float(compute="_compute_value_svl", compute_sudo=True)
     avg_cost_ref = fields.Monetary(
-        string="Costo unitario op.",
+        string="Op. unit cost",
         compute="_compute_value_svl",
         compute_sudo=True,
         currency_field="cost_currency_ref_id",
     )
     total_value_ref = fields.Monetary(
-        string="Valor total op.",
+        string="Op. total value",
         compute="_compute_value_svl",
         compute_sudo=True,
         currency_field="cost_currency_ref_id",

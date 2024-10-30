@@ -5,7 +5,7 @@ from odoo.tools import format_amount
 class AccountPayment(models.Model):
     _inherit = "account.payment"
 
-    amount_ref = fields.Char(string="Importe referencia", compute="_compute_amount_ref")
+    amount_ref = fields.Char(string="Reference amount", compute="_compute_amount_ref")
 
     @api.depends("amount", "currency_id", "currency_rate_ref")
     def _compute_amount_ref(self):

@@ -22,7 +22,7 @@ class StockLandedCostLine(models.Model):
     )
     currency_rate_ref = fields.Many2one(
         comodel_name="res.currency.rate",
-        string="Tasa de cambio",
+        string="Exchange rate",
         ondelete="restrict",
         required=True,
         default=lambda self: self.env.company.currency_ref_id.get_currency_rate(),

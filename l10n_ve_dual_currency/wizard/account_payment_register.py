@@ -7,7 +7,7 @@ class AccountPaymentRegister(models.TransientModel):
     currency_ref_id = fields.Many2one(related="company_id.currency_ref_id")
     currency_rate_ref = fields.Many2one(
         "res.currency.rate",
-        string="Tasa",
+        string="Rate",
         compute="_compute_currency_rate_ref",
         store=True,
         readonly=False,

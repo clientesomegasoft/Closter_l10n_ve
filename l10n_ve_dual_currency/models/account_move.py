@@ -13,14 +13,14 @@ class AccountMove(models.Model):
 
     currency_ref_id = fields.Many2one(related="company_id.currency_ref_id")
     global_rate_ref = fields.Boolean(
-        string="Tasa global",
+        string="Global rate",
         default=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     currency_rate_ref = fields.Many2one(
         "res.currency.rate",
-        string="Tasa de cambio",
+        string="Exchange rate",
         tracking=True,
         default=lambda self: self.env.company.currency_ref_id.get_currency_rate(),
         readonly=True,
@@ -28,19 +28,19 @@ class AccountMove(models.Model):
         domain="[('currency_id', '=', currency_ref_id)]",
     )
     amount_total_ref = fields.Monetary(
-        string="Total ope.",
+        string="Op Totale.",
         compute="_compute_amount_ref",
         store=True,
         currency_field="currency_ref_id",
     )
     amount_untaxed_ref = fields.Monetary(
-        string="Base imponible ope.",
+        string="Ope. taxable base",
         compute="_compute_amount_ref",
         store=True,
         currency_field="currency_ref_id",
     )
     amount_residual_ref = fields.Monetary(
-        string="Importe adeudado ope.",
+        string="Ope. amount owed",
         compute="_compute_amount_ref",
         store=True,
         currency_field="currency_ref_id",

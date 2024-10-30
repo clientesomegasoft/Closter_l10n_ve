@@ -11,7 +11,7 @@ class AccountMoveLine(models.Model):
     currency_ref_id = fields.Many2one(related="company_id.currency_ref_id")
     currency_rate_ref = fields.Many2one(
         "res.currency.rate",
-        string="Tasa de cambio",
+        string="Exchange rate",
         compute="_compute_currency_rate_ref",
         store=True,
         precompute=True,
@@ -21,31 +21,31 @@ class AccountMoveLine(models.Model):
         domain="[('currency_id', '=', currency_ref_id)]",
     )
     debit_ref = fields.Monetary(
-        string="Débito ope.",
+        string="Ope. debit",
         compute="_compute_debit_credit_ref",
         store=True,
         currency_field="currency_ref_id",
     )
     credit_ref = fields.Monetary(
-        string="Crédito ope.",
+        string="Ope. credit",
         compute="_compute_debit_credit_ref",
         store=True,
         currency_field="currency_ref_id",
     )
     balance_ref = fields.Monetary(
-        string="Balance ope.",
+        string="Ope. balance",
         compute="_compute_balance_ref",
         store=True,
         currency_field="currency_ref_id",
     )
     amount_residual_ref = fields.Monetary(
-        string="Importe adeudado ope.",
+        string="Ope. amount owed",
         compute="_compute_amount_residual",
         store=True,
         currency_field="currency_ref_id",
     )
     tax_base_amount_ref = fields.Monetary(
-        string="Base ope.",
+        string="Ope. base",
         compute="_compute_tax_base_amount_ref",
         store=True,
         currency_field="currency_ref_id",
@@ -55,7 +55,7 @@ class AccountMoveLine(models.Model):
         (
             "check_credit_debit_ref",
             "CHECK(display_type IN ('line_section', 'line_note') OR debit_ref * credit_ref = 0)",  # noqa: B950
-            "Wrong credit or debit value in accounting entry !",
+            "Wrong credit or debit value in accounting entry!",
         )
     ]
 

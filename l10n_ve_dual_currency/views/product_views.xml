@@ -45,7 +45,7 @@
             <xpath expr="//div[@name='product_lst_price']" position="after">
                 <field name="currency_ref_id" invisible="1" />
                 <div name="product_list_price_ref" class="mt-1">
-                    Precio op.: <field
+                    Op. Price: <field
                         name="list_price_ref"
                         widget="monetary"
                         options="{'currency_field': 'currency_ref_id', 'field_digits': True}"
@@ -94,7 +94,7 @@
                 <field name="standard_price_ref" optional="show" />
             </field>
             <field name="total_value" position="after">
-                <field name="total_value_ref" optional="show" sum="Total op" />
+                <field name="total_value_ref" optional="show" sum="Op Total" />
             </field>
         </field>
     </record>

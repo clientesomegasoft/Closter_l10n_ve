@@ -7,7 +7,7 @@ class SaleOrder(models.Model):
     currency_ref_id = fields.Many2one(related="company_id.currency_ref_id")
     currency_rate_ref = fields.Many2one(
         comodel_name="res.currency.rate",
-        string="Tasa de cambio",
+        string="Exchange rate",
         readonly=True,
         tracking=True,
         states={"draft": [("readonly", False)]},

@@ -5,14 +5,14 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     list_price_ref = fields.Float(
-        string="Precio de venta op.",
+        string="Op. sale price",
         digits="Product Price",
         compute="_compute_list_price_ref",
         inverse="_inverse_list_price_ref",
         store=True,
     )
     standard_price_ref = fields.Float(
-        "Coste op.",
+        "Op. cost",
         compute="_compute_standard_price_ref",
         inverse="_inverse_set_standard_price_ref",
         digits="Product Price",

@@ -11,13 +11,13 @@ class StockValuationLayer(models.Model):
         "res.currency", related="company_id.currency_ref_id"
     )
     unit_cost_ref = fields.Monetary(
-        "Valor unitario op.",
+        "Op. unit value",
         default=0.0,
         readonly=True,
         currency_field="currency_ref_id",
     )
     value_ref = fields.Monetary(
-        "Valor total op.", default=0.0, readonly=True, currency_field="currency_ref_id"
+        "Op. total value", default=0.0, readonly=True, currency_field="currency_ref_id"
     )
     remaining_value_ref = fields.Monetary(default=0.0, currency_field="currency_ref_id")
 

@@ -78,7 +78,7 @@ class CurrencyRate(models.Model):
     _inherit = "res.currency.rate"
 
     name = fields.Datetime(default=fields.Datetime.now)
-    is_bcv_rate = fields.Boolean(string="Tasa BCV", default=False)
+    is_bcv_rate = fields.Boolean(string="BCV Rate", default=False)
 
     @api.constrains("name", "is_bcv_rate")
     def _unique_bcv_rate_per_day(self):
