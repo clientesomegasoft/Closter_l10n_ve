@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Contract Employee Seniority",
+    "name": "Venezuela - Antigüedad de los empleados contratados",
     "version": "16.0.0.0.16",
     "category": "Human Resources/Contracts",
     "application": False,

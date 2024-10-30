@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Contract Benefit controls Fields",
+    "name": "Venezuela - Campos para Controles de prestaciones contractuales",
     "version": "16.0.0.0.16",
     "category": "Human Resources/Contracts",
     "application": False,

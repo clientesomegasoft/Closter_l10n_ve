@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Contract Vacations Fields",
+    "name": "Venezuela - Campos de Vacaciones del Contrato",
     "version": "16.0.0.0.16",
     "category": "Human Resources/Contracts",
     "application": False,

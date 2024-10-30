@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Contract Bonuses Fields",
+    "name": "Venezuela - Campos de las bonificaciones contractuales",
     "version": "16.0.0.1.2",
     "category": "Human Resources/Contracts",
     "application": False,

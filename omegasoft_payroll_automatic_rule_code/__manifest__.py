@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Payroll Automatic Rule Code",
+    "name": "Venezuela - Código de regla automática de nómina",
     "version": "16.0.0.0.16",
     "category": "Human Resources/Payroll",
     "application": False,

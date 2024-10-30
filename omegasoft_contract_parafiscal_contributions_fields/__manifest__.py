@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Contract Parafiscal Contributions Fields",
+    "name": "Venezuela - Campos de las contribuciones parafiscales contractuales",
     "version": "16.0.0.0.16",
     "category": "Human Resources/Contracts",
     "application": False,

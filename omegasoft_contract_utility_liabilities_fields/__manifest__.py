@@ -1,5 +1,5 @@
 {
-    "name": "Omegasoft C.A Contract Utility Liabilities Fields",
+    "name": "Venezuela - Campos de Obligaciones de Servicios Públicos del Contrato",
     "version": "16.0.0.0.16",
     "category": "Human Resources/Contracts",
     "application": False,
