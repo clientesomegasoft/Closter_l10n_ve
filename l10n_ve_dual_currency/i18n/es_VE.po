@@ -1,0 +1,297 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ve_dual_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 03:48+0000\n"
+"PO-Revision-Date: 2024-10-30 23:51-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: l10n_ve_dual_currency
+#: model_terms:ir.ui.view,arch_db:l10n_ve_dual_currency.view_invoice_tree
+msgid "Adeudado ope."
+msgstr "Adeudado ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_partial_reconcile__amount_ref
+msgid "Amount Ref"
+msgstr "Importe Ref"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move_line__balance_ref
+msgid "Balance ope."
+msgstr "Balance ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_bank_statement_line__amount_untaxed_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move__amount_untaxed_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment__amount_untaxed_ref
+msgid "Base imponible ope."
+msgstr "Base imponible ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move_line__tax_base_amount_ref
+msgid "Base ope."
+msgstr "Base ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_product__cost_currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_template__cost_currency_ref_id
+msgid "Cost Currency Ref"
+msgstr "Ref de moneda de costo"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_product__standard_price_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_template__standard_price_ref
+msgid "Coste op."
+msgstr "Coste op."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_product__avg_cost_ref
+msgid "Costo unitario op."
+msgstr "Costo unitario op."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move_line__credit_ref
+msgid "Crédito ope."
+msgstr "Crédito ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_res_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_res_currency_rate
+msgid "Currency Rate"
+msgstr "Tasa monetaria"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_product__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_template__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_stock_landed_cost_lines__currency_ref_id
+msgid "Currency Ref"
+msgstr "Ref de moneda"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move_line__debit_ref
+msgid "Débito ope."
+msgstr "Débito ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_bank_statement_line__amount_residual_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move__amount_residual_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move_line__amount_residual_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment__amount_residual_ref
+msgid "Importe adeudado ope."
+msgstr "Importe adeudado ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment__amount_ref
+msgid "Importe referencia"
+msgstr "Importe referencia"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_bank_statement_line__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move_line__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_partial_reconcile__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment_register__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_purchase_order__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_sale_order__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_stock_valuation_layer__currency_ref_id
+msgid "Moneda operativa"
+msgstr "Moneda operativa"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_res_currency_rate__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_account_partial_reconcile
+msgid "Partial Reconcile"
+msgstr "Conciliación parcial"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_product__list_price_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_template__list_price_ref
+msgid "Precio de venta op."
+msgstr "Precio de venta op."
+
+#. module: l10n_ve_dual_currency
+#: model_terms:ir.ui.view,arch_db:l10n_ve_dual_currency.product_template_kanban_view
+msgid "Precio op.:"
+msgstr "Precio op.:"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_product_pricelist_item
+msgid "Pricelist Rule"
+msgstr "Regla de la lista de precios"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_product_template
+msgid "Product"
+msgstr "Producto"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_product_product
+msgid "Product Variant"
+msgstr "Variantes de producto"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea pedido de compra"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar pago"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_stock_valuation_layer__remaining_value_ref
+msgid "Remaining Value Ref"
+msgstr "Valor restante Ref"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_stock_landed_cost
+msgid "Stock Landed Cost"
+msgstr "Coste en destino"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_stock_landed_cost_lines
+msgid "Stock Landed Cost Line"
+msgstr "Línea de coste en destino"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento stock"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_stock_valuation_layer
+msgid "Stock Valuation Layer"
+msgstr "Capa de valoración de stock"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment_register__currency_rate_ref
+msgid "Tasa"
+msgstr "Tasa"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_res_currency_rate__is_bcv_rate
+msgid "Tasa BCV"
+msgstr "Tasa BCV"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_bank_statement_line__currency_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move__currency_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move_line__currency_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment__currency_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_purchase_order__currency_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_sale_order__currency_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_stock_landed_cost_lines__currency_rate_ref
+msgid "Tasa de cambio"
+msgstr "Tasa de cambio"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_bank_statement_line__global_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move__global_rate_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment__global_rate_ref
+msgid "Tasa global"
+msgstr "Tasa global"
+
+#. module: l10n_ve_dual_currency
+#: model_terms:ir.ui.view,arch_db:l10n_ve_dual_currency.stock_valuation_layer_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: l10n_ve_dual_currency
+#: model_terms:ir.ui.view,arch_db:l10n_ve_dual_currency.view_move_form
+msgid "Total Credit Ref"
+msgstr "Ref de Crédito Total"
+
+#. module: l10n_ve_dual_currency
+#: model_terms:ir.ui.view,arch_db:l10n_ve_dual_currency.view_move_form
+msgid "Total Debit Ref"
+msgstr "Ref de Débito Total"
+
+#. module: l10n_ve_dual_currency
+#: model_terms:ir.ui.view,arch_db:l10n_ve_dual_currency.product_product_stock_tree_inherit_stock_account
+msgid "Total op"
+msgstr "Total op"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_bank_statement_line__amount_total_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_move__amount_total_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_account_payment__amount_total_ref
+msgid "Total ope."
+msgstr "Total ope."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_product__total_value_ref
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_stock_valuation_layer__value_ref
+msgid "Valor total op."
+msgstr "Valor total op."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_stock_valuation_layer__unit_cost_ref
+msgid "Valor unitario op."
+msgstr "Valor unitario op."
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model,name:l10n_ve_dual_currency.model_stock_valuation_adjustment_lines
+msgid "Valuation Adjustment Lines"
+msgstr "Líneas de ajuste de valoración"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.fields,field_description:l10n_ve_dual_currency.field_product_product__value_svl_ref
+msgid "Value Svl Ref"
+msgstr "Value Svl Ref"
+
+#. module: l10n_ve_dual_currency
+#: model:ir.model.constraint,message:l10n_ve_dual_currency.constraint_account_move_line_check_credit_debit_ref
+msgid "Wrong credit or debit value in accounting entry !"
+msgstr "¡Valor de crédito o débito incorrecto en el asiento contable!"

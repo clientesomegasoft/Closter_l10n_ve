@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ve_withholding_itf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 11:26+0000\n"
+"PO-Revision-Date: 2024-10-30 07:28-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: l10n_ve_withholding_itf
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_itf.view_account_payment_form
+msgid "<span class=\"o_stat_text\">Asiento ITF</span>"
+msgstr "<span class=\"o_stat_text\">Asiento ITF</span>"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment__apply_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment_register__apply_itf
+msgid "Apply Itf"
+msgstr "Aplicar ITF"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment__itf_move_id
+msgid "Asiento ITF"
+msgstr "Asiento ITF"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model,name:l10n_ve_withholding_itf.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model,name:l10n_ve_withholding_itf.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_company__itf_account_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_config_settings__itf_account_id
+msgid "Cuenta ITF"
+msgstr "Cuenta ITF"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model.constraint,message:l10n_ve_withholding_itf.constraint_res_company_check_apply_itf
+msgid ""
+"El porcentaje de retención ITF debe estar en un rango mayor a 0 y menor o "
+"igual a 100 y la cuenta ITF es requerida !"
+msgstr ""
+"¡El porcentaje de retención ITF debe estar en un rango mayor a 0 y menor "
+"o igual a 100 y la cuenta ITF es requerida!"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model,name:l10n_ve_withholding_itf.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment__calculate_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment_register__calculate_itf
+msgid "Permitir ITF"
+msgstr "Permitir ITF"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_company__itf_percentage
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_config_settings__itf_percentage
+msgid "Porcentaje ITF"
+msgstr "Porcentaje ITF"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model,name:l10n_ve_withholding_itf.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar pago"
+
+#. module: l10n_ve_withholding_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_company__apply_itf
+#: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_config_settings__apply_itf
+msgid "Retención automática de ITF"
+msgstr "Retención automática de ITF"
