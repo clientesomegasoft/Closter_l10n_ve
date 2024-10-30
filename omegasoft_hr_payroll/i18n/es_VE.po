@@ -4,40 +4,46 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-07 05:15+0000\n"
-"PO-Revision-Date: 2023-10-07 05:15+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2024-10-30 15:46-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: \n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: omegasoft_hr_payroll
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll.hr_payroll_payslip_by_employees_omegasoft
 msgid ""
-"<span class=\"text-muted\">Set a specific department if you want to select "
-"all employees of this department (and sub-departments) at once. In case you "
-"have selected a structure that has associated departments these will be "
-"selected automatically as well as their employees.</span>"
+"<span class=\"text-muted\">Set a specific department if you want to select all "
+"employees of this department (and sub-departments) at once. In case you have "
+"selected a structure that has associated departments these will be selected "
+"automatically as well as their employees.</span>"
 msgstr ""
 "<span class=\"text-muted\">Establezca un departamento específico si desea "
-"seleccionar todos los empleados de este departamento (y subdepartamentos) a "
-"la vez. En caso de haber seleccionado una estructura salarial que tenga "
-"asociados departamentos, estos se seleccionaran automáticamente así como sus"
-" empleados.</span>"
+"seleccionar todos los empleados de este departamento (y subdepartamentos) a la "
+"vez. En caso de haber seleccionado una estructura salarial que tenga asociados "
+"departamentos, estos se seleccionaran automáticamente así como sus empleados.</"
+"span>"
 
 #. module: omegasoft_hr_payroll
 #: model:mail.template,body_html:omegasoft_hr_payroll.mail_template_new_payslip_custom_omegasoft
 msgid ""
-"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%; margin:0px auto;\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%; "
+"margin:0px auto;\">\n"
 "                    <tbody>\n"
 "                        <tr>\n"
-"                            <td valign=\"top\" style=\"text-align: left; font-size: 14px;\">\n"
-"                                Dear <t t-esc=\"object.employee_id.name\"></t>, a new payslip is available for you.<br><br>\n"
-"                                Please find the PDF in your employee portal.<br><br>\n"
+"                            <td valign=\"top\" style=\"text-align: left; font-"
+"size: 14px;\">\n"
+"                                Dear <t t-esc=\"object.employee_id.name\"></t>, a "
+"new payslip is available for you.<br><br>\n"
+"                                Please find the PDF in your employee portal."
+"<br><br>\n"
 "                                Have a nice day,<br>\n"
 "                                The HR Team\n"
 "                            </td>\n"
@@ -46,12 +52,16 @@ msgid ""
 "                </table>\n"
 "            "
 msgstr ""
-"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%; margin:0px auto;\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%; "
+"margin:0px auto;\">\n"
 "                    <tbody>\n"
 "                        <tr>\n"
-"                            <td valign=\"top\" style=\"text-align: left; font-size: 14px;\">\n"
-"                                Estimado(a) <t t-esc=\"object.employee_id.name\"/>, hay un nuevo recibo de nómina disponible para usted.<br/><br/>\n"
-"                                Encontrará el PDF adjunto a éste correo.<br/><br/>\n"
+"                            <td valign=\"top\" style=\"text-align: left; font-"
+"size: 14px;\">\n"
+"                                Estimado(a) <t t-esc=\"object.employee_id.name\"/"
+">, hay un nuevo recibo de nómina disponible para usted.<br/><br/>\n"
+"                                Encontrará el PDF adjunto a éste correo.<br/><br/"
+">\n"
 "                                Tenga un buen día,<br/>\n"
 "                                El equipo de RR.HH\n"
 "                            </td>\n"
@@ -69,7 +79,7 @@ msgstr "Acción requerida"
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_res_currency_rate__currency_rate_active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__activity_ids
@@ -141,7 +151,7 @@ msgstr "Pago programado predeterminado"
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_employees__struct_fortnight
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__struct_fortnight
 msgid "Defines the frequency of the wage payment."
-msgstr "Define la frecuencia del pago de salarios"
+msgstr "Define la frecuencia del pago de salarios."
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__email_state__exception
@@ -184,9 +194,11 @@ msgstr "Contrato de empleado"
 #: code:addons/omegasoft_hr_payroll/models/mail.py:0
 #, python-format
 msgid ""
-"Error without exception. Probably due do concurrent access update of "
-"notification records. Please see with an administrator."
+"Error without exception. Probably due do concurrent access update of notification "
+"records. Please see with an administrator."
 msgstr ""
+"Error sin excepción. Probablemente debido a la actualización del acceso simultáneo "
+"de los registros de notificación. Por favor, consulte con un administrador."
 
 #. module: omegasoft_hr_payroll
 #. odoo-python
@@ -196,6 +208,8 @@ msgid ""
 "Error without exception. Probably due do sending an email without computed "
 "recipients."
 msgstr ""
+"Error sin excepción. Probablemente se deba al envío de un correo electrónico sin "
+"destinatarios calculados."
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__fortnight__first_fortnight
@@ -234,7 +248,7 @@ msgstr "Quincenas"
 #: code:addons/omegasoft_hr_payroll/models/hr_payroll_payslips_by_employees.py:0
 #, python-format
 msgid "From %s to %s"
-msgstr ""
+msgstr "De %s a %s"
 
 #. module: omegasoft_hr_payroll
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll.hr_payslip_run_form_inherit_omegasoft
@@ -268,8 +282,7 @@ msgstr "Icono para indicar una actividad de excepción."
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payroll_structure__message_needaction
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
-"Si se encuentra seleccionado, hay nuevos mensajes que requieren tu atención."
+msgstr "Si se encuentra seleccionado, hay nuevos mensajes que requieren tu atención."
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payroll_structure__message_has_error
@@ -284,11 +297,10 @@ msgstr "Si se encuentra seleccionado, algunos mensajes tienen error de envío."
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_employees__fortnight
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__fortnight
 msgid ""
-"Indicates whether the structure associated with the payroll is first or "
-"second fortnight"
+"Indicates whether the structure associated with the payroll is first or second "
+"fortnight"
 msgstr ""
-"Indica si la estructura asociada a la nómina es de primera o segunda "
-"quincena"
+"Indica si la estructura asociada a la nómina es de primera o segunda quincena"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__message_is_follower
@@ -366,7 +378,7 @@ msgstr "Nueva nomina"
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__activity_calendar_event_id
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr "Siguiente evento en el calendario de actividades."
+msgstr "Siguiente evento en el calendario de actividades"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__activity_date_deadline
@@ -395,6 +407,8 @@ msgid ""
 "No se puede llevar a borrardor una nomina con asientos publicados: \n"
 "%(name)s"
 msgstr ""
+"No se puede llevar a borrador una nomina con asientos publicados: \n"
+"%(name)s"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__message_needaction_counter
@@ -412,7 +426,7 @@ msgstr "Número de lunes"
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__number_of_mondays
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__number_of_mondays
 msgid "Number of Mondays in the selected period."
-msgstr "Número de lunes en el período seleccionado"
+msgstr "Número de lunes en el período seleccionado."
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__number_of_saturdays_sundays
@@ -424,13 +438,13 @@ msgstr "Número de sábados y domingos"
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__number_of_saturdays_sundays
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__number_of_saturdays_sundays
 msgid "Number of Saturdays and Sundays in the period selected "
-msgstr "Número de sábados y domingos en el periodo seleccionado"
+msgstr "Número de sábados y domingos en el periodo seleccionado "
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__message_has_error_counter
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__message_has_error_counter
 msgid "Number of errors"
-msgstr "Numero de errores"
+msgstr "Número de errores"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payroll_structure__message_needaction_counter
@@ -449,14 +463,14 @@ msgstr "Número de mensajes con error de envío"
 #: code:addons/omegasoft_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "One of the contract for these payslips has no structure type."
-msgstr ""
+msgstr "Uno de los contratos de estas nóminas no tiene ningún tipo de estructura."
 
 #. module: omegasoft_hr_payroll
 #. odoo-python
 #: code:addons/omegasoft_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "One of the payroll structures has no account journal defined on it."
-msgstr ""
+msgstr "Una de las estructuras de nómina no tiene ningún diario de cuentas definido."
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__email_state__outgoing
@@ -476,7 +490,7 @@ msgstr "Recibo de nómina"
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__payroll_structure_for_profits
 msgid "Payroll structure for profits"
-msgstr ""
+msgstr "Estructura de nómina para ganancias"
 
 #. module: omegasoft_hr_payroll
 #: model:mail.template,name:omegasoft_hr_payroll.mail_template_new_payslip_custom_omegasoft
@@ -488,7 +502,7 @@ msgstr "Nómina: Nueva nómina personalizada"
 #: code:addons/omegasoft_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "Payslip"
-msgstr ""
+msgstr "Recibo de sueldo"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model,name:omegasoft_hr_payroll.model_hr_payslip_run
@@ -573,7 +587,7 @@ msgstr "Enviado"
 #: code:addons/omegasoft_hr_payroll/models/hr_payroll_payslips_by_employees.py:0
 #, python-format
 msgid "Some work entries could not be validated."
-msgstr ""
+msgstr "Algunas entradas de trabajo no pudieron ser validadas."
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payroll_structure__activity_state
@@ -598,7 +612,7 @@ msgstr "Estructura"
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__structure_for_rate
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__structure_for_rate
 msgid "Structure For Rate"
-msgstr ""
+msgstr "Estructura de la tarifa"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__structure_for_resets_labor_liabilities
@@ -613,42 +627,44 @@ msgstr "Estructuras para la reinicialización de pasivos laborales (al cierre de
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__structures_for_utility_resets
 msgid "Structures for the reinitialization of profits (at year-end)"
-msgstr ""
+msgstr "Estructuras para la reinicialización de utilidades (al cierre del ejercicio)"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__structures_for_utility_resets
 msgid "Structures for utility resets"
-msgstr ""
+msgstr "Estructuras para restablecimiento de servicios públicos"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_employee__average_wage
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__average_wage
 msgid "The average amount of money received by a worker in a given period"
 msgstr ""
+"Es la cantidad de dinero promedio que recibe un trabajador en un periodo "
+"determinado"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payroll_structure__complementary_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__complementary_payroll
 msgid ""
-"This structure will be available when generating payroll for employees with "
-"weekly and monthly structures."
+"This structure will be available when generating payroll for employees with weekly "
+"and monthly structures."
 msgstr ""
-"Esta estructura estará disponible al momento de generar nómina para "
-"empleados con estructuras semanales y mensuales."
+"Esta estructura estará disponible al momento de generar nómina para empleados con "
+"estructuras semanales y mensuales."
 
 #. module: omegasoft_hr_payroll
 #. odoo-python
 #: code:addons/omegasoft_hr_payroll/models/hr_payslip.py:0
 #, python-format
 msgid "Tiene un pago de utilidades en estado pagado o realizado"
-msgstr ""
+msgstr "Tiene un pago de utilidades en estado pagado o realizado"
 
 #. module: omegasoft_hr_payroll
 #. odoo-python
 #: code:addons/omegasoft_hr_payroll/models/hr_payroll_payslips_by_employees.py:0
 #, python-format
 msgid "Time intervals to look for:%s"
-msgstr ""
+msgstr "Intervalos de tiempo a buscar:%s"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payroll_structure__activity_exception_decoration
@@ -661,14 +677,14 @@ msgstr "Tipo de actividad de excepción registrada."
 #: code:addons/omegasoft_hr_payroll/models/mail.py:0
 #, python-format
 msgid "Unable to connect to SMTP Server"
-msgstr ""
+msgstr "No se puede conectar al servidor SMTP"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_employee__wage_type
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__wage_type
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__wage_type_contract
 msgid "Wage Type"
-msgstr ""
+msgstr "Tipo de salario"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__website_message_ids
@@ -687,39 +703,38 @@ msgstr "Historial de comunicaciones del sitio web"
 #: code:addons/omegasoft_hr_payroll/models/hr_payroll_payslips_by_employees.py:0
 #, python-format
 msgid "You must select employee(s) to generate payslip(s)."
-msgstr ""
+msgstr "Debe seleccionar empleado(s) para generar nómina(s)."
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__payroll_structure_for_rate
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__payroll_structure_for_rate
 msgid "fee required for the following structures"
-msgstr ""
+msgstr "tarifa requerida para las siguientes estructuras"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__complementary_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__complementary_payroll
 msgid "is complementary payroll?"
-msgstr "Es nomina complementaria?"
+msgstr "¿Es nomina complementaria?"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__week_number
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__week_number
 msgid "number of week"
-msgstr "Número de semana"
+msgstr "número de semana"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_contract__recent_resets
 msgid "recent calculation for reset utility"
-msgstr ""
+msgstr "cálculo reciente de la utilidad Reset"
 
 #. module: omegasoft_hr_payroll
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__use_average_wage
 #: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__use_average_wage
 msgid "use average salary calculation?"
-msgstr "Necesita calculo de salario promedio?"
+msgstr "¿Utilizar el cálculo del salario medio?"
 
 #. module: omegasoft_hr_payroll
 #: model:mail.template,subject:omegasoft_hr_payroll.mail_template_new_payslip_custom_omegasoft
 msgid "{{ object.employee_id.name }}, a new payslip is available for you"
-msgstr ""
-"{{ object.employee_id.name }}, una nueva nómina está disponible para usted"
+msgstr "{{ object.employee_id.name }}, una nueva nómina está disponible para usted"

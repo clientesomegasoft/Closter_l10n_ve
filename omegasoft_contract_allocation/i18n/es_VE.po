@@ -4,16 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-02 22:05+0000\n"
-"PO-Revision-Date: 2022-11-02 22:05+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2024-10-30 09:38-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: \n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__access_warning
@@ -123,7 +125,7 @@ msgstr "Compañía"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__compute_state
 msgid "Compute State"
-msgstr ""
+msgstr "Estado de proceso"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.actions.act_window,name:omegasoft_contract_allocation.contract_allocation_action
@@ -281,7 +283,7 @@ msgstr "Seguidores (Socios)"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icono Font awesome, por ejemplo fa-tasks"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__frequency
@@ -298,34 +300,34 @@ msgstr "Tiene mensaje"
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__id
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icono para indicar una actividad de excepción."
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_needaction
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcada, nuevos mensajes requieren su atención."
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_has_error
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__name
 msgid "Indicates the type of endowment to be generated"
-msgstr ""
+msgstr "Indica el tipo de dotación que se va a generar"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__is_delivered
@@ -335,13 +337,13 @@ msgstr "Es entregado"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es seguidor"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_product_product__is_an_endowment_product
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_product_template__is_an_endowment_product
 msgid "It is an endowment product"
-msgstr "Es un producto para dotación?"
+msgstr "¿Es un producto para dotación?"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__job_title
@@ -353,36 +355,36 @@ msgstr "Título del cargo"
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines____last_update
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__write_uid
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__write_uid
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__write_date
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__write_date
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización el"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Adjunto principal"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Error de entrega del mensaje"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation_lines__delivery_frequency__monthly
@@ -392,7 +394,7 @@ msgstr "Meses"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Mi plazo de actividad"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__name
@@ -402,47 +404,47 @@ msgstr "Talla"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Siguiente evento en el calendario de actividades"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Fecha límite para la próxima actividad"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Resumen de la próxima actividad"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tipo de la próxima actividad"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Número de acciones"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Número de errores"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Número de mensajes que requieren una acción"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensajes con error de entrega"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Número de mensajes no leídos"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation__state__partial_delivery
@@ -453,7 +455,7 @@ msgstr "Entrega parcial"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__access_url
 msgid "Portal Access URL"
-msgstr ""
+msgstr "URL de acceso al portal"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__product_id
@@ -478,17 +480,17 @@ msgstr "Por entregar"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario responsable"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Error de entrega de SMS"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__access_token
 msgid "Security Token"
-msgstr ""
+msgstr "Token de seguridad"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__active
@@ -523,6 +525,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado basado en actividades\n"
+"Vencida: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
 
 #. module: omegasoft_contract_allocation
 #: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
@@ -543,24 +549,24 @@ msgstr "Tipo de dotación"
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de la actividad de excepción registrada."
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes No Leídos"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de Mensajes No Leídos"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes del sitio web"
 
 #. module: omegasoft_contract_allocation
 #: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historia de la comunicación en la web"

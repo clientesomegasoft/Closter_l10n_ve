@@ -4,16 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-14 16:46+0000\n"
-"PO-Revision-Date: 2023-07-14 16:46+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2024-10-30 09:53-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: \n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: omegasoft_contract_social_benefit_liabilities_fields
 #: model_terms:ir.ui.view,arch_db:omegasoft_contract_social_benefit_liabilities_fields.l10n_ve_omegasoft_res_config_settings_view_form_social_benefit
@@ -94,8 +96,7 @@ msgstr "Opciones de configuración"
 
 #. module: omegasoft_contract_social_benefit_liabilities_fields
 #: model_terms:ir.ui.view,arch_db:omegasoft_contract_social_benefit_liabilities_fields.l10n_ve_omegasoft_res_config_settings_view_form_social_benefit
-msgid ""
-"Configuration of the date to take in the calculation of social benefits"
+msgid "Configuration of the date to take in the calculation of social benefits"
 msgstr "Configuración de la fecha a tomar en el cálculo de las prestaciones sociales"
 
 #. module: omegasoft_contract_social_benefit_liabilities_fields
@@ -140,7 +141,7 @@ msgstr "Contrato de empleado"
 #: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_days_per_year_accumulated_date
 #: model:ir.model.fields,help:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_social_benefits_generated_date
 msgid "Indicates the date of the last Benefit interest payment calculation."
-msgstr "Indica la fecha del ultimo calculo de intereses prestacionales"
+msgstr "Indica la fecha del ultimo calculo de intereses prestacionales."
 
 #. module: omegasoft_contract_social_benefit_liabilities_fields
 #: model:ir.model.fields,field_description:omegasoft_contract_social_benefit_liabilities_fields.field_hr_contract__provisions_benefit_interest_date

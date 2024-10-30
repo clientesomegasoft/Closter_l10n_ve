@@ -4,16 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-29 20:51+0000\n"
-"PO-Revision-Date: 2023-03-29 20:51+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2024-10-30 15:38-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: \n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: omegasoft_hr_organizational_units
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.organizational_units_res_config_settings_view_form_inherit_omegasoft
@@ -147,7 +149,7 @@ msgstr "Seguidores (Socios)"
 #. module: omegasoft_hr_organizational_units
 #: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__has_message
 msgid "Has Message"
-msgstr "tiene mensaje"
+msgstr "Tiene mensaje"
 
 #. module: omegasoft_hr_organizational_units
 #: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__id
@@ -261,7 +263,7 @@ msgstr "Unidades organizativas"
 #. module: omegasoft_hr_organizational_units
 #: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_organizational_units__plan_ids
 msgid "Plan"
-msgstr ""
+msgstr "Plan"
 
 #. module: omegasoft_hr_organizational_units
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
@@ -306,22 +308,22 @@ msgstr "Historial de comunicación del sitio web"
 #: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_res_company__active_organizational_units
 #: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_res_config_settings__active_organizational_units
 msgid "active organizational units"
-msgstr "Unidades organizativas activas"
+msgstr "unidades organizativas activas"
 
 #. module: omegasoft_hr_organizational_units
 #: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_department__code
 msgid "code"
-msgstr "Referencia"
+msgstr "código"
 
 #. module: omegasoft_hr_organizational_units
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.hr_view_department_form_omegasoft_organizational_units
 msgid "department"
-msgstr "Departamento"
+msgstr "departamento"
 
 #. module: omegasoft_hr_organizational_units
 #: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_organizational_units
 msgid "hr.organizational.units"
-msgstr "Unidades organizativas"
+msgstr "unidades organizativas"
 
 #. module: omegasoft_hr_organizational_units
 #: model:ir.model.fields,field_description:omegasoft_hr_organizational_units.field_hr_appraisal__organizational_units_id
@@ -333,12 +335,12 @@ msgstr "Unidades organizativas"
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_filter
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_organizational_units.view_hr_organizational_units_form
 msgid "organizational units"
-msgstr "Unidad organizativa"
+msgstr "unidad organizativa"
 
 #. module: omegasoft_hr_organizational_units
 #: model:ir.model,name:omegasoft_hr_organizational_units.model_hr_plan
 msgid "plan"
-msgstr "Plan"
+msgstr "plan"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_job__contract_type_id

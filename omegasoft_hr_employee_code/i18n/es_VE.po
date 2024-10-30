@@ -4,16 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-12 19:13+0000\n"
-"PO-Revision-Date: 2023-07-12 19:13+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2024-10-30 10:08-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: \n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: omegasoft_hr_employee_code
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.l10n_ve_omegasoft_res_config_settings_view_form_inherit_payroll
@@ -87,17 +89,17 @@ msgstr "Histórico de contratación"
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre a mostrar"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.actions.server,name:omegasoft_hr_employee_code.contract_allocation_to_delivered_server_action
@@ -177,22 +179,22 @@ msgstr "Líneas de dotación"
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización el"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__name
@@ -202,7 +204,7 @@ msgstr "Número"
 #. module: omegasoft_hr_employee_code
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee__name_file_code_id
 msgid "Name Employee File"
-msgstr "Numero de ficha de empleado"
+msgstr "Número de ficha de empleado"
 
 #. module: omegasoft_hr_employee_code
 #: model:ir.model,name:omegasoft_hr_employee_code.model_employee_arc_report_wizard
@@ -212,8 +214,8 @@ msgstr ""
 #. module: omegasoft_hr_employee_code
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.l10n_ve_omegasoft_res_config_settings_view_form_inherit_payroll
 msgid ""
-"Represents the value that the sequence will take after this field is set, it"
-" does not represent the current value of the sequence."
+"Represents the value that the sequence will take after this field is set, "
+"it does not represent the current value of the sequence."
 msgstr ""
 "Representa el valor que tomara la secuencia a partir de que es establecido "
 "este campo, no representa el valor actual de la secuencia."
@@ -237,17 +239,19 @@ msgstr "No puede haber dos fichas con el mismo número."
 #. module: omegasoft_hr_employee_code
 #: model_terms:ir.actions.act_window,help:omegasoft_hr_employee_code.employee_file_code_action
 msgid "code for identification of employees."
-msgstr "Ficha de identificación de los empleados"
+msgstr "Ficha de identificación de los empleados."
 
 #. module: omegasoft_hr_employee_code
 #. odoo-python
 #: code:addons/omegasoft_hr_employee_code/models/hr_employee.py:0
 #, python-format
 msgid ""
-"The employee %s cannot be deleted because it has the following payslip entries:\n"
+"The employee %s cannot be deleted because it has the following payslip "
+"entries:\n"
 "%s"
 msgstr ""
-"El empleado %s no puede ser eliminado debido a que presenta las siguientes entradas de nómina:\n"
+"El empleado %s no puede ser eliminado debido a que presenta las siguientes "
+"entradas de nómina:\n"
 "%s"
 
 #. module: omegasoft_hr_employee_code

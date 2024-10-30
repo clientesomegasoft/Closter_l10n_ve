@@ -4,21 +4,23 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 05:19+0000\n"
-"PO-Revision-Date: 2023-10-07 05:19+0000\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2024-10-30 15:09+0000\n"
+"PO-Revision-Date: 2024-10-30 09:39-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: \n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: omegasoft_contract_bonuses_fields
 #: model:ir.model.fields,help:omegasoft_contract_bonuses_fields.field_hr_contract__perfect_attendance_bonus
 msgid "Bonus for punctual attendance at the assigned schedule."
-msgstr "Bonificación por asistir en el horario asignado puntualmente"
+msgstr "Bonificación por asistir en el horario asignado puntualmente."
 
 #. module: omegasoft_contract_bonuses_fields
 #: model_terms:ir.ui.view,arch_db:omegasoft_contract_bonuses_fields.hr_contract_bonuses_salary_field
@@ -38,7 +40,7 @@ msgstr "Bono complementario"
 #. module: omegasoft_contract_bonuses_fields
 #: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__complementary_bonus
 msgid "Complementary bonus amount"
-msgstr "Bono Complementario"
+msgstr "Monto del bono complementario"
 
 #. module: omegasoft_contract_bonuses_fields
 #: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__custom_contract_currency_bonus
@@ -60,7 +62,7 @@ msgstr "Indica si el trabajador posee activa la bonificación"
 #. module: omegasoft_contract_bonuses_fields
 #: model:ir.model.fields,help:omegasoft_contract_bonuses_fields.field_hr_contract__complementary_bonus
 msgid "It is an extra salary in dollars to compensate for the basic salary."
-msgstr "Es un salario extra en dólares para compensar el salario básico"
+msgstr "Es un salario extra en dólares para compensar el salario básico."
 
 #. module: omegasoft_contract_bonuses_fields
 #: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__night_bonus_currency

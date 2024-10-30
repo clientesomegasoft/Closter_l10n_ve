@@ -4,21 +4,23 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-25 13:38+0000\n"
-"PO-Revision-Date: 2023-05-25 13:38+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2024-10-30 18:18-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: \n"
+"Language: es_VE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acción necesaria"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__active
@@ -28,22 +30,22 @@ msgstr "Activo"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Decoración de excepción de actividad"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Estado de actividad"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icono de tipo de actividad"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_conf_line__allocation_percentage
@@ -76,7 +78,7 @@ msgstr "Configuración de asignaciónes"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Conteo de anexos"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_conf_line__bill_calculation
@@ -96,7 +98,7 @@ msgstr "Código"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_hr_contract__commission_conf_line_ids
 msgid "Commission Conf Line"
-msgstr ""
+msgstr "Línea de configuración de la Comisión"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.actions.act_window,name:omegasoft_sale_commissions.omegasoft_commission_scale_action
@@ -136,14 +138,14 @@ msgstr "Contrato"
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__create_uid
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_conf_line__create_date
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__create_date
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__curency_id
@@ -183,7 +185,7 @@ msgstr "Porcentaje directo"
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__display_name
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre a mostrar"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields.selection,name:omegasoft_sale_commissions.selection__paid_sales_allocation__state__draft
@@ -193,7 +195,7 @@ msgstr "Borrador"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__email_cc
 msgid "Email cc"
-msgstr ""
+msgstr "CC correo electrónico"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__employee_id
@@ -222,17 +224,17 @@ msgstr "Monto fijo"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (Socios)"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icono Font awesome, por ejemplo fa-tasks"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_hr_department__generate_commissions
@@ -247,36 +249,36 @@ msgstr "Porcentaje global"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tiene mensaje"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_conf_line__id
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__id
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icono para indicar una actividad de excepción."
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__message_needaction
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcada, nuevos mensajes requieren su atención."
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__message_has_error
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__invoice_id
@@ -301,12 +303,12 @@ msgstr "Estado de factura"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es seguidor"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__is_manual_commission
 msgid "Is Manual Commission"
-msgstr ""
+msgstr "Es una comisión manual"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model,name:omegasoft_sale_commissions.model_account_move
@@ -318,46 +320,46 @@ msgstr "Asiento contable"
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale____last_update
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_conf_line__write_uid
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__write_uid
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_conf_line__write_date
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__write_date
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_paid_sales_allocation__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización el"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__email_cc
 msgid "List of cc from incoming emails."
-msgstr ""
+msgstr "Lista de copias de correos electrónicos entrantes."
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Adjunto principal"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Error de entrega del mensaje"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Mi plazo de actividad"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__name
@@ -367,47 +369,47 @@ msgstr "Nombre"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Siguiente evento en el calendario de actividades"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Fecha límite para la próxima actividad"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Resumen de la próxima actividad"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Tipo de la próxima actividad"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Número de acciones"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Número de errores"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Número de mensajes que requieren una acción"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensajes con error de entrega"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Número de mensajes no leídos"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields.selection,name:omegasoft_sale_commissions.selection__paid_sales_allocation__state__paid
@@ -466,12 +468,12 @@ msgstr "Recibe comisión"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario responsable"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Error de entrega de SMS"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__sale_scale_from
@@ -481,7 +483,7 @@ msgstr "Escala de ventas"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__sale_scale_to
 msgid "Sale Scale To"
-msgstr ""
+msgstr "Escala de venta a"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model,name:omegasoft_sale_commissions.model_sale_order
@@ -512,6 +514,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado basado en actividades\n"
+"Vencida: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
 
 #. module: omegasoft_sale_commissions
 #: code:addons/omegasoft_sale_commissions/models/hr_contract.py:0
@@ -535,36 +541,34 @@ msgstr "Tipo"
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de la actividad de excepción registrada."
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes No Leídos"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de Mensajes No Leídos"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_commission_scale__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes del sitio web"
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,help:omegasoft_sale_commissions.field_commission_scale__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historia de la comunicación en la web"
 
 #. module: omegasoft_sale_commissions
-#: code:addons/omegasoft_sale_commissions/models/commission_conf_line.py:0
-#: code:addons/omegasoft_sale_commissions/models/commission_conf_line.py:0
 #: code:addons/omegasoft_sale_commissions/models/commission_conf_line.py:0
 #: code:addons/omegasoft_sale_commissions/models/product.py:0
 #, python-format
 msgid "You must enter percentages greater than 0 or less than 100."
-msgstr ""
+msgstr "Debe introducir porcentajes mayores que 0 o menores que 100."
 
 #. module: omegasoft_sale_commissions
 #: model:ir.model.fields,field_description:omegasoft_sale_commissions.field_account_bank_statement_line__seller_employee_id
@@ -577,4 +581,4 @@ msgstr "vendedor"
 #. module: omegasoft_sale_commissions
 #: model:ir.model,name:omegasoft_sale_commissions.model_commission_conf_line
 msgid "set up commissions"
-msgstr "Establecer comisiones"
+msgstr "establecer comisiones"
