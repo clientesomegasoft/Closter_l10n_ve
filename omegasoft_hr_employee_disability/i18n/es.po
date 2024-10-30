@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0+e\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-10 13:27+0000\n"
 "PO-Revision-Date: 2022-11-10 13:27+0000\n"
@@ -67,7 +67,7 @@ msgstr ""
 #. module: omegasoft_hr_employee_disability
 #: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_document
 msgid "Certificate number"
-msgstr "Numero de certificado"
+msgstr "Número de certificado"
 
 #. module: omegasoft_hr_employee_disability
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__company_id
@@ -338,4 +338,4 @@ msgstr ""
 #. module: omegasoft_hr_employee_disability
 #: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee__certificate_number
 msgid "certificate number"
-msgstr "Numero de certificado"
+msgstr "Número de certificado"
