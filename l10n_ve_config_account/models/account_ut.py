@@ -3,26 +3,26 @@ from odoo import api, fields, models
 
 class AccountUT(models.Model):
     _name = "account.ut"
-    _description = "Unidad Tributaria"
+    _description = "Tax Unit"
     _order = "date desc"
 
     name = fields.Char(
-        string="Número de referencia",
+        string="Reference number",
         required=True,
-        help="Número de referencia según la ley.",
+        help="Reference number according to law.",
     )
     date = fields.Date(
-        string="Fecha",
+        string="Date",
         required=True,
-        help="Fecha en la que entra en vigor la nueva unidad tributaria.",
+        help="Date on which the new tax unit becomes effective.",
     )
-    amount = fields.Float(string="Monto")
+    amount = fields.Float(string="Amount")
 
     _sql_constraints = [
         (
             "check_amount",
             "CHECK(amount > 0)",
-            "El monto de la unidad tributaria debe ser mayo a cero (0).",
+            "The amount of the tax unit must be greater than zero (0).",
         )
     ]
 

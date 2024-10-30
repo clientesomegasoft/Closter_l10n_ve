@@ -7,13 +7,13 @@ class ResCompany(models.Model):
 
     currency_ref_id = fields.Many2one(
         comodel_name="res.currency",
-        string="Moneda operativa",
+        string="Operating currency",
         required=True,
         default=lambda self: self._default_currency_id(),
     )
     fiscal_currency_id = fields.Many2one(
         comodel_name="res.currency",
-        string="Moneda fiscal",
+        string="Fiscal currency",
         required=True,
         domain="[('id', 'in', (currency_id, currency_ref_id))]",
         default=lambda self: self._default_currency_id(),
@@ -33,8 +33,8 @@ class ResCompany(models.Model):
                 ):
                     raise UserError(
                         _(
-                            "No puedes cambiar la moneda operativa / fiscal "
-                            "de la compañía ya que existen asientos contables !!!"
+                            "¡No puedes cambiar la moneda operativa / fiscal "
+                            "de la compañía ya que existen asientos contables!"
                         )
                     )
         return super(__class__, self).write(values)
