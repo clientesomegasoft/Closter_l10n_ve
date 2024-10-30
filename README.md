@@ -25,7 +25,6 @@ Available addons
 
 addon | version | maintainers | summary
 ---   | ---     | ---         | ---
-[hr_organizational_chart](hr_organizational_chart/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | HR Employees organizational chart
 [l10n_ve_account_reports_dual](l10n_ve_account_reports_dual/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | Reportes en moneda operativa
 [l10n_ve_account_sale_reports](l10n_ve_account_sale_reports/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | Customize the standards reports on Account and Sale applications
 [l10n_ve_arc_report](l10n_ve_arc_report/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | Reporte ARC Proveedores
@@ -84,7 +83,6 @@ addon | version | maintainers | summary
 [omegasoft_res_currency_payroll_rate](omegasoft_res_currency_payroll_rate/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | Provisions Employee Report
 [omegasoft_salary_bonuses_fields](omegasoft_salary_bonuses_fields/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | Res currency payroll customization
 [omegasoft_sale_commissions](omegasoft_sale_commissions/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | Comisiones de venta
-[pways_so_po_consignment](pways_so_po_consignment/) | 16.0.1.0.0 | <a href="https://www.omegasoftve.com/" title="Omegasoft C.A."><img src="https://www.omegasoftve.com/web/image/website/1/favicon" alt="Omegasoft C.A." width="30px" height="30px"></a> | Consignment Management System
 
 [//]: # (end addons)
 
