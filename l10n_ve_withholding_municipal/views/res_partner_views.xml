@@ -8,7 +8,7 @@
             <group name="withholding" position="inside">
                 <group
                     name="withholding_municipal"
-                    string="Retenciones municipales"
+                    string="Municipal withholdings"
                     attrs="{'invisible': [('partner_type', 'not in', ('customer', 'customer_supplier'))]}"
                 >
                     <field name="is_municipal_agent" />

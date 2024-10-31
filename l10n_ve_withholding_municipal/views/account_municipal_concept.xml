@@ -11,7 +11,7 @@
         </field>
     </record>
     <record id="account_municipal_concept_action" model="ir.actions.act_window">
-        <field name="name">Concepto de retención municipal</field>
+        <field name="name">Municipal retention concept</field>
         <field name="res_model">account.municipal.concept</field>
         <field name="view_mode">tree,form</field>
     </record>

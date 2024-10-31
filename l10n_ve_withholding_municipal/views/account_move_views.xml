@@ -9,7 +9,7 @@
                 <field name="withholding_municipal_ids" invisible="1" />
                 <button
                     name="button_open_withholding_municipal"
-                    string="RET. Municipal"
+                    string="Municipal RET."
                     class="oe_stat_button"
                     icon="fa-bars"
                     type="object"

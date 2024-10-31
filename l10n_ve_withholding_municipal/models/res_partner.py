@@ -5,7 +5,7 @@ class Partner(models.Model):
     _inherit = "res.partner"
 
     is_municipal_agent = fields.Boolean(
-        string="¿Es agente de retención municipal?", copy=False
+        string="Are you a municipal withholding agent?", copy=False
     )
 
     def write(self, vals):

@@ -31,11 +31,11 @@
                                 </div>
                                 <div class="row text-end">
                                     <div class="col-6 pe-1 border"><b
-                                        >Nro. Comprobante:</b> <span
+                                        >Receipt No.:</b> <span
                                             t-field="doc.name"
                                         /></div>
                                     <div class="col-6 pe-1 border"><b
-                                        >Fecha de emisión:</b> <span
+                                        >Release date:</b> <span
                                             t-field="doc.date"
                                         /></div>
                                 </div>
@@ -47,24 +47,24 @@
                         >
                             <tr>
                                 <td
-                                >Nombre y Apellido o Razón Social del Agente de Retención<br
+                                >Name and Surname or Business Name of the Withholding Agent<br
                                     /><span t-field="doc.agent_id" /></td>
                                 <td
-                                >Registro de Identificación Fiscal del Agente de Retención<br
+                                >Tax Identification Record of the Withholding Agent<br
                                     /><span t-field="doc.agent_id.vat" /></td>
-                                <td style="width:20%;">Período Fiscal<br /><span
+                                <td style="width:20%;">Fiscal Period<br /><span
                                         t-esc="doc.date.strftime('%m/%Y')"
                                     /></td>
                             </tr>
                             <tr>
                                 <td
                                     colspan="3"
-                                >Dirección Fiscal del Agente de Retención<br /><span
+                                >Tax Address of the Withholding Agent<br /><span
                                         t-esc="doc.agent_id._display_address(without_company=True)"
                                     /></td>
                             </tr>
                             <t t-if="doc.company_id.partner_id == doc.agent_id">
-                                <td colspan="2">Licencia de actividades económicas<br
+                                <td colspan="2">License for economic activities<br
                                     /><span
                                         t-field="doc.company_id.activity_number"
                                     /></td>
@@ -74,15 +74,15 @@
                             </t>
                             <tr>
                                 <td
-                                >Nombre y Apellido o Razón Social del Agente Retenido<br
+                                >Name and Surname or Business Name of the Retained Agent<br
                                     /><span t-field="doc.subject_id" /></td>
                                 <td
                                     colspan="2"
-                                >Registro de Identificación Fiscal del Agente Retenido<br
+                                >Tax Identification Record of the Retained Agent<br
                                     /><span t-field="doc.subject_id.vat" /></td>
                             </tr>
                             <tr>
-                                <td colspan="3">Dirección Fiscal del Agente Retenido<br
+                                <td colspan="3">Tax Address of the Retained Agent<br
                                     /><span
                                         t-esc="doc.subject_id._display_address(without_company=True)"
                                     /></td>
@@ -93,14 +93,14 @@
                             style="font-size: 13px;"
                         >
                             <tr style="background-color:#A9F5F2;">
-                                <th>Fecha de documento</th>
-                                <th>Nro. Factura</th>
-                                <th>Nro. Control</th>
-                                <th>Concepto de retencíon</th>
-                                <th>% de retención</th>
-                                <th>Monto total del documento</th>
-                                <th>Base imponible</th>
-                                <th>Monto retenido</th>
+                                <th>Document date</th>
+                                <th>Invoice No.</th>
+                                <th>Control No. </th>
+                                <th>Concept of retention</th>
+                                <th>% retention</th>
+                                <th>Total amount of the document</th>
+                                <th>Taxable base</th>
+                                <th>Amount withheld</th>
                             </tr>
                             <tr t-foreach="doc.line_ids" t-as="line">
                                 <td><span t-field="doc.invoice_date" /></td>
@@ -140,7 +140,7 @@
                                     style="width: 50%;"
                                 />
                                 <span t-field="doc.agent_id" /><br />
-                                Agente de Retención (Sello y Firma)
+                                Withholding Agent (Stamp and Signature)
                             </div>
                             <div class="col-6">
                                 <div style="height: 100px;">
@@ -155,7 +155,7 @@
                                     style="width: 50%;"
                                 />
                                 <span t-field="doc.subject_id" /><br />
-                                Firma del Beneficiario
+                                Signature of the Beneficiary
                             </div>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
         </t>
     </template>
     <record id="account_withholding_municipal_report" model="ir.actions.report">
-        <field name="name">Comprobante municipal</field>
+        <field name="name">Municipal receipt</field>
         <field name="model">account.withholding.municipal</field>
         <field name="report_type">qweb-pdf</field>
         <field

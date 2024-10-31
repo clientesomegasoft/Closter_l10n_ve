@@ -3,10 +3,10 @@ from odoo import fields, models
 
 class AccountMunicioalConcept(models.Model):
     _name = "account.municipal.concept"
-    _description = "Concepto de retencion municipal"
+    _description = "Municipal retention concept"
 
-    name = fields.Char(string="Nombre de concepto", required=True)
-    rate = fields.Float(string="% Retención", digits=(5, 2))
+    name = fields.Char(string="Concept name", required=True)
+    rate = fields.Float(string="% Retention", digits=(5, 2))
 
     _sql_constraints = [
         (

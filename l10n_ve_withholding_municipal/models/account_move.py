@@ -1,4 +1,4 @@
-from odoo import Command, api, fields, models
+from odoo import Command, _, api, fields, models
 
 
 class AccountMove(models.Model):
@@ -7,13 +7,13 @@ class AccountMove(models.Model):
     withholding_municipal_ids = fields.One2many(
         "account.withholding.municipal",
         "invoice_id",
-        string="Retenciones de municipales",
+        string="Municipal tax withholdings",
         readonly=True,
         domain=[("state", "!=", "cancel")],
     )
     municipal_concept_ids = fields.Many2many(
         "account.municipal.concept",
-        string="Conceptos de retención municipal",
+        string="Municipal retention concepts",
         readonly=True,
         states={"draft": [("readonly", False)]},
         copy=False,
@@ -90,7 +90,7 @@ class AccountMove(models.Model):
         self.ensure_one()
         action = {
             "type": "ir.actions.act_window",
-            "name": "Retención municipal",
+            "name": _("Municipal retention"),
             "res_model": "account.withholding.municipal",
             "context": {"create": False},
         }

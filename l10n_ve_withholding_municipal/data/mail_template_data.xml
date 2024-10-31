@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="mail_template_withholding_municipal_receipt" model="mail.template">
-        <field name="name">Comprobante de retención municipal</field>
+        <field name="name">Municipal withholding receipt</field>
         <field
             name="model_id"
             ref="l10n_ve_withholding_municipal.model_account_withholding_municipal"
         />
         <field
             name="subject"
-        >{{ object.agent_id.name }} - Comprobante de retención municipal: {{ object.name }}</field>
+        >{{ object.agent_id.name }} - Municipal withholding receipt: {{ object.name }}</field>
         <field
             name="email_from"
         >{{ (object.create_uid.email_formatted or user.email_formatted) }}</field>
@@ -17,25 +17,25 @@
         >{{ object.type == 'supplier' and object.subject_id.id or object.agent_id.id}}</field>
         <field
             name="description"
-        >Envia un correo cuando se pulsa el boton de "ENVIAR POR CORREO ELECTRONICO" en los comprobantes de retención municipal</field>
+        >Sends an email when the "SEND BY EMAIL" in the municipal withholding receipts</field>
         <field name="body_html" type="html">
 <div style="margin: 0px; padding: 0px;">
 <p style="margin: 0px; padding: 0px;font-size: 13px;">
-    Hola <t
+    Hello <t
                         t-out="object.type == 'supplier' and object.subject_id.name or object.agent_id.name"
                     />,<br />
-    Acá adjunto se encuentra el comprobante de retención municipal: <strong
+    Attached here is the municipal withholding receipt: <strong
                         t-out="object.name"
                     />
-    por un monto de <strong
+    for an amount of<strong
                         t-out="format_amount(object.amount, object.currency_id)"
                     />,<br />
-    correspondiente a la Factura Nro. <strong
+    corresponding to Invoice No. <strong
                         t-out="object.type == 'supplier' and object.invoice_id.supplier_invoice_number or object.invoice_id.name"
                     />.<br />
-    Puede responder este correo si tiene alguna duda.
+    You can reply to this email if you have any questions.
     <br /><br />
-    Muchas gracias.
+    Thank you so much.
     <t t-if="user.signature">
         <br /><t t-out="user.signature" />
     </t>

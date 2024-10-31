@@ -4,66 +4,66 @@ from odoo.exceptions import UserError
 
 class AccountWithholdingMunicipal(models.Model):
     _name = "account.withholding.municipal"
-    _description = "Retenciones Municipales"
+    _description = "Municipal Withholdings"
     _order = "date desc, name desc, id desc"
 
-    name = fields.Char(string="Numero de comprobante", default="NUMERO DE COMPROBANTE")
+    name = fields.Char(string="Voucher number", default="NUMERO DE COMPROBANTE")
     type = fields.Selection(
         [
-            ("customer", "Retención municipal clientes"),
-            ("supplier", "Retención municipal proveedores"),
+            ("customer", "Municipal customers retention"),
+            ("supplier", "Municipal retention of providers"),
         ],
         required=True,
         readonly=True,
     )
     state = fields.Selection(
-        [("draft", "Borrador"), ("posted", "Publicado"), ("cancel", "Cancelado")],
-        string="Estado",
+        [("draft", "Draft"), ("posted", "Published"), ("cancel", "Canceled")],
+        string="State",
         default="draft",
     )
     invoice_id = fields.Many2one(
         "account.move", string="Factura", required=True, readonly=True
     )
     agent_id = fields.Many2one(
-        "res.partner", string="Agente de retención", required=True, readonly=True
+        "res.partner", string="Withholding agent", required=True, readonly=True
     )
     subject_id = fields.Many2one(
-        "res.partner", string="Sujeto retenido", required=True, readonly=True
+        "res.partner", string="Subject detained", required=True, readonly=True
     )
     date = fields.Date(
-        string="Fecha de comprobante",
+        string="Receipt date",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     invoice_date = fields.Date(
-        related="invoice_id.invoice_date", string="Fecha factura"
+        related="invoice_id.invoice_date", string="Invoice date"
     )
     line_ids = fields.One2many(
         "account.withholding.municipal.line",
         "withholding_municipal_id",
-        string="Lineas",
+        string="Lines",
         readonly=True,
     )
     base_amount = fields.Monetary(
-        string="Base imponible", compute="_compute_amount", store=True
+        string="Taxable base", compute="_compute_amount", store=True
     )
     amount = fields.Monetary(
-        string="Monto retenido", compute="_compute_amount", store=True
+        string="Amount withheld", compute="_compute_amount", store=True
     )
-    move_id = fields.Many2one("account.move", string="Asiento contable")
-    journal_id = fields.Many2one("account.journal", string="Diario")
+    move_id = fields.Many2one("account.move", string="Accounting entry")
+    journal_id = fields.Many2one("account.journal", string="Journal")
     withholding_account_id = fields.Many2one(
-        "account.account", string="Cuenta de retención", required=True
+        "account.account", string="Withholding account", required=True
     )
     destination_account_id = fields.Many2one(
-        "account.account", string="Cuenta destino", required=True
+        "account.account", string="Destination account", required=True
     )
     currency_id = fields.Many2one(
         "res.currency", related="company_id.fiscal_currency_id", store=True
     )
     company_id = fields.Many2one(
-        "res.company", related="invoice_id.company_id", string="Compañía", store=True
+        "res.company", related="invoice_id.company_id", string="Company", store=True
     )
 
     @api.depends("line_ids.base_amount", "line_ids.amount")
@@ -162,7 +162,7 @@ class AccountWithholdingMunicipal(models.Model):
     def button_open_journal_entry(self):
         self.ensure_one()
         return {
-            "name": "Asiento",
+            "name": _("Entry"),
             "type": "ir.actions.act_window",
             "res_model": "account.move",
             "context": {"create": False},
@@ -249,19 +249,19 @@ class AccountWithholdingMunicipal(models.Model):
 
 class AccountWithholdingMunicipalLine(models.Model):
     _name = "account.withholding.municipal.line"
-    _description = "Lineas de retencion de municipal"
+    _description = "Municipal retention lines"
 
     withholding_municipal_id = fields.Many2one(
         "account.withholding.municipal", ondelete="cascade", required=True
     )
     municipal_concept_id = fields.Many2one(
         "account.municipal.concept",
-        string="Concepto de retención municipal",
+        string="Municipal retention concept",
         required=True,
     )
     municipal_concept_rate = fields.Float(related="municipal_concept_id.rate")
-    base_amount = fields.Monetary(string="Base imponible")
-    amount = fields.Monetary(string="Monto retenido")
+    base_amount = fields.Monetary(string="Taxable base")
+    amount = fields.Monetary(string="Amount withheld")
     currency_id = fields.Many2one(
         "res.currency", related="company_id.fiscal_currency_id", store=True
     )
