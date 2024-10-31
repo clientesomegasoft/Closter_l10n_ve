@@ -12,49 +12,49 @@ class WithholdingISLRXML(models.Model):
     _description = "Withholding ISLR XML"
 
     name = fields.Char(
-        "Descripción",
+        "Description",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     start_date = fields.Date(
-        string="Desde",
+        string="From",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     end_date = fields.Date(
-        string="Hasta",
+        string="To",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     state = fields.Selection(
         [
-            ("draft", "Borrador"),
-            ("posted", "Publicado"),
-            ("cancel", "Cancelado"),
+            ("draft", "Draft"),
+            ("posted", "Published"),
+            ("cancel", "Canceled"),
         ],
         default="draft",
     )
     filename = fields.Char()
-    file = fields.Binary(readonly=True, string="Archivo XML")
+    file = fields.Binary(readonly=True, string="XML file")
     line_ids = fields.One2many(
         "account.withholding.islr",
         "xml_id",
-        string="Líneas",
+        string="Lines",
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     amount = fields.Monetary(
-        string="Monto retenido", compute="_compute_amount", store=True
+        string="Amount withheld", compute="_compute_amount", store=True
     )
     currency_id = fields.Many2one(
         "res.currency", related="company_id.fiscal_currency_id", store=True
     )
     company_id = fields.Many2one(
         "res.company",
-        string="Compañía",
+        string="Company",
         default=lambda self: self.env.company,
         readonly=True,
     )

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <!-- account.withholding.islr.xml tree view -->
     <record id="account_withholding_islr_xml_view_tree" model="ir.ui.view">
         <field name="name">account.withholding.islr.xml.view.tree</field>
         <field name="model">account.withholding.islr.xml</field>
@@ -12,6 +13,8 @@
             </tree>
         </field>
     </record>
+
+    <!-- account.withholding.islr.xml form view -->
     <record id="account_withholding_islr_xml_view_form" model="ir.ui.view">
         <field name="name">account.withholding.islr.xml.view.form</field>
         <field name="model">account.withholding.islr.xml</field>
@@ -21,26 +24,26 @@
                     <button
                         name="seek_for_lines"
                         states="draft"
-                        string="Generar lineas"
+                        string="Generate lines"
                         type="object"
                         class="oe_edit_only"
                     />
                     <button
                         name="button_draft"
                         states="posted,cancel"
-                        string="Restablecer a borrador"
+                        string="Reset to draft"
                         type="object"
                     />
                     <button
                         name="button_post"
-                        string="Confirmar"
+                        string="Confirm"
                         type="object"
                         attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"
                     />
                     <button
                         name="button_cancel"
                         states="draft,posted"
-                        string="Cancelar"
+                        string="Cancel"
                         type="object"
                     />
                     <field
@@ -53,7 +56,7 @@
                     <div class="oe_title">
                         <h1 class="mt0"><field
                                 name="name"
-                                placeholder="Descripción"
+                                placeholder="Description"
                             /></h1>
                     </div>
                     <group>
@@ -75,7 +78,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page name="lines" string="Lineas">
+                        <page name="lines" string="Lines">
                             <field name="line_ids" widget="many2many" nolabel="1">
                                 <tree create="0" no_open="1">
                                     <field name="currency_id" invisible="1" />
@@ -96,11 +99,15 @@
             </form>
         </field>
     </record>
+
+    <!-- account.withholding.islr.xml action window -->
     <record id="account_withholding_islr_xml_action" model="ir.actions.act_window">
-        <field name="name">Generar XML ISLR</field>
+        <field name="name">Generate XML ISLR</field>
         <field name="res_model">account.withholding.islr.xml</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- account.withholding.islr.xml menu item -->
     <menuitem
         id="account_withholding_islr_xml_menu"
         parent="l10n_ve_config_account.menu_l10n_ve_reports"

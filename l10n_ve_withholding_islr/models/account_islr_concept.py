@@ -4,12 +4,12 @@ from odoo.exceptions import ValidationError
 
 class AccountISLRConcept(models.Model):
     _name = "account.islr.concept"
-    _description = "Concepto de ISLR"
+    _description = "ISLR Concept"
     _order = "name"
 
-    name = fields.Char(string="Nombre de concepto", required=True)
+    name = fields.Char(string="Concept name", required=True)
     rate_ids = fields.One2many(
-        "account.islr.concept.rate", "islr_concept_id", string="Tasas"
+        "account.islr.concept.rate", "islr_concept_id", string="Rates"
     )
 
     def get_concept_rate(self, person_type_id, base_ut):
@@ -50,33 +50,33 @@ class AccountISLRConcept(models.Model):
 
 class AccountISLRConceptRate(models.Model):
     _name = "account.islr.concept.rate"
-    _description = "Tasa de concepto de ISLR"
+    _description = "ISLR concept rate"
     _order = "name"
 
-    name = fields.Char(string="Código", size=3, required=True)
+    name = fields.Char(string="Code", size=3, required=True)
     person_type_id = fields.Many2one(
-        "person.type", string="Tipo de persona", required=True
+        "person.type", string="Type of person", required=True
     )
     base = fields.Float(string="% Base", digits=(5, 2), default=100)
     factor = fields.Float(string="Factor", digits=(16, 4))
-    rate = fields.Float(string="% Retención", digits=(5, 2))
+    rate = fields.Float(string="% Retention", digits=(5, 2))
     subtraction = fields.Float(
-        string="Sustracción (UT)", compute="_compute_subtraction", store=True
+        string="Subtraction (UT)", compute="_compute_subtraction", store=True
     )
     rate_type = fields.Selection(
-        [("payment", "Pagos acumulados"), ("rate", "Tarifa 2")], string="Tipo tasa"
+        [("payment", "Accumulated payments"), ("rate", "Rate 2")], string="Rate type"
     )
     islr_concept_id = fields.Many2one(
-        "account.islr.concept", string="Concepto de ISLR", ondelete="cascade"
+        "account.islr.concept", string="ISLR Concept", ondelete="cascade"
     )
 
     _sql_constraints = [
-        ("unique_name", "UNIQUE(name)", "El código debe ser único!"),
-        ("isdigit_name", "CHECK(name ~ '^\\d+$')", "El código tiene que ser numérico!"),
+        ("unique_name", "UNIQUE(name)", "The code must be unique!"),
+        ("isdigit_name", "CHECK(name ~ '^\\d+$')", "The code must be numeric!"),
         (
             "unique_person_type_id",
             "UNIQUE(islr_concept_id, person_type_id)",
-            'El campo "Tipo de persona" debe ser único por concepto !',
+            'The "Person Type" field must be unique per concept!',
         ),
     ]
 

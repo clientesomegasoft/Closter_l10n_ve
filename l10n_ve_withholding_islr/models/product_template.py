@@ -5,17 +5,17 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     apply_withholding_islr = fields.Boolean(
-        string="Aplica retención de ISLR", default=False
+        string="Apply ISLR withholding", default=False
     )
     islr_concept_id = fields.Many2one(
-        "account.islr.concept", string="Concepto de ISLR", ondelete="restrict"
+        "account.islr.concept", string="ISLR Concept", ondelete="restrict"
     )
 
     _sql_constraints = [
         (
             "check_islr_concept",
             "CHECK((type != 'service') OR apply_withholding_islr = FALSE OR (type = 'service' AND apply_withholding_islr = TRUE AND islr_concept_id IS NOT NULL))",  # noqa: B950
-            "Para los productos de tipo servicio el concepto de ISLR es requerido.",
+            "For service type products the ISLR concept is required.",
         )
     ]
 

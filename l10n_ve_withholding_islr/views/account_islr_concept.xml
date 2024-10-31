@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- account.islr.concept tree view -->
     <record id="account_islr_concept_view_tree" model="ir.ui.view">
         <field name="name">account.islr.concept.view.tree</field>
         <field name="model">account.islr.concept</field>
@@ -9,6 +10,8 @@
             </tree>
         </field>
     </record>
+
+    <!-- account.islr.concept form view -->
     <record id="account_islr_concept_view_form" model="ir.ui.view">
         <field name="name">account.islr.concept.view.form</field>
         <field name="model">account.islr.concept</field>
@@ -19,11 +22,11 @@
                         <label for="name" class="o_form_label" />
                         <h1 class="mt0"><field
                                 name="name"
-                                placeholder="ej. Sueldos y Salarios..."
+                                placeholder="eg. Salaries and Wages..."
                             /></h1>
                     </div>
                     <notebook>
-                        <page name="rate" string="Tasas">
+                        <page name="rate" string="Rates">
                             <field name="rate_ids" options="{'no_open': 1}">
                                 <tree editable="top">
                                     <field name="name" />
@@ -44,11 +47,15 @@
             </form>
         </field>
     </record>
+
+    <!-- account.islr.concept action window -->
     <record id="account_islr_concept_action" model="ir.actions.act_window">
-        <field name="name">Concepto de retención de ingresos</field>
+        <field name="name">Revenue retention concept</field>
         <field name="res_model">account.islr.concept</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- account.islr.concept menu item -->
     <menuitem
         id="menu_account_islr_concept"
         action="account_islr_concept_action"

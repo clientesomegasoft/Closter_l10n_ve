@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
+    <!-- account.move form view -->
     <record id="view_move_form" model="ir.ui.view">
         <field name="name">account.move.form</field>
         <field name="model">account.move</field>
@@ -9,7 +10,7 @@
                 <field name="withholding_islr_id" invisible="1" />
                 <button
                     name="button_open_withholding_islr"
-                    string="RET. ISLR"
+                    string="ISLR RET."
                     class="oe_stat_button"
                     icon="fa-bars"
                     type="object"

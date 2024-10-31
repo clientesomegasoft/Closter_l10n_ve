@@ -4,62 +4,62 @@ from odoo.exceptions import UserError
 
 class AccountWithholdingISLR(models.Model):
     _name = "account.withholding.islr"
-    _description = "Retenciones de ISLR"
+    _description = "ISLR withholdings"
     _order = "date desc, name desc, id desc"
 
-    name = fields.Char(string="Numero de comprobante", default="NUMERO DE COMPROBANTE")
+    name = fields.Char(string="Voucher number", default="NUMERO DE COMPROBANTE")
     type = fields.Selection(
         [
-            ("customer", "Retención ISLR clientes"),
-            ("supplier", "Retención ISLR proveedores"),
+            ("customer", "Customers ISLR withholding"),
+            ("supplier", "Providers ISLR withholding"),
         ],
         required=True,
         readonly=True,
     )
     state = fields.Selection(
-        [("draft", "Borrador"), ("posted", "Publicado"), ("cancel", "Cancelado")],
-        string="Estado",
+        [("draft", "Draft"), ("posted", "Published"), ("cancel", "Cancelado")],
+        string="State",
         default="draft",
     )
     invoice_id = fields.Many2one(
-        "account.move", string="Factura", required=True, readonly=True
+        "account.move", string="Invoice", required=True, readonly=True
     )
     agent_id = fields.Many2one(
-        "res.partner", string="Agente de retención", required=True, readonly=True
+        "res.partner", string="Withholding agent", required=True, readonly=True
     )
     subject_id = fields.Many2one(
-        "res.partner", string="Sujeto retenido", required=True, readonly=True
+        "res.partner", string="Subject detained", required=True, readonly=True
     )
     date = fields.Date(
-        string="Fecha de comprobante",
+        string="Receipt date",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     invoice_date = fields.Date(
-        related="invoice_id.invoice_date", string="Fecha factura"
+        related="invoice_id.invoice_date", string="Invoice date"
     )
     line_ids = fields.One2many(
         "account.withholding.islr.line",
         "withholding_islr_id",
-        string="Lineas",
+        string="Lines",
         readonly=True,
     )
     base_amount = fields.Monetary(
-        string="Base imponible", compute="_compute_amount", store=True
+        string="Taxable base", compute="_compute_amount", store=True
     )
     amount = fields.Monetary(
-        string="Monto retenido", compute="_compute_amount", store=True
+        string="Amount withheld", compute="_compute_amount", store=True
     )
-    move_id = fields.Many2one("account.move", string="Asiento contable")
+    move_id = fields.Many2one("account.move", string="Accounting entry")
     journal_id = fields.Many2one(
         "account.journal", string="Diario", required=True, readonly=True
     )
     withholding_account_id = fields.Many2one(
-        "account.account", string="Cuenta de retención", required=True
+        "account.account", string="Withholding account", required=True
     )
     destination_account_id = fields.Many2one(
-        "account.account", string="Cuenta destino", required=True
+        "account.account", string="Destination account", required=True
     )
     xml_id = fields.Many2one("account.withholding.islr.xml", string="ISLR XML")
     xml_state = fields.Selection(related="xml_id.state", store=True)
@@ -67,7 +67,7 @@ class AccountWithholdingISLR(models.Model):
         "res.currency", related="company_id.fiscal_currency_id", store=True
     )
     company_id = fields.Many2one(
-        "res.company", related="invoice_id.company_id", string="Compañía", store=True
+        "res.company", related="invoice_id.company_id", string="Company", store=True
     )
 
     @api.depends("line_ids.base_amount", "line_ids.amount")
@@ -138,7 +138,7 @@ class AccountWithholdingISLR(models.Model):
     def button_draft(self):
         if self.xml_state == "posted":
             raise UserError(
-                _("No se puede reestablecer a borrador una retención ya declarada.")
+                _("No se puede restablecer a borrador una retención ya declarada.")
             )
         if self.move_id:
             self.move_id.button_draft()
@@ -253,21 +253,21 @@ class AccountWithholdingISLR(models.Model):
 
 class AccountWithholdingISLRLine(models.Model):
     _name = "account.withholding.islr.line"
-    _description = "Lineas de retencion de ISLR"
+    _description = "ISLR withholding lines"
 
     withholding_islr_id = fields.Many2one(
         "account.withholding.islr", ondelete="cascade", required=True
     )
     islr_concept_id = fields.Many2one(
-        "account.islr.concept", string="Concepto de ISLR", required=True
+        "account.islr.concept", string="ISLR Concept", required=True
     )
     rate_id = fields.Many2one(
-        "account.islr.concept.rate", string="Código", required=True
+        "account.islr.concept.rate", string="Code", required=True
     )
-    base_amount = fields.Monetary(string="Base imponible")
-    amount = fields.Monetary(string="Monto retenido")
-    percent = fields.Float(string="Porcentaje")
-    subtraction = fields.Monetary(string="Substraendo")
+    base_amount = fields.Monetary(string="Taxable base")
+    amount = fields.Monetary(string="Amount withheld")
+    percent = fields.Float(string="Percentage")
+    subtraction = fields.Monetary(string="Subtrahend")
     currency_id = fields.Many2one(
         "res.currency", related="company_id.fiscal_currency_id", store=True
     )

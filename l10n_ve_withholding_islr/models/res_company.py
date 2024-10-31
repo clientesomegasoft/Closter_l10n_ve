@@ -5,16 +5,16 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     in_islr_journal_id = fields.Many2one(
-        "account.journal", string="Diario de ISLR en compras"
+        "account.journal", string="ISLR Journal on Purchases"
     )
     out_islr_journal_id = fields.Many2one(
-        "account.journal", string="Diario de ISLR en ventas"
+        "account.journal", string="ISLR Journal on Sales"
     )
     in_islr_account_id = fields.Many2one(
-        "account.account", string="Cuenta de ISLR en compras"
+        "account.account", string="ISLR account on purchases"
     )
     out_islr_account_id = fields.Many2one(
-        "account.account", string="Cuenta de ISLR en ventas"
+        "account.account", string="ISLR account on sales"
     )
 
     def _create_per_company_withholding_sequence(self):

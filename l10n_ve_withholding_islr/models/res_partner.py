@@ -5,12 +5,12 @@ class Partner(models.Model):
     _inherit = "res.partner"
 
     is_islr_agent = fields.Boolean(
-        string="¿Es agente de retención de ISLR?", copy=False
+        string="Are you an ISLR withholding agent?", copy=False
     )
     is_islr_exempt = fields.Boolean(
-        string="¿Es exento de retención de ingresos en compras?", copy=False
+        string="Are you exempt from income tax on purchases?", copy=False
     )
-    is_a_society = fields.Boolean(string="¿Es una sociedad de personas?", copy=False)
+    is_a_society = fields.Boolean(string="Is it a partnership?", copy=False)
 
     def write(self, vals):
         if vals.get("is_islr_agent", self.is_islr_agent) and (
