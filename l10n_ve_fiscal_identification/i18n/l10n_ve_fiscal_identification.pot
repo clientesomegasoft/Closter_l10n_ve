@@ -36,11 +36,6 @@ msgid "Commercial classification"
 msgstr ""
 
 #. module: l10n_ve_fiscal_identification
-#: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__customer
-msgid "Customer"
-msgstr ""
-
-#. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__customer_supplier
 msgid "Customer / Provider"
 msgstr ""
@@ -72,6 +67,7 @@ msgstr ""
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_sale_order__partner_id
+#: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__customer
 msgid "Customer"
 msgstr ""
 
