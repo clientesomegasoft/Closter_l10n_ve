@@ -340,10 +340,9 @@ msgstr "¡El código tiene que ser numérico!"
 
 #. module: l10n_ve_withholding_islr
 #: model:mail.template,description:l10n_ve_withholding_islr.mail_template_withholding_islr_receipt
-msgid ""
-"Sends an email when the \"SEND BY EMAIL\" button is pressed on the ISLR withholding receipts"
+msgid "Sends an email when the \"SEND BY EMAIL\" button is pressed on the ISLR withholding receipts"
 msgstr ""
-"Envia un correo cuando se pulsa el botón de \"ENVIAR POR CORREO ELECTRONICO\" en los comprobantes de retención de ISLR"
+"Envía un correo cuando se pulsa el botón de \"ENVIAR POR CORREO ELECTRÓNICO\" en los comprobantes de retención de ISLR"
 
 #. module: l10n_ve_withholding_islr
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr_view_form
@@ -511,7 +510,7 @@ msgstr "Nombre y Apellido o Razón Social del Agente de Retención:<br/>"
 
 #. module: l10n_ve_withholding_islr
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr
-msgid "Control No. "
+msgid "Control No."
 msgstr "Nro. Control"
 
 #. module: l10n_ve_withholding_islr

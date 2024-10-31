@@ -318,9 +318,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_islr
 #: model:mail.template,description:l10n_ve_withholding_islr.mail_template_withholding_islr_receipt
-msgid ""
-"Envia un correo cuando se pulsa el boton de \"ENVIAR POR CORREO "
-"ELECTRONICO\" en los comprobantes de retención de ISLR"
+msgid "Sends an email when the \"SEND BY EMAIL\" in the ISLR withholding vouchers"
 msgstr ""
 
 #. module: l10n_ve_withholding_islr
@@ -489,7 +487,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_islr
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr
-msgid "Control No. "
+msgid "Control No."
 msgstr ""
 
 #. module: l10n_ve_withholding_islr

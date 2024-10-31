@@ -166,7 +166,7 @@ class AccountWithholdingISLR(models.Model):
     def button_open_journal_entry(self):
         self.ensure_one()
         return {
-            "name": "Asiento",
+            "name": _("Entry"),
             "type": "ir.actions.act_window",
             "res_model": "account.move",
             "context": {"create": False},
