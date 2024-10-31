@@ -288,6 +288,7 @@ msgid "From"
 msgstr "Desde"
 
 #. module: l10n_ve_withholding_islr
+#: model:ir.model,name:l10n_ve_withholding_islr.model_account_journal
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__journal_id
 msgid "Journal"
 msgstr "Diario"
@@ -348,11 +349,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr_view_form
 msgid "Send by email"
 msgstr "Enviar por correo electrónico"
-
-#. module: l10n_ve_withholding_islr
-#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__state
-msgid "State"
-msgstr "Estado"
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_islr_concept_rate__factor
@@ -423,11 +419,6 @@ msgstr "XML ISLR"
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr
 msgid "Tax withheld"
 msgstr "Impuesto retenido"
-
-#. module: l10n_ve_withholding_islr
-#: model:ir.model,name:l10n_ve_withholding_islr.model_account_journal
-msgid "Journal"
-msgstr "Diario"
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model,name:l10n_ve_withholding_islr.model_account_move
@@ -619,19 +610,15 @@ msgstr "Retención ISLR"
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_islr.selection__account_withholding_islr__type__customer
+#: model:ir.actions.act_window,name:l10n_ve_withholding_islr.account_withholding_islr_customer_action
+#: model:ir.ui.menu,name:l10n_ve_withholding_islr.menu_account_withholding_islr_customer
 msgid "Customers ISLR withholding"
-msgstr "Retención ISLR clientes"
+msgstr "Retención de ISLR para Clientes"
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_islr.selection__account_withholding_islr__type__supplier
 msgid "Providers ISLR withholding"
 msgstr "Retención ISLR para proveedores"
-
-#. module: l10n_ve_withholding_islr
-#: model:ir.actions.act_window,name:l10n_ve_withholding_islr.account_withholding_islr_customer_action
-#: model:ir.ui.menu,name:l10n_ve_withholding_islr.menu_account_withholding_islr_customer
-msgid "Customers ISLR withholding"
-msgstr "Retención de ISLR para Clientes"
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.actions.act_window,name:l10n_ve_withholding_islr.account_withholding_islr_supplier_action
@@ -640,12 +627,14 @@ msgid "Providers ISLR Withholding"
 msgstr "Retención de ISLR para Proveedores"
 
 #. module: l10n_ve_withholding_islr
+#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__state
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__xml_state
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr_xml__state
 msgid "State"
 msgstr "Estado"
 
 #. module: l10n_ve_withholding_islr
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr_line__subtraction
 msgid "Subtrahend"
 msgstr "Sustraendo"
@@ -659,11 +648,6 @@ msgstr "Sujeto retenido"
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_islr_concept_rate__subtraction
 msgid "Subtraction (UT)"
 msgstr "Sustracción (UT)"
-
-#. module: l10n_ve_withholding_islr
-#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr
-msgid "Subtrahend"
-msgstr "Sustraendo"
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_islr.selection__account_islr_concept_rate__rate_type__rate

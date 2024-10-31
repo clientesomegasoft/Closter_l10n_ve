@@ -36,9 +36,7 @@ class AccountWithholdingISLR(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    invoice_date = fields.Date(
-        related="invoice_id.invoice_date", string="Invoice date"
-    )
+    invoice_date = fields.Date(related="invoice_id.invoice_date", string="Invoice date")
     line_ids = fields.One2many(
         "account.withholding.islr.line",
         "withholding_islr_id",
@@ -261,9 +259,7 @@ class AccountWithholdingISLRLine(models.Model):
     islr_concept_id = fields.Many2one(
         "account.islr.concept", string="ISLR Concept", required=True
     )
-    rate_id = fields.Many2one(
-        "account.islr.concept.rate", string="Code", required=True
-    )
+    rate_id = fields.Many2one("account.islr.concept.rate", string="Code", required=True)
     base_amount = fields.Monetary(string="Taxable base")
     amount = fields.Monetary(string="Amount withheld")
     percent = fields.Float(string="Percentage")

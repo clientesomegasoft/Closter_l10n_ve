@@ -39,9 +39,7 @@ class AccountWithholdingIVA(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    invoice_date = fields.Date(
-        related="invoice_id.invoice_date", string="Invoice date"
-    )
+    invoice_date = fields.Date(related="invoice_id.invoice_date", string="Invoice date")
     line_ids = fields.One2many(
         "account.withholding.iva.line",
         "withholding_iva_id",
