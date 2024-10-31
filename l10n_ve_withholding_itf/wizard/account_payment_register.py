@@ -5,7 +5,7 @@ class AccountPaymentRegister(models.TransientModel):
     _inherit = "account.payment.register"
 
     apply_itf = fields.Boolean(compute="_compute_apply_itf")
-    calculate_itf = fields.Boolean(string="Permitir ITF", default=True)
+    calculate_itf = fields.Boolean(string="Allow ITF", default=True)
 
     @api.depends("currency_id", "payment_type", "company_id.apply_itf")
     def _compute_apply_itf(self):

@@ -19,7 +19,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_itf
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_itf.view_account_payment_form
-msgid "<span class=\"o_stat_text\">Asiento ITF</span>"
+msgid "<span class=\"o_stat_text\">ITF Entry</span>"
 msgstr "<span class=\"o_stat_text\">Asiento ITF</span>"
 
 #. module: l10n_ve_withholding_itf
@@ -30,7 +30,7 @@ msgstr "Aplicar ITF"
 
 #. module: l10n_ve_withholding_itf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment__itf_move_id
-msgid "Asiento ITF"
+msgid "ITF Entry"
 msgstr "Asiento ITF"
 
 #. module: l10n_ve_withholding_itf
@@ -46,14 +46,14 @@ msgstr "Ajustes de configuración"
 #. module: l10n_ve_withholding_itf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_company__itf_account_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_config_settings__itf_account_id
-msgid "Cuenta ITF"
+msgid "ITF Account"
 msgstr "Cuenta ITF"
 
 #. module: l10n_ve_withholding_itf
 #: model:ir.model.constraint,message:l10n_ve_withholding_itf.constraint_res_company_check_apply_itf
 msgid ""
-"El porcentaje de retención ITF debe estar en un rango mayor a 0 y menor o "
-"igual a 100 y la cuenta ITF es requerida !"
+"The ITF retention percentage must be in a higher range to 0 and less or "
+"equal to 100 and ITF account is required!"
 msgstr ""
 "¡El porcentaje de retención ITF debe estar en un rango mayor a 0 y menor "
 "o igual a 100 y la cuenta ITF es requerida!"
@@ -66,13 +66,13 @@ msgstr "Pagos"
 #. module: l10n_ve_withholding_itf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment__calculate_itf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_account_payment_register__calculate_itf
-msgid "Permitir ITF"
+msgid "Allow ITF"
 msgstr "Permitir ITF"
 
 #. module: l10n_ve_withholding_itf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_company__itf_percentage
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_config_settings__itf_percentage
-msgid "Porcentaje ITF"
+msgid "ITF Percentage"
 msgstr "Porcentaje ITF"
 
 #. module: l10n_ve_withholding_itf
@@ -83,5 +83,5 @@ msgstr "Registrar pago"
 #. module: l10n_ve_withholding_itf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_company__apply_itf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_itf.field_res_config_settings__apply_itf
-msgid "Retención automática de ITF"
+msgid "Automatic retention of ITF"
 msgstr "Retención automática de ITF"

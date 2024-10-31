@@ -1,4 +1,4 @@
-from odoo import Command, api, fields, models
+from odoo import Command, _, api, fields, models
 
 
 class AccountPayment(models.Model):
@@ -6,12 +6,12 @@ class AccountPayment(models.Model):
 
     apply_itf = fields.Boolean(compute="_compute_apply_itf")
     calculate_itf = fields.Boolean(
-        string="Permitir ITF",
+        string="Allow ITF",
         default=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    itf_move_id = fields.Many2one("account.move", string="Asiento ITF")
+    itf_move_id = fields.Many2one("account.move", string="ITF Entry")
 
     @api.depends("currency_id", "payment_type", "company_id.apply_itf")
     def _compute_apply_itf(self):
@@ -122,7 +122,7 @@ class AccountPayment(models.Model):
     def button_open_itf_entry(self):
         self.ensure_one()
         return {
-            "name": "Asiento ITF",
+            "name": _("ITF Entry"),
             "type": "ir.actions.act_window",
             "res_model": "account.move",
             "context": {"create": False},
