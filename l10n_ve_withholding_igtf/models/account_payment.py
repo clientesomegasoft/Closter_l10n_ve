@@ -201,7 +201,7 @@ class AccountPayment(models.Model):
     def button_open_igtf_entry(self):
         self.ensure_one()
         return {
-            "name": "IGTF Entry",
+            "name": _("IGTF Entry"),
             "type": "ir.actions.act_window",
             "res_model": "account.move",
             "context": {"create": False},
