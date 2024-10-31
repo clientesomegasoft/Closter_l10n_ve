@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- account.liquor.tax tree view -->
     <record id="account_liquor_tax_view_tree" model="ir.ui.view">
         <field name="name">account.liquor.tax.view.tree</field>
         <field name="model">account.liquor.tax</field>
@@ -10,11 +11,15 @@
             </tree>
         </field>
     </record>
+
+    <!-- account.liquor.tax actions window -->
     <record id="account_liquor_tax_action" model="ir.actions.act_window">
-        <field name="name">Impuestos por venta de licor</field>
+        <field name="name">Taxes on liquor sales</field>
         <field name="res_model">account.liquor.tax</field>
         <field name="view_mode">tree</field>
     </record>
+
+    <!-- account.liquor.tax menu item -->
     <menuitem
         id="menu_account_liquor_tax"
         parent="l10n_ve_config_account.menu_l10n_ve_finance_configuration"

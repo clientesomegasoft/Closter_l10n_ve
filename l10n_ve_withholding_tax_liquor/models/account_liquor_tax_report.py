@@ -3,36 +3,36 @@ from odoo import Command, api, fields, models
 
 class AccountLiquourTaxReport(models.Model):
     _name = "account.liquor.tax.report"
-    _description = "Reporte impuesto sobre venta de licor"
+    _description = "Report tax on liquor sales"
 
     name = fields.Char(
-        string="Nombre",
+        string="Name",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     state = fields.Selection(
-        [("draft", "Borrador"), ("confirmed", "Confirmado"), ("paid", "Pagado")],
-        string="Estado",
+        [("draft", "Draft"), ("confirmed", "Confirmed"), ("paid", "Paid")],
+        string="State",
         default="draft",
         required=True,
         readonly=True,
         copy=False,
     )
     date_from = fields.Date(
-        string="Desde",
+        string="From",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     date_to = fields.Date(
-        string="Hasta",
+        string="To",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     line_ids = fields.One2many(
-        "account.liquor.tax.report.line", "report_id", string="Lineas", readonly=True
+        "account.liquor.tax.report.line", "report_id", string="Lines", readonly=True
     )
     amount = fields.Monetary(string="Total", compute="_compute_amount", store=True)
     currency_id = fields.Many2one(
@@ -40,7 +40,7 @@ class AccountLiquourTaxReport(models.Model):
     )
     company_id = fields.Many2one(
         "res.company",
-        string="Compañía",
+        string="Company",
         default=lambda self: self.env.company.id,
         readonly=True,
     )
@@ -113,7 +113,7 @@ class AccountLiquourTaxReport(models.Model):
 
 class AccountLiquourTaxReportLine(models.Model):
     _name = "account.liquor.tax.report.line"
-    _description = "Lineas reporte impuesto sobre venta de licor"
+    _description = "Lines report tax on liquor sales"
 
     report_id = fields.Many2one(
         "account.liquor.tax.report", required=True, ondelete="cascade"
@@ -121,8 +121,8 @@ class AccountLiquourTaxReportLine(models.Model):
     liquor_tax_id = fields.Many2one(
         "account.liquor.tax", string="Impuesto", required=True
     )
-    rate = fields.Float(string="Porcentaje")
-    base_amount = fields.Monetary(string="Base imponible")
+    rate = fields.Float(string="Percentage")
+    base_amount = fields.Monetary(string="Taxable base")
     amount = fields.Monetary(string="Total", compute="_compute_amount", store=True)
     currency_id = fields.Many2one(
         "res.currency", related="company_id.fiscal_currency_id", store=True
@@ -135,7 +135,7 @@ class AccountLiquourTaxReportLine(models.Model):
         (
             "unique_liquor_tax_per_report",
             "UNIQUE(report_id, liquor_tax_id)",
-            "Solo se puede tener una linea por tipo de impuesto",
+            "You can only have one line per tax type",
         )
     ]
 

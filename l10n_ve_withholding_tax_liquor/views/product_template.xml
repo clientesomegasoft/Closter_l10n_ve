@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
+    <!-- product.template form view -->
     <record id="product_template_form_view" model="ir.ui.view">
         <field name="name">product.product.form</field>
         <field name="model">product.template</field>
@@ -14,6 +15,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- sale.order form view -->
     <record id="view_order_form" model="ir.ui.view">
         <field name="name">sale.order.form</field>
         <field name="model">sale.order</field>
@@ -32,6 +35,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- account.move form view -->
     <record id="view_move_form" model="ir.ui.view">
         <field name="name">account.move.form</field>
         <field name="model">account.move</field>

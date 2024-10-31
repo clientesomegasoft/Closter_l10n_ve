@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-30 13:16+0000\n"
-"PO-Revision-Date: 2024-10-30 13:16+0000\n"
+"POT-Creation-Date: 2024-10-30 13:17+0000\n"
+"PO-Revision-Date: 2024-10-30 13:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,28 +17,28 @@ msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report_line__base_amount
-msgid "Base imponible"
+msgid "Taxable base"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_tax_liquor.selection__account_liquor_tax_report__state__draft
-msgid "Borrador"
+msgid "Draft"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report__company_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report_line__company_id
-msgid "Compañía"
+msgid "Company"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_tax_liquor.selection__account_liquor_tax_report__state__confirmed
-msgid "Confirmado"
+msgid "Confirmed"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_tax_liquor.account_liquor_tax_report_view_form
-msgid "Confirmar"
+msgid "Confirm"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
@@ -57,12 +57,12 @@ msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_tax_liquor.account_liquor_tax_report_view_form
-msgid "Descripción"
+msgid "Description"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report__date_from
-msgid "Desde"
+msgid "From"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
@@ -74,22 +74,22 @@ msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.constraint,message:l10n_ve_withholding_tax_liquor.constraint_account_liquor_tax_check_rate
-msgid "El importe debe estar en un rango mayor a 0 y menor o igual a 100."
+msgid "The amount must be in a range greater than 0 and less than or equal to 100."
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report__state
-msgid "Estado"
+msgid "State"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_tax_liquor.account_liquor_tax_report_view_form
-msgid "Generar lineas"
+msgid "Generate lines"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report__date_to
-msgid "Hasta"
+msgid "To"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
@@ -101,12 +101,12 @@ msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report_line__liquor_tax_id
-msgid "Impuesto"
+msgid "Tax"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model,name:l10n_ve_withholding_tax_liquor.model_account_liquor_tax
-msgid "Impuesto al licor"
+msgid "Liquor tax"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
@@ -116,7 +116,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_product_template__liquor_tax_ids
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_sale_order_line__liquor_tax_ids
 #: model:ir.ui.menu,name:l10n_ve_withholding_tax_liquor.menu_account_liquor_tax
-msgid "Impuestos por venta de licor"
+msgid "Liquor sales tax"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
@@ -148,44 +148,44 @@ msgstr ""
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report__line_ids
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_tax_liquor.account_liquor_tax_report_view_form
-msgid "Lineas"
+msgid "Lines"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model,name:l10n_ve_withholding_tax_liquor.model_account_liquor_tax_report_line
-msgid "Lineas reporte impuesto sobre venta de licor"
+msgid "Lines report tax on liquor sales"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report__currency_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report_line__currency_id
-msgid "Moneda fiscal"
+msgid "Fiscal currency"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report__name
-msgid "Nombre"
+msgid "Name"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax__name
-msgid "Nombre del impuesto"
+msgid "Name of the tax"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_tax_liquor.selection__account_liquor_tax_report__state__paid
-msgid "Pagado"
+msgid "Paid"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_tax_liquor.account_liquor_tax_report_view_form
-msgid "Pagar"
+msgid "Pay"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax__rate
 #: model:ir.model.fields,field_description:l10n_ve_withholding_tax_liquor.field_account_liquor_tax_report_line__rate
-msgid "Porcentaje"
+msgid "Percentage"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
@@ -200,18 +200,18 @@ msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model,name:l10n_ve_withholding_tax_liquor.model_account_liquor_tax_report
-msgid "Reporte impuesto sobre venta de licor"
+msgid "Report tax on liquor sales"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.actions.act_window,name:l10n_ve_withholding_tax_liquor.account_liquor_tax_report_action
 #: model:ir.ui.menu,name:l10n_ve_withholding_tax_liquor.menu_account_liquor_tax_report
-msgid "Reporte impuestos por venta de licor"
+msgid "Report taxes on liquor sales"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_tax_liquor.account_liquor_tax_report_view_form
-msgid "Restablecer a borrador"
+msgid "Reset to draft"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
@@ -221,7 +221,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor
 #: model:ir.model.constraint,message:l10n_ve_withholding_tax_liquor.constraint_account_liquor_tax_report_line_unique_liquor_tax_per_report
-msgid "Solo se puede tener una linea por tipo de impuesto"
+msgid "You can only have one line per tax type"
 msgstr ""
 
 #. module: l10n_ve_withholding_tax_liquor

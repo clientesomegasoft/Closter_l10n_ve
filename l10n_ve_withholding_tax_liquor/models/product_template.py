@@ -5,7 +5,7 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     liquor_tax_ids = fields.Many2many(
-        "account.liquor.tax", string="Impuestos por venta de licor", ondelete="restrict"
+        "account.liquor.tax", string="Liquor sales tax", ondelete="restrict"
     )
 
 
@@ -13,7 +13,7 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
     liquor_tax_ids = fields.Many2many(
-        "account.liquor.tax", string="Impuestos por venta de licor", readonly=True
+        "account.liquor.tax", string="Liquor sales tax", readonly=True
     )
 
     @api.onchange("product_id")
@@ -34,7 +34,7 @@ class AccountMoveLine(models.Model):
         "liquor_tax_move_line_rel",
         "line_id",
         "tax_id",
-        string="Impuestos por venta de licor",
+        string="Liquor sales tax",
         readonly=True,
     )
 
