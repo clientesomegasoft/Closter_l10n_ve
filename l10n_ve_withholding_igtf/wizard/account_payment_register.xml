@@ -18,7 +18,7 @@
                     >(= <field
                             name="igtf_amount"
                             class="oe_inline"
-                        /> importe IGTF)</span>
+                        /> IGTF amount)</span>
                 </div>
                 <field
                     name="igtf_journal_id"

@@ -4,7 +4,7 @@ from odoo import fields, models
 class Partner(models.Model):
     _inherit = "res.partner"
 
-    apply_igtf = fields.Boolean(string="Agente de percepción de IGTF")
+    apply_igtf = fields.Boolean(string="IGTF Perception Agent")
 
     def write(self, vals):
         if (

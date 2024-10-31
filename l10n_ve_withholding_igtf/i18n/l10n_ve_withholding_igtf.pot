@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-30 04:06+0000\n"
-"PO-Revision-Date: 2024-10-30 04:06+0000\n"
+"POT-Creation-Date: 2024-10-30 04:07+0000\n"
+"PO-Revision-Date: 2024-10-30 04:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,14 +17,14 @@ msgstr ""
 
 #. module: l10n_ve_withholding_igtf
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_igtf.view_account_payment_form
-msgid "<span class=\"o_stat_text\">Asiento IGTF</span>"
+msgid "<span class=\"o_stat_text\">IGTF Entry</span>"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_config_settings__apply_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_partner__apply_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_users__apply_igtf
-msgid "Agente de percepción de IGTF"
+msgid "IGTF Perception Agent"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
@@ -35,7 +35,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_account_payment__igtf_move_id
-msgid "Asiento IGTF"
+msgid "IGTF Entry"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
@@ -68,19 +68,19 @@ msgstr ""
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_company__igtf_inbound_account_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_config_settings__igtf_inbound_account_id
-msgid "Cuenta Recibos IGTF"
+msgid "IGTF Receipt Account"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_company__igtf_outbound_account_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_config_settings__igtf_outbound_account_id
-msgid "Cuenta pagos IGTF"
+msgid "IGTF payment account"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_account_payment__igtf_journal_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_account_payment_register__igtf_journal_id
-msgid "Diario IGTF"
+msgid "IGTF Journal"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
@@ -91,7 +91,7 @@ msgstr ""
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_account_payment__igtf_amount
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_account_payment_register__igtf_amount
-msgid "Importe IGTF"
+msgid "IGTF amount"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
@@ -102,13 +102,13 @@ msgstr ""
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_account_payment__calculate_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_account_payment_register__calculate_igtf
-msgid "Permitir IGTF"
+msgid "Allow IGTF"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_company__igtf_percentage
 #: model:ir.model.fields,field_description:l10n_ve_withholding_igtf.field_res_config_settings__igtf_percentage
-msgid "Porcentaje IGTF"
+msgid "IGTF percentage"
 msgstr ""
 
 #. module: l10n_ve_withholding_igtf
@@ -119,5 +119,5 @@ msgstr ""
 #. module: l10n_ve_withholding_igtf
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_igtf.view_account_payment_form
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_igtf.view_account_payment_register_form
-msgid "importe IGTF)"
+msgid "IGTF amount)"
 msgstr ""

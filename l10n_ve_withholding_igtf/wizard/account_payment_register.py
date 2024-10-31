@@ -7,14 +7,14 @@ class AccountPaymentRegister(models.TransientModel):
     apply_igtf = fields.Selection(
         [("cash", "Cash"), ("bank", "Bank")], compute="_compute_apply_igtf"
     )
-    calculate_igtf = fields.Boolean(string="Permitir IGTF", default=True)
+    calculate_igtf = fields.Boolean(string="Allow IGTF", default=True)
     igtf_journal_id = fields.Many2one(
         "account.journal",
-        string="Diario IGTF",
+        string="IGTF Journal",
         check_company=True,
         domain="[('type', 'in', ('bank', 'cash'))]",
     )
-    igtf_amount = fields.Monetary(string="Importe IGTF", compute="_compute_igtf_amount")
+    igtf_amount = fields.Monetary(string="IGTF amount", compute="_compute_igtf_amount")
 
     @api.depends(
         "payment_type",

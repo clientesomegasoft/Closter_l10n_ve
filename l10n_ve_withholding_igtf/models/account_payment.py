@@ -9,21 +9,21 @@ class AccountPayment(models.Model):
         [("cash", "Cash"), ("bank", "Bank")], compute="_compute_apply_igtf", store=True
     )
     calculate_igtf = fields.Boolean(
-        string="Permitir IGTF",
+        string="Allow IGTF",
         default=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     igtf_journal_id = fields.Many2one(
         "account.journal",
-        string="Diario IGTF",
+        string="IGTF Journal",
         readonly=True,
         states={"draft": [("readonly", False)]},
         check_company=True,
         domain="[('type', 'in', ('bank', 'cash'))]",
     )
-    igtf_move_id = fields.Many2one("account.move", string="Asiento IGTF")
-    igtf_amount = fields.Monetary(string="Importe IGTF", compute="_compute_igtf_amount")
+    igtf_move_id = fields.Many2one("account.move", string="IGTF Entry")
+    igtf_amount = fields.Monetary(string="IGTF amount", compute="_compute_igtf_amount")
 
     @api.depends(
         "payment_type",
@@ -201,7 +201,7 @@ class AccountPayment(models.Model):
     def button_open_igtf_entry(self):
         self.ensure_one()
         return {
-            "name": "Asiento IGTF",
+            "name": "IGTF Entry",
             "type": "ir.actions.act_window",
             "res_model": "account.move",
             "context": {"create": False},
