@@ -266,11 +266,6 @@ msgid "From"
 msgstr ""
 
 #. module: l10n_ve_withholding_islr
-#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__journal_id
-msgid "Journal"
-msgstr ""
-
-#. module: l10n_ve_withholding_islr
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_res_company__in_islr_journal_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_res_config_settings__in_islr_journal_id
 msgid "ISLR Journal on Purchases"
@@ -324,11 +319,6 @@ msgstr ""
 #. module: l10n_ve_withholding_islr
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr_view_form
 msgid "Send by email"
-msgstr ""
-
-#. module: l10n_ve_withholding_islr
-#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__state
-msgid "State"
 msgstr ""
 
 #. module: l10n_ve_withholding_islr
@@ -403,6 +393,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model,name:l10n_ve_withholding_islr.model_account_journal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__journal_id
 msgid "Journal"
 msgstr ""
 
@@ -594,18 +585,14 @@ msgstr ""
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_islr.selection__account_withholding_islr__type__customer
+#: model:ir.actions.act_window,name:l10n_ve_withholding_islr.account_withholding_islr_customer_action
+#: model:ir.ui.menu,name:l10n_ve_withholding_islr.menu_account_withholding_islr_customer
 msgid "Customers ISLR withholding"
 msgstr ""
 
 #. module: l10n_ve_withholding_islr
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_islr.selection__account_withholding_islr__type__supplier
 msgid "Providers ISLR withholding"
-msgstr ""
-
-#. module: l10n_ve_withholding_islr
-#: model:ir.actions.act_window,name:l10n_ve_withholding_islr.account_withholding_islr_customer_action
-#: model:ir.ui.menu,name:l10n_ve_withholding_islr.menu_account_withholding_islr_customer
-msgid "Customers ISLR withholding"
 msgstr ""
 
 #. module: l10n_ve_withholding_islr
@@ -617,12 +604,8 @@ msgstr ""
 #. module: l10n_ve_withholding_islr
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__xml_state
 #: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr_xml__state
+#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr__state
 msgid "State"
-msgstr ""
-
-#. module: l10n_ve_withholding_islr
-#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr_line__subtraction
-msgid "Subtrahend"
 msgstr ""
 
 #. module: l10n_ve_withholding_islr
@@ -637,6 +620,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_islr
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_islr.account_withholding_islr
+#: model:ir.model.fields,field_description:l10n_ve_withholding_islr.field_account_withholding_islr_line__subtraction
 msgid "Subtrahend"
 msgstr ""
 
