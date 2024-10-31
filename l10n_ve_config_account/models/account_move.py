@@ -5,9 +5,7 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     person_type_code = fields.Char(related="partner_id.person_type_id.code")
-    supplier_invoice_number = fields.Char(
-        string="Provider invoice number", copy=False
-    )
+    supplier_invoice_number = fields.Char(string="Provider invoice number", copy=False)
     nro_ctrl = fields.Char(string="Control number", copy=False)
 
     _sql_constraints = [
