@@ -178,10 +178,6 @@ msgstr "Comprobante municipal"
 
 #. module: l10n_ve_withholding_municipal
 #: model:ir.model,name:l10n_ve_withholding_municipal.model_account_municipal_concept
-msgid "Municipal retention concept"
-msgstr "Concepto de retencion municipal"
-
-#. module: l10n_ve_withholding_municipal
 #: model:ir.actions.act_window,name:l10n_ve_withholding_municipal.account_municipal_concept_action
 #: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal_line__municipal_concept_id
 #: model:ir.ui.menu,name:l10n_ve_withholding_municipal.menu_account_municipal_concept
@@ -269,11 +265,6 @@ msgstr ""
 "                                        Fecha 23 de Febrero de 2015 y en el articulo 210, 211, 214, de la ley Orgánica del Poder Público Municipal."
 
 #. module: l10n_ve_withholding_municipal
-#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__journal_id
-msgid "Journal"
-msgstr "Diario"
-
-#. module: l10n_ve_withholding_municipal
 #: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_company__in_municipal_journal_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_res_config_settings__in_municipal_journal_id
 msgid "Purchase journal for municipal retention"
@@ -351,6 +342,7 @@ msgstr "ID"
 
 #. module: l10n_ve_withholding_municipal
 #: model:ir.model,name:l10n_ve_withholding_municipal.model_account_journal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_municipal.field_account_withholding_municipal__journal_id
 msgid "Journal"
 msgstr "Diario"
 

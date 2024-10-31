@@ -57,11 +57,12 @@
                                     /></td>
                             </tr>
                             <tr>
-                                <td
-                                    colspan="3"
-                                >Tax Address of the Withholding Agent<br /><span
+                                <td colspan="3">
+                                    Tax Address of the Withholding Agent<br />
+                                    <span
                                         t-esc="doc.agent_id._display_address(without_company=True)"
-                                    /></td>
+                                    />
+                                </td>
                             </tr>
                             <t t-if="doc.company_id.partner_id == doc.agent_id">
                                 <td colspan="2">License for economic activities<br

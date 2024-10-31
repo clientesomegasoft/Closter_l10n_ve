@@ -24,9 +24,7 @@
     Hello <t
                         t-out="object.type == 'supplier' and object.subject_id.name or object.agent_id.name"
                     />,<br />
-    Attached here is the municipal withholding receipt: <strong
-                        t-out="object.name"
-                    />
+    Attached here is the municipal withholding receipt: <strong t-out="object.name" />
     for an amount of<strong
                         t-out="format_amount(object.amount, object.currency_id)"
                     />,<br />
