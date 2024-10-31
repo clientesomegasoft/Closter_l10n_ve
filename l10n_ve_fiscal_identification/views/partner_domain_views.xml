@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
+    <!-- sale.order form view -->
     <record id="view_order_form" model="ir.ui.view">
         <field name="name">sale.order.form</field>
         <field name="model">sale.order</field>
@@ -10,6 +11,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- purchase.order form view -->
     <record id="purchase_order_form" model="ir.ui.view">
         <field name="name">purchase.order.form</field>
         <field name="model">purchase.order</field>
@@ -20,6 +23,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- account.move form view -->
     <record id="view_move_form" model="ir.ui.view">
         <field name="name">account.move.form</field>
         <field name="model">account.move</field>
@@ -36,6 +41,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- account.analytic.account form view -->
     <record id="view_account_analytic_account_form" model="ir.ui.view">
         <field name="name">analytic.analytic.account.form</field>
         <field name="model">account.analytic.account</field>
@@ -46,6 +53,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- product.supplierinfo tree view -->
     <record id="product_supplierinfo_tree_view" model="ir.ui.view">
         <field name="name">product.supplierinfo.tree.view</field>
         <field name="model">product.supplierinfo</field>
@@ -56,6 +65,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- account.bank.statement.line form view -->
     <record id="view_bank_statement_line_form_bank_rec_widget" model="ir.ui.view">
         <field name="name">account.bank.statement.line.form.bank_rec_widget</field>
         <field name="model">account.bank.statement.line</field>
@@ -69,6 +80,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- account.bank.statement.line tree view -->
     <record id="view_bank_statement_line_tree_bank_rec_widget" model="ir.ui.view">
         <field name="name">account.bank.statement.line.tree.bank_rec_widget</field>
         <field name="model">account.bank.statement.line</field>

@@ -3,8 +3,8 @@ from odoo import fields, models
 
 class PersonType(models.Model):
     _name = "person.type"
-    _description = "Tipo de persona"
+    _description = "Type of person"
 
-    name = fields.Char(string="Tipo", required=True)
-    code = fields.Char(string="Código", required=True)
-    is_company = fields.Boolean(string="Es compañía", default=False)
+    name = fields.Char(string="Type", required=True)
+    code = fields.Char(string="Code", required=True)
+    is_company = fields.Boolean(string="It's company", default=False)

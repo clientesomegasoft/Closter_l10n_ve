@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- res.partner form view -->
     <record id="view_partner_form" model="ir.ui.view">
         <field name="name">view.partner.form</field>
         <field name="model">res.partner</field>
@@ -19,7 +20,7 @@
                 <field name="vat" position="move" />
             </xpath>
             <field name="vat" position="attributes">
-                <attribute name="placeholder">Ej. J-12345678-9</attribute>
+                <attribute name="placeholder">Ex. J-12345678-9</attribute>
                 <attribute
                     name="attrs"
                 >{'invisible': [('type', 'not in', ('contact', 'invoice'))], 'required': [('person_type_code', '=', 'PJDO')], 'readonly': [('parent_id', '!=', False)]}</attribute>
@@ -51,6 +52,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- res.partner filter form view -->
     <record id="view_res_partner_filter" model="ir.ui.view">
         <field name="name">res.partner.select</field>
         <field name="model">res.partner</field>
@@ -65,19 +68,21 @@
             </field>
         </field>
     </record>
+
+    <!-- res.partner search view -->
     <record id="res_partner_view_search" model="ir.ui.view">
         <field name="name">res.partner.search.inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="account.res_partner_view_search" />
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='customer']" position="attributes">
-                <attribute name="string">Clientes</attribute>
+                <attribute name="string">Customers</attribute>
                 <attribute
                     name="domain"
                 >[('partner_type', 'in', ['customer', 'customer_supplier'])]</attribute>
             </xpath>
             <xpath expr="//filter[@name='supplier']" position="attributes">
-                <attribute name="string">Proveedores</attribute>
+                <attribute name="string">Providers</attribute>
                 <attribute
                     name="domain"
                 >[('partner_type', 'in', ['supplier', 'customer_supplier'])]</attribute>

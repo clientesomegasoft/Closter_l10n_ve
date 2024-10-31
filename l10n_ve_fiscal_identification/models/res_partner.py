@@ -30,20 +30,20 @@ class Partner(models.Model):
 
     person_type_id = fields.Many2one(
         "person.type",
-        string="Tipo de persona",
+        string="Type of person",
         domain="[('is_company', '=', is_company)]",
         tracking=True,
         copy=False,
     )
     person_type_code = fields.Char(related="person_type_id.code")
-    identification = fields.Char("Documento de identidad", tracking=True, copy=False)
+    identification = fields.Char("Identity document", tracking=True, copy=False)
     partner_type = fields.Selection(
         [
-            ("customer", "Cliente"),
-            ("supplier", "Proveedor"),
-            ("customer_supplier", "Cliente / Proveedor"),
+            ("customer", "Customer"),
+            ("supplier", "Provider"),
+            ("customer_supplier", "Customer / Provider"),
         ],
-        string="Clasificación comercial",
+        string="Commercial classification",
         tracking=True,
         copy=False,
     )
@@ -53,12 +53,12 @@ class Partner(models.Model):
         (
             "unique_identification",
             "UNIQUE(identification)",
-            "\nYa existe un contacto con el mismo Documento de identidad !",
+            "\nThere is already a contact with the same ID!",
         ),
         (
             "unique_vat",
             "EXCLUDE (vat WITH =) WHERE (parent_id IS NULL)",
-            "\nYa existe un contacto con el mismo RIF !",
+            "\nThere is already a contact with the same RIF!",
         ),
     ]
 
@@ -107,7 +107,7 @@ class Partner(models.Model):
                         )
                     if not partner.identification:
                         raise ValidationError(
-                            _("El campo 'Documento de identidad' no puede ser nulo !")
+                            _("¡El campo 'Documento de identidad' no puede ser nulo!")
                         )
                     if (
                         partner.person_type_id.code == "PNRE"
@@ -123,7 +123,7 @@ class Partner(models.Model):
                         )
                 if not partner.partner_type:
                     raise ValidationError(
-                        _("El campo 'Clasificación comercial' no puede ser nulo !")
+                        _("¡El campo 'Clasificación comercial' no puede ser nulo!")
                     )
 
     @api.constrains("vat", "country_id")

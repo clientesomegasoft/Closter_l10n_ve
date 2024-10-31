@@ -21,7 +21,7 @@ msgstr ""
 #: model:ir.model.constraint,message:l10n_ve_fiscal_identification.constraint_res_partner_unique_identification
 msgid ""
 "\n"
-"Ya existe un contacto con el mismo Documento de identidad !"
+"There is already a contact with the same ID!"
 msgstr ""
 "\n"
 "¡Ya existe un contacto con el mismo Documento de identidad!"
@@ -30,7 +30,7 @@ msgstr ""
 #: model:ir.model.constraint,message:l10n_ve_fiscal_identification.constraint_res_partner_unique_vat
 msgid ""
 "\n"
-"Ya existe un contacto con el mismo RIF !"
+"There is already a contact with the same RIF!"
 msgstr ""
 "\n"
 "¡Ya existe un contacto con el mismo RIF!"
@@ -38,22 +38,22 @@ msgstr ""
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__partner_type
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__partner_type
-msgid "Clasificación comercial"
+msgid "Commercial classification"
 msgstr "Clasificación comercial"
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__customer
-msgid "Cliente"
+msgid "Customer"
 msgstr "Cliente"
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__customer_supplier
-msgid "Cliente / Proveedor"
+msgid "Customer / Provider"
 msgstr "Cliente / Proveedor"
 
 #. module: l10n_ve_fiscal_identification
 #: model_terms:ir.ui.view,arch_db:l10n_ve_fiscal_identification.res_partner_view_search
-msgid "Clientes"
+msgid "Customers"
 msgstr "Clientes"
 
 #. module: l10n_ve_fiscal_identification
@@ -90,7 +90,7 @@ msgstr "Cliente/Proveedor"
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__code
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__person_type_code
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__person_type_code
-msgid "Código"
+msgid "Code"
 msgstr "Código"
 
 #. module: l10n_ve_fiscal_identification
@@ -101,18 +101,18 @@ msgstr "Nombre a mostrar"
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__identification
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__identification
-msgid "Documento de identidad"
+msgid "Identity document"
 msgstr "Documento de identidad"
 
 #. module: l10n_ve_fiscal_identification
 #: model_terms:ir.ui.view,arch_db:l10n_ve_fiscal_identification.view_partner_form
-msgid "Ej. J-12345678-9"
+msgid "Ex. J-12345678-9"
 msgstr "Ej. J-12345678-9"
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__is_company
-msgid "Es compañía"
-msgstr "Es compañía"
+msgid "It's company"
+msgstr "¿Es compañía?"
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__id
@@ -151,12 +151,12 @@ msgstr "Pagos"
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields.selection,name:l10n_ve_fiscal_identification.selection__res_partner__partner_type__supplier
-msgid "Proveedor"
+msgid "Provider"
 msgstr "Proveedor"
 
 #. module: l10n_ve_fiscal_identification
 #: model_terms:ir.ui.view,arch_db:l10n_ve_fiscal_identification.res_partner_view_search
-msgid "Proveedores"
+msgid "Providers"
 msgstr "Proveedores"
 
 #. module: l10n_ve_fiscal_identification
@@ -189,14 +189,14 @@ msgstr ""
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_person_type__name
-msgid "Tipo"
+msgid "Type"
 msgstr "Tipo"
 
 #. module: l10n_ve_fiscal_identification
 #: model:ir.model,name:l10n_ve_fiscal_identification.model_person_type
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_partner__person_type_id
 #: model:ir.model.fields,field_description:l10n_ve_fiscal_identification.field_res_users__person_type_id
-msgid "Tipo de persona"
+msgid "Type of person"
 msgstr "Tipo de persona"
 
 #. module: l10n_ve_fiscal_identification
