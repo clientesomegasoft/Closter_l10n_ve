@@ -146,18 +146,14 @@ msgstr ""
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__company_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__company_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__company_id
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
 msgid "Company"
 msgstr ""
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
 msgid "Company Logo"
-msgstr ""
-
-#. module: l10n_ve_withholding_iva
-#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__company_id
-#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Company"
 msgstr ""
 
 #. module: l10n_ve_withholding_iva
@@ -252,11 +248,6 @@ msgid "From"
 msgstr ""
 
 #. module: l10n_ve_withholding_iva
-#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__journal_id
-msgid "Journal"
-msgstr ""
-
-#. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__in_iva_journal_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__in_iva_journal_id
 msgid "VAT journal on purchases"
@@ -294,11 +285,6 @@ msgstr ""
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
 msgid "Send by email"
-msgstr ""
-
-#. module: l10n_ve_withholding_iva
-#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__state
-msgid "State"
 msgstr ""
 
 #. module: l10n_ve_withholding_iva
@@ -364,7 +350,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__tax_amount
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__tax_line_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__tax_amount
-msgid "Impuesto"
+msgid "Tax"
 msgstr ""
 
 #. module: l10n_ve_withholding_iva
@@ -379,6 +365,7 @@ msgstr ""
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model,name:l10n_ve_withholding_iva.model_account_journal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__journal_id
 msgid "Journal"
 msgstr ""
 
@@ -591,6 +578,7 @@ msgstr ""
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__txt_state
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__state
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__state
 msgid "State"
 msgstr ""
 

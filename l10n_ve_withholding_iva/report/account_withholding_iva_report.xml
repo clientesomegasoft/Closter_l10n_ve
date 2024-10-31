@@ -57,10 +57,12 @@
                                     /></td>
                             </tr>
                             <tr>
-                                <td colspan="3">Tax Address of the Withholding Agent:<br
-                                    /><span
+                                <td colspan="3">
+                                    Tax Address of the Withholding Agent:<br />
+                                    <span
                                         t-esc="doc.agent_id._display_address(without_company=True)"
-                                    /></td>
+                                    />
+                                </td>
                             </tr>
                             <tr>
                                 <td

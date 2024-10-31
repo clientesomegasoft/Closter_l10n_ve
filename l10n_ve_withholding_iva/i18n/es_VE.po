@@ -167,6 +167,8 @@ msgstr "Compañías"
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__company_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__company_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__company_id
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
 msgid "Company"
 msgstr "Compañía"
 
@@ -174,12 +176,6 @@ msgstr "Compañía"
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
 msgid "Company Logo"
 msgstr "Logotipo de Compañía"
-
-#. module: l10n_ve_withholding_iva
-#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__company_id
-#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Company"
-msgstr "Compañía"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
@@ -273,11 +269,6 @@ msgid "From"
 msgstr "Desde"
 
 #. module: l10n_ve_withholding_iva
-#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__journal_id
-msgid "Journal"
-msgstr "Diario"
-
-#. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__in_iva_journal_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__in_iva_journal_id
 msgid "VAT journal on purchases"
@@ -316,11 +307,6 @@ msgstr "Envía un correo cuando se pulsa el botón de \"ENVIAR POR CORREO ELECTR
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
 msgid "Send by email"
 msgstr "Enviar por correo electrónico"
-
-#. module: l10n_ve_withholding_iva
-#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__state
-msgid "State"
-msgstr "Estado"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__invoice_id
@@ -400,6 +386,7 @@ msgstr "Impuesto retenido"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model,name:l10n_ve_withholding_iva.model_account_journal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__journal_id
 msgid "Journal"
 msgstr "Diario"
 
@@ -614,6 +601,7 @@ msgstr "Retención de IVA Proveedores"
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__txt_state
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__state
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__state
 msgid "State"
 msgstr "Estado"
 
