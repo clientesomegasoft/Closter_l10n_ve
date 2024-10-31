@@ -4,9 +4,9 @@ from odoo import fields, models
 class Partner(models.Model):
     _inherit = "res.partner"
 
-    is_iva_agent = fields.Boolean(string="¿Es agente de retención de IVA?", copy=False)
+    is_iva_agent = fields.Boolean(string="Are you a VAT withholding agent?", copy=False)
     iva_rate_id = fields.Many2one(
-        "withholding.iva.rate", string="Tasa de retención de IVA", copy=False
+        "withholding.iva.rate", string="VAT withholding rate", copy=False
     )
 
     def write(self, vals):

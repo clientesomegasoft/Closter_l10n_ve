@@ -21,7 +21,7 @@
                             <div class="col-9">
                                 <div class="row py-4">
                                     <div class="col-6 text-center"><h4
-                                        >Comprobante de Retención de IVA</h4></div>
+                                        >VAT Withholding receipt</h4></div>
                                     <div class="col-6 text-end pr-0"><p
                                             style="font-size: 9px;"
                                         >
@@ -31,11 +31,11 @@
                                 </div>
                                 <div class="row text-end mt-4">
                                     <div class="col-6 pe-1 border"><b
-                                        >Nro. Comprobante:</b> <span
+                                        >Receipt No.:</b> <span
                                             t-field="doc.name"
                                         /></div>
                                     <div class="col-6 pe-1 border"><b
-                                        >Fecha de emisión:</b> <span
+                                        >Release date:</b> <span
                                             t-field="doc.date"
                                         /></div>
                                 </div>
@@ -47,33 +47,33 @@
                         >
                             <tr>
                                 <td
-                                >Nombre y Apellido o Razón Social del Agente de Retención:<br
+                                >Name and Surname or Business Name of the Withholding Agent:<br
                                     /><span t-field="doc.agent_id" /></td>
                                 <td
-                                >Registro de Identificación Fiscal del Agente de Retención<br
+                                >Tax Identification Record of the Withholding Agent<br
                                     /><span t-field="doc.agent_id.vat" /></td>
-                                <td style="width:20%;">Período Fiscal<br /><span
+                                <td style="width:20%;">Fiscal Period<br /><span
                                         t-esc="doc.date.strftime('%m/%Y')"
                                     /></td>
                             </tr>
                             <tr>
                                 <td
                                     colspan="3"
-                                >Dirección Fiscal del Agente de Retención:<br /><span
+                                >Tax Address of the Withholding Agent:<br /><span
                                         t-esc="doc.agent_id._display_address(without_company=True)"
                                     /></td>
                             </tr>
                             <tr>
                                 <td
-                                >Nombre y Apellido o Razón Social del Agente Retenido:<br
+                                >Name and Surname or Business Name of the Retained Agent:<br
                                     /><span t-field="doc.subject_id" /></td>
                                 <td
                                     colspan="2"
-                                >Registro de Identificación Fiscal del Agente Retenido<br
+                                >Tax Identification Record of the Retained Agent<br
                                     /><span t-field="doc.subject_id.vat" /></td>
                             </tr>
                             <tr>
-                                <td colspan="3">Dirección Fiscal del Agente Retenido:<br
+                                <td colspan="3">Tax Address of the Retained Agent:<br
                                     /><span
                                         t-esc="doc.subject_id._display_address(without_company=True)"
                                     /></td>
@@ -84,20 +84,20 @@
                             style="font-size: 13px;"
                         >
                             <tr style="background-color:#A9F5F2;">
-                                <th>Fecha de documento</th>
-                                <th>Nro. Factura</th>
-                                <th>Nro. Control</th>
-                                <th>Nro. Nota de débito</th>
-                                <th>Nro. Nota de crédito</th>
-                                <th>Tipo Trans.</th>
-                                <th>Nro. Factura afectada</th>
-                                <th>Monto total del documento</th>
-                                <th>Compras sin derecho a crédito fiscal</th>
-                                <th>Base imponible</th>
-                                <th>% Alicuota</th>
-                                <th>Impuesto causado</th>
-                                <th>% de retención</th>
-                                <th>Impuesto retenido</th>
+                                <th>Document date</th>
+                                <th>Invoice No.</th>
+                                <th>Control No. </th>
+                                <th>Debit note No.</th>
+                                <th>Credit note No.</th>
+                                <th>Trans. Type</th>
+                                <th>Affected Invoice No.</th>
+                                <th>Total amount of the document</th>
+                                <th>Purchases without the right to tax credit</th>
+                                <th>Taxable base</th>
+                                <th>% Aliquot</th>
+                                <th>Tax caused</th>
+                                <th>% retention</th>
+                                <th>Tax withheld</th>
                             </tr>
                             <tr t-foreach="doc.line_ids" t-as="line">
                                 <td><span t-field="doc.invoice_date" /></td>
@@ -182,7 +182,7 @@
                                     style="width: 50%;"
                                 />
                                 <span t-field="doc.agent_id" /><br />
-                                Agente de Retención (Sello y Firma)
+                                Withholding Agent (Stamp and Signature)
                             </div>
                             <div class="col-6">
                                 <div style="height: 100px;">
@@ -197,7 +197,7 @@
                                     style="width: 50%;"
                                 />
                                 <span t-field="doc.subject_id" /><br />
-                                Firma del Beneficiario
+                                Signature of the Beneficiary
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
         </t>
     </template>
     <record id="account_withholding_iva_report" model="ir.actions.report">
-        <field name="name">Comprobante de IVA</field>
+        <field name="name">VAT receipt</field>
         <field name="model">account.withholding.iva</field>
         <field name="report_type">qweb-pdf</field>
         <field
@@ -215,7 +215,7 @@
         <field
             name="report_file"
         >l10n_ve_withholding_iva.account_withholding_iva</field>
-        <field name="print_report_name">'COMP IVA - %s' % (object.name)</field>
+        <field name="print_report_name">'VAT Voucher - %s' % (object.name)</field>
         <field name="binding_model_id" ref="model_account_withholding_iva" />
         <field
             name="paperformat_id"

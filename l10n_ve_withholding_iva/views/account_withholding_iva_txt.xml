@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <!-- account.withholding.iva.txt tree view -->
     <record id="account_withholding_iva_txt_view_tree" model="ir.ui.view">
         <field name="name">account.withholding.iva.txt.view.tree</field>
         <field name="model">account.withholding.iva.txt</field>
@@ -12,6 +13,8 @@
             </tree>
         </field>
     </record>
+
+    <!-- account.withholding.iva.txt form view -->
     <record id="account_withholding_iva_txt_view_form" model="ir.ui.view">
         <field name="name">account.withholding.iva.txt.view.form</field>
         <field name="model">account.withholding.iva.txt</field>
@@ -21,26 +24,26 @@
                     <button
                         name="seek_for_lines"
                         states="draft"
-                        string="Generar lineas"
+                        string="Generate lines"
                         type="object"
                         class="oe_edit_only"
                     />
                     <button
                         name="button_draft"
                         states="posted,cancel"
-                        string="Restablecer a borrador"
+                        string="Reset to draft"
                         type="object"
                     />
                     <button
                         name="button_post"
-                        string="Confirmar"
+                        string="Confirm"
                         type="object"
                         attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"
                     />
                     <button
                         name="button_cancel"
                         states="draft,posted"
-                        string="Cancelar"
+                        string="Cancel"
                         type="object"
                     />
                     <field
@@ -53,7 +56,7 @@
                     <div class="oe_title">
                         <h1 class="mt0"><field
                                 name="name"
-                                placeholder="Descripción"
+                                placeholder="Description"
                             /></h1>
                     </div>
                     <group>
@@ -75,7 +78,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page name="lines" string="Lineas">
+                        <page name="lines" string="Lines">
                             <field name="line_ids" widget="many2many">
                                 <tree create="0" editable="top">
                                     <field name="currency_id" invisible="1" />
@@ -99,11 +102,15 @@
             </form>
         </field>
     </record>
+
+    <!-- account.withholding.iva.txt actions window -->
     <record id="action_account_withholding_iva_txt" model="ir.actions.act_window">
-        <field name="name">Generar TXT IVA</field>
+        <field name="name">Generate VAT TXT</field>
         <field name="res_model">account.withholding.iva.txt</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- account.withholding.iva.txt menu item -->
     <menuitem
         id="account_withholding_iva_txt_menu"
         parent="l10n_ve_config_account.menu_l10n_ve_reports"

@@ -19,34 +19,34 @@ msgstr ""
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "% Alicuota"
+msgid "% Aliquot"
 msgstr "% Alicuota"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "% de retención"
+msgid "% retention"
 msgstr "% de retención"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.actions.report,print_report_name:l10n_ve_withholding_iva.account_withholding_iva_report
-msgid "'COMP IVA - %s' % (object.name)"
+msgid "'VAT Voucher - %s' % (object.name)"
 msgstr "'COMP IVA - %s' % (object.name)"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "<b>Fecha de emisión:</b>"
+msgid "<b>Release date:</b>"
 msgstr "<b>Fecha de emisión:</b>"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "<b>Nro. Comprobante:</b>"
+msgid "<b>Receipt No.:</b>"
 msgstr "<b>Nro. Comprobante:</b>"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
 msgid ""
 "<br/>\n"
-"                                Agente de Retención (Sello y Firma)"
+"                                Withholding Agent (Stamp and Signature)"
 msgstr ""
 "<br/>\n"
 "                                Agente de Retención (Sello y Firma)"
@@ -55,7 +55,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
 msgid ""
 "<br/>\n"
-"                                Firma del Beneficiario"
+"                                Signature of the Beneficiary"
 msgstr ""
 "<br/>\n"
 "                                Firma del Beneficiario"
@@ -65,14 +65,13 @@ msgstr ""
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
 "<p style=\"margin: 0px; padding: 0px;font-size: 13px;\">\n"
-"    Hola <t t-out=\"object.type == 'supplier' and object.subject_id.name or object.agent_id.name\"></t>,<br>\n"
-"    Acá adjunto se encuentra el comprobante de retención de IVA: <strong t-out=\"object.name\"></strong>\n"
-"    por un monto de <strong t-out=\"format_amount(object.amount, object.currency_id)\"></strong>,<br>\n"
-"    correspondiente a la Factura Nro. <strong t-out=\"object.type == 'supplier' and object.invoice_id.supplier_invoice_number or object.invoice_id.name\"></strong>."
-"<br>\n"
-"    Puede responder este correo si tiene alguna duda.\n"
+"    Hello <t t-out=\"object.type == 'supplier' and object.subject_id.name or object.agent_id.name\"></t>,<br>\n"
+"    Attached here is the VAT withholding receipt: <strong t-out=\"object.name\"></strong>\n"
+"    for an amount of<strong t-out=\"format_amount(object.amount, object.currency_id)\"></strong>,<br>\n"
+"    corresponding to Invoice No. <strong t-out=\"object.type == 'supplier' and object.invoice_id.supplier_invoice_number or object.invoice_id.name\"></strong>.<br>\n"
+"    You can reply to this email if you have any questions.\n"
 "    <br><br>\n"
-"    Muchas gracias.\n"
+"    Thank you so much.\n"
 "    <t t-if=\"user.signature\">\n"
 "        <br><t t-out=\"user.signature\"></t>\n"
 "    </t>\n"
@@ -97,22 +96,22 @@ msgstr ""
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "<span class=\"o_stat_text\">Asiento</span>"
+msgid "<span class=\"o_stat_text\">Entry</span>"
 msgstr "<span class=\"o_stat_text\">Asiento</span>"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__agent_id
-msgid "Agente de retención"
+msgid "Withholding agent"
 msgstr "Agente de retención"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__file
-msgid "Archivo TXT"
+msgid "TXT file"
 msgstr "Archivo TXT"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__move_id
-msgid "Asiento contable"
+msgid "Accounting entry"
 msgstr "Asiento contable"
 
 #. module: l10n_ve_withholding_iva
@@ -134,30 +133,30 @@ msgstr "Ref de Importe base Moneda"
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__tax_base_amount
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__tax_base_amount
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Base imponible"
+msgid "Taxable base"
 msgstr "Base imponible"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__state__draft
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva_txt__state__draft
-msgid "Borrador"
+msgid "Draft"
 msgstr "Borrador"
 
 #. module: l10n_ve_withholding_iva
 #: model:mail.template,report_name:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
-msgid "COMP IVA - {{ object.name }}"
+msgid "VAT Voucher - {{ object.name }}"
 msgstr "COMP IVA - {{ object.name }}"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__state__cancel
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva_txt__state__cancel
-msgid "Cancelado"
+msgid "Canceled"
 msgstr "Cancelado"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Cancelar"
+msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: l10n_ve_withholding_iva
@@ -179,27 +178,27 @@ msgstr "Logotipo de Compañía"
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__company_id
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Compañía"
+msgid "Company"
 msgstr "Compañía"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Compras sin derecho a crédito fiscal"
+msgid "Purchases without the right to tax credit"
 msgstr "Compras sin derecho a crédito fiscal"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.actions.report,name:l10n_ve_withholding_iva.account_withholding_iva_report
-msgid "Comprobante de IVA"
+msgid "VAT receipt"
 msgstr "Comprobante de IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Comprobante de Retención de IVA"
+msgid "VAT Withholding receipt"
 msgstr "Comprobante de Retención de IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model:mail.template,name:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
-msgid "Comprobante de retención de IVA"
+msgid "VAT withholding receipt"
 msgstr "Comprobante de retención de IVA"
 
 #. module: l10n_ve_withholding_iva
@@ -210,7 +209,7 @@ msgstr "Ajustes de configuración"
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Confirmar"
+msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: l10n_ve_withholding_iva
@@ -237,67 +236,67 @@ msgstr "Creado en"
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__in_iva_account_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__in_iva_account_id
-msgid "Cuenta de IVA en compras"
+msgid "VAT account on purchases"
 msgstr "Cuenta de IVA en compras"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__out_iva_account_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__out_iva_account_id
-msgid "Cuenta de IVA en ventas"
+msgid "VAT account on sales"
 msgstr "Cuenta de IVA en ventas"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__withholding_account_id
-msgid "Cuenta de retención"
+msgid "Withholding account"
 msgstr "Cuenta de retención"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__destination_account_id
-msgid "Cuenta destino"
+msgid "Destination account"
 msgstr "Cuenta destino"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Declarado"
+msgid "Declared"
 msgstr "Declarado"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__name
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__description
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
-msgid "Descripción"
+msgid "Description"
 msgstr "Descripción"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__start_date
-msgid "Desde"
+msgid "From"
 msgstr "Desde"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__journal_id
-msgid "Diario"
+msgid "Journal"
 msgstr "Diario"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__in_iva_journal_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__in_iva_journal_id
-msgid "Diario de IVA en compras"
+msgid "VAT journal on purchases"
 msgstr "Diario de IVA en compras"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__out_iva_journal_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__out_iva_journal_id
-msgid "Diario de IVA en ventas"
+msgid "VAT journal on sales"
 msgstr "Diario de IVA en ventas"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Dirección Fiscal del Agente Retenido:<br/>"
+msgid "Tax Address of the Retained Agent:<br/>"
 msgstr "Dirección Fiscal del Agente Retenido:<br/>"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Dirección Fiscal del Agente de Retención:<br/>"
+msgid "Tax Address of the Withholding Agent:<br/>"
 msgstr "Dirección Fiscal del Agente de Retención:<br/>"
 
 #. module: l10n_ve_withholding_iva
@@ -310,42 +309,42 @@ msgstr "Nombre a Mostrar"
 
 #. module: l10n_ve_withholding_iva
 #: model:mail.template,description:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
-msgid "Envia un correo cuando se pulsa el boton de \"ENVIAR POR CORREO ELECTRONICO\" en los comprobantes de retención de IVA"
-msgstr "Envia un correo cuando se pulsa el boton de \"ENVIAR POR CORREO ELECTRONICO\" en los comprobantes de retención de IVA"
+msgid "Sends an email when the \"SEND BY EMAIL\" in the VAT withholding receipts"
+msgstr "Envía un correo cuando se pulsa el botón de \"ENVIAR POR CORREO ELECTRONICO\" en los comprobantes de retención de IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Enviar por correo electrónico"
+msgid "Send by email"
 msgstr "Enviar por correo electrónico"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__state
-msgid "Estado"
+msgid "State"
 msgstr "Estado"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__invoice_id
-msgid "Factura"
+msgid "Invoice"
 msgstr "Factura"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__date
-msgid "Fecha de comprobante"
+msgid "Receipt date"
 msgstr "Fecha de comprobante"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.withholding_iva_rate_view_tree
-msgid "Fecha de creación"
+msgid "Creation date"
 msgstr "Fecha de creación"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Fecha de documento"
+msgid "Document date"
 msgstr "Fecha de documento"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__invoice_date
-msgid "Fecha factura"
+msgid "Invoice date"
 msgstr "Fecha factura"
 
 #. module: l10n_ve_withholding_iva
@@ -356,17 +355,17 @@ msgstr "Nombre de archivo"
 #. module: l10n_ve_withholding_iva
 #: model:ir.actions.act_window,name:l10n_ve_withholding_iva.action_account_withholding_iva_txt
 #: model:ir.ui.menu,name:l10n_ve_withholding_iva.account_withholding_iva_txt_menu
-msgid "Generar TXT IVA"
+msgid "Generate VAT TXT"
 msgstr "Generar TXT IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
-msgid "Generar lineas"
+msgid "Generate lines"
 msgstr "Generar lineas"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__end_date
-msgid "Hasta"
+msgid "To"
 msgstr "Hasta"
 
 #. module: l10n_ve_withholding_iva
@@ -379,24 +378,24 @@ msgstr "ID"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_journal__withholding_journal_type__iva
-msgid "IVA"
+msgid "VAT"
 msgstr "IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__tax_amount
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__tax_line_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__tax_amount
-msgid "Impuesto"
+msgid "Tax"
 msgstr "Impuesto"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Impuesto causado"
+msgid "Tax caused"
 msgstr "Impuesto causado"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Impuesto retenido"
+msgid "Tax withheld"
 msgstr "Impuesto retenido"
 
 #. module: l10n_ve_withholding_iva
@@ -420,7 +419,8 @@ msgstr ""
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.constraint,message:l10n_ve_withholding_iva.constraint_withholding_iva_rate_check_percentage
-msgid "La tasa de retención de IVA debe ser mayor a cero y menor o igual a 100."
+msgid ""
+"The VAT withholding rate must be greater than zero and less than or equal to 100."
 msgstr "La tasa de retención de IVA debe ser mayor a cero y menor o igual a 100."
 
 #. module: l10n_ve_withholding_iva
@@ -449,174 +449,166 @@ msgstr "Última actualización en"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__line_ids
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__line_ids
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Lineas"
+msgid "Lines"
 msgstr "Lineas"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model,name:l10n_ve_withholding_iva.model_account_withholding_iva_line
-msgid "Lineas de retencion de IVA"
+msgid "VAT withholding lines"
 msgstr "Lineas de retencion de IVA"
-
-#. module: l10n_ve_withholding_iva
-#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__line_ids
-msgid "Líneas"
-msgstr "Líneas"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__currency_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__currency_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__currency_id
-msgid "Moneda fiscal"
+msgid "Fiscal currency"
 msgstr "Moneda fiscal"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__total_amount
-msgid "Monto a declarar"
+msgid "Amount to be declared"
 msgstr "Monto a declarar"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__exempt_amount
-msgid "Monto exento"
+msgid "Exempt amount"
 msgstr "Monto exento"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__tax_amount
-msgid "Monto impuesto"
+msgid "Amount taxed"
 msgstr "Monto impuesto"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__amount
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__amount
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__amount
-msgid "Monto retenido"
+msgid "Amount withheld"
 msgstr "Monto retenido"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Monto total del documento"
+msgid "Total amount of the document"
 msgstr "Monto total del documento"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Nombre y Apellido o Razón Social del Agente Retenido:<br/>"
+msgid "Name and Surname or Business Name of the Retained Agent:<br/>"
 msgstr "Nombre y Apellido o Razón Social del Agente Retenido:<br/>"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Nombre y Apellido o Razón Social del Agente de Retención:<br/>"
+msgid "Name and Surname or Business Name of the Withholding Agent:<br/>"
 msgstr "Nombre y Apellido o Razón Social del Agente de Retención:<br/>"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Nro. Control"
+msgid "Control No."
 msgstr "Nro. Control"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Nro. Factura"
+msgid "Invoice No."
 msgstr "Nro. Factura"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Nro. Factura afectada"
+msgid "Affected Invoice No."
 msgstr "Nro. Factura afectada"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Nro. Nota de crédito"
+msgid "Credit note No."
 msgstr "Nro. Nota de crédito"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Nro. Nota de débito"
+msgid "Debit note No."
 msgstr "Nro. Nota de débito"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__name
-msgid "Numero de comprobante"
+msgid "Voucher number"
 msgstr "Numero de comprobante"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Período Fiscal<br/>"
+msgid "Fiscal Period<br/>"
 msgstr "Período Fiscal<br/>"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__iva_rate_id
-msgid "Porcentaje de retención"
+msgid "Retention percentage"
 msgstr "Porcentaje de retención"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Providencia Administrativa N° SNAT/2015/0049 del 10/08/2015"
+msgid "Administrative Order No. SNAT/2015/0049 of 08/10/2015"
 msgstr "Providencia Administrativa N° SNAT/2015/0049 del 10/08/2015"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__state__posted
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva_txt__state__posted
-msgid "Publicado"
+msgid "Published"
 msgstr "Publicado"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.view_move_form
-msgid "RET. IVA"
+msgid "VAT RET."
 msgstr "RET. IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Registro de Identificación Fiscal del Agente Retenido<br/>"
+msgid "Tax Identification Record of the Retained Agent<br/>"
 msgstr "Registro de Identificación Fiscal del Agente Retenido<br/>"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Registro de Identificación Fiscal del Agente de Retención<br/>"
+msgid "Tax Identification Record of the Withholding Agent<br/>"
 msgstr "Registro de Identificación Fiscal del Agente de Retención<br/>"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
-msgid "Restablecer a borrador"
+msgid "Reset to draft"
 msgstr "Restablecer a borrador"
 
 #. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_account_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_bank_statement_line__withholding_iva_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_move__withholding_iva_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_payment__withholding_iva_id
-msgid "Retencion de IVA"
+msgid "VAT withholding"
 msgstr "Retencion de IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.view_partner_form
-msgid "Retenciones de IVA"
+msgid "VAT withholdings"
 msgstr "Retenciones de IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__type__customer
-msgid "Retención IVA clientes"
+msgid "VAT Withholding for clients"
 msgstr "Retención IVA clientes"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__type__supplier
-msgid "Retención IVA proveedores"
+msgid "VAT Withholding for providers"
 msgstr "Retención IVA proveedores"
-
-#. module: l10n_ve_withholding_iva
-#: model:ir.model,name:l10n_ve_withholding_iva.model_account_withholding_iva
-msgid "Retención de IVA"
-msgstr "Retención de IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.actions.act_window,name:l10n_ve_withholding_iva.account_withholding_iva_customer_action
 #: model:ir.ui.menu,name:l10n_ve_withholding_iva.menu_account_withholding_iva_customer
-msgid "Retención de IVA Clientes"
+msgid "VAT Withholding for Customers"
 msgstr "Retención de IVA Clientes"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.actions.act_window,name:l10n_ve_withholding_iva.account_withholding_iva_supplier_action
 #: model:ir.ui.menu,name:l10n_ve_withholding_iva.menu_account_withholding_iva_supplier
-msgid "Retención de IVA Proveedores"
+msgid "VAT Withholding for Providers"
 msgstr "Retención de IVA Proveedores"
 
 #. module: l10n_ve_withholding_iva
@@ -627,17 +619,17 @@ msgstr "Estado"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__subject_id
-msgid "Sujeto retenido"
+msgid "Subject detained"
 msgstr "Sujeto retenido"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__txt_id
-msgid "TXT IVA"
+msgid "VAT TXT"
 msgstr "TXT IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__name
-msgid "Tasa"
+msgid "Rate"
 msgstr "Tasa"
 
 #. module: l10n_ve_withholding_iva
@@ -645,23 +637,24 @@ msgstr "Tasa"
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__iva_rate_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_partner__iva_rate_id
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_users__iva_rate_id
-msgid "Tasa de retención de IVA"
+msgid "VAT withholding rate"
 msgstr "Tasa de retención de IVA"
 
 #. module: l10n_ve_withholding_iva
-#: model:ir.actions.act_window,name:l10n_ve_withholding_iva.action_withholding_iva_rate model:ir.ui.menu,name:l10n_ve_withholding_iva.menu_withholding_iva_rate
-msgid "Tasas de retención de IVA"
+#: model:ir.actions.act_window,name:l10n_ve_withholding_iva.action_withholding_iva_rate
+#: model:ir.ui.menu,name:l10n_ve_withholding_iva.menu_withholding_iva_rate
+msgid "VAT withholding rates"
 msgstr "Tasas de retención de IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
-msgid "Tipo Trans."
+msgid "Trans. Type"
 msgstr "Tipo Trans."
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_bank_statement_import_journal_creation__withholding_journal_type
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_journal__withholding_journal_type
-msgid "Tipo de diario retenciones"
+msgid "Type of withholding journal"
 msgstr "Tipo de diario retenciones"
 
 #. module: l10n_ve_withholding_iva
@@ -671,22 +664,24 @@ msgstr "Tipo"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model,name:l10n_ve_withholding_iva.model_account_withholding_iva_txt
-msgid "Withholding IVA TXT"
+msgid "VAT withholding in TXT"
 msgstr "Retención IVA en TXT"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__withholding_iva_id
-msgid "Withholding Iva"
+msgid "VAT Withholding"
 msgstr "Retención IVA"
 
 #. module: l10n_ve_withholding_iva
 #: model:mail.template,subject:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
-msgid "{{ object.agent_id.name }} - Comprobante de retención de IVA: {{ object.name }}"
+msgid ""
+"{{ object.agent_id.name }} - VAT withholding receipt: {{ object.name"
+" }}"
 msgstr "{{ object.agent_id.name }} - Comprobante de retención de IVA: {{ object.name }}"
 
 #. module: l10n_ve_withholding_iva
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__is_iva_agent
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_partner__is_iva_agent
 #: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_users__is_iva_agent
-msgid "¿Es agente de retención de IVA?"
+msgid "Are you a VAT withholding agent?"
 msgstr "¿Es agente de retención de IVA?"

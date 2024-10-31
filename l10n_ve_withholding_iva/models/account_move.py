@@ -5,7 +5,7 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     withholding_iva_id = fields.Many2one(
-        "account.withholding.iva", string="Retencion de IVA", readonly=True, copy=False
+        "account.withholding.iva", string="VAT withholding", readonly=True, copy=False
     )
 
     def _post(self, soft=True):
@@ -112,10 +112,10 @@ class AccountMove(models.Model):
                     Command.create(
                         {
                             "tax_line_id": line.tax_line_id.id,
-                            # -- MONTOS EN MONEDA FISCAL --#
+                            # -- AMOUNTS IN FISCAL CURRENCY --#
                             "tax_base_amount": getattr(line, tax_base_amount),
                             "tax_amount": abs(getattr(line, balance)),
-                            # -- MONTOS BASE EN OTRAS MONEDAS--#
+                            # -- BASE AMOUNTS IN OTHER CURRENCIES --#
                             "base_amount_currency": abs(
                                 line.amount_currency
                             ),  # in invoice currency

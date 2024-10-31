@@ -6,40 +6,40 @@ from odoo.exceptions import UserError
 
 class WithholdingIVATXT(models.Model):
     _name = "account.withholding.iva.txt"
-    _description = "Withholding IVA TXT"
+    _description = "VAT withholding in TXT"
 
     name = fields.Char(
-        "Descripción",
+        "Description",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     start_date = fields.Date(
-        string="Desde",
+        string="From",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     end_date = fields.Date(
-        string="Hasta",
+        string="To",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     state = fields.Selection(
         [
-            ("draft", "Borrador"),
-            ("posted", "Publicado"),
-            ("cancel", "Cancelado"),
+            ("draft", "Draft"),
+            ("posted", "Published"),
+            ("cancel", "Canceled"),
         ],
         default="draft",
     )
     filename = fields.Char()
-    file = fields.Binary(readonly=True, string="Archivo TXT")
+    file = fields.Binary(readonly=True, string="TXT file")
     line_ids = fields.One2many(
         "account.withholding.iva",
         "txt_id",
-        string="Líneas",
+        string="Lines",
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
@@ -47,15 +47,15 @@ class WithholdingIVATXT(models.Model):
         string="Impuesto", compute="_compute_amount", store=True
     )
     amount = fields.Monetary(
-        string="Monto retenido", compute="_compute_amount", store=True
+        string="Amount withheld", compute="_compute_amount", store=True
     )
     total_amount = fields.Monetary(
-        string="Monto a declarar", compute="_compute_amount", store=True
+        string="Amount to be declared", compute="_compute_amount", store=True
     )
     currency_id = fields.Many2one(related="company_id.fiscal_currency_id")
     company_id = fields.Many2one(
         "res.company",
-        string="Compañía",
+        string="Company",
         default=lambda self: self.env.company.id,
         readonly=True,
     )

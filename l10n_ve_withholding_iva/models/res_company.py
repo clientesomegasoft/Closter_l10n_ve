@@ -5,23 +5,23 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     in_iva_journal_id = fields.Many2one(
-        "account.journal", string="Diario de IVA en compras"
+        "account.journal", string="VAT journal on purchases"
     )
     out_iva_journal_id = fields.Many2one(
-        "account.journal", string="Diario de IVA en ventas"
+        "account.journal", string="VAT journal on sales"
     )
     in_iva_account_id = fields.Many2one(
-        "account.account", string="Cuenta de IVA en compras"
+        "account.account", string="VAT account on purchases"
     )
     out_iva_account_id = fields.Many2one(
-        "account.account", string="Cuenta de IVA en ventas"
+        "account.account", string="VAT account on sales"
     )
 
     def _create_per_company_withholding_sequence(self):
         res = super(__class__, self)._create_per_company_withholding_sequence()
         values = [
             {
-                "name": "Withholding IVA: %s" % company.name,
+                "name": "VAT Withholding: %s" % company.name,
                 "code": "account_withholding_iva",
                 "company_id": company.id,
                 "padding": 8,

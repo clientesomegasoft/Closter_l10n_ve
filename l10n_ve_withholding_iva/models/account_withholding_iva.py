@@ -4,71 +4,71 @@ from odoo.exceptions import UserError
 
 class AccountWithholdingIVA(models.Model):
     _name = "account.withholding.iva"
-    _description = "Retención de IVA"
+    _description = "VAT withholding"
     _order = "date desc, name desc, id desc"
 
-    name = fields.Char(string="Numero de comprobante", default="NUMERO DE COMPROBANTE")
+    name = fields.Char(string="Voucher number", default="NUMERO DE COMPROBANTE")
     type = fields.Selection(
         [
-            ("customer", "Retención IVA clientes"),
-            ("supplier", "Retención IVA proveedores"),
+            ("customer", "VAT Withholding for clients"),
+            ("supplier", "VAT Withholding for providers"),
         ],
         required=True,
         readonly=True,
     )
     state = fields.Selection(
-        [("draft", "Borrador"), ("posted", "Publicado"), ("cancel", "Cancelado")],
-        string="Estado",
+        [("draft", "Draft"), ("posted", "Published"), ("cancel", "Canceled")],
+        string="State",
         default="draft",
     )
     invoice_id = fields.Many2one(
-        "account.move", string="Factura", required=True, readonly=True
+        "account.move", string="Invoice", required=True, readonly=True
     )
     agent_id = fields.Many2one(
-        "res.partner", string="Agente de retención", required=True, readonly=True
+        "res.partner", string="Withholding agent", required=True, readonly=True
     )
     subject_id = fields.Many2one(
-        "res.partner", string="Sujeto retenido", required=True, readonly=True
+        "res.partner", string="Subject detained", required=True, readonly=True
     )
     iva_rate_id = fields.Many2one(
-        "withholding.iva.rate", string="Porcentaje de retención", required=True
+        "withholding.iva.rate", string="Retention percentage", required=True
     )
     date = fields.Date(
-        string="Fecha de comprobante",
+        string="Receipt date",
         required=True,
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
     invoice_date = fields.Date(
-        related="invoice_id.invoice_date", string="Fecha factura"
+        related="invoice_id.invoice_date", string="Invoice date"
     )
     line_ids = fields.One2many(
         "account.withholding.iva.line",
         "withholding_iva_id",
-        string="Lineas",
+        string="Lines",
         readonly=True,
     )
-    exempt_amount = fields.Monetary(string="Monto exento")
+    exempt_amount = fields.Monetary(string="Exempt amount")
     tax_base_amount = fields.Monetary(
-        string="Base imponible", compute="_compute_amount", store=True
+        string="Taxable base", compute="_compute_amount", store=True
     )
     tax_amount = fields.Monetary(
         string="Impuesto", compute="_compute_amount", store=True
     )
     amount = fields.Monetary(
-        string="Monto retenido", compute="_compute_amount", store=True
+        string="Amount withheld", compute="_compute_amount", store=True
     )
-    move_id = fields.Many2one("account.move", string="Asiento contable")
+    move_id = fields.Many2one("account.move", string="Accounting entry")
     journal_id = fields.Many2one(
-        "account.journal", string="Diario", required=True, readonly=True
+        "account.journal", string="Journal", required=True, readonly=True
     )
     withholding_account_id = fields.Many2one(
-        "account.account", string="Cuenta de retención", required=True
+        "account.account", string="Withholding account", required=True
     )
     destination_account_id = fields.Many2one(
-        "account.account", string="Cuenta destino", required=True
+        "account.account", string="Destination account", required=True
     )
-    txt_id = fields.Many2one("account.withholding.iva.txt", string="TXT IVA")
+    txt_id = fields.Many2one("account.withholding.iva.txt", string="VAT TXT")
     txt_state = fields.Selection(related="txt_id.state", store=True)
     currency_id = fields.Many2one(
         "res.currency", related="company_id.fiscal_currency_id", store=True
@@ -180,7 +180,7 @@ class AccountWithholdingIVA(models.Model):
     def button_open_journal_entry(self):
         self.ensure_one()
         return {
-            "name": "Asiento",
+            "name": _("Entry"),
             "type": "ir.actions.act_window",
             "res_model": "account.move",
             "context": {"create": False},
@@ -274,16 +274,16 @@ class AccountWithholdingIVA(models.Model):
 
 class AccountWithholdingIVALine(models.Model):
     _name = "account.withholding.iva.line"
-    _description = "Lineas de retencion de IVA"
+    _description = "VAT withholding lines"
 
     withholding_iva_id = fields.Many2one(
         "account.withholding.iva", ondelete="cascade", required=True
     )
     tax_line_id = fields.Many2one("account.tax", string="Impuesto", required=True)
-    tax_base_amount = fields.Monetary(string="Base imponible")
-    tax_amount = fields.Monetary(string="Monto impuesto")
+    tax_base_amount = fields.Monetary(string="Taxable base")
+    tax_amount = fields.Monetary(string="Amount taxed")
     amount = fields.Monetary(
-        string="Monto retenido", compute="_compute_amount", store=True
+        string="Amount withheld", compute="_compute_amount", store=True
     )
     base_amount_currency = fields.Float()
     base_amount_company_currency = fields.Float()

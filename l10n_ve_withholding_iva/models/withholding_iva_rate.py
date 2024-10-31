@@ -3,16 +3,16 @@ from odoo import fields, models
 
 class WithholdingIvaRate(models.Model):
     _name = "withholding.iva.rate"
-    _description = "Tasa de retención de IVA"
+    _description = "VAT withholding rate"
 
-    name = fields.Float(string="Tasa")
-    description = fields.Char(string="Descripción")
+    name = fields.Float(string="Rate")
+    description = fields.Char(string="Description")
 
     _sql_constraints = [
         (
             "check_percentage",
             "CHECK(name > 0 AND name <= 100)",
-            "La tasa de retención de IVA debe ser mayor a cero y menor o igual a 100.",
+            "The VAT withholding rate must be greater than zero and less than or equal to 100.",
         )
     ]
 
