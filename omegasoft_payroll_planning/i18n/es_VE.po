@@ -1754,7 +1754,7 @@ msgstr "Consejo: Registre su planeación más rápido"
 #. module: planning
 #: model_terms:ir.ui.view,arch_db:planning.period_report_template
 msgid "To"
-msgstr "Hasta"
+msgstr "A"
 
 #. module: planning
 #: model:ir.model.fields,field_description:planning.field_planning_slot__resource_type

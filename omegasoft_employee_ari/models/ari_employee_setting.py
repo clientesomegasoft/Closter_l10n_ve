@@ -12,10 +12,10 @@ class AriEmployeeSetting(models.Model):
     )
     employee_id = fields.Many2one("hr.employee", string="Empleado", required=True)
     line_ids = fields.One2many(
-        "ari.employee.setting.lines", "ari_setting_id", string="Lineas"
+        "ari.employee.setting.lines", "ari_setting_id", string="Líneas"
     )
     company_id = fields.Many2one(
-        "res.company", string="compañia", default=lambda self: self.env.company.id
+        "res.company", string="Compañía", default=lambda self: self.env.company.id
     )
 
     _sql_constraints = [
@@ -74,14 +74,14 @@ class AriEmployeeSettingLines(models.Model):
                 "Institutos docentes por la educación del contribuyente "
                 "y descendientes no mayores de 25 años",
             ),
-            ("HCM", "Primas de seguros de Hospitalizacion, cirugia y maternidad"),
+            ("HCM", "Primas de seguros de Hospitalización, cirugía y maternidad"),
             (
                 "odontology",
-                "Gastos de servicios Medicos, Odontologicos y de Hospitalizacion",
+                "Gastos de servicios Medicos, Odontologicos y de Hospitalización",
             ),
             (
                 "house",
-                "Intereses para la adquisicion de la vivienda principal "
+                "Intereses para la adquisición de la vivienda principal "
                 "o del pago del alquiler de la vivienda",
             ),
             ("extra", "Monto retenido de mas en años anteriores"),
@@ -99,7 +99,7 @@ class AriEmployeeSettingLines(models.Model):
         (
             "at_lest_one_active_tremester",
             "CHECK(trimester_1 OR trimester_2 OR trimester_3 OR trimester_4)",
-            "Al menos un trimestre debe estar activo para la creacion de la linea.",
+            "Al menos un trimestre debe estar activo para la creación de la linea.",
         ),
         (
             "amount_greater_than_zero",
@@ -132,7 +132,7 @@ class HrEmployeeARI(models.Model):
     ut = fields.Float(string="Unidad tributaria")
     education = fields.Float(string="Educación")
     HCM = fields.Float(string="HCM")
-    odontology = fields.Float(string="Odontologia")
+    odontology = fields.Float(string="Odontología")
     house = fields.Float(string="Vivienda")
     family = fields.Float(string="Carga familiar")
     extra = fields.Float(string="Retenido de mas")

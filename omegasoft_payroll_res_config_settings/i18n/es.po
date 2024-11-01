@@ -83,7 +83,7 @@ msgstr ""
 #. module: omegasoft_payroll_res_config_settings
 #: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Lines other entries</span>"
-msgstr "<span class=\"o_form_label\">Lineas de otras entradas</span>"
+msgstr "<span class=\"o_form_label\">Líneas de otras entradas</span>"
 
 #. module: omegasoft_payroll_res_config_settings
 #: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
@@ -563,7 +563,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__lines_other_entries_type
 #: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__lines_other_entries_type
 msgid "Lines other entries"
-msgstr "Lineas de otras entradas"
+msgstr "Líneas de otras entradas"
 
 #. module: omegasoft_payroll_res_config_settings
 #: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form

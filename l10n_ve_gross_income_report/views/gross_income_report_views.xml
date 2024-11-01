@@ -94,7 +94,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Lineas">
+                        <page string="Líneas">
                             <field name="line_ids" options="{'no_open': 1}">
                                 <tree>
                                     <field name="currency_id" invisible="1" />

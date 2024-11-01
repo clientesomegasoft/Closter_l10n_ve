@@ -16,7 +16,7 @@ class HrEmployeePrivate(models.Model):
         "hr.employee.ari", "employee_id", string="ARI", readonly=True
     )
     employee_ari_setting_ids = fields.One2many(
-        "ari.employee.setting.lines", "employee_id", string="Lineas"
+        "ari.employee.setting.lines", "employee_id", string="Líneas"
     )
 
     def _calculate_ari(self, force=False):

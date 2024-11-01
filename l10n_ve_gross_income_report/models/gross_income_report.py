@@ -37,7 +37,7 @@ class GrossIncomeReport(models.Model):
     )
     percentage = fields.Float(related="town_hall_id.percentage", store=True)
     line_ids = fields.One2many(
-        "gross.income.report.line", "report_id", string="Lineas", readonly=True
+        "gross.income.report.line", "report_id", string="Líneas", readonly=True
     )
     amount_total = fields.Monetary(
         string="Total", compute="_compute_amount", store=True

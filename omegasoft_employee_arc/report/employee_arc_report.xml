@@ -53,7 +53,7 @@
                                         <th
                                                 style="width: 50%;"
                                             >Nombre y Apellido o Razón Social</th>
-                                        <th style="width: 25%;">Numero de RIF</th>
+                                        <th style="width: 25%;">Número de RIF</th>
                                         <th
                                                 style="width: 25%;"
                                             >Nro del contribuyente</th>
@@ -71,7 +71,7 @@
                                         <th
                                                 style="width: 50%;"
                                             >Funcionario autorizado para la retención    </th>
-                                        <th style="width: 25%;">Numero de RIF</th>
+                                        <th style="width: 25%;">Número de RIF</th>
                                         <th style="width: 25%;">Cédula de identidad</th>
                                         </tr></thead>
                                     <tbody><tr>

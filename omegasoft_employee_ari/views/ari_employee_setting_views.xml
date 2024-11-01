@@ -39,7 +39,7 @@
                         <field name="fiscal_year" widget="fieldyear_int" colspan="2" />
                     </group>
                     <notebook>
-                        <page name="expences" string="Lineas">
+                        <page name="expences" string="Líneas">
                             <field name="line_ids">
                                 <tree editable="bottom">
                                     <field name="expense" />
