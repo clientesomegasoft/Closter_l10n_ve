@@ -79,7 +79,7 @@ class ExportBankPayments(models.Model):
     )
 
     txt_type = fields.Selection(
-        [("ticket", "Todoticket"), ("guard", "Guarderia")],
+        [("ticket", "Todoticket"), ("guard", "Guardería")],
         string="Tipo TXT",
         states=_READONLY_STATES,
     )
@@ -271,14 +271,14 @@ class ExportBankPayments(models.Model):
             raise ValidationError(
                 _(
                     "La longitud del número de cuenta de "
-                    "la compañia debe ser de 20 dígitos."
+                    "la compañía debe ser de 20 dígitos."
                 )
             )
 
         elif self.bank_account_id and not self.bank_account_id.is_payroll_account:
             raise ValidationError(
                 _(
-                    "La cuenta de la compañia debe estar "
+                    "La cuenta de la compañía debe estar "
                     "configurada como 'Cuenta de Nomina'."
                 )
             )
@@ -287,7 +287,7 @@ class ExportBankPayments(models.Model):
             self.env.company.partner_id.partner_type != "other"
             and not self.env.company.partner_id.vat
         ):
-            raise ValidationError(_("Por favor establezca el RIF de la compañia."))
+            raise ValidationError(_("Por favor establezca el RIF de la compañía."))
 
         bank_account_number = self.bank_account_id.acc_number[:4]
 
@@ -346,8 +346,8 @@ class ExportBankPayments(models.Model):
                 ]
             )
         # Filtro:
-        # 1. Tipo de operacion: Comparar primeros 4 digitos de
-        # la cuenta de la compañia con los de la cuenta del empleado
+        # 1. Tipo de operación: Comparar primeros 4 dígitos de
+        # la cuenta de la compañía con los de la cuenta del empleado
         if self.type_trans != "fiscal":
             bank_account_number = self.bank_account_id.acc_number[:4]
             if self.operation_type == "same":
@@ -396,7 +396,7 @@ class ExportBankPayments(models.Model):
                 (
                     _(
                         "El monto a pagar para el empleado: %s, "
-                        "excede la cantidad maxima de digitos."
+                        "excede la cantidad maxima de dígitos."
                     )
                 )
                 % (payslip.employee_id.name)
@@ -408,7 +408,7 @@ class ExportBankPayments(models.Model):
                     (
                         _(
                             "El monto a pagar para el empleado: %s, "
-                            "excede la cantidad maxima de digitos."
+                            "excede la cantidad maxima de dígitos."
                         )
                     )
                     % (payslip.employee_id.name)
@@ -426,7 +426,7 @@ class ExportBankPayments(models.Model):
                     (
                         _(
                             "El monto a pagar para el empleado: %s, "
-                            "excede la cantidad maxima de digitos."
+                            "excede la cantidad maxima de dígitos."
                         )
                     )
                     % (payslip.employee_id.name)
@@ -437,7 +437,7 @@ class ExportBankPayments(models.Model):
     def _txt_prepare_data_bnc(self, payslip):
         aux_txt_data = ""
 
-        # *** Preparacion de campos ***
+        # *** Preparación de campos ***
         employees_bank_info = self.env["hr_employee_bank_information"].search(
             [
                 ("employee_id", "=", payslip.employee_id.id),
@@ -456,7 +456,7 @@ class ExportBankPayments(models.Model):
         nationality = employees_bank_info.letter.upper()
         id_digits = employees_bank_info.holder_account_id
 
-        # # *** Construccion de registro ***
+        # # *** Construcción de registro ***
         aux_txt_data += f'{"ND":<2}{"0":<1}{bank_acc:<20}{amount:0>13}{nationality:<1}{id_digits:0>9}'  # noqa: B950
 
         return aux_txt_data
@@ -468,7 +468,7 @@ class ExportBankPayments(models.Model):
         if payslips:
             # *** Registro de cabecera ***
 
-            # 1. Preparacion de campos
+            # 1. Preparación de campos
 
             bank_acc = self.bank_account_id.sanitized_acc_number
             total_payroll = 0.0
@@ -478,7 +478,7 @@ class ExportBankPayments(models.Model):
             if len(total_payroll) > 13:
                 raise ValidationError(
                     _(
-                        "El monto total de la nomina excede la cantidad maxima de digitos."
+                        "El monto total de la nomina excede la cantidad maxima de dígitos."
                     )
                 )
 
@@ -491,7 +491,7 @@ class ExportBankPayments(models.Model):
                 nationality = ""
                 vat_digits = ""
 
-            # 2. Construccion de linea
+            # 2. Construcción de linea
             txt_data += f'{"NC":<2}{"0":<1}{bank_acc:<20}{total_payroll:0>13}{nationality:<1}{vat_digits:0>9}'  # noqa: B950
 
             for payslip in payslips:
@@ -512,7 +512,7 @@ class ExportBankPayments(models.Model):
                 (
                     _(
                         "El monto a pagar para el empleado: %s, "
-                        "excede la cantidad maxima de digitos."
+                        "excede la cantidad maxima de dígitos."
                     )
                 )
                 % (payslip.employee_id.name)
@@ -526,7 +526,7 @@ class ExportBankPayments(models.Model):
 
         aux_txt_data = ""
 
-        # *** Preparacion de campos ***
+        # *** Preparación de campos ***
         employees_bank_info = self.env["hr_employee_bank_information"].search(
             [
                 ("employee_id", "=", payslip.employee_id.id),
@@ -637,7 +637,7 @@ class ExportBankPayments(models.Model):
         else:
             if payslips:
                 # *** Registro de cabecera ***
-                # 1. Preparacion de campos
+                # 1. Preparación de campos
                 bank_acc = self.bank_account_id.sanitized_acc_number
                 total_payroll = 0.0
                 for payslip in payslips:
@@ -647,7 +647,7 @@ class ExportBankPayments(models.Model):
                     raise ValidationError(
                         _(
                             "El monto total de la nomina excede "
-                            "la cantidad maxima de digitos."
+                            "la cantidad maxima de dígitos."
                         )
                     )
 
@@ -658,7 +658,7 @@ class ExportBankPayments(models.Model):
                     nationality = ""
                     vat_digits = ""
 
-                # 2. Construccion de linea
+                # 2. Construcción de linea
                 # Header
                 txt_data += "HDRBANESCO        ED  95BPAYMULP\n"
                 txt_data += "01SAL"
@@ -706,7 +706,7 @@ class ExportBankPayments(models.Model):
                 (
                     _(
                         "El monto a pagar para el empleado: %s, "
-                        "excede la cantidad maxima de digitos."
+                        "excede la cantidad maxima de dígitos."
                     )
                 )
                 % (payslip.employee_id.name)
@@ -720,7 +720,7 @@ class ExportBankPayments(models.Model):
 
         aux_txt_data = ""
 
-        # *** Preparacion de campos ***
+        # *** Preparación de campos ***
         employees_bank_info = self.env["hr_employee_bank_information"].search(
             [
                 ("employee_id", "=", payslip.employee_id.id),
@@ -766,7 +766,7 @@ class ExportBankPayments(models.Model):
         if payslips:
             # *** Registro de cabecera ***
 
-            # 1. Preparacion de campos
+            # 1. Preparación de campos
 
             bank_acc = self.bank_account_id.sanitized_acc_number
             total_payroll = 0.0
@@ -776,7 +776,7 @@ class ExportBankPayments(models.Model):
             if len(total_payroll) > 18:
                 raise ValidationError(
                     _(
-                        "El monto total de la nomina excede la cantidad maxima de digitos."
+                        "El monto total de la nomina excede la cantidad maxima de dígitos."
                     )
                 )
 
@@ -787,7 +787,7 @@ class ExportBankPayments(models.Model):
                 nationality = ""
                 vat_digits = ""
 
-            # 2. Construccion de linea
+            # 2. Construcción de linea
             # Header
             txt_data += "HEADER"
             txt_data += f"{self.name:0>8}"
@@ -834,7 +834,7 @@ class ExportBankPayments(models.Model):
                 (
                     _(
                         "El monto a pagar para el empleado: %s, "
-                        "excede la cantidad maxima de digitos."
+                        "excede la cantidad maxima de dígitos."
                     )
                 )
                 % (payslip.employee_id.name)
@@ -848,7 +848,7 @@ class ExportBankPayments(models.Model):
 
         aux_txt_data = ""
 
-        # *** Preparacion de campos ***
+        # *** Preparación de campos ***
         employees_bank_info = self.env["hr_employee_bank_information"].search(
             [
                 ("employee_id", "=", payslip.employee_id.id),
@@ -893,13 +893,13 @@ class ExportBankPayments(models.Model):
         return aux_txt_data
 
     def generate_mercantil(self):
-        # Obtener recibos de salario
+        """Obtener recibos de salario desde Mercantil"""
         payslips = self._get_payslips()
         txt_data = ""
         if payslips:
             # *** Registro de cabecera ***
 
-            # 1. Preparacion de campos
+            # 1. Preparación de campos
 
             bank_acc = self.bank_account_id.sanitized_acc_number
             total_payroll = 0.0
@@ -909,7 +909,7 @@ class ExportBankPayments(models.Model):
             if len(total_payroll) > 17:
                 raise ValidationError(
                     _(
-                        "El monto total de la nomina excede la cantidad maxima de digitos."
+                        "El monto total de la nomina excede la cantidad maxima de dígitos."
                     )
                 )
 
@@ -920,7 +920,7 @@ class ExportBankPayments(models.Model):
                 nationality = ""
                 vat_digits = ""
 
-            # 2. Construccion de linea
+            # 2. Construcción de linea
             # Cabecera
             txt_data += "1"
             txt_data += "{:<12}".format("BAMRVECA")

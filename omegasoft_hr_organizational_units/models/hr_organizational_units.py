@@ -77,7 +77,7 @@ class HrOrganizatioanlUnits(models.Model):
                 or self.env.company.appraisal_manager_feedback_template
             )
 
-    # (Booton)plan action by organizational unit
+    # (Booton) plan action by organizational unit
 
     plan_ids = fields.One2many("hr.plan", "organizational_units_id")
     plans_count = fields.Integer(compute="_compute_plan_count")

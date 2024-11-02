@@ -22,7 +22,7 @@
                         <label for="name" />
                         <h1 class="mt0"><field
                                 name="name"
-                                placeholder="Facturas de ventas ..."
+                                placeholder="Facturas de ventas..."
                             /></h1>
                     </div>
                     <group>
