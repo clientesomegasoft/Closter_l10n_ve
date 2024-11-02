@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import _, fields, models
 
 
 class ProductTemplateCustomization(models.Model):
@@ -20,7 +20,7 @@ class HrContractCustomization(models.Model):
         self.ensure_one()
         return {
             "type": "ir.actions.act_window",
-            "name": ("Dotaciones entregadas"),
+            "name": _("Dotaciones entregadas"),
             "view_mode": "tree",
             "res_model": "contract_allocation_lines",
             "domain": [

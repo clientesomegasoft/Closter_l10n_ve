@@ -1,6 +1,6 @@
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, models
+from odoo import _, fields, models
 from odoo.tools.misc import format_date
 
 
@@ -163,7 +163,7 @@ class ReportArc(models.AbstractModel):
         date_from = fields.Date.from_string(report._get_markup(params["line_id"]))
         return {
             "type": "ir.actions.act_window",
-            "name": "ISLR - %s" % options["partner_id"]["name"],
+            "name": _("ISLR - %s") % (options["partner_id"]["name"]),
             "res_model": "account.withholding.islr",
             "views": [
                 [

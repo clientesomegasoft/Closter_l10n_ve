@@ -1,7 +1,7 @@
 import io
 from datetime import date
 
-from odoo import api, models
+from odoo import _, api, models
 from odoo.tools.misc import xlsxwriter
 
 SECTIONS = {
@@ -308,7 +308,7 @@ class FiscalBooksReportHandler(models.AbstractModel):
 
         return {
             "type": "ir.actions.act_window",
-            "name": "Apuntes contables",
+            "name": _("Apuntes contables"),
             "res_model": "account.move.line",
             "views": [[self.env.ref("account.view_move_line_tree").id, "list"]],
             "domain": domain,
@@ -319,7 +319,7 @@ class FiscalBooksReportHandler(models.AbstractModel):
         withholding_type = report._get_markup(params["line_id"])
         return {
             "type": "ir.actions.act_window",
-            "name": "Retenciones",
+            "name": _("Retenciones"),
             "res_model": "account.withholding.iva",
             "views": [
                 [
@@ -693,7 +693,7 @@ class FiscalBooksReportHandler(models.AbstractModel):
             }
         )
 
-        # ENCABEZADO DE COMPAÑIA
+        # COMPANY HEADER
         company_id = self.env.company.partner_id
         sheet.merge_range(
             1, 1, 1, 10, "Nombre de la empresa: " + company_id.name, bold_style

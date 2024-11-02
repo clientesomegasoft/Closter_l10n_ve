@@ -185,7 +185,7 @@ class HrContractAllocation(models.Model):
             raise_if_not_found=False,
         )
         return {
-            "name": ("Líneas de Dotaciones a entregar"),
+            "name": _("Líneas de Dotaciones a entregar"),
             "view_mode": "tree",
             "res_model": "contract_allocation_lines",
             "view_id": lines_tree_view.id,

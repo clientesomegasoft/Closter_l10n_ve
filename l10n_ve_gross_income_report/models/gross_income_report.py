@@ -1,4 +1,4 @@
-from odoo import Command, api, fields, models
+from odoo import Command, _, api, fields, models
 
 
 class GrossIncomeReport(models.Model):
@@ -167,7 +167,7 @@ class GrossIncomeReport(models.Model):
     def button_open_journal_entry(self):
         self.ensure_one()
         return {
-            "name": "Asiento",
+            "name": _("Asiento"),
             "type": "ir.actions.act_window",
             "res_model": "account.move",
             "context": {"create": False},

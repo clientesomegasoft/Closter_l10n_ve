@@ -1,4 +1,4 @@
-from odoo import Command, api, fields, models
+from odoo import Command, _, api, fields, models
 
 
 class AccountSaleSequence(models.Model):
@@ -19,7 +19,7 @@ class AccountSaleSequence(models.Model):
         readonly=True,
     )
 
-    # FACTURAS
+    # INVOICES
     invoice_control_sequence_id = fields.Many2one(
         "ir.sequence", required=True, ondelete="restrict"
     )
@@ -47,7 +47,7 @@ class AccountSaleSequence(models.Model):
         related="invoice_sequence_id.number_next_actual", readonly=False
     )
 
-    # NOTAS DE CRÉDITO
+    # CREDIT NOTES
     refund_control_sequence_id = fields.Many2one(
         "ir.sequence", required=True, ondelete="restrict"
     )
@@ -75,7 +75,7 @@ class AccountSaleSequence(models.Model):
         related="refund_sequence_id.number_next_actual", readonly=False
     )
 
-    # NOTAS DE DÉBITO
+    # DEBIT NOTES
     debit_control_sequence_id = fields.Many2one(
         "ir.sequence", required=True, ondelete="restrict"
     )
@@ -191,7 +191,11 @@ class AccountSaleSequence(models.Model):
     def _create_control_sequence(self, field, vals):
         return self.env["ir.sequence"].create(
             {
-                "name": "control number {} - {}".format(field, vals["sequence_type"]),
+                "name": _(
+                    "control number %(field)s - %(sequence_type)s",
+                    field=field,
+                    sequence_type=vals["sequence_type"],
+                ),
                 "prefix": "00-",
                 "padding": 8,
                 "company_id": vals.get("company_id")

@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class HrOrganizatioanlUnits(models.Model):
@@ -137,7 +137,7 @@ class HrOrganizatioanlUnits(models.Model):
         # return action
         return {
             "type": "ir.actions.act_window",
-            "name": "employee",
+            "name": _("Employee"),
             "view_mode": "tree",
             "res_model": "hr.employee",
             "domain": [("organizational_units_id", "=", self.id)],

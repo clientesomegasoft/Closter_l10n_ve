@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import _, fields, models
 
 
 class ResConfigSettings(models.TransientModel):
@@ -32,7 +32,7 @@ class ResCompany(models.Model):
             if not sequence:
                 self.env["ir.sequence"].create(
                     {
-                        "name": "Employee file code",
+                        "name": _("Employee file code"),
                         "code": "hr.employee.code",
                         "prefix": "",
                         "number_next": 1,

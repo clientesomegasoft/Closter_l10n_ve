@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import _, fields, models
 
 
 class ResCompany(models.Model):
@@ -23,7 +23,7 @@ class ResCompany(models.Model):
         res = super(__class__, self)._create_per_company_withholding_sequence()
         values = [
             {
-                "name": "Withholding municipal: %s" % company.name,
+                "name": _("Municipal Withholding: %s") % (company.name),
                 "code": "account_withholding_municipal",
                 "company_id": company.id,
                 "padding": 8,

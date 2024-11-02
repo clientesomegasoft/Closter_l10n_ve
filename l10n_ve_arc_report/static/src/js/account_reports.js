@@ -175,7 +175,7 @@ odoo.define("l10n_ve_arc_report.report_filter", function (require) {
                 if (this.partner_m2o_filter === undefined) {
                     this.partner_m2o_filter = new M2OFilters(this, {
                         partner_id: {
-                            label: "Proveedor",
+                            label: _t("Proveedor"),
                             modelName: "res.partner",
                             value: this.report_options.partner_id,
                             domain: [
