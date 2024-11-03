@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- product.product tree view -->
     <record id="view_product_margin_tree" model="ir.ui.view">
         <field name="name">product.margin.tree</field>
         <field name="model">product.product</field>

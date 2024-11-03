@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- ari.employee.setting tree view -->
     <record id="ari_employee_setting_view_tree" model="ir.ui.view">
         <field name="name">ari.employee.setting.view.tree</field>
         <field name="model">ari.employee.setting</field>
@@ -17,6 +18,8 @@
             </tree>
         </field>
     </record>
+
+    <!-- ari.employee.setting form view -->
     <record id="ari_employee_setting_view_form" model="ir.ui.view">
         <field name="name">ari.employee.setting.view.form</field>
         <field name="model">ari.employee.setting</field>
@@ -56,11 +59,15 @@
             </form>
         </field>
     </record>
+
+    <!-- ari.employee.setting actions act_window -->
     <record id="ari_employee_setting_action" model="ir.actions.act_window">
         <field name="name">Configuración ARI</field>
         <field name="res_model">ari.employee.setting</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- ari.employee.setting menu item -->
     <menuitem
         id="menu_ari_employee_setting"
         action="ari_employee_setting_action"

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
+    <!-- hr.contract form view -->
     <record id="omegasoft_hr_contract_view_form_inherit" model="ir.ui.view">
         <field name="name">hr.contract.view.form.inherit</field>
         <field name="model">hr.contract</field>

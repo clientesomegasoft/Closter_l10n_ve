@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.payroll.structure form view -->
     <record id="hr_payroll_structure_loan_discount_omegasoft" model="ir.ui.view">
         <field name="name">hr.payroll.structure.loan.discount.omegasoft</field>
         <field name="model">hr.payroll.structure</field>

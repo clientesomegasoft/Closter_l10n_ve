@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
+    <!-- res.config.settings form view -->
     <record id="l10n_ve_omegasoft_res_config_settings_view_form" model="ir.ui.view">
         <field name="name">l10n.ve.omegasoft.res.config.settings.view.form</field>
         <field name="model">res.config.settings</field>
@@ -495,6 +495,7 @@
         </field>
     </record>
 
+    <!-- hr.salary.rule tree view -->
     <record id="hr_salary_rule_list_tree_inherit_omegasoft" model="ir.ui.view">
         <field name="name">hr.salary.rule.list.tree.inherit.omegasoft</field>
         <field name="model">hr.salary.rule</field>
@@ -505,5 +506,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

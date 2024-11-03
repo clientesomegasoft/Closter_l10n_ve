@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- hr.job form view -->
     <record id="omegasoft_hr_organizational_units" model="ir.ui.view">
         <field name="name">omegasoft.hr.organizational.units</field>
         <field name="model">hr.job</field>

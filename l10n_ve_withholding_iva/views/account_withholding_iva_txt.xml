@@ -103,7 +103,7 @@
         </field>
     </record>
 
-    <!-- account.withholding.iva.txt actions window -->
+    <!-- account.withholding.iva.txt action window -->
     <record id="action_account_withholding_iva_txt" model="ir.actions.act_window">
         <field name="name">Generate VAT TXT</field>
         <field name="res_model">account.withholding.iva.txt</field>

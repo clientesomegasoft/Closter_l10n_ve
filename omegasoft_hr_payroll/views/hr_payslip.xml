@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.payslip form view -->
     <record id="hr_payslip_view_form_inherit_omegasoft" model="ir.ui.view">
         <field name="name">hr.payslip.view.form.inherit.omegasoft</field>
         <field name="model">hr.payslip</field>
@@ -22,7 +22,7 @@
         </field>
     </record>
 
-    <!--Rate in Payroll-->
+    <!-- hr.payslip Rate in Payroll form view -->
     <record id="hr_payslip_view_form_inherit_omegasoft_rate" model="ir.ui.view">
         <field name="name">hr.payslip.view.form.inherit.omegasoft.rate</field>
         <field name="model">hr.payslip</field>
@@ -83,6 +83,7 @@
         </field>
     </record>
 
+    <!-- hr.payslip tree view -->
     <record id="view_hr_payslip_tree_email_state" model="ir.ui.view">
         <field name="name">view.hr.payslip.tree.email.state</field>
         <field name="model">hr.payslip</field>

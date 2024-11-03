@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-
-
+    <!-- hr_employee_advances_loans_discounts_lines tree view -->
         <record id="advances_loans_discounts_lines_tree" model="ir.ui.view">
             <field name="name">advances.loans.discounts.lines.tree</field>
             <field name="model">hr_employee_advances_loans_discounts_lines</field>
@@ -46,6 +45,7 @@
             </field>
         </record>
 
+    <!-- hr_employee_advances_loans_discounts_lines form view -->
         <record id="advances_loans_discounts_lines_form" model="ir.ui.view">
             <field name="name">advances.loans.discounts.lines.form</field>
             <field name="model">hr_employee_advances_loans_discounts_lines</field>
@@ -87,5 +87,4 @@
                 </form>
             </field>
         </record>
-
 </odoo>

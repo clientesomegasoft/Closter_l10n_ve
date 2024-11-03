@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-
-
+    <!-- contract.allocation.lines tree view -->
         <record id="contract_allocation_lines_tree" model="ir.ui.view">
             <field name="name">contract.allocation.lines.tree</field>
             <field name="model">contract_allocation_lines</field>
@@ -44,6 +43,7 @@
             </field>
         </record>
 
+    <!-- contract.allocation.lines form view -->
         <record id="contract_allocation_lines_form" model="ir.ui.view">
             <field name="name">contract.allocation.lines.form</field>
             <field name="model">contract_allocation_lines</field>
@@ -101,5 +101,4 @@
                 </form>
             </field>
         </record>
-
 </odoo>

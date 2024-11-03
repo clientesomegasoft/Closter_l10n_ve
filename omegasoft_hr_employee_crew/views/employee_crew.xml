@@ -1,5 +1,5 @@
 <odoo>
-
+    <!-- hr.employee.crew tree view -->
   <record id="employee_crew_view_tree" model="ir.ui.view">
     <field name="name">employee.crew.view.tree</field>
     <field name="model">hr.employee.crew</field>
@@ -17,6 +17,7 @@
     </field>
 </record>
 
+    <!-- hr.employee.crew search view -->
 <record id="employee_crew_view_search" model="ir.ui.view">
     <field name="name">employee.crew.view.search</field>
     <field name="model">hr.employee.crew</field>
@@ -46,6 +47,7 @@
     </field>
 </record>
 
+    <!-- hr.employee.crew action window -->
 <record id="employee_crew_action" model="ir.actions.act_window">
     <field name="name">Employee crew</field>
     <field name="res_model">hr.employee.crew</field>
@@ -60,6 +62,8 @@
     </field>
 </record>
 
+
+    <!-- hr.employee.crew menu item -->
 <menuitem
         id="employee_crew_menu"
         name="Employee crew"

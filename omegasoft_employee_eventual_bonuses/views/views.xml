@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
-    <!-- Page Bonus-->
+    <!-- hr.employee.bonus.page form view -->
     <record id="hr_employee_bonus_page_form" model="ir.ui.view">
         <field name="name">hr.employee.bonus.page.form</field>
         <field name="model">hr.employee</field>
@@ -34,5 +33,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

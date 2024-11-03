@@ -136,7 +136,7 @@
         </field>
     </record>
 
-    <!-- account.withholding.iva Customers actions window -->
+    <!-- account.withholding.iva Customers action window -->
     <record id="account_withholding_iva_customer_action" model="ir.actions.act_window">
         <field name="name">VAT Withholding for Customers</field>
         <field name="res_model">account.withholding.iva</field>
@@ -145,7 +145,7 @@
         <field name="context">{'default_type': 'customer'}</field>
     </record>
 
-    <!-- account.withholding.iva Providers actions window -->
+    <!-- account.withholding.iva Providers action window -->
     <record id="account_withholding_iva_supplier_action" model="ir.actions.act_window">
         <field name="name">VAT Withholding for Providers</field>
         <field name="res_model">account.withholding.iva</field>

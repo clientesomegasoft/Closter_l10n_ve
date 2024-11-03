@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- account.sale.sequence tree view -->
     <record id="account_sale_sequence_view_tree" model="ir.ui.view">
         <field name="name">account.sale.sequence.view.tree</field>
         <field name="model">account.sale.sequence</field>
@@ -12,6 +13,8 @@
             </tree>
         </field>
     </record>
+
+    <!-- account.sale.sequence form view -->
     <record id="account_sale_sequence_view_form" model="ir.ui.view">
         <field name="name">account.sale.sequence.view.form</field>
         <field name="model">account.sale.sequence</field>
@@ -111,11 +114,15 @@
             </form>
         </field>
     </record>
+
+    <!-- account.sale.sequence action window -->
     <record id="account_sale_sequence_action" model="ir.actions.act_window">
         <field name="name">Secuencias de control y facturación</field>
         <field name="res_model">account.sale.sequence</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- account.sale.sequence menu item -->
     <menuitem
         id="account_sale_sequence_menu"
         action="account_sale_sequence_action"

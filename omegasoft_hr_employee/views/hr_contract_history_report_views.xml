@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- hr.contract.history form view -->
     <record id="hr_contract_history_view_form_hourly_wage" model="ir.ui.view">
         <field name="name">hr.contract.history.form.hourly.wage</field>
         <field name="model">hr.contract.history</field>

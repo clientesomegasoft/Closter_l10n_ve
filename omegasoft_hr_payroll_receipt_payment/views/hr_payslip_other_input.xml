@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-
+    <!-- hr.payslip form view -->
     <record id="hr_payslip_other_input_custom" model="ir.ui.view">
         <field name="name">hr.payslip.other.input.custom</field>
         <field name="model">hr.payslip</field>
@@ -31,6 +31,4 @@
 
         </field>
     </record>
-
-
 </odoo>

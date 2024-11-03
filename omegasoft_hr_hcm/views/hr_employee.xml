@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.employee form view -->
     <record id="view_employee_form_hcm" model="ir.ui.view">
         <field name="name">hr.employee.form</field>
         <field name="model">hr.employee</field>
@@ -57,5 +57,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

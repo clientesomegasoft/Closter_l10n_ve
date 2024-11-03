@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <!--smart button endowments delivered-->
+    <!-- hr.contract form view -->
     <record
         id="hr_contract_view_form_inherit_button_endowments_delivered"
         model="ir.ui.view"
@@ -29,6 +30,7 @@
         </field>
     </record>
 
+    <!-- product.template form view -->
     <record
         id="product_template_form_view_omegasoft_endowment_product"
         model="ir.ui.view"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.contract form view -->
     <record id="hr_contract_employee_seniority" model="ir.ui.view">
         <field name="name">hr.contract.employee.seniority</field>
         <field name="model">hr.contract</field>

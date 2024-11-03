@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- hr.contract.history form view -->
     <record
         id="hr_contract_history_view_form_inherit_for_hr_employee_code"
         model="ir.ui.view"
@@ -23,5 +24,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

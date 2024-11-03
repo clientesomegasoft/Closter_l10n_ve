@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- res.town.hall tree view -->
     <record id="res_town_hall_view_tree" model="ir.ui.view">
         <field name="name">res.town.hall.view.tree</field>
         <field name="model">res.town.hall</field>
@@ -19,11 +20,15 @@
             </tree>
         </field>
     </record>
+
+    <!-- res.town.hall action window -->
     <record id="res_town_hall_action" model="ir.actions.act_window">
         <field name="name">Alcaldías</field>
         <field name="res_model">res.town.hall</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- res.town.hall menu item -->
     <menuitem
         id="menu_res_town_hall"
         parent="l10n_ve_config_account.menu_l10n_ve_finance_configuration"

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
-    <!--Structure type-->
+    <!-- hr.payroll.structure.type form view -->
     <record id="hr_payroll_structure_type_view_form_inherit" model="ir.ui.view">
         <field name="name">hr.payroll.structure.type.view.form.inherit</field>
         <field name="model">hr.payroll.structure.type</field>
@@ -17,6 +16,7 @@
         </field>
     </record>
 
+    <!-- hr.payroll.structure form view -->
     <record id="hr_payroll_structure_departments_omegasoft" model="ir.ui.view">
         <field name="name">hr.payroll.structure.departments.omegasoft</field>
         <field name="model">hr.payroll.structure</field>
@@ -43,5 +43,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

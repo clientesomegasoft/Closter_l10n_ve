@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
+    <!-- account.withholding.municipal tree view -->
     <record id="account_withholding_municipal_view_tree" model="ir.ui.view">
         <field name="name">account.withholding.municipal.view.tree</field>
         <field name="model">account.withholding.municipal</field>
@@ -18,6 +19,8 @@
             </tree>
         </field>
     </record>
+
+    <!-- account.withholding.municipal form view -->
     <record id="account_withholding_municipal_view_form" model="ir.ui.view">
         <field name="name">account.withholding.municipal.view.form</field>
         <field name="model">account.withholding.municipal</field>
@@ -120,6 +123,8 @@
             </form>
         </field>
     </record>
+
+    <!-- account.withholding.municipal customer action window -->
     <record
         id="account_withholding_municipal_customer_action"
         model="ir.actions.act_window"
@@ -130,6 +135,8 @@
         <field name="domain">[('type', '=', 'customer')]</field>
         <field name="context">{'default_type': 'customer'}</field>
     </record>
+
+    <!-- account.withholding.municipal providers action window -->
     <record
         id="account_withholding_municipal_supplier_action"
         model="ir.actions.act_window"
@@ -140,11 +147,15 @@
         <field name="domain">[('type', '=', 'supplier')]</field>
         <field name="context">{'default_type': 'supplier'}</field>
     </record>
+
+    <!-- account.withholding.municipal customer menu item -->
     <menuitem
         id="menu_account_withholding_municipal_customer"
         action="account_withholding_municipal_customer_action"
         parent="account.menu_finance_receivables"
     />
+
+    <!-- account.withholding.municipal providers menu item -->
     <menuitem
         id="menu_account_withholding_municipal_supplier"
         action="account_withholding_municipal_supplier_action"

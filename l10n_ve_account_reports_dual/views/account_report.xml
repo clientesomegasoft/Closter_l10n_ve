@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- account.report form view -->
     <record id="account_report_form_custom" model="ir.ui.view">
         <field name="name">account.report.form.custom</field>
         <field name="model">account.report</field>
@@ -10,6 +11,7 @@
             </xpath>
         </field>
     </record>
+
     <template id="search_template_custom" inherit_id="account_reports.search_template">
         <xpath expr="//div[@id='extra_options_dropdown']" position="after">
             <div
@@ -21,6 +23,7 @@
             </div>
         </xpath>
     </template>
+
     <template id="search_template_currencies">
         <button
             type="button"

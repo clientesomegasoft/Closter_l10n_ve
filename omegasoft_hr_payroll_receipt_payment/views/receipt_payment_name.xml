@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
+    <!-- hr_receipt_payment_names tree view -->
     <record id="hr_report_name_tree" model="ir.ui.view">
         <field name="name">hr.report.name.tree</field>
         <field name="model">hr_receipt_payment_names</field>
@@ -11,6 +12,7 @@
         </field>
     </record>
 
+    <!-- hr_receipt_payment_names form view -->
     <record id="hr_report_name_form" model="ir.ui.view">
         <field name="name">hr.report.name.form</field>
         <field name="model">hr_receipt_payment_names</field>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.contract form view -->
     <record id="hr_contract_benefit_control_field" model="ir.ui.view">
         <field name="name">hr.contract.benefit.control.field</field>
         <field name="model">hr.contract</field>
@@ -147,5 +147,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

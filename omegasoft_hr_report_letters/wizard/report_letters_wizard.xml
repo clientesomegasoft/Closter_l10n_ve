@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- hr.report.letters form view -->
     <record id="hr_report_letters_view_form" model="ir.ui.view">
         <field name="name">hr.report.letters.view.form</field>
         <field name="model">hr.report.letters</field>
@@ -39,6 +40,7 @@
         </field>
     </record>
 
+    <!-- hr.report.letters action window -->
     <record id="report_letters_action" model="ir.actions.act_window">
         <field name="name">Cartas</field>
         <field name="res_model">hr.report.letters</field>
@@ -46,6 +48,7 @@
         <field name="target">new</field>
     </record>
 
+    <!-- hr.report.letters menu item -->
     <menuitem
         id="hr_report_letters_menu"
         name="Cartas"

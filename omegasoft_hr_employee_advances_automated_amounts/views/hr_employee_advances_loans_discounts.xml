@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr_employee_advances_loans_discounts form view -->
     <record
         id="l10n_ve_omegasoft_res_config_settings_view_form_inherit"
         model="ir.ui.view"
@@ -136,6 +136,4 @@
 
         </field>
     </record>
-
-
 </odoo>

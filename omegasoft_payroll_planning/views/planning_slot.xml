@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- planning.slot tree view -->
     <record id="omegasoft_planning_view_tree_inherit" model="ir.ui.view">
         <field name="name">omegasoft.planning.view.tree.inherit</field>
         <field name="model">planning.slot</field>
@@ -12,6 +12,7 @@
         </field>
     </record>
 
+    <!-- planning.slot form view -->
     <record id="omegasoft_planning_view_form_inherit" model="ir.ui.view">
         <field name="name">omegasoft.planning.view.form.inherit</field>
         <field name="model">planning.slot</field>
@@ -23,6 +24,7 @@
         </field>
     </record>
 
+    <!-- planning.slot pivot view -->
     <record id="omegasoft_planning_slot_report_view_pivot_inherit" model="ir.ui.view">
         <field name="name">omegasoft.planning.slot.report.view.pivot.inherit</field>
         <field name="model">planning.slot</field>
@@ -33,5 +35,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
+    <!-- paid.sales.allocation tree view -->
     <record id="omegasoft_paid_sales_allocation_line_tree" model="ir.ui.view">
         <field name="name">paid.sales.allocation.line.tree</field>
         <field name="model">paid.sales.allocation</field>

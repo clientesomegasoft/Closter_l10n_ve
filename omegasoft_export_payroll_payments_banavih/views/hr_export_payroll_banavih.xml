@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-
+    <!-- export.bank.payments form view -->
     <record id="hr_export_payment_banavih" model="ir.ui.view">
         <field name="name">hr.export.payment.banavih</field>
         <field name="model">export.bank.payments</field>
@@ -34,6 +34,4 @@
 
         </field>
     </record>
-
-
 </odoo>

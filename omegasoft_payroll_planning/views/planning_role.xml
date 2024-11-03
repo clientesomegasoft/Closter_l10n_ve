@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- planning.role tree view -->
     <record id="planning_role_view_tree_inherit_omegasoft" model="ir.ui.view">
         <field name="name">planning.role.view.tree.inherit.omegasoft</field>
         <field name="model">planning.role</field>
@@ -20,5 +20,4 @@
 
         </field>
     </record>
-
 </odoo>

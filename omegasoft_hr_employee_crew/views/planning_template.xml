@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- planning.slot.template tree view -->
     <record
         id="planning_slot_template_view_tree_inherit_employee_crew"
         model="ir.ui.view"
@@ -22,6 +22,7 @@
         </field>
     </record>
 
+    <!-- planning.slot.template form view -->
     <record
         id="planning_slot_template_view_form_inherit_employee_crew"
         model="ir.ui.view"
@@ -38,5 +39,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

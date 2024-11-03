@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <!-- hr.leave.type form view -->
     <record id="omegasoft_accumulated_hr_leave_type_view_form" model="ir.ui.view">
         <field name="name">omegasoft.accumulated.hr.leave.type.view.form.inherit</field>
         <field name="model">hr.leave.type</field>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.payslip.employees form view -->
     <record id="hr_payroll_payslip_by_employees_omegasoft" model="ir.ui.view">
         <field name="name">hr.payroll.payslip.by.employees.omegasoft</field>
         <field name="model">hr.payslip.employees</field>
@@ -45,5 +45,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

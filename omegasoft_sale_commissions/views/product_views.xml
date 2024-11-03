@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
+    <!-- product.template view form -->
     <record
         id="omegasoft_product_template_form_view_commission_inherit"
         model="ir.ui.view"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.canapdis tree view -->
     <record id="canapdis_view_tree" model="ir.ui.view">
         <field name="name">canapdis.view.tree</field>
         <field name="model">hr.canapdis</field>
@@ -13,6 +13,7 @@
         </field>
     </record>
 
+    <!-- hr.canapdis form view -->
     <record id="canapdis_view_form" model="ir.ui.view">
         <field name="name">canapdis.view.form</field>
         <field name="model">hr.canapdis</field>
@@ -58,6 +59,7 @@
         </field>
     </record>
 
+    <!-- hr.canapdis search view -->
     <record id="canapdis_view_search" model="ir.ui.view">
         <field name="name">canapdis.view.search</field>
         <field name="model">hr.canapdis</field>
@@ -69,6 +71,7 @@
         </field>
     </record>
 
+    <!-- hr.canapdis action window -->
     <record id="hr_canapdis_action" model="ir.actions.act_window">
         <field name="name">CANAPDIS</field>
         <field name="res_model">hr.canapdis</field>
@@ -79,6 +82,7 @@
         </field>
     </record>
 
+    <!-- hr.canapdis menu item -->
     <menuitem
         id="canapdis_menu"
         name="CANAPDIS"
@@ -87,5 +91,4 @@
         parent="hr.hr_menu_hr_reports"
         sequence="15"
     />
-
 </odoo>

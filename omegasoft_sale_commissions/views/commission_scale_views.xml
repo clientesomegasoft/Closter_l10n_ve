@@ -1,4 +1,5 @@
 <odoo>
+    <!-- commission.scale tree view -->
     <record id="omegasoft_commission_scale_tree" model="ir.ui.view">
         <field name="name">commission.scale.tree</field>
         <field name="model">commission.scale</field>
@@ -10,6 +11,7 @@
         </field>
     </record>
 
+    <!-- commission.scale search view -->
     <record id="omegasoft_commission_scale_search" model="ir.ui.view">
         <field name="name">commission.scale.search</field>
         <field name="model">commission.scale</field>
@@ -26,6 +28,7 @@
         </field>
     </record>
 
+    <!-- commission.scale form view -->
     <record id="omegasoft_commission_scale_form" model="ir.ui.view">
         <field name="name">commission.scale.form</field>
         <field name="model">commission.scale</field>
@@ -67,12 +70,14 @@
         </field>
     </record>
 
+    <!-- commission.scale action window -->
     <record id="omegasoft_commission_scale_action" model="ir.actions.act_window">
         <field name="name">Commission Scale</field>
         <field name="res_model">commission.scale</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- commission.scale menu item -->
     <menuitem
         id="commission_scale_config"
         name="Commission Scales"

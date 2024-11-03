@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-
-    <!-- Form view for "model" -->
+    <!-- hr.employee form view -->
     <record id="hr_employee_inherit_employee_disability" model="ir.ui.view">
         <field name="name">hr.employee.inherit.employee.disability</field>
         <field name="model">hr.employee</field>
@@ -25,6 +24,4 @@
 
         </field>
     </record>
-
-
 </odoo>

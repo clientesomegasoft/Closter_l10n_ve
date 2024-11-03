@@ -1,4 +1,5 @@
 <odoo>
+    <!-- res.currency form view -->
     <record id="view_currency_form_inherit" model="ir.ui.view">
       <field name="name">view.currency.form.inherit</field>
       <field name="model">res.currency</field>

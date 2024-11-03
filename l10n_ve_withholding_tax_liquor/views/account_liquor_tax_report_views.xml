@@ -85,7 +85,7 @@
         </field>
     </record>
 
-    <!-- account.liquor.tax.report actions window -->
+    <!-- account.liquor.tax.report action window -->
     <record id="account_liquor_tax_report_action" model="ir.actions.act_window">
         <field name="name">Report taxes on liquor sales</field>
         <field name="res_model">account.liquor.tax.report</field>

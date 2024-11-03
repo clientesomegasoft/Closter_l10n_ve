@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- hr.organizational.units form view -->
     <record id="view_hr_organizational_units_form" model="ir.ui.view">
         <field name="name">view.hr.organizational.units.form</field>
         <field name="model">hr.organizational.units</field>
@@ -99,6 +100,7 @@
         </field>
     </record>
 
+    <!-- hr.organizational.units tree view -->
     <record id="view_hr_organizational_units_tree" model="ir.ui.view">
         <field name="name">view.hr.organizational.units.tree</field>
         <field name="model">hr.organizational.units</field>
@@ -112,6 +114,7 @@
         </field>
     </record>
 
+    <!-- hr.organizational.units search view -->
     <record id="view_hr_organizational_units_filter" model="ir.ui.view">
         <field name="name">hr.organizational.units.search</field>
         <field name="model">hr.organizational.units</field>
@@ -134,12 +137,14 @@
             </field>
     </record>
 
+    <!-- hr.organizational.units action window -->
     <record id="hr_organizational_units_tree_action" model="ir.actions.act_window">
         <field name="name">Organizational units</field>
         <field name="res_model">hr.organizational.units</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- hr.organizational.units menu item -->
     <menuitem
         id="menu_organizational_units"
         name="organizational units"
@@ -148,5 +153,4 @@
         groups="hr.group_hr_user"
         sequence="4"
     />
-
 </odoo>

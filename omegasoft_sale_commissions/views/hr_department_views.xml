@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
+    <!-- hr.department form view -->
     <record id="omegasoft_view_department_form_inherit" model="ir.ui.view">
         <field name="name">view.department.form.inherit</field>
         <field name="model">hr.department</field>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.leave form view -->
     <record id="hr_leave_view_form_inherit_accumulated_vacation" model="ir.ui.view">
         <field name="name">hr.leave.view.form.inherit.accumulated.vacation</field>
         <field name="model">hr.leave</field>
@@ -49,5 +49,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

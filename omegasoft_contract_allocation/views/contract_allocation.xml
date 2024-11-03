@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-    <!-- contract_allocation -->
+    <!-- contract.allocation tree view -->
     <record id="contract_allocation_tree" model="ir.ui.view">
         <field name="name">contract.allocation.tree</field>
         <field name="model">contract_allocation</field>
@@ -28,6 +28,7 @@
         </field>
     </record>
 
+    <!-- contract.allocation form view -->
     <record id="contract_allocation_form" model="ir.ui.view">
         <field name="name">contract.allocation.form</field>
         <field name="model">contract_allocation</field>
@@ -158,6 +159,7 @@
 
     <!--Allocation to delivered-->
 
+    <!-- contract.allocation.to.delivered tree view -->
     <record id="contract_allocation_to_delivered_tree" model="ir.ui.view">
         <field name="name">contract.allocation.to.delivered.tree</field>
         <field name="model">contract_allocation</field>
@@ -192,6 +194,7 @@
         </field>
     </record>
 
+    <!-- contract.allocation.to.delivered form view -->
     <record id="contract_allocation_to_delivered_form" model="ir.ui.view">
         <field name="name">contract.allocation.to.delivered.form</field>
         <field name="model">contract_allocation</field>
@@ -380,6 +383,7 @@
         </field>
     </record>
 
+    <!-- contract.allocation action window -->
     <record id="contract_allocation_action" model="ir.actions.act_window">
         <field name="name">Configuration of endowments</field>
         <field name="res_model">contract_allocation</field>
@@ -392,6 +396,7 @@
         />
     </record>
 
+    <!-- contract.allocation.to.delivered action window -->
     <record id="contract_allocation_to_delivered_action" model="ir.actions.act_window">
         <field name="name">Allocation to delivered</field>
         <field name="res_model">contract_allocation</field>
@@ -405,7 +410,7 @@
         <field name="context">{'create':0}</field>
     </record>
 
-    <!-- actions -->
+    <!-- menu item -->
     <menuitem
         id="menu_contract_allocation"
         name="Allocation"
@@ -413,6 +418,7 @@
         sequence="97"
     />
 
+    <!-- contract.allocation menu item -->
     <menuitem
         id="contract_allocation_config"
         name="Delivery configuration"
@@ -420,6 +426,8 @@
         parent="menu_contract_allocation"
         sequence="1"
     />
+
+    <!-- contract.allocation.to.delivered menu item -->
     <menuitem
         id="contract_allocation_delivery_registration"
         name="Delivery registration"

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-    <!-- Employee bonus -->
+    <!-- hr.employee.bonus tree view -->
     <record id="hr_employee_bonus_tree" model="ir.ui.view">
         <field name="name">hr.employee.bonus.tree</field>
         <field name="model">hr_employee_bonus</field>
@@ -29,6 +29,7 @@
         </field>
     </record>
 
+    <!-- hr.employee.bonus form view -->
     <record id="hr_employee_bonus_form" model="ir.ui.view">
         <field name="name">hr.employee.bonus.form</field>
         <field name="model">hr_employee_bonus</field>
@@ -181,6 +182,7 @@
         </field>
     </record>
 
+    <!-- hr.employee.bonus search view -->
     <record id="hr_employee_bonus_search" model="ir.ui.view">
         <field name="name">hr.employee.bonus.search</field>
         <field name="model">hr_employee_bonus</field>
@@ -197,13 +199,14 @@
         </field>
     </record>
 
+    <!-- hr.employee.bonus action window -->
     <record id="hr_employee_bonus_action" model="ir.actions.act_window">
         <field name="name">Employee Bonus</field>
         <field name="res_model">hr_employee_bonus</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- actions -->
+    <!-- hr.employee.bonus menu items -->
     <menuitem
         id="menu_hr_employee_bonus"
         name="Eventual bonus"

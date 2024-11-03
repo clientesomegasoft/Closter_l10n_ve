@@ -435,6 +435,7 @@ class ExportBankPayments(models.Model):
         return True
 
     def _txt_prepare_data_bnc(self, payslip):
+        """Preparación de data para archivo BNC"""
         aux_txt_data = ""
 
         # *** Preparación de campos ***
@@ -462,7 +463,7 @@ class ExportBankPayments(models.Model):
         return aux_txt_data
 
     def generate_bnc(self):
-        # Obtener recibos de salario
+        """Obtener recibos de salario desde BNC"""
         payslips = self._get_payslips()
         txt_data = ""
         if payslips:
@@ -501,6 +502,7 @@ class ExportBankPayments(models.Model):
         return txt_data
 
     def _txt_prepare_data_banesco(self, payslip):
+        """Preparación de data para archivo Banesco"""
         if not payslip.net_wage or payslip.net_wage <= 0.0:
             raise ValidationError(
                 (_("Establezca un monto valido a pagar al empleado: %s."))
@@ -569,8 +571,8 @@ class ExportBankPayments(models.Model):
         return aux_txt_data
 
     def generate_banesco(self):
+        """Obtener recibos de salario desde Banesco"""
         txt_data = ""
-        # Obtener recibos de salario
         payslips = self._get_payslips()
         if self.txt_type == "ticket":
             # Obtener recibos de salario
@@ -695,6 +697,7 @@ class ExportBankPayments(models.Model):
         return txt_data
 
     def _txt_prepare_data_vzla(self, payslip):
+        """Preparación de data para archivo Venezuela"""
         if not payslip.net_wage or payslip.net_wage <= 0.0:
             raise ValidationError(
                 (_("Establezca un monto valido a pagar al empleado: %s."))
@@ -760,7 +763,7 @@ class ExportBankPayments(models.Model):
         return aux_txt_data
 
     def generate_vzla(self):
-        # Obtener recibos de salario
+        """Obtener recibos de salario desde Venezuela"""
         payslips = self._get_payslips()
         txt_data = ""
         if payslips:
@@ -823,6 +826,7 @@ class ExportBankPayments(models.Model):
         return txt_data
 
     def _txt_prepare_data_mercantil(self, payslip):
+        """Preparación de data para archivo Mercantil"""
         if not payslip.net_wage or payslip.net_wage <= 0.0:
             raise ValidationError(
                 (_("Establezca un monto valido a pagar al empleado: %s."))

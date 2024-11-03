@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr_employee_bank_information form view -->
     <record id="hr_employee_bank_information_view_form" model="ir.ui.view">
         <field name="name">hr.employee.bank.information.view.form</field>
         <field name="model">hr_employee_bank_information</field>
@@ -26,6 +26,7 @@
         </field>
     </record>
 
+    <!-- hr_employee_bank_information tree view -->
     <record id="hr_employee_bank_information_view_tree" model="ir.ui.view">
         <field name="name">hr.employee.bank.information.view.tree</field>
         <field name="model">hr_employee_bank_information</field>
@@ -42,6 +43,7 @@
         </field>
     </record>
 
+    <!-- hr_employee_bank_information search view -->
     <record id="hr_employee_bank_information_search" model="ir.ui.view">
         <field name="name">hr.employee.bank.information.search</field>
         <field name="model">hr_employee_bank_information</field>
@@ -57,5 +59,4 @@
             </search>
         </field>
     </record>
-
 </odoo>

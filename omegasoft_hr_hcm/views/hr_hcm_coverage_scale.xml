@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.hcm.coverage.scale action window -->
     <record id="hr_hcm_coverage_scale_window_action" model="ir.actions.act_window">
         <field name="name">HCM Converage Scale</field>
         <field name="res_model">hr.hcm.coverage.scale</field>
@@ -14,6 +14,7 @@
         </field>
     </record>
 
+    <!-- hr.hcm.coverage.scale tree view -->
     <record id="hr_hcm_coverage_scale_view_tree" model="ir.ui.view">
         <field name="name">hr.hcm.coverage.scale.view.tree</field>
         <field name="model">hr.hcm.coverage.scale</field>
@@ -28,6 +29,7 @@
         </field>
     </record>
 
+    <!-- hr.hcm.coverage.scale form view -->
     <record id="hr_hcm_coverage_scale_view_form" model="ir.ui.view">
         <field name="name">hr.hcm.coverage.scale.view.form</field>
         <field name="model">hr.hcm.coverage.scale</field>
@@ -66,6 +68,7 @@
         </field>
     </record>
 
+    <!-- hr.hcm.coverage.scale menu item -->
     <menuitem
         id="menu_hr_hcm_coverage_scale"
         name="HCM Coverage Scale"
@@ -73,5 +76,4 @@
         action="hr_hcm_coverage_scale_window_action"
         sequence="5"
     />
-
 </odoo>

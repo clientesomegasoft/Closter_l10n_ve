@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- product.template form view -->
     <record id="product_template_form_view" model="ir.ui.view">
         <field name="name">product.template.common.form</field>
         <field name="model">product.template</field>
@@ -37,6 +38,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- product.template kanban view -->
     <record id="product_template_kanban_view" model="ir.ui.view">
         <field name="name">Product.template.product.kanban</field>
         <field name="model">product.template</field>
@@ -54,6 +57,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- product.template tree view -->
     <record id="product_template_tree_view" model="ir.ui.view">
         <field name="name">product.template.product.tree</field>
         <field name="model">product.template</field>
@@ -81,6 +86,8 @@
             </xpath>
         </field>
     </record>
+
+    <!-- product.product tree view -->
     <record id="product_product_stock_tree_inherit_stock_account" model="ir.ui.view">
         <field name="name">product.product.stock.tree.inherit.stock.account</field>
         <field name="model">product.product</field>

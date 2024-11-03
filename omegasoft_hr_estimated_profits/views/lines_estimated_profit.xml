@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <!-- hr.estimated.profit form view -->
     <record id="estimated_profit_lines_form" model="ir.ui.view">
         <field name="name">estimated.profit.lines.form</field>
         <field name="model">hr.estimated.profit</field>
@@ -27,6 +28,7 @@
         </field>
     </record>
 
+    <!-- hr.estimated.profit tree view -->
     <record id="estimated_profit_lines_tree" model="ir.ui.view">
         <field name="name">estimated.profit.lines.tree</field>
         <field name="model">hr.estimated.profit</field>
@@ -48,6 +50,7 @@
         </field>
     </record>
 
+    <!-- hr.estimated.profit action window -->
     <record id="estimated_profit_lines_action" model="ir.actions.act_window">
         <field name="name">Estimated profit lines</field>
         <field name="res_model">hr.estimated.profit</field>

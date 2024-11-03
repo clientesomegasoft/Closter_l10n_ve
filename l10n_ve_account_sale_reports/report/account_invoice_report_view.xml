@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- account.invoice.report tree view -->
     <record id="account_invoice_report_view_tree_operative" model="ir.ui.view">
         <field name="name">account.invoice.report.view.tree.operative</field>
         <field name="model">account.invoice.report</field>

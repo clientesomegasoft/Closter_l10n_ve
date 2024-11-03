@@ -12,6 +12,7 @@
             </tree>
         </field>
     </record>
+
     <!-- account.ut action window -->
     <record id="action_account_ut" model="ir.actions.act_window">
         <field name="name">Tax unit</field>
@@ -21,6 +22,7 @@
             Tax unit according to SENIAT
         </field>
     </record>
+
     <!-- account.ut menu item -->
     <menuitem
         id="menu_action_account_ut"

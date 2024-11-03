@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
+    <!-- res.config.settings form view -->
     <record
         id="l10n_ve_omegasoft_res_config_settings_view_form_signature"
         model="ir.ui.view"

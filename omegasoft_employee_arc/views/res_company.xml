@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- res.company form view -->
     <record id="extra_company_venezuela" model="ir.ui.view">
         <field name="name">Extra company Venezuela</field>
         <field name="model">res.company</field>

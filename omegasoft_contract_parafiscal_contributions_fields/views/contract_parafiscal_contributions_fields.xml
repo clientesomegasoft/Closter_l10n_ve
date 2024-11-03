@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.contract form view -->
     <record id="hr_contract_parafiscal_contributions_field" model="ir.ui.view">
         <field name="name">hr.contract.parafiscal.contributions.field</field>
         <field name="model">hr.contract</field>

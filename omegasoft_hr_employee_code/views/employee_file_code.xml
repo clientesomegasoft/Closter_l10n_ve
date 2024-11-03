@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- employee.file.code tree view -->
     <record id="employee_file_code_view_tree" model="ir.ui.view">
         <field name="name">employee.file.code.view.tree</field>
         <field name="model">employee.file.code</field>
@@ -13,6 +13,7 @@
         </field>
     </record>
 
+    <!-- employee.file.code search view -->
     <record id="employee_file_code_view_search" model="ir.ui.view">
         <field name="name">employee.file.code.view.search</field>
         <field name="model">employee.file.code</field>
@@ -37,6 +38,7 @@
         </field>
     </record>
 
+    <!-- employee.file.code action window -->
     <record id="employee_file_code_action" model="ir.actions.act_window">
         <field name="name">Employee File</field>
         <field name="res_model">employee.file.code</field>
@@ -50,6 +52,7 @@
         </field>
     </record>
 
+    <!-- employee.file.code menu item -->
     <menuitem
         id="employee_file_code_menu"
         name="Employee files"
@@ -58,5 +61,4 @@
         parent="hr.menu_config_employee"
         sequence="10"
     />
-
 </odoo>

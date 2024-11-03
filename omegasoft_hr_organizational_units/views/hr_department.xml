@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- hr.department form view -->
     <record
         id="hr_view_department_form_omegasoft_organizational_units"
         model="ir.ui.view"

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
+    <!-- withholding.iva.rate tree view -->
     <record id="withholding_iva_rate_view_tree" model="ir.ui.view">
         <field name="name">withholding.iva.rate.view.tree</field>
         <field name="model">withholding.iva.rate</field>
@@ -11,12 +12,16 @@
             </tree>
         </field>
     </record>
+
+    <!-- withholding.iva.rate action window -->
     <record id="action_withholding_iva_rate" model="ir.actions.act_window">
         <field name="name">VAT withholding rates</field>
         <field name="res_model">withholding.iva.rate</field>
         <field name="view_mode">tree</field>
         <field name="view_id" ref="withholding_iva_rate_view_tree" />
     </record>
+
+    <!-- withholding.iva.rate menu item -->
     <menuitem
         id="menu_withholding_iva_rate"
         action="action_withholding_iva_rate"

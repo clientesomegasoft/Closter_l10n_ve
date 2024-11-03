@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
-    <!-- hr_employee_advances_loans_discounts -->
+    <!-- hr_employee_advances_loans_discounts tree view -->
     <record id="hr_employee_advances_loans_discounts_tree" model="ir.ui.view">
         <field name="name">hr.employee.advances.loans.discounts.tree</field>
         <field name="model">hr_employee_advances_loans_discounts</field>
@@ -33,6 +32,7 @@
         </field>
     </record>
 
+    <!-- hr_employee_advances_loans_discounts form view -->
     <record id="hr_employee_advances_loans_discounts_form" model="ir.ui.view">
         <field name="name">hr.employee.salary.advance.form</field>
         <field name="model">hr_employee_advances_loans_discounts</field>
@@ -254,6 +254,7 @@
         </field>
     </record>
 
+    <!-- hr_employee_advances_loans_discounts action window -->
     <record
         id="hr_employee_advances_loans_discounts_action"
         model="ir.actions.act_window"
@@ -263,7 +264,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- actions -->
+    <!-- hr_employee_advances_loans_discounts menu items -->
     <menuitem
         id="hr_employee_advances_loans_discounts"
         name="Anticipos Préstamos y descuentos"
@@ -277,5 +278,4 @@
         parent="hr_employee_advances_loans_discounts"
         sequence="1"
     />
-
 </odoo>

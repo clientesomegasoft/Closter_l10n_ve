@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.payslip form view -->
     <record id="payslip_form_inherit_net_amount_button" model="ir.ui.view">
         <field name="name">payslip.form.inherit.net.amount.button</field>
         <field name="model">hr.payslip</field>
@@ -19,6 +19,7 @@
         </field>
     </record>
 
+    <!-- hr.payslip actions server -->
     <record model="ir.actions.server" id="action_send_payslip_by_email">
         <field name="name">Send Payslip by Email</field>
         <field name="model_id" ref="hr_payroll.model_hr_payslip" />
@@ -30,5 +31,4 @@
                 action = records.filtered(lambda x: x.state in ['paid']).action_send_payslip_by_email()
         </field>
     </record>
-
 </odoo>

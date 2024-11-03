@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
+    <!-- account.move form view -->
     <record id="omegasoft_view_move_commission_form_inherit" model="ir.ui.view">
         <field name="name">view.move.commission.form.inherit</field>
         <field name="model">account.move</field>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
-    <!-- minimum wage history -->
+    <!-- minimum.wage.history tree view -->
     <record id="minimum_wage_history_tree" model="ir.ui.view">
         <field name="name">minimum.wage.history.tree</field>
         <field name="model">minimum.wage.history</field>
@@ -15,6 +14,7 @@
         </field>
     </record>
 
+    <!-- minimum.wage.history search view -->
     <record id="minimum_wage_history_view_search" model="ir.ui.view">
         <field name="name">minimum.wage.history.view.search</field>
         <field name="model">minimum.wage.history</field>
@@ -41,6 +41,7 @@
         </field>
     </record>
 
+    <!-- minimum.wage.history action window -->
     <record id="minimum_wage_history_action" model="ir.actions.act_window">
         <field name="name">Minimum wage History</field>
         <field name="res_model">minimum.wage.history</field>
@@ -50,7 +51,7 @@
         </field>
     </record>
 
-    <!-- salary basket ticket History -->
+    <!-- salary.basket.ticket.history tree view -->
     <record id="salary_basket_ticket_history_tree" model="ir.ui.view">
         <field name="name">salary.basket.ticket.history.tree</field>
         <field name="model">salary.basket.ticket.history</field>
@@ -64,6 +65,7 @@
         </field>
     </record>
 
+    <!-- salary.basket.ticket.history search view -->
     <record id="salary_basket_ticket_history_view_search" model="ir.ui.view">
         <field name="name">salary.basket.ticket.history.view.search</field>
         <field name="model">salary.basket.ticket.history</field>
@@ -90,6 +92,7 @@
         </field>
     </record>
 
+    <!-- salary.basket.ticket.history action window -->
     <record id="salary_basket_ticket_history_action" model="ir.actions.act_window">
         <field name="name">Salary Basket Ticket History</field>
         <field name="res_model">salary.basket.ticket.history</field>
@@ -99,7 +102,7 @@
         </field>
     </record>
 
-    <!-- vacations history -->
+    <!-- vacations.history tree view -->
     <record id="vacations_history_tree" model="ir.ui.view">
         <field name="name">vacations.history.tree</field>
         <field name="model">vacations.history</field>
@@ -112,6 +115,7 @@
         </field>
     </record>
 
+    <!-- vacations.history search view -->
     <record id="vacations_history_view_search" model="ir.ui.view">
         <field name="name">vacations.history.view.search</field>
         <field name="model">vacations.history</field>
@@ -132,6 +136,7 @@
         </field>
     </record>
 
+    <!-- vacations.history action window -->
     <record id="vacations_history_action" model="ir.actions.act_window">
         <field name="name">Vacations History</field>
         <field name="res_model">vacations.history</field>
@@ -141,7 +146,7 @@
         </field>
     </record>
 
-    <!-- days of profit history -->
+    <!-- days.of.profit.history tree view -->
     <record id="days_of_profit_history_tree" model="ir.ui.view">
         <field name="name">days.of.profit.history.tree</field>
         <field name="model">days.of.profit.history</field>
@@ -154,6 +159,7 @@
         </field>
     </record>
 
+    <!-- days.of.profit.history search view -->
     <record id="days_of_profit_history_view_search" model="ir.ui.view">
         <field name="name">days.of.profit.history.view.search</field>
         <field name="model">days.of.profit.history</field>
@@ -174,6 +180,7 @@
         </field>
     </record>
 
+    <!-- days.of.profit.history action window -->
     <record id="days_of_profit_history_action" model="ir.actions.act_window">
         <field name="name">Days of Profit History</field>
         <field name="res_model">days.of.profit.history</field>
@@ -183,7 +190,7 @@
         </field>
     </record>
 
-    <!-- central bank social benefits rate History -->
+    <!-- central.bank.social.benefits.rate.history tree view -->
     <record id="central_bank_social_benefits_rate_history_tree" model="ir.ui.view">
         <field name="name">central.bank.social.benefits.rate.history.tree</field>
         <field name="model">central.bank.social.benefits.rate.history</field>
@@ -196,6 +203,7 @@
         </field>
     </record>
 
+    <!-- central.bank.social.benefits.rate.history search view -->
     <record
         id="central_bank_social_benefits_rate_history_view_search"
         model="ir.ui.view"
@@ -219,6 +227,7 @@
         </field>
     </record>
 
+    <!-- central.bank.social.benefits.rate.history action window -->
     <record
         id="central_bank_social_benefits_rate_history_action"
         model="ir.actions.act_window"
@@ -232,5 +241,4 @@
             >Create Central Bank Social Benefits Rate History</p>
         </field>
     </record>
-
 </odoo>

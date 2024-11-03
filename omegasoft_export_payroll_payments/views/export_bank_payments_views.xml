@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
     <!-- Generar TXT de Nomina -->
+    <!-- export.bank.payments tree view -->
     <record id="export_bank_payments_view_tree" model="ir.ui.view">
         <field name="name">export.bank.payments.tree</field>
         <field name="model">export.bank.payments</field>
@@ -16,6 +17,8 @@
             </tree>
         </field>
     </record>
+
+    <!-- export.bank.payments form view -->
     <record id="export_bank_payments_view_form" model="ir.ui.view">
         <field name="name">export.bank.payments.form</field>
         <field name="model">export.bank.payments</field>
@@ -107,6 +110,8 @@
             </form>
         </field>
     </record>
+
+    <!-- export.bank.payments search view -->
     <record id="export_bank_payments_view_search" model="ir.ui.view">
         <field name="name">export.bank.payments.search</field>
         <field name="model">export.bank.payments</field>
@@ -116,6 +121,8 @@
             </search>
         </field>
     </record>
+
+    <!-- export.bank.payments action window -->
     <record id="export_bank_payments_action" model="ir.actions.act_window">
         <field name="name">Generar TXT de Nómina</field>
         <field name="res_model">export.bank.payments</field>
@@ -130,6 +137,7 @@
         </field>
     </record>
 
+    <!-- export.bank.payments menu item -->
     <menuitem
         id="export_bank_payments_menu"
         name="Generar TXT de Nómina"
@@ -137,5 +145,4 @@
         action="export_bank_payments_action"
         sequence="11"
     />
-
 </odoo>

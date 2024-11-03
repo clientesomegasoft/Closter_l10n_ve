@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
+    <!-- hr.contract view form -->
     <record id="hr_contract_view_form_estimated_profit" model="ir.ui.view">
         <field name="name">hr.contract.view.form.estimated.profit</field>
         <field name="model">hr.contract</field>
@@ -21,5 +21,4 @@
             </xpath>
         </field>
     </record>
-
 </odoo>

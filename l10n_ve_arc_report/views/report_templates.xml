@@ -28,6 +28,7 @@
             </div>
         </div>
     </template>
+
     <template id="search_template_partner_id">
         <button
             type="button"
@@ -43,6 +44,7 @@
             <li class="o_account_report_search js_m2o_filters" />
         </ul>
     </template>
+
     <template id="search_template" inherit_id="account_reports.search_template">
         <xpath expr="." position="inside">
             <div

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
+    <!-- commission.conf.line tree view -->
     <record id="omegasoft_commission_conf_line_tree" model="ir.ui.view">
         <field name="name">commission.conf.line.tree</field>
         <field name="model">commission.conf.line</field>

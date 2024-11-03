@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- Define the XML view for the tree view -->
+    <!-- hr_plan_accumulation tree view -->
     <record id="omegasoft_view_hr_accumulation_tree" model="ir.ui.view">
         <field name="name">hr.plan.accumulation.tree</field>
         <field name="model">hr_plan_accumulation</field>
@@ -13,7 +13,7 @@
         </field>
     </record>
 
-    <!-- Define the XML view for the form view -->
+    <!-- hr_plan_accumulation form view -->
     <record id="omegasoft_view_hr_accumulation_form" model="ir.ui.view">
         <field name="name">hr.plan.accumulation.form</field>
         <field name="model">hr_plan_accumulation</field>
@@ -71,7 +71,7 @@
         </field>
     </record>
 
-    <!-- Define the XML view for the search view -->
+    <!-- hr_plan_accumulation search view -->
     <record id="omegasoft_view_hr_accumulation_search" model="ir.ui.view">
         <field name="name">hr.plan.accumulation.search</field>
         <field name="model">hr_plan_accumulation</field>
@@ -82,7 +82,7 @@
         </field>
     </record>
 
-    <!-- Define the action -->
+    <!-- hr_plan_accumulation action window -->
     <record id="action_hr_accumulation" model="ir.actions.act_window">
         <field name="name">Acumulation Plan</field>
         <field name="type">ir.actions.act_window</field>
@@ -91,7 +91,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-        <!-- Define the menu -->
+    <!-- hr_plan_accumulation menu item -->
     <menuitem
         id="menu_hr_vacation"
         action="action_hr_accumulation"

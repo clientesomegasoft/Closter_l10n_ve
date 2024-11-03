@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- Define the XML view for the tree view -->
+    <!-- hr_plan_accumulation.history tree view -->
     <record id="omegasoft_view_hr_accumulated_history_tree" model="ir.ui.view">
         <field name="name">hr.accumulated.history.tree</field>
         <field name="model">hr_plan_accumulation.history</field>

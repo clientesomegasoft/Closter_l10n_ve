@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- hr.contract form view -->
     <record id="hr_contract_bonuses_salary_field" model="ir.ui.view">
         <field name="name">hr.contract.bonuses.salary.field</field>
         <field name="model">hr.contract</field>
