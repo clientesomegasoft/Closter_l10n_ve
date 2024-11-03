@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- customer.statements tree view-->
+    <!-- customer.statements tree view -->
     <record id="customer_statements_tree_view" model="ir.ui.view">
         <field name="name">customer.statements.tree</field>
         <field name="model">res.partner</field>
@@ -16,7 +16,7 @@
         </field>
     </record>
 
-    <!-- customer.statements form view-->
+    <!-- customer.statements form view -->
     <record id="customer_statements_form_view" model="ir.ui.view">
         <field name="name">customer.statements.followup</field>
         <field name="model">res.partner</field>

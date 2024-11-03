@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data noupdate="1">
-
         <record id="sequence_employee_file" model="ir.sequence">
             <field name="name">Employee file code</field>
             <field name="code">hr.employee.code</field>
@@ -11,6 +10,5 @@
             <field name="company_id" eval="False" />
             <field name="padding">6</field>
         </record>
-
     </data>
 </odoo>
