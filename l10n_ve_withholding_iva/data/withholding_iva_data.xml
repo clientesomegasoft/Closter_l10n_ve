@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="100_percent_iva_rate" model="withholding.iva.rate">
+        <field name="name">100</field>
+        <field name="description">Retención de 100% de IVA</field>
+    </record>
+    <record id="75_percent_iva_rate" model="withholding.iva.rate">
+        <field name="name">75</field>
+        <field name="description">Retención de 75% de IVA</field>
+    </record>
+</odoo>

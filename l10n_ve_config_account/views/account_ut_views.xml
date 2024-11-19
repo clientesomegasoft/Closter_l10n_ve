@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- account.ut tree view -->
+    <record id="account_ut_view_tree" model="ir.ui.view">
+        <field name="name">account.ut.view.tree</field>
+        <field name="model">account.ut</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+                <field name="date" />
+                <field name="amount" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- account.ut action window -->
+    <record id="action_account_ut" model="ir.actions.act_window">
+        <field name="name">Tax unit</field>
+        <field name="res_model">account.ut</field>
+        <field name="view_mode">tree</field>
+        <field name="help">
+            Tax unit according to SENIAT
+        </field>
+    </record>
+
+    <!-- account.ut menu item -->
+    <menuitem
+        id="menu_action_account_ut"
+        parent="menu_l10n_ve_finance_configuration"
+        action="action_account_ut"
+        sequence="1"
+    />
+</odoo>

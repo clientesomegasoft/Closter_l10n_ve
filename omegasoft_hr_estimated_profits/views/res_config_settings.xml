@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- res.config.settings form view -->
+    <record
+        id="l10n_ve_omegasoft_res_config_settings_estimated_profit"
+        model="ir.ui.view"
+    >
+        <field
+            name="name"
+        >l10n.ve.omegasoft.res.config.settings.estimated.profit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='average_wage_ids']" position="before">
+                <field name="estimated_profit_ids" invisible="1" />
+
+                <div class="o_setting_right_pane">
+                    <span class="o_form_label">Estimated profit</span>
+                    <div class="mt8">
+                        <field
+                            name="estimated_profit_count"
+                            class="w-auto pl-1 font-weight-bold"
+                        />
+
+                        <span class="o_form_label">
+                                Lines for calculating the estimayed profits
+                        </span>
+
+                        <div>
+                            <button
+                                name="%(estimated_profit_lines_action)d"
+                                type="action"
+                                class="oe_link"
+                            >Manage lines for estimated profits calculation</button>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

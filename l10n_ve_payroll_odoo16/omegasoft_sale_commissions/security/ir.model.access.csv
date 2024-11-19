@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_commission_conf_line,model.access.commission.conf.line,model_commission_conf_line,base.group_user,1,1,1,1
-access_commission_scale,model.access.commission.scale,model_commission_scale,base.group_user,1,1,1,1
-access_paid_sales_allocation,model.access.paid.sales.allocation,model_paid_sales_allocation,base.group_user,1,1,1,1

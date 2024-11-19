@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-
-    <menuitem id="main_menu_sale_consignments"
-            name="Sale Consigment"
-            parent="pways_so_po_consignment.main_purchase_consignments_root"
-            sequence="3"/>
-
-</odoo>

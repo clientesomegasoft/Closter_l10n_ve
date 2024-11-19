@@ -1,0 +1,572 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_contract_allocation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-02 22:05+0000\n"
+"PO-Revision-Date: 2024-10-30 09:38-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__access_warning
+msgid "Access warning"
+msgstr "Aviso de acceso"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Actividad Decoración de excepción"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__allocated_quantity
+msgid "Allocated quantity"
+msgstr "Cantidad asignada"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__allocation_id
+#: model:ir.ui.menu,name:omegasoft_contract_allocation.menu_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_form
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
+msgid "Allocation"
+msgstr "Dotaciones"
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_lines_form
+msgid "Allocation Lines"
+msgstr "Líneas de dotación"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model,name:omegasoft_contract_allocation.model_contract_allocation_size
+msgid "Allocation Size"
+msgstr "Talla"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__allocation_date
+msgid "Allocation date"
+msgstr "Fecha"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__allocation_line_ids
+msgid "Allocation line"
+msgstr "Línea de dotación"
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_form
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
+msgid "Allocation lines"
+msgstr "Líneas de dotación"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.actions.act_window,name:omegasoft_contract_allocation.contract_allocation_to_delivered_action
+msgid "Allocation to delivered"
+msgstr "Dotaciones a entregar"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_hr_contract__allocation_ids
+msgid "Allocations"
+msgstr "Dotaciones"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation_lines__delivery_frequency__annual
+msgid "Annual"
+msgstr "Años"
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de dotaciones"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__company_id
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation__name__company
+msgid "Company"
+msgstr "Compañía"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__compute_state
+msgid "Compute State"
+msgstr "Estado de proceso"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.actions.act_window,name:omegasoft_contract_allocation.contract_allocation_action
+msgid "Configuration of endowments"
+msgstr "Configuración de dotaciones"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model,name:omegasoft_contract_allocation.model_contract_allocation
+msgid "Contract allocations"
+msgstr "Contratos"
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_form
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
+msgid "Contract(s)"
+msgstr "Contratos"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__create_uid
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__create_uid
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__create_date
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__create_date
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__access_url
+msgid "Customer Portal URL"
+msgstr "URL del portal del cliente"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__date_delivered
+msgid "Date delivered"
+msgstr "Fecha de entrega"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation_lines__delivery_frequency__days
+msgid "Days"
+msgstr "Días"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation__state__delivered
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation_lines__state__delivered
+msgid "Delivered"
+msgstr "Entregado"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_hr_contract__delivered_count
+msgid "Delivered Count"
+msgstr "Recuento de entregas"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.ui.menu,name:omegasoft_contract_allocation.contract_allocation_config
+msgid "Delivery configuration"
+msgstr "Configuración"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__delivery_frequency
+msgid "Delivery frequency"
+msgstr "Tipo de frecuencia"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.ui.menu,name:omegasoft_contract_allocation.contract_allocation_delivery_registration
+msgid "Delivery registration"
+msgstr "Registro de entrega"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation__name__department
+msgid "Department"
+msgstr "Departamento"
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_form
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
+msgid "Department(s)"
+msgstr "Departamento(s)"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__department_ids
+msgid "Departments"
+msgstr "Departamentos"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__display_name
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__display_name
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__display_name
+msgid "Display Name"
+msgstr "Nombre de la pantalla"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__delivered_each
+msgid "Each"
+msgstr "Cada"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model,name:omegasoft_contract_allocation.model_hr_employee
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__employee_id
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation__name__employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model,name:omegasoft_contract_allocation.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato del empleado"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__employee_contract_ids
+msgid "Employee contract"
+msgstr "Contrato del empleado"
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_form
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
+msgid "Employee(s)"
+msgstr "Empleado(s)"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__employee_ids
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__employee_ids
+msgid "Employees"
+msgstr "Empleado"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model,name:omegasoft_contract_allocation.model_contract_allocation_lines
+msgid "Endowment lines"
+msgstr "Líneas de dotación"
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.hr_contract_view_form_inherit_button_endowments_delivered
+msgid "Endowments delivered"
+msgstr "Dotaciones entregadas"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono Font awesome, por ejemplo fa-tasks"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__frequency
+msgid "Frequency"
+msgstr "Frecuencia"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__id
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__id
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__id
+msgid "ID"
+msgstr "ID"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_needaction
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcada, nuevos mensajes requieren su atención."
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_has_error
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__name
+msgid "Indicates the type of endowment to be generated"
+msgstr "Indica el tipo de dotación que se va a generar"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__is_delivered
+msgid "Is Delivered"
+msgstr "Es entregado"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_product_product__is_an_endowment_product
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_product_template__is_an_endowment_product
+msgid "It is an endowment product"
+msgstr "¿Es un producto para dotación?"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__job_title
+msgid "Job Title"
+msgstr "Título del cargo"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation____last_update
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines____last_update
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__write_uid
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__write_uid
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__write_date
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__write_date
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation_lines__delivery_frequency__monthly
+msgid "Monthly"
+msgstr "Meses"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi plazo de actividad"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_size__name
+msgid "Name"
+msgstr "Talla"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Siguiente evento en el calendario de actividades"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite para la próxima actividad"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la próxima actividad"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation__state__partial_delivery
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation_lines__state__partial_delivery
+msgid "Partial delivery"
+msgstr "Entrega parcial"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__access_url
+msgid "Portal Access URL"
+msgstr "URL de acceso al portal"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model,name:omegasoft_contract_allocation.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__quantity_delivered
+msgid "Quantity delivered"
+msgstr "Cantidad entregada"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__quantity_to_deliver
+msgid "Quantity to deliver"
+msgstr "Por entregar"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__access_token
+msgid "Security Token"
+msgstr "Token de seguridad"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__active
+msgid "Set active to false to hide the allocation tag without removing it."
+msgstr ""
+"Establezca active en false para ocultar la etiqueta de dotación sin "
+"eliminarla."
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__size_id
+msgid "Size"
+msgstr "Talla"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__allocation_date
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_form
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
+msgid "Start date for delivery of the endowment"
+msgstr "Fecha de inicio de la entrega de la dotación"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__state
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation_lines__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
+
+#. module: omegasoft_contract_allocation
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_allocation.contract_allocation_to_delivered_form
+msgid "Submit"
+msgstr "Entregar"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation__state__draft
+#: model:ir.model.fields.selection,name:omegasoft_contract_allocation.selection__contract_allocation_lines__state__draft
+msgid "To be delivered"
+msgstr "Por entregar"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__name
+msgid "Type of endowment"
+msgstr "Tipo de dotación"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de excepción registrada."
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes No Leídos"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de Mensajes No Leídos"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,field_description:omegasoft_contract_allocation.field_contract_allocation__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: omegasoft_contract_allocation
+#: model:ir.model.fields,help:omegasoft_contract_allocation.field_contract_allocation__website_message_ids
+msgid "Website communication history"
+msgstr "Historia de la comunicación en la web"

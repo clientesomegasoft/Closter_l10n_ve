@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-	<menuitem id="menu_l10n_ve_finance_configuration" name="Configuración Fiscal de Venezuela" parent="account.menu_finance_configuration"/>
-	<menuitem id="menu_l10n_ve_reports" name="Informes de Venezuela" parent="account.menu_finance_reports" sequence="20"/>
-</odoo>

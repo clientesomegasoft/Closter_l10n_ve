@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fiscal_books" model="account.report">
+        <field name="name">Libros de compra y venta</field>
+        <field name="filter_period_comparison" eval="False" />
+        <field name="filter_show_draft" eval="False" />
+        <field name="filter_currency" eval="False" />
+        <field name="default_opening_date_filter">this_month</field>
+        <field
+            name="custom_handler_model_id"
+            ref="model_account_fiscal_books_report_handler"
+        />
+        <field name="column_ids">
+            <record id="fiscal_books_tax_base_amount" model="account.report.column">
+                <field name="name">Base imponible</field>
+                <field name="expression_label">tax_base_amount</field>
+            </record>
+            <record id="fiscal_books_balance" model="account.report.column">
+                <field name="name">Débito fiscal</field>
+                <field name="expression_label">balance</field>
+            </record>
+        </field>
+    </record>
+    <record id="action_account_report_fiscal_books" model="ir.actions.client">
+        <field name="name">Libros de compra y venta</field>
+        <field name="tag">account_report</field>
+        <field
+            name="context"
+            eval="{'report_id': ref('l10n_ve_fiscal_book_report.fiscal_books')}"
+        />
+    </record>
+    <menuitem
+        id="menu_action_account_report_fiscal_books"
+        parent="l10n_ve_config_account.menu_l10n_ve_reports"
+        action="action_account_report_fiscal_books"
+    />
+</odoo>

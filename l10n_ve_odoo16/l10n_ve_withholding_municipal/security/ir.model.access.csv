@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_municipal_concept,access.account.municipal.concept,model_account_municipal_concept,,1,1,1,1
-access_account_withholding_municipal,access.account.withholding.municipal,model_account_withholding_municipal,,1,1,1,1
-access_account_withholding_municipal_line,access.account.withholding.municipal.line,model_account_withholding_municipal_line,,1,1,1,1

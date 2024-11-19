@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- minimum.wage.history tree view -->
+    <record id="minimum_wage_history_tree" model="ir.ui.view">
+        <field name="name">minimum.wage.history.tree</field>
+        <field name="model">minimum.wage.history</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="date" />
+                <field name="amount" />
+                <field name="currency_id" options="{'no_create': 1, 'mo_open': 1}" />
+                <field name="company_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- minimum.wage.history search view -->
+    <record id="minimum_wage_history_view_search" model="ir.ui.view">
+        <field name="name">minimum.wage.history.view.search</field>
+        <field name="model">minimum.wage.history</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="amount" />
+                <field name="currency_id" />
+                <field name="date" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
+                <group expand="0" string="Group By...">
+                    <filter
+                        name="currency_id"
+                        string="Currency"
+                        context="{'group_by': 'currency_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- minimum.wage.history action window -->
+    <record id="minimum_wage_history_action" model="ir.actions.act_window">
+        <field name="name">Minimum wage History</field>
+        <field name="res_model">minimum.wage.history</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create minimum wage history</p>
+        </field>
+    </record>
+
+    <!-- salary.basket.ticket.history tree view -->
+    <record id="salary_basket_ticket_history_tree" model="ir.ui.view">
+        <field name="name">salary.basket.ticket.history.tree</field>
+        <field name="model">salary.basket.ticket.history</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="date" />
+                <field name="amount" />
+                <field name="currency_id" options="{'no_create': 1, 'mo_open': 1}" />
+                <field name="company_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- salary.basket.ticket.history search view -->
+    <record id="salary_basket_ticket_history_view_search" model="ir.ui.view">
+        <field name="name">salary.basket.ticket.history.view.search</field>
+        <field name="model">salary.basket.ticket.history</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="amount" />
+                <field name="currency_id" />
+                <field name="date" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
+                <group expand="0" string="Group By...">
+                    <filter
+                        name="currency_id"
+                        string="Currency"
+                        context="{'group_by': 'currency_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- salary.basket.ticket.history action window -->
+    <record id="salary_basket_ticket_history_action" model="ir.actions.act_window">
+        <field name="name">Salary Basket Ticket History</field>
+        <field name="res_model">salary.basket.ticket.history</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create Salary Basket Ticket History</p>
+        </field>
+    </record>
+
+    <!-- vacations.history tree view -->
+    <record id="vacations_history_tree" model="ir.ui.view">
+        <field name="name">vacations.history.tree</field>
+        <field name="model">vacations.history</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="date" />
+                <field name="days" />
+                <field name="company_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- vacations.history search view -->
+    <record id="vacations_history_view_search" model="ir.ui.view">
+        <field name="name">vacations.history.view.search</field>
+        <field name="model">vacations.history</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="days" />
+                <field name="date" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
+                <group expand="0" string="Group By...">
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- vacations.history action window -->
+    <record id="vacations_history_action" model="ir.actions.act_window">
+        <field name="name">Vacations History</field>
+        <field name="res_model">vacations.history</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create Vacations History</p>
+        </field>
+    </record>
+
+    <!-- days.of.profit.history tree view -->
+    <record id="days_of_profit_history_tree" model="ir.ui.view">
+        <field name="name">days.of.profit.history.tree</field>
+        <field name="model">days.of.profit.history</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="date" />
+                <field name="days" />
+                <field name="company_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- days.of.profit.history search view -->
+    <record id="days_of_profit_history_view_search" model="ir.ui.view">
+        <field name="name">days.of.profit.history.view.search</field>
+        <field name="model">days.of.profit.history</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="days" />
+                <field name="date" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
+                <group expand="0" string="Group By...">
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- days.of.profit.history action window -->
+    <record id="days_of_profit_history_action" model="ir.actions.act_window">
+        <field name="name">Days of Profit History</field>
+        <field name="res_model">days.of.profit.history</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create Days of Profit History</p>
+        </field>
+    </record>
+
+    <!-- central.bank.social.benefits.rate.history tree view -->
+    <record id="central_bank_social_benefits_rate_history_tree" model="ir.ui.view">
+        <field name="name">central.bank.social.benefits.rate.history.tree</field>
+        <field name="model">central.bank.social.benefits.rate.history</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="date" />
+                <field name="amount" />
+                <field name="company_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- central.bank.social.benefits.rate.history search view -->
+    <record
+        id="central_bank_social_benefits_rate_history_view_search"
+        model="ir.ui.view"
+    >
+        <field name="name">central.bank.social.benefits.rate.history.view.search</field>
+        <field name="model">central.bank.social.benefits.rate.history</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="amount" />
+                <field name="date" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
+                <group expand="0" string="Group By...">
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- central.bank.social.benefits.rate.history action window -->
+    <record
+        id="central_bank_social_benefits_rate_history_action"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Central Bank Social Benefits Rate History</field>
+        <field name="res_model">central.bank.social.benefits.rate.history</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p
+                class="oe_view_nocontent_create"
+            >Create Central Bank Social Benefits Rate History</p>
+        </field>
+    </record>
+</odoo>

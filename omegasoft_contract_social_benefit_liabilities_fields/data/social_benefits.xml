@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="ir_cron_employee_social_benefits" model="ir.cron">
+        <field name="name">Social Benefits</field>
+        <field name="model_id" ref="model_hr_contract" />
+        <field name="state">code</field>
+        <field name="code">model._social_benefits()</field>
+        <field name="active" eval="False" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field
+            name="nextcall"
+            eval="(DateTime.now().replace(day=5) + relativedelta(months=1))"
+        />
+        <field name="numbercall">-1</field>
+    </record>
+</odoo>

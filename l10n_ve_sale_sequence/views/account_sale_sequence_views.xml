@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- account.sale.sequence tree view -->
+    <record id="account_sale_sequence_view_tree" model="ir.ui.view">
+        <field name="name">account.sale.sequence.view.tree</field>
+        <field name="model">account.sale.sequence</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence_type" />
+                <field name="name" />
+                <field name="serie" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- account.sale.sequence form view -->
+    <record id="account_sale_sequence_view_form" model="ir.ui.view">
+        <field name="name">account.sale.sequence.view.form</field>
+        <field name="model">account.sale.sequence</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1 class="mt0"><field
+                                name="name"
+                                placeholder="Facturas de ventas..."
+                            /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sequence_type" />
+                            <field
+                                name="serie"
+                                attrs="{'invisible': [('sequence_type', '!=', 'serie')], 'required': [('sequence_type', '=', 'serie')]}"
+                            />
+                        </group>
+                        <group>
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                                force_save="1"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="journal_ids" string="Secuencias">
+                            <group
+                                name="control_number"
+                                string="Número de control"
+                                col="6"
+                            >
+                                <group colspan="2">
+                                    <field name="invoice_control_number_next_actual" />
+                                    <field name="invoice_control_padding" />
+                                </group>
+                                <group
+                                    colspan="2"
+                                    attrs="{'invisible': [('sequence_type', '!=', 'manual')]}"
+                                >
+                                    <field name="refund_control_number_next_actual" />
+                                    <field name="refund_control_padding" />
+                                </group>
+                                <group
+                                    colspan="2"
+                                    attrs="{'invisible': [('sequence_type', '!=', 'manual')]}"
+                                >
+                                    <field name="debit_control_number_next_actual" />
+                                    <field name="debit_control_padding" />
+                                </group>
+                            </group>
+                            <group name="journals" col="6">
+                                <group string="Facturas" colspan="2">
+                                    <field name="invoice_sequence_id" invisible="1" />
+                                    <field
+                                        name="invoice_journal_ids"
+                                        string="Diarios"
+                                        widget="many2many_tags"
+                                        options="{'no_create': 1}"
+                                    />
+                                    <field name="invoice_prefix" />
+                                    <field name="invoice_padding" />
+                                    <field name="invoice_number_next_actual" />
+                                </group>
+                                <group string="Notas de crédito" colspan="2">
+                                    <field name="refund_sequence_id" invisible="1" />
+                                    <field
+                                        name="refund_journal_ids"
+                                        string="Diarios"
+                                        widget="many2many_tags"
+                                        options="{'no_create': 1}"
+                                    />
+                                    <field name="refund_prefix" />
+                                    <field name="refund_padding" />
+                                    <field name="refund_number_next_actual" />
+                                </group>
+                                <group string="Notas de débito" colspan="2">
+                                    <field name="debit_sequence_id" invisible="1" />
+                                    <field
+                                        name="debit_journal_ids"
+                                        string="Diarios"
+                                        widget="many2many_tags"
+                                        options="{'no_create': 1}"
+                                    />
+                                    <field name="debit_prefix" />
+                                    <field name="debit_padding" />
+                                    <field name="debit_number_next_actual" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- account.sale.sequence action window -->
+    <record id="account_sale_sequence_action" model="ir.actions.act_window">
+        <field name="name">Secuencias de control y facturación</field>
+        <field name="res_model">account.sale.sequence</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- account.sale.sequence menu item -->
+    <menuitem
+        id="account_sale_sequence_menu"
+        action="account_sale_sequence_action"
+        parent="l10n_ve_config_account.menu_l10n_ve_finance_configuration"
+    />
+</odoo>

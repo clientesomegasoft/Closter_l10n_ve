@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <record id="hr_receipt_payment_names_001" model="hr_receipt_payment_names">
+        <field name="name">RECIBO DE PAGO</field>
+    </record>
+
+    <record id="hr_receipt_payment_names_002" model="hr_receipt_payment_names">
+        <field name="name">RECIBO DE VACACIONES</field>
+    </record>
+
+    <record id="hr_receipt_payment_names_003" model="hr_receipt_payment_names">
+        <field name="name">RECIBO DE UTILIDADES</field>
+    </record>
+
+    <record id="hr_receipt_payment_names_004" model="hr_receipt_payment_names">
+        <field name="name">RECIBO DE LIQUIDACIÓN</field>
+    </record>
+</odoo>

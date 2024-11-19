@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- account.payment form view -->
+    <record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_open_journal_entry']" position="before">
+                <field name="itf_move_id" invisible="1" />
+                <button
+                    name="button_open_itf_entry"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-bars"
+                    attrs="{'invisible': ['|', ('itf_move_id', '=', False), ('state', '!=', 'posted')]}"
+                >
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">ITF Entry</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//group[@name='group2']" position="inside">
+                <field name="apply_itf" invisible="1" />
+                <field
+                    name="calculate_itf"
+                    attrs="{'invisible': [('apply_itf', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

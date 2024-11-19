@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- account.move form view -->
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@id='header_left_group']" position="inside">
+                <field name="person_type_code" invisible="1" />
+                <field
+                    name="nro_ctrl"
+                    attrs="{
+                    'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund'))],
+                    'required': ['|', ('move_type', 'in', ('out_invoice', 'out_refund')), '&amp;', ('move_type', 'in', ('in_invoice', 'in_refund')), ('person_type_code', 'in', ('PJDO', 'PNRE'))],
+                    'readonly':[('state', '!=', 'draft')]
+                }"
+                />
+                <field
+                    name="supplier_invoice_number"
+                    attrs="{
+                    'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund'))],
+                    'required': [('move_type', 'in', ('in_invoice', 'in_refund')), ('person_type_code', 'in', ('PJDO', 'PNRE'))],
+                    'readonly':[('state', '!=', 'draft')]
+                }"
+                />
+            </xpath>
+            <xpath
+                expr="//field[@name='invoice_line_ids']/tree/field[@name='tax_ids']"
+                position="attributes"
+            >
+                <attribute
+                    name="attrs"
+                >{'required': [('display_type', '=', 'product')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

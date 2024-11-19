@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_model_hr_receipt_payment_names,model_access_hr_receipt_payment_names,omegasoft_hr_payroll_receipt_payment.model_hr_receipt_payment_names,base.group_user,1,1,1,1

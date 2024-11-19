@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <!-- hr.employee form view -->
+    <record id="hr_employee_inherit_employee_disability" model="ir.ui.view">
+        <field name="name">hr.employee.inherit.employee.disability</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+
+            <xpath
+                expr="//page[@name='personal_information']/group[1]/group[4]"
+                position="after"
+            >
+                <!-- Employee Disability-->
+                <group name="employee_disability" string="Employee Disability">
+                    <field
+                        name="employee_type_disability_ids"
+                        widget="many2many_tags"
+                    />
+                    <field name="certificate_number" />
+                </group>
+
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

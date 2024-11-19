@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- account.tax form view -->
+    <record id="view_tax_form" model="ir.ui.view">
+        <field name="name">account.tax.form</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type_tax_use']" position="after">
+                <field
+                    name="fiscal_tax_type"
+                    attrs="{'invisible': [('type_tax_use', '=', 'none')], 'required': [('type_tax_use', '!=', 'none')]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

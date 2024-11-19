@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- hr.payroll.structure.type form view -->
+    <record id="hr_payroll_structure_type_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.payroll.structure.type.view.form.inherit</field>
+        <field name="model">hr.payroll.structure.type</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payroll_structure_type_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='wage_type']" position="after">
+                <field
+                    name="currency_id"
+                    options="{'no_create': True, 'no_open': True}"
+                    required="1"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- hr.payroll.structure form view -->
+    <record id="hr_payroll_structure_departments_omegasoft" model="ir.ui.view">
+        <field name="name">hr.payroll.structure.departments.omegasoft</field>
+        <field name="model">hr.payroll.structure</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_employee_grade_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='schedule_pay']" position="after">
+                <field name="department_ids" widget="many2many_tags" required="1" />
+            </xpath>
+
+             <xpath expr="//field[@name='use_worked_day_lines']" position="after">
+                <field name="use_average_wage" />
+                <field name="complementary_payroll" />
+                <field name="is_bonus" />
+                <field name="is_perfect_attendance" />
+                <field name="is_night_bonus" />
+                <field name="is_special_bonus" />
+                <field name="is_seniority_bonus_applies" />
+                <field name="is_productivity_bonus_applies" />
+                <field name="is_mobility_bonus_applies" />
+            </xpath>
+
+            <xpath expr="//field[@name='country_id']" position="after">
+                <field name="currency_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

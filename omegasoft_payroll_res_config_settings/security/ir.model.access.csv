@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_model_average_wage_lines,model_access_average_wage_lines,omegasoft_payroll_res_config_settings.model_average_wage_lines,base.group_user,1,1,1,1

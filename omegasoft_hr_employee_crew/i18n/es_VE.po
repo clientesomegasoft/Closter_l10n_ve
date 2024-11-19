@@ -1,0 +1,111 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_employee_crew
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-31 13:35+0000\n"
+"PO-Revision-Date: 2024-10-30 10:09-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_hr_employee_crew
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_crew.employee_crew_view_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__company_id
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_crew.employee_crew_view_search
+msgid "Company"
+msgstr "Compañia"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: omegasoft_hr_employee_crew
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_crew.employee_crew_view_search
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_planning_slot_template__employee_crew_id
+msgid "Employee Crew"
+msgstr "Cuadrilla"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.actions.act_window,name:omegasoft_hr_employee_crew.employee_crew_action
+#: model:ir.model,name:omegasoft_hr_employee_crew.model_hr_employee_crew
+#: model:ir.ui.menu,name:omegasoft_hr_employee_crew.employee_crew_menu
+msgid "Employee crew"
+msgstr "Cuadrillas"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__employee_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__id
+msgid "ID"
+msgstr "ID"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_crew.field_hr_employee_crew__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: omegasoft_hr_employee_crew
+#: model:ir.model,name:omegasoft_hr_employee_crew.model_planning_slot_template
+msgid "Shift Template"
+msgstr "Plantilla de turno"
+
+#. module: omegasoft_hr_employee_crew
+#: model_terms:ir.actions.act_window,help:omegasoft_hr_employee_crew.employee_crew_action
+msgid "There are no defined crews"
+msgstr "No hay cuadrillas definidas"
+
+#. module: omegasoft_hr_employee_crew
+#: model_terms:ir.actions.act_window,help:omegasoft_hr_employee_crew.employee_crew_action
+msgid "please create one"
+msgstr "Por favor, creé una"

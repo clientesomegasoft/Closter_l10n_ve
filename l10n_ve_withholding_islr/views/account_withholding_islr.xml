@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <!-- account.withholding.islr tree view -->
+    <record id="account_withholding_islr_view_tree" model="ir.ui.view">
+        <field name="name">account.withholding.islr.view.tree</field>
+        <field name="model">account.withholding.islr</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+                <field name="name" />
+                <field name="invoice_id" />
+                <field name="date" />
+                <field name="agent_id" />
+                <field name="subject_id" />
+                <field name="base_amount" optional="hide" />
+                <field name="amount" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="state" />
+                <field name="currency_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- account.withholding.islr form view -->
+    <record id="account_withholding_islr_view_form" model="ir.ui.view">
+        <field name="name">account.withholding.islr.view.form</field>
+        <field name="model">account.withholding.islr</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <header>
+                    <button
+                        name="button_post"
+                        states="draft"
+                        type="object"
+                        class="oe_highlight"
+                        string="Confirm"
+                    />
+                    <button
+                        name="button_send_mail"
+                        states="posted"
+                        type="object"
+                        string="Send by email"
+                    />
+                    <button
+                        name="button_draft"
+                        states="posted"
+                        type="object"
+                        string="Reset to draft"
+                    />
+                    <button
+                        name="button_cancel"
+                        states="draft,posted"
+                        type="object"
+                        string="Cancel"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,posted"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="move_id" invisible="1" />
+                        <button
+                            name="button_open_journal_entry"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-bars"
+                            attrs="{'invisible': ['|', ('state', '!=', 'posted'), ('move_id', '=', False)]}"
+                        >
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Entry</span>
+                            </div>
+                        </button>
+                    </div>
+                    <field name="xml_state" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Declared"
+                        attrs="{'invisible': [('xml_state', '!=', 'posted')]}"
+                    />
+                    <div class="oe_title">
+                        <span class="o_form_label"><field
+                                name="type"
+                                nolabel="1"
+                            /></span>
+                        <h1 class="mt0"><field
+                                name="name"
+                                attrs="{'required': [('type', '=', 'customer')], 'readonly': ['|', ('type', '=', 'supplier'), ('state', '!=', 'draft')]}"
+                            /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="invoice_id" />
+                            <field name="agent_id" />
+                            <field name="subject_id" />
+                        </group>
+                        <group>
+                            <field name="date" />
+                            <field name="invoice_date" />
+                            <field name="journal_id" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Lines">
+                            <field name="line_ids">
+                                <tree>
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="islr_concept_id" />
+                                    <field name="rate_id" />
+                                    <field name="base_amount" />
+                                    <field name="percent" />
+                                    <field name="subtraction" />
+                                    <field name="amount" />
+                                </tree>
+                            </field>
+                            <group col="4">
+                                <group colspan="1" class="oe_subtotal_footer oe_right">
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="base_amount" />
+                                    <field name="amount" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- account.withholding.islr customer action window -->
+    <record id="account_withholding_islr_customer_action" model="ir.actions.act_window">
+        <field name="name">Customers ISLR withholding</field>
+        <field name="res_model">account.withholding.islr</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type', '=', 'customer')]</field>
+        <field name="context">{'default_type': 'customer'}</field>
+    </record>
+
+    <!-- account.withholding.islr provider action window -->
+    <record id="account_withholding_islr_supplier_action" model="ir.actions.act_window">
+        <field name="name">Providers ISLR Withholding</field>
+        <field name="res_model">account.withholding.islr</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type', '=', 'supplier')]</field>
+        <field name="context">{'default_type': 'supplier'}</field>
+    </record>
+
+    <!-- account.withholding.islr customer menu items -->
+    <menuitem
+        id="menu_account_withholding_islr_customer"
+        action="account_withholding_islr_customer_action"
+        parent="account.menu_finance_receivables"
+    />
+
+    <!-- account.withholding.islr provider menu items -->
+    <menuitem
+        id="menu_account_withholding_islr_supplier"
+        action="account_withholding_islr_supplier_action"
+        parent="account.menu_finance_payables"
+    />
+</odoo>

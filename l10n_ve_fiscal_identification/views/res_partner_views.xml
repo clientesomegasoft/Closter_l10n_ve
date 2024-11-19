@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- res.partner form view -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">view.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//span[@name='address_name']" position="before">
+                <field
+                    name="person_type_id"
+                    attrs="{'invisible': [('type', 'not in', ('contact', 'invoice'))], 'required': [('type', 'in', ('contact', 'invoice'))]}"
+                    options="{'no_open': 1}"
+                />
+                <field name="person_type_code" invisible="1" />
+                <field
+                    name="identification"
+                    attrs="{'invisible': ['|', ('type', 'not in', ('contact', 'invoice')), ('is_company', '=', True)], 'required': [('type', 'in', ('contact', 'invoice')), ('is_company', '=', False)]}"
+                />
+                <field name="vat" position="move" />
+            </xpath>
+            <field name="vat" position="attributes">
+                <attribute name="placeholder">Ex. J-12345678-9</attribute>
+                <attribute
+                    name="attrs"
+                >{'invisible': [('type', 'not in', ('contact', 'invoice'))], 'required': [('person_type_code', '=', 'PJDO')], 'readonly': [('parent_id', '!=', False)]}</attribute>
+            </field>
+            <xpath expr="//sheet/group/group" position="inside">
+                <field
+                    name="partner_type"
+                    attrs="{'invisible': [('type', 'not in', ('contact', 'invoice'))], 'required': [('type', 'in', ('contact', 'invoice'))]}"
+                />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form/sheet/group[1]/group[1]/field[@name='name']"
+                position="after"
+            >
+                <field name="is_company" invisible="1" />
+                <field
+                    name="person_type_id"
+                    attrs="{'invisible': [('type', 'not in', ('contact', 'invoice'))], 'required': [('type', 'in', ('contact', 'invoice'))]}"
+                    options="{'no_open': 1}"
+                />
+                <field
+                    name="identification"
+                    attrs="{'invisible': [('type', 'not in', ('contact', 'invoice'))], 'required': [('type', 'in', ('contact', 'invoice'))]}"
+                />
+                <field
+                    name="partner_type"
+                    attrs="{'invisible': [('type', 'not in', ('contact', 'invoice'))], 'required': [('type', 'in', ('contact', 'invoice'))]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner filter form view -->
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field
+                    name="identification"
+                    filter_domain="[('identification', 'ilike', self)]"
+                />
+                <field name="vat" filter_domain="[('vat', 'ilike', self)]" />
+            </field>
+        </field>
+    </record>
+
+    <!-- res.partner search view -->
+    <record id="res_partner_view_search" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.res_partner_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='customer']" position="attributes">
+                <attribute name="string">Customers</attribute>
+                <attribute
+                    name="domain"
+                >[('partner_type', 'in', ['customer', 'customer_supplier'])]</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='supplier']" position="attributes">
+                <attribute name="string">Providers</attribute>
+                <attribute
+                    name="domain"
+                >[('partner_type', 'in', ['supplier', 'customer_supplier'])]</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

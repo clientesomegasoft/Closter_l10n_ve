@@ -1,0 +1,701 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_employee_advances_loans_discounts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-31 15:36+0000\n"
+"PO-Revision-Date: 2024-10-30 10:04-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#. odoo-python
+#: code:addons/omegasoft_hr_employee_advances_loans_discounts/models/hr_employee_advances_loans_discounts_lines.py:0
+#, python-format
+msgid "75{} del monto total de las prestaciones disponibles"
+msgstr ""
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__access_warning
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__access_warning
+msgid "Access warning"
+msgstr "Aviso de acceso"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_needaction
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_exception_decoration
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_state
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_type_icon
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__name
+msgid "Advance type"
+msgstr "Tipo de Anticipo"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "Advances Loans and discounts to employees"
+msgstr "Anticipos Préstamos y descuentos a empleados"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_view_employee_form_omegasoft__advances_loans_discounts_page
+msgid "Advances loans discounts"
+msgstr "Anticipos Préstamos y descuentos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee__advances_loans_discounts_line_ids
+msgid "Advances loans discounts lines"
+msgstr "Líneas de productos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__fee_amount
+msgid "Amount of installments to be discounted."
+msgstr "Monto de los cuotas a descontar."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__amount
+msgid "Amount to allocate (pay) the selected product."
+msgstr "Cantidad a designar a el producto seleccionado."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.actions.act_window,name:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_action
+#: model:ir.ui.menu,name:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts
+#: model:ir.ui.menu,name:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_config
+msgid "Anticipos Préstamos y descuentos"
+msgstr "Anticipos Préstamos y descuentos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_attachment_count
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de anexos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__benefit_interest
+msgid "Benefit interest"
+msgstr "Intereses prestacionales"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__description
+msgid "Brief description of the product"
+msgstr "Breve descripción del producto"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "Cancel"
+msgstr "RECHAZAR"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__company_id
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts__name__company
+msgid "Company"
+msgstr "Compañía"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__company_currency
+msgid "Company Currency"
+msgstr "Moneda de la compañía"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "Confirm"
+msgstr "CONFIRMAR"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__create_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__create_date
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__currency_id
+msgid "Currencies active in the company"
+msgstr "Monedas activas en la compañía"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__access_url
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__access_url
+msgid "Customer Portal URL"
+msgstr "URL del portal del cliente"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__date_issue
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__date_issue
+msgid "Date of issue"
+msgstr "Fecha de emisión"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__date_issue
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__date_issue
+msgid "Date of issue of the advance, loan or discount"
+msgstr "Fecha de emisión del anticipo, préstamo o descuento"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__days_per_year
+msgid "Days per year"
+msgstr "Días por año"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts__name__department
+msgid "Department"
+msgstr "Departmento"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__department_ids
+msgid "Departments"
+msgstr "Departmentos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__discount
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__discount_end_date
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__discount_end_date
+msgid "Discount end date"
+msgstr "Fecha de fin del descuento"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__discount_start_date
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__discount_start_date
+msgid "Discount start date"
+msgstr "Fecha de inicio del descuento"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__discount_state
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__discount_state
+msgid "Discount state"
+msgstr "Estado del descuento"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__display_name
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts__state__draft
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__discount_state__draft
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "Draft"
+msgstr "BORRADOR"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model,name:omegasoft_hr_employee_advances_loans_discounts.model_hr_employee
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts__name__employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model,name:omegasoft_hr_employee_advances_loans_discounts.model_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__advances_loans_discounts_id
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.advances_loans_discounts_lines_form
+msgid "Employee Advances, loans and discounts"
+msgstr "Anticipos, préstamos y descuentos a los empleados"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model,name:omegasoft_hr_employee_advances_loans_discounts.model_hr_employee_advances_loans_discounts_lines
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__advances_loans_discounts_line_ids
+msgid "Employee Advances, loans and discounts lines"
+msgstr "Líneas de Anticipos, préstamos y descuentos a los empleados"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model,name:omegasoft_hr_employee_advances_loans_discounts.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__employee_contract_ids
+msgid "Employee contract"
+msgstr "Contrato de trabajo"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__employee_reference
+msgid "Employee reference"
+msgstr "Referencia del empleado"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__employee_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__employee_ids
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__employee_ids
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__employee_ids
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__product_employee_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__product_employee_ids
+msgid "Employees product"
+msgstr "Empleados"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__exceeds_maximum
+msgid "Exceeds the maximum?"
+msgstr "¿Supera el máximo?"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__fees
+msgid "Fees"
+msgstr "Cuotas"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__fee_amount
+msgid "Fees Amount"
+msgstr "Monto de las cuotas"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_follower_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_partner_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_type_icon
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono Font awesome, por ejemplo fa-tasks"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__has_message
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__has_message
+msgid "Has Message"
+msgstr "Tiene Mensaje"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__id
+msgid "ID"
+msgstr "ID"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_exception_icon
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_exception_icon
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_needaction
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcada, nuevos mensajes requieren su atención."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_has_error
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_has_sms_error
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_has_error
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#. odoo-python
+#: code:addons/omegasoft_hr_employee_advances_loans_discounts/models/hr_employee_advances_loans_discounts_lines.py:0
+#, python-format
+msgid "Indicate the structure for loans and discounts from the employee contract"
+msgstr ""
+"Indique la estructura para los prestamos y descuentos desde el contrato de empleados"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__rate_amount
+msgid "Inverse Company Rate"
+msgstr "Tasa inversa de la compañía"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_is_follower
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_payroll_structure__is_loan_discount
+msgid "Is loan and Discount"
+msgstr "Prestamo y descuento"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__name
+msgid ""
+"It refers to whether the Advance, Loan or discount is for an employee, specific "
+"department or the entire company."
+msgstr ""
+"Se refiere a si el Anticipo, Préstamo o descuento es para un empleado, un "
+"departamento específico o toda la empresa."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts____last_update
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__write_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__write_date
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__loan
+msgid "Loan"
+msgstr "Préstamo"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_main_attachment_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_has_error
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__my_activity_date_deadline
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi plazo de actividad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_calendar_event_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_date_deadline
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite para la próxima actividad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_summary
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_type_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la próxima actividad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_needaction_counter
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_has_error_counter
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_needaction_counter
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_has_error_counter
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts__state__open
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__discount_state__open
+msgid "Open"
+msgstr "ABIERTO"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__others
+msgid "Others"
+msgstr "Otros"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts__state__paid
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__discount_state__paid
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "Paid"
+msgstr "PAGADO"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__per_diem
+msgid "Per diem"
+msgstr "Viáticos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__access_url
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__access_url
+msgid "Portal Access URL"
+msgstr "URL de acceso al portal"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "Product lines"
+msgstr "Líneas de productos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__type_advance_loan
+msgid "Products"
+msgstr "Productos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__profits
+msgid "Profits"
+msgstr "Utilidades"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__rate_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__rate_id
+msgid "Rate"
+msgstr "Tasa"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__rate_amount
+msgid "Rate amount"
+msgstr "Monto de la tasa"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts__state__rejected
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__discount_state__rejected
+msgid "Rejected"
+msgstr "RECHAZADO"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "Request advance"
+msgstr "Solicite un anticipo"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_user_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__message_has_sms_error
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model,name:omegasoft_hr_employee_advances_loans_discounts.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "Estructura salarial"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__access_token
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__access_token
+msgid "Security Token"
+msgstr "Token de seguridad"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__active
+msgid "Set active to false to hide the salary advance tag without removing it."
+msgstr ""
+"Establezca active en false para ocultar la etiqueta de anticipo de salario sin "
+"eliminarla."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__social_benefits
+msgid "Social benefits"
+msgstr "Prestaciones sociales"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_state
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_contract__structure_loan_discount
+msgid "Structure Loan and Discount"
+msgstr "Estructura para prestamo y descuentos"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__rate_amount
+msgid "The rate of the currency to the currency of rate 1 "
+msgstr "El tipo de la moneda a la moneda del tipo 1"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__activity_exception_decoration
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de excepción registrada."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__type_advance_loan
+msgid "Types of advances, loans that exist in the company"
+msgstr "Tipos de anticipos, préstamos que existen en la empresa"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields.selection,name:omegasoft_hr_employee_advances_loans_discounts.selection__hr_employee_advances_loans_discounts_lines__type_advance_loan__vacations
+msgid "Vacations"
+msgstr "Vacaciones"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__website_message_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__website_message_ids
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__website_message_ids
+msgid "Website communication history"
+msgstr "Historia de la comunicación en la web"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__exceeds_maximum
+msgid ""
+"When active, the system will not consider the limits of the amount of the advance "
+"payment."
+msgstr ""
+"Cuando esté activo, el sistema no tendrá en cuenta los límites delmonto del "
+"anticipo.."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__description
+msgid "description"
+msgstr "descripción"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts_lines__fees
+msgid "number of installments to be discounted."
+msgstr "número de cuotas a descontar."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model:ir.model.fields,help:omegasoft_hr_employee_advances_loans_discounts.field_hr_employee_advances_loans_discounts__employee_reference
+msgid "reference of the loan or advance to be requested."
+msgstr "referencia del préstamo o anticipo que se va a solicitar."
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "restore a draf"
+msgstr "RESTABLECER A BORRADOR"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_advances_loans_discounts.hr_employee_advances_loans_discounts_form
+msgid "restore a open"
+msgstr "RESTABLECER ABIERTO"
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#. odoo-python
+#: code:addons/omegasoft_hr_employee_advances_loans_discounts/models/hr_employee_advances_loans_discounts_lines.py:0
+#, python-format
+msgid "sus días por año"
+msgstr ""
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#. odoo-python
+#: code:addons/omegasoft_hr_employee_advances_loans_discounts/models/hr_employee_advances_loans_discounts_lines.py:0
+#, python-format
+msgid "sus intereses prestacionales"
+msgstr ""
+
+#. module: omegasoft_hr_employee_advances_loans_discounts
+#. odoo-python
+#: code:addons/omegasoft_hr_employee_advances_loans_discounts/models/hr_employee_advances_loans_discounts_lines.py:0
+#, python-format
+msgid "sus utilidades"
+msgstr ""

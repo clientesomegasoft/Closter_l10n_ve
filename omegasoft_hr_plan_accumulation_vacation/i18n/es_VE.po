@@ -1,0 +1,648 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_plan_accumulation_vacation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-29 11:47+0000\n"
+"PO-Revision-Date: 2024-10-30 18:05-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_employee__history_ids
+msgid "Accumulated"
+msgstr "Acumulado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_plan_accumulation_vacation.omegasoft_view_hr_accumulation_form
+msgid "Accumulated enjoy"
+msgstr "Plan de disfrute"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_plan_accumulation_vacation.omegasoft_view_hr_accumulation_form
+msgid "Accumulated vacation"
+msgstr "Plan de acumulacion de vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.actions.server,name:omegasoft_hr_plan_accumulation_vacation.ir_cron_employee_accumulation_ir_actions_server
+#: model:ir.cron,cron_name:omegasoft_hr_plan_accumulation_vacation.ir_cron_employee_accumulation
+msgid "Accumulated vacation employee"
+msgstr "Plan de acumulacion de vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.actions.act_window,name:omegasoft_hr_plan_accumulation_vacation.action_hr_accumulation
+#: model:ir.ui.menu,name:omegasoft_hr_plan_accumulation_vacation.menu_hr_vacation
+msgid "Acumulation Plan"
+msgstr "Plan acumulacion vacaciones y disfrute"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__additional_days
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__additional_days
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__additional_days
+msgid "Additional Days"
+msgstr "Dias adicionales"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de anexos"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__company_id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__employee_id
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__employee_id
+msgid "Company employees with contracts in Process"
+msgstr "Empleados de la empresa con contratos en Proceso"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__create_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__create_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__create_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__create_date
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__create_date
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__create_date
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__days_law
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__days_law
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__days_law
+msgid "Day Law"
+msgstr "Dias ley"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__display_name
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__display_name
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__display_name
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_plan_accumulation_history.py:0
+#, python-format
+msgid "Do not have vacations for the selected period"
+msgstr "No tiene vacaciones en el periodo seleccionado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model,name:omegasoft_hr_plan_accumulation_vacation.model_hr_employee
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__employee_id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__employee_file_code_id
+msgid "Employee File"
+msgstr "Ficha de empleado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__name
+msgid "Employee Name"
+msgstr "Nombre de empleado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__employee_file
+msgid "Employee file"
+msgstr "Ficha de empleado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__employee_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__enjoy_ids
+msgid "Enjoy"
+msgstr "Disfrute"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_leave.py:0
+#, python-format
+msgid "Error: The legal days, vacation days, and additional days cannot be less than zero"
+msgstr "Los días legales, días de vacaciones y días adicionales no pueden ser menoresque cero"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono Font awesome, por ejemplo fa-tasks"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_leave__history_ids
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_plan_accumulation_vacation.hr_leave_view_form_inherit_accumulated_vacation
+msgid "History"
+msgstr "Acumulado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__id
+msgid "ID"
+msgstr "Identificacion"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcada, nuevos mensajes requieren su atención."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_has_error
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__image_1920
+msgid "Image"
+msgstr "Imagen"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__image_1024
+msgid "Image 1024"
+msgstr "Imagen 1024"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__image_128
+msgid "Image 128"
+msgstr "Imagen 128"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__image_256
+msgid "Image 256"
+msgstr "Imagen 256"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__image_512
+msgid "Image 512"
+msgstr "Imagen 512"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__time_off_type_id
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__time_off_type_id
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__time_off_type_id
+msgid ""
+"It is the absence that will be used to create, update and recalculate the accumulated "
+"vacation plan for all fields."
+msgstr ""
+"Es la ausencia que se utilizará para crear, actualizar y recalcular el plan de vacaciones "
+"acumulado para todos los campos."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__days_law
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__days_law
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__days_law
+msgid ""
+"It refers to the 15 fixed legal days that are increased by the planned action or by adding "
+"lines."
+msgstr ""
+"Se refiere a los 15 días legales fijos que se incrementan con los previstosacción o agregando "
+"líneas."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__vacation_bonus
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__vacation_bonus
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__vacation_bonus
+msgid ""
+"It refers to the fixed 15-day Vacation Bonus that is increased by the planned action or by "
+"adding lines."
+msgstr ""
+"Se refiere al Bono Vacacional fijo de 15 días que se incrementa en el acción planificada o "
+"agregando líneas."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__last_calculation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__period
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__period
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__period
+msgid ""
+"It refers to the year to which the vacation days belong, Field will be increased "
+"automatically by the planned action."
+msgstr ""
+"Se refiere al año al que pertenecen los días de vacaciones, el campo será aumentado "
+"automáticamente por la acción planificada."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation____last_update
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy____last_update
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history____last_update
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__write_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__write_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__write_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por última vez por"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__write_date
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__write_date
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__write_date
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model,name:omegasoft_hr_plan_accumulation_vacation.model_hr_plan_accumulation_vacation
+msgid "Line Vacation accumulation plan"
+msgstr "Plan de acumulación de vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model,name:omegasoft_hr_plan_accumulation_vacation.model_hr_plan_accumulation_enjoy
+msgid "Lines Absence Enjoy Plan"
+msgstr "Plan de disfrute de vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_leave__liquidate
+msgid "Liquidate"
+msgstr "Liquidacion"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi plazo de actividad"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Siguiente evento en el calendario de actividades"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite para la próxima actividad"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la próxima actividad"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__period
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__period
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__period
+msgid "Period"
+msgstr "Periodo"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_plan_accumulation_vacation.hr_view_employee_form_omegasoft_accumulated__page
+msgid "Plan Accumulated"
+msgstr "Planes de acumulacion"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__leave_id
+msgid "Record"
+msgstr "Registro"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__request_date_to
+msgid "Request End Date"
+msgstr "Fecha Hasta"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__request_date_from
+msgid "Request Start Date"
+msgstr "Fecha Desde"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__active
+msgid "Set active to false to hide the children tag without removing it."
+msgstr "Establezca active en false para ocultar la etiqueta secundaria sin eliminarla."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_leave__state
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_plan_accumulation_vacation.py:0
+#, python-format
+msgid "The additional days cannot be less than zero or more than 15."
+msgstr "Los días adicionales no podrán ser inferiores a cero ni superiores a 15."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.constraint,message:omegasoft_hr_plan_accumulation_vacation.constraint_hr_plan_accumulation_Employee_unique
+msgid "The employee must be unique per company!"
+msgstr "¡El empleado debe ser único por Compañia!"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_plan_accumulation_vacation.py:0
+#, python-format
+msgid "The legal days cannot be less than zero or greater than 15."
+msgstr "Los días legales no pueden ser menores de cero ni mayores de 15."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_leave.py:0
+#, python-format
+msgid "The number of days to be deducted does not match the number of days of the permission"
+msgstr "El número de días a descontar no coincide con el número de días del permiso"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.constraint,message:omegasoft_hr_plan_accumulation_vacation.constraint_hr_plan_accumulation_enjoy_period_unique
+#: model:ir.model.constraint,message:omegasoft_hr_plan_accumulation_vacation.constraint_hr_plan_accumulation_vacation_period_unique
+msgid "The period must be unique per year!"
+msgstr "¡El período debe ser único por año!"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_leave__state
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__state
+msgid ""
+"The status is set to 'To Submit', when a time off request is created.\n"
+"The status is 'To Approve', when time off request is confirmed by user.\n"
+"The status is 'Refused', when time off request is refused by manager.\n"
+"The status is 'Approved', when time off request is approved by manager."
+msgstr ""
+"El estado se establece en `Para enviar', cuando se crea una solicitud de ausencia.\n"
+"El estado es 'Para Aprobar', cuando el usuario confirma la solicitud de ausencia.\n"
+"El estado es 'Rechazado', cuando el gerente rechaza la solicitud de ausencia.\n"
+"El estado es 'Aprobado', cuando el gerente aprueba la solicitud de ausencia."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_plan_accumulation_vacation.py:0
+#, python-format
+msgid "The vacation bonus days cannot be less than zero or more than 30."
+msgstr "Los días de bonificación vacacional no podrán ser inferiores a cero ni superiores a 30."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_leave_type.py:0
+#, python-format
+msgid ""
+"There can only be one type of absence with the is_plan_enjoy check active, including in "
+"archived records"
+msgstr ""
+"Solo puede haber un tipo de ausencia con el check (Es plan de disfrute) activo, incluso en "
+"registros archivados"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_leave_type.py:0
+#, python-format
+msgid ""
+"There can only be one type of absence with the is_plan_vacation check active, including in "
+"archived records"
+msgstr ""
+"Solo puede haber un tipo de ausencia con el check (Es plan de vacaciones)activo, incluso en "
+"registros archivados"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__additional_days
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__additional_days
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__additional_days
+msgid ""
+"This calculation of the field of additional days depends on the seniority in years, it is one "
+"day for each year of services from the second year with a cap of 15 days"
+msgstr ""
+"Este cálculo del campo de días adicionales depende de la antigüedad enaños, es un día por "
+"cada año de servicios a partir del segundo año con un gorra 15 dias"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_leave.py:0
+#, python-format
+msgid "This type of absence cannot be generated without their respective lines"
+msgstr "Este tipo de ausencia no se puede generar sin sus respectivas líneas"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model,name:omegasoft_hr_plan_accumulation_vacation.model_hr_leave
+msgid "Time Off"
+msgstr "Ausencias"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model,name:omegasoft_hr_plan_accumulation_vacation.model_hr_leave_type
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__time_off_type_id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__time_off_type_id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__time_off_type_id
+msgid "Time Off Type"
+msgstr "Tipo de ausencia"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de excepción registrada."
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__vacation_ids
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_plan_accumulation_vacation.omegasoft_view_hr_accumulation_form
+msgid "Vacation"
+msgstr "Vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__vacation_bonus
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_history__vacation_bonus
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__vacation_bonus
+msgid "Vacation bonus"
+msgstr "Bono de vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__accumulated_id
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__accumulated_id
+msgid "Vacations"
+msgstr "Vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,help:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__website_message_ids
+msgid "Website communication history"
+msgstr "Historia de la comunicación en la web"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#. odoo-python
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_plan_accumulation.py:0
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_plan_accumulation_enjoy.py:0
+#: code:addons/omegasoft_hr_plan_accumulation_vacation/models/hr_plan_accumulation_vacation.py:0
+#, python-format
+msgid "You must indicate in the types of absence, an absence of vacations and one of enjoyment"
+msgstr "Se debe indicar en los tipos de ausencia, una ausencia de vacaciones y unade disfrute"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model,name:omegasoft_hr_plan_accumulation_vacation.model_hr_plan_accumulation
+msgid "accumulation plan"
+msgstr "plan de acumulación"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_leave__is_plan_enjoy
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_leave_type__is_plan_enjoy
+msgid "is plan enjoy"
+msgstr "es plan de disfrute"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_leave__is_plan_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_leave_type__is_plan_vacation
+msgid "is plan vacation"
+msgstr "es plan de vacaciones"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation__last_calculation
+msgid "last calculation"
+msgstr "último cálculo"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model,name:omegasoft_hr_plan_accumulation_vacation.model_hr_plan_accumulation_history
+msgid "registration lines for what was consumed in the vacation plan and in the enjoyment plan"
+msgstr "líneas de registro de lo consumido en el plan vacacional y en elplan de disfrute"
+
+#. module: omegasoft_hr_plan_accumulation_vacation
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_enjoy__year_period
+#: model:ir.model.fields,field_description:omegasoft_hr_plan_accumulation_vacation.field_hr_plan_accumulation_vacation__year_period
+msgid "year of period"
+msgstr "año del período"

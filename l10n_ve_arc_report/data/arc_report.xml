@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="search_template_arc_report"
+        inherit_id="account_reports.search_template"
+        primary="True"
+    >
+        <xpath
+            expr="//div[hasclass('o_account_reports_filter_date')]"
+            position="replace"
+        />
+    </template>
+    <template
+        id="main_table_header_arc_report"
+        inherit_id="account_reports.main_table_header"
+        primary="True"
+    >
+        <xpath
+            expr="//thead[hasclass('o_account_reports_header_hierarchy')]/t"
+            position="replace"
+        />
+    </template>
+    <template
+        id="main_template_arc_report"
+        inherit_id="account_reports.main_template"
+        primary="True"
+    >
+        <xpath expr="//div[@id='warnings_div']" position="inside">
+            <div
+                class="alert alert-info text-center mb-0 no_print"
+                t-if="not options.get('partner_id')"
+            >
+                <span>Selecciona un proveedor</span>
+            </div>
+        </xpath>
+    </template>
+    <record id="arc_report" model="account.report">
+        <field name="name">ARC Proveedores</field>
+        <field name="filter_year" eval="True" />
+        <field name="filter_partner_id" eval="True" />
+        <field name="filter_date_range" eval="False" />
+        <field name="filter_period_comparison" eval="False" />
+        <field name="filter_show_draft" eval="False" />
+        <field name="filter_growth_comparison" eval="False" />
+        <field name="filter_currency" eval="False" />
+        <field name="filter_hierarchy">never</field>
+        <field
+            name="search_template"
+        >l10n_ve_arc_report.search_template_arc_report</field>
+        <field
+            name="main_table_header_template"
+        >l10n_ve_arc_report.main_table_header_arc_report</field>
+        <field name="main_template">l10n_ve_arc_report.main_template_arc_report</field>
+        <field name="custom_handler_model_id" ref="model_account_arc_report_handler" />
+        <field name="column_ids">
+            <record id="general_ledger_report_date" model="account.report.column">
+                <field name="name">Total facturas</field>
+                <field name="expression_label">total_invoice</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record
+                id="general_ledger_report_communication"
+                model="account.report.column"
+            >
+                <field name="name">Base</field>
+                <field name="expression_label">base</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record
+                id="general_ledger_report_partner_name"
+                model="account.report.column"
+            >
+                <field name="name">Retenido</field>
+                <field name="expression_label">amount</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record
+                id="general_ledger_report_amount_currency"
+                model="account.report.column"
+            >
+                <field name="name">Base acumulado</field>
+                <field name="expression_label">sum_base</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="general_ledger_report_debit" model="account.report.column">
+                <field name="name">Retenido acumulado</field>
+                <field name="expression_label">sum_amount</field>
+                <field name="figure_type">monetary</field>
+            </record>
+        </field>
+    </record>
+    <record id="action_account_report_arc" model="ir.actions.client">
+        <field name="name">ARC Proveedores</field>
+        <field name="tag">account_report</field>
+        <field
+            name="context"
+            eval="{'report_id': ref('l10n_ve_arc_report.arc_report')}"
+        />
+    </record>
+    <menuitem
+        id="menu_action_account_report_arc"
+        parent="l10n_ve_config_account.menu_l10n_ve_reports"
+        action="action_account_report_arc"
+    />
+</odoo>

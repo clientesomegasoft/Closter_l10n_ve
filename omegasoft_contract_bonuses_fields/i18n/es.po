@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_contract_bonuses_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-29 15:22+0000\n"
+"PO-Revision-Date: 2022-09-29 15:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,help:omegasoft_contract_bonuses_fields.field_hr_contract__perfect_attendance_bonus
+msgid "Bonus for punctual attendance at the assigned schedule."
+msgstr "Bonificación por asistir en el horario asignado puntualmente"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_bonuses_fields.hr_contract_bonuses_salary_field
+msgid "Bonuses"
+msgstr "Bonificaciones"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__complementary_bonus_currency
+msgid "Complementary Bonus Currency"
+msgstr "Moneda Bono Complementario"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__complementary_bonus
+msgid "Complementary bonus"
+msgstr "Bono Complementario"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__custom_contract_currency_bonus
+msgid "Custom Contract Currency Bonus"
+msgstr "Moneda para los bonos"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model,name:omegasoft_contract_bonuses_fields.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato del empleado"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,help:omegasoft_contract_bonuses_fields.field_hr_contract__night_bonus
+msgid "Indicates whether the employee has an active bonus"
+msgstr "Indica si el trabajador posee activa la bonificación"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,help:omegasoft_contract_bonuses_fields.field_hr_contract__complementary_bonus
+msgid "It is an extra salary in dollars to compensate for the basic salary."
+msgstr "Es un salario extra en dólares para compensar el salario básico"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__night_bonus
+msgid "Night bonus"
+msgstr "Bono nocturno"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__night_bonus_amount
+msgid "Night bonus amount"
+msgstr "Monto Bono Nocturno"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_bonuses_fields.field_hr_contract__perfect_attendance_bonus
+msgid "Perfect attendance bonus"
+msgstr "Bono Asistencia Perfecta"
+
+#. module: omegasoft_contract_bonuses_fields
+#: model:ir.model.fields,help:omegasoft_contract_bonuses_fields.field_hr_contract__night_bonus_amount
+msgid "Value assigned to the worker for night shift"
+msgstr "Valor Asignado al trabajador por Jornada Nocturna"

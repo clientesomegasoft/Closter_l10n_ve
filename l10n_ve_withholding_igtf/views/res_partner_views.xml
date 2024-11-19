@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- res.partner form view -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">view.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_ve_config_withholding.view_partner_form" />
+        <field name="arch" type="xml">
+            <group name="withholding" position="inside">
+                <group
+                    name="withholding_igtf"
+                    string="IGTF"
+                    attrs="{'invisible': [('partner_type', 'not in', ('supplier', 'customer_supplier'))]}"
+                >
+                    <field name="apply_igtf" />
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

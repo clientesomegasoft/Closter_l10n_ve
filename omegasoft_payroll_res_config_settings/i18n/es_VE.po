@@ -1,0 +1,868 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_payroll_res_config_settings
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-02 18:48+0000\n"
+"PO-Revision-Date: 2024-10-30 18:13-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">\n"
+"                                            Lines for calculating the average wage\n"
+"                                    </span>"
+msgstr ""
+"<span class=\"o_form_label\">\n"
+"                                        Líneas de configuración para el cálculo del salario promedio\n"
+"                                    </span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Advance profit sharing</span>"
+msgstr "<span class=\"o_form_label\">Anticipo de utilidades</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Average salary settings</span>"
+msgstr "<span class=\"o_form_label\">Configuración del salario promedio</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Categories for assignments</span>"
+msgstr "<span class=\"o_form_label\">Categorías para las asignaciones</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Categories for basic</span>"
+msgstr "<span class=\"o_form_label\">Salario básico</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Categories for deductions</span>"
+msgstr "<span class=\"o_form_label\">Categorías para las deducciones</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Categories for net</span>"
+msgstr "<span class=\"o_form_label\">Salario neto</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Categories for profits</span>"
+msgstr "<span class=\"o_form_label\">Categorías para las utilidades</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Categories of wage rules</span>"
+msgstr "<span class=\"o_form_label\">Categorías de reglas salariales</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Days of profit</span>"
+msgstr "<span class=\"o_form_label\">Días de utilidades</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Fee required for structures, in receipt of payment</span>"
+msgstr "<span class=\"o_form_label\">Tasa requerida para estructuras, en el recibo de nomina</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Lines other entries</span>"
+msgstr "<span class=\"o_form_label\">Líneas de otras entradas</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Minimum wage</span>"
+msgstr "<span class=\"o_form_label\">Salario mínimo</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Net income</span>"
+msgstr "<span class=\"o_form_label\">Utilidades netas</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Payroll structure for Average vacation salary</span>"
+msgstr "<span class=\"o_form_label\">Estructuras de nómina para el salario promedio Vacaciones</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Payroll structure for Salary Settlement</span>"
+msgstr "<span class=\"o_form_label\">Estructuras de nómina para el salario Liquidación</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Payroll structure</span>"
+msgstr "<span class=\"o_form_label\">Estructura Salarial</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Profits generated</span>"
+msgstr "<span class=\"o_form_label\">Utilidades generadas</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Quarterly payment of benefits</span>"
+msgstr "<span class=\"o_form_label\">Abono trimestral de prestaciones</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Salary Basket Ticket</span>"
+msgstr "<span class=\"o_form_label\">Salario Cesta Ticket</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Show average vacation salary</span>"
+msgstr "<span class=\"o_form_label\">Mostrar el salario promedio de Vacaciones</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Show salary Settlement</span>"
+msgstr "<span class=\"o_form_label\">Mostrar salario Liquidación</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Social benefits rate Central Bank</span>"
+msgstr "<span class=\"o_form_label\">Tasa prestaciones sociales Banco Central</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Social benefits</span>"
+msgstr "<span class=\"o_form_label\">Prestaciones sociales</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Structures for profits</span>"
+msgstr "<span class=\"o_form_label\">Estructuras salariales para las utilidades</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Structures for the reinitialization of Labor Liabilities</span>"
+msgstr "<span class=\"o_form_label\">Estructuras salariales para la reinicialización de los Pasivos Laborales</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Vacations</span>"
+msgstr "<span class=\"o_form_label\">Días de vacaciones</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Wage rule codes</span>"
+msgstr "<span class=\"o_form_label\">Códigos de reglas salariales</span>"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__active
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__active
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__active
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__active
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__advance_profit_sharing
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__advance_profit_sharing
+msgid "Advance profit sharing"
+msgstr "Anticipo de utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__amount
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__amount
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.central_bank_social_benefits_rate_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.days_of_profit_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.minimum_wage_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.salary_basket_ticket_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.vacations_history_view_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.act_window,name:omegasoft_payroll_res_config_settings.average_wage_lines_action
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_average_wage_lines
+msgid "Average Wage Lines"
+msgstr "Líneas salario promedio"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__average_days
+msgid "Average days"
+msgstr "Promedio de días"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__show_average_vacation_salary
+msgid "Average vacation salary"
+msgstr "Salario promedio de vacaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__best_weeks_check
+msgid "Best Weeks Check"
+msgstr "Mejores semanas"
+
+#. module: omegasoft_payroll_res_config_settings
+#. odoo-python
+#: code:addons/omegasoft_payroll_res_config_settings/models/global_amounts_history.py:0
+#, python-format
+msgid "Cannot archive the record in use."
+msgstr "No se puede archivar el registro en uso."
+
+#. module: omegasoft_payroll_res_config_settings
+#. odoo-python
+#: code:addons/omegasoft_payroll_res_config_settings/models/global_amounts_history.py:0
+#, python-format
+msgid "Cannot delete the record in use."
+msgstr "No se puede eliminar el registro en uso."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_categories_assignments
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_categories_assignments
+msgid "Categories for assignments"
+msgstr "Categorías para las asignaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_categories_basic
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_categories_basic
+msgid "Categories for basic"
+msgstr "Categoría para el salario básico"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_categories_deductions
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_categories_deductions
+msgid "Categories for deductions"
+msgstr "Categorías para las deducciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_categories_net
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_categories_net
+msgid "Categories for net"
+msgstr "Categoría para el salario neto"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_categories_for_profits
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_categories_for_profits
+msgid "Categories for profits"
+msgstr "Categorías para las utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__salary_rule_category
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_category
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_category
+msgid "Categories of wage rules"
+msgstr "Categorías de reglas salariales"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.act_window,name:omegasoft_payroll_res_config_settings.central_bank_social_benefits_rate_history_action
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_central_bank_social_benefits_rate_history
+msgid "Central Bank Social Benefits Rate History"
+msgstr "Historial: Tasa prestaciones sociales Banco Central"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.server,name:omegasoft_payroll_res_config_settings.ir_cron_central_bank_social_benefits_rate_history_ir_actions_server
+#: model:ir.cron,cron_name:omegasoft_payroll_res_config_settings.ir_cron_central_bank_social_benefits_rate_history
+msgid "Central bank social benefits rate History: set Social benefits rate Central Bank"
+msgstr "Historial Tasa prestaciones sociales Banco Central: establecer Tasa prestaciones sociales Banco Central"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__company_id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__company_id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__company_id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__company_id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__company_id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Configuration of accruals."
+msgstr "Configuración de acumulados."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Configuration of social benefits"
+msgstr "Configuración de las prestaciones sociales"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid ""
+"Configuration of the Structures for the reinitialization of Labor Liabilities \n"
+"                                        (Profit Sharing Liabilities)."
+msgstr ""
+"Configuración de las Estructuras para la reinicialización de Pasivos Laborales \n"
+"(Pasivo de Utilidades)."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid ""
+"Configuration of the Structures for the reinitialization of Labor Liabilities \n"
+"                                    (labor liabilities of days per year, interest on social benefits and social benefits)."
+msgstr ""
+"Configuración de las Estructuras para la reinicialización de Pasivos Laborales \n"
+"(Días por año, intereses sobre prestaciones sociales y prestaciones sociales)."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Configuration of the categories for the calculation of generated Profits."
+msgstr "Configuración de las categorías para el cálculo de las Utilidades generadas."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid ""
+"Configuration of the categories to be taken into account in the lines (salary calculation) \n"
+"                                        of the payroll to be paid for social benefits."
+msgstr ""
+"Configuración de las categorías que se tomaran en cuenta en las lineas (Calculo de salario) \n"
+"                                        de las nominas a pagar para las prestaciones sociales."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid ""
+"Configuration of the pay grade, pay structure and pay rule codes,\n"
+"                                            to be taken into account for the calculation of the net salary."
+msgstr ""
+"Configuración de la categoría, estructura salarial y códigos de reglas salariales,\n"
+"                                             que se tomaran en cuenta para el calculo del Salario neto.."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid ""
+"Configuration of the pay grade, pay structure and pay rule codes, \n"
+"                                            to be taken into account for the calculation of the base salary."
+msgstr ""
+"Configuración de la categoría, estructura salarial y códigos de reglas salariales, \n"
+"                                            que se tomaran en cuenta para el calculo del Salario básico."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Configuration of the structures for the calculation of generated Profits."
+msgstr "Configuración de las estructuras salariales para el cálculo de las utilidades generadas."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.actions.act_window,help:omegasoft_payroll_res_config_settings.central_bank_social_benefits_rate_history_action
+msgid "Create Central Bank Social Benefits Rate History"
+msgstr "Crear historial Tasa prestaciones sociales Banco Central"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.actions.act_window,help:omegasoft_payroll_res_config_settings.days_of_profit_history_action
+msgid "Create Days of Profit History"
+msgstr "Crear historial Días de utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.actions.act_window,help:omegasoft_payroll_res_config_settings.salary_basket_ticket_history_action
+msgid "Create Salary Basket Ticket History"
+msgstr "Crear historial Salario Cesta Ticket"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.actions.act_window,help:omegasoft_payroll_res_config_settings.vacations_history_action
+msgid "Create Vacations History"
+msgstr "Crear historial Vacaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.actions.act_window,help:omegasoft_payroll_res_config_settings.average_wage_lines_action
+msgid "Create average wage line"
+msgstr "Crear línea de salario promedio"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.actions.act_window,help:omegasoft_payroll_res_config_settings.minimum_wage_history_action
+msgid "Create minimum wage history"
+msgstr "Crear historial Salario mínimo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__create_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__create_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__create_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__create_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__create_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__create_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__create_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__create_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__create_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__create_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__currency_id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__currency_id
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.minimum_wage_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.salary_basket_ticket_history_view_search
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__days
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__days
+msgid "Days"
+msgstr "Número de días"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_days_of_profit_history
+msgid "Days Of Profit History"
+msgstr "Historial: Días de utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.act_window,name:omegasoft_payroll_res_config_settings.days_of_profit_history_action
+msgid "Days of Profit History"
+msgstr "Historial: Días de utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__days_of_profit
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__days_of_profit
+msgid "Days of profit"
+msgstr "Días de utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.server,name:omegasoft_payroll_res_config_settings.ir_cron_days_of_profit_history_ir_actions_server
+#: model:ir.cron,cron_name:omegasoft_payroll_res_config_settings.ir_cron_days_of_profit_history
+msgid "Days of profit History: set days of profit"
+msgstr "Historial días de utilidades: establecer Días de utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__structure_type_default_schedule_pay
+msgid "Default Scheduled Pay"
+msgstr "Pagos programados por defecto"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,help:omegasoft_payroll_res_config_settings.field_average_wage_lines__structure_type_default_schedule_pay
+msgid "Defines the frequency of the wage payment."
+msgstr "Define la frecuencia del pago de salarios."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__display_name
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__display_name
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__display_name
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__display_name
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__display_name
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Global amounts"
+msgstr "Montos globales"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid ""
+"Global amounts to customize the minimum wage, vacation days, \n"
+"                                    utility days, ticket basket salary and the rate of employee benefits."
+msgstr ""
+"Montos globales para personalizar el salario mínimo, los días de vacaciones, \n"
+"                                    los días de utilidades, el salario cesta ticket y la tasa de beneficios de los empleados."
+
+#. module: omegasoft_payroll_res_config_settings
+#. odoo-python
+#: code:addons/omegasoft_payroll_res_config_settings/models/res_config_settings.py:0
+#, python-format
+msgid "Global amounts. The amount entered must not be less than zero."
+msgstr "Importes globales. El monto ingresado no debe ser menor a cero."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.central_bank_social_benefits_rate_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.days_of_profit_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.minimum_wage_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.salary_basket_ticket_history_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.vacations_history_view_search
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "History"
+msgstr "Historial"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__id
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__id
+msgid "ID"
+msgstr "ID"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__in_use
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__in_use
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__in_use
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__in_use
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__in_use
+msgid "In Use"
+msgstr "En uso"
+
+#. module: omegasoft_payroll_res_config_settings
+#. odoo-python
+#: code:addons/omegasoft_payroll_res_config_settings/models/global_amounts_history.py:0
+#, python-format
+msgid "It is not possible to create backdated records through the interface. Historical data must be entered by import upload."
+msgstr ""
+"No es posible crear registros retroactivos a través de la interfaz.Los datos históricos deben ingresarse mediante carga de "
+"importación."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines____last_update
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history____last_update
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history____last_update
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history____last_update
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history____last_update
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__write_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__write_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__write_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__write_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__write_uid
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__write_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_central_bank_social_benefits_rate_history__write_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_days_of_profit_history__write_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_minimum_wage_history__write_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_salary_basket_ticket_history__write_date
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_vacations_history__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__lines_other_entries_type
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__lines_other_entries_type
+msgid "Lines other entries"
+msgstr "Líneas de otras entradas"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Localization Payroll"
+msgstr "Localización Nómina"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Manage lines for average wage calculation"
+msgstr "Administrar las líneas para el cálculo del salario promedio"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__minimum_wage_currency
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__minimum_wage_currency
+msgid "Minimum Wage Currency"
+msgstr "Moneda del salario mínimo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__minimum_wage
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__minimum_wage
+msgid "Minimum wage"
+msgstr "Salario mínimo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.act_window,name:omegasoft_payroll_res_config_settings.minimum_wage_history_action
+msgid "Minimum wage History"
+msgstr "Historial: Salario mínimo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_minimum_wage_history
+msgid "Minimum wage history"
+msgstr "Historial: Salario mínimo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.server,name:omegasoft_payroll_res_config_settings.ir_cron_minimum_wage_history_ir_actions_server
+#: model:ir.cron,cron_name:omegasoft_payroll_res_config_settings.ir_cron_minimum_wage_history
+msgid "Minimum wage history: set minimum wage"
+msgstr "Historial Salario mínimo: establecer Salario mínimo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__net_income
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__net_income
+msgid "Net income"
+msgstr "Utilidades netas"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__number_of_best_weeks
+msgid "Number of Best Weeks"
+msgstr "Cantidad mejores semanas"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Payment receipt configuration"
+msgstr "Configuración del recibo de pago"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__payroll_structure_for_average_vacation_salary
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__payroll_structure_for_average_vacation_salary
+msgid "Payroll structure for Average vacation salary"
+msgstr "Estructuras de nómina para el salario promedio Vacaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__payroll_structure_for_salary_settlement
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__payroll_structure_for_salary_settlement
+msgid "Payroll structure for Salary Settlement"
+msgstr "Estructuras de nómina para el salario Liquidación"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__payroll_structure_for_basic
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__payroll_structure_for_basic
+msgid "Payroll structure for basic"
+msgstr "Estructuras salariales para el salario básico"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__payroll_structure_for_net
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__payroll_structure_for_net
+msgid "Payroll structure for net"
+msgstr "Estructuras salariales para el salario neto"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__payroll_structure_for_profits
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__payroll_structure_for_profits
+msgid "Payroll structure for profits"
+msgstr "Estructuras salariales para las utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Profits"
+msgstr "Utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__profits_generated
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__profits_generated
+msgid "Profits generated"
+msgstr "Utilidades generadas"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__quarterly_payment_benefits
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__quarterly_payment_benefits
+msgid "Quarterly payment of benefits"
+msgstr "Abono trimestral de prestaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__codes_line_receipt
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__codes_line_receipt
+msgid "Receipt line codes"
+msgstr "Códigos de línea de recibo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_for_basic
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_for_basic
+msgid "Rule for basic"
+msgstr "Reglas para el salario básico"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_rules_for_net
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_rules_for_net
+msgid "Rule for net"
+msgstr "Reglas para el salario neto"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_basket_ticket
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_basket_ticket
+msgid "Salary Basket Ticket"
+msgstr "Salario Cesta Ticket"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__salary_basket_ticket_currency
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__salary_basket_ticket_currency
+msgid "Salary Basket Ticket Currency"
+msgstr "Moneda del Salario Cesta Ticket"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.act_window,name:omegasoft_payroll_res_config_settings.salary_basket_ticket_history_action
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_salary_basket_ticket_history
+msgid "Salary Basket Ticket History"
+msgstr "Historial: Salario Cesta Ticket"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.server,name:omegasoft_payroll_res_config_settings.ir_cron_salary_basket_ticket_history_ir_actions_server
+#: model:ir.cron,cron_name:omegasoft_payroll_res_config_settings.ir_cron_salary_basket_ticket_history
+msgid "Salary Basket Ticket History: set salary basket ticket"
+msgstr "Historial Salario Cesta Ticket: establecer Salario Cesta Ticket"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__show_salary_settlement
+msgid "Salary Settlement"
+msgstr "Salario Liquidación"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Selection of the structures in which the rate will be mandatory when creating the payroll."
+msgstr "Selección de las estructuras en las cuales la tasa sera obligatoria al crear la nomina."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__sequences_lines_receipt
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__sequences_lines_receipt
+msgid "Sequences of lines on the receipt"
+msgstr "Secuencias de líneas en el recibo"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Setting to display average salary and settlement salary on the pay slip."
+msgstr "Configuración para mostrar el salario promedio y el salario de liquidación en el recibo."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Setting up the structures for the average Vacation and Salary Settlement Wages."
+msgstr "Configuración de las estructuras salariales para el salario promedio Vacaciones y salario Liquidación."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__show_average_vacation_salary
+msgid "Show Average vacation salary"
+msgstr "Mostrar el salario promedio"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__show_salary_settlement
+msgid "Show Salary Settlement"
+msgstr "Mostrar el salario liquidación"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__social_benefits
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__social_benefits
+msgid "Social benefits"
+msgstr "Prestaciones sociales"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__central_bank_social_benefits_rate
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__central_bank_social_benefits_rate
+msgid "Social benefits rate Central Bank"
+msgstr "Tasa prestaciones sociales Banco Central"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__payroll_structure_type
+msgid "Structure type"
+msgstr "Tipo de estructura"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__structure_for_resets_labor_liabilities
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__structure_for_resets_labor_liabilities
+msgid "Structures for labor liabilities resets"
+msgstr "Estructura para reiniciar pasivos laborales"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,help:omegasoft_payroll_res_config_settings.field_res_company__structure_for_resets_labor_liabilities
+#: model:ir.model.fields,help:omegasoft_payroll_res_config_settings.field_res_config_settings__structure_for_resets_labor_liabilities
+msgid "Structures for the reinitialization of labor liabilities (at year-end)"
+msgstr "Estructuras para la reinicialización de pasivos laborales (al cierre del ejercicio)"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,help:omegasoft_payroll_res_config_settings.field_res_config_settings__structures_for_utility_resets
+msgid "Structures for the reinitialization of profits"
+msgstr "Estructuras salariales para la reinicialización de las utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,help:omegasoft_payroll_res_config_settings.field_res_company__structures_for_utility_resets
+msgid "Structures for the reinitialization of profits (at year-end)"
+msgstr "Estructuras salariales para la reinicialización de las utilidades (a final de año)"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__structures_for_utility_resets
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__structures_for_utility_resets
+msgid "Structures for utility resets"
+msgstr "Estructuras salariales para el reinicialización de las utilidades"
+
+#. module: omegasoft_payroll_res_config_settings
+#. odoo-python
+#: code:addons/omegasoft_payroll_res_config_settings/models/global_amounts_history.py:0
+#, python-format
+msgid "The amount must be greater than zero."
+msgstr "La cantidad debe ser mayor que cero."
+
+#. module: omegasoft_payroll_res_config_settings
+#. odoo-python
+#: code:addons/omegasoft_payroll_res_config_settings/models/global_amounts_history.py:0
+#, python-format
+msgid "The days must be greater or equal than zero."
+msgstr "Los días deben ser mayores o iguales que cero."
+
+#. module: omegasoft_payroll_res_config_settings
+#. odoo-python
+#: code:addons/omegasoft_payroll_res_config_settings/models/global_amounts_history.py:0
+#, python-format
+msgid "There can be no more than one record per day."
+msgstr "No puede haber más de un registro por día."
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__vacations
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__vacations
+msgid "Vacations"
+msgstr "Días de vacaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.act_window,name:omegasoft_payroll_res_config_settings.vacations_history_action
+#: model:ir.model,name:omegasoft_payroll_res_config_settings.model_vacations_history
+msgid "Vacations History"
+msgstr "Historial: Días de vacaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.actions.server,name:omegasoft_payroll_res_config_settings.ir_cron_vacations_history_ir_actions_server
+#: model:ir.cron,cron_name:omegasoft_payroll_res_config_settings.ir_cron_vacations_history
+msgid "Vacations History: set vacation days"
+msgstr "Historial Días de vacaciones: establecer Días de vacaciones"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model_terms:ir.ui.view,arch_db:omegasoft_payroll_res_config_settings.l10n_ve_omegasoft_res_config_settings_view_form
+msgid "Wage configuration"
+msgstr "Configuración del salario"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__average_wage_ids
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__average_wage_ids
+msgid "average wage"
+msgstr "salario promedio"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__average_wage_count
+msgid "average_wage_count"
+msgstr "contador de líneas de salario promedio"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_company__payroll_structure_for_rate
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_res_config_settings__payroll_structure_for_rate
+msgid "fee required for the following structures"
+msgstr "tasa requerida para las siguientes estructuras"
+
+#. module: omegasoft_payroll_res_config_settings
+#: model:ir.model.fields,field_description:omegasoft_payroll_res_config_settings.field_average_wage_lines__number_of_weeks
+msgid "number of weeks"
+msgstr "número de semanas a tomar"

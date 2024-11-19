@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_islr_concept,access.account.islr.concept,model_account_islr_concept,,1,1,1,1
-access_account_islr_concept_rate,access.account.islr.concept.rate,model_account_islr_concept_rate,,1,1,1,1
-access_account_withholding_islr,access.account.withholding.islr,model_account_withholding_islr,,1,1,1,1
-access_account_withholding_islr_line,access.account.withholding.islr.line,model_account_withholding_islr_line,,1,1,1,1
-access_account_withholding_islr_xml,access.account.withholding.islr.xml,model_account_withholding_islr_xml,,1,1,1,1

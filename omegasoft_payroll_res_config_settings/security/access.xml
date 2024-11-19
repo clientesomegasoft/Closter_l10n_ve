@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- average_wage_lines -->
+    <record id="access_model_average_wage_lines" model="ir.model.access">
+        <field name="name">model_access_average_wage_lines</field>
+        <field
+            name="model_id"
+            ref="omegasoft_payroll_res_config_settings.model_average_wage_lines"
+        />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- minimum wage history -->
+    <record id="access_model_minimum_wage_history" model="ir.model.access">
+        <field name="name">model_access_minimum_wage_history</field>
+        <field
+            name="model_id"
+            ref="omegasoft_payroll_res_config_settings.model_minimum_wage_history"
+        />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- salary basket ticket history -->
+    <record id="access_model_salary_basket_ticket_history" model="ir.model.access">
+        <field name="name">model_access_salary_basket_ticket_history</field>
+        <field
+            name="model_id"
+            ref="omegasoft_payroll_res_config_settings.model_salary_basket_ticket_history"
+        />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- vacations history -->
+    <record id="access_model_vacations_history" model="ir.model.access">
+        <field name="name">model_access_vacations_history</field>
+        <field
+            name="model_id"
+            ref="omegasoft_payroll_res_config_settings.model_vacations_history"
+        />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- days of profit history -->
+    <record id="access_model_days_of_profit_history" model="ir.model.access">
+        <field name="name">model_access_days_of_profit_history</field>
+        <field
+            name="model_id"
+            ref="omegasoft_payroll_res_config_settings.model_days_of_profit_history"
+        />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <!-- central bank social benefits rate history -->
+    <record
+        id="access_model_central_bank_social_benefits_rate_history"
+        model="ir.model.access"
+    >
+        <field
+            name="name"
+        >model_access_central_bank_social_benefits_rate_history</field>
+        <field
+            name="model_id"
+            ref="omegasoft_payroll_res_config_settings.model_central_bank_social_benefits_rate_history"
+        />
+        <field name="group_id" ref="base.group_system" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+</odoo>

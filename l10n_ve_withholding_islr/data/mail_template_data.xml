@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="mail_template_withholding_islr_receipt" model="mail.template">
+        <field name="name">Proof of ISLR withholding</field>
+        <field
+            name="model_id"
+            ref="l10n_ve_withholding_islr.model_account_withholding_islr"
+        />
+        <field
+            name="subject"
+        >{{ object.agent_id.name }} - Proof of ISLR withholding: {{ object.name }}</field>
+        <field
+            name="email_from"
+        >{{ (object.create_uid.email_formatted or user.email_formatted) }}</field>
+        <field
+            name="partner_to"
+        >{{ object.type == 'supplier' and object.subject_id.id or object.agent_id.id}}</field>
+        <field
+            name="description"
+        >Sends an email when the "SEND BY EMAIL" button is pressed on the ISLR withholding receipts</field>
+        <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+<p style="margin: 0px; padding: 0px;font-size: 13px;">
+    Hello <t
+                        t-out="object.type == 'supplier' and object.subject_id.name or object.agent_id.name"
+                    />,<br />
+    Attached here is the ISLR withholding receipt: <strong t-out="object.name" />
+    for an amount of<strong
+                        t-out="format_amount(object.amount, object.currency_id)"
+                    />,<br />
+    corresponding to Invoice No. <strong
+                        t-out="object.type == 'supplier' and object.invoice_id.supplier_invoice_number or object.invoice_id.name"
+                    />.<br />
+    You can reply to this email if you have any questions.
+    <br /><br />
+    Thank you so much.
+    <t t-if="user.signature">
+        <br /><t t-out="user.signature" />
+    </t>
+</p>
+</div></field>
+        <field name="report_template" ref="account_withholding_islr_report" />
+        <field name="report_name">ISLR Voucher - {{ object.name }}</field>
+        <field name="lang">{{ object.subject_id.lang }}</field>
+        <field name="auto_delete" eval="True" />
+    </record>
+</odoo>

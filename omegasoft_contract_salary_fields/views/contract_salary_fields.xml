@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- hr.contract form view -->
+    <record id="hr_contract_salary_field" model="ir.ui.view">
+        <field name="name">hr.contract.salary.field</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='salary_info']" position="attributes">
+                <attribute name="string">Salaries</attribute>
+            </xpath>
+
+            <xpath expr="//div[@name='hourly_wage']" position="after">
+                <label for="cestaticket_salary" />
+                <div class="o_row" name="cestaticket_salary">
+                    <field
+                        name="cestaticket_salary"
+                        nolabel="1"
+                        required="1"
+                        widget="monetary"
+                        options="{'currency_field': 'cestaticket_salary_currency'}"
+                    /><div />
+                    <field
+                        name="cestaticket_salary_currency"
+                        options="{'no_open': True, 'no_create': True}"
+                        attrs="{'required': [('cestaticket_salary', '>', 0)]}"
+                    />
+                </div>
+
+                <label for="average_wage" />
+                <div class="o_row" name="average_wage">
+                    <field name="is_average_wage" invisible="1" />
+                    <field
+                        name="average_wage"
+                        nolabel="1"
+                        attrs="{'readonly': [('is_average_wage', '=', True)]}"
+                        required="1"
+                        widget="monetary"
+                        options="{'currency_field': 'average_wage_currency'}"
+                    /><span />
+                    <field
+                        name="average_wage_currency"
+                        options="{'no_open': True, 'no_create': True}"
+                        invisible="1"
+                    />
+                    <field
+                        name="average_wage_date_start"
+                        placeholder="Date Start"
+                        attrs="{'required': [('average_wage', '>', 0)]}"
+                        force_save="1"
+                    />
+                    <field
+                        name="average_wage_date_end"
+                        placeholder="Date End"
+                        attrs="{'required': [('average_wage', '>', 0)]}"
+                        force_save="1"
+                    />
+                    <field
+                        name="average_wage_date_start"
+                        placeholder="Date Start"
+                        invisible="1"
+                    />
+                    <field
+                        name="average_wage_date_end"
+                        placeholder="Date End"
+                        invisible="1"
+                    />
+                </div>
+
+                <label for="salary_overtime_hours" />
+                <div class="o_row" name="salary_overtime_hours">
+                    <field
+                        name="salary_overtime_hours"
+                        required="1"
+                        widget="monetary"
+                        options="{'currency_field': 'salary_overtime_hours_currency'}"
+                    /><span>P/hr.</span>
+                    <field
+                        name="salary_overtime_hours_currency"
+                        options="{'no_open': True, 'no_create': True}"
+                        invisible="1"
+                    />
+                </div>
+            </xpath>
+
+            <xpath expr="//label[@for='wage']" position="replace">
+                <label for="wage" invisible='1' />
+            </xpath>
+
+            <xpath expr="//div[@name='wage']" position="replace">
+                <div class="o_row" name="wage" invisible='1'>
+                    <field
+                        name="wage"
+                        nolabel="1"
+                        options="{'currency_field': 'custom_wage_currency'}"
+                    />
+                    <div class="mb-3">/ month</div>
+                    <field
+                        name="custom_wage_currency"
+                        options="{'no_open': True, 'no_create': True}"
+                        attrs="{'required': [('wage', '>', 0)]}"
+                    />
+                </div>
+            </xpath>
+
+            <xpath expr="//div[@name='hourly_wage']" position="after">
+                <label
+                    for="wage"
+                    attrs="{'invisible': [('wage_type', '=', 'hourly')]}"
+                />
+                <div
+                    class="o_row"
+                    name="wage"
+                    attrs="{'invisible': [('wage_type', '=', 'hourly')]}"
+                >
+                    <field
+                        name="wage"
+                        nolabel="1"
+                        options="{'currency_field': 'custom_wage_currency'}"
+                    />
+                    <div class="mb-3">/ month</div>
+                    <field
+                        name="custom_wage_currency"
+                        options="{'no_open': True, 'no_create': True}"
+                        attrs="{'required': [('wage', '>', 0)]}"
+                    />
+                </div>
+            </xpath>
+
+            <xpath expr="//div[@name='hourly_wage']/span" position="after">
+                <field
+                    name="custom_hourly_wage_currency"
+                    options="{'no_open': True, 'no_create': True}"
+                    attrs="{'required': [('hourly_wage', '>', 0)]}"
+                />
+            </xpath>
+
+            <xpath
+                expr="//div[@name='hourly_wage']/field[@name='hourly_wage']"
+                position="attributes"
+            >
+                <attribute
+                    name="options"
+                >{'currency_field': 'custom_hourly_wage_currency'}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='department_id'][1]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='department_id'][2]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='job_id'][1]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='job_id'][2]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='contract_type_id'][1]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='contract_type_id'][2]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='structure_type_id'][1]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='structure_type_id'][2]" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='employee_id']" position="before">
+                <field name="employee_file" invisible="True" />
+                <field
+                    name="employee_file_code_id"
+                    attrs="{'invisible': [('employee_file', '=', False)], 'readonly': [('state', '!=', 'draft')]}"
+                    options="{'no_open': 1, 'no_create': 1}"
+                />
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute
+                    name="attrs"
+                >{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

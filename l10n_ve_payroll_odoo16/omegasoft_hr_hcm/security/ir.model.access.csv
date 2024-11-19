@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hr_hcm_insurer_user,access.hr.hcm.insurer.user,model_hr_hcm_insurer,hr.group_hr_user,1,1,1,1
-access_hr_hcm_coverage_scale_readonly,access.hr.hcm.coverage.scale.readonly,model_hr_hcm_coverage_scale,base.group_user,1,0,0,0
-access_hr_hcm_coverage_scale_user,access.hr.hcm.coverage.scale.user,model_hr_hcm_coverage_scale,hr.group_hr_user,1,1,1,1
-access_hr_hcm_coverage_scale_manager,access.hr.hcm.coverage.scale.manager,model_hr_hcm_coverage_scale,hr.group_hr_manager,1,1,1,1

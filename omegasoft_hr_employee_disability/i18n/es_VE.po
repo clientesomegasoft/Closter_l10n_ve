@@ -1,0 +1,348 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_employee_disability
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-10 13:27+0000\n"
+"PO-Revision-Date: 2024-10-30 15:32-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.actions.report,print_report_name:omegasoft_hr_employee_disability.canapdis_report_action
+msgid "(object.name)"
+msgstr "(object.name)"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__access_warning
+msgid "Access warning"
+msgstr "Aviso de acceso"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de anexos"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.actions.act_window,name:omegasoft_hr_employee_disability.hr_canapdis_action
+#: model:ir.actions.report,name:omegasoft_hr_employee_disability.canapdis_report_action
+#: model:ir.model,name:omegasoft_hr_employee_disability.model_hr_canapdis
+#: model:ir.ui.menu,name:omegasoft_hr_employee_disability.canapdis_menu
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_document
+msgid "CANAPDIS"
+msgstr "CANAPDIS"
+
+#. module: omegasoft_hr_employee_disability
+#: modelNúmero
+#: ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_document
+msgid "Certificate number"
+msgstr "Número de certificado"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__create_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__create_date
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__access_url
+msgid "Customer Portal URL"
+msgstr "URL del portal del cliente"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: omegasoft_hr_employee_disability
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_document
+msgid "Date:"
+msgstr "Fecha:"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__name
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_document
+msgid "Disability"
+msgstr "Discapacidad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__display_name
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model,name:omegasoft_hr_employee_disability.model_hr_employee
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_document
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: omegasoft_hr_employee_disability
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.hr_employee_disability_form
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.hr_employee_inherit_employee_disability
+msgid "Employee Disability"
+msgstr "Discapacidad del empleado"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__employee_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model,name:omegasoft_hr_employee_disability.model_hr_employee_disability
+msgid "Employees disability"
+msgstr "Discapacidad del empleado"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee__employee_type_disability_ids
+msgid "Employees type disability"
+msgstr "Discapacidad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono Font awesome, por ejemplo fa-tasks"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__has_message
+msgid "Has Message"
+msgstr "Tiene Mensaje"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__id
+msgid "ID"
+msgstr "ID"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcada, nuevos mensajes requieren su atención."
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__message_has_error
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis____last_update
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__write_uid
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__write_date
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee_disability__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi plazo de actividad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite para la próxima actividad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la próxima actividad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__access_url
+msgid "Portal Access URL"
+msgstr "URL de acceso al portal"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: omegasoft_hr_employee_disability
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_view_form
+msgid "Search employees"
+msgstr "Buscar empleados"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__access_token
+msgid "Security Token"
+msgstr "Token de seguridad"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
+
+#. module: omegasoft_hr_employee_disability
+#: model_terms:ir.actions.act_window,help:omegasoft_hr_employee_disability.hr_canapdis_action
+msgid "Theres CANAPDIS generated yet."
+msgstr "No se han generado CANAPDIS todavia."
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de la actividad de excepción registrada."
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_canapdis__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,help:omegasoft_hr_employee_disability.field_hr_canapdis__website_message_ids
+msgid "Website communication history"
+msgstr "Historia de la comunicación en la web"
+
+#. module: omegasoft_hr_employee_disability
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_view_search
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_disability.canapdis_view_tree
+msgid "canapdis"
+msgstr "canapdis"
+
+#. module: omegasoft_hr_employee_disability
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_disability.field_hr_employee__certificate_number
+msgid "certificate number"
+msgstr "número de certificado"

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <!-- sale.order form view -->
+    <record id="omegasoft_view_order_form_commission_inherit" model="ir.ui.view">
+        <field name="name">view.order.form.commission.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='order_details']" position="inside">
+                <field name="required_department_id" invisible="1" />
+                <field
+                    name="department_id"
+                    attrs="{'required': [('required_department_id', '=', True)]}"
+                />
+            </xpath>
+
+            <xpath expr="//group[@name='sale_info']" position="inside">
+                <separator string="Commissions" />
+                <label for="seller_employee_id" />
+                <div class="o_row" name="seller_employee_id">
+                    <field name="seller_employee_id" />
+                </div>
+                <label for="assigned_employee_id" />
+                <div class="o_row" name="assigned_employee_id">
+                    <field name="assigned_employee_id" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

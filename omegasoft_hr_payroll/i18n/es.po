@@ -1,0 +1,272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-20 18:57+0000\n"
+"PO-Revision-Date: 2022-10-20 18:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_hr_payroll
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll.hr_payroll_payslip_by_employees_omegasoft
+msgid ""
+"<span class=\"text-muted\">Set a specific department if you want to select "
+"all employees of this department (and sub-departments) at once. In case you "
+"have selected a structure that has associated departments these will be "
+"selected automatically as well as their employees.</span>"
+msgstr ""
+"<span class=\"text-muted\">Establezca un departamento específico si desea "
+"seleccionar todos los empleados de este departamento (y subdepartamentos) a "
+"la vez. En caso de haber seleccionado una estructura salarial que tenga "
+"asociados departamentos, estos se seleccionaran automáticamente así como sus"
+" empleados.</span>"
+
+#. module: omegasoft_hr_payroll
+#: model:mail.template,body_html:omegasoft_hr_payroll.mail_template_new_payslip_custom_omegasoft
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%; margin:0px auto;\">\n"
+"                    <tbody>\n"
+"                        <tr>\n"
+"                            <td valign=\"top\" style=\"text-align: left; font-size: 14px;\">\n"
+"                                Dear <t t-esc=\"object.employee_id.name\"/>, a new payslip is available for you.<br/><br/>\n"
+"                                Please find the PDF in your employee portal.<br/><br/>\n"
+"                                Have a nice day,<br/>\n"
+"                                The HR Team\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"            "
+msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%; margin:0px auto;\">\n"
+"                    <tbody>\n"
+"                        <tr>\n"
+"                            <td valign=\"top\" style=\"text-align: left; font-size: 14px;\">\n"
+"                                Estimado(a) <t t-esc=\"object.employee_id.name\"/>, hay un nuevo recibo de nómina disponible para usted.<br/><br/>\n"
+"                                Encontrará el PDF adjunto a éste correo.<br/><br/>\n"
+"                                Tenga un buen día,<br/>\n"
+"                                El equipo de RR.HH\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"            "
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_res_currency_rate__currency_rate_active
+msgid "Active"
+msgstr ""
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__email_state__cancel
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__company_currency
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__company_currency
+msgid "Company Currency"
+msgstr "Moneda de la compañia"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__currency_id
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure_type__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_res_currency_rate
+msgid "Currency Rate"
+msgstr "Tasa monetaria"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__struct_fortnight
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_employees__struct_fortnight
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__struct_fortnight
+msgid "Defines the frequency of the wage payment."
+msgstr "Define la frecuencia del pago de salarios"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__email_state__exception
+msgid "Delivery Failed"
+msgstr "Entrega fallida"
+
+#. module: omegasoft_hr_payroll
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll.hr_payroll_payslip_by_employees_omegasoft
+msgid "Department"
+msgstr "Departamento"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payroll_structure__department_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_employees__department_ids
+msgid "Departments"
+msgstr "Departamentos"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__email_state
+msgid "Email Status"
+msgstr "Correo del recibo"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_mail_template
+msgid "Email Templates"
+msgstr "Plantillas de correo electrónico"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__fortnight__first_fortnight
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip_employees__fortnight__first_fortnight
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip_run__fortnight__first_fortnight
+msgid "First fortnight"
+msgstr "Primera quincena"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__fortnight
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_employees__fortnight
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__fortnight
+msgid "Fortnights"
+msgstr "Quincenas"
+
+#. module: omegasoft_hr_payroll
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll.hr_payslip_run_form_inherit_omegasoft
+msgid "Generate payroll receipts"
+msgstr "Generar recibos de nómina"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_hr_payslip_employees
+msgid "Generate payslips for all selected employees"
+msgstr "Generar los recibos de nómina para todos los empleados seleccionados"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__fortnight
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_employees__fortnight
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__fortnight
+msgid ""
+"Indicates whether the structure associated with the payroll is first or "
+"second fortnight"
+msgstr ""
+"Indica si la estructura asociada a la nómina es de primera o segunda "
+"quincena"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__number_of_mondays
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__number_of_mondays
+msgid "Number of Mondays"
+msgstr "Número de lunes"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__number_of_mondays
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__number_of_mondays
+msgid "Number of Mondays in the selected period."
+msgstr "Número de lunes en el período seleccionado"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__number_of_saturdays_sundays
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__number_of_saturdays_sundays
+msgid "Number of Saturdays and Sundays"
+msgstr "Número de sábados y domingos"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip__number_of_saturdays_sundays
+#: model:ir.model.fields,help:omegasoft_hr_payroll.field_hr_payslip_run__number_of_saturdays_sundays
+msgid "Number of Saturdays and Sundays in the period selected "
+msgstr "Número de sábados y domingos en el periodo seleccionado"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__email_state__outgoing
+msgid "Outgoing"
+msgstr "Por enviar"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Correos salientes"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Recibo de nómina"
+
+#. module: omegasoft_hr_payroll
+#: model:mail.template,name:omegasoft_hr_payroll.mail_template_new_payslip_custom_omegasoft
+msgid "Payroll: New Payslip Custom"
+msgstr "Nómina: Nueva nómina personalizada"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "Lotes de recibos de nómina"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__rate_id
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__rate_id
+msgid "Rate"
+msgstr "Tasa"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__rate_amount
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__rate_amount
+msgid "Rate amount"
+msgstr "Monto de la tasa"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__email_state__received
+msgid "Received"
+msgstr "Recivido"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "Estructura salarial"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model,name:omegasoft_hr_payroll.model_hr_payroll_structure_type
+msgid "Salary Structure Type"
+msgstr "Tipo de estructura salarial"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip__struct_fortnight
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_employees__struct_fortnight
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__struct_fortnight
+msgid "Scheduled Pay"
+msgstr "Pago programado"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__fortnight__second_fortnight
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip_employees__fortnight__second_fortnight
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip_run__fortnight__second_fortnight
+msgid "Second fortnight"
+msgstr "Segunda quincena"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.actions.server,name:omegasoft_hr_payroll.action_send_payslip_by_email
+msgid "Send Payslip by Email"
+msgstr "Enviar por correo electrónico"
+
+#. module: omegasoft_hr_payroll
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll.payslip_form_inherit_net_amount_button
+msgid "Send by Email"
+msgstr "Enviar por correo electrónico"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields.selection,name:omegasoft_hr_payroll.selection__hr_payslip__email_state__sent
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: omegasoft_hr_payroll
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll.field_hr_payslip_run__struct_id
+msgid "Structure"
+msgstr "Estructura"
+
+#. module: omegasoft_hr_payroll
+#: model:mail.template,subject:omegasoft_hr_payroll.mail_template_new_payslip_custom_omegasoft
+msgid "{{ object.employee_id.name }}, a new payslip is available for you"
+msgstr ""
+"{{ object.employee_id.name }}, una nueva nómina está disponible para usted"

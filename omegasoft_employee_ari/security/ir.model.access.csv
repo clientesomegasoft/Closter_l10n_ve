@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ari_employee_setting,access.ari.employee.setting,model_ari_employee_setting,,1,1,1,1
+access_ari_employee_setting_lines,access.ari.employee.setting.lines,model_ari_employee_setting_lines,,1,1,1,1
+access_hr_employee_ari,access.hr.employee.ari,model_hr_employee_ari,,1,1,1,1

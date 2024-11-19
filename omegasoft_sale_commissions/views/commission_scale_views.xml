@@ -1,0 +1,89 @@
+<odoo>
+    <!-- commission.scale tree view -->
+    <record id="omegasoft_commission_scale_tree" model="ir.ui.view">
+        <field name="name">commission.scale.tree</field>
+        <field name="model">commission.scale</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- commission.scale search view -->
+    <record id="omegasoft_commission_scale_search" model="ir.ui.view">
+        <field name="name">commission.scale.search</field>
+        <field name="model">commission.scale</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <separator />
+                <filter
+                    name="archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <!-- commission.scale form view -->
+    <record id="omegasoft_commission_scale_form" model="ir.ui.view">
+        <field name="name">commission.scale.form</field>
+        <field name="model">commission.scale</field>
+        <field name="arch" type="xml">
+            <form string="Scale">
+                <header>
+                </header>
+                <sheet>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="name" />
+                            <field
+                                name="code"
+                                force_save="1"
+                                attrs="{'invisible': [('code', '=', 0)]}"
+                            />
+                            <label for="sale_scale_from" />
+                            <div name="scale_range_div" class="o_row">
+                                <field name="sale_scale_from" />
+                                <field name="sale_scale_to" />
+                            </div>
+                        </group>
+                        <group name="group_right">
+                            <field name="fixed_amount" />
+                            <label for="percentage" />
+                            <div name="percentage_div" class="o_row">
+                                <field name="percentage" />%
+                            </div>
+                            <field name="curency_id" />
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- commission.scale action window -->
+    <record id="omegasoft_commission_scale_action" model="ir.actions.act_window">
+        <field name="name">Commission Scale</field>
+        <field name="res_model">commission.scale</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- commission.scale menu item -->
+    <menuitem
+        id="commission_scale_config"
+        name="Commission Scales"
+        action="omegasoft_commission_scale_action"
+        parent="hr.menu_human_resources_configuration"
+        sequence="10"
+        groups=""
+    />
+</odoo>

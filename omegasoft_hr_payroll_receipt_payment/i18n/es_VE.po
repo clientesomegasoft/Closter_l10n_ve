@@ -1,0 +1,308 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_payroll_receipt_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-31 17:40+0000\n"
+"PO-Revision-Date: 2024-10-30 15:50-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<b>Aprobado por</b>"
+msgstr "<b>Aprobado por</b>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<b>Recibido por</b>"
+msgstr "<b>Recibido por</b>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid ""
+"<span>\n"
+"                                    <strong>Neto a pagar</strong>\n"
+"                                        :\n"
+"                                </span>"
+msgstr ""
+"<span>\n"
+"                                    <strong>Neto a pagar</strong>\n"
+"                                        :\n"
+"                                </span>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid ""
+"<span>\n"
+"                                    <strong>Totales</strong>\n"
+"                                        :\n"
+"                                </span>"
+msgstr ""
+"<span>\n"
+"                                    <strong>Totales</strong>\n"
+"                                        :\n"
+"                                </span>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Abono trimestral de Prestaciones Sociales:</strong>"
+msgstr "<strong>Abono trimestral de Prestaciones Sociales:</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Acumulados</strong>"
+msgstr "<strong>Acumulados</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Anticipo de Utilades Otorgados:</strong>"
+msgstr "<strong>Anticipo de Utilidades Otorgados:</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Calculado en </strong>"
+msgstr "<strong>Calculado en </strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Cargo</strong>"
+msgstr "<strong>Cargo</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Empleado</strong>"
+msgstr "<strong>Empleado</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Fecha de inicio del contrato</strong>"
+msgstr "<strong>Fecha de inicio del contrato</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Identificación</strong>"
+msgstr "<strong>Identificación</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Período de pago</strong>"
+msgstr "<strong>Período de pago</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Prestaciones Sociales:</strong>"
+msgstr "<strong>Prestaciones Sociales:</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Salario básico</strong>"
+msgstr "<strong>Salario básico</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Salario promedio vacaciones</strong>"
+msgstr "<strong>Salario promedio vacaciones</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Utilades generadas:</strong>"
+msgstr "<strong>Utilades generadas:</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Utilidades Netas:</strong>"
+msgstr "<strong>Utilidades Netas:</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_report_name_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "Asignaciones"
+msgstr "Asignaciones"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "Deducciones"
+msgstr "Deducciones"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid ""
+"El importe neto se recuperará de la primera remuneración positiva "
+"establecida después."
+msgstr ""
+"El importe neto se recuperará de la primera remuneración positiva "
+"establecida después."
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__id
+msgid "ID"
+msgstr "ID"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_other_input_custom
+msgid "Input Data"
+msgstr "Datos de entrada"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_uom_category__is_payroll_category
+msgid "Is payroll category"
+msgstr "¿Es una categoría para nómina?"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.omegasoft_payroll_custom_layout
+msgid "Logo"
+msgstr "Logotipo"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "Número de días"
+msgstr "Número de días"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "Número de horas"
+msgstr "Número de horas"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model,name:omegasoft_hr_payroll_receipt_payment.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Recibo de nómina"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model,name:omegasoft_hr_payroll_receipt_payment.model_hr_payslip_input
+msgid "Payslip Input"
+msgstr "Entrada de recibo de nómina"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model,name:omegasoft_hr_payroll_receipt_payment.model_uom_category
+msgid "Product UoM Categories"
+msgstr "Categoria de productos UdM"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.omegasoft_payroll_custom_layout
+msgid "Página: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Página: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__name
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_report_name_form
+msgid "Report Name"
+msgstr "Nombre del Recibo"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_payroll_structure__report_name_id
+msgid "Report name"
+msgstr "Nombre del Recibo"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model,name:omegasoft_hr_payroll_receipt_payment.model_hr_receipt_payment_names
+msgid "Report names"
+msgstr "Nombre del Recibo"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model,name:omegasoft_hr_payroll_receipt_payment.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "Estructura salarial"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,help:omegasoft_hr_payroll_receipt_payment.field_hr_receipt_payment_names__active
+msgid "Set active to false to hide the report name tag without removing it."
+msgstr ""
+"Establezca active en false para ocultar la etiqueta del nombre del recibo "
+"sin eliminarla."
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_hr_payslip_input__uom_id
+msgid "Uom"
+msgstr "Cantidad"
+
+#. module: hr_payroll
+#: model:ir.actions.report,print_report_name:hr_payroll.action_report_payslip
+msgid "'Payslip - %s' % (object.name)"
+msgstr "'Nómina - %s' % (object.name)"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.hr_payslip_report_custom
+msgid "<strong>Salario liquidación</strong>"
+msgstr "<strong>Salario liquidación</strong>"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model,name:omegasoft_hr_payroll_receipt_payment.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model,name:omegasoft_hr_payroll_receipt_payment.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_payroll_receipt_payment.l10n_ve_omegasoft_res_config_settings_view_form_signature
+msgid "Configuration of the stamp and signature for payment receipts."
+msgstr "Configuración del sello y firma para recibos de pago."
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: code:addons/omegasoft_hr_payroll_receipt_payment/models/models.py:0
+#, python-format
+msgid "Salary Slip"
+msgstr "Nómina"
+
+#. module: omegasoft_hr_payroll_receipt_payment
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_res_company__signature_512
+#: model:ir.model.fields,field_description:omegasoft_hr_payroll_receipt_payment.field_res_config_settings__signature_512
+msgid "Signature 512"
+msgstr "Firma"

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <!-- hr.employee form view -->
+    <record id="hr_view_employee_form_omegasoft_accumulated__page" model="ir.ui.view">
+        <field name="name">hr.view.employee.form.omegasoft.accumulated.page</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='hr_settings']" position="before">
+                <page name="plan_accumulated" string="Plan Accumulated">
+                    <field
+                        name="history_ids"
+                        options="{'no_open': True}"
+                        readonly="1"
+                    />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

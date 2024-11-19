@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- account.withholding.islr.xml tree view -->
+    <record id="account_withholding_islr_xml_view_tree" model="ir.ui.view">
+        <field name="name">account.withholding.islr.xml.view.tree</field>
+        <field name="model">account.withholding.islr.xml</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="start_date" />
+                <field name="end_date" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- account.withholding.islr.xml form view -->
+    <record id="account_withholding_islr_xml_view_form" model="ir.ui.view">
+        <field name="name">account.withholding.islr.xml.view.form</field>
+        <field name="model">account.withholding.islr.xml</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="seek_for_lines"
+                        states="draft"
+                        string="Generate lines"
+                        type="object"
+                        class="oe_edit_only"
+                    />
+                    <button
+                        name="button_draft"
+                        states="posted,cancel"
+                        string="Reset to draft"
+                        type="object"
+                    />
+                    <button
+                        name="button_post"
+                        string="Confirm"
+                        type="object"
+                        attrs="{'invisible': ['|', ('line_ids', '=', []), ('state', '!=', 'draft')]}"
+                    />
+                    <button
+                        name="button_cancel"
+                        states="draft,posted"
+                        string="Cancel"
+                        type="object"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,posted"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class="mt0"><field
+                                name="name"
+                                placeholder="Description"
+                            /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="start_date" />
+                            <field name="end_date" />
+                        </group>
+                        <group>
+                            <field name="filename" invisible="1" />
+                            <field
+                                name="file"
+                                filename="filename"
+                                attrs="{'invisible': [('state', '!=', 'posted')]}"
+                            />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="lines" string="Lines">
+                            <field name="line_ids" widget="many2many" nolabel="1">
+                                <tree create="0" no_open="1">
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="subject_id" />
+                                    <field name="amount" />
+                                </tree>
+                            </field>
+                            <group col="4" name="wh_islr_totals">
+                                <group colspan="1" class="oe_subtotal_footer oe_right">
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="amount" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- account.withholding.islr.xml action window -->
+    <record id="account_withholding_islr_xml_action" model="ir.actions.act_window">
+        <field name="name">Generate XML ISLR</field>
+        <field name="res_model">account.withholding.islr.xml</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- account.withholding.islr.xml menu item -->
+    <menuitem
+        id="account_withholding_islr_xml_menu"
+        parent="l10n_ve_config_account.menu_l10n_ve_reports"
+        action="account_withholding_islr_xml_action"
+    />
+</odoo>

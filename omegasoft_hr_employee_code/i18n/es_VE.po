@@ -1,0 +1,262 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_employee_code
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-12 19:13+0000\n"
+"PO-Revision-Date: 2024-10-30 10:08-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_hr_employee_code
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.l10n_ve_omegasoft_res_config_settings_view_form_inherit_payroll
+msgid "<span class=\"o_form_label\">Employee file</span>"
+msgstr "<span class=\"o_form_label\">Ficha de empleado</span>"
+
+#. module: omegasoft_hr_employee_code
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.l10n_ve_omegasoft_res_config_settings_view_form_inherit_payroll
+msgid "<span class=\"o_form_label\">Sequence next number</span>"
+msgstr "<span class=\"o_form_label\">Inicio de secuencia</span>"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.actions.server,name:omegasoft_hr_employee_code.hr_employee_advances_loans_discounts_server_action
+msgid "Anticipos Préstamos y descuentos"
+msgstr ""
+
+#. module: omegasoft_hr_employee_code
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.employee_file_code_view_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_ari_employee_setting__company_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__company_id
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.employee_file_code_view_search
+msgid "Company"
+msgstr "Compañía"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.actions.server,name:omegasoft_hr_employee_code.employee_ari_config_server_action
+#: model:ir.model,name:omegasoft_hr_employee_code.model_ari_employee_setting
+msgid "Configuración ARI"
+msgstr ""
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.actions.server,name:omegasoft_hr_employee_code.contract_allocation_config_server_action
+msgid "Configuración de dotaciones"
+msgstr ""
+
+#. module: omegasoft_hr_employee_code
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.l10n_ve_omegasoft_res_config_settings_view_form_inherit_payroll
+msgid "Configuration of the display of the employee's file in all its views."
+msgstr ""
+"Configuración del desplieque de la ficha del empleado en todas sus vistas."
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_contract_allocation
+msgid "Contract allocations"
+msgstr "Contratos"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_hr_contract_history
+msgid "Contract history"
+msgstr "Histórico de contratación"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.actions.server,name:omegasoft_hr_employee_code.contract_allocation_to_delivered_server_action
+msgid "Dotaciones a entregar"
+msgstr ""
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_hr_employee
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_hr_employee_advances_loans_discounts
+msgid "Employee Advances, loans and discounts"
+msgstr "Anticipos, préstamos y descuentos a los empleados"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_hr_employee_advances_loans_discounts_lines
+msgid "Employee Advances, loans and discounts lines"
+msgstr "Líneas de Anticipos, préstamos y descuentos a los empleados"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato de empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.actions.act_window,name:omegasoft_hr_employee_code.employee_file_code_action
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_ari_employee_setting__employee_file_code_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_contract_allocation__employee_file_code_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_contract_allocation_lines__employee_file_code_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_arc_report_wizard__employee_file_code_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_contract__employee_file_code_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee__employee_file_code_id
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee_advances_loans_discounts__employee_file_code_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee_advances_loans_discounts_lines__employee_file_code_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_res_company__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_res_config_settings__employee_file
+msgid "Employee File"
+msgstr "Ficha de empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_employee_file_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_contract_history__employee_file_code_id
+msgid "Employee File Code"
+msgstr "Ficha de empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_ari_employee_setting__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_contract_allocation__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_contract_allocation_lines__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_arc_report_wizard__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_contract__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_contract_history__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee_advances_loans_discounts__employee_file
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee_advances_loans_discounts_lines__employee_file
+msgid "Employee file"
+msgstr "Ficha de empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.l10n_ve_omegasoft_res_config_settings_view_form_inherit_payroll
+msgid "Employee file configuration"
+msgstr "Configuración de Ficha del empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.ui.menu,name:omegasoft_hr_employee_code.employee_file_code_menu
+msgid "Employee files"
+msgstr "Ficha de empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_contract_allocation_lines
+msgid "Endowment lines"
+msgstr "Líneas de dotación"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__id
+msgid "ID"
+msgstr "ID"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_employee_file_code__name
+msgid "Name"
+msgstr "Número"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_hr_employee__name_file_code_id
+msgid "Name Employee File"
+msgstr "Número de ficha de empleado"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model,name:omegasoft_hr_employee_code.model_employee_arc_report_wizard
+msgid "Reporte ARC Empleados"
+msgstr ""
+
+#. module: omegasoft_hr_employee_code
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_employee_code.l10n_ve_omegasoft_res_config_settings_view_form_inherit_payroll
+msgid ""
+"Represents the value that the sequence will take after this field is set, "
+"it does not represent the current value of the sequence."
+msgstr ""
+"Representa el valor que tomara la secuencia a partir de que es establecido "
+"este campo, no representa el valor actual de la secuencia."
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_res_company__sequence_next_number
+#: model:ir.model.fields,field_description:omegasoft_hr_employee_code.field_res_config_settings__sequence_next_number
+msgid "Sequence Next Number"
+msgstr "Inicio de secuencia"
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.constraint,message:omegasoft_hr_employee_code.constraint_employee_file_code_uniq_employee
+msgid "There cannot be two cards with the same employee."
+msgstr "No puede haber dos fichas con el mismo empleado."
+
+#. module: omegasoft_hr_employee_code
+#: model:ir.model.constraint,message:omegasoft_hr_employee_code.constraint_employee_file_code_uniq_employee_code
+msgid "There cannot be two cards with the same name."
+msgstr "No puede haber dos fichas con el mismo número."
+
+#. module: omegasoft_hr_employee_code
+#: model_terms:ir.actions.act_window,help:omegasoft_hr_employee_code.employee_file_code_action
+msgid "code for identification of employees."
+msgstr "Ficha de identificación de los empleados."
+
+#. module: omegasoft_hr_employee_code
+#. odoo-python
+#: code:addons/omegasoft_hr_employee_code/models/hr_employee.py:0
+#, python-format
+msgid ""
+"The employee %s cannot be deleted because it has the following payslip "
+"entries:\n"
+"%s"
+msgstr ""
+"El empleado %s no puede ser eliminado debido a que presenta las siguientes "
+"entradas de nómina:\n"
+"%s"
+
+#. module: omegasoft_hr_employee_code
+#. odoo-python
+#: code:addons/omegasoft_hr_employee_code/models/hr_employee.py:0
+#, python-format
+msgid "And more..."
+msgstr "y más registros..."

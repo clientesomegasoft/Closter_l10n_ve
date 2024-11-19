@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- planning.role tree view -->
+    <record id="planning_role_view_tree_inherit_omegasoft" model="ir.ui.view">
+        <field name="name">planning.role.view.tree.inherit.omegasoft</field>
+        <field name="model">planning.role</field>
+        <field name="inherit_id" ref="planning.planning_role_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="company_id" invisible="1" />
+                <field name="jobs_with_roles" invisible="1" />
+                <field
+                    name="hr_job_id"
+                    optional="hide"
+                    domain="[('rotating_job', '=', True)]"
+                    options="{'no_create': True}"
+                />
+            </xpath>
+
+
+        </field>
+    </record>
+</odoo>

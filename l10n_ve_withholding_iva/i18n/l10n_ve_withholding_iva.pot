@@ -1,0 +1,652 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ve_withholding_iva
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 11:29+0000\n"
+"PO-Revision-Date: 2024-10-30 11:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "% Aliquot"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "% retention"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.actions.report,print_report_name:l10n_ve_withholding_iva.account_withholding_iva_report
+msgid "'VAT Voucher - %s' % (object.name)"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "<b>Release date:</b>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "<b>Receipt No.:</b>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid ""
+"<br/>\n"
+"                                Withholding Agent (Stamp and Signature)"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid ""
+"<br/>\n"
+"                                Signature of the Beneficiary"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:mail.template,body_html:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"<p style=\"margin: 0px; padding: 0px;font-size: 13px;\">\n"
+"    Hello <t t-out=\"object.type == 'supplier' and object.subject_id.name or object.agent_id.name\"></t>,<br>\n"
+"    Attached here is the VAT withholding receipt: <strong t-out=\"object.name\"></strong>\n"
+"    for an amount of<strong t-out=\"format_amount(object.amount, object.currency_id)\"></strong>,<br>\n"
+"    corresponding to Invoice No. <strong t-out=\"object.type == 'supplier' and object.invoice_id.supplier_invoice_number or object.invoice_id.name\"></strong>.<br>\n"
+"    You can reply to this email if you have any questions.\n"
+"    <br><br>\n"
+"    Thank you so much.\n"
+"    <t t-if=\"user.signature\">\n"
+"        <br><t t-out=\"user.signature\"></t>\n"
+"    </t>\n"
+"</p>\n"
+"</div>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "<span class=\"o_stat_text\">Entry</span>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__agent_id
+msgid "Withholding agent"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__file
+msgid "TXT file"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__move_id
+msgid "Accounting entry"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__base_amount_company_currency
+msgid "Base Amount Company Currency"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__base_amount_currency
+msgid "Base Amount Currency"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__base_amount_currency_ref
+msgid "Base Amount Currency Ref"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__tax_base_amount
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__tax_base_amount
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Taxable base"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__state__draft
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva_txt__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:mail.template,report_name:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
+msgid "VAT Voucher - {{ object.name }}"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__state__cancel
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva_txt__state__cancel
+msgid "Canceled"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__company_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__company_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__company_id
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "Company"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Company Logo"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Purchases without the right to tax credit"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.actions.report,name:l10n_ve_withholding_iva.account_withholding_iva_report
+msgid "VAT receipt"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "VAT Withholding receipt"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:mail.template,name:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
+msgid "VAT withholding receipt"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__create_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__create_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__create_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__create_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__create_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__create_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__in_iva_account_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__in_iva_account_id
+msgid "VAT account on purchases"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__out_iva_account_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__out_iva_account_id
+msgid "VAT account on sales"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__withholding_account_id
+msgid "Withholding account"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__destination_account_id
+msgid "Destination account"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "Declared"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__name
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__description
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
+msgid "Description"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__start_date
+msgid "From"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__in_iva_journal_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__in_iva_journal_id
+msgid "VAT journal on purchases"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_company__out_iva_journal_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__out_iva_journal_id
+msgid "VAT journal on sales"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Tax Address of the Retained Agent:<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Tax Address of the Withholding Agent:<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__display_name
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__display_name
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__display_name
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:mail.template,description:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
+msgid "Sends an email when the \"SEND BY EMAIL\" in the VAT withholding receipts"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "Send by email"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__invoice_id
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__date
+msgid "Receipt date"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.withholding_iva_rate_view_tree
+msgid "Creation date"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Document date"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__invoice_date
+msgid "Invoice date"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__filename
+msgid "Filename"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.actions.act_window,name:l10n_ve_withholding_iva.action_account_withholding_iva_txt
+#: model:ir.ui.menu,name:l10n_ve_withholding_iva.account_withholding_iva_txt_menu
+msgid "Generate VAT TXT"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
+msgid "Generate lines"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__end_date
+msgid "To"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_journal__withholding_journal_type__iva
+msgid "VAT"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__tax_amount
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__tax_line_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__tax_amount
+msgid "Tax"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Tax caused"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Tax withheld"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_account_journal
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid ""
+"LEY IVA - ART. 11: \"SERÁN RESPONSABLES DEL PAGO DE IMPUESTO EN CALIDAD DE AGENTES DE RETENCIÓN, LOS COMPRADORES O ADQUIRIENTES\n"
+"                                        DE DETERMINADOS BIENES MUEBLES Y LOS RECEPTORES DE CIERTOS SERVICIOS A QUIENES LA ADMINISTRACIÓN TRIBUTARIA DESIGNE COMO TAL\""
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.constraint,message:l10n_ve_withholding_iva.constraint_withholding_iva_rate_check_percentage
+msgid ""
+"The VAT withholding rate must be greater than zero and less than or equal to 100."
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva____last_update
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line____last_update
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt____last_update
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__write_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__write_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__write_uid
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__write_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__write_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__write_date
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__line_ids
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "Lines"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_account_withholding_iva_line
+msgid "VAT withholding lines"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__currency_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__currency_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__currency_id
+msgid "Fiscal currency"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__total_amount
+msgid "Amount to be declared"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__exempt_amount
+msgid "Exempt amount"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__tax_amount
+msgid "Amount taxed"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__amount
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__amount
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__amount
+msgid "Amount withheld"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Total amount of the document"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Name and Surname or Business Name of the Retained Agent:<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Name and Surname or Business Name of the Withholding Agent:<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Control No."
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Invoice No."
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Affected Invoice No."
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Credit note No."
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Debit note No."
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__name
+msgid "Voucher number"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Fiscal Period<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__iva_rate_id
+msgid "Retention percentage"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Administrative Order No. SNAT/2015/0049 of 08/10/2015"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__state__posted
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva_txt__state__posted
+msgid "Published"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.view_move_form
+msgid "VAT RET."
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Tax Identification Record of the Retained Agent<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Tax Identification Record of the Withholding Agent<br/>"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_txt_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva_view_form
+msgid "Reset to draft"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_account_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_bank_statement_line__withholding_iva_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_move__withholding_iva_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_payment__withholding_iva_id
+msgid "VAT withholding"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.view_partner_form
+msgid "VAT withholdings"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__type__customer
+msgid "VAT Withholding for clients"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields.selection,name:l10n_ve_withholding_iva.selection__account_withholding_iva__type__supplier
+msgid "VAT Withholding for providers"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.actions.act_window,name:l10n_ve_withholding_iva.account_withholding_iva_customer_action
+#: model:ir.ui.menu,name:l10n_ve_withholding_iva.menu_account_withholding_iva_customer
+msgid "VAT Withholding for Customers"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.actions.act_window,name:l10n_ve_withholding_iva.account_withholding_iva_supplier_action
+#: model:ir.ui.menu,name:l10n_ve_withholding_iva.menu_account_withholding_iva_supplier
+msgid "VAT Withholding for Providers"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__txt_state
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_txt__state
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__state
+msgid "State"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__subject_id
+msgid "Subject detained"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__txt_id
+msgid "VAT TXT"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_withholding_iva_rate__name
+msgid "Rate"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_withholding_iva_rate
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__iva_rate_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_partner__iva_rate_id
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_users__iva_rate_id
+msgid "VAT withholding rate"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.actions.act_window,name:l10n_ve_withholding_iva.action_withholding_iva_rate
+#: model:ir.ui.menu,name:l10n_ve_withholding_iva.menu_withholding_iva_rate
+msgid "VAT withholding rates"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model_terms:ir.ui.view,arch_db:l10n_ve_withholding_iva.account_withholding_iva
+msgid "Trans. Type"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_bank_statement_import_journal_creation__withholding_journal_type
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_journal__withholding_journal_type
+msgid "Type of withholding journal"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva__type
+msgid "Type"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model,name:l10n_ve_withholding_iva.model_account_withholding_iva_txt
+msgid "VAT withholding in TXT"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_account_withholding_iva_line__withholding_iva_id
+msgid "VAT Withholding"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:mail.template,subject:l10n_ve_withholding_iva.mail_template_withholding_iva_receipt
+msgid ""
+"{{ object.agent_id.name }} - VAT withholding receipt: {{ object.name"
+" }}"
+msgstr ""
+
+#. module: l10n_ve_withholding_iva
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_config_settings__is_iva_agent
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_partner__is_iva_agent
+#: model:ir.model.fields,field_description:l10n_ve_withholding_iva.field_res_users__is_iva_agent
+msgid "Are you a VAT withholding agent?"
+msgstr ""

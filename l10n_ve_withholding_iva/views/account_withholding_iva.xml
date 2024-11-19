@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <!-- account.withholding.iva tree view -->
+    <record id="account_withholding_iva_view_tree" model="ir.ui.view">
+        <field name="name">account.withholding.iva.view.tree</field>
+        <field name="model">account.withholding.iva</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+                <field name="name" />
+                <field name="invoice_id" />
+                <field name="date" />
+                <field name="agent_id" />
+                <field name="subject_id" />
+                <field name="tax_amount" optional="hide" />
+                <field name="amount" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="state" />
+                <field name="currency_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- account.withholding.iva form view -->
+    <record id="account_withholding_iva_view_form" model="ir.ui.view">
+        <field name="name">account.withholding.iva.view.form</field>
+        <field name="model">account.withholding.iva</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <header>
+                    <button
+                        name="button_post"
+                        states="draft"
+                        type="object"
+                        class="oe_highlight"
+                        string="Confirm"
+                    />
+                    <button
+                        name="button_send_mail"
+                        states="posted"
+                        type="object"
+                        string="Send by email"
+                    />
+                    <button
+                        name="button_draft"
+                        type="object"
+                        string="Reset to draft"
+                        attrs="{'invisible': ['|', ('state', '!=', 'posted'), ('txt_state', '=', 'posted')]}"
+                    />
+                    <button
+                        name="button_cancel"
+                        type="object"
+                        string="Cancel"
+                        attrs="{'invisible': ['|', ('state', 'not in', ('draft', 'posted')), ('txt_state', '=', 'posted')]}"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,posted"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="move_id" invisible="1" />
+                        <button
+                            name="button_open_journal_entry"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-bars"
+                            attrs="{'invisible': ['|', ('state', '!=', 'posted'), ('move_id', '=', False)]}"
+                        >
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Entry</span>
+                            </div>
+                        </button>
+                    </div>
+                    <field name="txt_state" invisible="1" />
+                    <widget
+                        name="web_ribbon"
+                        title="Declared"
+                        attrs="{'invisible': [('txt_state', '!=', 'posted')]}"
+                    />
+                    <div class="oe_title">
+                        <span class="o_form_label"><field
+                                name="type"
+                                nolabel="1"
+                            /></span>
+                        <h1 class="mt0"><field
+                                name="name"
+                                attrs="{'required': [('type', '=', 'customer')], 'readonly': ['|', ('type', '=', 'supplier'), ('state', '!=', 'draft')]}"
+                            /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="invoice_id" />
+                            <field name="agent_id" />
+                            <field name="subject_id" />
+                            <field
+                                name="iva_rate_id"
+                                options="{'no_create': 1, 'no_open': 1}"
+                            />
+                        </group>
+                        <group>
+                            <field name="date" />
+                            <field name="invoice_date" />
+                            <field name="journal_id" />
+                            <field
+                                name="company_id"
+                                string="Company"
+                                groups="base.group_no_one"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Lines">
+                            <field name="line_ids">
+                                <tree>
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="tax_line_id" />
+                                    <field name="tax_base_amount" />
+                                    <field name="tax_amount" />
+                                    <field name="amount" />
+                                </tree>
+                            </field>
+                            <group col="4">
+                                <group colspan="1" class="oe_subtotal_footer oe_right">
+                                    <field name="currency_id" invisible="1" />
+                                    <field name="tax_base_amount" invisible="1" />
+                                    <field name="tax_amount" />
+                                    <field name="amount" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- account.withholding.iva Customers action window -->
+    <record id="account_withholding_iva_customer_action" model="ir.actions.act_window">
+        <field name="name">VAT Withholding for Customers</field>
+        <field name="res_model">account.withholding.iva</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type', '=', 'customer')]</field>
+        <field name="context">{'default_type': 'customer'}</field>
+    </record>
+
+    <!-- account.withholding.iva Providers action window -->
+    <record id="account_withholding_iva_supplier_action" model="ir.actions.act_window">
+        <field name="name">VAT Withholding for Providers</field>
+        <field name="res_model">account.withholding.iva</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type', '=', 'supplier')]</field>
+        <field name="context">{'default_type': 'supplier'}</field>
+    </record>
+
+    <!-- account.withholding.iva Customers menu item -->
+    <menuitem
+        id="menu_account_withholding_iva_customer"
+        action="account_withholding_iva_customer_action"
+        parent="account.menu_finance_receivables"
+    />
+
+    <!-- account.withholding.iva Providers menu item -->
+    <menuitem
+        id="menu_account_withholding_iva_supplier"
+        action="account_withholding_iva_supplier_action"
+        parent="account.menu_finance_payables"
+    />
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="account_withholding_iva_sequence" model="ir.sequence">
+        <field name="name">VAT Withholding</field>
+        <field name="code">account_withholding_iva</field>
+        <field name="padding">8</field>
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>

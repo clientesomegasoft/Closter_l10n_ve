@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- planning.slot.template form view -->
+    <record id="omegasoft_planning_slot_template_view_form" model="ir.ui.view">
+        <field name="name">omegasoft.planning.slot.template.view.form</field>
+        <field name="model">planning.slot.template</field>
+        <field name="inherit_id" ref="planning.planning_slot_template_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='role_id']" position="after">
+                <field name="work_shifts_id" />
+                <field name="work_entry_type_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- planning.slot.template tree view -->
+    <record id="omegasoft_planning_slot_template_view_tree" model="ir.ui.view">
+        <field name="name">omegasoft.planning.slot.template.view.tree</field>
+        <field name="model">planning.slot.template</field>
+        <field name="inherit_id" ref="planning.planning_slot_template_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="work_shifts_id" />
+                <field name="work_entry_type_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

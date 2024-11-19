@@ -1,0 +1,180 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_hr_estimated_profits
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-03 21:33+0000\n"
+"PO-Revision-Date: 2024-10-30 15:35-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: omegasoft_hr_estimated_profits
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_estimated_profits.l10n_ve_omegasoft_res_config_settings_estimated_profit
+msgid ""
+"<span class=\"o_form_label\">\n"
+"                                Lines for calculating the estimayed profits\n"
+"                        </span>"
+msgstr ""
+"<span class=\"o_form_label\">\n"
+"                                Líneas para el cálculo de los beneficios estimados\n"
+"                        </span>"
+
+#. module: omegasoft_hr_estimated_profits
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_estimated_profits.l10n_ve_omegasoft_res_config_settings_estimated_profit
+msgid "<span class=\"o_form_label\">Estimated profit</span>"
+msgstr "<span class=\"o_form_label\">Configuracion de utilidades estimadas</span>"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__average_days
+msgid "Average days"
+msgstr "Días"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model,name:omegasoft_hr_estimated_profits.model_hr_estimated_profit
+msgid "Calculation estimated profit"
+msgstr "Cálculo beneficio estimado"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__salary_rule_category
+msgid "Categories of wage rules"
+msgstr "Categorías de reglas salariales"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model,name:omegasoft_hr_estimated_profits.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model,name:omegasoft_hr_estimated_profits.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: omegasoft_hr_estimated_profits
+#: model_terms:ir.actions.act_window,help:omegasoft_hr_estimated_profits.estimated_profit_lines_action
+msgid "Create Estimated Profit line"
+msgstr "Crear línea de beneficio estimado"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: omegasoft_hr_estimated_profits
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_estimated_profits.hr_contract_view_form_estimated_profit
+msgid "Date End"
+msgstr "Fecha de Finalización"
+
+#. module: omegasoft_hr_estimated_profits
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_estimated_profits.hr_contract_view_form_estimated_profit
+msgid "Date Start"
+msgstr "Fecha de Inicio"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_contract__estimated_profit_date_end
+msgid "Date end"
+msgstr "Fecha de finalización"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_contract__estimated_profit_date_start
+msgid "Date start"
+msgstr "Fecha de inicio"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__structure_type_default_schedule_pay
+msgid "Default Scheduled Pay"
+msgstr "Pago programado predeterminado"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,help:omegasoft_hr_estimated_profits.field_hr_estimated_profit__structure_type_default_schedule_pay
+msgid "Defines the frequency of the wage payment."
+msgstr "Define la frecuencia del pago del salario."
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model,name:omegasoft_hr_estimated_profits.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato del empleado"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,help:omegasoft_hr_estimated_profits.field_hr_contract__estimated_profit_date_end
+msgid "End date up to estimated profit"
+msgstr "Fecha de finalización del calculo de las utilidades estimado"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_contract__estimated_profit
+msgid "Estimated profit"
+msgstr "Utilidades estimadas"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.actions.act_window,name:omegasoft_hr_estimated_profits.estimated_profit_lines_action
+msgid "Estimated profit lines"
+msgstr "Líneas de utilidades estimadas"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__id
+msgid "ID"
+msgstr "Identificacion"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: omegasoft_hr_estimated_profits
+#: model_terms:ir.ui.view,arch_db:omegasoft_hr_estimated_profits.l10n_ve_omegasoft_res_config_settings_estimated_profit
+msgid "Manage lines for estimated profits calculation"
+msgstr "Administrar líneas para el cálculo de utilidades estimadas"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,help:omegasoft_hr_estimated_profits.field_hr_contract__estimated_profit_date_start
+msgid "Starting date from estimated profit"
+msgstr "Fecha de inicio del beneficio estimado"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_hr_estimated_profit__payroll_structure_type
+msgid "Structure type"
+msgstr "Tipo de estructura"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_res_company__estimated_profit_ids
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_res_config_settings__estimated_profit_ids
+msgid "estimated profit"
+msgstr "Utilidades estimadas"
+
+#. module: omegasoft_hr_estimated_profits
+#: model:ir.model.fields,field_description:omegasoft_hr_estimated_profits.field_res_config_settings__estimated_profit_count
+msgid "estimated profit count"
+msgstr "recuento de utilidades estimadas"

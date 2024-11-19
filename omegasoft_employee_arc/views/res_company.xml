@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- res.company form view -->
+    <record id="extra_company_venezuela" model="ir.ui.view">
+        <field name="name">Extra company Venezuela</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <!-- <field name="inherit_id" ref="l10n_ve_full.extra_company_venezuela"/> -->
+        <field name="arch" type="xml">
+            <!-- <xpath expr="//field[@name='islr_withholding_agent']" position="after">
+                <field name="islr_agent_number" attrs="{'invisible': [('islr_withholding_agent', '=', False)]}"/>
+            </xpath> -->
+
+            <xpath expr="//field[@name='favicon']" position="after">
+                <field name="islr_agent_number" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="mail_template_employee_arc" model="mail.template">
+        <field name="name">Comprobante de ARC de empleados</field>
+        <field
+            name="model_id"
+            ref="omegasoft_employee_arc.model_employee_arc_report_wizard"
+        />
+        <field
+            name="subject"
+        >{{ object.employee_ids.name }} - Comprobante de ARC: {{ object.employee_ids.name}}</field>
+        <field
+            name="email_from"
+        >{{ (object.create_uid.email_formatted or user.email_formatted) }}</field>
+        <field name="email_to">{{ (object.employee_ids.work_email) }}</field>
+        <field
+            name="description"
+        >Envia un correo cuando se pulsa el boton de "ENVIAR POR CORREO ELECTRONICO" para el ARC</field>
+        <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+<p style="margin: 0px; padding: 0px;font-size: 13px;">
+    Hola <t t-out="object.employee_ids.name" />,<br />
+    Acá adjunto se encuentra el comprobante de retención de ARC: <strong
+                        t-out="object.employee_ids.name"
+                    />
+    Puede responder este correo si tiene alguna duda.
+    <br /><br />
+    Muchas gracias.
+    <t t-if="user.signature">
+        <br /><t t-out="user.signature" />
+    </t>
+</p>
+</div></field>
+        <field name="report_template" ref="action_employee_arc_report" />
+        <field name="report_name">ARC - {{ object.employee_ids.name }}</field>
+        <field name="lang">{{ ctx.get('default_lang') }}</field>
+        <field name="auto_delete" eval="True" />
+    </record>
+</odoo>

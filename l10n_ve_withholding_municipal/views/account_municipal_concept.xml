@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- account.municipal.concept tree view -->
+    <record id="account_municipal_concept_view_tree" model="ir.ui.view">
+        <field name="name">account.municipal.concept.view.tree</field>
+        <field name="model">account.municipal.concept</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+                <field name="rate" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- account.municipal.concept action window -->
+    <record id="account_municipal_concept_action" model="ir.actions.act_window">
+        <field name="name">Municipal retention concept</field>
+        <field name="res_model">account.municipal.concept</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- account.municipal.concept menu item -->
+    <menuitem
+        id="menu_account_municipal_concept"
+        parent="l10n_ve_config_account.menu_l10n_ve_finance_configuration"
+        action="account_municipal_concept_action"
+    />
+</odoo>

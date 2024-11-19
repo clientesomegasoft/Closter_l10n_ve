@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omegasoft_contract_vacations_fields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-02 12:56+0000\n"
+"PO-Revision-Date: 2022-12-02 12:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: omegasoft_contract_vacations_fields
+#: model:ir.model,name:omegasoft_contract_vacations_fields.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrato del empleado"
+
+#. module: omegasoft_contract_vacations_fields
+#: model_terms:ir.ui.view,arch_db:omegasoft_contract_vacations_fields.hr_contract_view_form_inherit_vacations_fields
+msgid "Vacations"
+msgstr "Vacaciones"
+
+#. module: omegasoft_contract_vacations_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_vacations_fields.field_hr_contract__vacations_advances_granted_currency
+msgid "Vacations Advances Granted Currency"
+msgstr "Moneda de los Anticipos Otorgados"
+
+#. module: omegasoft_contract_vacations_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_vacations_fields.field_hr_contract__vacations_advances_granted
+msgid "Vacations Advances granted"
+msgstr "Anticipos Otorgados"
+
+#. module: omegasoft_contract_vacations_fields
+#: model:ir.model.fields,field_description:omegasoft_contract_vacations_fields.field_hr_contract__vacations_advances_granted_previous_amount
+msgid "Vacations Advances granted previous amount"
+msgstr "Anticipos Otorgados monto previo"

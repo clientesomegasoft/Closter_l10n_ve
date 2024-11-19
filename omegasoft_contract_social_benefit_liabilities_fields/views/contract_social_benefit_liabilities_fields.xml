@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- hr.contract form view -->
+    <record
+        id="hr_contract_view_form_inherit_social_benefit_liabilities_fields"
+        model="ir.ui.view"
+    >
+        <field
+            name="name"
+        >hr.contract.view.form.inherit.social.benefit.liabilities.fields</field>
+        <field name="model">hr.contract</field>
+        <field
+            name="inherit_id"
+            ref="omegasoft_contract_utility_liabilities_fields.hr_contract_view_form_inherit_labor_liabilities_page"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='labor_liabilities']/group[@name='top']/group[1]"
+                position="after"
+            >
+
+                <group
+                    name="social_benefit_liabilities"
+                    string="Social benefit liabilities"
+                >
+
+                    <label for="social_benefits_generated" />
+                    <div class="o_row" name="social_benefits_generated">
+                        <field
+                            name="social_benefits_generated"
+                            readonly="1"
+                            widget="monetary"
+                            options="{'currency_field': 'social_benefits_generated_currency'}"
+                        />
+                        <field
+                            name="social_benefits_generated_previous_amount"
+                            invisible="1"
+                            widget="monetary"
+                            options="{'currency_field': 'social_benefits_generated_currency'}"
+                        />
+                        <field
+                            name="social_benefits_generated_currency"
+                            invisible="1"
+                            options="{'no_open': True, 'no_create': True}"
+                            attrs="{'required': [('social_benefits_generated', '>', 0)]}"
+                        />
+                    </div>
+
+                    <label for="accrued_social_benefits" />
+                    <div class="o_row" name="accrued_social_benefits">
+                        <field
+                            name="accrued_social_benefits"
+                            readonly="1"
+                            widget="monetary"
+                            options="{'currency_field': 'accrued_social_benefits_currency'}"
+                        />
+                        <field
+                            name="accrued_social_benefits_previous_amount"
+                            invisible="1"
+                            widget="monetary"
+                            options="{'currency_field': 'accrued_social_benefits_currency'}"
+                        />
+                        <field
+                            name="accrued_social_benefits_currency"
+                            invisible="1"
+                            options="{'no_open': True, 'no_create': True}"
+                            attrs="{'required': [('accrued_social_benefits', '>', 0)]}"
+                        />
+                    </div>
+
+                    <label for="advances_of_social_benefits" />
+                    <div class="o_row" name="advances_of_social_benefits">
+                        <field
+                            name="advances_of_social_benefits"
+                            readonly="1"
+                            widget="monetary"
+                            options="{'currency_field': 'advances_of_social_benefits_currency'}"
+                        />
+                        <field
+                            name="advances_of_social_benefits_previous_amount"
+                            invisible="1"
+                            widget="monetary"
+                            options="{'currency_field': 'advances_of_social_benefits_currency'}"
+                        />
+                        <field
+                            name="advances_of_social_benefits_currency"
+                            invisible="1"
+                            options="{'no_open': True, 'no_create': True}"
+                            attrs="{'required': [('advances_of_social_benefits', '>', 0)]}"
+                        />
+                    </div>
+
+                    <label for="total_available_social_benefits_generated" />
+                    <div class="o_row" name="total_available_social_benefits_generated">
+                        <field
+                            name="total_available_social_benefits_generated"
+                            readonly="1"
+                            widget="monetary"
+                            options="{'currency_field': 'total_available_social_benefits_generated_currency'}"
+                        />
+                        <field
+                            name="total_available_social_benefits_generated_currency"
+                            invisible="1"
+                            options="{'no_open': True, 'no_create': True}"
+                            attrs="{'required': [('total_available_social_benefits_generated', '>', 0)]}"
+                        />
+                    </div>
+                </group>
+
+                <group string="Social benefit liabilities">
+                    <label for="benefit_interest" />
+                    <div class="o_row" name="benefit_interest">
+                        <field
+                            name="benefit_interest"
+                            readonly="1"
+                            widget="monetary"
+                            options="{'currency_field': 'benefit_interest_currency'}"
+                        />
+                        <field
+                            name="benefit_interest_previous_amount"
+                            invisible="1"
+                            widget="monetary"
+                            options="{'currency_field': 'benefit_interest_currency'}"
+                        />
+                        <field
+                            name="benefit_interest_currency"
+                            invisible="1"
+                            options="{'no_open': True, 'no_create': True}"
+                            attrs="{'required': [('benefit_interest', '>', 0)]}"
+                        />
+                    </div>
+
+                    <label for="days_per_year_accumulated" />
+                    <div class="o_row" name="days_per_year_accumulated">
+                        <field
+                            name="days_per_year_accumulated"
+                            readonly="1"
+                            widget="monetary"
+                            options="{'currency_field': 'days_per_year_accumulated_currency'}"
+                        />
+                        <field
+                            name="days_per_year_accumulated_previous_amount"
+                            invisible="1"
+                            widget="monetary"
+                            options="{'currency_field': 'days_per_year_accumulated_currency'}"
+                        />
+                        <field
+                            name="days_per_year_accumulated_currency"
+                            invisible="1"
+                            options="{'no_open': True, 'no_create': True}"
+                            attrs="{'required': [('days_per_year_accumulated', '>', 0)]}"
+                        />
+                    </div>
+
+                    <field
+                        name="provisions_social_benefits_generated"
+                        readonly="1"
+                        groups="base.group_no_one"
+                        widget="monetary"
+                        options="{'currency_field': 'social_benefits_generated_currency'}"
+                    />
+                    <field
+                        name="provisions_social_benefits_generated_date"
+                        groups="base.group_no_one"
+                        readonly="1"
+                    />
+
+                    <field
+                        name="provisions_benefit_interest"
+                        readonly="1"
+                        groups="base.group_no_one"
+                        widget="monetary"
+                        options="{'currency_field': 'benefit_interest_currency'}"
+                    />
+                    <field
+                        name="provisions_benefit_interest_date"
+                        groups="base.group_no_one"
+                        readonly="1"
+                    />
+
+                    <field
+                        name="provisions_days_per_year_accumulated"
+                        readonly="1"
+                        groups="base.group_no_one"
+                        widget="monetary"
+                        options="{'currency_field': 'days_per_year_accumulated_currency'}"
+                    />
+                    <field
+                        name="provisions_days_per_year_accumulated_date"
+                        readonly="1"
+                        groups="base.group_no_one"
+                    />
+
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

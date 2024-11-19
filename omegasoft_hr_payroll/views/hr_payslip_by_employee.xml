@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- hr.payslip.employees form view -->
+    <record id="hr_payroll_payslip_by_employees_omegasoft" model="ir.ui.view">
+        <field name="name">hr.payroll.payslip.by.employees.omegasoft</field>
+        <field name="model">hr.payslip.employees</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_by_employees" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[1]/field[@name='structure_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+            <xpath expr="//div[1]/field[@name='structure_id']" position="after">
+                <field name="struct_fortnight" invisible="1" />
+                <field
+                    name="fortnight"
+                    readonly="1"
+                    attrs="{'invisible': [('struct_fortnight', '!=', 'bi-weekly')] ,'required': [('struct_fortnight', '=', 'bi-weekly')]}"
+                />
+            </xpath>
+
+            <xpath expr="//div[2]" position="replace">
+                <group colspan="2">
+                    <separator string="Department" colspan="2" />
+                    <newline />
+                    <span
+                        class="text-muted"
+                    >Set a specific department if you want to select all employees of this department (and sub-departments) at once. In case you have selected a structure that has associated departments these will be selected automatically as well as their employees.</span>
+                    <group>
+                        <field
+                            name="department_id"
+                            readonly="1"
+                            nolabel="1"
+                            attrs="{'invisible': [('department_ids', '!=', [])]}"
+                        />
+                        <field
+                            name="department_ids"
+                            readonly="1"
+                            nolabel="1"
+                            widget="many2many_tags"
+                        />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

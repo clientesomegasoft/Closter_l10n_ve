@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- hr_plan_accumulation tree view -->
+    <record id="omegasoft_view_hr_accumulation_tree" model="ir.ui.view">
+        <field name="name">hr.plan.accumulation.tree</field>
+        <field name="model">hr_plan_accumulation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id" />
+                <field name="last_calculation" />
+                <field name="company_id" groups="base.group_no_one" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- hr_plan_accumulation form view -->
+    <record id="omegasoft_view_hr_accumulation_form" model="ir.ui.view">
+        <field name="name">hr.plan.accumulation.form</field>
+        <field name="model">hr_plan_accumulation</field>
+        <field name="arch" type="xml">
+            <form string="Vacation">
+                <sheet>
+                    <field name="active" invisible="1" />
+                    <group>
+                        <field name="employee_id" />
+                        <field name="employee_file" invisible="1" />
+                        <field
+                            name="employee_file_code_id"
+                            options="{'no_create': 1}"
+                            attrs="{'invisible': [('employee_file', '=', False)]}"
+                        />
+                        <field name="last_calculation" readonly="1" default="today" />
+                        <field name="company_id" groups="base.group_no_one" />
+                    </group>
+                    <notebook colspan="4">
+                        <page name="line_vacations" string="Accumulated vacation">
+                            <field name="vacation_ids">
+                                <tree
+                                    editable="bottom"
+                                    nolabel="1"
+                                    decoration-muted="(days_law == 0 and vacation_bonus == 0 and additional_days == 0)"
+                                >
+                                    <field name="accumulated_id" invisible="1" />
+                                    <field name="period" widget="date" />
+                                    <field name="days_law" />
+                                    <field name="vacation_bonus" />
+                                    <field name="additional_days" />
+                                    <field name="time_off_type_id" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="line_enjoy" string="Accumulated enjoy">
+                            <field name="enjoy_ids">
+                                <tree editable="bottom" nolabel="1">
+                                    <field name="accumulated_id" invisible="1" />
+                                    <field name="period" />
+                                    <field name="days_law" />
+                                    <field name="vacation_bonus" />
+                                    <field name="additional_days" />
+                                    <field name="time_off_type_id" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- hr_plan_accumulation search view -->
+    <record id="omegasoft_view_hr_accumulation_search" model="ir.ui.view">
+        <field name="name">hr.plan.accumulation.search</field>
+        <field name="model">hr_plan_accumulation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="employee_id" />
+            </search>
+        </field>
+    </record>
+
+    <!-- hr_plan_accumulation action window -->
+    <record id="action_hr_accumulation" model="ir.actions.act_window">
+        <field name="name">Acumulation Plan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr_plan_accumulation</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- hr_plan_accumulation menu item -->
+    <menuitem
+        id="menu_hr_vacation"
+        action="action_hr_accumulation"
+        name="Acumulation Plan"
+        parent="hr_holidays.menu_hr_holidays_configuration"
+        groups="hr_holidays.group_hr_holidays_manager"
+        sequence="1"
+    />
+</odoo>

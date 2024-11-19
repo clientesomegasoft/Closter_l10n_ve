@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <!-- product.template view form -->
+    <record
+        id="omegasoft_product_template_form_view_commission_inherit"
+        model="ir.ui.view"
+    >
+        <field name="name">product.template.form.view.commission.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale']" position="inside">
+                <group name="commission_group">
+                    <field name="product_commission" />
+                    <field
+                        name="commission_type"
+                        attrs="{'invisible': [('product_commission', '=', False)], 'required': [('product_commission', '=', True)]}"
+                    />
+
+                    <label
+                        for="percentage"
+                        attrs="{'invisible': ['|', ('commission_type', '!=', 'percentage'), ('product_commission', '=', False)]}"
+                    />
+                    <div
+                        name="percentage_div"
+                        class="o_row"
+                        attrs="{'invisible': ['|', ('commission_type', '!=', 'percentage'), ('product_commission', '=', False)]}"
+                    >
+                        <field
+                            name="percentage"
+                            attrs="{'required': [('commission_type', '=', 'percentage')]}"
+                        />%
+                    </div>
+
+                    <label
+                        for="fixed_amount"
+                        attrs="{'invisible': ['|', ('commission_type', '!=', 'fixed_amount'), ('product_commission', '=', False)]}"
+                    />
+                    <div
+                        name="fixed_amount_div"
+                        class="o_row"
+                        attrs="{'invisible': ['|', ('commission_type', '!=', 'fixed_amount'), ('product_commission', '=', False)]}"
+                    >
+                        <field
+                            name="fixed_amount"
+                            attrs="{'required': [('commission_type', '=', 'fixed_amount')]}"
+                        />
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

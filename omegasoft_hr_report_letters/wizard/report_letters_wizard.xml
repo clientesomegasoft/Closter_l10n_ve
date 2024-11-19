@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- hr.report.letters form view -->
+    <record id="hr_report_letters_view_form" model="ir.ui.view">
+        <field name="name">hr.report.letters.view.form</field>
+        <field name="model">hr.report.letters</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="date" />
+                        <field
+                            name="employee_id"
+                            attrs="{'invisible': [('letter_type', '!=', 'work')]}"
+                        />
+                        <field
+                            name="export_bank_payment_id"
+                            attrs="{'invisible': [('letter_type', '!=', 'txt')]}"
+                        />
+                    </group>
+                    <group>
+                        <field name="letter_type" />
+                        <field name="company_id" invisible="1" />
+                    </group>
+                </group>
+                <footer>
+                    <button
+                        string="Imprimir"
+                        name="button_print"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button
+                        string="Cancelar"
+                        class="btn btn-secondary"
+                        special="cancel"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- hr.report.letters action window -->
+    <record id="report_letters_action" model="ir.actions.act_window">
+        <field name="name">Cartas</field>
+        <field name="res_model">hr.report.letters</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- hr.report.letters menu item -->
+    <menuitem
+        id="hr_report_letters_menu"
+        name="Cartas"
+        parent="hr.hr_menu_hr_reports"
+        action="report_letters_action"
+        sequence="100"
+    />
+</odoo>

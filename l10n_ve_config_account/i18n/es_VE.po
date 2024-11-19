@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ve_config_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 18:59+0000\n"
+"PO-Revision-Date: 2024-10-30 15:06-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_VE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.constraint,message:l10n_ve_config_account.constraint_account_move_unique_nro_ctrl_in_invoice
+#: model:ir.model.constraint,message:l10n_ve_config_account.constraint_account_move_unique_nro_ctrl_out_invoice
+msgid ""
+"\n"
+"A document with the same control number already exists!"
+msgstr ""
+"\n"
+"¡Ya existe un documento con el mismo número de control!"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Fiscal currency</span>"
+msgstr "<span class=\"o_form_label\">Moneda fiscal</span>"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Functional currency</span>"
+msgstr "<span class=\"o_form_label\">Moneda funcional</span>"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Operating currency</span>"
+msgstr "<span class=\"o_form_label\">Moneda operativa</span>"
+
+#. module: l10n_ve_config_account
+#: model:ir.model,name:l10n_ve_config_account.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: l10n_ve_config_account
+#: model:ir.model,name:l10n_ve_config_account.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: l10n_ve_config_account
+#: model:ir.ui.menu,name:l10n_ve_config_account.menu_l10n_ve_finance_configuration
+msgid "Fiscal Configuration of Venezuela"
+msgstr "Configuración Fiscal de Venezuela"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid ""
+"Control the management of reports that, due to fiscal matters, need to be generated\n"
+"                                    in a currency regardless of the functional configuration of the system."
+msgstr ""
+"Controlar la gestión de los reportes que por materia fiscal requieren ser generados\n"
+"                                    en una moneda independientemente de la configuración funcional del sistema."
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_bank_statement_line__person_type_code
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_move__person_type_code
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_payment__person_type_code
+msgid "Code"
+msgstr "Código"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.constraint,message:l10n_ve_config_account.constraint_account_ut_check_amount
+msgid "The amount of the tax unit must be greater than zero (0)."
+msgstr "El monto de la unidad tributaria debe ser mayo a cero (0)."
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,help:l10n_ve_config_account.field_account_ut__date
+msgid "Date on which the new tax unit becomes effective."
+msgstr "Fecha en la que entra en vigor la nueva unidad tributaria."
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_ve_config_account
+#: model:ir.ui.menu,name:l10n_ve_config_account.menu_l10n_ve_reports
+msgid "Venezuela Reports"
+msgstr "Informes de Venezuela"
+
+#. module: l10n_ve_config_account
+#: model:ir.model,name:l10n_ve_config_account.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "Accounting localization"
+msgstr "Localización contable"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_res_company__fiscal_currency_id
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_res_config_settings__fiscal_currency_id
+msgid "Fiscal currency"
+msgstr "Moneda fiscal"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_res_company__currency_ref_id
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_res_config_settings__currency_ref_id
+msgid "Operating currency"
+msgstr "Moneda operativa"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "Main currency of your company"
+msgstr "Moneda principal de tu compañía"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_bank_statement_line__nro_ctrl
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_move__nro_ctrl
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_payment__nro_ctrl
+msgid "Control number"
+msgstr "Número de control"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_bank_statement_line__supplier_invoice_number
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_move__supplier_invoice_number
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_payment__supplier_invoice_number
+msgid "Provider invoice number"
+msgstr "Número de factura de proveedor"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,field_description:l10n_ve_config_account.field_account_ut__name
+msgid "Reference number"
+msgstr "Número de referencia"
+
+#. module: l10n_ve_config_account
+#: model:ir.model.fields,help:l10n_ve_config_account.field_account_ut__name
+msgid "Reference number according to law."
+msgstr "Número de referencia según la ley."
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "Represents monetary amounts in a secondary currency."
+msgstr "Representa los importes monetarios en una moneda secundaria."
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.ui.view,arch_db:l10n_ve_config_account.res_config_settings_view_form
+msgid "Conversion system"
+msgstr "Sistema de conversión"
+
+#. module: l10n_ve_config_account
+#: model:ir.model,name:l10n_ve_config_account.model_account_ut
+msgid "Tax Unit"
+msgstr "Unidad Tributaria"
+
+#. module: l10n_ve_config_account
+#: model:ir.actions.act_window,name:l10n_ve_config_account.action_account_ut
+#: model:ir.ui.menu,name:l10n_ve_config_account.menu_action_account_ut
+msgid "Tax unit"
+msgstr "Unidad tributaria"
+
+#. module: l10n_ve_config_account
+#: model_terms:ir.actions.act_window,help:l10n_ve_config_account.action_account_ut
+msgid "Tax unit according to SENIAT"
+msgstr "Unidad tributaria de acuerdo al SENIAT"
