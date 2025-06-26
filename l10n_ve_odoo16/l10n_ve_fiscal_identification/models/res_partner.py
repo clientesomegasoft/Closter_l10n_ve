@@ -38,7 +38,7 @@ class Partner(models.Model):
 		for partner in self:
 			if partner.type in ('contact', 'invoice'):
 				if partner.is_company:
-					if partner.person_type_id.code not in ('PJDO', 'PJND'):
+					if partner.person_type_id.code not in ('PJDO', 'PJND', 'PNRE'):
 						raise ValidationError("El campo 'Tipo de persona' no puede ser nulo y debe corresponder con el tipo de contacto Compañía ('PJDO' o 'PJND').")
 					if partner.person_type_id.code == 'PJDO' and not partner.vat:
 						raise ValidationError("El campo 'RIF' no puede ser nulo !")
